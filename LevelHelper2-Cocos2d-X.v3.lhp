@@ -18,7 +18,7 @@
 			<key>SuffixName</key>
 			<string>hd</string>
 			<key>color</key>
-			<string>{{0.98594826459884644, 0}, {0.026950567960739136, 1}}</string>
+			<string>{{0.968475341796875, 0}, {0.044634129852056503, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -32,7 +32,7 @@
 			<key>SuffixName</key>
 			<string>568</string>
 			<key>color</key>
-			<string>{{1, 1}, {0.041410073637962341, 1}}</string>
+			<string>{{1, 1}, {0.060624871402978897, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -46,7 +46,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.98473900556564331, 0}, {0.99912577867507935, 1}}</string>
+			<string>{{0.96575230360031128, 0}, {0.99799174070358276, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -60,7 +60,7 @@
 			<key>SuffixName</key>
 			<string>ipadhd</string>
 			<key>color</key>
-			<string>{{0.98473900556564331, 0}, {0.99912577867507935, 1}}</string>
+			<string>{{0.96575230360031128, 0}, {0.99799174070358276, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -69,6 +69,21 @@
 	<dict>
 		<key>name</key>
 		<string>LevelHelper2-Cocos2d-X.v3</string>
+		<key>publishOptions</key>
+		<dict>
+			<key>ScenesOptions</key>
+			<dict>
+				<key>level01.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>publisherPluginName</key>
+			<string>Cocos2d-X</string>
+			<key>selectedPublishTypeName</key>
+			<string>Current Scene Only</string>
+		</dict>
 	</dict>
 	<key>uuid</key>
 	<string>6CA17CF5-B77E-4C3E-A619-FC3AEDC1A503</string>

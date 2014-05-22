@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>about</key>
+	<dict>
+		<key>app</key>
+		<string>LevelHelper 2</string>
+		<key>author</key>
+		<string>Vladu Bogdan</string>
+		<key>web</key>
+		<string>http://www.gamedevhelper.com</string>
+	</dict>
+	<key>frames</key>
+	<dict>
+		<key>object_backpack</key>
+		<dict>
+			<key>frame</key>
+			<string>{{69, 144}, {80, 96}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{5, 5}, {80, 96}}</string>
+			<key>sourceSize</key>
+			<string>{90, 106}</string>
+			<key>uuid</key>
+			<string>79AD2F07-C0BE-4B5A-BB3F-9FAC5F80A471</string>
+		</dict>
+		<key>object_banana</key>
+		<dict>
+			<key>frame</key>
+			<string>{{153, 1}, {82, 57}}</string>
+			<key>offset</key>
+			<string>{0, 0.5}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{5, 3}, {82, 57}}</string>
+			<key>sourceSize</key>
+			<string>{92, 64}</string>
+			<key>uuid</key>
+			<string>FAE55543-0B9F-4B04-A86D-BAB025D0B01C</string>
+		</dict>
+		<key>object_bananabunch</key>
+		<dict>
+			<key>frame</key>
+			<string>{{152, 62}, {78, 55}}</string>
+			<key>offset</key>
+			<string>{2, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{5, 7}, {55, 78}}</string>
+			<key>sourceSize</key>
+			<string>{88, 65}</string>
+			<key>uuid</key>
+			<string>60F9EAC9-FDD1-4EAB-811D-7A0EF562B591</string>
+		</dict>
+		<key>object_canteen</key>
+		<dict>
+			<key>frame</key>
+			<string>{{210, 61}, {43, 65}}</string>
+			<key>offset</key>
+			<string>{-1.5, -0.5}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{7, 7}, {43, 65}}</string>
+			<key>sourceSize</key>
+			<string>{60, 78}</string>
+			<key>uuid</key>
+			<string>C3F38C64-C80F-4AC6-BA50-91147927289B</string>
+		</dict>
+		<key>object_hat</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 143}, {110, 64}}</string>
+			<key>offset</key>
+			<string>{0, 0.5}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{6, 6}, {64, 110}}</string>
+			<key>sourceSize</key>
+			<string>{122, 75}</string>
+			<key>uuid</key>
+			<string>A0CC7494-203E-4C79-A14A-ECA50F1FBA3D</string>
+		</dict>
+		<key>object_pineapple</key>
+		<dict>
+			<key>frame</key>
+			<string>{{98, 2}, {51, 127}}</string>
+			<key>offset</key>
+			<string>{1, -1.5}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{6, 5}, {51, 127}}</string>
+			<key>sourceSize</key>
+			<string>{61, 134}</string>
+			<key>uuid</key>
+			<string>072F5BA2-FB8C-4349-BB62-DFB06F1A6E47</string>
+		</dict>
+		<key>object_statue</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 2}, {93, 139}}</string>
+			<key>offset</key>
+			<string>{1, -0.5}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{7, 5}, {93, 139}}</string>
+			<key>sourceSize</key>
+			<string>{105, 148}</string>
+			<key>uuid</key>
+			<string>0DB4639A-8D34-4D83-8FBD-20753577F85A</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{254, 254}</string>
+		<key>textureFileName</key>
+		<string>objects.png</string>
+	</dict>
+</dict>
+</plist>

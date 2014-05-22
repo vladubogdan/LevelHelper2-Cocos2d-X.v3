@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>designResolutionDeviceIdx</key>
+	<integer>0</integer>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>DeviceName</key>
+			<string>iPhones 3.5 inch Retina</string>
+			<key>ScaleRatio</key>
+			<real>1</real>
+			<key>ScreenHeight</key>
+			<integer>640</integer>
+			<key>ScreenWidth</key>
+			<integer>960</integer>
+			<key>SuffixName</key>
+			<string>hd</string>
+			<key>color</key>
+			<string>{{0.98594826459884644, 0}, {0.026950567960739136, 1}}</string>
+		</dict>
+		<dict>
+			<key>DeviceName</key>
+			<string>iPhone 4 inch Retina</string>
+			<key>ScaleRatio</key>
+			<real>1</real>
+			<key>ScreenHeight</key>
+			<integer>640</integer>
+			<key>ScreenWidth</key>
+			<integer>1136</integer>
+			<key>SuffixName</key>
+			<string>568</string>
+			<key>color</key>
+			<string>{{1, 1}, {0.041410073637962341, 1}}</string>
+		</dict>
+		<dict>
+			<key>DeviceName</key>
+			<string>iPad &amp; iPad Mini</string>
+			<key>ScaleRatio</key>
+			<real>1</real>
+			<key>ScreenHeight</key>
+			<integer>768</integer>
+			<key>ScreenWidth</key>
+			<integer>1024</integer>
+			<key>SuffixName</key>
+			<string>ipad</string>
+			<key>color</key>
+			<string>{{0.98473900556564331, 0}, {0.99912577867507935, 1}}</string>
+		</dict>
+		<dict>
+			<key>DeviceName</key>
+			<string>iPad Retina</string>
+			<key>ScaleRatio</key>
+			<real>2</real>
+			<key>ScreenHeight</key>
+			<integer>1536</integer>
+			<key>ScreenWidth</key>
+			<integer>2048</integer>
+			<key>SuffixName</key>
+			<string>ipadhd</string>
+			<key>color</key>
+			<string>{{0.98473900556564331, 0}, {0.99912577867507935, 1}}</string>
+		</dict>
+	</array>
+	<key>engine</key>
+	<string>Cocos2d-X</string>
+	<key>options</key>
+	<dict>
+		<key>name</key>
+		<string>LevelHelper2-Cocos2d-X.v3</string>
+	</dict>
+	<key>uuid</key>
+	<string>6CA17CF5-B77E-4C3E-A619-FC3AEDC1A503</string>
+</dict>
+</plist>

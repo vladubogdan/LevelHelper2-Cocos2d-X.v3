@@ -74,10 +74,10 @@
 		6E89FCB9192DFFF30040478F /* LHDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FCAE192DFFF30040478F /* LHDevice.cpp */; };
 		6E89FCBA192DFFF30040478F /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FCB0192DFFF30040478F /* LHDictionary.cpp */; };
 		6E89FCBB192DFFF30040478F /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FCB0192DFFF30040478F /* LHDictionary.cpp */; };
-		6E89FCDF192E01A90040478F /* DEMO_INIDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E89FCDE192E01A90040478F /* DEMO_INIDIVIDUAL_IMAGES_EXAMPLE */; };
-		6E89FCE0192E01A90040478F /* DEMO_INIDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E89FCDE192E01A90040478F /* DEMO_INIDIVIDUAL_IMAGES_EXAMPLE */; };
 		6E89FCE7192E020C0040478F /* LHSceneSubclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FCE5192E020C0040478F /* LHSceneSubclass.cpp */; };
 		6E89FCE8192E020C0040478F /* LHSceneSubclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FCE5192E020C0040478F /* LHSceneSubclass.cpp */; };
+		6E89FE3E192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E89FE3D192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
+		6E89FE3F192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E89FE3D192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -292,9 +292,9 @@
 		6E89FCAF192DFFF30040478F /* LHDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDevice.h; sourceTree = "<group>"; };
 		6E89FCB0192DFFF30040478F /* LHDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDictionary.cpp; sourceTree = "<group>"; };
 		6E89FCB1192DFFF30040478F /* LHDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDictionary.h; sourceTree = "<group>"; };
-		6E89FCDE192E01A90040478F /* DEMO_INIDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INIDIVIDUAL_IMAGES_EXAMPLE; path = ../DEMO_INIDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
 		6E89FCE5192E020C0040478F /* LHSceneSubclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneSubclass.cpp; path = ../Classes/LHSceneSubclass.cpp; sourceTree = "<group>"; };
 		6E89FCE6192E020C0040478F /* LHSceneSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneSubclass.h; path = ../Classes/LHSceneSubclass.h; sourceTree = "<group>"; };
+		6E89FE3D192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -413,7 +413,7 @@
 			children = (
 				6E89FC9F192DFFF30040478F /* LevelHelper2-API */,
 				6E89FC9A192DFFEA0040478F /* DEMO_PUBLISH_FOLDER */,
-				6E89FCDE192E01A90040478F /* DEMO_INIDIVIDUAL_IMAGES_EXAMPLE */,
+				6E89FE3D192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
 				15AA9C4015B7EC450033D6C2 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -715,6 +715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				6E89FE3E192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				6E89FC9B192DFFEA0040478F /* DEMO_PUBLISH_FOLDER in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
@@ -723,7 +724,6 @@
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
-				6E89FCDF192E01A90040478F /* DEMO_INIDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
@@ -743,9 +743,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
+				6E89FE3F192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				6E89FC9C192DFFEA0040478F /* DEMO_PUBLISH_FOLDER in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
-				6E89FCE0192E01A90040478F /* DEMO_INIDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
 				5087E75517EB910900C73F5D /* HelloWorld.png in Resources */,
 			);

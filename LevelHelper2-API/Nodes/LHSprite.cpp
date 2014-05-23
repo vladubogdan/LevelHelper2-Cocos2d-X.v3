@@ -15,7 +15,7 @@
 
 LHSprite::LHSprite()
 {
-
+    printf("SPRITE CONSTRUCTOR\n");
 }
 
 LHSprite::~LHSprite()
@@ -140,11 +140,16 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     {
         prnt->addChild(this);
         
+        _physicsBody = NULL;
         
-        this->setName(dict->stringForKey("name"));
-        this->setUuid(dict->stringForKey("uuid"));
-        this->setTags(dict->arrayForKey("tags"));
-        this->loadUserPropertyWithDictionary(dict, this);
+        setName(dict->stringForKey("name"));
+        setUuid(dict->stringForKey("uuid"));
+        setTags(dict->arrayForKey("tags"));
+        loadUserPropertyWithDictionary(dict, this);
+        
+        uuid = dict->stringForKey("uuid");
+        
+        printf("uuid was set to %s\n", uuid.c_str());
         
 //        if(this->getUserProperty()){
 //            printf("user prop name %s\n", this->getUserProperty()->getClassName().c_str());
@@ -197,12 +202,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
             }
         }
         
-//        [LHUtils createAnimationsForNode:self
-//                         animationsArray:&_animations
-//                         activeAnimation:&activeAnimation
-//                          fromDictionary:dict];
-
-        
+        createAnimationsFromDictionary(dict, this);
         
         
         return true;
@@ -228,6 +228,44 @@ LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
         CC_SAFE_DELETE(ret);
         return nullptr;
     }
+}
+
+//void LHSprite::setOpacity(GLubyte opacity)
+//{
+//    Sprite::setOpacity(opacity);
+//}
+//
+//void LHSprite::setRotation(float rotation)
+//{
+//    Sprite::setRotation(rotation);
+//    
+//    //*own stuff here*//
+//}
+//void LHSprite::setScaleX(float scaleX)
+//{
+//    Sprite::setScaleX(scaleX);
+//}
+//
+//void LHSprite::setScaleY(float scaleY)
+//{
+//    Sprite::setScaleY(scaleY);
+//}
+//
+//void LHSprite::setPosition(const Point& pos)
+//{
+//    Sprite::setPosition(pos);
+//}
+//
+//Scene* LHSprite::getScene()
+//{
+//    return Sprite::getScene();
+//}
+
+void LHSprite::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+{
+    visitActiveAnimation();
+    
+    Sprite::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 /*
@@ -427,24 +465,4 @@ LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
     return _userProperty;
 }
 
-- (void)visit
-{
-    NSTimeInterval thisTime = [NSDate timeIntervalSinceReferenceDate];
-    float dt = thisTime - lastTime;
-    
-    if(activeAnimation){
-        [activeAnimation updateTimeWithDelta:dt];
-    }
-    
-    [super visit];
-    
-    lastTime = thisTime;
-}
-
-#pragma mark - 
--(void)setActiveAnimation:(LHAnimation*)anim{
-    activeAnimation = anim;
-}
-
-@end
 */

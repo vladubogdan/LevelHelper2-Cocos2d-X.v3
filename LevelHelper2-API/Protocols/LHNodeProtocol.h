@@ -34,13 +34,13 @@ class LHNodeProtocol
      Returns the unique name of the node.
      */
     virtual std::string getName(){return name;}
-    virtual void setName(const std::string& value){name = value;}
+    virtual void setName(const std::string& value){name = std::string(value);}
     
     /**
      Returns the unique identifier of the node.
      */
-    virtual std::string getUuid(){return uuid;}
-    virtual void setUuid(const std::string& value){uuid = value;}
+    virtual std::string getUuid();
+    virtual void setUuid(std::string value);
     
     /**
      Returns all tag values of the node.
@@ -63,6 +63,42 @@ class LHNodeProtocol
      */
     virtual Node* getChildNodeWithUUID(const std::string& uuid);
 
+    /**
+     Returns all children nodes that are of specified class type. The type must be compatible with Cocos2d-X __Array type. (must be of Ref type)
+     @param type A "Class" type.
+     @return An array with all the found nodes of the specified class.
+     * @code
+     * //this is how you should use this function
+     * __Array* children = myObject->getChildrenOfType<Node*>(NULL);
+     * @endcode
+     
+     */
+    
+    template<typename T>
+    __Array* getChildrenOfType(T value)
+    {
+        Node* node = dynamic_cast<Node*>(this);
+        
+        __Array* array = __Array::create();
+        
+        auto& children = node->getChildren();
+        for( const auto &n : children) {
+            
+            T dynamicNode = dynamic_cast<T>(n);
+            if(dynamicNode != NULL){
+                array->addObject(dynamicNode);
+            }
+            
+            LHNodeProtocol* nPro = dynamic_cast<LHNodeProtocol*>(n);
+            if(nPro){
+                __Array* nOfType = nPro->getChildrenOfType(value);
+                array->addObjectsFromArray(nOfType);
+            }
+        }
+        
+        return array;
+    }
+
     
     virtual bool isScene(){return false;}
     virtual bool isSprite(){return false;}
@@ -71,7 +107,7 @@ class LHNodeProtocol
     virtual bool isShape(){return false;}
     virtual bool isJoint(){return false;}
     
-private:
+    
     std::string name;
     std::string uuid;
     std::vector<std::string>tags;
@@ -97,11 +133,4 @@ private:
  @return An array of nodes.
  */
 //-(NSMutableArray*)childrenWithTags:(NSArray*)tagValues containsAny:(BOOL)any;
-
-/**
- Returns all children nodes that are of specified class type.
- @param type A "Class" type.
- @return An array with all the found nodes of the specified class.
- */
-//-(NSMutableArray*)childrenOfType:(Class)type;
 

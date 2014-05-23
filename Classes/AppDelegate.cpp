@@ -31,8 +31,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
 //    auto scene = HelloWorld::createScene();
 
-    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level01.plist");
+    //auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level01.plist");
 
+    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level02-anim.plist");
+    
+    
     // run
     director->runWithScene(scene);
 

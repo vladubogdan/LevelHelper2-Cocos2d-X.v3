@@ -78,6 +78,44 @@
 		6E89FCE8192E020C0040478F /* LHSceneSubclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FCE5192E020C0040478F /* LHSceneSubclass.cpp */; };
 		6E89FE3E192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E89FE3D192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		6E89FE3F192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E89FE3D192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
+		6E89FE6C192E32290040478F /* LHFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FE48192E32290040478F /* LHFrame.cpp */; };
+		6E89FE6D192E32290040478F /* LHFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FE48192E32290040478F /* LHFrame.cpp */; };
+		6E89FEA7192E34440040478F /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FE91192E34440040478F /* LHAnimationProperty.cpp */; };
+		6E89FEA8192E34440040478F /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FE91192E34440040478F /* LHAnimationProperty.cpp */; };
+		6E89FEBF192E402B0040478F /* LHPositionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEBD192E402B0040478F /* LHPositionFrame.cpp */; };
+		6E89FEC0192E402B0040478F /* LHPositionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEBD192E402B0040478F /* LHPositionFrame.cpp */; };
+		6E89FEC3192E43630040478F /* LHOpacityFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEC1192E43630040478F /* LHOpacityFrame.cpp */; };
+		6E89FEC4192E43640040478F /* LHOpacityFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEC1192E43630040478F /* LHOpacityFrame.cpp */; };
+		6E89FEC7192E46020040478F /* LHRotationFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEC5192E46020040478F /* LHRotationFrame.cpp */; };
+		6E89FEC8192E46020040478F /* LHRotationFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEC5192E46020040478F /* LHRotationFrame.cpp */; };
+		6E89FECB192E479E0040478F /* LHScaleFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEC9192E479E0040478F /* LHScaleFrame.cpp */; };
+		6E89FECC192E479E0040478F /* LHScaleFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEC9192E479E0040478F /* LHScaleFrame.cpp */; };
+		6E89FECF192E48D50040478F /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FECD192E48D50040478F /* LHSpriteFrame.cpp */; };
+		6E89FED0192E48D50040478F /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FECD192E48D50040478F /* LHSpriteFrame.cpp */; };
+		6E89FED3192E49C20040478F /* LHPositionProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FED1192E49C20040478F /* LHPositionProperty.cpp */; };
+		6E89FED4192E49C20040478F /* LHPositionProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FED1192E49C20040478F /* LHPositionProperty.cpp */; };
+		6E89FED7192E4D5B0040478F /* LHRotationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FED5192E4D5B0040478F /* LHRotationProperty.cpp */; };
+		6E89FED8192E4D5B0040478F /* LHRotationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FED5192E4D5B0040478F /* LHRotationProperty.cpp */; };
+		6E89FEDB192E4E0B0040478F /* LHScaleProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FED9192E4E0B0040478F /* LHScaleProperty.cpp */; };
+		6E89FEDC192E4E0B0040478F /* LHScaleProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FED9192E4E0B0040478F /* LHScaleProperty.cpp */; };
+		6E89FEDF192E4E9F0040478F /* LHOpacityProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEDD192E4E9F0040478F /* LHOpacityProperty.cpp */; };
+		6E89FEE0192E4E9F0040478F /* LHOpacityProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEDD192E4E9F0040478F /* LHOpacityProperty.cpp */; };
+		6E89FEE3192E4F340040478F /* LHSpriteFrameProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEE1192E4F340040478F /* LHSpriteFrameProperty.cpp */; };
+		6E89FEE4192E4F340040478F /* LHSpriteFrameProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEE1192E4F340040478F /* LHSpriteFrameProperty.cpp */; };
+		6E89FEE7192E4FD70040478F /* LHCameraActivateProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEE5192E4FD70040478F /* LHCameraActivateProperty.cpp */; };
+		6E89FEE8192E4FD70040478F /* LHCameraActivateProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEE5192E4FD70040478F /* LHCameraActivateProperty.cpp */; };
+		6E89FEEB192E507C0040478F /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEE9192E507C0040478F /* LHChildrenPositionsProperty.cpp */; };
+		6E89FEEC192E507C0040478F /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEE9192E507C0040478F /* LHChildrenPositionsProperty.cpp */; };
+		6E89FEEF192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEED192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp */; };
+		6E89FEF0192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEED192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp */; };
+		6E89FEF3192E52FF0040478F /* LHChildrenRotationsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEF1192E52FF0040478F /* LHChildrenRotationsProperty.cpp */; };
+		6E89FEF4192E52FF0040478F /* LHChildrenRotationsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEF1192E52FF0040478F /* LHChildrenRotationsProperty.cpp */; };
+		6E89FEF7192E539F0040478F /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEF5192E539F0040478F /* LHChildrenScalesProperty.cpp */; };
+		6E89FEF8192E539F0040478F /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEF5192E539F0040478F /* LHChildrenScalesProperty.cpp */; };
+		6E89FEFB192E54420040478F /* LHAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEF9192E54420040478F /* LHAnimation.cpp */; };
+		6E89FEFC192E54420040478F /* LHAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FEF9192E54420040478F /* LHAnimation.cpp */; };
+		6E89FF47192F35110040478F /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FF46192F35110040478F /* LHNodeAnimationProtocol.cpp */; };
+		6E89FF48192F35110040478F /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FF46192F35110040478F /* LHNodeAnimationProtocol.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -295,6 +333,43 @@
 		6E89FCE5192E020C0040478F /* LHSceneSubclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneSubclass.cpp; path = ../Classes/LHSceneSubclass.cpp; sourceTree = "<group>"; };
 		6E89FCE6192E020C0040478F /* LHSceneSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneSubclass.h; path = ../Classes/LHSceneSubclass.h; sourceTree = "<group>"; };
 		6E89FE3D192E2FD30040478F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
+		6E89FE47192E32290040478F /* LHFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHFrame.h; sourceTree = "<group>"; };
+		6E89FE48192E32290040478F /* LHFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHFrame.cpp; sourceTree = "<group>"; };
+		6E89FE91192E34440040478F /* LHAnimationProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHAnimationProperty.cpp; sourceTree = "<group>"; };
+		6E89FE92192E34440040478F /* LHAnimationProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAnimationProperty.h; sourceTree = "<group>"; };
+		6E89FEBD192E402B0040478F /* LHPositionFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPositionFrame.cpp; sourceTree = "<group>"; };
+		6E89FEBE192E402B0040478F /* LHPositionFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPositionFrame.h; sourceTree = "<group>"; };
+		6E89FEC1192E43630040478F /* LHOpacityFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHOpacityFrame.cpp; sourceTree = "<group>"; };
+		6E89FEC2192E43630040478F /* LHOpacityFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHOpacityFrame.h; sourceTree = "<group>"; };
+		6E89FEC5192E46020040478F /* LHRotationFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHRotationFrame.cpp; sourceTree = "<group>"; };
+		6E89FEC6192E46020040478F /* LHRotationFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRotationFrame.h; sourceTree = "<group>"; };
+		6E89FEC9192E479E0040478F /* LHScaleFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHScaleFrame.cpp; sourceTree = "<group>"; };
+		6E89FECA192E479E0040478F /* LHScaleFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHScaleFrame.h; sourceTree = "<group>"; };
+		6E89FECD192E48D50040478F /* LHSpriteFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSpriteFrame.cpp; sourceTree = "<group>"; };
+		6E89FECE192E48D50040478F /* LHSpriteFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSpriteFrame.h; sourceTree = "<group>"; };
+		6E89FED1192E49C20040478F /* LHPositionProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPositionProperty.cpp; sourceTree = "<group>"; };
+		6E89FED2192E49C20040478F /* LHPositionProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPositionProperty.h; sourceTree = "<group>"; };
+		6E89FED5192E4D5B0040478F /* LHRotationProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHRotationProperty.cpp; sourceTree = "<group>"; };
+		6E89FED6192E4D5B0040478F /* LHRotationProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRotationProperty.h; sourceTree = "<group>"; };
+		6E89FED9192E4E0B0040478F /* LHScaleProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHScaleProperty.cpp; sourceTree = "<group>"; };
+		6E89FEDA192E4E0B0040478F /* LHScaleProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHScaleProperty.h; sourceTree = "<group>"; };
+		6E89FEDD192E4E9F0040478F /* LHOpacityProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHOpacityProperty.cpp; sourceTree = "<group>"; };
+		6E89FEDE192E4E9F0040478F /* LHOpacityProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHOpacityProperty.h; sourceTree = "<group>"; };
+		6E89FEE1192E4F340040478F /* LHSpriteFrameProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSpriteFrameProperty.cpp; sourceTree = "<group>"; };
+		6E89FEE2192E4F340040478F /* LHSpriteFrameProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSpriteFrameProperty.h; sourceTree = "<group>"; };
+		6E89FEE5192E4FD70040478F /* LHCameraActivateProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHCameraActivateProperty.cpp; sourceTree = "<group>"; };
+		6E89FEE6192E4FD70040478F /* LHCameraActivateProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCameraActivateProperty.h; sourceTree = "<group>"; };
+		6E89FEE9192E507C0040478F /* LHChildrenPositionsProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHChildrenPositionsProperty.cpp; sourceTree = "<group>"; };
+		6E89FEEA192E507C0040478F /* LHChildrenPositionsProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHChildrenPositionsProperty.h; sourceTree = "<group>"; };
+		6E89FEED192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHChildrenOpacitiesProperty.cpp; sourceTree = "<group>"; };
+		6E89FEEE192E51CA0040478F /* LHChildrenOpacitiesProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHChildrenOpacitiesProperty.h; sourceTree = "<group>"; };
+		6E89FEF1192E52FF0040478F /* LHChildrenRotationsProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHChildrenRotationsProperty.cpp; sourceTree = "<group>"; };
+		6E89FEF2192E52FF0040478F /* LHChildrenRotationsProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHChildrenRotationsProperty.h; sourceTree = "<group>"; };
+		6E89FEF5192E539F0040478F /* LHChildrenScalesProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHChildrenScalesProperty.cpp; sourceTree = "<group>"; };
+		6E89FEF6192E539F0040478F /* LHChildrenScalesProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHChildrenScalesProperty.h; sourceTree = "<group>"; };
+		6E89FEF9192E54420040478F /* LHAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHAnimation.cpp; sourceTree = "<group>"; };
+		6E89FEFA192E54420040478F /* LHAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAnimation.h; sourceTree = "<group>"; };
+		6E89FF46192F35110040478F /* LHNodeAnimationProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHNodeAnimationProtocol.cpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -495,6 +570,7 @@
 		6E89FC9F192DFFF30040478F /* LevelHelper2-API */ = {
 			isa = PBXGroup;
 			children = (
+				6E89FE45192E32290040478F /* Animations */,
 				6E89FCA0192DFFF30040478F /* LevelHelper2API.h */,
 				6E89FCA1192DFFF30040478F /* LHScene.cpp */,
 				6E89FCA2192DFFF30040478F /* LHScene.h */,
@@ -519,6 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				6E89FCA7192DFFF30040478F /* LHNodeAnimationProtocol.h */,
+				6E89FF46192F35110040478F /* LHNodeAnimationProtocol.cpp */,
 				6E89FCA8192DFFF30040478F /* LHNodeProtocol.cpp */,
 				6E89FCA9192DFFF30040478F /* LHNodeProtocol.h */,
 				6E89FCAA192DFFF30040478F /* LHUserProperties.h */,
@@ -537,6 +614,65 @@
 				6E89FCB1192DFFF30040478F /* LHDictionary.h */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6E89FE45192E32290040478F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				6E89FEF9192E54420040478F /* LHAnimation.cpp */,
+				6E89FEFA192E54420040478F /* LHAnimation.h */,
+				6E89FE90192E34440040478F /* AnimationProperties */,
+				6E89FE46192E32290040478F /* AnimationFrames */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		6E89FE46192E32290040478F /* AnimationFrames */ = {
+			isa = PBXGroup;
+			children = (
+				6E89FE47192E32290040478F /* LHFrame.h */,
+				6E89FE48192E32290040478F /* LHFrame.cpp */,
+				6E89FEBD192E402B0040478F /* LHPositionFrame.cpp */,
+				6E89FEBE192E402B0040478F /* LHPositionFrame.h */,
+				6E89FEC1192E43630040478F /* LHOpacityFrame.cpp */,
+				6E89FEC2192E43630040478F /* LHOpacityFrame.h */,
+				6E89FEC5192E46020040478F /* LHRotationFrame.cpp */,
+				6E89FEC6192E46020040478F /* LHRotationFrame.h */,
+				6E89FEC9192E479E0040478F /* LHScaleFrame.cpp */,
+				6E89FECA192E479E0040478F /* LHScaleFrame.h */,
+				6E89FECD192E48D50040478F /* LHSpriteFrame.cpp */,
+				6E89FECE192E48D50040478F /* LHSpriteFrame.h */,
+			);
+			path = AnimationFrames;
+			sourceTree = "<group>";
+		};
+		6E89FE90192E34440040478F /* AnimationProperties */ = {
+			isa = PBXGroup;
+			children = (
+				6E89FE91192E34440040478F /* LHAnimationProperty.cpp */,
+				6E89FE92192E34440040478F /* LHAnimationProperty.h */,
+				6E89FED1192E49C20040478F /* LHPositionProperty.cpp */,
+				6E89FED2192E49C20040478F /* LHPositionProperty.h */,
+				6E89FED5192E4D5B0040478F /* LHRotationProperty.cpp */,
+				6E89FED6192E4D5B0040478F /* LHRotationProperty.h */,
+				6E89FED9192E4E0B0040478F /* LHScaleProperty.cpp */,
+				6E89FEDA192E4E0B0040478F /* LHScaleProperty.h */,
+				6E89FEDD192E4E9F0040478F /* LHOpacityProperty.cpp */,
+				6E89FEDE192E4E9F0040478F /* LHOpacityProperty.h */,
+				6E89FEE1192E4F340040478F /* LHSpriteFrameProperty.cpp */,
+				6E89FEE2192E4F340040478F /* LHSpriteFrameProperty.h */,
+				6E89FEE5192E4FD70040478F /* LHCameraActivateProperty.cpp */,
+				6E89FEE6192E4FD70040478F /* LHCameraActivateProperty.h */,
+				6E89FEE9192E507C0040478F /* LHChildrenPositionsProperty.cpp */,
+				6E89FEEA192E507C0040478F /* LHChildrenPositionsProperty.h */,
+				6E89FEED192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp */,
+				6E89FEEE192E51CA0040478F /* LHChildrenOpacitiesProperty.h */,
+				6E89FEF1192E52FF0040478F /* LHChildrenRotationsProperty.cpp */,
+				6E89FEF2192E52FF0040478F /* LHChildrenRotationsProperty.h */,
+				6E89FEF5192E539F0040478F /* LHChildrenScalesProperty.cpp */,
+				6E89FEF6192E539F0040478F /* LHChildrenScalesProperty.h */,
+			);
+			path = AnimationProperties;
 			sourceTree = "<group>";
 		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
@@ -758,16 +894,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E89FEE7192E4FD70040478F /* LHCameraActivateProperty.cpp in Sources */,
+				6E89FEEF192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp in Sources */,
+				6E89FEDF192E4E9F0040478F /* LHOpacityProperty.cpp in Sources */,
+				6E89FEF3192E52FF0040478F /* LHChildrenRotationsProperty.cpp in Sources */,
+				6E89FF47192F35110040478F /* LHNodeAnimationProtocol.cpp in Sources */,
+				6E89FED3192E49C20040478F /* LHPositionProperty.cpp in Sources */,
 				6E89FCB2192DFFF30040478F /* LHScene.cpp in Sources */,
 				6E89FCB4192DFFF30040478F /* LHSprite.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				6E89FED7192E4D5B0040478F /* LHRotationProperty.cpp in Sources */,
+				6E89FEEB192E507C0040478F /* LHChildrenPositionsProperty.cpp in Sources */,
+				6E89FEC7192E46020040478F /* LHRotationFrame.cpp in Sources */,
+				6E89FECB192E479E0040478F /* LHScaleFrame.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				6E89FCE7192E020C0040478F /* LHSceneSubclass.cpp in Sources */,
+				6E89FEDB192E4E0B0040478F /* LHScaleProperty.cpp in Sources */,
+				6E89FEE3192E4F340040478F /* LHSpriteFrameProperty.cpp in Sources */,
+				6E89FEA7192E34440040478F /* LHAnimationProperty.cpp in Sources */,
+				6E89FEFB192E54420040478F /* LHAnimation.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				6E89FEC3192E43630040478F /* LHOpacityFrame.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				6E89FE6C192E32290040478F /* LHFrame.cpp in Sources */,
+				6E89FECF192E48D50040478F /* LHSpriteFrame.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 				6E89FCBA192DFFF30040478F /* LHDictionary.cpp in Sources */,
 				6E89FCB8192DFFF30040478F /* LHDevice.cpp in Sources */,
+				6E89FEBF192E402B0040478F /* LHPositionFrame.cpp in Sources */,
+				6E89FEF7192E539F0040478F /* LHChildrenScalesProperty.cpp in Sources */,
 				6E89FCB6192DFFF30040478F /* LHNodeProtocol.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -776,15 +931,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E89FEC0192E402B0040478F /* LHPositionFrame.cpp in Sources */,
+				6E89FEA8192E34440040478F /* LHAnimationProperty.cpp in Sources */,
+				6E89FEE8192E4FD70040478F /* LHCameraActivateProperty.cpp in Sources */,
+				6E89FEC4192E43640040478F /* LHOpacityFrame.cpp in Sources */,
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
 				6E89FCE8192E020C0040478F /* LHSceneSubclass.cpp in Sources */,
 				6E89FCB9192DFFF30040478F /* LHDevice.cpp in Sources */,
+				6E89FED8192E4D5B0040478F /* LHRotationProperty.cpp in Sources */,
+				6E89FF48192F35110040478F /* LHNodeAnimationProtocol.cpp in Sources */,
+				6E89FEF4192E52FF0040478F /* LHChildrenRotationsProperty.cpp in Sources */,
+				6E89FEFC192E54420040478F /* LHAnimation.cpp in Sources */,
+				6E89FEDC192E4E0B0040478F /* LHScaleProperty.cpp in Sources */,
+				6E89FECC192E479E0040478F /* LHScaleFrame.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
+				6E89FED0192E48D50040478F /* LHSpriteFrame.cpp in Sources */,
+				6E89FEC8192E46020040478F /* LHRotationFrame.cpp in Sources */,
+				6E89FEF8192E539F0040478F /* LHChildrenScalesProperty.cpp in Sources */,
 				6E89FCBB192DFFF30040478F /* LHDictionary.cpp in Sources */,
+				6E89FE6D192E32290040478F /* LHFrame.cpp in Sources */,
 				6E89FCB5192DFFF30040478F /* LHSprite.cpp in Sources */,
 				6E89FCB3192DFFF30040478F /* LHScene.cpp in Sources */,
+				6E89FEE0192E4E9F0040478F /* LHOpacityProperty.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				6E89FEF0192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp in Sources */,
+				6E89FEE4192E4F340040478F /* LHSpriteFrameProperty.cpp in Sources */,
+				6E89FEEC192E507C0040478F /* LHChildrenPositionsProperty.cpp in Sources */,
 				6E89FCB7192DFFF30040478F /* LHNodeProtocol.cpp in Sources */,
+				6E89FED4192E49C20040478F /* LHPositionProperty.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

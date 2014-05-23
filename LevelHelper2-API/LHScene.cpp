@@ -88,6 +88,8 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         
 
+        setContentSize(sceneSize);
+        
         
 //            [self setName:levelPlistFile];
 //            _uuid = [[NSString alloc] initWithString:[dict objectForKey:@"uuid"]];

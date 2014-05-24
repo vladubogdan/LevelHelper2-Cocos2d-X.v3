@@ -137,19 +137,16 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     
     if(initResult)
     {
-        prnt->addChild(this);
-        
         _physicsBody = NULL;
         
-        setName(dict->stringForKey("name"));
-        setUuid(dict->stringForKey("uuid"));
-        setTags(dict->arrayForKey("tags"));
-        loadUserPropertyWithDictionary(dict, this);
+        loadGenericInfoFromDictionary(dict);
+
+
+        //physics body needs to be created before adding this node to the parent
+        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"));
         
-//        if(this->getUserProperty()){
-//            printf("user prop name %s\n", this->getUserProperty()->getClassName().c_str());
-//        }
-        
+        prnt->addChild(this);
+
         
         Point unitPos   = dict->pointForKey("generalPosition");
         Point pos       = LHScene::positionForNode(this, unitPos);
@@ -170,9 +167,9 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->setOpacity(dict->floatForKey("alpha"));
         this->setRotation(dict->floatForKey("rotation"));
         this->setZOrder(dict->floatForKey("zOrder"));
+        
 
-//        [LHUtils loadPhysicsFromDict:[dict objectForKey:@"nodePhysics"]
-//                             forNode:self];
+        CCLOG("SPRITE HAS BODY %p world %p", this->getPhysicsBody(), this->getPhysicsBody()->getWorld());
         
         Point scl = dict->pointForKey("scale");
         this->setScaleX(scl.x);

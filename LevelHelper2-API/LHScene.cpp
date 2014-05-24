@@ -12,6 +12,11 @@
 #include "LHDevice.h"
 
 #include "LHSprite.h"
+
+#include <sstream>
+using namespace std;
+
+
 using namespace cocos2d;
 
 LHScene::LHScene()
@@ -34,62 +39,64 @@ LHScene::~LHScene()
 
 bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 {
-    bool ret = false;
-    do
+    std::string fullPath = FileUtils::getInstance()->fullPathForFilename(plistLevelFile);
+    
+    LHDictionary* dict = (LHDictionary*)__Dictionary::createWithContentsOfFile(fullPath.c_str());
+    
+    int aspect = dict->intForKey("aspect");
+    
+    designResolutionSize = dict->sizeForKey("designResolution");
+    LHArray* devsInfo = dict->arrayForKey("devices");
+    
+    for(int i = 0; i < devsInfo->count(); ++i)
     {
-        std::string fullPath = FileUtils::getInstance()->fullPathForFilename(plistLevelFile);
+        LHDictionary* devInf = devsInfo->dictAtIndex(i);
+        devices.push_back(new LHDevice(devInf));
+    }
+    
+    LHDevice* curDev = LHDevice::currentDeviceFromArray(devices);
+    
+    Size sceneSize = curDev->getSize();
+    
+    float ratio = curDev->getRatio();
+    sceneSize.width = sceneSize.width/ratio;
+    sceneSize.height = sceneSize.height/ratio;
+    
+    Director::getInstance()->setContentScaleFactor(ratio);
+    
+    if(aspect == 0)//exact fit
+    {
+        sceneSize = designResolutionSize;
         
-        LHDictionary* dict = (LHDictionary*)__Dictionary::createWithContentsOfFile(fullPath.c_str());
+        Director::getInstance()->getOpenGLView()->setDesignResolutionSize(designResolutionSize.width,
+                                                                          designResolutionSize.height,
+                                                                          ResolutionPolicy::EXACT_FIT);
+    }
+    else if(aspect == 1)//no borders
+    {
+        Director::getInstance()->getOpenGLView()->setDesignResolutionSize(designResolutionSize.width,
+                                                                          designResolutionSize.height,
+                                                                          ResolutionPolicy::NO_BORDER);
+    }
+    else if(aspect == 2)//show all
+    {
+        Director::getInstance()->getOpenGLView()->setDesignResolutionSize(sceneSize.width,
+                                                                          sceneSize.height,
+                                                                          ResolutionPolicy::SHOW_ALL);
         
-        int aspect = dict->intForKey("aspect");
-        
-        designResolutionSize = dict->sizeForKey("designResolution");
-        LHArray* devsInfo = dict->arrayForKey("devices");
-        
-        for(int i = 0; i < devsInfo->count(); ++i)
-        {
-            LHDictionary* devInf = devsInfo->dictAtIndex(i);
-            devices.push_back(new LHDevice(devInf));
-        }
-        
-        LHDevice* curDev = LHDevice::currentDeviceFromArray(devices);
-        
-        Size sceneSize = curDev->getSize();
-        
-        float ratio = curDev->getRatio();
-        sceneSize.width = sceneSize.width/ratio;
-        sceneSize.height = sceneSize.height/ratio;
-        
-        Director::getInstance()->setContentScaleFactor(ratio);
-        
-        if(aspect == 0)//exact fit
-        {
-            sceneSize = designResolutionSize;
-            
-            Director::getInstance()->getOpenGLView()->setDesignResolutionSize(designResolutionSize.width,
-                                                                              designResolutionSize.height,
-                                                                              ResolutionPolicy::EXACT_FIT);
-        }
-        else if(aspect == 1)//no borders
-        {
-            Director::getInstance()->getOpenGLView()->setDesignResolutionSize(designResolutionSize.width,
-                                                                              designResolutionSize.height,
-                                                                              ResolutionPolicy::NO_BORDER);
-        }
-        else if(aspect == 2)//show all
-        {
-            Director::getInstance()->getOpenGLView()->setDesignResolutionSize(sceneSize.width,
-                                                                              sceneSize.height,
-                                                                              ResolutionPolicy::SHOW_ALL);
-            
-            designOffset.x = (sceneSize.width - designResolutionSize.width)*0.5;
-            designOffset.y = (sceneSize.height - designResolutionSize.height)*0.5;
-        }
-        
-        
-
+        designOffset.x = (sceneSize.width - designResolutionSize.width)*0.5;
+        designOffset.y = (sceneSize.height - designResolutionSize.height)*0.5;
+    }
+    
+    bool ret = Scene::initWithPhysics();
+    if(ret)
+    {
         setContentSize(sceneSize);
         
+        
+        loadGenericInfoFromDictionary(dict);
+        this->setName(plistLevelFile);
+
         
 //            [self setName:levelPlistFile];
 //            _uuid = [[NSString alloc] initWithString:[dict objectForKey:@"uuid"]];
@@ -102,7 +109,89 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 //                tracedFixtures = [[NSDictionary alloc] initWithDictionary:tracedFixInfo];
 //            }
 
+
+//        PhysicsWorld* world = PhysicsWorld::PhysicsWorld
+//        
+//        PhysicsNode* pNode = PhysicsNode::create();
+//        pNode.contentSize = self.contentSize;
+//        [pNode setDebugDraw:YES];
+//        [super addChild:pNode];
+//        physicsNode = pNode;
+//        
+        
+        
+        getPhysicsWorld()->setDebugDrawMask(true ? PhysicsWorld::DEBUGDRAW_ALL : PhysicsWorld::DEBUGDRAW_NONE);
+
+        
+        if(dict->boolForKey("useGlobalGravity"))
+        {
+            Point gravityVector = dict->pointForKey("globalGravityDirection");
+            float gravityForce  = dict->floatForKey("globalGravityForce");
             
+            this->getPhysicsWorld()->setGravity(Point(gravityVector.x*gravityForce*100,
+                                                      gravityVector.y*gravityForce*100));
+            
+        }
+        
+        
+        LHDictionary* phyBoundInfo = dict->dictForKey("physicsBoundaries");
+        if(phyBoundInfo)
+        {
+            Size scr = LH_SCREEN_RESOLUTION;
+            
+            stringstream tempString;
+            tempString <<(int)scr.width<<"x"<<(int)scr.height;
+            std::string key = tempString.str(); //Converts this into string;
+
+            std::string rectInf;
+            if(phyBoundInfo->objectForKey(key)){
+                rectInf = phyBoundInfo->stringForKey(key);
+
+            }
+            else{
+                rectInf = phyBoundInfo->stringForKey("general");
+            }
+            
+            if(rectInf.length() > 0){
+                Rect bRect = RectFromString(rectInf);
+                Size designSize = getDesignResolutionSize();
+                Point offset = getDesignOffset();
+                Rect skBRect(bRect.origin.x*designSize.width + offset.x,
+                             getContentSize().height - bRect.origin.y*designSize.height + offset.y,
+                             bRect.size.width*designSize.width ,
+                             -bRect.size.height*designSize.height);
+                                
+                {
+                    createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
+                                                     Point(skBRect.getMaxX(), skBRect.getMinY()),
+                                                     "LHPhysicsBottomBoundary");
+                }
+                
+                {
+                    createPhysicsBoundarySectionFrom(Point(skBRect.getMaxX(), skBRect.getMinY()),
+                                                     Point(skBRect.getMaxX(), skBRect.getMaxY()),
+                                                    "LHPhysicsRightBoundary");
+                    
+                }
+                
+                {
+                    createPhysicsBoundarySectionFrom(Point(skBRect.getMaxX(), skBRect.getMaxY()),
+                                                     Point(skBRect.getMinX(), skBRect.getMaxY()),
+                                                     "LHPhysicsTopBoundary");
+                }
+                
+                {
+                    createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMaxY()),
+                                                     Point(skBRect.getMinX(), skBRect.getMinY()),
+                                                    "LHPhysicsLeftBoundary");
+                }
+            }
+        }
+        
+        
+        
+        
+        
         LHArray* childrenInfo = dict->arrayForKey("children");
         for(int i = 0; i < childrenInfo->count(); ++i)
         {
@@ -120,7 +209,8 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         
         ret = true;
-    } while (0);
+    };
+    
     return ret;
 }
 
@@ -264,6 +354,24 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
     
     return NULL;
 }
+
+void LHScene::createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName)
+{
+    Node* drawNode = Node::create();
+    
+//#ifndef NDEBUG
+//    [drawNode drawSegmentFrom:from
+//                           to:to
+//                       radius:1
+//                        color:[CCColor redColor]];
+//#endif
+    PhysicsBody* boundaryBody = PhysicsBody::createEdgeSegment(from, to);
+    drawNode->setPhysicsBody(boundaryBody);
+    
+    addChild(drawNode);
+}
+
+
 
 //Texture2D* LHScene::textureWithImagePath(const std::string& imagePath)
 //{
@@ -624,25 +732,6 @@ Point LHScene::positionForNode(Node* node, Point unitPos)
     return physicsNode;
 }
 
--(void)createPhysicsBoundarySectionFrom:(CGPoint)from
-                                     to:(CGPoint)to
-                               withName:(NSString*)sectionName
-{
-    CCDrawNode* drawNode = [CCDrawNode node];
-    [self addChild:drawNode];
-    [drawNode setZOrder:100];
-    [drawNode setName:sectionName];
-    
-#ifndef NDEBUG
-    [drawNode drawSegmentFrom:from
-                           to:to
-                       radius:1
-                        color:[CCColor redColor]];
-#endif
-    CCPhysicsBody* boundariesBody = [CCPhysicsBody bodyWithPillFrom:from to:to cornerRadius:0];
-    [boundariesBody setType:CCPhysicsBodyTypeStatic];
-    [drawNode setPhysicsBody:boundariesBody];
-}
 
 -(void)performLateLoading{
     if(!lateLoadingNodes)return;

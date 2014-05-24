@@ -56,6 +56,8 @@ private:
     
     static Node* createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt);
     
+    void createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName);
+    
     
 //+(instancetype)sceneWithContentOfFile:(NSString*)levelPlistFile;
 //-(instancetype)initWithContentOfFile:(NSString*)levelPlistFile;

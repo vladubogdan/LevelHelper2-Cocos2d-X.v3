@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>0</integer>
+	<key>backgroundColor</key>
+	<string>{{1, 0.99997437000274658}, {0.99999129772186279, 1}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.44768147831103611, 0.29794189330132215}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_banana</string>
+			<key>nodePhysics</key>
+			<dict>
+				<key>allowSleep</key>
+				<true/>
+				<key>bullet</key>
+				<false/>
+				<key>fixedRotation</key>
+				<false/>
+				<key>genericFixture</key>
+				<dict>
+					<key>category</key>
+					<integer>1</integer>
+					<key>density</key>
+					<real>0.10000000149011612</real>
+					<key>fixtureID</key>
+					<integer>0</integer>
+					<key>friction</key>
+					<real>0.20000000298023224</real>
+					<key>mask</key>
+					<integer>65535</integer>
+					<key>name</key>
+					<string>GenericFixture</string>
+					<key>restitution</key>
+					<real>0.0</real>
+					<key>sensor</key>
+					<false/>
+				</dict>
+				<key>gravityScale</key>
+				<real>1</real>
+				<key>shape</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>FFA5118F-7FD4-46C4-9700-5349E519BDFB</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{92, 64}</string>
+			<key>spriteName</key>
+			<string>object_banana</string>
+			<key>spriteUUID</key>
+			<string>FAE55543-0B9F-4B04-A86D-BAB025D0B01C</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>E3A70DD6-5BA3-4E80-9EBE-A4D09D792E63</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960, 640}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960, 640}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136, 640}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024, 768}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048, 1536}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+	</array>
+	<key>globalGravityDirection</key>
+	<string>{-0.70710683035554056, 0.70710673201755103}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>1024x768</key>
+		<string>{{0.010107412934303284, 0.016026604920625687}, {0.97345709800720215, 0.96004277467727661}}</string>
+		<key>1136x640</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>2048x1536</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>960x640</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>general</key>
+		<string>{{0.010107412934303284, 0.016026604920625687}, {0.97345709800720215, 0.96004277467727661}}</string>
+	</dict>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>FFA5118F-7FD4-46C4-9700-5349E519BDFB</string>
+</dict>
+</plist>

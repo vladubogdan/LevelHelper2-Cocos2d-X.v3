@@ -52,7 +52,6 @@ class LHNodeProtocol
      Returns the user property object assigned to this object or nil.
      */
     virtual LHUserPropertyProtocol* getUserProperty(){return userProperty;}
-    virtual void loadUserPropertyWithDictionary(LHDictionary* dict, Node* node);
     
     virtual bool lateLoading(){return true;}
     
@@ -107,6 +106,9 @@ class LHNodeProtocol
     virtual bool isShape(){return false;}
     virtual bool isJoint(){return false;}
     
+    virtual void loadUserPropertyWithDictionary(LHDictionary* dict);
+    virtual void loadGenericInfoFromDictionary(LHDictionary* dict);
+    virtual void loadPhysicsFromDictionary(LHDictionary* dict);
     
     std::string name;
     std::string uuid;

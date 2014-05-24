@@ -18,7 +18,7 @@
 			<key>SuffixName</key>
 			<string>hd</string>
 			<key>color</key>
-			<string>{{0.53711700439453125, 0}, {0.05141637846827507, 1}}</string>
+			<string>{{0.45644199848175049, 0}, {0.049516279250383377, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -32,7 +32,7 @@
 			<key>SuffixName</key>
 			<string>568</string>
 			<key>color</key>
-			<string>{{1, 1}, {0.078188471496105194, 1}}</string>
+			<string>{{1, 1}, {0.078214749693870544, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -46,7 +46,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.50398969650268555, 0}, {0.95471274852752686, 1}}</string>
+			<string>{{0.42057669162750244, 0}, {0.94168412685394287, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -60,7 +60,7 @@
 			<key>SuffixName</key>
 			<string>ipadhd</string>
 			<key>color</key>
-			<string>{{0.50398969650268555, 0}, {0.95471274852752686, 1}}</string>
+			<string>{{0.42057669162750244, 0}, {0.94168412685394287, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -79,6 +79,11 @@
 					<true/>
 				</dict>
 				<key>level02-anim.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level03-physics.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

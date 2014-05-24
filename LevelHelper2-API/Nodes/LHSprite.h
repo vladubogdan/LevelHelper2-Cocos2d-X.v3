@@ -12,9 +12,7 @@
 
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
-//#import "LHNodeAnimationProtocol.h"
-//#import "LHUserPropertyProtocol.h"
-
+#include "LHNodeAnimationProtocol.h"
 
 using namespace cocos2d;
 
@@ -26,7 +24,7 @@ using namespace cocos2d;
 class LHDictionary;
 class LHScene;
 
-class LHSprite : public Sprite, public LHNodeProtocol  //<LHNodeProtocol, LHNodeAnimationProtocol>
+class LHSprite : public Sprite, public LHNodeProtocol, public LHNodeAnimationProtocol
 {
 
 public:
@@ -39,8 +37,13 @@ public:
 
     static  bool isLHSprite(Node* obj){return (0 != dynamic_cast<LHSprite*>(obj));}
     virtual bool isSprite(){return true;}
+        
+    //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
+    virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
 private:
-
+    
+    float lastTime;
+    
     /**
      Returns the unique identifier of this sprite node.
      */

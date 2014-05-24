@@ -12,12 +12,14 @@
 
 #include "LHUserProperties.h"
 
-LHNodeProtocol::LHNodeProtocol():userProperty(NULL)
+LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
 {
-    
+//    printf("NODE PROTOCOL CONTSTRUCTOR\n");
 }
 LHNodeProtocol::~LHNodeProtocol()
 {
+//    printf("\nNODE PROTOCOL DEALLOC\n");
+    
     if(userProperty){
         delete userProperty;
         userProperty = NULL;
@@ -32,7 +34,17 @@ void LHNodeProtocol::setTags(LHArray* _tags_)
         tags.push_back(_tags_->stringAtIndex(i));
     }
 }
-    
+
+std::string LHNodeProtocol::getUuid()
+{
+    return uuid;
+}
+void LHNodeProtocol::setUuid(std::string value)
+{
+    uuid = std::string(value);
+}
+
+
 void LHNodeProtocol::loadUserPropertyWithDictionary(LHDictionary* dict, Node* node)
 {
     if(dict->objectForKey("userPropertyInfo"))
@@ -52,5 +64,26 @@ void LHNodeProtocol::loadUserPropertyWithDictionary(LHDictionary* dict, Node* no
 
 Node* LHNodeProtocol::getChildNodeWithUUID(const std::string& uuid)
 {
+    Node* node = dynamic_cast<Node*>(this);
+    if(!node)return NULL;
+    
+    auto& children = node->getChildren();
+    for( const auto &n : children)
+    {
+        LHNodeProtocol* nProt = dynamic_cast<LHNodeProtocol*>(n);
+        if(nProt)
+        {
+            if(nProt->getUuid() == uuid)
+            {
+                return n;
+            }
+            
+            Node* retNode = nProt->getChildNodeWithUUID(uuid);
+            if(retNode)
+            {
+                return retNode;
+            }
+        }
+    }
     return NULL;
 }

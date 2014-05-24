@@ -15,7 +15,6 @@
 
 LHSprite::LHSprite()
 {
-
 }
 
 LHSprite::~LHSprite()
@@ -83,14 +82,14 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     std::string imageFile = dict->stringForKey("imageFileName");
     std::string relativeImgPath = dict->stringForKey("relativeImagePath");
     
-    printf("image file %s\n", imageFile.c_str());
-    printf("relative image path %s\n", relativeImgPath.c_str());
+//    printf("image file %s\n", imageFile.c_str());
+//    printf("relative image path %s\n", relativeImgPath.c_str());
     
     std::string imagePath = LHScene::imagePathWithFilename(imageFile,
                                                            relativeImgPath,
                                                            scene->getCurrentDeviceSuffix());
 
-    printf("final path %s\n", imagePath.c_str());
+//    printf("final path %s\n", imagePath.c_str());
 
     bool initResult = false;
     
@@ -140,11 +139,12 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     {
         prnt->addChild(this);
         
+        _physicsBody = NULL;
         
-        this->setName(dict->stringForKey("name"));
-        this->setUuid(dict->stringForKey("uuid"));
-        this->setTags(dict->arrayForKey("tags"));
-        this->loadUserPropertyWithDictionary(dict, this);
+        setName(dict->stringForKey("name"));
+        setUuid(dict->stringForKey("uuid"));
+        setTags(dict->arrayForKey("tags"));
+        loadUserPropertyWithDictionary(dict, this);
         
 //        if(this->getUserProperty()){
 //            printf("user prop name %s\n", this->getUserProperty()->getClassName().c_str());
@@ -197,12 +197,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
             }
         }
         
-//        [LHUtils createAnimationsForNode:self
-//                         animationsArray:&_animations
-//                         activeAnimation:&activeAnimation
-//                          fromDictionary:dict];
-
-        
+        createAnimationsFromDictionary(dict, this);
         
         
         return true;
@@ -215,8 +210,6 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
-    printf("LHSprite spriteNodeWithDictionary\n");
-    
     LHSprite *ret = new LHSprite();
     if (ret && ret->initWithDictionary(dict, prnt))
     {
@@ -228,6 +221,44 @@ LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
         CC_SAFE_DELETE(ret);
         return nullptr;
     }
+}
+
+//void LHSprite::setOpacity(GLubyte opacity)
+//{
+//    Sprite::setOpacity(opacity);
+//}
+//
+//void LHSprite::setRotation(float rotation)
+//{
+//    Sprite::setRotation(rotation);
+//    
+//    //*own stuff here*//
+//}
+//void LHSprite::setScaleX(float scaleX)
+//{
+//    Sprite::setScaleX(scaleX);
+//}
+//
+//void LHSprite::setScaleY(float scaleY)
+//{
+//    Sprite::setScaleY(scaleY);
+//}
+//
+//void LHSprite::setPosition(const Point& pos)
+//{
+//    Sprite::setPosition(pos);
+//}
+//
+//Scene* LHSprite::getScene()
+//{
+//    return Sprite::getScene();
+//}
+
+void LHSprite::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+{
+    visitActiveAnimation();
+    
+    Sprite::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 /*
@@ -376,26 +407,6 @@ LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
     return self;
 }
 
--(void)setSpriteFrameWithName:(NSString*)spriteFrame{
-//    if(atlas){
-//        SKTexture* texture = [atlas textureNamed:spriteFrame];
-//        if(texture){
-//            [self setTexture:texture];
-//            
-//            float xScale = [self xScale];
-//            float yScale = [self yScale];
-//            
-//            [self setXScale:1];
-//            [self setYScale:1];
-//            
-//            [self setSize:texture.size];
-//            
-//            [self setXScale:xScale];
-//            [self setYScale:yScale];
-//        }
-//    }
-}
-
 -(CCNode <LHNodeProtocol>*)childNodeWithName:(NSString*)name{
     return [LHScene childNodeWithName:name
                               forNode:self];
@@ -427,24 +438,4 @@ LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
     return _userProperty;
 }
 
-- (void)visit
-{
-    NSTimeInterval thisTime = [NSDate timeIntervalSinceReferenceDate];
-    float dt = thisTime - lastTime;
-    
-    if(activeAnimation){
-        [activeAnimation updateTimeWithDelta:dt];
-    }
-    
-    [super visit];
-    
-    lastTime = thisTime;
-}
-
-#pragma mark - 
--(void)setActiveAnimation:(LHAnimation*)anim{
-    activeAnimation = anim;
-}
-
-@end
 */

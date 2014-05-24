@@ -16,7 +16,7 @@ using namespace cocos2d;
 
 LHScene::LHScene()
 {
-    printf("lhscene constructor\n");
+//    printf("lhscene constructor\n");
 }
 
 LHScene::~LHScene()
@@ -29,7 +29,7 @@ LHScene::~LHScene()
     }
     devices.clear();
     
-    printf("lhscene dealloc\n");
+//    printf("lhscene dealloc\n");
 }
 
 bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
@@ -88,6 +88,8 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         
 
+        setContentSize(sceneSize);
+        
         
 //            [self setName:levelPlistFile];
 //            _uuid = [[NSString alloc] initWithString:[dict objectForKey:@"uuid"]];
@@ -125,7 +127,7 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 
 LHScene *LHScene::createWithContentOfFile(const std::string& plistLevelFile)
 {
-    printf("lhscene createWithcontent\n");
+//    printf("lhscene createWithcontent\n");
     
     LHScene *ret = new LHScene();
     if (ret && ret->initWithContentOfFile(plistLevelFile))

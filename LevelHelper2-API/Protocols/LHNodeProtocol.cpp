@@ -285,51 +285,42 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
         node->getPhysicsBody()->setDynamic(true);
     }
     
-//    NSDictionary* fixInfo = [dict objectForKey:@"genericFixture"];
-//    if(fixInfo && node.physicsBody)
-//    {
-//        NSArray* collisionCats = [fixInfo objectForKey:@"collisionCategories"];
-//        NSArray* ignoreCats = [fixInfo objectForKey:@"ignoreCategories"];
-//        if(!ignoreCats || [ignoreCats count] == 0){
-//            collisionCats = nil;
-//            ignoreCats = nil;
-//        }
-//        
-//        if([fixShapes count] > 0)
-//        {
-//            for(CCPhysicsShape* shape in fixShapes)
-//            {
-//                shape.density = [fixInfo floatForKey:@"density"];
-//                shape.friction = [fixInfo floatForKey:@"friction"];
-//                shape.elasticity = [fixInfo floatForKey:@"restitution"];
-//                shape.sensor = [fixInfo boolForKey:@"sensor"];
-//                
-//                if(ignoreCats)
-//                    [shape setCollisionCategories:ignoreCats];//member of
-//                if(collisionCats)
-//                    [shape setCollisionMask:collisionCats];//wants to collide with
-//            }
-//        }
-//        else{
-//            
-//            if(ignoreCats)
-//                [node.physicsBody setCollisionCategories:ignoreCats];//member of
-//            if(collisionCats)
-//                [node.physicsBody setCollisionMask:collisionCats];//wants to collide with
-//            
-//            if(shape != 3){
-//                node.physicsBody.density = [fixInfo floatForKey:@"density"];
-//                node.physicsBody.friction = [fixInfo floatForKey:@"friction"];
-//                node.physicsBody.elasticity = [fixInfo floatForKey:@"restitution"];
-//                node.physicsBody.sensor = [fixInfo boolForKey:@"sensor"];
-//            }
-//        }
-//        
-//        if(node.physicsBody.type == CCPhysicsBodyTypeDynamic)
-//            node.physicsBody.allowsRotation = ![dict boolForKey:@"fixedRotation"];
-//            
-//            if([dict intForKey:@"gravityScale"] == 0){
-//                node.physicsBody.affectedByGravity = NO;
-//            }
-//    }
+    LHDictionary* fixInfo = dict->dictForKey("genericFixture");
+    if(fixInfo && node->getPhysicsBody())
+    {
+        int category = fixInfo->intForKey("category");
+        int mask = fixInfo->intForKey("mask");
+        
+        node->getPhysicsBody()->setCollisionBitmask(mask);
+        node->getPhysicsBody()->setCategoryBitmask(category);
+        
+        if(shape != 3)//chain
+        {
+           Vector<PhysicsShape*> bodyShapes = node->getPhysicsBody()->getShapes();
+            
+            for (Ref* obj : bodyShapes)
+            {
+                PhysicsShape* shp = dynamic_cast<PhysicsShape*>(obj);
+                
+                //setting density causes weird behaviour - WHY?
+//                shp->setDensity(fixInfo->floatForKey("density"));
+                shp->setFriction(fixInfo->floatForKey("friction"));
+                shp->setRestitution(fixInfo->floatForKey("restitution"));
+
+//                shp->setCollisionBitmask(mask);
+//                shp->setCategoryBitmask(category);
+                
+            }
+//                node->getPhysicsBody()->sensor = [fixInfo boolForKey:@"sensor"];
+        }
+        
+        if(type == 2)//dynamic
+        {
+            node->getPhysicsBody()->setRotationEnable(!dict->boolForKey("fixedRotation"));
+        }
+
+        if(dict->intForKey("gravityScale") == 0){
+            node->getPhysicsBody()->setGravityEnable(false);
+        }
+    }
 }

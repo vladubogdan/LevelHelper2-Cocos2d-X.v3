@@ -10,19 +10,19 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Category_02</string>
+		<string>BlueRobot</string>
 		<key>value</key>
 		<integer>2</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Category_03</string>
+		<string>GreenRobot</string>
 		<key>value</key>
 		<integer>4</integer>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Category_04</string>
+		<string>PinkRobot</string>
 		<key>value</key>
 		<integer>8</integer>
 	</dict>

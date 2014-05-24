@@ -11,23 +11,24 @@
 
 
 #include "LHScene.h"
+#include "LHNode.h"
+#include "LHSprite.h"
+
 //#import "LHAsset.h"
 //#import "LHBezier.h"
 //#import "LHCamera.h"
-//#import "LHNode.h"
 //#import "LHParallax.h"
 //#import "LHParallaxLayer.h"
 //#import "LHRopeJointNode.h"
 //#import "LHShape.h"
-//#import "LHSprite.h"
 //#import "LHWater.h"
 //#import "LHAnimation.h"
 //#import "LHDistanceJointNode.h"
 //#import "LHGravityArea.h"
 //
-//#import "LHNodeProtocol.h"
-//#import "LHNodeAnimationProtocol.h"
-//#import "LHUserPropertyProtocol.h"
+#include "LHNodeProtocol.h"
+#include "LHNodeAnimationProtocol.h"
+#include "LHUserPropertyProtocol.h"
 
 
 #endif //__LEVELHELPER_API_H__

@@ -14,8 +14,10 @@
 
 class LHDictionary;
 class LHArray;
+class LHScene;
 
 using namespace cocos2d;
+
 
 /**
  Most of the LevelHelper-2 nodes conforms to this protocol.
@@ -52,7 +54,6 @@ class LHNodeProtocol
      Returns the user property object assigned to this object or nil.
      */
     virtual LHUserPropertyProtocol* getUserProperty(){return userProperty;}
-    virtual void loadUserPropertyWithDictionary(LHDictionary* dict, Node* node);
     
     virtual bool lateLoading(){return true;}
     
@@ -107,6 +108,9 @@ class LHNodeProtocol
     virtual bool isShape(){return false;}
     virtual bool isJoint(){return false;}
     
+    virtual void loadUserPropertyWithDictionary(LHDictionary* dict);
+    virtual void loadGenericInfoFromDictionary(LHDictionary* dict);
+    virtual void loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene);
     
     std::string name;
     std::string uuid;

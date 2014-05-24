@@ -41,25 +41,6 @@ public:
     //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
     virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
 private:
-    
-    float lastTime;
-    
-    /**
-     Returns the unique identifier of this sprite node.
-     */
-//    -(NSString*)uuid;
-    
-    /**
-     Returns all the tags of the node. (array with NSString's);
-     */
-//    -(NSArray*)tags;
-    
-    /**
-     Returns the user property object assigned to this object or nil.
-     */
-//    -(id<LHUserPropertyProtocol>)userProperty;
-//    -(void)setSpriteFrameWithName:(NSString*)spriteFrame;
-    
 
 };
 

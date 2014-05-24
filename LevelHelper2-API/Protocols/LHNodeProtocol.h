@@ -14,8 +14,10 @@
 
 class LHDictionary;
 class LHArray;
+class LHScene;
 
 using namespace cocos2d;
+
 
 /**
  Most of the LevelHelper-2 nodes conforms to this protocol.
@@ -108,7 +110,7 @@ class LHNodeProtocol
     
     virtual void loadUserPropertyWithDictionary(LHDictionary* dict);
     virtual void loadGenericInfoFromDictionary(LHDictionary* dict);
-    virtual void loadPhysicsFromDictionary(LHDictionary* dict);
+    virtual void loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene);
     
     std::string name;
     std::string uuid;

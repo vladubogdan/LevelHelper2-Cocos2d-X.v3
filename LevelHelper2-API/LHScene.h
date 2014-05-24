@@ -46,13 +46,17 @@ public:
     
     static  bool isLHScene(Node* obj){return (0 != dynamic_cast<LHScene*>(obj));}
     virtual bool isScene(){return true;};
+    
+    __Array* tracedFixturesWithUUID(const std::string& uuid);
 private:
     
     friend class LHSprite;
+    friend class LHNodeProtocol;
     
     std::vector<LHDevice*> devices;
     Size    designResolutionSize;
     Point   designOffset;
+    __Dictionary* tracedFixtures;
     
     static Node* createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt);
     

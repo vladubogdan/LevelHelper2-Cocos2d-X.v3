@@ -21,6 +21,8 @@ using namespace cocos2d;
 
 LHScene::LHScene()
 {
+    tracedFixtures = nullptr;
+    
 //    printf("lhscene constructor\n");
 }
 
@@ -34,6 +36,7 @@ LHScene::~LHScene()
     }
     devices.clear();
     
+    CC_SAFE_RELEASE(tracedFixtures);
 //    printf("lhscene dealloc\n");
 }
 
@@ -104,10 +107,11 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 //            [LHUtils tagsFromDictionary:dict
 //                           savedToArray:&_tags];
         
-//            NSDictionary* tracedFixInfo = [dict objectForKey:@"tracedFixtures"];
-//            if(tracedFixInfo){
-//                tracedFixtures = [[NSDictionary alloc] initWithDictionary:tracedFixInfo];
-//            }
+            LHDictionary* tracedFixInfo = dict->dictForKey("tracedFixtures");
+            if(tracedFixInfo){
+                tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
+                tracedFixtures->retain();
+            }
 
 
 //        PhysicsWorld* world = PhysicsWorld::PhysicsWorld
@@ -157,9 +161,9 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
                 Size designSize = getDesignResolutionSize();
                 Point offset = getDesignOffset();
                 Rect skBRect(bRect.origin.x*designSize.width + offset.x,
-                             getContentSize().height - bRect.origin.y*designSize.height + offset.y,
+                             bRect.origin.y*designSize.height + offset.y,
                              bRect.size.width*designSize.width ,
-                             -bRect.size.height*designSize.height);
+                             bRect.size.height*designSize.height);
                                 
                 {
                     createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
@@ -358,18 +362,16 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
 void LHScene::createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName)
 {
     Node* drawNode = Node::create();
-    
-//#ifndef NDEBUG
-//    [drawNode drawSegmentFrom:from
-//                           to:to
-//                       radius:1
-//                        color:[CCColor redColor]];
-//#endif
     PhysicsBody* boundaryBody = PhysicsBody::createEdgeSegment(from, to);
     drawNode->setPhysicsBody(boundaryBody);
-    
     addChild(drawNode);
 }
+
+__Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
+{
+    return (__Array*)tracedFixtures->objectForKey(uuid);
+}
+
 
 
 
@@ -1276,10 +1278,6 @@ Point LHScene::positionForNode(Node* node, Point unitPos)
         }
     }
     return temp;
-}
-
--(NSArray*)tracedFixturesWithUUID:(NSString*)uuid{
-    return [tracedFixtures objectForKey:uuid];
 }
 
 -(void)addLateLoadingNode:(CCNode*)node{

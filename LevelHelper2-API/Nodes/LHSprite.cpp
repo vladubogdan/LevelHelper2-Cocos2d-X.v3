@@ -143,7 +143,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 
         //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"));
+        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         
         prnt->addChild(this);
 
@@ -169,8 +169,6 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->setZOrder(dict->floatForKey("zOrder"));
         
 
-        CCLOG("SPRITE HAS BODY %p world %p", this->getPhysicsBody(), this->getPhysicsBody()->getWorld());
-        
         Point scl = dict->pointForKey("scale");
         this->setScaleX(scl.x);
         this->setScaleY(scl.y);

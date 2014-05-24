@@ -9,7 +9,7 @@
 #include "LHNodeProtocol.h"
 #include "LHDictionary.h"
 #include "LHArray.h"
-
+#include "LHScene.h"
 #include "LHUserProperties.h"
 
 LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
@@ -100,14 +100,12 @@ void LHNodeProtocol::loadGenericInfoFromDictionary(LHDictionary* dict){
     loadUserPropertyWithDictionary(dict);
 }
 
-void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict)
+void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
     if(!dict)return;
     
     Node* node = dynamic_cast<Node*>(this);
     if(!node)return;
-    
-    CCLOG("WE HAVE NODE AND DICT CREATING PHYSICS");
     
     int shape = dict->intForKey("shape");
     int type  = dict->intForKey("type");
@@ -115,25 +113,15 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict)
     __Array* fixShapes = new __Array();
     fixShapes->init();
     
-    LHArray* fixturesInfo = NULL;
+    __Array* fixturesInfo = NULL;
     
     if(shape == 0)//RECTANGLE
     {
-        Point offset(0, 0);
-        Rect bodyRect(offset.x,
-                      offset.y,
-                      node->getContentSize().width,
-                      node->getContentSize().height);
-        
-        CCLOG("DID CREATE RECTALGE");
         node->setPhysicsBody(PhysicsBody::createBox(node->getContentSize()));
     }
     else if(shape == 1)//CIRCLE
     {
-//        CGPoint offset = CGPointMake(node.contentSize.width*0.5,
-//                                     node.contentSize.height*0.5);
-//        node.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:node.contentSize.width*0.5
-//                                                       andCenter:offset];
+        node->setPhysicsBody(PhysicsBody::createCircle(node->getContentSize().width*0.5));
     }
     else if(shape == 3)//CHAIN
     {
@@ -196,28 +184,24 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict)
 //            node.physicsBody =  [CCPhysicsBody bodyWithShapes:fixShapes];
 //        }
 //        else{
-//            type = 0;
-//            
-//            CGPoint offset = CGPointMake(0, 0);
-//            CGRect bodyRect = CGRectMake(offset.x,
-//                                         offset.y,
-//                                         node.contentSize.width,
-//                                         node.contentSize.height);
-//            
-//            node.physicsBody = [CCPhysicsBody bodyWithPolylineFromRect:bodyRect
-//                                                          cornerRadius:0];
+            type = 0;
+            node->setPhysicsBody(PhysicsBody::createEdgeBox(node->getContentSize()));
 //        }
         
     }
     else if(shape == 4)//OVAL
     {
-//        fixturesInfo = [dict objectForKey:@"ovalShape"];
+        fixturesInfo = dict->arrayForKey("ovalShape");
     }
     else if(shape == 5)//TRACED
     {
-//        NSString* fixUUID = [dict objectForKey:@"fixtureUUID"];
-//        LHScene* scene = (LHScene*)[node scene];
-//        fixturesInfo = [scene tracedFixturesWithUUID:fixUUID];
+        if(dict->objectForKey("fixtureUUID"))
+        {
+            std::string fixUUID = dict->stringForKey("fixtureUUID");
+            if(scene){
+                fixturesInfo = scene->tracedFixturesWithUUID(fixUUID);
+            }
+        }
     }
     else if(shape == 2)//POLYGON
     {
@@ -251,34 +235,44 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict)
     
     if(fixturesInfo)
     {
-//        for(NSArray* fixPoints in fixturesInfo)
-//        {
-//            int count = (int)[fixPoints count];
-//            CGPoint points[count];
-//            
-//            int i = count - 1;
-//            for(int j = 0; j< count; ++j)
-//            {
-//                NSString* pointStr = [fixPoints objectAtIndex:(NSUInteger)j];
-//                CGPoint point = LHPointFromString(pointStr);
-//                
-//                point.x += node.contentSize.width*0.5;
-//                point.y -= node.contentSize.height*0.5;
-//                point.y = -point.y;
-//                
-//                
-//                points[j] = point;
-//                i = i-1;
-//            }
-//            
-//            CCPhysicsShape* shape = [CCPhysicsShape polygonShapeWithPoints:points count:count cornerRadius:0];
-//            [fixShapes addObject:shape];
-//        }
+        for(int f = 0; f < fixturesInfo->count(); ++f)
+        {
+            LHArray* fixPoints = (LHArray*)fixturesInfo->getObjectAtIndex(f);
+
+            int count = (int)fixPoints->count();
+            Point* points = new Point[count];
+            
+            int i = count - 1;
+            for(int j = 0; j< count; ++j)
+            {
+                Point point = fixPoints->pointAtIndex(j);
+                point.y = -point.y;
+                
+                points[j] = point;
+                i = i-1;
+            }
+            
+            PhysicsShapePolygon* shape = PhysicsShapePolygon::create(points, count);
+            fixShapes->addObject(shape);
+            
+            delete[] points;
+        }
     }
-//    if([fixShapes count] > 0){
-//        node.physicsBody =  [CCPhysicsBody bodyWithShapes:fixShapes];
-//    }
-//    
+    if(fixShapes->count() > 0){
+        
+        PhysicsBody* body = PhysicsBody::create();
+
+        for(int i = 0; i < fixShapes->count(); ++i)
+        {
+            PhysicsShape* shape = (PhysicsShape*)fixShapes->getObjectAtIndex(i);
+            body->addShape(shape);
+        }
+        
+        node->setPhysicsBody(body);
+    }
+
+    CC_SAFE_DELETE(fixShapes);
+    
     if(type == 0)//static
     {
         node->getPhysicsBody()->setDynamic(false);
@@ -288,7 +282,6 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict)
     }
     else if(type == 2)//dynamic
     {
-        CCLOG("MAKING DYNAMIC");
         node->getPhysicsBody()->setDynamic(true);
     }
     

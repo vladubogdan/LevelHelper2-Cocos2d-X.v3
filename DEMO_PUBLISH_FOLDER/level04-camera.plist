@@ -1130,61 +1130,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -1223,61 +1168,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_34</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -1316,61 +1206,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_33</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -1409,61 +1244,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_32</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -1502,61 +1282,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_31</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -1595,61 +1320,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_30</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -1688,61 +1358,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_29</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -1781,61 +1396,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_28</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3052,61 +2612,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_1</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3145,61 +2650,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_2</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3238,61 +2688,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_3</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3331,61 +2726,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_4</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3424,61 +2764,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_5</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3517,61 +2802,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_6</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3610,61 +2840,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_7</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3703,61 +2878,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_8</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3796,61 +2916,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_9</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3889,61 +2954,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_10</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -3982,61 +2992,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_11</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4075,61 +3030,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_12</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4168,61 +3068,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_13</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4261,61 +3106,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_14</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4354,61 +3144,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_15</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4447,61 +3182,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_16</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4540,61 +3220,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_17</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4633,61 +3258,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_18</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4726,61 +3296,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_19</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4819,61 +3334,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_20</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -4912,61 +3372,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_21</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5005,61 +3410,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_22</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5098,61 +3448,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_23</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5191,61 +3486,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_24</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5284,61 +3524,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_25</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5377,61 +3562,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_26</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5470,61 +3600,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_27</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5563,61 +3638,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_28</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5656,61 +3676,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_29</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5749,61 +3714,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_30</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5842,61 +3752,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_31</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -5935,61 +3790,6 @@
 					<string>objects.png</string>
 					<key>name</key>
 					<string>object_statue_35_32</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
@@ -6059,7 +3859,7 @@
 			<key>colorOverlay</key>
 			<string>{{0, 0}, {0, 1}}</string>
 			<key>generalPosition</key>
-			<string>{0.50995121947159794, -0.26994111458727466}</string>
+			<string>{0.50995128304988568, -0.26994111458727466}</string>
 			<key>name</key>
 			<string>UntitledBezier_1</string>
 			<key>nodePhysics</key>
@@ -6125,27 +3925,27 @@
 			<array>
 				<dict>
 					<key>ctrl1</key>
-					<string>{-1163.2222900390625, 320.13630294799805}</string>
+					<string>{-1163.2223510742188, 320.13630294799805}</string>
 					<key>ctrl2</key>
-					<string>{-806.77095413208008, -668.44755935668934}</string>
+					<string>{-806.77101516723633, -668.44755935668934}</string>
 					<key>hasCtrl1</key>
 					<true/>
 					<key>hasCtrl2</key>
 					<true/>
 					<key>mainPt</key>
-					<string>{-1163.2222900390625, 220.13630294799805}</string>
+					<string>{-1163.2223510742188, 220.13630294799805}</string>
 				</dict>
 				<dict>
 					<key>ctrl1</key>
-					<string>{544.4741039276123, 59.944606781005859}</string>
+					<string>{544.47404289245605, 59.944606781005859}</string>
 					<key>ctrl2</key>
-					<string>{1163.2221813201904, 177.08645248413086}</string>
+					<string>{1163.2221202850342, 177.08645248413086}</string>
 					<key>hasCtrl1</key>
 					<true/>
 					<key>hasCtrl2</key>
 					<true/>
 					<key>mainPt</key>
-					<string>{1163.2221813201904, 77.086452484130859}</string>
+					<string>{1163.2221202850342, 77.086452484130859}</string>
 				</dict>
 			</array>
 			<key>rotation</key>
@@ -6169,7 +3969,7 @@
 			<key>followedNodeUUID</key>
 			<string>06521BA7-46D1-471A-9AFA-7C6E0C81ED37</string>
 			<key>generalPosition</key>
-			<string>{0.27237520217895506, 0.5099027156829834}</string>
+			<string>{-0.2542289098103841, -0.27031593322753905}</string>
 			<key>name</key>
 			<string>UntitledCamera</string>
 			<key>nodeType</key>
@@ -6418,16 +4218,7 @@
 									<key>positions</key>
 									<dict>
 										<key>06521BA7-46D1-471A-9AFA-7C6E0C81ED37</key>
-										<string>{261.48020585880636, 326.33772779894804}</string>
-									</dict>
-								</dict>
-								<dict>
-									<key>frameIndex</key>
-									<integer>29</integer>
-									<key>positions</key>
-									<dict>
-										<key>06521BA7-46D1-471A-9AFA-7C6E0C81ED37</key>
-										<string>{840.09197998046875, 339.82504844665527}</string>
+										<string>{-484.23893514766343, -289.94297908352877}</string>
 									</dict>
 								</dict>
 								<dict>
@@ -6436,7 +4227,34 @@
 									<key>positions</key>
 									<dict>
 										<key>06521BA7-46D1-471A-9AFA-7C6E0C81ED37</key>
-										<string>{261.48020585880636, 326.33772779894804}</string>
+										<string>{-569.25175253047587, 871.47914005709617}</string>
+									</dict>
+								</dict>
+								<dict>
+									<key>frameIndex</key>
+									<integer>139</integer>
+									<key>positions</key>
+									<dict>
+										<key>06521BA7-46D1-471A-9AFA-7C6E0C81ED37</key>
+										<string>{1566.5634330163991, 1014.757658733854}</string>
+									</dict>
+								</dict>
+								<dict>
+									<key>frameIndex</key>
+									<integer>199</integer>
+									<key>positions</key>
+									<dict>
+										<key>06521BA7-46D1-471A-9AFA-7C6E0C81ED37</key>
+										<string>{854.91588052616476, -344.87466548489601}</string>
+									</dict>
+								</dict>
+								<dict>
+									<key>frameIndex</key>
+									<integer>239</integer>
+									<key>positions</key>
+									<dict>
+										<key>06521BA7-46D1-471A-9AFA-7C6E0C81ED37</key>
+										<string>{-484.23893514766343, -289.94297908352877}</string>
 									</dict>
 								</dict>
 							</array>
@@ -6447,13 +4265,13 @@
 					<key>repetitions</key>
 					<integer>0</integer>
 					<key>totalFrames</key>
-					<integer>60</integer>
+					<integer>240</integer>
 				</dict>
 			</array>
 			<key>colorOverlay</key>
 			<string>{{1, 1}, {1, 1}}</string>
 			<key>generalPosition</key>
-			<string>{0.27237521443625662, 0.50990269968585633}</string>
+			<string>{-0.50441555744548272, -0.4530359048180137}</string>
 			<key>imageFileName</key>
 			<string>objects.png</string>
 			<key>name</key>
@@ -6530,9 +4348,9 @@
 		<key>2048x1536</key>
 		<string>{{-0.78853046894073486, -0.83658236265182495}, {2.5816664695739746, 2.5831360816955566}}</string>
 		<key>960x640</key>
-		<string>{{-0.78853046894073486, -0.83658236265182495}, {2.5816664695739746, 2.5831360816955566}}</string>
+		<string>{{-0.75422888994216919, -0.77031594514846802}, {2.512444019317627, 2.2956357002258301}}</string>
 		<key>general</key>
-		<string>{{-0.78853046894073486, -0.83658236265182495}, {2.5816664695739746, 2.5831360816955566}}</string>
+		<string>{{-0.75422888994216919, -0.77031594514846802}, {2.512444019317627, 2.2956357002258301}}</string>
 	</dict>
 	<key>globalGravityDirection</key>
 	<string>{0, -1}</string>

@@ -60,8 +60,6 @@ bool LHCamera::initWithDictionary(LHDictionary* dict, Node* prnt)
         }
         this->setPosition(pos);
 
-        CCLOG("CREATE CAMERA");
-        
         if(dict->objectForKey("followedNodeUUID")){
             _followedNodeUUID = dict->stringForKey("followedNodeUUID");
         }
@@ -98,7 +96,6 @@ void LHCamera::setActive(bool value){
 Node* LHCamera::followedNode()
 {
     if(_followedNode == nullptr && _followedNodeUUID.length()> 0){
-        CCLOG("CHECKING for follow node %s", _followedNodeUUID.c_str());
         _followedNode = ((LHScene*)getScene())->getGameWorld()->getChildNodeWithUUID(_followedNodeUUID);
         if(_followedNode){
             _followedNodeUUID ="";
@@ -118,7 +115,6 @@ void LHCamera::setRestrictedToGameWorld(bool val){
 }
 
 void LHCamera::setPosition(Point position){
-    CCLOG("SETTING CAMERA POSITION %f %f", position.x, position.y);
     Node::setPosition(transformToRestrictivePosition(position));
 }
 
@@ -126,9 +122,7 @@ void LHCamera::setSceneView(){
     if(_active)
     {
         Point transPoint = transformToRestrictivePosition(getPosition());
-        
-        CCLOG("SETTING SCENE %p POSITION %f %f ", ((LHScene*)getScene()), transPoint.x, transPoint.y);
-        ((LHScene*)getScene())->setPosition(transPoint);
+        ((LHScene*)getScene())->getGameWorld()->setPosition(transPoint);
     }
 }
 
@@ -138,13 +132,11 @@ Point LHCamera::transformToRestrictivePosition(Point position)
     if(followed){
         position = followed->getPosition();
 
-//        Point anchor = followed->getAnchorPoint();
-//        Size content = followed->getContentSize();
-//        
-//        position.x -= content.width*(anchor.x -0.5);
-//        position.y -= content.height*(anchor.y -0.5);
+        Point anchor = followed->getAnchorPoint();
+        Size content = followed->getContentSize();
         
-        CCLOG("POSITION OF FOLLOWED %f %f", position.x, position.y);
+        position.x -= content.width*(anchor.x -0.5);
+        position.y -= content.height*(anchor.y -0.5);
     }
 
     Size winSize = ((LHScene*)getScene())->getContentSize();
@@ -152,22 +144,19 @@ Point LHCamera::transformToRestrictivePosition(Point position)
 
     float x = position.x;
     float y = position.y;
-
     
-//    if(!worldRect.equals(Rect()) && restrictedToGameWorld()){
-//        
-//        if(x > (worldRect.origin.x + worldRect.size.width)*0.5){
-//            x = MIN(x, worldRect.origin.x + worldRect.size.width - winSize.width *0.5);
-//        }
-//        else{
-//            x = MAX(x, worldRect.origin.x + winSize.width *0.5);
-//        }
-//        
-//        y = MIN(y, worldRect.origin.y + worldRect.size.height - winSize.height*0.5);
-//        y = MAX(y, worldRect.origin.y + winSize.height*0.5);
-//    }
-
-//    Point pt(-x, y);
+    if(!worldRect.equals(Rect()) && restrictedToGameWorld()){
+        
+        if(x > (worldRect.origin.x + worldRect.size.width)*0.5){
+            x = MIN(x, worldRect.origin.x + worldRect.size.width - winSize.width *0.5);
+        }
+        else{
+            x = MAX(x, worldRect.origin.x + winSize.width *0.5);
+        }
+        
+        y = MAX(y, worldRect.origin.y + worldRect.size.height + winSize.height*0.5);
+        y = MIN(y, worldRect.origin.y - winSize.height*0.5);
+    }
     
     Point pt(winSize.width*0.5-x,
              winSize.height*0.5-y);

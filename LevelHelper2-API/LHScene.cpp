@@ -180,13 +180,6 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
                              bRect.size.width*designSize.width ,
                              bRect.size.height*designSize.height);
                 
-                
-//                CGRect skBRect = CGRectMake(bRect.origin.x*designSize.width + offset.x,
-//                                            self.contentSize.height - bRect.origin.y*designSize.height + offset.y,
-//                                            bRect.size.width*designSize.width ,
-//                                            -bRect.size.height*designSize.height);
-
-                
                 {
                     createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
                                                      Point(skBRect.getMaxX(), skBRect.getMinY()),
@@ -241,10 +234,24 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
                 Point offset = getDesignOffset();
                 
                 gameWorldRect = Rect(bRect.origin.x*designSize.width+ offset.x,
-                                     (1.0f - bRect.origin.y)*designSize.height + offset.y,
+                                     (1.0f-  bRect.origin.y)*designSize.height + offset.y,
                                      bRect.size.width*designSize.width ,
                                      -(bRect.size.height)*designSize.height);
-                gameWorldRect.origin.y -= sceneSize.height;
+                                
+                DrawNode* gw = DrawNode::create();
+                
+                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()),
+                                Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
+                
+                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()),
+                                                 Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
+                
+                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()),
+                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
+                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()),
+                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
+
+                _gameWorld->addChild(gw);
             }
         }
         

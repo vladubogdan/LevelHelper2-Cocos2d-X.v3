@@ -31,17 +31,21 @@ LHRotationProperty::~LHRotationProperty(){
 }
 bool LHRotationProperty::initWithDictionary(LHDictionary* dict, LHAnimation* anim)
 {
+    if(dict == NULL)return true; //special case for children subproperties
+    
     if(LHAnimationProperty::initWithDictionary(dict, anim))
     {
         LHArray* framesInfo = dict->arrayForKey("Frames");
-        
-        for(int i = 0; i < framesInfo->count(); ++i)
+        if(framesInfo)
         {
-            LHDictionary* frmInfo = framesInfo->dictAtIndex(i);
-            
-            LHRotationFrame* frm = LHRotationFrame::createWithDictionary(frmInfo, this);
-            addKeyFrame(frm);
-            
+            for(int i = 0; i < framesInfo->count(); ++i)
+            {
+                LHDictionary* frmInfo = framesInfo->dictAtIndex(i);
+                
+                LHRotationFrame* frm = LHRotationFrame::createWithDictionary(frmInfo, this);
+                addKeyFrame(frm);
+                
+            }
         }
         return true;
     }

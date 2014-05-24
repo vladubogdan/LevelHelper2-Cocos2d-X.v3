@@ -101,7 +101,6 @@ bool LHAnimation::initWithDictionary(LHDictionary* dict, LHNodeAnimationProtocol
         _properties->addObject(prop);
     }
     
-    printf("animation is active %d", _active);
     if(_active){
         this->setAnimating(true);
     }
@@ -281,7 +280,7 @@ void LHAnimation::updateNodeWithAnimationProperty(LHAnimationProperty* prop, flo
     LHNodeAnimationProtocol* animNode = _node;
     
     if(prop->isSubproperty() && prop->subpropertyNode()){
-        printf("set animNode as subproperty node");
+//        printf("set animNode as subproperty node");
         animNode = prop->subpropertyNode();
     }
     

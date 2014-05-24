@@ -15,7 +15,6 @@
 
 LHSprite::LHSprite()
 {
-    printf("SPRITE CONSTRUCTOR\n");
 }
 
 LHSprite::~LHSprite()
@@ -83,14 +82,14 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     std::string imageFile = dict->stringForKey("imageFileName");
     std::string relativeImgPath = dict->stringForKey("relativeImagePath");
     
-    printf("image file %s\n", imageFile.c_str());
-    printf("relative image path %s\n", relativeImgPath.c_str());
+//    printf("image file %s\n", imageFile.c_str());
+//    printf("relative image path %s\n", relativeImgPath.c_str());
     
     std::string imagePath = LHScene::imagePathWithFilename(imageFile,
                                                            relativeImgPath,
                                                            scene->getCurrentDeviceSuffix());
 
-    printf("final path %s\n", imagePath.c_str());
+//    printf("final path %s\n", imagePath.c_str());
 
     bool initResult = false;
     
@@ -146,10 +145,6 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
         setUuid(dict->stringForKey("uuid"));
         setTags(dict->arrayForKey("tags"));
         loadUserPropertyWithDictionary(dict, this);
-        
-        uuid = dict->stringForKey("uuid");
-        
-        printf("uuid was set to %s\n", uuid.c_str());
         
 //        if(this->getUserProperty()){
 //            printf("user prop name %s\n", this->getUserProperty()->getClassName().c_str());
@@ -215,8 +210,6 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
-    printf("LHSprite spriteNodeWithDictionary\n");
-    
     LHSprite *ret = new LHSprite();
     if (ret && ret->initWithDictionary(dict, prnt))
     {

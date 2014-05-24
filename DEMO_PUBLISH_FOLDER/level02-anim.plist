@@ -319,6 +319,61 @@
 									<dict/>
 								</dict>
 							</array>
+							<key>subproperties</key>
+							<dict>
+								<key>D7F59AAC-5198-4738-9968-F9BB2A534025</key>
+								<dict>
+									<key>Frames</key>
+									<array>
+										<dict>
+											<key>frameIndex</key>
+											<integer>0</integer>
+											<key>rotations</key>
+											<dict/>
+										</dict>
+										<dict>
+											<key>frameIndex</key>
+											<integer>9</integer>
+											<key>rotations</key>
+											<dict>
+												<key>D7F59AAC-5198-4738-9968-F9BB2A534025</key>
+												<real>285.96041870117188</real>
+											</dict>
+										</dict>
+										<dict>
+											<key>frameIndex</key>
+											<integer>19</integer>
+											<key>rotations</key>
+											<dict>
+												<key>D7F59AAC-5198-4738-9968-F9BB2A534025</key>
+												<real>235.9326171875</real>
+											</dict>
+										</dict>
+										<dict>
+											<key>frameIndex</key>
+											<integer>39</integer>
+											<key>rotations</key>
+											<dict>
+												<key>D7F59AAC-5198-4738-9968-F9BB2A534025</key>
+												<real>54.214527130126953</real>
+											</dict>
+										</dict>
+										<dict>
+											<key>frameIndex</key>
+											<integer>59</integer>
+											<key>rotations</key>
+											<dict>
+												<key>D7F59AAC-5198-4738-9968-F9BB2A534025</key>
+												<real>234.94903564453125</real>
+											</dict>
+										</dict>
+									</array>
+									<key>locked</key>
+									<false/>
+									<key>type</key>
+									<string>LHRotationProperty</string>
+								</dict>
+							</dict>
 							<key>type</key>
 							<string>LHChildrenRotationsProperty</string>
 						</dict>

@@ -32,20 +32,19 @@ LHPositionProperty::~LHPositionProperty(){
 }
 bool LHPositionProperty::initWithDictionary(LHDictionary* dict, LHAnimation* anim)
 {
-    printf("DID CREATE POSITION ANIMATION PROPERTY\n");
-
     if(dict == NULL)return true; //special case for children subproperties
     
     if(LHAnimationProperty::initWithDictionary(dict, anim))
     {
         LHArray* framesInfo = dict->arrayForKey("Frames");
+        if(framesInfo){
+            for(int i = 0; i < framesInfo->count(); ++i)
+            {
+                LHDictionary* frmInfo = framesInfo->dictAtIndex(i);
 
-        for(int i = 0; i < framesInfo->count(); ++i)
-        {
-            LHDictionary* frmInfo = framesInfo->dictAtIndex(i);
-
-            LHPositionFrame* frm = LHPositionFrame::createWithDictionary(frmInfo, this);
-            addKeyFrame(frm);
+                LHPositionFrame* frm = LHPositionFrame::createWithDictionary(frmInfo, this);
+                addKeyFrame(frm);
+            }
         }
         return true;
     }

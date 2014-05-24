@@ -42,7 +42,9 @@ bool LHChildrenRotationsProperty::initWithDictionary(LHDictionary* dict, LHAnima
 LHAnimationProperty* LHChildrenRotationsProperty::newSubpropertyForNode(LHNodeAnimationProtocol* node)
 {
     LHRotationProperty* prop = LHRotationProperty::createWithDictionary(NULL, this->animation());
-    prop->setSubpropertyNode(node);
+    if(prop){
+        prop->setSubpropertyNode(node);
+    }
     return prop;
 }
 

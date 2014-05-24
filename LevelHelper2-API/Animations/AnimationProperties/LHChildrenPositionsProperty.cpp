@@ -24,8 +24,7 @@ LHChildrenPositionsProperty* LHChildrenPositionsProperty::createWithDictionary(L
     return aProp;
 }
 LHChildrenPositionsProperty::LHChildrenPositionsProperty(){
-    CCLOG("LH CHILDREN POSITION PROPERTY");
-    
+
 }
 LHChildrenPositionsProperty::~LHChildrenPositionsProperty(){
     

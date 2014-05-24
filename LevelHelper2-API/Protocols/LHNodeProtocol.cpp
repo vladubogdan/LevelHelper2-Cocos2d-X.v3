@@ -14,11 +14,11 @@
 
 LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
 {
-    printf("NODE PROTOCOL CONTSTRUCTOR\n");
+//    printf("NODE PROTOCOL CONTSTRUCTOR\n");
 }
 LHNodeProtocol::~LHNodeProtocol()
 {
-    printf("\nNODE PROTOCOL DEALLOC\n");
+//    printf("\nNODE PROTOCOL DEALLOC\n");
     
     if(userProperty){
         delete userProperty;

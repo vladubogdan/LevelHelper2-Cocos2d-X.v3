@@ -64,7 +64,7 @@ LHAnimationProperty* LHAnimationProperty::createWithDictionary(LHDictionary* dic
 }
 
 LHAnimationProperty::LHAnimationProperty(){
-    printf("CONSTRUCTOR LH ANIMATION PROPERTY\n");
+
     _frames = new __Array();
     _frames->init();
     
@@ -99,7 +99,9 @@ bool LHAnimationProperty::initWithDictionary(LHDictionary* dict, LHAnimation* an
             LHDictionary* subInfo = subsInfo->dictForKey(subUUID);
             if(subInfo)
             {
-                LHNodeAnimationProtocol* child = (LHNodeAnimationProtocol*)parentNode->getChildNodeWithUUID(subUUID);
+                Node* returnedNode = parentNode->getChildNodeWithUUID(subUUID);
+                
+                LHNodeAnimationProtocol* child = dynamic_cast<LHNodeAnimationProtocol*>(returnedNode);
                 
                 if(child && subInfo){
                     
@@ -110,11 +112,13 @@ bool LHAnimationProperty::initWithDictionary(LHDictionary* dict, LHAnimation* an
                     
                     LHAnimationProperty* subProp = newSubpropertyForNode(child);
                     if(subProp){
+                
                         subProp->setParentProperty(this);
                         subProp->setSubpropertyNode(child);
                         subProp->initWithDictionary(subInfo, anim);
                         
                         LHNodeProtocol* childNode = dynamic_cast<LHNodeProtocol*>(child);
+                        
                         if(childNode)
                         {
                             subproperties->setObject(subProp, childNode->getUuid());

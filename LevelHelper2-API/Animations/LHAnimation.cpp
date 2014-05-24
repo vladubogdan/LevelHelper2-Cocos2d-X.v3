@@ -49,7 +49,7 @@ LHAnimation::~LHAnimation()
     _node = NULL;
     _scene = NULL;
     
-    CC_SAFE_RELEASE(_properties);
+    CC_SAFE_DELETE(_properties);
 }
 
 

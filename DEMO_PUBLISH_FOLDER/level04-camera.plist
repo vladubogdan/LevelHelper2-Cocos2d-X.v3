@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>0</integer>
+	<key>backgroundColor</key>
+	<string>{{1, 0.99997437000274658}, {0.99999129772186279, 1}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.24342772969393991, 0.2200476044366951}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_hat</string>
+			<key>nodePhysics</key>
+			<dict>
+				<key>allowSleep</key>
+				<true/>
+				<key>bullet</key>
+				<false/>
+				<key>fixedRotation</key>
+				<false/>
+				<key>fixtureUUID</key>
+				<string>3EBAC22A-480C-4B99-BD6D-A9C56F245EA2</string>
+				<key>genericFixture</key>
+				<dict>
+					<key>category</key>
+					<integer>1</integer>
+					<key>collisionCategories</key>
+					<array>
+						<string>DEFAULT</string>
+						<string>BlueRobot</string>
+						<string>GreenRobot</string>
+						<string>PinkRobot</string>
+						<string>Category_05</string>
+						<string>Category_06</string>
+						<string>Category_07</string>
+						<string>Category_08</string>
+						<string>Category_09</string>
+						<string>Category_10</string>
+						<string>Category_11</string>
+						<string>Category_12</string>
+						<string>Category_13</string>
+						<string>Category_14</string>
+						<string>Category_15</string>
+						<string>Category_16</string>
+					</array>
+					<key>density</key>
+					<real>0.10000000149011612</real>
+					<key>fixtureID</key>
+					<integer>0</integer>
+					<key>friction</key>
+					<real>0.20000000298023224</real>
+					<key>ignoreCategories</key>
+					<array/>
+					<key>mask</key>
+					<integer>65535</integer>
+					<key>name</key>
+					<string>GenericFixture</string>
+					<key>restitution</key>
+					<real>0.0</real>
+					<key>sensor</key>
+					<false/>
+				</dict>
+				<key>gravityScale</key>
+				<real>1</real>
+				<key>shape</key>
+				<integer>5</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>57E99465-149A-4A29-833E-9FE9521F663C</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{122, 75}</string>
+			<key>spriteName</key>
+			<string>object_hat</string>
+			<key>spriteUUID</key>
+			<string>A0CC7494-203E-4C79-A14A-ECA50F1FBA3D</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>055B6BFE-1E51-48EE-93B6-15BB800C5606</string>
+			<key>zOrder</key>
+			<integer>-1</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>closed</key>
+			<false/>
+			<key>colorOverlay</key>
+			<string>{{0, 1}, {0.90972846746444702, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.46875410402814549, 0.50034677274525163}</string>
+			<key>name</key>
+			<string>UntitledBezier</string>
+			<key>nodePhysics</key>
+			<dict>
+				<key>allowSleep</key>
+				<true/>
+				<key>bullet</key>
+				<false/>
+				<key>fixedRotation</key>
+				<false/>
+				<key>genericFixture</key>
+				<dict>
+					<key>category</key>
+					<integer>1</integer>
+					<key>collisionCategories</key>
+					<array>
+						<string>DEFAULT</string>
+						<string>BlueRobot</string>
+						<string>GreenRobot</string>
+						<string>PinkRobot</string>
+						<string>Category_05</string>
+						<string>Category_06</string>
+						<string>Category_07</string>
+						<string>Category_08</string>
+						<string>Category_09</string>
+						<string>Category_10</string>
+						<string>Category_11</string>
+						<string>Category_12</string>
+						<string>Category_13</string>
+						<string>Category_14</string>
+						<string>Category_15</string>
+						<string>Category_16</string>
+					</array>
+					<key>density</key>
+					<real>0.10000000149011612</real>
+					<key>fixtureID</key>
+					<integer>0</integer>
+					<key>friction</key>
+					<real>0.20000000298023224</real>
+					<key>ignoreCategories</key>
+					<array/>
+					<key>mask</key>
+					<integer>65535</integer>
+					<key>name</key>
+					<string>GenericFixture</string>
+					<key>restitution</key>
+					<real>0.0</real>
+					<key>sensor</key>
+					<false/>
+				</dict>
+				<key>gravityScale</key>
+				<real>1</real>
+				<key>shape</key>
+				<integer>3</integer>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>nodeType</key>
+			<string>LHBezier</string>
+			<key>parentUUID</key>
+			<string>57E99465-149A-4A29-833E-9FE9521F663C</string>
+			<key>points</key>
+			<array>
+				<dict>
+					<key>ctrl1</key>
+					<string>{-358.80082702636719, -123.79223251342773}</string>
+					<key>ctrl2</key>
+					<string>{-371.86332702636719, 121.76558303833008}</string>
+					<key>hasCtrl1</key>
+					<true/>
+					<key>hasCtrl2</key>
+					<true/>
+					<key>mainPt</key>
+					<string>{-358.80082702636719, -223.79223251342773}</string>
+				</dict>
+				<dict>
+					<key>ctrl1</key>
+					<string>{89.151532511226833, 233.18275956809521}</string>
+					<key>ctrl2</key>
+					<string>{89.151532511226833, 213.18275956809521}</string>
+					<key>hasCtrl1</key>
+					<true/>
+					<key>hasCtrl2</key>
+					<true/>
+					<key>mainPt</key>
+					<string>{89.151532511226833, 223.18275956809521}</string>
+				</dict>
+				<dict>
+					<key>ctrl1</key>
+					<string>{52.330417633056641, -49.757068634033203}</string>
+					<key>ctrl2</key>
+					<string>{230.87417984008789, -222.88675308227539}</string>
+					<key>hasCtrl1</key>
+					<true/>
+					<key>hasCtrl2</key>
+					<true/>
+					<key>mainPt</key>
+					<string>{358.80074691772461, -145.4172248840332}</string>
+				</dict>
+			</array>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{717.6016845703125, 447.58447265625}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>99C7E01C-41D7-4FF6-B6E4-72ACBB4E66B3</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960, 640}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960, 640}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136, 640}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024, 768}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048, 1536}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+	</array>
+	<key>globalGravityDirection</key>
+	<string>{0, -1}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>3EBAC22A-480C-4B99-BD6D-A9C56F245EA2</key>
+		<array>
+			<array>
+				<string>{13.5, 30.5}</string>
+				<string>{-5, 30.5}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{34.5, -5.5}</string>
+				<string>{35, 27}</string>
+				<string>{23.5, 29.5}</string>
+			</array>
+			<array>
+				<string>{23.5, 29.5}</string>
+				<string>{13.5, 30.5}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{34.5, -5.5}</string>
+				<string>{23.5, 29.5}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{31, -17.5}</string>
+				<string>{34.5, -5.5}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{29, -21.5}</string>
+				<string>{31, -17.5}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{25, -26.5}</string>
+				<string>{29, -21.5}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{19.5, -29.5}</string>
+				<string>{25, -26.5}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{14.5, -31}</string>
+				<string>{19.5, -29.5}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{7.5, -32}</string>
+				<string>{14.5, -31}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{7.5, -32}</string>
+				<string>{-6, -31.5}</string>
+				<string>{-5.5, -32}</string>
+			</array>
+			<array>
+				<string>{-35, -3.5}</string>
+				<string>{-5, 30.5}</string>
+				<string>{-27.5, 28.5}</string>
+			</array>
+			<array>
+				<string>{-35, -3.5}</string>
+				<string>{-27.5, 28.5}</string>
+				<string>{-39.5, 26}</string>
+			</array>
+			<array>
+				<string>{-46, 2}</string>
+				<string>{-35, -3.5}</string>
+				<string>{-39.5, 26}</string>
+			</array>
+			<array>
+				<string>{-46, 2}</string>
+				<string>{-39.5, 26}</string>
+				<string>{-50.5, 21}</string>
+			</array>
+			<array>
+				<string>{-53, 9}</string>
+				<string>{-46, 2}</string>
+				<string>{-50.5, 21}</string>
+			</array>
+			<array>
+				<string>{-53, 9}</string>
+				<string>{-50.5, 21}</string>
+				<string>{-54, 16.5}</string>
+			</array>
+			<array>
+				<string>{-53, 9}</string>
+				<string>{-54, 16.5}</string>
+				<string>{-54, 11}</string>
+			</array>
+			<array>
+				<string>{-5, 30.5}</string>
+				<string>{-35, -3.5}</string>
+				<string>{-31.5, -14.5}</string>
+				<string>{-27, -22.5}</string>
+				<string>{-22.5, -27}</string>
+				<string>{-19, -29}</string>
+				<string>{-12.5, -31}</string>
+				<string>{-6, -31.5}</string>
+			</array>
+			<array>
+				<string>{53.5, 13.5}</string>
+				<string>{49.5, 19.5}</string>
+				<string>{45.5, 22.5}</string>
+				<string>{35, 27}</string>
+				<string>{34.5, -5.5}</string>
+				<string>{47, -1}</string>
+				<string>{52.5, 4.5}</string>
+				<string>{54, 10}</string>
+			</array>
+		</array>
+	</dict>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>57E99465-149A-4A29-833E-9FE9521F663C</string>
+</dict>
+</plist>

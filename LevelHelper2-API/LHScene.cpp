@@ -14,6 +14,7 @@
 #include "LHSprite.h"
 #include "LHNode.h"
 #include "LHCamera.h"
+#include "LHBezier.h"
 
 #include <sstream>
 using namespace std;
@@ -125,6 +126,10 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 //        physicsNode = pNode;
 //        
         
+        //load background color
+        Color3B backgroundClr = dict->colorForKey("backgroundColor");
+        glClearColor(backgroundClr.r, backgroundClr.g, backgroundClr.b, 1.0f);
+
         
         getPhysicsWorld()->setDebugDrawMask(true ? PhysicsWorld::DEBUGDRAW_ALL : PhysicsWorld::DEBUGDRAW_NONE);
 
@@ -300,13 +305,11 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
         LHCamera* cm = LHCamera::cameraWithDictionary(childInfo, prnt);
         return cm;
     }
-
-//    else if([nodeType isEqualToString:@"LHBezier"])
-//    {
-//        LHBezier* bez = [LHBezier bezierNodeWithDictionary:childInfo
-//                                                    parent:prnt];
-//        return bez;
-//    }
+    else if(nodeType == "LHBezier")
+    {
+        LHBezier* bez = LHBezier::bezierNodeWithDictionary(childInfo, prnt);
+        return bez;
+    }
 //    else if([nodeType isEqualToString:@"LHTexturedShape"])
 //    {
 //        LHShape* sp = [LHShape shapeNodeWithDictionary:childInfo

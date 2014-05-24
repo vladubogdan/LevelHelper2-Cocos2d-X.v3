@@ -24,7 +24,7 @@ Users can retrieve a bezier objects by calling the scene (LHScene) childNodeWith
 class LHDictionary;
 class LHScene;
 
-class LHBezier : public Node, public LHNodeProtocol, public LHNodeAnimationProtocol
+class LHBezier : public DrawNode, public LHNodeProtocol, public LHNodeAnimationProtocol
 {
 public:
     
@@ -43,10 +43,11 @@ public:
     /**
      Returns the points used to draw this bezier node. Array of NSValue with CGPoints;
      */
-    //-(NSMutableArray*)linePoints;
+    std::vector<Point> linePoints();
 
     
 private:
+    std::vector<Point> _linePoints;
 };
 
 #endif // __LEVELHELPER_API_BEZIER_H__

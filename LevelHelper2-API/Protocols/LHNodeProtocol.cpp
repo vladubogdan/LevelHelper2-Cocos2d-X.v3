@@ -12,6 +12,8 @@
 #include "LHScene.h"
 #include "LHUserProperties.h"
 
+#include "LHBezier.h"
+
 LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
 {
 //    printf("NODE PROTOCOL CONTSTRUCTOR\n");
@@ -125,28 +127,30 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
     }
     else if(shape == 3)//CHAIN
     {
-//        if([node isKindOfClass:[LHBezier class]])
-//        {
-//            NSMutableArray* points = [(LHBezier*)node linePoints];
-//            
-//            NSValue* prevValue = nil;
-//            for(NSValue* val in points){
-//                
-//                if(prevValue)
-//                {
-//                    CGPoint ptA = CGPointFromValue(prevValue);
-//                    CGPoint ptB = CGPointFromValue(val);
-//                    CCPhysicsShape* shape = [CCPhysicsShape pillShapeFrom:ptA
-//                                                                       to:ptB
-//                                                             cornerRadius:0];
-//                    [fixShapes addObject:shape];
-//                }
-//                
-//                prevValue = val;
-//            }
-//            
-//            node.physicsBody =  [CCPhysicsBody bodyWithShapes:fixShapes];
-//        }
+        LHBezier* bez = dynamic_cast<LHBezier*>(node);
+        if(bez)
+        {
+            std::vector<Point> points = bez->linePoints();
+
+            PhysicsBody* body = PhysicsBody::create();
+            node->setPhysicsBody(body);
+
+            Point *prevPt = nullptr;
+            for(size_t i = 0; i < points.size(); ++i)
+            {
+                Point ptB = points[i];
+                if(prevPt)
+                {
+                    PhysicsShapeEdgeSegment* shape = PhysicsShapeEdgeSegment::create(Point(prevPt->x, prevPt->y), ptB);
+                    fixShapes->addObject(shape);
+                    body->addShape(shape);
+                }
+                
+                CC_SAFE_DELETE(prevPt);
+                prevPt = new Point(ptB);
+            }
+            CC_SAFE_DELETE(prevPt);
+        }
 //        else if([node isKindOfClass:[LHShape class]])
 //        {
 //            NSArray* points = [(LHShape*)node outlinePoints];

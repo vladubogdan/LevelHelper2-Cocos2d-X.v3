@@ -22,31 +22,6 @@ LHSprite::~LHSprite()
 
 }
 
-//bool LHSprite::initWithDictionary(LHDictionary* dictionary){
-//    
-//    std::string imgPath = LHSettings::sharedInstance()->imagePath(dictionary->stringForKey("SheetImage"));
-//    
-//    if(imgPath == "")
-//        return false;
-//    
-//    
-//    LHDictionary* texDict = dictionary->dictForKey("TextureProperties");
-//    CCRect rect = texDict->rectForKey("Frame");
-//    
-//    rect = LHSettings::sharedInstance()->transformedTextureRect(rect,imgPath);
-//    
-//    if(initWithFile(imgPath.c_str(), rect))
-//    {
-//        setImageFile(imgPath);
-//        loadInformationFromDictionary(dictionary);
-//        
-//        return true;
-//    }
-//    
-//    return false;
-//}
-//
-
 bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 {
         LHScene* scene = (LHScene*)prnt->getScene();

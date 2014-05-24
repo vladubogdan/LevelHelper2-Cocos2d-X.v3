@@ -51,6 +51,7 @@ public:
 private:
     
     friend class LHSprite;
+    friend class LHNode;
     friend class LHNodeProtocol;
     
     std::vector<LHDevice*> devices;

@@ -12,6 +12,7 @@
 #include "LHDevice.h"
 
 #include "LHSprite.h"
+#include "LHNode.h"
 
 #include <sstream>
 using namespace std;
@@ -255,12 +256,11 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
         LHSprite* spr = LHSprite::spriteNodeWithDictionary(childInfo, prnt);
         return spr;
     }
-//    else if([nodeType isEqualToString:@"LHNode"])
-//    {
-//        LHNode* nd = [LHNode nodeWithDictionary:childInfo
-//                                         parent:prnt];
-//        return nd;
-//    }
+    else if(nodeType == "LHNode")
+    {
+        LHNode* nd = LHNode::nodeWithDictionary(childInfo, prnt);
+        return nd;
+    }
 //    else if([nodeType isEqualToString:@"LHBezier"])
 //    {
 //        LHBezier* bez = [LHBezier bezierNodeWithDictionary:childInfo

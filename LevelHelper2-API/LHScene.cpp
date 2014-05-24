@@ -13,6 +13,7 @@
 
 #include "LHSprite.h"
 #include "LHNode.h"
+#include "LHCamera.h"
 
 #include <sstream>
 using namespace std;
@@ -196,6 +197,39 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         
         
+        LHDictionary* gameWorldInfo = dict->dictForKey("gameWorld");
+        if(gameWorldInfo)
+        {
+            Size scr = LH_SCREEN_RESOLUTION;
+            
+            stringstream tempString;
+            tempString <<(int)scr.width<<"x"<<(int)scr.height;
+            std::string key = tempString.str(); //Converts this into string;
+            
+            std::string rectInf;
+            if(phyBoundInfo->objectForKey(key)){
+                rectInf = phyBoundInfo->stringForKey(key);
+                
+            }
+            else{
+                rectInf = phyBoundInfo->stringForKey("general");
+            }
+            
+            if(rectInf.length() > 0){
+                Rect bRect = RectFromString(rectInf);
+                Size designSize = getDesignResolutionSize();
+                Point offset = getDesignOffset();
+                
+                gameWorldRect = Rect(bRect.origin.x*designSize.width+ offset.x,
+                                     (1.0f - bRect.origin.y)*designSize.height + offset.y,
+                                     bRect.size.width*designSize.width ,
+                                     -(bRect.size.height)*designSize.height);
+                gameWorldRect.origin.y -= sceneSize.height;
+            }
+        }
+        
+        
+        
         
         LHArray* childrenInfo = dict->arrayForKey("children");
         for(int i = 0; i < childrenInfo->count(); ++i)
@@ -261,6 +295,12 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
         LHNode* nd = LHNode::nodeWithDictionary(childInfo, prnt);
         return nd;
     }
+    else if(nodeType == "LHCamera")
+    {
+        LHCamera* cm = LHCamera::cameraWithDictionary(childInfo, prnt);
+        return cm;
+    }
+
 //    else if([nodeType isEqualToString:@"LHBezier"])
 //    {
 //        LHBezier* bez = [LHBezier bezierNodeWithDictionary:childInfo
@@ -302,15 +342,6 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
 //        LHAsset* as = [LHAsset assetWithDictionary:childInfo
 //                                            parent:prnt];
 //        return as;
-//    }
-//    else if([nodeType isEqualToString:@"LHCamera"])
-//    {
-//        if(scene)
-//        {
-//            LHCamera* cm = [LHCamera cameraWithDictionary:childInfo
-//                                                   parent:prnt];
-//            return cm;
-//        }
 //    }
 //    else if([nodeType isEqualToString:@"LHRopeJoint"])
 //    {
@@ -420,6 +451,9 @@ Point LHScene::getDesignOffset(){
     return designOffset;
 }
 
+Rect LHScene::getGameWorldRect(){
+    return gameWorldRect;
+}
 
 Point LHScene::positionForNode(Node* node, Point unitPos)
 {

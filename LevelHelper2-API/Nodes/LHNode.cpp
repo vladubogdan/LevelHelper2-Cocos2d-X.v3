@@ -1,5 +1,5 @@
 //
-//  LHNode.m
+//  LHNode.cpp
 //  LevelHelper2-Cocos2d-X-v3
 //
 //  Created by Bogdan Vladu on 31/03/14.
@@ -39,7 +39,6 @@ bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
 {
     if(Node::init())
     {
-        
         _physicsBody = NULL;
         
         loadGenericInfoFromDictionary(dict);
@@ -93,10 +92,11 @@ bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
             }
         }
         
-        createAnimationsFromDictionary(dict, this);
-
+        createAnimationsFromDictionary(dict);
+        
+        return true;
     }
-    return true;
+    return false;
 }
 
 void LHNode::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)

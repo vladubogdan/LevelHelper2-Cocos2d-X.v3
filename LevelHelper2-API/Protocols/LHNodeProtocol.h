@@ -107,6 +107,8 @@ class LHNodeProtocol
     virtual bool isBezier(){return false;}
     virtual bool isShape(){return false;}
     virtual bool isJoint(){return false;}
+    virtual bool isCamera(){return false;}
+    
     
     virtual void loadUserPropertyWithDictionary(LHDictionary* dict);
     virtual void loadGenericInfoFromDictionary(LHDictionary* dict);

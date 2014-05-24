@@ -28,7 +28,7 @@ void LHNodeAnimationProtocol::setActiveAnimation(LHAnimation* animation)
 }
 
 
-void LHNodeAnimationProtocol::createAnimationsFromDictionary(LHDictionary* dict, LHNodeAnimationProtocol* node)
+void LHNodeAnimationProtocol::createAnimationsFromDictionary(LHDictionary* dict)
 {
     if(dict->objectForKey("animations"))
     {
@@ -41,7 +41,7 @@ void LHNodeAnimationProtocol::createAnimationsFromDictionary(LHDictionary* dict,
                 _animations = new __Array();
                 _animations->init();
             }
-            LHAnimation* animation = LHAnimation::createWithDictionary(animInf, node);
+            LHAnimation* animation = LHAnimation::createWithDictionary(animInf, this);
             if(animation->isActive()){
                 _activeAnimation = animation;
             }

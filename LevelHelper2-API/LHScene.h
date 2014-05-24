@@ -42,6 +42,8 @@ public:
     Point       getDesignOffset();
 
     
+    Rect        getGameWorldRect();
+    
     static Point positionForNode(Node* node, Point unitPos);
     
     static  bool isLHScene(Node* obj){return (0 != dynamic_cast<LHScene*>(obj));}
@@ -53,10 +55,13 @@ private:
     friend class LHSprite;
     friend class LHNode;
     friend class LHNodeProtocol;
+    friend class LHBezier;
+    friend class LHCamera;
     
     std::vector<LHDevice*> devices;
     Size    designResolutionSize;
     Point   designOffset;
+    Rect    gameWorldRect;
     __Dictionary* tracedFixtures;
     
     static Node* createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt);

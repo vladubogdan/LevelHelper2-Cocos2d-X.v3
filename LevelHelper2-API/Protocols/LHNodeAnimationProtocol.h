@@ -39,7 +39,7 @@ public:
 
     
     
-    virtual void createAnimationsFromDictionary(LHDictionary* dict, LHNodeAnimationProtocol* node);
+    virtual void createAnimationsFromDictionary(LHDictionary* dict);
     virtual void visitActiveAnimation();
 
 private:

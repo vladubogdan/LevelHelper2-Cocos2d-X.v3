@@ -114,8 +114,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
             }
         }
         
-        createAnimationsFromDictionary(dict, this);
-        
+        createAnimationsFromDictionary(dict);
         
         return true;
     }

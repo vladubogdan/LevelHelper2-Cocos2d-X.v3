@@ -13,10 +13,10 @@
 #include "LHScene.h"
 #include "LHNode.h"
 #include "LHSprite.h"
+#include "LHCamera.h"
 
 //#import "LHAsset.h"
 //#import "LHBezier.h"
-//#import "LHCamera.h"
 //#import "LHParallax.h"
 //#import "LHParallaxLayer.h"
 //#import "LHRopeJointNode.h"

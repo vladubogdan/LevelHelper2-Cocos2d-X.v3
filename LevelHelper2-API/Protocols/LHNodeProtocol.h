@@ -70,13 +70,13 @@ class LHNodeProtocol
      @return An array with all the found nodes of the specified class.
      * @code
      * //this is how you should use this function
-     * __Array* children = myObject->getChildrenOfType<Node*>(NULL);
+     * __Array* children = myObject->getChildrenOfType<Node*>();
      * @endcode
      
      */
     
     template<typename T>
-    __Array* getChildrenOfType(T value)
+    __Array* getChildrenOfType(T value = nullptr)
     {
         Node* node = dynamic_cast<Node*>(this);
         

@@ -8,9 +8,9 @@
 
 #include "LHAnimation.h"
 
-//#import "LHNode.h"
+#include "LHNode.h"
 #include "LHSprite.h"
-//#import "LHCamera.h"
+#include "LHCamera.h"
 #include "LHScene.h"
 #include "LHDictionary.h"
 
@@ -348,7 +348,7 @@ Point LHAnimation::convertFramePosition(Point newPos, Node* animNode)
     LHScene* scene = this->scene();
     Point offset = scene->getDesignOffset();
     Node* p = animNode->getParent();
-    if(LHScene::isLHScene(p))// [p isKindOfClass:[CCPhysicsNode class]])
+    if(p == scene->getGameWorld())// LHScene::isLHScene(p))// [p isKindOfClass:[CCPhysicsNode class]])
     {
         newPos.x += offset.x;
         newPos.y += offset.y;

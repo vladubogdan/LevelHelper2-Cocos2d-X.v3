@@ -20,6 +20,21 @@ LHNode::~LHNode()
     
 }
 
+LHNode* LHNode::createWithName(const std::string& nm)
+{
+    LHNode *ret = new LHNode();
+    if (ret && ret->initWithName(nm))
+    {
+        ret->autorelease();
+        return ret;
+    }
+    else
+    {
+        CC_SAFE_DELETE(ret);
+        return nullptr;
+    }
+}
+
 LHNode* LHNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHNode *ret = new LHNode();
@@ -34,7 +49,16 @@ LHNode* LHNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
         return nullptr;
     }
 }
-
+bool LHNode::initWithName(const std::string& nm)
+{
+    if(Node::init())
+    {
+        _physicsBody = NULL;
+        setName(nm);
+        return true;
+    }
+    return false;
+}
 bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
 {
     if(Node::init())

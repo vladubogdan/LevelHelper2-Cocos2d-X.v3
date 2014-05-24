@@ -10,6 +10,7 @@
 #include "LHDictionary.h"
 #include "LHScene.h"
 #include "LHDevice.h"
+#include "LHNode.h"
 
 LHCamera::LHCamera()
 {
@@ -58,14 +59,15 @@ bool LHCamera::initWithDictionary(LHDictionary* dict, Node* prnt)
             }
         }
         this->setPosition(pos);
+
+        CCLOG("CREATE CAMERA");
         
-//        NSString* followedUUID = [dict objectForKey:@"followedNodeUUID"];
-//        if(followedUUID){
-//            _followedNodeUUID = [[NSString alloc] initWithString:followedUUID];
-//        }
-//        
-//        _active = [dict boolForKey:@"activeCamera"];
-//        _restricted = [dict boolForKey:@"restrictToGameWorld"];
+        if(dict->objectForKey("followedNodeUUID")){
+            _followedNodeUUID = dict->stringForKey("followedNodeUUID");
+        }
+        
+        _active     = dict->boolForKey("activeCamera");
+        _restricted = dict->boolForKey("restrictToGameWorld");
 
         
         createAnimationsFromDictionary(dict);
@@ -83,23 +85,25 @@ void LHCamera::resetActiveState(){
     _active = false;
 }
 void LHCamera::setActive(bool value){
-    
-//    NSMutableArray* cameras = [(LHScene*)[self scene] childrenOfType:[LHCamera class]];
-//    for(LHCamera* cam in cameras){
-//        [cam resetActiveState];
-//    }
-//    _active = value;
-//    [self setSceneView];
+    __Array* cameras = ((LHScene*)getScene())->getChildrenOfType<LHCamera*>();
+    for(int i = 0; i < cameras->count(); ++i)
+    {
+        LHCamera* cam = (LHCamera*)cameras->getObjectAtIndex(i);
+        cam->resetActiveState();
+    }
+    _active = value;
+    setSceneView();
 }
 
 Node* LHCamera::followedNode()
 {
-//    if(_followedNodeUUID && _followedNode == nil){
-//        _followedNode = (CCNode<LHNodeAnimationProtocol, LHNodeProtocol>*)[(LHScene*)[self scene] childNodeWithUUID:_followedNodeUUID];
-//        if(_followedNode){
-//            LH_SAFE_RELEASE(_followedNodeUUID);
-//        }
-//    }
+    if(_followedNode == nullptr && _followedNodeUUID.length()> 0){
+        CCLOG("CHECKING for follow node %s", _followedNodeUUID.c_str());
+        _followedNode = ((LHScene*)getScene())->getGameWorld()->getChildNodeWithUUID(_followedNodeUUID);
+        if(_followedNode){
+            _followedNodeUUID ="";
+        }
+    }
     return _followedNode;
 }
 void LHCamera::followNode(Node* node){
@@ -114,6 +118,7 @@ void LHCamera::setRestrictedToGameWorld(bool val){
 }
 
 void LHCamera::setPosition(Point position){
+    CCLOG("SETTING CAMERA POSITION %f %f", position.x, position.y);
     Node::setPosition(transformToRestrictivePosition(position));
 }
 
@@ -121,7 +126,9 @@ void LHCamera::setSceneView(){
     if(_active)
     {
         Point transPoint = transformToRestrictivePosition(getPosition());
-        getScene()->setPosition(transPoint);
+        
+        CCLOG("SETTING SCENE %p POSITION %f %f ", ((LHScene*)getScene()), transPoint.x, transPoint.y);
+        ((LHScene*)getScene())->setPosition(transPoint);
     }
 }
 
@@ -131,11 +138,13 @@ Point LHCamera::transformToRestrictivePosition(Point position)
     if(followed){
         position = followed->getPosition();
 
-        Point anchor = followed->getAnchorPoint();
-        Size content = followed->getContentSize();
+//        Point anchor = followed->getAnchorPoint();
+//        Size content = followed->getContentSize();
+//        
+//        position.x -= content.width*(anchor.x -0.5);
+//        position.y -= content.height*(anchor.y -0.5);
         
-        position.x -= content.width*(anchor.x -0.5);
-        position.y -= content.height*(anchor.y -0.5);
+        CCLOG("POSITION OF FOLLOWED %f %f", position.x, position.y);
     }
 
     Size winSize = ((LHScene*)getScene())->getContentSize();
@@ -145,18 +154,20 @@ Point LHCamera::transformToRestrictivePosition(Point position)
     float y = position.y;
 
     
-    if(!worldRect.equals(Rect()) && restrictedToGameWorld()){
-        
-        if(x > (worldRect.origin.x + worldRect.size.width)*0.5){
-            x = MIN(x, worldRect.origin.x + worldRect.size.width - winSize.width *0.5);
-        }
-        else{
-            x = MAX(x, worldRect.origin.x + winSize.width *0.5);
-        }
-        
-        y = MIN(y, worldRect.origin.y + worldRect.size.height - winSize.height*0.5);
-        y = MAX(y, worldRect.origin.y + winSize.height*0.5);
-    }
+//    if(!worldRect.equals(Rect()) && restrictedToGameWorld()){
+//        
+//        if(x > (worldRect.origin.x + worldRect.size.width)*0.5){
+//            x = MIN(x, worldRect.origin.x + worldRect.size.width - winSize.width *0.5);
+//        }
+//        else{
+//            x = MAX(x, worldRect.origin.x + winSize.width *0.5);
+//        }
+//        
+//        y = MIN(y, worldRect.origin.y + worldRect.size.height - winSize.height*0.5);
+//        y = MAX(y, worldRect.origin.y + winSize.height*0.5);
+//    }
+
+//    Point pt(-x, y);
     
     Point pt(winSize.width*0.5-x,
              winSize.height*0.5-y);

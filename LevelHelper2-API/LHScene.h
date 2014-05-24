@@ -19,8 +19,8 @@
  */
 using namespace cocos2d;
 
-class LHCamera;
 class LHDevice;
+class LHNode;
 class LHDictionary;
 
 class LHScene : public cocos2d::Scene, LHNodeProtocol
@@ -41,6 +41,8 @@ public:
     Size        getDesignResolutionSize();
     Point       getDesignOffset();
 
+    LHNode* getGameWorld();
+    LHNode* getUI();
     
     Rect        getGameWorldRect();
     
@@ -57,6 +59,9 @@ private:
     friend class LHNodeProtocol;
     friend class LHBezier;
     friend class LHCamera;
+    
+    LHNode* _gameWorld;
+    LHNode* _ui;
     
     std::vector<LHDevice*> devices;
     Size    designResolutionSize;

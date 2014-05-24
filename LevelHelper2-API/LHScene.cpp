@@ -25,7 +25,8 @@ using namespace cocos2d;
 LHScene::LHScene()
 {
     tracedFixtures = nullptr;
-    
+    _gameWorld = nullptr;
+    _ui = nullptr;
 //    printf("lhscene constructor\n");
 }
 
@@ -40,6 +41,9 @@ LHScene::~LHScene()
     devices.clear();
     
     CC_SAFE_RELEASE(tracedFixtures);
+    _gameWorld = nullptr;
+    _ui = nullptr;
+
 //    printf("lhscene dealloc\n");
 }
 
@@ -116,15 +120,19 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
                 tracedFixtures->retain();
             }
 
+//        this->setAnchorPoint(Point(0,1));
+        
+        _gameWorld = LHNode::createWithName("LH_GAME_WORLD_NODE");
+        _gameWorld->setLocalZOrder(0);
+//        _gameWorld->setAnchorPoint(Point(0,0));
+        
+        _gameWorld->setContentSize(sceneSize);
+        this->addChild(_gameWorld);
+        
+        _ui = LHNode::createWithName("LH_UI_NODE");
+        _ui->setLocalZOrder(1);
+        this->addChild(_ui);
 
-//        PhysicsWorld* world = PhysicsWorld::PhysicsWorld
-//        
-//        PhysicsNode* pNode = PhysicsNode::create();
-//        pNode.contentSize = self.contentSize;
-//        [pNode setDebugDraw:YES];
-//        [super addChild:pNode];
-//        physicsNode = pNode;
-//        
         
         //load background color
         Color3B backgroundClr = dict->colorForKey("backgroundColor");
@@ -171,7 +179,14 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
                              bRect.origin.y*designSize.height + offset.y,
                              bRect.size.width*designSize.width ,
                              bRect.size.height*designSize.height);
-                                
+                
+                
+//                CGRect skBRect = CGRectMake(bRect.origin.x*designSize.width + offset.x,
+//                                            self.contentSize.height - bRect.origin.y*designSize.height + offset.y,
+//                                            bRect.size.width*designSize.width ,
+//                                            -bRect.size.height*designSize.height);
+
+                
                 {
                     createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
                                                      Point(skBRect.getMaxX(), skBRect.getMinY()),
@@ -212,12 +227,12 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
             std::string key = tempString.str(); //Converts this into string;
             
             std::string rectInf;
-            if(phyBoundInfo->objectForKey(key)){
-                rectInf = phyBoundInfo->stringForKey(key);
+            if(gameWorldInfo->objectForKey(key)){
+                rectInf = gameWorldInfo->stringForKey(key);
                 
             }
             else{
-                rectInf = phyBoundInfo->stringForKey("general");
+                rectInf = gameWorldInfo->stringForKey("general");
             }
             
             if(rectInf.length() > 0){
@@ -241,7 +256,7 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         {
             LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
             
-            Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
+            Node* node = LHScene::createLHNodeWithDictionary(childInfo, _gameWorld);
             
             if(node){
                 
@@ -395,10 +410,10 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
 
 void LHScene::createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName)
 {
-    Node* drawNode = Node::create();
+    LHNode* drawNode = LHNode::createWithName(sectionName);
     PhysicsBody* boundaryBody = PhysicsBody::createEdgeSegment(from, to);
     drawNode->setPhysicsBody(boundaryBody);
-    addChild(drawNode);
+    _gameWorld->addChild(drawNode);
 }
 
 __Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
@@ -454,6 +469,13 @@ Point LHScene::getDesignOffset(){
     return designOffset;
 }
 
+LHNode* LHScene::getGameWorld(){
+    return _gameWorld;
+}
+LHNode* LHScene::getUI(){
+    return _ui;
+}
+
 Rect LHScene::getGameWorldRect(){
     return gameWorldRect;
 }
@@ -467,7 +489,7 @@ Point LHScene::positionForNode(Node* node, Point unitPos)
     
     Point designPos = Point();
     
-    if(node->getParent() == scene){// scene->physicsNode()){
+    if(node->getParent() == scene->getGameWorld()){// scene->physicsNode()){
         designPos = Point(designSize.width*unitPos.x,
                           (designSize.height - designSize.height*unitPos.y));
         designPos.x += offset.x;

@@ -40,6 +40,7 @@ public:
         
     //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
     virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
+    
 private:
 
 };

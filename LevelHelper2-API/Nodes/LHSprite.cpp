@@ -407,26 +407,6 @@ void LHSprite::visit(Renderer *renderer, const kmMat4& parentTransform, bool par
     return self;
 }
 
--(void)setSpriteFrameWithName:(NSString*)spriteFrame{
-//    if(atlas){
-//        SKTexture* texture = [atlas textureNamed:spriteFrame];
-//        if(texture){
-//            [self setTexture:texture];
-//            
-//            float xScale = [self xScale];
-//            float yScale = [self yScale];
-//            
-//            [self setXScale:1];
-//            [self setYScale:1];
-//            
-//            [self setSize:texture.size];
-//            
-//            [self setXScale:xScale];
-//            [self setYScale:yScale];
-//        }
-//    }
-}
-
 -(CCNode <LHNodeProtocol>*)childNodeWithName:(NSString*)name{
     return [LHScene childNodeWithName:name
                               forNode:self];

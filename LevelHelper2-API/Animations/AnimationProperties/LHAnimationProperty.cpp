@@ -20,6 +20,15 @@
 #include "LHRotationProperty.h"
 #include "LHChildrenRotationsProperty.h"
 
+#include "LHScaleProperty.h"
+#include "LHChildrenScalesProperty.h"
+
+#include "LHOpacityProperty.h"
+#include "LHChildrenOpacitiesProperty.h"
+
+#include "LHSpriteFrameProperty.h"
+
+
 LHAnimationProperty::~LHAnimationProperty()
 {
     _parentProperty  = NULL;
@@ -35,7 +44,7 @@ LHAnimationProperty* LHAnimationProperty::createWithDictionary(LHDictionary* dic
     
     std::string type = dict->stringForKey("type");
     
-    printf("ANIMTION PROP TYPE %s\n", type.c_str());
+//    printf("ANIMTION PROP TYPE %s\n", type.c_str());
     
     LHAnimationProperty* aProp = NULL;
     if(type == "LHPositionProperty"){
@@ -49,6 +58,21 @@ LHAnimationProperty* LHAnimationProperty::createWithDictionary(LHDictionary* dic
     }
     else if(type == "LHChildrenRotationsProperty"){
         aProp = new LHChildrenRotationsProperty();
+    }
+    else if(type == "LHScaleProperty"){
+        aProp = new LHScaleProperty();
+    }
+    else if(type == "LHChildrenScalesProperty"){
+        aProp = new LHChildrenScalesProperty();
+    }
+    else if(type == "LHOpacityProperty"){
+        aProp = new LHOpacityProperty();
+    }
+    else if(type == "LHChildrenOpacitiesProperty"){
+        aProp = new LHChildrenOpacitiesProperty();
+    }
+    else if(type == "LHSpriteFrameProperty"){
+        aProp = new LHSpriteFrameProperty();
     }
     else{
         aProp = new LHAnimationProperty();

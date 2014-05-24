@@ -30,7 +30,7 @@ LHChildrenScalesProperty::~LHChildrenScalesProperty(){
 }
 bool LHChildrenScalesProperty::initWithDictionary(LHDictionary* dict, LHAnimation* anim)
 {
-    if(LHAnimationProperty::initWithDictionary(dict, anim))
+    if(LHScaleProperty::initWithDictionary(dict, anim))
     {
         //we may have something to init in the future
         return true;
@@ -41,6 +41,8 @@ bool LHChildrenScalesProperty::initWithDictionary(LHDictionary* dict, LHAnimatio
 LHAnimationProperty* LHChildrenScalesProperty::newSubpropertyForNode(LHNodeAnimationProtocol* node)
 {
     LHScaleProperty* prop = LHScaleProperty::createWithDictionary(NULL, this->animation());
-    prop->setSubpropertyNode(node);
+    if(prop){
+        prop->setSubpropertyNode(node);
+    }
     return prop;
 }

@@ -21,6 +21,7 @@ public:
     virtual ~LHSpriteFrameProperty();
     bool initWithDictionary(LHDictionary* dict, LHAnimation* anim);
     
+    static  bool isLHSpriteFrameProperty(LHAnimationProperty* obj){return (0 != dynamic_cast<LHSpriteFrameProperty*>(obj));}
 private:
     
 };

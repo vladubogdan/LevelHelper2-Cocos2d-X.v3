@@ -32,6 +32,8 @@ LHOpacityProperty::~LHOpacityProperty(){
 }
 bool LHOpacityProperty::initWithDictionary(LHDictionary* dict, LHAnimation* anim)
 {
+    if(dict == NULL)return true; //special case for children subproperties
+    
     if(LHAnimationProperty::initWithDictionary(dict, anim))
     {
         LHArray* framesInfo = dict->arrayForKey("Frames");

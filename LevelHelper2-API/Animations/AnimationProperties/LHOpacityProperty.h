@@ -22,6 +22,7 @@ public:
     virtual ~LHOpacityProperty();
     bool initWithDictionary(LHDictionary* dict, LHAnimation* anim);
     
+    static  bool isLHOpacityProperty(LHAnimationProperty* obj){return (0 != dynamic_cast<LHOpacityProperty*>(obj));}
 private:
     
 };

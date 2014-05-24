@@ -21,6 +21,7 @@ public:
     virtual ~LHScaleProperty();
     bool initWithDictionary(LHDictionary* dict, LHAnimation* anim);
     
+    static  bool isLHScaleProperty(LHAnimationProperty* obj){return (0 != dynamic_cast<LHScaleProperty*>(obj));}
 private:
     
 };

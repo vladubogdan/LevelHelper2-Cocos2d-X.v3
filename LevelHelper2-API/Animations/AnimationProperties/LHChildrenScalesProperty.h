@@ -23,6 +23,7 @@ public:
     
     LHAnimationProperty* newSubpropertyForNode(LHNodeAnimationProtocol* node);
     
+    static  bool isLHChildrenScalesProperty(LHAnimationProperty* obj){return (0 != dynamic_cast<LHChildrenScalesProperty*>(obj));}
 private:
 };
 

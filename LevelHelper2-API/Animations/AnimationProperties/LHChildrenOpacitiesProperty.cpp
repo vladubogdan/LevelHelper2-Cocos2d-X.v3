@@ -30,7 +30,7 @@ LHChildrenOpacitiesProperty::~LHChildrenOpacitiesProperty(){
 }
 bool LHChildrenOpacitiesProperty::initWithDictionary(LHDictionary* dict, LHAnimation* anim)
 {
-    if(LHAnimationProperty::initWithDictionary(dict, anim))
+    if(LHOpacityProperty::initWithDictionary(dict, anim))
     {
         //we may have something to init in the future
         return true;

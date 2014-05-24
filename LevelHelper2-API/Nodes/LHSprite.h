@@ -37,15 +37,7 @@ public:
 
     static  bool isLHSprite(Node* obj){return (0 != dynamic_cast<LHSprite*>(obj));}
     virtual bool isSprite(){return true;}
-    
-    
-//    virtual void setOpacity(GLubyte opacity);
-//    virtual void setRotation(float rotation);
-//    virtual void setScaleX(float scaleX);
-//    virtual void setScaleY(float scaleY);
-//    virtual void setPosition(const Point& pos);
-//    virtual Scene* getScene();
-
+        
     //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
     virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
 private:

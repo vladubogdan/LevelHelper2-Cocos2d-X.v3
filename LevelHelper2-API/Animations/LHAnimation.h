@@ -124,5 +124,10 @@ private:
     void animateNodePositionToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode);
     void animateNodeChildrenRotationsToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode, LHAnimationProperty* prop);
     void animateNodeRotationToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode);
+    void animateNodeChildrenScalesToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode, LHAnimationProperty* prop);
+    void animateNodeScaleToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode);
+    void animateNodeChildrenOpacitiesToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode, LHAnimationProperty* prop);
+    void animateNodeOpacityToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode);
+    void animateSpriteFrameChangeWithFrame(LHFrame* beginFrm, LHNodeAnimationProtocol* animNode);
 };
 #endif //__LEVELHELPER_API_ANIMATION_H__

@@ -22,6 +22,7 @@ public:
     
     virtual LHAnimationProperty* newSubpropertyForNode(LHNodeAnimationProtocol* node);
     
+    static  bool isLHChildrenOpacitiesProperty(LHAnimationProperty* obj){return (0 != dynamic_cast<LHChildrenOpacitiesProperty*>(obj));}
 private:
     
 };

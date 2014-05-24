@@ -39,13 +39,18 @@ bool LHOpacityFrame::initWithDictionary(LHDictionary* dict, LHAnimationProperty*
     if(LHFrame::initWithDictionary(dict, prop))
     {
         LHDictionary* opaInfo = dict->dictForKey("opacities");
-        __Array* allKeys = opaInfo->allKeys();
-        
-        for(int i = 0; i < allKeys->count();++i)
+        if(opaInfo)
         {
-            std::string uuid = ((__String*)allKeys->getObjectAtIndex(i))->getCString();
-            float op = opaInfo->floatForKey(uuid);
-            opacities[uuid] = op;
+            __Array* allKeys = opaInfo->allKeys();
+            if(allKeys)
+            {
+                for(int i = 0; i < allKeys->count();++i)
+                {
+                    std::string uuid = ((__String*)allKeys->getObjectAtIndex(i))->getCString();
+                    float op = opaInfo->floatForKey(uuid);
+                    opacities[uuid] = op;
+                }
+            }
         }
         
         return true;

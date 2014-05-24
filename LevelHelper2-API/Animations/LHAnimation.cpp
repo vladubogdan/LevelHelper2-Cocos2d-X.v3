@@ -45,9 +45,7 @@
 
 
 LHAnimation::~LHAnimation()
-{
-    printf("animation dealloc\n");
-    
+{    
     _node = NULL;
     _scene = NULL;
     
@@ -69,13 +67,11 @@ LHAnimation* LHAnimation::createWithDictionary(LHDictionary* dict, LHNodeAnimati
 }
 LHAnimation::LHAnimation():_node(NULL),_properties(NULL),_scene(NULL)
 {
-    printf("animation constructor\n");
+
     
 }
 bool LHAnimation::initWithDictionary(LHDictionary* dict, LHNodeAnimationProtocol* n)
 {
-    printf("DID CREATE ANIMATION\n");
-    
     _node = n;
     
     _repetitions= dict->intForKey("repetitions");
@@ -293,7 +289,7 @@ void LHAnimation::updateNodeWithAnimationProperty(LHAnimationProperty* prop, flo
     {
         animateNodePositionToTime(time, beginFrm, endFrm, animNode);
     }
-    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
     else if(LHChildrenRotationsProperty::isLHChildrenRotationsProperty(prop))
     {
         animateNodeChildrenRotationsToTime(time, beginFrm, endFrm, animNode, prop);
@@ -302,43 +298,29 @@ void LHAnimation::updateNodeWithAnimationProperty(LHAnimationProperty* prop, flo
     {
         animateNodeRotationToTime(time, beginFrm, endFrm, animNode);
     }
-    
+    ////////////////////////////////////////////////////////////////////////////
+    else if(LHChildrenScalesProperty::isLHChildrenScalesProperty(prop))
+    {
+        animateNodeChildrenScalesToTime(time, beginFrm, endFrm, animNode, prop);
+    }
+    else if(LHScaleProperty::isLHScaleProperty(prop))
+    {
+        animateNodeScaleToTime(time, beginFrm, endFrm, animNode);
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    else if(LHChildrenOpacitiesProperty::isLHChildrenOpacitiesProperty(prop))
+    {
+        animateNodeChildrenOpacitiesToTime(time, beginFrm, endFrm, animNode, prop);
+    }
+    else if(LHOpacityProperty::isLHOpacityProperty(prop))
+    {
+        animateNodeOpacityToTime(time, beginFrm, endFrm, animNode);
+    }
+    else if(LHSpriteFrameProperty::isLHSpriteFrameProperty(prop))
+    {
+        animateSpriteFrameChangeWithFrame(beginFrm, animNode);
+    }
     /*
-    else if([prop isKindOfClass:[LHChildrenScalesProperty class]])
-    {
-        [self animateNodeChildrenScalesToTime:time
-                                   beginFrame:beginFrm
-                                     endFrame:endFrm
-                                         node:animNode
-                                     property:prop];
-    }
-    else if([prop isKindOfClass:[LHScaleProperty class]])
-    {
-        [self animateNodeScaleToTime:time
-                          beginFrame:beginFrm
-                            endFrame:endFrm
-                                node:animNode];
-    }
-    else if([prop isKindOfClass:[LHChildrenOpacitiesProperty class]])
-    {
-        [self animateNodeChildrenOpacitiesToTime:time
-                                      beginFrame:beginFrm
-                                        endFrame:endFrm
-                                            node:animNode
-                                        property:prop];
-    }
-    else if([prop isKindOfClass:[LHOpacityProperty class]])
-    {
-        [self animateNodeOpacityToTime:time
-                            beginFrame:beginFrm
-                              endFrame:endFrm
-                                  node:animNode];
-    }
-    else if([prop isKindOfClass:[LHSpriteFrameProperty class]])
-    {
-        [self animateSpriteFrameChangeWithFrame:beginFrm
-                                      forSprite:animNode];
-    }
     else if([prop isKindOfClass:[LHCameraActivateProperty class]] && [node isKindOfClass:[LHCamera class]])
     {
         [self animateCameraActivationWithFrame:beginFrm];
@@ -611,195 +593,255 @@ void LHAnimation::animateNodeRotationToTime(float time, LHFrame* beginFrm, LHFra
         node->setRotation(beginRotation);
     }
 }
-/*
--(void)animateNodeChildrenScalesToTime:(float)time
-                            beginFrame:(LHFrame*)beginFrm
-                              endFrame:(LHFrame*)endFrm
-                                  node:(id<LHNodeAnimationProtocol, LHNodeProtocol>)animNode
-                              property:(LHAnimationProperty*)prop
+
+void LHAnimation::animateNodeChildrenScalesToTime(float time,
+                                                  LHFrame* beginFrm,
+                                                  LHFrame* endFrm,
+                                                  LHNodeAnimationProtocol* _animNode,
+                                                  LHAnimationProperty* prop)
 {
+    LHNodeProtocol* animNode = dynamic_cast<LHNodeProtocol*>(_animNode);
+    
+    if(!animNode)
+        return;
     //here we handle scale
     LHScaleFrame* beginFrame    = (LHScaleFrame*)beginFrm;
     LHScaleFrame* endFrame      = (LHScaleFrame*)endFrm;
     
-    NSArray* children = [animNode childrenOfType:[CCNode class]];
+    __Array* children = animNode->getChildrenOfType<Node*>(NULL);
+    
     
     if(beginFrame && endFrame)
     {
-        float beginTime = [beginFrame frameNumber]*(1.0f/_fps);
-        float endTime = [endFrame frameNumber]*(1.0f/_fps);
+        float beginTime = beginFrame->frameNumber()*(1.0f/_fps);
+        float endTime   = endFrame->frameNumber()*(1.0f/_fps);
         
         float framesTimeDistance = endTime - beginTime;
         float timeUnit = (time-beginTime)/framesTimeDistance; //a value between 0 and 1
         
-        for(id<LHNodeProtocol, LHNodeAnimationProtocol> child in children){
-            if(![prop subpropertyForUUID:[child uuid]])
+        for(int i = 0; i < children->count(); ++i)
+        {
+            LHNodeProtocol* child = dynamic_cast<LHNodeProtocol*>(children->getObjectAtIndex(i));
+            if(!prop->subpropertyForUUID(child->getUuid()))
             {
-                CGSize beginScale = [beginFrame scaleForUUID:[child uuid]];
-                CGSize endScale = [endFrame scaleForUUID:[child uuid]];
+                Size beginScale = beginFrame->scaleForUUID(child->getUuid());
+                Size endScale   = endFrame->scaleForUUID(child->getUuid());
                 
                 //lets calculate the new node scale based on the start - end and unit time
                 float newX = beginScale.width + (endScale.width - beginScale.width)*timeUnit;
                 float newY = beginScale.height + (endScale.height - beginScale.height)*timeUnit;
 
+                Node* childNode = dynamic_cast<Node*>(child);
+                if(!childNode)
+                    return;
                 
-                [child setScaleX:newX];
-                [child setScaleY:newY];
+                childNode->setScaleX(newX);
+                childNode->setScaleY(newY);
             }
         }
     }
     else if(beginFrame)
     {
-        for(id<LHNodeProtocol, LHNodeAnimationProtocol> child in children){
-            if(![prop subpropertyForUUID:[child uuid]])
+        for(int i = 0; i < children->count(); ++i)
+        {
+            LHNodeProtocol* child = dynamic_cast<LHNodeProtocol*>(children->getObjectAtIndex(i));
+            if(!prop->subpropertyForUUID(child->getUuid()))
             {
-                CGSize beginScale = [beginFrame scaleForUUID:[child uuid]];
-                [child setScaleX:beginScale.width];
-                [child setScaleY:beginScale.height];
+                Size beginScale = beginFrame->scaleForUUID(child->getUuid());
+                
+                Node* childNode = dynamic_cast<Node*>(child);
+                if(!childNode)
+                    return;
+                
+                childNode->setScaleX(beginScale.width);
+                childNode->setScaleY(beginScale.height);
             }
         }
     }
 }
 
--(void)animateNodeScaleToTime:(float)time
-                   beginFrame:(LHFrame*)beginFrm
-                     endFrame:(LHFrame*)endFrm
-                         node:(id<LHNodeAnimationProtocol, LHNodeProtocol>)animNode
+void LHAnimation::animateNodeScaleToTime(float time,
+                                         LHFrame* beginFrm,
+                                         LHFrame* endFrm,
+                                         LHNodeAnimationProtocol* _animNode)
 {
+    LHNodeProtocol* animNode = dynamic_cast<LHNodeProtocol*>(_animNode);
+    
+    if(!animNode)
+        return;
+
     //here we handle scale
     LHScaleFrame* beginFrame    = (LHScaleFrame*)beginFrm;
     LHScaleFrame* endFrame      = (LHScaleFrame*)endFrm;
     
     if(beginFrame && endFrame)
     {
-        float beginTime = [beginFrame frameNumber]*(1.0f/_fps);
-        float endTime = [endFrame frameNumber]*(1.0f/_fps);
+        float beginTime = beginFrame->frameNumber()*(1.0f/_fps);
+        float endTime   = endFrame->frameNumber()*(1.0f/_fps);
         
         float framesTimeDistance = endTime - beginTime;
         float timeUnit = (time-beginTime)/framesTimeDistance; //a value between 0 and 1
         
-        CGSize beginScale = [beginFrame scaleForUUID:[animNode uuid]];
-        CGSize endScale = [endFrame scaleForUUID:[animNode uuid]];
+        Size beginScale = beginFrame->scaleForUUID(animNode->getUuid());
+        Size endScale   = endFrame->scaleForUUID(animNode->getUuid());
         
         //lets calculate the new node scale based on the start - end and unit time
         float newX = beginScale.width + (endScale.width - beginScale.width)*timeUnit;
         float newY = beginScale.height + (endScale.height - beginScale.height)*timeUnit;
         
-        [animNode setScaleX:newX];
-        [animNode setScaleY:newY];
+        Node* node = dynamic_cast<Node*>(animNode);
+        if(!node)
+            return;
+        
+        node->setScaleX(newX);
+        node->setScaleY(newY);
     }
     else if(beginFrame)
     {
-        CGSize beginScale = [beginFrame scaleForUUID:[animNode uuid]];
-        [animNode setScaleX:beginScale.width];
-        [animNode setScaleY:beginScale.height];
+        Size beginScale = beginFrame->scaleForUUID(animNode->getUuid());
+        
+        Node* node = dynamic_cast<Node*>(animNode);
+        if(!node)
+            return;
+        
+        node->setScaleX(beginScale.width);
+        node->setScaleY(beginScale.height);
     }
 }
 
 
--(void)animateNodeChildrenOpacitiesToTime:(float)time
-                               beginFrame:(LHFrame*)beginFrm
-                                 endFrame:(LHFrame*)endFrm
-                                     node:(id<LHNodeAnimationProtocol, LHNodeProtocol>)animNode
-                                 property:(LHAnimationProperty*)prop
+void LHAnimation::animateNodeChildrenOpacitiesToTime(float time,
+                                                     LHFrame* beginFrm,
+                                                     LHFrame* endFrm,
+                                                     LHNodeAnimationProtocol* _animNode,
+                                                     LHAnimationProperty* prop)
 {
+    LHNodeProtocol* animNode = dynamic_cast<LHNodeProtocol*>(_animNode);
+    
+    if(!animNode)
+        return;
+    
     //here we handle sprites opacity
     LHOpacityFrame* beginFrame    = (LHOpacityFrame*)beginFrm;
     LHOpacityFrame* endFrame      = (LHOpacityFrame*)endFrm;
     
-    NSArray* children = [node childrenOfType:[CCNode class]];
+    __Array* children = animNode->getChildrenOfType<Node*>(NULL);
     
     if(beginFrame && endFrame)
     {
-        float beginTime = [beginFrame frameNumber]*(1.0f/_fps);
-        float endTime = [endFrame frameNumber]*(1.0f/_fps);
+        float beginTime = beginFrame->frameNumber()*(1.0f/_fps);
+        float endTime   = endFrame->frameNumber()*(1.0f/_fps);
         
         float framesTimeDistance = endTime - beginTime;
         float timeUnit = (time-beginTime)/framesTimeDistance; //a value between 0 and 1
         
-        for(id<LHNodeProtocol, LHNodeAnimationProtocol> child in children){
-            if(![prop subpropertyForUUID:[child uuid]])
+        for(int i = 0; i < children->count(); ++i)
+        {
+            LHNodeProtocol* child = dynamic_cast<LHNodeProtocol*>(children->getObjectAtIndex(i));
+            if(!prop->subpropertyForUUID(child->getUuid()))
             {
-                float beginValue = [beginFrame opacityForUUID:[child uuid]];
-                float endValue = [endFrame opacityForUUID:[child uuid]];
+                float beginValue = beginFrame->opacityForUUID(child->getUuid());
+                float endValue   = endFrame->opacityForUUID(child->getUuid());
                 
                 //lets calculate the new value based on the start - end and unit time
                 float newValue = beginValue + (endValue - beginValue)*timeUnit;
                 
-                [child setOpacity:newValue/255.0f];
+                Node* childNode = dynamic_cast<Node*>(child);
+                if(!childNode)
+                    return;
+                
+                childNode->setOpacity(newValue);
             }
         }
     }
     else if(beginFrame)
     {
-        for(id<LHNodeProtocol, LHNodeAnimationProtocol> child in children){
-            if(![prop subpropertyForUUID:[child uuid]])
+        for(int i = 0; i < children->count(); ++i)
+        {
+            LHNodeProtocol* child = dynamic_cast<LHNodeProtocol*>(children->getObjectAtIndex(i));
+            if(!prop->subpropertyForUUID(child->getUuid()))
             {
                 //we only have begin frame so lets set value based on this frame
-                float beginValue = [beginFrame opacityForUUID:[child uuid]];
-                [child setOpacity:beginValue/255.0f];
+                float beginValue = beginFrame->opacityForUUID(child->getUuid());
+                
+                Node* childNode = dynamic_cast<Node*>(child);
+                if(!childNode)
+                    return;
+
+                childNode->setOpacity(beginValue);
             }
         }
     }
 }
 
-
--(void)animateNodeOpacityToTime:(float)time
-                     beginFrame:(LHFrame*)beginFrm
-                       endFrame:(LHFrame*)endFrm
-                           node:(id<LHNodeAnimationProtocol, LHNodeProtocol>)animNode
+void LHAnimation::animateNodeOpacityToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* _animNode)
 {
+    LHNodeProtocol* animNode = dynamic_cast<LHNodeProtocol*>(_animNode);
+    
+    if(!animNode)
+        return;
+    
     //here we handle sprites opacity
     LHOpacityFrame* beginFrame    = (LHOpacityFrame*)beginFrm;
     LHOpacityFrame* endFrame      = (LHOpacityFrame*)endFrm;
     
     if(beginFrame && endFrame)
     {
-        float beginTime = [beginFrame frameNumber]*(1.0f/_fps);
-        float endTime = [endFrame frameNumber]*(1.0f/_fps);
+        float beginTime = beginFrame->frameNumber()*(1.0f/_fps);
+        float endTime   = endFrame->frameNumber()*(1.0f/_fps);
         
         float framesTimeDistance = endTime - beginTime;
         float timeUnit = (time-beginTime)/framesTimeDistance; //a value between 0 and 1
         
-        float beginValue = [beginFrame opacityForUUID:[animNode uuid]];
-        float endValue = [endFrame opacityForUUID:[animNode uuid]];
+        float beginValue = beginFrame->opacityForUUID(animNode->getUuid());
+        float endValue  = endFrame->opacityForUUID(animNode->getUuid());
         
         //lets calculate the new value based on the start - end and unit time
         float newValue = beginValue + (endValue - beginValue)*timeUnit;
-                
-        [animNode setOpacity:newValue/255.0f];
+        
+        Node* node = dynamic_cast<Node*>(animNode);
+        if(!node)
+            return;
+        
+        node->setOpacity(newValue);
     }
     else if(beginFrame)
     {
         //we only have begin frame so lets set value based on this frame
-        float beginValue = [beginFrame opacityForUUID:[animNode uuid]];
-        [animNode setOpacity:beginValue/255.0f];
+        float beginValue = beginFrame->opacityForUUID(animNode->getUuid());
+        
+        Node* node = dynamic_cast<Node*>(animNode);
+        if(!node)
+            return;
+
+        node->setOpacity(beginValue);
     }
 }
 
--(void)animateSpriteFrameChangeWithFrame:(LHFrame*)beginFrm
-                               forSprite:(id<LHNodeAnimationProtocol, LHNodeProtocol>)animNode
+void LHAnimation::animateSpriteFrameChangeWithFrame(LHFrame* beginFrm, LHNodeAnimationProtocol* _animNode)
 {
-    LHSprite* sprite = [animNode isKindOfClass:[LHSprite class]] ? (LHSprite*)animNode : nil;
-    if(!sprite)return;
+    LHSprite* sprite = dynamic_cast<LHSprite*>(_animNode);
+    
+    if(!sprite)
+        return;
     
     LHSpriteFrame* beginFrame = (LHSpriteFrame*)beginFrm;
     if(beginFrame && sprite)
     {
-        if(animating)
+        if(_animating)
         {
-            if(![beginFrame wasShot])
+            if(!beginFrame->wasShot())
             {
-                [sprite setSpriteFrameWithName:[beginFrame spriteFrameName]];
-                [beginFrame setWasShot:YES];
+                sprite->setSpriteFrame(beginFrame->spriteFrameName());
+                beginFrame->setWasShot(true);
             }
         }
         else{
-            [sprite setSpriteFrameWithName:[beginFrame spriteFrameName]];
+            sprite->setSpriteFrame(beginFrame->spriteFrameName());
         }
     }
 }
-
+/*
 -(void)animateCameraActivationWithFrame:(LHFrame*)beginFrm
 {
     LHFrame* beginFrame = (LHFrame*)beginFrm;

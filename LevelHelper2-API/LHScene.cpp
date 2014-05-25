@@ -15,6 +15,7 @@
 #include "LHNode.h"
 #include "LHCamera.h"
 #include "LHBezier.h"
+#include "LHShape.h"
 
 #include <sstream>
 using namespace std;
@@ -176,10 +177,10 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
                 Size designSize = getDesignResolutionSize();
                 Point offset = getDesignOffset();
                 Rect skBRect(bRect.origin.x*designSize.width + offset.x,
-                             bRect.origin.y*designSize.height + offset.y,
+                             getContentSize().height -  bRect.origin.y*designSize.height + offset.y,
                              bRect.size.width*designSize.width ,
-                             bRect.size.height*designSize.height);
-                
+                             -bRect.size.height*designSize.height);
+                                
                 {
                     createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
                                                      Point(skBRect.getMaxX(), skBRect.getMinY()),
@@ -238,20 +239,20 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
                                      bRect.size.width*designSize.width ,
                                      -(bRect.size.height)*designSize.height);
                                 
-                DrawNode* gw = DrawNode::create();
-                
-                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()),
-                                Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
-                
-                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()),
-                                                 Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
-                
-                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()),
-                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
-                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()),
-                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
-
-                _gameWorld->addChild(gw);
+//                DrawNode* gw = DrawNode::create();
+//                
+//                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()),
+//                                Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
+//                
+//                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()),
+//                                                 Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
+//                
+//                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()),
+//                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
+//                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()),
+//                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
+//
+//                _gameWorld->addChild(gw);
             }
         }
         
@@ -298,6 +299,116 @@ LHScene *LHScene::createWithContentOfFile(const std::string& plistLevelFile)
     }
 }
 
+//const kmMat4& LHScene::getParentToNodeTransform() const
+//{
+//    if ( _inverseDirty ) {
+//        
+//        kmMat4 temp_transform = getNodeToParentTransformTest();
+//        
+//        kmMat4Inverse(&_inverse, &temp_transform);
+//        _inverseDirty = false;
+//    }
+//    
+//    return _inverse;
+//}
+//
+//
+//kmMat4& LHScene::getNodeToParentTransformTest() const
+//{
+//    kmMat4 temp_transform;
+//    
+//        // Translate values
+//        float x = 0;//_position.x;
+//        float y = 0;// _position.y;
+//        float z = _positionZ;
+//        
+//        if (_ignoreAnchorPointForPosition)
+//        {
+//            x += _anchorPointInPoints.x;
+//            y += _anchorPointInPoints.y;
+//        }
+//        
+//        // Rotation values
+//		// Change rotation code to handle X and Y
+//		// If we skew with the exact same value for both x and y then we're simply just rotating
+//        float cx = 1, sx = 0, cy = 1, sy = 0;
+//        if (_rotationZ_X || _rotationZ_Y)
+//        {
+//            float radiansX = -CC_DEGREES_TO_RADIANS(_rotationZ_X);
+//            float radiansY = -CC_DEGREES_TO_RADIANS(_rotationZ_Y);
+//            cx = cosf(radiansX);
+//            sx = sinf(radiansX);
+//            cy = cosf(radiansY);
+//            sy = sinf(radiansY);
+//        }
+//        
+//        bool needsSkewMatrix = ( _skewX || _skewY );
+//        
+//        
+//        // optimization:
+//        // inline anchor point calculation if skew is not needed
+//        // Adjusted transform calculation for rotational skew
+//        if (! needsSkewMatrix && !_anchorPointInPoints.equals(Point::ZERO))
+//        {
+//            x += cy * -_anchorPointInPoints.x * _scaleX + -sx * -_anchorPointInPoints.y * _scaleY;
+//            y += sy * -_anchorPointInPoints.x * _scaleX +  cx * -_anchorPointInPoints.y * _scaleY;
+//        }
+//        
+//        
+//        // Build Transform Matrix
+//        // Adjusted transform calculation for rotational skew
+//        kmScalar mat[] = {
+//            cy * _scaleX,   sy * _scaleX,   0,          0,
+//            -sx * _scaleY,  cx * _scaleY,   0,          0,
+//            0,              0,              _scaleZ,    0,
+//            x,              y,              z,          1 };
+//        
+//        kmMat4Fill(&temp_transform, mat);
+//        
+//        // XXX
+//        // FIX ME: Expensive operation.
+//        // FIX ME: It should be done together with the rotationZ
+//        if(_rotationY) {
+//            kmMat4 rotY;
+//            kmMat4RotationY(&rotY,CC_DEGREES_TO_RADIANS(_rotationY));
+//            kmMat4Multiply(&temp_transform, &temp_transform, &rotY);
+//        }
+//        if(_rotationX) {
+//            kmMat4 rotX;
+//            kmMat4RotationX(&rotX,CC_DEGREES_TO_RADIANS(_rotationX));
+//            kmMat4Multiply(&temp_transform, &temp_transform, &rotX);
+//        }
+//        
+//        // XXX: Try to inline skew
+//        // If skew is needed, apply skew and then anchor point
+////        if (needsSkewMatrix)
+////        {
+////            kmMat4 skewMatrix = { 1, (float)tanf(CC_DEGREES_TO_RADIANS(_skewY)), 0, 0,
+////                (float)tanf(CC_DEGREES_TO_RADIANS(_skewX)), 1, 0, 0,
+////                0,  0,  1, 0,
+////                0,  0,  0, 1};
+////            
+////            kmMat4Multiply(&temp_transform, &temp_transform, &skewMatrix);
+////            
+////            // adjust anchor point
+////            if (!_anchorPointInPoints.equals(Point::ZERO))
+////            {
+////                // XXX: Argh, kmMat needs a "translate" method.
+////                // XXX: Although this is faster than multiplying a vec4 * mat4
+////                temp_transform.mat[12] += temp_transform.mat[0] * -_anchorPointInPoints.x + temp_transform.mat[4] * -_anchorPointInPoints.y;
+////                temp_transform.mat[13] += temp_transform.mat[1] * -_anchorPointInPoints.x + temp_transform.mat[5] * -_anchorPointInPoints.y;
+////            }
+////        }
+//    
+//        if (_useAdditionalTransform)
+//        {
+//            kmMat4Multiply(&temp_transform, &temp_transform, &_additionalTransform);
+//        }
+//            
+//    return temp_transform;
+//}
+
+
 Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
 {
     
@@ -332,12 +443,11 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
         LHBezier* bez = LHBezier::bezierNodeWithDictionary(childInfo, prnt);
         return bez;
     }
-//    else if([nodeType isEqualToString:@"LHTexturedShape"])
-//    {
-//        LHShape* sp = [LHShape shapeNodeWithDictionary:childInfo
-//                                                parent:prnt];
-//        return sp;
-//    }
+    else if(nodeType == "LHTexturedShape")
+    {
+        LHShape* sp = LHShape::shapeNodeWithDictionary(childInfo, prnt);
+        return sp;
+    }
 //    else if([nodeType isEqualToString:@"LHWaves"])
 //    {
 //        LHWater* wt = [LHWater waterNodeWithDictionary:childInfo
@@ -428,37 +538,6 @@ __Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
     return (__Array*)tracedFixtures->objectForKey(uuid);
 }
 
-
-
-
-//Texture2D* LHScene::textureWithImagePath(const std::string& imagePath)
-//{
-//    if(!loadedTextures){
-//        loadedTextures = __Dictionary::create();
-//    }
-//    
-//    Texture2D* texture = NULL;
-//    if(imagePath.length()>0){
-//        texture = (Texture2D*)loadedTextures->objectForKey(imagePath);
-//        if(!texture){
-//            Texture2D::create
-//            texture = [CCTexture textureWithFile:imagePath];
-//            if(texture){
-//                [loadedTextures setObject:texture forKey:imagePath];
-//            }
-//        }
-//    }
-//    
-//    return texture;
-//}
-//
-std::string LHScene::imagePathWithFilename(const std::string& filename,
-                                           const std::string& folder,
-                                           const std::string& suffix)
-{
-    return folder + suffix + "/" + filename;
-}
-
 std::string LHScene::getCurrentDeviceSuffix()
 {
     LHDevice* dev = LHDevice::currentDeviceFromArray(devices);
@@ -496,7 +575,8 @@ Point LHScene::positionForNode(Node* node, Point unitPos)
     
     Point designPos = Point();
     
-    if(node->getParent() == scene->getGameWorld()){// scene->physicsNode()){
+    if(node->getParent() == scene->getGameWorld() || node->getParent() == scene){// scene->physicsNode()){
+        
         designPos = Point(designSize.width*unitPos.x,
                           (designSize.height - designSize.height*unitPos.y));
         designPos.x += offset.x;

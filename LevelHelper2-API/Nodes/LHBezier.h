@@ -22,7 +22,6 @@ Users can retrieve a bezier objects by calling the scene (LHScene) childNodeWith
 */
 
 class LHDictionary;
-class LHScene;
 
 class LHBezier : public DrawNode, public LHNodeProtocol, public LHNodeAnimationProtocol
 {

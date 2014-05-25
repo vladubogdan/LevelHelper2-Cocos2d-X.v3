@@ -7,7 +7,7 @@
 //
 
 #include "LHSprite.h"
-//#import "LHUtils.h"
+#include "LHUtils.h"
 #include "LHScene.h"
 #include "LHDictionary.h"
 #include "LHArray.h"
@@ -29,9 +29,12 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     std::string imageFile = dict->stringForKey("imageFileName");
     std::string relativeImgPath = dict->stringForKey("relativeImagePath");
     
-    std::string imagePath = LHScene::imagePathWithFilename(imageFile,
-                                                           relativeImgPath,
-                                                           scene->getCurrentDeviceSuffix());
+    CCLOG("IMAGE FILE %s", imageFile.c_str());
+    CCLOG("IMG PATH %s", relativeImgPath.c_str());
+    
+    std::string imagePath = LHUtils::getImagePathWithFilename(imageFile,
+                                                              relativeImgPath,
+                                                              scene->getCurrentDeviceSuffix());
 
     bool initResult = false;
     

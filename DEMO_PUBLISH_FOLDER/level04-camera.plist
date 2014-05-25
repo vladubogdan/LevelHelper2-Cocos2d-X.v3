@@ -4353,7 +4353,7 @@
 		<string>{{-0.75422888994216919, -0.77031594514846802}, {2.512444019317627, 2.2956357002258301}}</string>
 	</dict>
 	<key>globalGravityDirection</key>
-	<string>{0, -1}</string>
+	<string>{-4.3711390001862412e-08, 0.999999999999999}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
 	<key>nodeType</key>

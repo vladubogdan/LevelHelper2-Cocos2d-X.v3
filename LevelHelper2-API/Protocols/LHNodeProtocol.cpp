@@ -11,7 +11,7 @@
 #include "LHArray.h"
 #include "LHScene.h"
 #include "LHUserProperties.h"
-
+#include "LHShape.h"
 #include "LHBezier.h"
 
 LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
@@ -151,47 +151,50 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
             }
             CC_SAFE_DELETE(prevPt);
         }
-//        else if([node isKindOfClass:[LHShape class]])
-//        {
-//            NSArray* points = [(LHShape*)node outlinePoints];
-//            
-//            NSValue* firstValue = nil;
-//            NSValue* prevValue = nil;
-//            for(NSValue* val in points){
-//                
-//                if(prevValue)
-//                {
-//                    CGPoint ptA = CGPointFromValue(prevValue);
-//                    CGPoint ptB = CGPointFromValue(val);
-//                    CCPhysicsShape* shape = [CCPhysicsShape pillShapeFrom:ptA
-//                                                                       to:ptB
-//                                                             cornerRadius:0];
-//                    [fixShapes addObject:shape];
-//                }
-//                
-//                if(nil == firstValue){
-//                    firstValue = val;
-//                }
-//                prevValue = val;
-//            }
-//            
-//            //close the shape
-//            if(prevValue && firstValue){
-//                CGPoint ptA = CGPointFromValue(prevValue);
-//                CGPoint ptB = CGPointFromValue(firstValue);
-//                CCPhysicsShape* shape = [CCPhysicsShape pillShapeFrom:ptA
-//                                                                   to:ptB
-//                                                         cornerRadius:0];
-//                [fixShapes addObject:shape];
-//            }
-//            
-//            node.physicsBody =  [CCPhysicsBody bodyWithShapes:fixShapes];
-//        }
-//        else{
+        else if(LHShape::isLHShape(node))
+        {
+            LHShape* shape = dynamic_cast<LHShape*>(node);
+            
+            std::vector<Point> points = shape->outlinePoints();
+            
+            PhysicsBody* body = PhysicsBody::create();
+            node->setPhysicsBody(body);
+
+            Point* firstPt = nullptr;
+            Point* prevPt = nullptr;
+            
+            for(size_t i = 0; i < points.size(); ++i)
+            {
+                Point ptB = points[i];
+            
+                if(prevPt)
+                {
+                    PhysicsShapeEdgeSegment* shape = PhysicsShapeEdgeSegment::create(Point(prevPt->x, prevPt->y), ptB);
+                    fixShapes->addObject(shape);
+                    body->addShape(shape);
+                }
+                
+                if(nullptr == firstPt){
+                    firstPt = new Point(ptB);
+                }
+                CC_SAFE_DELETE(prevPt);
+                prevPt = new Point(ptB);
+            }
+            
+            //close the shape
+            if(prevPt && firstPt){
+                
+                PhysicsShapeEdgeSegment* shape = PhysicsShapeEdgeSegment::create(Point(prevPt->x, prevPt->y), Point(firstPt->x, firstPt->y));
+                fixShapes->addObject(shape);
+                body->addShape(shape);
+            }
+            CC_SAFE_DELETE(prevPt);
+            CC_SAFE_DELETE(firstPt);
+        }
+        else{
             type = 0;
             node->setPhysicsBody(PhysicsBody::createEdgeBox(node->getContentSize()));
-//        }
-        
+        }
     }
     else if(shape == 4)//OVAL
     {
@@ -210,35 +213,41 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
     else if(shape == 2)//POLYGON
     {
         
-//        if([node isKindOfClass:[LHShape class]])
-//        {
-//            NSArray* trianglePoints = [(LHShape*)node trianglePoints];
-//            
-//            for(int i = 0; i < [trianglePoints count]; i+=3)
-//            {
-//                NSValue* valA = [trianglePoints objectAtIndex:i];
-//                NSValue* valB = [trianglePoints objectAtIndex:i+1];
-//                NSValue* valC = [trianglePoints objectAtIndex:i+2];
-//                
-//                CGPoint ptA = CGPointFromValue(valA);
-//                CGPoint ptB = CGPointFromValue(valB);
-//                CGPoint ptC = CGPointFromValue(valC);
-//                
-//                CGPoint points[3];
-//                
-//                points[0] = ptA;
-//                points[1] = ptB;
-//                points[2] = ptC;
-//                
-//                
-//                CCPhysicsShape* shape = [CCPhysicsShape polygonShapeWithPoints:points count:3 cornerRadius:0];
-//                [fixShapes addObject:shape];
-//            }
-//        }
+        if(LHShape::isLHShape(node))
+        {
+            LHShape* shape = dynamic_cast<LHShape*>(node);
+            std::vector<Point> trianglePoints = shape->trianglePoints();
+
+            PhysicsBody* body = PhysicsBody::create();
+            node->setPhysicsBody(body);
+
+            for(size_t i = 0; i < trianglePoints.size(); i+=3)
+            {
+                
+                Point ptA = trianglePoints[i];
+                Point ptB = trianglePoints[i+1];
+                Point ptC = trianglePoints[i+2];
+                
+                Point* points = new Point[3];
+                
+                points[0] = ptA;
+                points[1] = ptB;
+                points[2] = ptC;
+                
+                PhysicsShapePolygon* p_shape =  PhysicsShapePolygon::create(points, 3);
+                body->addShape(p_shape);
+                fixShapes->addObject(p_shape);
+                
+                delete[] points;
+            }
+        }
     }
     
     if(fixturesInfo)
     {
+        PhysicsBody* body = PhysicsBody::create();
+        node->setPhysicsBody(body);
+
         for(int f = 0; f < fixturesInfo->count(); ++f)
         {
             LHArray* fixPoints = (LHArray*)fixturesInfo->getObjectAtIndex(f);
@@ -258,35 +267,27 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
             
             PhysicsShapePolygon* shape = PhysicsShapePolygon::create(points, count);
             fixShapes->addObject(shape);
+            body->addShape(shape);
             
             delete[] points;
         }
     }
-    if(fixShapes->count() > 0){
-        
-        PhysicsBody* body = PhysicsBody::create();
-
-        for(int i = 0; i < fixShapes->count(); ++i)
-        {
-            PhysicsShape* shape = (PhysicsShape*)fixShapes->getObjectAtIndex(i);
-            body->addShape(shape);
-        }
-        
-        node->setPhysicsBody(body);
-    }
 
     CC_SAFE_DELETE(fixShapes);
     
-    if(type == 0)//static
+    if(node->getPhysicsBody())
     {
-        node->getPhysicsBody()->setDynamic(false);
-    }
-    else if(type == 1)//kinematic
-    {
-    }
-    else if(type == 2)//dynamic
-    {
-        node->getPhysicsBody()->setDynamic(true);
+        if(type == 0)//static
+        {
+            node->getPhysicsBody()->setDynamic(false);
+        }
+        else if(type == 1)//kinematic
+        {
+        }
+        else if(type == 2)//dynamic
+        {
+            node->getPhysicsBody()->setDynamic(true);
+        }
     }
     
     LHDictionary* fixInfo = dict->dictForKey("genericFixture");
@@ -308,8 +309,8 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
                 
                 //setting density causes weird behaviour - WHY?
 //                shp->setDensity(fixInfo->floatForKey("density"));
-                shp->setFriction(fixInfo->floatForKey("friction"));
-                shp->setRestitution(fixInfo->floatForKey("restitution"));
+//                shp->setFriction(fixInfo->floatForKey("friction"));
+//                shp->setRestitution(fixInfo->floatForKey("restitution"));
 
 //                shp->setCollisionBitmask(mask);
 //                shp->setCategoryBitmask(category);

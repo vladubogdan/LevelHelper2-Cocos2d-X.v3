@@ -15,12 +15,13 @@
 #include "LHSprite.h"
 #include "LHCamera.h"
 #include "LHBezier.h"
+#include "LHShape.h"
 
 //#import "LHAsset.h"
 //#import "LHParallax.h"
 //#import "LHParallaxLayer.h"
 //#import "LHRopeJointNode.h"
-//#import "LHShape.h"
+
 //#import "LHWater.h"
 //#import "LHAnimation.h"
 //#import "LHDistanceJointNode.h"

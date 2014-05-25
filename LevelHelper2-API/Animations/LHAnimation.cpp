@@ -348,7 +348,7 @@ Point LHAnimation::convertFramePosition(Point newPos, Node* animNode)
     LHScene* scene = this->scene();
     Point offset = scene->getDesignOffset();
     Node* p = animNode->getParent();
-    if(p == scene->getGameWorld())// LHScene::isLHScene(p))// [p isKindOfClass:[CCPhysicsNode class]])
+    if(p == scene->getGameWorld() || p == scene)// LHScene::isLHScene(p))// [p isKindOfClass:[CCPhysicsNode class]])
     {
         newPos.x += offset.x;
         newPos.y += offset.y;

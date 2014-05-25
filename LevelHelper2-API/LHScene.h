@@ -33,10 +33,6 @@ public:
     virtual ~LHScene();
     virtual bool initWithContentOfFile(const std::string& plistLevelFile);
     
-    static std::string imagePathWithFilename(const std::string& filename,
-                                             const std::string& folder,
-                                             const std::string& suffix);
-    
     std::string getCurrentDeviceSuffix();
     Size        getDesignResolutionSize();
     Point       getDesignOffset();
@@ -52,6 +48,11 @@ public:
     virtual bool isScene(){return true;};
     
     __Array* tracedFixturesWithUUID(const std::string& uuid);
+    
+//    const kmMat4& getParentToNodeTransform() const;
+//    const kmMat4& getNodeToParentTransform() const;
+//    kmMat4& getNodeToParentTransformTest() const;
+    
 private:
     
     friend class LHSprite;
@@ -59,6 +60,7 @@ private:
     friend class LHNodeProtocol;
     friend class LHBezier;
     friend class LHCamera;
+    friend class LHShape;
     
     LHNode* _gameWorld;
     LHNode* _ui;

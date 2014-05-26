@@ -16,8 +16,8 @@
 #include "LHCamera.h"
 #include "LHBezier.h"
 #include "LHShape.h"
+#include "LHAsset.h"
 
-//#import "LHAsset.h"
 //#import "LHParallax.h"
 //#import "LHParallaxLayer.h"
 //#import "LHRopeJointNode.h"

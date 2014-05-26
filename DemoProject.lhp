@@ -18,7 +18,7 @@
 			<key>SuffixName</key>
 			<string>hd</string>
 			<key>color</key>
-			<string>{{0.03961944580078125, 0}, {0.040756326168775558, 1}}</string>
+			<string>{{0.039482332766056061, 0}, {0.040751367807388306, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -46,7 +46,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.034902609884738922, 0}, {0.13282826542854309, 1}}</string>
+			<string>{{0.03773229569196701, 0}, {0.077398493885993958, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -60,7 +60,7 @@
 			<key>SuffixName</key>
 			<string>ipadhd</string>
 			<key>color</key>
-			<string>{{0.034902609884738922, 0}, {0.13282826542854309, 1}}</string>
+			<string>{{0.03773229569196701, 0}, {0.077398493885993958, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -99,6 +99,11 @@
 					<true/>
 				</dict>
 				<key>level05-shape.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level06-assets.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

@@ -16,6 +16,8 @@
 #include "LHCamera.h"
 #include "LHBezier.h"
 #include "LHShape.h"
+#include "LHAsset.h"
+#include "LHUtils.h"
 
 #include <sstream>
 using namespace std;
@@ -25,6 +27,7 @@ using namespace cocos2d;
 
 LHScene::LHScene()
 {
+    _loadedAssetsInformations = nullptr;
     tracedFixtures = nullptr;
     _gameWorld = nullptr;
     _ui = nullptr;
@@ -45,6 +48,8 @@ LHScene::~LHScene()
     _gameWorld = nullptr;
     _ui = nullptr;
 
+    CC_SAFE_DELETE(_loadedAssetsInformations);
+    
 //    printf("lhscene dealloc\n");
 }
 
@@ -448,6 +453,11 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
         LHShape* sp = LHShape::shapeNodeWithDictionary(childInfo, prnt);
         return sp;
     }
+    else if(nodeType == "LHAsset")
+    {
+        LHAsset* as = LHAsset::assetNodeWithDictionary(childInfo, prnt);
+        return as;
+    }
 //    else if([nodeType isEqualToString:@"LHWaves"])
 //    {
 //        LHWater* wt = [LHWater waterNodeWithDictionary:childInfo
@@ -471,12 +481,6 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
 //        LHParallaxLayer* lh = [LHParallaxLayer parallaxLayerWithDictionary:childInfo
 //                                                                    parent:prnt];
 //        return lh;
-//    }
-//    else if([nodeType isEqualToString:@"LHAsset"])
-//    {
-//        LHAsset* as = [LHAsset assetWithDictionary:childInfo
-//                                            parent:prnt];
-//        return as;
 //    }
 //    else if([nodeType isEqualToString:@"LHRopeJoint"])
 //    {
@@ -565,6 +569,31 @@ LHNode* LHScene::getUI(){
 Rect LHScene::getGameWorldRect(){
     return gameWorldRect;
 }
+
+__Dictionary* LHScene::assetInfoForFile(const std::string& assetFileName)
+{
+    if(!_loadedAssetsInformations){
+        _loadedAssetsInformations = new __Dictionary();
+        _loadedAssetsInformations->init();
+    }
+    
+    __Dictionary* info = (__Dictionary*)_loadedAssetsInformations->objectForKey(assetFileName);
+    if(!info){
+        
+        std::string folder = LHUtils::removeLastPathComponent(this->getName());
+        
+        std::string path = FileUtils::getInstance()->fullPathForFilename(folder + assetFileName + ".plist");
+        
+        if(path.length()>0){
+            info =  __Dictionary::createWithContentsOfFile(path.c_str());
+            if(info){
+                _loadedAssetsInformations->setObject(info, assetFileName);
+            }
+        }
+    }
+    return info;
+}
+
 
 Point LHScene::positionForNode(Node* node, Point unitPos)
 {
@@ -939,25 +968,6 @@ Point LHScene::positionForNode(Node* node, Point unitPos)
 
 -(CGRect)gameWorldRect{
     return gameWorldRect;
-}
-
--(NSDictionary*)assetInfoForFile:(NSString*)assetFileName{
-    if(!_loadedAssetsInformations){
-        _loadedAssetsInformations = [[NSMutableDictionary alloc] init];
-    }
-    NSDictionary* info = [_loadedAssetsInformations objectForKey:assetFileName];
-    if(!info){
-        NSString* path = [[NSBundle mainBundle] pathForResource:assetFileName
-                                                         ofType:@"plist"
-                                                    inDirectory:[self relativePath]];
-        if(path){
-            info = [NSDictionary dictionaryWithContentsOfFile:path];
-            if(info){
-                [_loadedAssetsInformations setObject:info forKey:assetFileName];
-            }
-        }
-    }
-    return info;
 }
 
 //#if TARGET_OS_IPHONE

@@ -103,6 +103,7 @@ class LHNodeProtocol
     
     virtual bool isScene(){return false;}
     virtual bool isSprite(){return false;}
+    virtual bool isAsset(){return false;}
     virtual bool isNode(){return false;}
     virtual bool isBezier(){return false;}
     virtual bool isShape(){return false;}

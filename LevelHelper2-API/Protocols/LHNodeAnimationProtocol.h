@@ -30,14 +30,17 @@ public:
     LHNodeAnimationProtocol();
     virtual ~LHNodeAnimationProtocol();
     
-
     /**
      Set the active animation on a node.
      @param animation The animation that is about to get activated.
      */
     virtual void setActiveAnimation(LHAnimation* animation);
 
-    
+    /**
+     Get the animation with a specific name or nullptr if not found.
+     @param animName The name of the animation.
+     */
+    virtual LHAnimation* getAnimationWithName(const std::string& animName);
     
     virtual void createAnimationsFromDictionary(LHDictionary* dict);
     virtual void visitActiveAnimation();

@@ -37,7 +37,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 //    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level03-characterAnimation.plist");
     //BUG IN COCOS2D-X v3.x please see discussion https://github.com/cocos2d/cocos2d-x/pull/5493
 //    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level04-camera.plist");
-    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level05-shape.plist");
+//    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level05-shape.plist");
+    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level06-assets.plist");
     
     // run
     director->runWithScene(scene);

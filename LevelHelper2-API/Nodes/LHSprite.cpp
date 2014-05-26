@@ -29,9 +29,6 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     std::string imageFile = dict->stringForKey("imageFileName");
     std::string relativeImgPath = dict->stringForKey("relativeImagePath");
     
-    CCLOG("IMAGE FILE %s", imageFile.c_str());
-    CCLOG("IMG PATH %s", relativeImgPath.c_str());
-    
     std::string imagePath = LHUtils::getImagePathWithFilename(imageFile,
                                                               relativeImgPath,
                                                               scene->getCurrentDeviceSuffix());

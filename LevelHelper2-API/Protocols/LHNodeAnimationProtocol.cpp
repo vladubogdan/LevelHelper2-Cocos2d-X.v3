@@ -27,6 +27,16 @@ void LHNodeAnimationProtocol::setActiveAnimation(LHAnimation* animation)
     _activeAnimation = animation;
 }
 
+LHAnimation* LHNodeAnimationProtocol::getAnimationWithName(const std::string& animName)
+{
+    for(int i = 0; i < _animations->count();++i){
+        LHAnimation* anim = (LHAnimation*)_animations->getObjectAtIndex(i);
+        if(anim->name() == animName){
+            return anim;
+        }
+    }
+    return nullptr;
+}
 
 void LHNodeAnimationProtocol::createAnimationsFromDictionary(LHDictionary* dict)
 {

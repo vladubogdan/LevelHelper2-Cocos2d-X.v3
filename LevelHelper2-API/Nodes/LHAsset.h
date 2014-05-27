@@ -27,11 +27,23 @@ class LHAsset : public Node, public LHNodeProtocol, public LHNodeAnimationProtoc
 {
 public:
     
-    static LHAsset* assetNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    /**
+     Creates a new asset node with a specific name.
+     @param nm The name of the new asset node. Can be used later to retrieve the asset from the children hierarchy.
+     @param assetFileName The name of the asset that. Do not provide an extension. E.g If file is named "myAsset.lhasset.plist" then yous should pass @"myAsset.lhasset".
+     @param prnt The parent node. Must not be nil and must be a children of the LHScene (or subclass of LHScene).
+     @return A new asset node.
+     * @code
+     * //this is how you should use this function
+     * LHAsset* asset = LHAsset::createWithName("myNewAsset", "OfficerAsset.lhasset", this->getGameWorld());
+     * asset->setPosition(Point(110,40));
+     * @endcode
+     */
+    static LHAsset* createWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
+    
     
     LHAsset();
     virtual ~LHAsset();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     static  bool isLHAsset(Node* obj){return (0 != dynamic_cast<LHAsset*>(obj));}
     virtual bool isAsset(){return true;}
@@ -40,7 +52,11 @@ public:
     virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
     
 private:
+    friend class LHScene;
     
+    static LHAsset* assetNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    bool initWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
+    bool initWithDictionary(LHDictionary* dict, Node* prnt);
 };
 
 #endif //__LEVELHELPER_API_ASSET_H__

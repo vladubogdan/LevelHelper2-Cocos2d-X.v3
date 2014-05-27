@@ -21,6 +21,52 @@ LHAsset::~LHAsset()
     
 }
 
+LHAsset* LHAsset::createWithName(const std::string& nm, const std::string& assetFileName, Node* prnt)
+{
+    LHAsset *ret = new LHAsset();
+    if (ret && ret->initWithName(nm, assetFileName, prnt))
+    {
+        ret->autorelease();
+        return ret;
+    }
+    else
+    {
+        CC_SAFE_DELETE(ret);
+        return nullptr;
+    }
+}
+
+bool LHAsset::initWithName(const std::string& nm, const std::string& assetFileName, Node* prnt)
+{
+    if(Node::init())
+    {
+        _physicsBody = NULL;
+        setName(nm);
+        LHScene* scene = (LHScene*)prnt->getScene();
+        
+        __Dictionary* assetInfo = scene->assetInfoForFile(assetFileName);
+        if(assetInfo)
+        {
+            prnt->addChild(this);
+            
+            LHArray* childrenInfo = (LHArray*)assetInfo->objectForKey("children");
+            if(childrenInfo)
+            {
+                for(int i = 0; i < childrenInfo->count(); ++i)
+                {
+                    LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
+                    
+                    Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
+#pragma unused (node)
+                }
+            }
+        }
+        
+        return true;
+    }
+    return false;
+}
+
 LHAsset* LHAsset::assetNodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHAsset *ret = new LHAsset();
@@ -51,7 +97,8 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
         
         prnt->addChild(this);
         
-        this->setContentSize(dict->sizeForKey("size"));
+        if(dict->objectForKey("size"))
+            this->setContentSize(dict->sizeForKey("size"));
         
         Point unitPos   = dict->pointForKey("generalPosition");
         Point pos       = LHScene::positionForNode(this, unitPos);

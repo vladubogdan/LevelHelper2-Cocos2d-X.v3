@@ -27,7 +27,7 @@ using namespace cocos2d;
 
 class LHNodeProtocol
 {
-    public:
+public:
 
     LHNodeProtocol();
     virtual ~LHNodeProtocol();
@@ -56,7 +56,14 @@ class LHNodeProtocol
     virtual LHUserPropertyProtocol* getUserProperty(){return userProperty;}
     
     virtual bool lateLoading(){return true;}
-    
+
+    /**
+     Returns a node with the specified unique name or nil if that node is not found in the children hierarchy.
+     @param name The unique name of the node.
+     @return A node or or NULL.
+     */
+    virtual Node* getChildNodeWithName(const std::string& name);
+
     /**
      Returns a node with the specified unique identifier or nil if that node is not found in the children hierarchy.
      @param uuid The unique idenfier of the node.

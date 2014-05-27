@@ -23,7 +23,7 @@ class LHDevice;
 class LHNode;
 class LHDictionary;
 
-class LHScene : public cocos2d::Scene, LHNodeProtocol
+class LHScene : public cocos2d::Scene, public LHNodeProtocol
 {
     
 public:

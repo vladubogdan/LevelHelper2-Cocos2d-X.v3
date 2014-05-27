@@ -67,6 +67,32 @@ void LHNodeProtocol::loadUserPropertyWithDictionary(LHDictionary* dict)
     }
 }
 
+Node* LHNodeProtocol::getChildNodeWithName(const std::string& name)
+{
+    Node* node = dynamic_cast<Node*>(this);
+    if(!node)return NULL;
+    
+    auto& children = node->getChildren();
+    for( const auto &n : children)
+    {
+        LHNodeProtocol* nProt = dynamic_cast<LHNodeProtocol*>(n);
+        if(nProt)
+        {
+            if(nProt->getName() == name)
+            {
+                return n;
+            }
+            
+            Node* retNode = nProt->getChildNodeWithName(name);
+            if(retNode)
+            {
+                return retNode;
+            }
+        }
+    }
+    return NULL;
+}
+
 Node* LHNodeProtocol::getChildNodeWithUUID(const std::string& uuid)
 {
     Node* node = dynamic_cast<Node*>(this);

@@ -17,7 +17,10 @@
 #include "LHBezier.h"
 #include "LHShape.h"
 #include "LHAsset.h"
+#include "LHParallax.h"
+#include "LHParallaxLayer.h"
 #include "LHUtils.h"
+
 
 #include <sstream>
 using namespace std;
@@ -458,6 +461,17 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
         LHAsset* as = LHAsset::assetNodeWithDictionary(childInfo, prnt);
         return as;
     }
+    else if(nodeType == "LHParallax")
+    {
+        LHParallax* pr = LHParallax::parallaxWithDictionary(childInfo, prnt);
+        return pr;
+    }
+    else if(nodeType == "LHParallaxLayer")
+    {
+        LHParallaxLayer* lh = LHParallaxLayer::parallaxLayerWithDictionary(childInfo, prnt);
+        return lh;
+    }
+
 //    else if([nodeType isEqualToString:@"LHWaves"])
 //    {
 //        LHWater* wt = [LHWater waterNodeWithDictionary:childInfo
@@ -469,18 +483,6 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
 //        LHGravityArea* gv = [LHGravityArea gravityAreaWithDictionary:childInfo
 //                                                              parent:prnt];
 //        return gv;
-//    }
-//    else if([nodeType isEqualToString:@"LHParallax"])
-//    {
-//        LHParallax* pr = [LHParallax parallaxWithDictionary:childInfo
-//                                                     parent:prnt];
-//        return pr;
-//    }
-//    else if([nodeType isEqualToString:@"LHParallaxLayer"])
-//    {
-//        LHParallaxLayer* lh = [LHParallaxLayer parallaxLayerWithDictionary:childInfo
-//                                                                    parent:prnt];
-//        return lh;
 //    }
 //    else if([nodeType isEqualToString:@"LHRopeJoint"])
 //    {

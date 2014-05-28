@@ -64,6 +64,10 @@
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
 		6E0F05141931B5EC005882C8 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F05121931B5EC005882C8 /* LHUtils.cpp */; };
 		6E0F05151931B5EC005882C8 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F05121931B5EC005882C8 /* LHUtils.cpp */; };
+		6E452B9A19351CEC005593C5 /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E452B9619351CEC005593C5 /* LHParallax.cpp */; };
+		6E452B9B19351CEC005593C5 /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E452B9619351CEC005593C5 /* LHParallax.cpp */; };
+		6E452B9C19351CEC005593C5 /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E452B9819351CEC005593C5 /* LHParallaxLayer.cpp */; };
+		6E452B9D19351CEC005593C5 /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E452B9819351CEC005593C5 /* LHParallaxLayer.cpp */; };
 		6E5CF9391933771100E752BF /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E5CF9371933771100E752BF /* LHAsset.cpp */; };
 		6E5CF93A1933771100E752BF /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E5CF9371933771100E752BF /* LHAsset.cpp */; };
 		6E677FCB1930949900CCEB7E /* LHNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E677FC91930949900CCEB7E /* LHNode.cpp */; };
@@ -328,6 +332,10 @@
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
 		6E0F05121931B5EC005882C8 /* LHUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHUtils.cpp; sourceTree = "<group>"; };
 		6E0F05131931B5EC005882C8 /* LHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUtils.h; sourceTree = "<group>"; };
+		6E452B9619351CEC005593C5 /* LHParallax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHParallax.cpp; sourceTree = "<group>"; };
+		6E452B9719351CEC005593C5 /* LHParallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHParallax.h; sourceTree = "<group>"; };
+		6E452B9819351CEC005593C5 /* LHParallaxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHParallaxLayer.cpp; sourceTree = "<group>"; };
+		6E452B9919351CEC005593C5 /* LHParallaxLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHParallaxLayer.h; sourceTree = "<group>"; };
 		6E5CF9371933771100E752BF /* LHAsset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHAsset.cpp; sourceTree = "<group>"; };
 		6E5CF9381933771100E752BF /* LHAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAsset.h; sourceTree = "<group>"; };
 		6E677FC91930949900CCEB7E /* LHNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHNode.cpp; sourceTree = "<group>"; };
@@ -609,6 +617,10 @@
 		6E89FCA3192DFFF30040478F /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				6E452B9619351CEC005593C5 /* LHParallax.cpp */,
+				6E452B9719351CEC005593C5 /* LHParallax.h */,
+				6E452B9819351CEC005593C5 /* LHParallaxLayer.cpp */,
+				6E452B9919351CEC005593C5 /* LHParallaxLayer.h */,
 				6E5CF9371933771100E752BF /* LHAsset.cpp */,
 				6E5CF9381933771100E752BF /* LHAsset.h */,
 				6E677FE11931ACBE00CCEB7E /* LHShape.cpp */,
@@ -936,6 +948,8 @@
 				6E89FEDF192E4E9F0040478F /* LHOpacityProperty.cpp in Sources */,
 				6E89FEF3192E52FF0040478F /* LHChildrenRotationsProperty.cpp in Sources */,
 				6E677FE31931ACBE00CCEB7E /* LHShape.cpp in Sources */,
+				6E452B9C19351CEC005593C5 /* LHParallaxLayer.cpp in Sources */,
+				6E452B9A19351CEC005593C5 /* LHParallax.cpp in Sources */,
 				6E89FF47192F35110040478F /* LHNodeAnimationProtocol.cpp in Sources */,
 				6E89FED3192E49C20040478F /* LHPositionProperty.cpp in Sources */,
 				6E0F05141931B5EC005882C8 /* LHUtils.cpp in Sources */,
@@ -983,6 +997,7 @@
 				6E89FCB9192DFFF30040478F /* LHDevice.cpp in Sources */,
 				6E89FED8192E4D5B0040478F /* LHRotationProperty.cpp in Sources */,
 				6E89FF48192F35110040478F /* LHNodeAnimationProtocol.cpp in Sources */,
+				6E452B9D19351CEC005593C5 /* LHParallaxLayer.cpp in Sources */,
 				6E89FEF4192E52FF0040478F /* LHChildrenRotationsProperty.cpp in Sources */,
 				6E677FD31930A28100CCEB7E /* LHCamera.cpp in Sources */,
 				6E677FCC1930949900CCEB7E /* LHNode.cpp in Sources */,
@@ -990,6 +1005,7 @@
 				6E89FEDC192E4E0B0040478F /* LHScaleProperty.cpp in Sources */,
 				6E89FECC192E479E0040478F /* LHScaleFrame.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
+				6E452B9B19351CEC005593C5 /* LHParallax.cpp in Sources */,
 				6E0F05151931B5EC005882C8 /* LHUtils.cpp in Sources */,
 				6E89FED0192E48D50040478F /* LHSpriteFrame.cpp in Sources */,
 				6E89FEC8192E46020040478F /* LHRotationFrame.cpp in Sources */,

@@ -36,13 +36,15 @@ bool LHSceneSubclass::initWithContentOfFile(const std::string& plistLevelFile)
     /*AT THIS POINT EVERYTHING IS LOADED AND YOU CAN ACCESS YOUR OBJECTS*/
     
     LHAsset* assetInLevel = (LHAsset*)this->getChildNodeWithName("OfficerAsset");
-    
-    printf("Found the following asset in the loaded level %p name %s\n", assetInLevel, assetInLevel->getName().c_str());
-    
+    if(assetInLevel){
+        printf("Found the following asset in the loaded level %p name %s\n", assetInLevel, assetInLevel->getName().c_str());
+    }
     
     
     LHAsset* asset = LHAsset::createWithName("myNewAsset", "OfficerAsset.lhasset", this->getGameWorld());
-    asset->setPosition(Point(110,180));
+    if(asset){
+        asset->setPosition(Point(110,180));
+    }
 
     return retValue;
 }

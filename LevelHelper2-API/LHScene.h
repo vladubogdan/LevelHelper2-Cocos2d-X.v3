@@ -73,6 +73,8 @@ private:
     friend class LHCamera;
     friend class LHShape;
     friend class LHAsset;
+    friend class LHParallaxLayer;
+    friend class LHParallax;
     
     LHNode* _gameWorld;
     LHNode* _ui;

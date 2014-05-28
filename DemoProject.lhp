@@ -18,7 +18,7 @@
 			<key>SuffixName</key>
 			<string>hd</string>
 			<key>color</key>
-			<string>{{0.039482332766056061, 0}, {0.040751367807388306, 1}}</string>
+			<string>{{0.03945491835474968, 0}, {0.040750280022621155, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -46,7 +46,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.03773229569196701, 0}, {0.077398493885993958, 1}}</string>
+			<string>{{0.038416355848312378, 0}, {0.062742248177528381, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -60,7 +60,7 @@
 			<key>SuffixName</key>
 			<string>ipadhd</string>
 			<key>color</key>
-			<string>{{0.03773229569196701, 0}, {0.077398493885993958, 1}}</string>
+			<string>{{0.038416355848312378, 0}, {0.062742248177528381, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -104,6 +104,11 @@
 					<true/>
 				</dict>
 				<key>level06-assets.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level07-parallax.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

@@ -122,8 +122,8 @@ void LHCamera::setSceneView(){
     if(_active)
     {
         Point transPoint = transformToRestrictivePosition(getPosition());
-        //((LHScene*)getScene())->getGameWorld()->setPosition(transPoint);
-        ((LHScene*)getScene())->setPosition(transPoint);
+        ((LHScene*)getScene())->getGameWorld()->setPosition(transPoint);
+        //((LHScene*)getScene())->setPosition(transPoint);
     }
 }
 

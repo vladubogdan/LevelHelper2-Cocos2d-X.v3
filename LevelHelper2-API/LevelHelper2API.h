@@ -17,9 +17,10 @@
 #include "LHBezier.h"
 #include "LHShape.h"
 #include "LHAsset.h"
+#include "LHParallax.h"
+#include "LHParallaxLayer.h"
 
-//#import "LHParallax.h"
-//#import "LHParallaxLayer.h"
+
 //#import "LHRopeJointNode.h"
 
 //#import "LHWater.h"

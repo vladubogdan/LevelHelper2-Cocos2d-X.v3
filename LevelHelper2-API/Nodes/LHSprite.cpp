@@ -22,6 +22,83 @@ LHSprite::~LHSprite()
 
 }
 
+LHSprite* LHSprite::createWithFile(const std::string& filename, const std::string& folder, Node* prnt)
+{
+    LHSprite *ret = new LHSprite();
+    if (ret && ret->initWithFilename(filename, folder, prnt))
+    {
+        ret->autorelease();
+        return ret;
+    }
+    else
+    {
+        CC_SAFE_DELETE(ret);
+        return nullptr;
+    }
+}
+bool LHSprite::initWithFilename(const std::string& filename, const std::string& folder, Node* prnt)
+{
+    LHScene* scene = (LHScene*)prnt->getScene();
+    
+    std::string imagePath = LHUtils::getImagePathWithFilename(filename,
+                                                              folder,
+                                                              scene->getCurrentDeviceSuffix());
+    if(Sprite::initWithFile(imagePath))
+    {
+        prnt->addChild(this);
+
+        //some other initializing in the future
+        return true;
+    }
+    return false;
+}
+
+LHSprite* LHSprite::createWithSpriteName(const std::string& spriteFrameName,
+                                         const std::string& plistFile,
+                                         const std::string& plistFolder,
+                                         Node* prnt)
+{
+    LHSprite *ret = new LHSprite();
+    if (ret && ret->initWithSpriteName(spriteFrameName, plistFile, plistFolder, prnt))
+    {
+        ret->autorelease();
+        return ret;
+    }
+    else
+    {
+        CC_SAFE_DELETE(ret);
+        return nullptr;
+    }
+}
+bool LHSprite::initWithSpriteName(const std::string& spriteName,
+                                  const std::string& plistFile,
+                                  const std::string& plistFolder,
+                                  Node* prnt)
+{
+    LHScene* scene = (LHScene*)prnt->getScene();
+    
+    std::string plistPath = LHUtils::getImagePathWithFilename(plistFile,
+                                                              plistFolder,
+                                                              scene->getCurrentDeviceSuffix());
+    
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile(plistPath);
+    
+    CCLOG("PLIST PATH %s", plistPath.c_str());
+    
+    if(Sprite::initWithSpriteFrameName(spriteName))
+    {
+        prnt->addChild(this);
+        
+        //some other initializing in the future
+        return true;
+    }
+    return false;
+}
+
+
+
+
+
 bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHScene* scene = (LHScene*)prnt->getScene();

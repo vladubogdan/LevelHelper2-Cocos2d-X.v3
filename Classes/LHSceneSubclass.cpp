@@ -45,6 +45,26 @@ bool LHSceneSubclass::initWithContentOfFile(const std::string& plistLevelFile)
     if(asset){
         asset->setPosition(Point(110,180));
     }
+    
+    LHSprite* imgSpr = LHSprite::createWithFile("bgrd.png", "DEMO_INDIVIDUAL_IMAGES_EXAMPLE/", this->getGameWorld());
+    if(imgSpr){
+        imgSpr->setAnchorPoint(Point(0,0));
+        imgSpr->setPosition(Point(0,0));
+        imgSpr->setLocalZOrder(-4);
 
+        CCLOG("DID CREATE SPRITE FROM IMAGE %p", imgSpr);
+        
+    }
+    
+    LHSprite* frmSpr = LHSprite::createWithSpriteName("object_backpack",
+                                                      "objects.plist",
+                                                      "DEMO_PUBLISH_FOLDER/",
+                                                      this->getGameWorld());
+    if(frmSpr){
+        frmSpr->setPosition(Point(400,300));
+        CCLOG("DID CREATE SPRITE FROM SHEET %p", frmSpr);
+    }
+
+    
     return retValue;
 }

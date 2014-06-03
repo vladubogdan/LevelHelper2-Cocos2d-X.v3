@@ -118,6 +118,7 @@ public:
     virtual bool isCamera(){return false;}
     virtual bool isParallax(){return false;}
     virtual bool isParallaxLayer(){return false;}
+    virtual bool isRopeJointNode(){return false;}
     
     
     virtual void loadUserPropertyWithDictionary(LHDictionary* dict);

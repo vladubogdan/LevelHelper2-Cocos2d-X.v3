@@ -10,6 +10,8 @@
 #define __LevelHelper2API__LHUtils__
 
 #include <string>
+#include "cocos2d.h"
+using namespace cocos2d;
 
 class LHUtils
 {
@@ -23,6 +25,5 @@ public:
 
     
 };
-
 
 #endif //__LevelHelper2API__LHUtils__

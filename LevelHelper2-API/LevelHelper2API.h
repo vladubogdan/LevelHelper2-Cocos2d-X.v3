@@ -20,8 +20,7 @@
 #include "LHParallax.h"
 #include "LHParallaxLayer.h"
 
-
-//#import "LHRopeJointNode.h"
+#include "LHRopeJointNode.h"
 
 //#import "LHWater.h"
 //#import "LHAnimation.h"

@@ -19,6 +19,8 @@
 #include "LHAsset.h"
 #include "LHParallax.h"
 #include "LHParallaxLayer.h"
+#include "LHRopeJointNode.h"
+
 #include "LHUtils.h"
 
 
@@ -31,9 +33,11 @@ using namespace cocos2d;
 LHScene::LHScene()
 {
     _loadedAssetsInformations = nullptr;
-    tracedFixtures = nullptr;
+    _tracedFixtures = nullptr;
     _gameWorld = nullptr;
+    _lateLoadingNodes = nullptr;
     _ui = nullptr;
+    
 //    printf("lhscene constructor\n");
 }
 
@@ -47,7 +51,7 @@ LHScene::~LHScene()
     }
     devices.clear();
     
-    CC_SAFE_RELEASE(tracedFixtures);
+    CC_SAFE_RELEASE(_tracedFixtures);
     _gameWorld = nullptr;
     _ui = nullptr;
 
@@ -125,8 +129,8 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
             LHDictionary* tracedFixInfo = dict->dictForKey("tracedFixtures");
             if(tracedFixInfo){
-                tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
-                tracedFixtures->retain();
+                _tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
+                _tracedFixtures->retain();
             }
 
 //        this->setAnchorPoint(Point(0,1));
@@ -280,7 +284,7 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         }
         
         
-        
+        this->performLateLoading();
         
         
         ret = true;
@@ -307,114 +311,30 @@ LHScene *LHScene::createWithContentOfFile(const std::string& plistLevelFile)
     }
 }
 
-//const kmMat4& LHScene::getParentToNodeTransform() const
-//{
-//    if ( _inverseDirty ) {
-//        
-//        kmMat4 temp_transform = getNodeToParentTransformTest();
-//        
-//        kmMat4Inverse(&_inverse, &temp_transform);
-//        _inverseDirty = false;
-//    }
-//    
-//    return _inverse;
-//}
-//
-//
-//kmMat4& LHScene::getNodeToParentTransformTest() const
-//{
-//    kmMat4 temp_transform;
-//    
-//        // Translate values
-//        float x = 0;//_position.x;
-//        float y = 0;// _position.y;
-//        float z = _positionZ;
-//        
-//        if (_ignoreAnchorPointForPosition)
-//        {
-//            x += _anchorPointInPoints.x;
-//            y += _anchorPointInPoints.y;
-//        }
-//        
-//        // Rotation values
-//		// Change rotation code to handle X and Y
-//		// If we skew with the exact same value for both x and y then we're simply just rotating
-//        float cx = 1, sx = 0, cy = 1, sy = 0;
-//        if (_rotationZ_X || _rotationZ_Y)
-//        {
-//            float radiansX = -CC_DEGREES_TO_RADIANS(_rotationZ_X);
-//            float radiansY = -CC_DEGREES_TO_RADIANS(_rotationZ_Y);
-//            cx = cosf(radiansX);
-//            sx = sinf(radiansX);
-//            cy = cosf(radiansY);
-//            sy = sinf(radiansY);
-//        }
-//        
-//        bool needsSkewMatrix = ( _skewX || _skewY );
-//        
-//        
-//        // optimization:
-//        // inline anchor point calculation if skew is not needed
-//        // Adjusted transform calculation for rotational skew
-//        if (! needsSkewMatrix && !_anchorPointInPoints.equals(Point::ZERO))
-//        {
-//            x += cy * -_anchorPointInPoints.x * _scaleX + -sx * -_anchorPointInPoints.y * _scaleY;
-//            y += sy * -_anchorPointInPoints.x * _scaleX +  cx * -_anchorPointInPoints.y * _scaleY;
-//        }
-//        
-//        
-//        // Build Transform Matrix
-//        // Adjusted transform calculation for rotational skew
-//        kmScalar mat[] = {
-//            cy * _scaleX,   sy * _scaleX,   0,          0,
-//            -sx * _scaleY,  cx * _scaleY,   0,          0,
-//            0,              0,              _scaleZ,    0,
-//            x,              y,              z,          1 };
-//        
-//        kmMat4Fill(&temp_transform, mat);
-//        
-//        // XXX
-//        // FIX ME: Expensive operation.
-//        // FIX ME: It should be done together with the rotationZ
-//        if(_rotationY) {
-//            kmMat4 rotY;
-//            kmMat4RotationY(&rotY,CC_DEGREES_TO_RADIANS(_rotationY));
-//            kmMat4Multiply(&temp_transform, &temp_transform, &rotY);
-//        }
-//        if(_rotationX) {
-//            kmMat4 rotX;
-//            kmMat4RotationX(&rotX,CC_DEGREES_TO_RADIANS(_rotationX));
-//            kmMat4Multiply(&temp_transform, &temp_transform, &rotX);
-//        }
-//        
-//        // XXX: Try to inline skew
-//        // If skew is needed, apply skew and then anchor point
-////        if (needsSkewMatrix)
-////        {
-////            kmMat4 skewMatrix = { 1, (float)tanf(CC_DEGREES_TO_RADIANS(_skewY)), 0, 0,
-////                (float)tanf(CC_DEGREES_TO_RADIANS(_skewX)), 1, 0, 0,
-////                0,  0,  1, 0,
-////                0,  0,  0, 1};
-////            
-////            kmMat4Multiply(&temp_transform, &temp_transform, &skewMatrix);
-////            
-////            // adjust anchor point
-////            if (!_anchorPointInPoints.equals(Point::ZERO))
-////            {
-////                // XXX: Argh, kmMat needs a "translate" method.
-////                // XXX: Although this is faster than multiplying a vec4 * mat4
-////                temp_transform.mat[12] += temp_transform.mat[0] * -_anchorPointInPoints.x + temp_transform.mat[4] * -_anchorPointInPoints.y;
-////                temp_transform.mat[13] += temp_transform.mat[1] * -_anchorPointInPoints.x + temp_transform.mat[5] * -_anchorPointInPoints.y;
-////            }
-////        }
-//    
-//        if (_useAdditionalTransform)
-//        {
-//            kmMat4Multiply(&temp_transform, &temp_transform, &_additionalTransform);
-//        }
-//            
-//    return temp_transform;
-//}
+void LHScene::addLateLoadingNode(Node* node){
+    if(!_lateLoadingNodes) {
+        _lateLoadingNodes = new __Array();
+        _lateLoadingNodes->init();
+    }
+    _lateLoadingNodes->addObject(node);
+}
+
+void LHScene::performLateLoading(){
+    if(!_lateLoadingNodes)return;
+    
+    for(size_t i = 0; i < _lateLoadingNodes->count(); ++i)
+    {
+        Node* node = (Node*)_lateLoadingNodes->getObjectAtIndex(i);
+
+        LHNodeProtocol* protocol = dynamic_cast<LHNodeProtocol*>(node);
+        if(protocol)
+        {
+            protocol->lateLoading();
+        }
+    }
+    
+    CC_SAFE_DELETE(_lateLoadingNodes);
+}
 
 
 Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
@@ -471,6 +391,14 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
         LHParallaxLayer* lh = LHParallaxLayer::parallaxLayerWithDictionary(childInfo, prnt);
         return lh;
     }
+    else if(nodeType == "LHRopeJoint")
+    {
+        if(scene)
+        {
+            LHRopeJointNode* jt = LHRopeJointNode::ropeJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
 
 //    else if([nodeType isEqualToString:@"LHWaves"])
 //    {
@@ -483,15 +411,6 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
 //        LHGravityArea* gv = [LHGravityArea gravityAreaWithDictionary:childInfo
 //                                                              parent:prnt];
 //        return gv;
-//    }
-//    else if([nodeType isEqualToString:@"LHRopeJoint"])
-//    {
-//        if(scene)
-//        {
-//            LHRopeJointNode* jt = [LHRopeJointNode ropeJointNodeWithDictionary:childInfo
-//                                                                        parent:prnt];
-//            [scene addLateLoadingNode:jt];
-//        }
 //    }
     //    else if([nodeType isEqualToString:@"LHWeldJoint"])
     //    {
@@ -541,7 +460,7 @@ void LHScene::createPhysicsBoundarySectionFrom(Point from, Point to, const std::
 
 __Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
 {
-    return (__Array*)tracedFixtures->objectForKey(uuid);
+    return (__Array*)_tracedFixtures->objectForKey(uuid);
 }
 
 std::string LHScene::getCurrentDeviceSuffix()
@@ -912,22 +831,7 @@ Point LHScene::positionForNode(Node* node, Point unitPos)
 }
 
 
--(void)performLateLoading{
-    if(!lateLoadingNodes)return;
-    
-    NSMutableArray* lateLoadingToRemove = [NSMutableArray array];
-    for(CCNode* node in lateLoadingNodes){
-        if([node respondsToSelector:@selector(lateLoading)]){
-            if([(id<LHNodeProtocol>)node lateLoading]){
-                [lateLoadingToRemove addObject:node];
-            }
-        }
-    }
-    [lateLoadingNodes removeObjectsInArray:lateLoadingToRemove];
-    if([lateLoadingNodes count] == 0){
-        LH_SAFE_RELEASE(lateLoadingNodes);
-    }
-}
+
 
 -(void)addChild:(CCNode *)node{
     [physicsNode addChild:node];
@@ -1436,13 +1340,6 @@ Point LHScene::positionForNode(Node* node, Point unitPos)
         }
     }
     return temp;
-}
-
--(void)addLateLoadingNode:(CCNode*)node{
-    if(!lateLoadingNodes) {
-        lateLoadingNodes = [[NSMutableArray alloc] init];
-    }
-    [lateLoadingNodes addObject:node];
 }
 
 -(NSString*)relativePath{

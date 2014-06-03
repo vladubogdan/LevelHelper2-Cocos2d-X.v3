@@ -75,6 +75,7 @@ private:
     friend class LHAsset;
     friend class LHParallaxLayer;
     friend class LHParallax;
+    friend class LHRopeJointNode;
     
     LHNode* _gameWorld;
     LHNode* _ui;
@@ -83,13 +84,17 @@ private:
     Size    designResolutionSize;
     Point   designOffset;
     Rect    gameWorldRect;
-    __Dictionary* tracedFixtures;
-    __Dictionary* _loadedAssetsInformations;
+    
+    __Dictionary*   _tracedFixtures;
+    __Dictionary*   _loadedAssetsInformations;
+    __Array*        _lateLoadingNodes;
     
     static Node* createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt);
     
     void createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName);
     
+    void addLateLoadingNode(Node* nd);
+    void performLateLoading();
 };
 
 #endif //__LEVELHELPER_API_SCENE_H__

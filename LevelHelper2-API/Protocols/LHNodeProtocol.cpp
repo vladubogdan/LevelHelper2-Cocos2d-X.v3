@@ -96,22 +96,20 @@ Node* LHNodeProtocol::getChildNodeWithName(const std::string& name)
 Node* LHNodeProtocol::getChildNodeWithUUID(const std::string& uuid)
 {
     Node* node = dynamic_cast<Node*>(this);
-    if(!node)return NULL;
+    if(!node){
+        return NULL;
+    }
     
     auto& children = node->getChildren();
-    for( const auto &n : children)
-    {
+    for( const auto &n : children){
         LHNodeProtocol* nProt = dynamic_cast<LHNodeProtocol*>(n);
-        if(nProt)
-        {
-            if(nProt->getUuid() == uuid)
-            {
+        if(nProt){
+            if(nProt->getUuid() == uuid){
                 return n;
             }
             
             Node* retNode = nProt->getChildNodeWithUUID(uuid);
-            if(retNode)
-            {
+            if(retNode){
                 return retNode;
             }
         }

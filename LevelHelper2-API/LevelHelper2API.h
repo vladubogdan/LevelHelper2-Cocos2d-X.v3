@@ -22,6 +22,7 @@
 
 #include "LHRopeJointNode.h"
 
+
 //#import "LHWater.h"
 //#import "LHAnimation.h"
 //#import "LHDistanceJointNode.h"
@@ -30,6 +31,7 @@
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
 #include "LHUserPropertyProtocol.h"
+#include "LHUserProperties.h"
 
 
 #endif //__LEVELHELPER_API_H__

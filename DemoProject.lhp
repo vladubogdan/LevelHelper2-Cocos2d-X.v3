@@ -18,7 +18,7 @@
 			<key>SuffixName</key>
 			<string>hd</string>
 			<key>color</key>
-			<string>{{0.039426330476999283, 0}, {0.040749039500951767, 1}}</string>
+			<string>{{0.03942219540476799, 0}, {0.040748830884695053, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -46,7 +46,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.039224989712238312, 0}, {0.045038748532533646, 1}}</string>
+			<string>{{0.039356343448162079, 0}, {0.042141500860452652, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -60,13 +60,15 @@
 			<key>SuffixName</key>
 			<string>ipadhd</string>
 			<key>color</key>
-			<string>{{0.039224989712238312, 0}, {0.045038748532533646, 1}}</string>
+			<string>{{0.039356343448162079, 0}, {0.042141500860452652, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
 	<string>Cocos2d-X</string>
 	<key>options</key>
 	<dict>
+		<key>UserPropertiesGenerationPath</key>
+		<string>DEMO_USER_PROPERTIES_GENERATION_FOLDER</string>
 		<key>name</key>
 		<string>DemoProject</string>
 		<key>publishOptions</key>
@@ -114,6 +116,11 @@
 					<true/>
 				</dict>
 				<key>level08-ropeJoint.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level09-customProperties.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

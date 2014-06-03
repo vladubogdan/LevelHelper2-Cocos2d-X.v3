@@ -5,12 +5,16 @@
 #ifndef __LEVELHELPER_API_CUSTOM_USER_PROPERTIES_HEADERS__
 #define __LEVELHELPER_API_CUSTOM_USER_PROPERTIES_HEADERS__
 
+#include "DemoCustomClass.h"
+
+
 #include "LHUserPropertyProtocol.h"
 
 class LHUserCustomPropertiesManager
 {
 public:
 	static LHUserPropertyProtocol* customClassInstanceWithName(const std::string& className, Node* node){
+		if("DemoCustomClass" == className){ return DemoCustomClass::customClassInstanceWithNode(node);}
 		return NULL;
 	}
 

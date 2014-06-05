@@ -114,14 +114,20 @@ void LHDrawNode::draw(Renderer *renderer, const kmMat4 &transform, bool transfor
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_TEX_COORDS);
-    
+//	GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_TEX_COORDS);
+    //VERTEX_ATTRIB_FLAG_TEX_COORDS its named VERTEX_ATTRIB_FLAG_TEX_COORD in 3.1 so we use the value instead (which is the same on all cocos2d-x versions)
+    GL::enableVertexAttribs(1 << 0 | 1 << 2);
+        
 	_glProgram->use();
 	
     _glProgram->setUniformsForBuiltins();
 	
-    glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _trianglePoints);
-	glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORDS, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _uvPoints);
+//    glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _trianglePoints);
+//	glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORDS, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _uvPoints);
+
+    //VERTEX_ATTRIB_TEX_COORDS is named VERTEX_ATTRIB_TEX_COORD in 3.1 so we use the value instead (which is the same on all cocos2d-x versions)
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _trianglePoints);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _uvPoints);
     
 	glDrawArrays(GL_TRIANGLES, 0, _numberOfTriangles*3);
 }

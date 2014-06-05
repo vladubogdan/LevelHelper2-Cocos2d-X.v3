@@ -66,8 +66,6 @@
 		6E0F05151931B5EC005882C8 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F05121931B5EC005882C8 /* LHUtils.cpp */; };
 		6E25B8CB193DA3A30003BF48 /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8C9193DA3A30003BF48 /* LHDrawNode.cpp */; };
 		6E25B8CC193DA3A30003BF48 /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8C9193DA3A30003BF48 /* LHDrawNode.cpp */; };
-		6E25B8D5193DE7980003BF48 /* DemoCustomClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8D3193DE7980003BF48 /* DemoCustomClass.cpp */; };
-		6E25B8D6193DE7980003BF48 /* DemoCustomClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8D3193DE7980003BF48 /* DemoCustomClass.cpp */; };
 		6E25B8DB193DE7BF0003BF48 /* LHSceneUserProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */; };
 		6E25B8DC193DE7BF0003BF48 /* LHSceneUserProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */; };
 		6E25B8E3193E0E2F0003BF48 /* LHSceneCutRope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8E1193E0E2F0003BF48 /* LHSceneCutRope.cpp */; };
@@ -142,6 +140,8 @@
 		6E89FF48192F35110040478F /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E89FF46192F35110040478F /* LHNodeAnimationProtocol.cpp */; };
 		6EAB95BD193C7DD50085C963 /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB95BB193C7DD50085C963 /* LHRopeJointNode.cpp */; };
 		6EAB95BE193C7DD50085C963 /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB95BB193C7DD50085C963 /* LHRopeJointNode.cpp */; };
+		6EDE2A9E1940478600CE99C4 /* DemoCustomClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE2A9C1940478600CE99C4 /* DemoCustomClass.cpp */; };
+		6EDE2A9F1940478600CE99C4 /* DemoCustomClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE2A9C1940478600CE99C4 /* DemoCustomClass.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -345,8 +345,6 @@
 		6E25B8C8193D9C940003BF48 /* LHPointValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPointValue.h; sourceTree = "<group>"; };
 		6E25B8C9193DA3A30003BF48 /* LHDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDrawNode.cpp; sourceTree = "<group>"; };
 		6E25B8CA193DA3A30003BF48 /* LHDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDrawNode.h; sourceTree = "<group>"; };
-		6E25B8D3193DE7980003BF48 /* DemoCustomClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoCustomClass.cpp; sourceTree = "<group>"; };
-		6E25B8D4193DE7980003BF48 /* DemoCustomClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCustomClass.h; sourceTree = "<group>"; };
 		6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneUserProp.cpp; path = ../Classes/LHSceneUserProp.cpp; sourceTree = "<group>"; };
 		6E25B8DA193DE7BF0003BF48 /* LHSceneUserProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneUserProp.h; path = ../Classes/LHSceneUserProp.h; sourceTree = "<group>"; };
 		6E25B8E1193E0E2F0003BF48 /* LHSceneCutRope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneCutRope.cpp; path = ../Classes/LHSceneCutRope.cpp; sourceTree = "<group>"; };
@@ -423,6 +421,8 @@
 		6E89FF46192F35110040478F /* LHNodeAnimationProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHNodeAnimationProtocol.cpp; sourceTree = "<group>"; };
 		6EAB95BB193C7DD50085C963 /* LHRopeJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHRopeJointNode.cpp; sourceTree = "<group>"; };
 		6EAB95BC193C7DD50085C963 /* LHRopeJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRopeJointNode.h; sourceTree = "<group>"; };
+		6EDE2A9C1940478600CE99C4 /* DemoCustomClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoCustomClass.cpp; sourceTree = "<group>"; };
+		6EDE2A9D1940478600CE99C4 /* DemoCustomClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCustomClass.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -628,8 +628,8 @@
 		6E25B8D2193DE7980003BF48 /* DEMO_USER_PROPERTIES_GENERATION_FOLDER */ = {
 			isa = PBXGroup;
 			children = (
-				6E25B8D3193DE7980003BF48 /* DemoCustomClass.cpp */,
-				6E25B8D4193DE7980003BF48 /* DemoCustomClass.h */,
+				6EDE2A9C1940478600CE99C4 /* DemoCustomClass.cpp */,
+				6EDE2A9D1940478600CE99C4 /* DemoCustomClass.h */,
 			);
 			name = DEMO_USER_PROPERTIES_GENERATION_FOLDER;
 			path = ../DEMO_USER_PROPERTIES_GENERATION_FOLDER;
@@ -1017,7 +1017,7 @@
 				6E89FE6C192E32290040478F /* LHFrame.cpp in Sources */,
 				6E89FECF192E48D50040478F /* LHSpriteFrame.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
-				6E25B8D5193DE7980003BF48 /* DemoCustomClass.cpp in Sources */,
+				6EDE2A9E1940478600CE99C4 /* DemoCustomClass.cpp in Sources */,
 				6E677FD21930A28100CCEB7E /* LHCamera.cpp in Sources */,
 				6E89FCBA192DFFF30040478F /* LHDictionary.cpp in Sources */,
 				6E89FCB8192DFFF30040478F /* LHDevice.cpp in Sources */,
@@ -1065,8 +1065,8 @@
 				6E89FCB3192DFFF30040478F /* LHScene.cpp in Sources */,
 				6E89FEE0192E4E9F0040478F /* LHOpacityProperty.cpp in Sources */,
 				6E25B8DC193DE7BF0003BF48 /* LHSceneUserProp.cpp in Sources */,
+				6EDE2A9F1940478600CE99C4 /* DemoCustomClass.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				6E25B8D6193DE7980003BF48 /* DemoCustomClass.cpp in Sources */,
 				6E677FD91930AA9600CCEB7E /* LHBezier.cpp in Sources */,
 				6E89FEF0192E51CA0040478F /* LHChildrenOpacitiesProperty.cpp in Sources */,
 				6E25B8CC193DA3A30003BF48 /* LHDrawNode.cpp in Sources */,

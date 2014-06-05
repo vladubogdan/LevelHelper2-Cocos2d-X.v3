@@ -27,6 +27,8 @@ public:
 
     static long LHMillisecondNow();
 
+    //this methods are also available in cocos2d-x but it seams various versions have them in different places
+    //so for simplicity and making the API work will all cocos2d-x v3 versions - I have my own methods over here.
     static LHPointValue* LHLinesIntersection(const Point& p1, const Point& p2, const Point& p3, const Point& p4);
     static Point LHPointNormalize(const Point& pt);
     static Point LHPointScaled(const Point& pt, float val);

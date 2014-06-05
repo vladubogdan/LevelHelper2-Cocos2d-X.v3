@@ -34,7 +34,7 @@
 			<key>relativePosB</key>
 			<string>{-16.6332848072052, 6.4664077758789062}</string>
 			<key>removeAfterCut</key>
-			<false/>
+			<true/>
 			<key>segments</key>
 			<real>22</real>
 			<key>shouldDraw</key>
@@ -381,6 +381,19 @@
 	<real>8</real>
 	<key>nodeType</key>
 	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>1024x768</key>
+		<string>{{0.032003570348024368, 0.051032710820436478}, {0.93531328439712524, 0.90403568744659424}}</string>
+		<key>1136x640</key>
+		<string>{{0.032003570348024368, 0.051032710820436478}, {0.93531328439712524, 0.90403568744659424}}</string>
+		<key>2048x1536</key>
+		<string>{{0.032003570348024368, 0.051032710820436478}, {0.93531328439712524, 0.90403568744659424}}</string>
+		<key>960x640</key>
+		<string>{{0.032003570348024368, 0.051032710820436478}, {0.93531328439712524, 0.90403568744659424}}</string>
+		<key>general</key>
+		<string>{{0.032003570348024368, 0.051032710820436478}, {0.93531328439712524, 0.90403568744659424}}</string>
+	</dict>
 	<key>tags</key>
 	<array>
 		<string>DEFAULT</string>

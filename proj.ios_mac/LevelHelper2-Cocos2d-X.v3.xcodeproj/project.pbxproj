@@ -70,6 +70,8 @@
 		6E25B8D6193DE7980003BF48 /* DemoCustomClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8D3193DE7980003BF48 /* DemoCustomClass.cpp */; };
 		6E25B8DB193DE7BF0003BF48 /* LHSceneUserProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */; };
 		6E25B8DC193DE7BF0003BF48 /* LHSceneUserProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */; };
+		6E25B8E3193E0E2F0003BF48 /* LHSceneCutRope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8E1193E0E2F0003BF48 /* LHSceneCutRope.cpp */; };
+		6E25B8E4193E0E2F0003BF48 /* LHSceneCutRope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8E1193E0E2F0003BF48 /* LHSceneCutRope.cpp */; };
 		6E452B9A19351CEC005593C5 /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E452B9619351CEC005593C5 /* LHParallax.cpp */; };
 		6E452B9B19351CEC005593C5 /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E452B9619351CEC005593C5 /* LHParallax.cpp */; };
 		6E452B9C19351CEC005593C5 /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E452B9819351CEC005593C5 /* LHParallaxLayer.cpp */; };
@@ -347,6 +349,8 @@
 		6E25B8D4193DE7980003BF48 /* DemoCustomClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCustomClass.h; sourceTree = "<group>"; };
 		6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneUserProp.cpp; path = ../Classes/LHSceneUserProp.cpp; sourceTree = "<group>"; };
 		6E25B8DA193DE7BF0003BF48 /* LHSceneUserProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneUserProp.h; path = ../Classes/LHSceneUserProp.h; sourceTree = "<group>"; };
+		6E25B8E1193E0E2F0003BF48 /* LHSceneCutRope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneCutRope.cpp; path = ../Classes/LHSceneCutRope.cpp; sourceTree = "<group>"; };
+		6E25B8E2193E0E2F0003BF48 /* LHSceneCutRope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneCutRope.h; path = ../Classes/LHSceneCutRope.h; sourceTree = "<group>"; };
 		6E452B9619351CEC005593C5 /* LHParallax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHParallax.cpp; sourceTree = "<group>"; };
 		6E452B9719351CEC005593C5 /* LHParallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHParallax.h; sourceTree = "<group>"; };
 		6E452B9819351CEC005593C5 /* LHParallaxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHParallaxLayer.cpp; sourceTree = "<group>"; };
@@ -500,6 +504,8 @@
 				6E89FCE6192E020C0040478F /* LHSceneSubclass.h */,
 				6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */,
 				6E25B8DA193DE7BF0003BF48 /* LHSceneUserProp.h */,
+				6E25B8E1193E0E2F0003BF48 /* LHSceneCutRope.cpp */,
+				6E25B8E2193E0E2F0003BF48 /* LHSceneCutRope.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -998,6 +1004,7 @@
 				6E89FEC7192E46020040478F /* LHRotationFrame.cpp in Sources */,
 				6E89FECB192E479E0040478F /* LHScaleFrame.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				6E25B8E3193E0E2F0003BF48 /* LHSceneCutRope.cpp in Sources */,
 				6E89FCE7192E020C0040478F /* LHSceneSubclass.cpp in Sources */,
 				6E89FEDB192E4E0B0040478F /* LHScaleProperty.cpp in Sources */,
 				6E89FEE3192E4F340040478F /* LHSpriteFrameProperty.cpp in Sources */,
@@ -1041,6 +1048,7 @@
 				6E89FEF4192E52FF0040478F /* LHChildrenRotationsProperty.cpp in Sources */,
 				6E677FD31930A28100CCEB7E /* LHCamera.cpp in Sources */,
 				6E677FCC1930949900CCEB7E /* LHNode.cpp in Sources */,
+				6E25B8E4193E0E2F0003BF48 /* LHSceneCutRope.cpp in Sources */,
 				6E89FEFC192E54420040478F /* LHAnimation.cpp in Sources */,
 				6E89FEDC192E4E0B0040478F /* LHScaleProperty.cpp in Sources */,
 				6E89FECC192E479E0040478F /* LHScaleFrame.cpp in Sources */,

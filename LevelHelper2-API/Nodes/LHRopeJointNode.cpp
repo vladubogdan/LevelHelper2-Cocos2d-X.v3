@@ -69,6 +69,15 @@ double fcat(double x, void *data)
 
 LHRopeJointNode::LHRopeJointNode()
 {
+    cutJointA = nullptr;
+    cutJointB = nullptr;
+    joint = nullptr;
+    nodeA = nullptr;
+    nodeB = nullptr;
+    ropeShape = nullptr;
+    cutAShapeNode = nullptr;
+    cutBShapeNode = nullptr;
+    _cutTimer = -1;
 }
 
 LHRopeJointNode::~LHRopeJointNode()
@@ -79,11 +88,11 @@ LHRopeJointNode::~LHRopeJointNode()
     ropeShape = nullptr;
     joint = nullptr;
     
-//    cutAShapeNode = nil;
-//    cutJointA = nil;
-//    
-//    cutBShapeNode = nil;
-//    cutJointB = nil;
+    cutAShapeNode = nullptr;
+    cutJointA = nullptr;
+    
+    cutBShapeNode = nullptr;
+    cutJointB = nullptr;
 
 }
 
@@ -151,12 +160,9 @@ bool LHRopeJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
             }
         }
         
-        Rect clrInfo = dict->rectForKey("colorOverlay");
-        clrInfo.size.height = dict->floatForKey("alpha")/255.0f;
-        colorInfo = Color4F(clrInfo.origin.x,
-                            clrInfo.origin.y,
-                            clrInfo.size.width,
-                            clrInfo.size.height);
+        colorInfo = dict->rectForKey("colorOverlay");
+        colorInfo.size.height = dict->floatForKey("alpha")/255.0f;
+        alphaValue = dict->floatForKey("alpha")/255.0f;
         
         
         this->setLocalZOrder(dict->intForKey("zOrder"));
@@ -258,168 +264,174 @@ void LHRopeJointNode::drawRopeShape(LHDrawNode* shape, Point anchorA, Point anch
             prevB = valB;
         }
         
-        shape->setShapeTriangles(triangles, uvPoints, colorInfo);
+        shape->setShapeTriangles(triangles, uvPoints, Color4F(colorInfo.origin.x,
+                                                              colorInfo.origin.y,
+                                                              colorInfo.size.width,
+                                                              alphaValue));
     }
 }
 
-//-(void)cutWithLineFromPointA:(CGPoint)ptA
-//                    toPointB:(CGPoint)ptB
-//{
-//    if(cutJointA || cutJointB) return; //dont cut again
-//    
-//    if(!joint)return;
-//    
-//    CGPoint a = [self anchorA];
-//    CGPoint b = [self anchorB];
-//    
-//    
-//    BOOL flipped = NO;
-//    NSMutableArray* rPoints = [self ropePointsFromPointA:a
-//                                                toPointB:b
-//                                              withLength:_length
-//                                                segments:segments
-//                                                 flipped:&flipped];
-//    
-//    
-//    NSValue* prevValue = nil;
-//    float cutLength = 0.0f;
-//    for(NSValue* val in rPoints)
-//    {
-//        if(prevValue)
-//        {
-//            CGPoint ropeA = CGPointFromValue(prevValue);
-//            CGPoint ropeB = CGPointFromValue(val);
-//            
-//            cutLength += LHDistanceBetweenPoints(ropeA, ropeB);
-//            
-//            NSValue* interVal = LHLinesIntersection(ropeA, ropeB, ptA, ptB);
-//            
-//            if(interVal){
-//                CGPoint interPt = CGPointFromValue(interVal);
-//                
-//                //need to destroy the joint and create 2 other joints
-//                if(joint){
-//                    
-//                    cutTimer = [NSDate timeIntervalSinceReferenceDate];
-//                    
-//                    nodeA = (CCNode<LHNodeAnimationProtocol, LHNodeProtocol>*)joint.bodyA.node;
-//                    nodeB = (CCNode<LHNodeAnimationProtocol, LHNodeProtocol>*)joint.bodyB.node;
-//                    CGPoint anchorA = [self anchorA];
-//                    CGPoint anchorB = [self anchorB];
-//                    
-//                    float length = _length;
-//
-//                    [joint tryRemoveFromPhysicsNode:[[self scene] physicsNode]];
-//                    joint = nil;
-//                    
-//                    if(ropeShape){
-//                        
-//                        LHDrawNode* shapeA = [LHDrawNode node];
-//                        [self addChild:shapeA];
-//                        cutAShapeNode = shapeA;
-//                        
-//                        LHDrawNode* shapeB = [LHDrawNode node];
-//                        [self addChild:shapeB];
-//                        cutBShapeNode = shapeB;
-//                        
-//                        cutAShapeNode.texture = ropeShape.texture;
-//                        cutBShapeNode.texture = ropeShape.texture;
-//                        
-//                        [ropeShape removeFromParent];
-//                        ropeShape = nil;
-//                    }
-//                    
-//                    //create a new body at cut position and a joint between bodyA and this new body
-//                    {
-//                        CCNode* cutBodyA = [CCNode node];
-//                        
-//                        
-//                        cutBodyA.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:3
-//                                                                           andCenter:CGPointZero];
-//                        cutBodyA.physicsBody.type = CCPhysicsBodyTypeDynamic;
-//                        cutBodyA.position = interPt;
-//                        cutBodyA.physicsBody.density = 0.1;
-////                        cutBodyA.physicsBody.sensor = YES;
-//                        
-//                        anchorA = CGPointMake(relativePosA.x + nodeA.contentSize.width*0.5,
-//                                              -relativePosA.y + nodeA.contentSize.height*0.5);
-//
-//                        [self addChild:cutBodyA];
-//                        
-//                        if(!flipped){
-//                            cutJointALength = cutLength;
-//                        }
-//                        else{
-//                            cutJointALength = length - cutLength;
-//                        }
-//                        
-//                        cutJointA = [CCPhysicsJoint connectedDistanceJointWithBodyA:nodeA.physicsBody
-//                                                                              bodyB:cutBodyA.physicsBody
-//                                                                            anchorA:anchorA
-//                                                                            anchorB:CGPointZero
-//                                                                        minDistance:0
-//                                                                        maxDistance:cutJointALength];
-//                    }
-//                    
-//                    //create a new body at cut position and a joint between bodyB and this new body
-//                    {
-//
-//                        CCNode* cutBodyB = [CCNode node];
-//
-//                        cutBodyB.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:3
-//                                                                           andCenter:CGPointZero];
-//                        cutBodyB.physicsBody.type = CCPhysicsBodyTypeDynamic;
-//                        cutBodyB.position = interPt;
-//                        cutBodyB.physicsBody.density = 0.1;
-////                        cutBodyB.physicsBody.sensor = YES;
-//                        
-//                        [self addChild:cutBodyB];
-//
-//                        if(!flipped){
-//                            cutJointBLength = length - cutLength;
-//                        }
-//                        else{
-//                            cutJointBLength = cutLength;
-//                        }
-//                        
-//                        anchorB = CGPointMake(relativePosB.x + nodeB.contentSize.width*0.5,
-//                                              -relativePosB.y + nodeB.contentSize.height*0.5);
-//
-//
-//                        cutJointB = [CCPhysicsJoint connectedDistanceJointWithBodyA:cutBodyB.physicsBody
-//                                                                              bodyB:nodeB.physicsBody
-//                                                                            anchorA:CGPointZero
-//                                                                            anchorB:anchorB
-//                                                                        minDistance:0
-//                                                                        maxDistance:cutJointBLength];
-//                    }
-//                }
-//                
-//                return;
-//            }
-//        }
-//        prevValue = val;
-//    }
-//}
 
-//-(void)removeFromParent{
-//    if(cutJointA){
-//        [cutJointA tryRemoveFromPhysicsNode:[[self scene] physicsNode]];
-//        cutJointA = nil;
-//    }
-//    
-//    if(cutJointB){
-//        [cutJointB tryRemoveFromPhysicsNode:[[self scene] physicsNode]];
-//        cutJointB = nil;
-//    }
-//    
-//    if(joint){
-//        [joint tryRemoveFromPhysicsNode:[[self scene] physicsNode]];
-//        joint = nil;
-//    }
-//    
-//    [super removeFromParent];
-//}
+void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
+{
+    if(cutJointA || cutJointB) return; //dont cut again
+    
+    if(!joint)return;
+    
+    Point a = this->getAnchorA();
+    Point b = this->getAnchorB();
+    
+    LHScene* scene = (LHScene*)this->getScene();
+    
+    bool flipped = false;
+    __Array* rPoints = this->ropePointsFromPointA(a, b, _length, _segments, &flipped);
+    
+    LHPointValue* prevValue = nullptr;
+    float cutLength = 0.0f;
+
+    for(size_t i = 0; i < rPoints->count(); ++i)
+    {
+        LHPointValue* val = (LHPointValue*)rPoints->getObjectAtIndex(i);
+
+        if(prevValue)
+        {
+            Point ropeA = prevValue->getValue();
+            Point ropeB = val->getValue();
+            
+            cutLength += ropeA.getDistance(ropeB);
+            
+            LHPointValue* interVal = LHUtils::LHLinesIntersection(ropeA, ropeB, ptA, ptB);
+            
+            if(interVal != nullptr)
+            {
+                Point interPt = interVal->getValue();
+                
+                //need to destroy the joint and create 2 other joints
+                if(joint){
+                    
+                    _cutTimer = LHUtils::LHMillisecondNow();
+                    
+                    nodeA = joint->getBodyA()->getNode();
+                    nodeB = joint->getBodyB()->getNode();
+
+                    float length = _length;
+
+                    joint->removeFormWorld();
+                    joint = nullptr;
+                    
+                    if(ropeShape){
+                        
+                        LHDrawNode* shapeA = LHDrawNode::create();
+                        this->addChild(shapeA);
+                        cutAShapeNode = shapeA;
+                        
+                        LHDrawNode* shapeB = LHDrawNode::create();
+                        this->addChild(shapeB);
+                        cutBShapeNode = shapeB;
+                        
+                        cutAShapeNode->setTexture(ropeShape->getTexture());
+                        cutBShapeNode->setTexture(ropeShape->getTexture());
+                        
+                        ropeShape->removeFromParent();
+                        ropeShape = nullptr;
+                    }
+                    
+                    //create a new body at cut position and a joint between bodyA and this new body
+                    {
+                        Node* cutBodyA = Node::create();
+                        
+                        PhysicsBody* body = PhysicsBody::createCircle(3);
+                        cutBodyA->setPhysicsBody(body);
+                        body->setDynamic(true);
+                        
+                        cutBodyA->setPosition(interPt);
+                        //body->setDensity(0.1);
+//                        cutBodyA.physicsBody.sensor = YES;
+                        
+                        a = Point(_relativePosA.x, -_relativePosA.y);
+
+                        this->addChild(cutBodyA);
+                        
+                        if(!flipped){
+                            cutJointALength = cutLength;
+                        }
+                        else{
+                            cutJointALength = length - cutLength;
+                        }
+                        
+                        cutJointA = PhysicsJointLimit::construct(nodeA->getPhysicsBody(),
+                                                                 body,
+                                                                 a,
+                                                                 Point(),
+                                                                 0,
+                                                                 cutJointALength);
+                        
+                        scene->getPhysicsWorld()->addJoint(cutJointA);
+                    }
+                    
+                    //create a new body at cut position and a joint between bodyB and this new body
+                    {
+
+                        Node* cutBodyB = Node::create();
+
+                        PhysicsBody* body = PhysicsBody::createCircle(3);
+                        
+                        cutBodyB->setPhysicsBody(body);
+                        body->setDynamic(true);
+                        cutBodyB->setPosition(interPt);
+                        
+//                        cutBodyB.physicsBody.density = 0.1;
+//                        cutBodyB.physicsBody.sensor = YES;
+                        
+                        this->addChild(cutBodyB);
+
+                        if(!flipped){
+                            cutJointBLength = length - cutLength;
+                        }
+                        else{
+                            cutJointBLength = cutLength;
+                        }
+                        
+                        b = Point(_relativePosB.x, -_relativePosB.y);
+
+
+                        cutJointB = PhysicsJointLimit::construct(body,
+                                                                 nodeB->getPhysicsBody(),
+                                                                 Point(),
+                                                                 b,
+                                                                 0,
+                                                                 cutJointBLength);
+                        
+                        scene->getPhysicsWorld()->addJoint(cutJointB);
+                    }
+                }
+                
+                return;
+            }
+        }
+        prevValue = val;
+    }
+}
+
+void LHRopeJointNode::removeFromParent(){
+
+    if(cutJointA){
+        cutJointA->removeFormWorld();
+        cutJointA = nullptr;
+    }
+    
+    if(cutJointB){
+        cutJointB->removeFormWorld();
+        cutJointB = nullptr;
+    }
+    
+    if(joint){
+        joint->removeFormWorld();
+        joint = nullptr;
+    }
+    
+    Node::removeFromParent();
+}
 
 
 
@@ -635,14 +647,14 @@ __Array* LHRopeJointNode::thickLinePointsFrom(const Point& start, const Point& e
     Point rightSide = Point(dy, -dx);
 
     if (rightSide.getLength() > 0) {
-        rightSide = rightSide.normalize();
-        rightSide = rightSide*(width*0.5);
+        rightSide = LHUtils::LHPointNormalize(rightSide);
+        rightSide = LHUtils::LHPointScaled(rightSide, width*0.5);
     }
     
     Point leftSide(-dy, dx);
     if (leftSide.getLength() > 0) {
-        leftSide = leftSide.normalize();
-        leftSide = leftSide*(width*0.5);
+        leftSide = LHUtils::LHPointNormalize(leftSide);
+        leftSide = LHUtils::LHPointScaled(leftSide, width*0.5);
     }
     
     Point one    = leftSide + start;
@@ -679,42 +691,34 @@ void LHRopeJointNode::visit(Renderer *renderer,
         drawRopeShape(ropeShape, anchorA, anchorB, _length, _segments);
     }
     
-//    NSTimeInterval currentTimer = [NSDate timeIntervalSinceReferenceDate];
-//    
-//    if(removeAfterCut && cutAShapeNode && cutBShapeNode){
-//        
-//        float unit = (currentTimer - cutTimer)/fadeOutDelay;
-//        alphaValue = colorInfo.size.height;
-//        alphaValue -= alphaValue*unit;
-//        
-//        if(unit >=1){
-//            [self removeFromParent];
-//            return;
-//        }
-//    }
-//
-//    if(cutAShapeNode){
-//        CGPoint pt = [cutJointA.bodyB.node convertToWorldSpaceAR:CGPointZero];
-//        CGPoint B = [nodeA.parent convertToNodeSpaceAR:pt];
-//        
-//        [self drawRopeShape:cutAShapeNode
-//                    anchorA:anchorA
-//                    anchorB:B
-//                     length:cutJointALength
-//                   segments:segments];
-//    }
-//    
-//    if(cutBShapeNode){
-//        
-//        CGPoint pt = [cutJointB.bodyA.node convertToWorldSpaceAR:CGPointZero];
-//        CGPoint A = [nodeB.parent convertToNodeSpaceAR:pt];
-//        
-//        [self drawRopeShape:cutBShapeNode
-//                    anchorA:A
-//                    anchorB:anchorB
-//                     length:cutJointBLength
-//                   segments:segments];
-//    }
+    long currentTimer = LHUtils::LHMillisecondNow();
+    
+    if(_removeAfterCut && cutAShapeNode && cutBShapeNode){
+        
+        float unit = (currentTimer - _cutTimer)/_fadeOutDelay;
+        alphaValue = colorInfo.size.height;
+        alphaValue -= alphaValue*unit;
+        
+        if(unit >=1){
+            this->removeFromParent();
+            return;
+        }
+    }
+
+    if(cutAShapeNode){
+        Point pt = cutJointA->getBodyB()->getNode()->convertToWorldSpaceAR(Point());
+        Point B = nodeA->getParent()->convertToNodeSpaceAR(pt);
+        
+        this->drawRopeShape(cutAShapeNode, anchorA, B, cutJointALength, _segments);
+    }
+    
+    if(cutBShapeNode){
+        
+        Point pt = cutJointB->getBodyA()->getNode()->convertToWorldSpaceAR(Point());
+        Point A = nodeB->getParent()->convertToNodeSpaceAR(pt);
+        
+        this->drawRopeShape(cutBShapeNode, A, anchorB, cutJointBLength, _segments);
+    }
 
     Node::visit(renderer, parentTransform, parentTransformUpdated);
 }

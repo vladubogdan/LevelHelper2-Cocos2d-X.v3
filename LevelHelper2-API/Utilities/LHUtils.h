@@ -13,6 +13,8 @@
 #include "cocos2d.h"
 using namespace cocos2d;
 
+class LHPointValue;
+
 class LHUtils
 {
 public:
@@ -23,7 +25,12 @@ public:
                                                 const std::string& folder,
                                                 const std::string& suffix);
 
-    
+    static long LHMillisecondNow();
+
+    static LHPointValue* LHLinesIntersection(const Point& p1, const Point& p2, const Point& p3, const Point& p4);
+    static Point LHPointNormalize(const Point& pt);
+    static Point LHPointScaled(const Point& pt, float val);
+    static float LHPointLength(const Point& pt);
 };
 
 #endif //__LevelHelper2API__LHUtils__

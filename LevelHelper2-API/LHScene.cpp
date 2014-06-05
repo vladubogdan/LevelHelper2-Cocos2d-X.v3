@@ -32,6 +32,7 @@ using namespace cocos2d;
 
 LHScene::LHScene()
 {
+    _touchListener = nullptr;
     _loadedAssetsInformations = nullptr;
     _tracedFixtures = nullptr;
     _gameWorld = nullptr;
@@ -119,7 +120,6 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         loadGenericInfoFromDictionary(dict);
         this->setName(plistLevelFile);
-
         
 //            [self setName:levelPlistFile];
 //            _uuid = [[NSString alloc] initWithString:[dict objectForKey:@"uuid"]];
@@ -145,7 +145,6 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         _ui = LHNode::createWithName("LH_UI_NODE");
         _ui->setLocalZOrder(1);
         this->addChild(_ui);
-
         
         //load background color
         Color3B backgroundClr = dict->colorForKey("backgroundColor");
@@ -310,6 +309,37 @@ LHScene *LHScene::createWithContentOfFile(const std::string& plistLevelFile)
         return nullptr;
     }
 }
+
+// on "init" you need to initialize your instance
+void LHScene::onEnter()
+{
+    CCLOG("SCENE ON ENTER");
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->setSwallowTouches(true);
+    listener->onTouchBegan = CC_CALLBACK_2(LHScene::onTouchBegan, this);
+    listener->onTouchMoved = CC_CALLBACK_2(LHScene::onTouchMoved, this);
+    listener->onTouchEnded = CC_CALLBACK_2(LHScene::onTouchEnded, this);
+    listener->onTouchCancelled = CC_CALLBACK_2(LHScene::onTouchCancelled, this);
+    dispatcher->addEventListenerWithFixedPriority(listener, 1);
+    _touchListener = listener;
+    
+    Scene::onEnter();
+}
+
+
+void LHScene::onExit()
+{
+    CCLOG("SCENE ON EXIT");
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->removeEventListener(_touchListener);
+    _touchListener = nullptr;
+    
+    Scene::onExit();
+}
+
+
+
 
 void LHScene::addLateLoadingNode(Node* node){
     if(!_lateLoadingNodes) {
@@ -544,6 +574,107 @@ Point LHScene::positionForNode(Node* node, Point unitPos)
     
     return designPos;
 }
+
+
+#pragma mark - TOUCHES
+bool LHScene::onTouchBegan(Touch* touch, Event* event){
+    
+    _ropeJointsCutStartPt = touch->getLocation();
+
+//    CCLOG("TOUCH BEGIN %f %f", _ropeJointsCutStartPt.x, _ropeJointsCutStartPt.y);
+
+    return true;
+}
+void LHScene::onTouchMoved(Touch* touch, Event* event){
+    
+}
+void LHScene::onTouchEnded(Touch* touch, Event* event){
+ 
+    Point location = touch->getLocation();
+    
+//    CCLOG("TOUCH ENDED %f %f", location.x, location.y);
+    
+    __Array* ropeJoints = this->getChildrenOfType<LHRopeJointNode*>();
+    
+    for(size_t i = 0; i< ropeJoints->count(); ++i)
+    {
+        LHRopeJointNode* rope = (LHRopeJointNode*)ropeJoints->getObjectAtIndex(i);
+
+        if(rope->canBeCut())
+        {
+            rope->cutWithLineFromPointA(_ropeJointsCutStartPt,
+                                        location);
+        }
+    }
+}
+void LHScene::onTouchCancelled(Touch *touch, Event *event){
+
+}
+
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    
+//    CGVector grv = self.physicsWorld.gravity;
+//    
+//    [self.physicsWorld setGravity:CGVectorMake(grv.dx,
+//                                               -grv.dy)];
+//    
+//    return;
+//    
+//    for (UITouch *touch in touches) {
+//        CGPoint location = [touch locationInNode:self];
+//        
+//        ropeJointsCutStartPt = location;
+//        
+//        NSArray* foundNodes = [self nodesAtPoint:location];
+//        for(SKNode* foundNode in foundNodes)
+//        {
+//            if(foundNode.physicsBody){
+//                touchedNode = foundNode;
+//                touchedNodeWasDynamic = touchedNode.physicsBody.affectedByGravity;
+//                [touchedNode.physicsBody setAffectedByGravity:NO];
+//                return;
+//            }
+//        }
+//    }
+//}
+//
+//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    for (UITouch *touch in touches) {
+//        CGPoint location = [touch locationInNode:self];
+//        
+//        if(touchedNode && touchedNode.physicsBody){
+//            [touchedNode setPosition:location];
+//        }
+//    }
+//}
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//    
+//    for (UITouch *touch in touches) {
+//        CGPoint location = [touch locationInNode:self];
+//        
+//        for(LHRopeJointNode* rope in ropeJoints){
+//            if([rope canBeCut]){
+//                [rope cutWithLineFromPointA:ropeJointsCutStartPt
+//                                   toPointB:location];
+//            }
+//        }
+//    }
+//    
+//    
+//    
+//    if(touchedNode){
+//        [touchedNode.physicsBody setAffectedByGravity:touchedNodeWasDynamic];
+//        touchedNode = nil;
+//    }
+//}
+//- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+//    if(touchedNode){
+//        touchedNode.physicsBody.affectedByGravity = touchedNodeWasDynamic;
+//        touchedNode = nil;
+//    }
+//}
 
 
 

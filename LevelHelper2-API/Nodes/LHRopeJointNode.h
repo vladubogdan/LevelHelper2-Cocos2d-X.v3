@@ -27,6 +27,7 @@ using namespace cocos2d;
 class LHDictionary;
 class LHScene;
 class LHDrawNode;
+class LHPointValue;
 
 class LHRopeJointNode : public Node, public LHNodeProtocol
 {
@@ -44,6 +45,8 @@ public:
     //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
     virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
     
+    
+    virtual void removeFromParent();
     
     /**
      Returns the point where the joint is connected by the first body. In scene coordinates.
@@ -68,8 +71,11 @@ public:
     void cutWithLineFromPointA(const Point& ptA, const Point& ptB);
 
     virtual bool lateLoading();
+    
 private:
     PhysicsJointLimit* joint;
+    PhysicsJointLimit* cutJointA;
+    PhysicsJointLimit* cutJointB;
     
     float   _thickness;
     int     _segments;
@@ -89,9 +95,16 @@ private:
     Node* nodeA;
     Node* nodeB;
     
-    Color4F colorInfo;
+    Rect colorInfo;
+    float alphaValue;
     
     LHDrawNode* ropeShape;
+    LHDrawNode* cutAShapeNode;
+    LHDrawNode* cutBShapeNode;
+    long _cutTimer;
+    
+    float cutJointALength;
+    float cutJointBLength;
     
     void drawRopeShape(LHDrawNode* shape, Point anchorA, Point anchorB, float length, int no_segments);
     

@@ -64,6 +64,8 @@
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
 		6E0F05141931B5EC005882C8 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F05121931B5EC005882C8 /* LHUtils.cpp */; };
 		6E0F05151931B5EC005882C8 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F05121931B5EC005882C8 /* LHUtils.cpp */; };
+		6E1AFAE41941F23700965737 /* LHSceneTags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1AFAE21941F23700965737 /* LHSceneTags.cpp */; };
+		6E1AFAE51941F23700965737 /* LHSceneTags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1AFAE21941F23700965737 /* LHSceneTags.cpp */; };
 		6E25B8CB193DA3A30003BF48 /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8C9193DA3A30003BF48 /* LHDrawNode.cpp */; };
 		6E25B8CC193DA3A30003BF48 /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8C9193DA3A30003BF48 /* LHDrawNode.cpp */; };
 		6E25B8DB193DE7BF0003BF48 /* LHSceneUserProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */; };
@@ -342,6 +344,8 @@
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
 		6E0F05121931B5EC005882C8 /* LHUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHUtils.cpp; sourceTree = "<group>"; };
 		6E0F05131931B5EC005882C8 /* LHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUtils.h; sourceTree = "<group>"; };
+		6E1AFAE21941F23700965737 /* LHSceneTags.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneTags.cpp; path = ../Classes/LHSceneTags.cpp; sourceTree = "<group>"; };
+		6E1AFAE31941F23700965737 /* LHSceneTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneTags.h; path = ../Classes/LHSceneTags.h; sourceTree = "<group>"; };
 		6E25B8C8193D9C940003BF48 /* LHPointValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPointValue.h; sourceTree = "<group>"; };
 		6E25B8C9193DA3A30003BF48 /* LHDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDrawNode.cpp; sourceTree = "<group>"; };
 		6E25B8CA193DA3A30003BF48 /* LHDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDrawNode.h; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 				6E89FCE6192E020C0040478F /* LHSceneSubclass.h */,
 				6E25B8D9193DE7BF0003BF48 /* LHSceneUserProp.cpp */,
 				6E25B8DA193DE7BF0003BF48 /* LHSceneUserProp.h */,
+				6E1AFAE21941F23700965737 /* LHSceneTags.cpp */,
+				6E1AFAE31941F23700965737 /* LHSceneTags.h */,
 				6E25B8E1193E0E2F0003BF48 /* LHSceneCutRope.cpp */,
 				6E25B8E2193E0E2F0003BF48 /* LHSceneCutRope.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
@@ -1008,6 +1014,7 @@
 				6E89FCE7192E020C0040478F /* LHSceneSubclass.cpp in Sources */,
 				6E89FEDB192E4E0B0040478F /* LHScaleProperty.cpp in Sources */,
 				6E89FEE3192E4F340040478F /* LHSpriteFrameProperty.cpp in Sources */,
+				6E1AFAE41941F23700965737 /* LHSceneTags.cpp in Sources */,
 				6E89FEA7192E34440040478F /* LHAnimationProperty.cpp in Sources */,
 				6E89FEFB192E54420040478F /* LHAnimation.cpp in Sources */,
 				6E677FCB1930949900CCEB7E /* LHNode.cpp in Sources */,
@@ -1034,6 +1041,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E89FEC0192E402B0040478F /* LHPositionFrame.cpp in Sources */,
+				6E1AFAE51941F23700965737 /* LHSceneTags.cpp in Sources */,
 				6E677FE41931ACBE00CCEB7E /* LHShape.cpp in Sources */,
 				6E89FEA8192E34440040478F /* LHAnimationProperty.cpp in Sources */,
 				6E89FEE8192E4FD70040478F /* LHCameraActivateProperty.cpp in Sources */,

@@ -32,8 +32,7 @@ void DemoCustomClass::setPropertiesFromDictionary(LHDictionary* dict)
 
 Node* DemoCustomClass::getOtherRobot(){
 	if(!otherRobot && otherRobot_uuid.length()>0){
-		LHScene* scene = (LHScene*)getNode()->getScene();
-		otherRobot= scene->getChildNodeWithUUID(otherRobot_uuid);
+		otherRobot= ((LHNodeProtocol*)(getNode()->getScene()))->getChildNodeWithUUID(otherRobot_uuid);
 	}
 	return otherRobot;
 }

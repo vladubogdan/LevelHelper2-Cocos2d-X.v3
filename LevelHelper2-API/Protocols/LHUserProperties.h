@@ -8,7 +8,6 @@
 #include "DemoCustomClass.h"
 
 
-//If compiler gives an error with "... file not found" you need to add that file into your project Xcode or Make file.
 #include "LHUserPropertyProtocol.h"
 
 class LHUserCustomPropertiesManager

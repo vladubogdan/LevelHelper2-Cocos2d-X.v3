@@ -116,6 +116,60 @@ Node* LHNodeProtocol::getChildNodeWithUUID(const std::string& uuid)
     }
     return NULL;
 }
+
+__Array* LHNodeProtocol::getChildrenWithTags(const std::vector<std::string>& tagValues, bool any)
+{
+    __Array* temp = __Array::create();
+    
+    Node* node = dynamic_cast<Node*>(this);
+    if(!node){
+        return NULL;
+    }
+    
+    auto& children = node->getChildren();
+    for( const auto &n : children){
+        LHNodeProtocol* nProt = dynamic_cast<LHNodeProtocol*>(n);
+        if(nProt){
+            std::vector<std::string> childTags = nProt->getTags();
+            
+            int foundCount = 0;
+            bool foundAtLeastOne = false;
+            
+            for(size_t i = 0; i < childTags.size(); ++i)
+            {
+                std::string tg = childTags[i];
+                
+                for(size_t j = 0; j < tagValues.size();++j)
+                {
+                    std::string st = tagValues[j];
+                    if(st == tg)
+                    {
+                        ++foundCount;
+                        foundAtLeastOne = true;
+                        if(any){
+                            break;
+                        }
+                    }
+                }
+                
+                if(any && foundAtLeastOne){
+                    temp->addObject(n);
+                }
+            }
+            
+            if(!any && foundAtLeastOne && foundCount == tagValues.size()){
+                temp->addObject(n);
+            }
+            
+            __Array* childArray = nProt->getChildrenWithTags(tagValues, any);
+            if(childArray){
+                temp->addObjectsFromArray(childArray);
+            }
+        }
+    }
+    return temp;
+}
+
 void LHNodeProtocol::loadGenericInfoFromDictionary(LHDictionary* dict){
     
     if(dict->objectForKey("name"))

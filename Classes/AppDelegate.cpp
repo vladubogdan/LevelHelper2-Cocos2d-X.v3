@@ -4,6 +4,7 @@
 #include "LHSceneSubclass.h"
 #include "LHSceneUserProp.h"
 #include "LHSceneCutRope.h"
+#include "LHSceneTags.h"
 
 USING_NS_CC;
 
@@ -48,9 +49,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     //camera will have to wait until cocos2d-x team fixes the issue or until i add Box2d physics support.
 //      auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level07-parallax.plist");
     
-    auto scene = LHSceneCutRope::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level08-ropeJoint.plist");
+//    auto scene = LHSceneCutRope::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level08-ropeJoint.plist");
     
 //    auto scene = LHSceneUserProp::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level09-customProperties.plist");
+    
+    auto scene = LHSceneTags::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level09-tags.plist");
     
     // run
     director->runWithScene(scene);

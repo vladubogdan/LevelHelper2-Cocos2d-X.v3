@@ -72,6 +72,16 @@ public:
     virtual Node* getChildNodeWithUUID(const std::string& uuid);
 
     /**
+     Returns all children nodes that have the specified tag values.
+     @param tagValues An vector containing tag names.
+     @param any Specify if all or just one tag value of the node needs to be in common with the passed ones.
+     @return An array of nodes.
+     */
+    virtual __Array* getChildrenWithTags(const std::vector<std::string>& tagValues, bool any=true);
+    
+
+    
+    /**
      Returns all children nodes that are of specified class type. The type must be compatible with Cocos2d-X __Array type. (must be of Ref type)
      @param type A "Class" type.
      @return An array with all the found nodes of the specified class.
@@ -132,22 +142,3 @@ public:
 };
 
 #endif //__LEVELHELPER_API_NODE_PROTOCOL_H__
-
-//@optional
-////////////////////////////////////////////////////////////////////////////////
-
-/**
- Returns a node with the specified unique name or nil if that node is not found in the children hierarchy.
- @param name The unique name of the node.
- @return A node or or nil.
- */
-//-(CCNode <LHNodeProtocol>*)childNodeWithName:(NSString*)name;
-
-/**
- Returns all children nodes that have the specified tag values. 
- @param tagValues An array containing tag names. Array of NSString's.
- @param any Specify if all or just one tag value of the node needs to be in common with the passed ones.
- @return An array of nodes.
- */
-//-(NSMutableArray*)childrenWithTags:(NSArray*)tagValues containsAny:(BOOL)any;
-

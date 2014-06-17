@@ -83,8 +83,6 @@ bool LHSprite::initWithSpriteName(const std::string& spriteName,
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile(plistPath);
     
-    CCLOG("PLIST PATH %s", plistPath.c_str());
-    
     if(Sprite::initWithSpriteFrameName(spriteName))
     {
         prnt->addChild(this);

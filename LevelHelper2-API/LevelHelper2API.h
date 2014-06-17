@@ -23,7 +23,8 @@
 #include "LHRopeJointNode.h"
 
 
-//#import "LHWater.h"
+#include "LHWater.h"
+
 //#import "LHAnimation.h"
 //#import "LHDistanceJointNode.h"
 //#import "LHGravityArea.h"

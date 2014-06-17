@@ -129,6 +129,7 @@ public:
     virtual bool isParallax(){return false;}
     virtual bool isParallaxLayer(){return false;}
     virtual bool isRopeJointNode(){return false;}
+    virtual bool isWater(){return false;}
     
     
     virtual void loadUserPropertyWithDictionary(LHDictionary* dict);

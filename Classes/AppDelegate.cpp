@@ -53,7 +53,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
 //    auto scene = LHSceneUserProp::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level09-customProperties.plist");
     
-    auto scene = LHSceneTags::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level09-tags.plist");
+//    auto scene = LHSceneTags::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level09-tags.plist");
+    
+    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level10-water.plist");
     
     // run
     director->runWithScene(scene);

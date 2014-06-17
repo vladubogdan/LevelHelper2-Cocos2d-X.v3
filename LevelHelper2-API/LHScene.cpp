@@ -21,6 +21,8 @@
 #include "LHParallaxLayer.h"
 #include "LHRopeJointNode.h"
 
+#include "LHWater.h"
+
 #include "LHUtils.h"
 
 
@@ -151,8 +153,9 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         glClearColor(backgroundClr.r, backgroundClr.g, backgroundClr.b, 1.0f);
 
         
-        getPhysicsWorld()->setDebugDrawMask(true ? PhysicsWorld::DEBUGDRAW_ALL : PhysicsWorld::DEBUGDRAW_NONE);
+        //getPhysicsWorld()->setDebugDrawMask(true ? PhysicsWorld::DEBUGDRAW_ALL : PhysicsWorld::DEBUGDRAW_NONE);
 
+        
         
         if(dict->boolForKey("useGlobalGravity"))
         {
@@ -429,13 +432,11 @@ Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
             scene->addLateLoadingNode(jt);
         }
     }
-
-//    else if([nodeType isEqualToString:@"LHWaves"])
-//    {
-//        LHWater* wt = [LHWater waterNodeWithDictionary:childInfo
-//                                                parent:prnt];
-//        return wt;
-//    }
+    else if(nodeType == "LHWaves")
+    {
+        LHWater* wt = LHWater::waterWithDictionary(childInfo, prnt);
+        return wt;
+    }
 //    else if([nodeType isEqualToString:@"LHAreaGravity"])
 //    {
 //        LHGravityArea* gv = [LHGravityArea gravityAreaWithDictionary:childInfo

@@ -379,11 +379,11 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
         
         if(shape != 3)//chain
         {
-           Vector<PhysicsShape*> bodyShapes = node->getPhysicsBody()->getShapes();
-            
-            for (Ref* obj : bodyShapes)
-            {
-                PhysicsShape* shp = dynamic_cast<PhysicsShape*>(obj);
+//           Vector<PhysicsShape*> bodyShapes = node->getPhysicsBody()->getShapes();
+//            
+//            for (Ref* obj : bodyShapes)
+//            {
+//                PhysicsShape* shp = dynamic_cast<PhysicsShape*>(obj);
                 
                 //setting density causes weird behaviour - WHY?
 //                shp->setDensity(fixInfo->floatForKey("density"));
@@ -392,8 +392,8 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
 
 //                shp->setCollisionBitmask(mask);
 //                shp->setCategoryBitmask(category);
-                
-            }
+//                
+//            }
 //                node->getPhysicsBody()->sensor = [fixInfo boolForKey:@"sensor"];
         }
         

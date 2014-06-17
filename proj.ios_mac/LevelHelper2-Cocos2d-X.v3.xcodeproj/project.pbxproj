@@ -62,6 +62,8 @@
 		50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
 		50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A017ECD613001EB2F8 /* Icon-29.png */; };
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
+		6E0D5974194F638F0036E940 /* LHWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5972194F638F0036E940 /* LHWater.cpp */; };
+		6E0D5975194F638F0036E940 /* LHWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5972194F638F0036E940 /* LHWater.cpp */; };
 		6E0F05141931B5EC005882C8 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F05121931B5EC005882C8 /* LHUtils.cpp */; };
 		6E0F05151931B5EC005882C8 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F05121931B5EC005882C8 /* LHUtils.cpp */; };
 		6E1AFAE41941F23700965737 /* LHSceneTags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E1AFAE21941F23700965737 /* LHSceneTags.cpp */; };
@@ -342,6 +344,8 @@
 		50EF629517ECD46A001EB2F8 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		50EF62A017ECD613001EB2F8 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
+		6E0D5972194F638F0036E940 /* LHWater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHWater.cpp; sourceTree = "<group>"; };
+		6E0D5973194F638F0036E940 /* LHWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHWater.h; sourceTree = "<group>"; };
 		6E0F05121931B5EC005882C8 /* LHUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHUtils.cpp; sourceTree = "<group>"; };
 		6E0F05131931B5EC005882C8 /* LHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUtils.h; sourceTree = "<group>"; };
 		6E1AFAE21941F23700965737 /* LHSceneTags.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneTags.cpp; path = ../Classes/LHSceneTags.cpp; sourceTree = "<group>"; };
@@ -679,6 +683,8 @@
 				6E677FCA1930949900CCEB7E /* LHNode.h */,
 				6E89FCA4192DFFF30040478F /* LHSprite.cpp */,
 				6E89FCA5192DFFF30040478F /* LHSprite.h */,
+				6E0D5972194F638F0036E940 /* LHWater.cpp */,
+				6E0D5973194F638F0036E940 /* LHWater.h */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -1029,6 +1035,7 @@
 				6E89FCBA192DFFF30040478F /* LHDictionary.cpp in Sources */,
 				6E89FCB8192DFFF30040478F /* LHDevice.cpp in Sources */,
 				6E25B8CB193DA3A30003BF48 /* LHDrawNode.cpp in Sources */,
+				6E0D5974194F638F0036E940 /* LHWater.cpp in Sources */,
 				6E5CF9391933771100E752BF /* LHAsset.cpp in Sources */,
 				6E89FEBF192E402B0040478F /* LHPositionFrame.cpp in Sources */,
 				6E89FEF7192E539F0040478F /* LHChildrenScalesProperty.cpp in Sources */,
@@ -1043,6 +1050,7 @@
 				6E89FEC0192E402B0040478F /* LHPositionFrame.cpp in Sources */,
 				6E1AFAE51941F23700965737 /* LHSceneTags.cpp in Sources */,
 				6E677FE41931ACBE00CCEB7E /* LHShape.cpp in Sources */,
+				6E0D5975194F638F0036E940 /* LHWater.cpp in Sources */,
 				6E89FEA8192E34440040478F /* LHAnimationProperty.cpp in Sources */,
 				6E89FEE8192E4FD70040478F /* LHCameraActivateProperty.cpp in Sources */,
 				6E89FEC4192E43640040478F /* LHOpacityFrame.cpp in Sources */,

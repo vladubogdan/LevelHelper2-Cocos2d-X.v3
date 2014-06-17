@@ -21,7 +21,7 @@ public:
     CREATE_FUNC(HelloWorld);
     
     
-    void draw(Renderer* renderer, const kmMat4 &transform, bool transformUpdated);
+    void draw(Renderer* renderer, const Mat4 &transform, bool transformUpdated);
     
     Texture2D* _texture;
     // The points used to draw the openGl triangle strip

@@ -7,12 +7,12 @@
 		<key>LevelHelper2-Cocos2d-X.v3 Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>1</integer>
 		</dict>
 		<key>LevelHelper2-Cocos2d-X.v3 iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

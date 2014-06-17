@@ -95,6 +95,20 @@ bool LHSprite::initWithSpriteName(const std::string& spriteName,
 
 
 
+LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
+{
+    LHSprite *ret = new LHSprite();
+    if (ret && ret->initWithDictionary(dict, prnt))
+    {
+        ret->autorelease();
+        return ret;
+    }
+    else
+    {
+        CC_SAFE_DELETE(ret);
+        return nullptr;
+    }
+}
 
 
 bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
@@ -134,6 +148,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     
     if(initResult)
     {
+     
         _physicsBody = NULL;
         
         loadGenericInfoFromDictionary(dict);
@@ -144,6 +159,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
         
         prnt->addChild(this);
 
+        
         
         Point unitPos   = dict->pointForKey("generalPosition");
         Point pos       = LHScene::positionForNode(this, unitPos);
@@ -198,55 +214,8 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
-
-LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
-{
-    LHSprite *ret = new LHSprite();
-    if (ret && ret->initWithDictionary(dict, prnt))
-    {
-        ret->autorelease();
-        return ret;
-    }
-    else
-    {
-        CC_SAFE_DELETE(ret);
-        return nullptr;
-    }
-}
-
-//void LHSprite::setOpacity(GLubyte opacity)
-//{
-//    Sprite::setOpacity(opacity);
-//}
-//
-//void LHSprite::setRotation(float rotation)
-//{
-//    Sprite::setRotation(rotation);
-//    
-//    //*own stuff here*//
-//}
-//void LHSprite::setScaleX(float scaleX)
-//{
-//    Sprite::setScaleX(scaleX);
-//}
-//
-//void LHSprite::setScaleY(float scaleY)
-//{
-//    Sprite::setScaleY(scaleY);
-//}
-//
-//void LHSprite::setPosition(const Point& pos)
-//{
-//    Sprite::setPosition(pos);
-//}
-//
-//Scene* LHSprite::getScene()
-//{
-//    return Sprite::getScene();
-//}
-void LHSprite::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
     visitActiveAnimation();
-    
     Sprite::visit(renderer, parentTransform, parentTransformUpdated);
 }

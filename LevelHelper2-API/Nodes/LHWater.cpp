@@ -345,7 +345,7 @@ void LHWater::setShapeTriangles(__Array* triangles, const Color4F& c4)
     }
 }
 
-void LHWater::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+void LHWater::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
     std::vector<LHWave*> toKeep;
     for(size_t i = 0; i < waves.size(); ++i)

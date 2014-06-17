@@ -38,9 +38,7 @@ public:
     static  bool isLHParallax(Node* obj){return (0 != dynamic_cast<LHParallax*>(obj));}
     virtual bool isParallax(){return true;}
     
-    //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
-    virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
-    
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
     
     /**
      Returns the followed node or nullptr if no node is being fallowed;

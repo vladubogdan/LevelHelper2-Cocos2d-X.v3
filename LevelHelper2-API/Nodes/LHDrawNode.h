@@ -31,7 +31,7 @@ public:
     virtual void setBlendFunc(const BlendFunc &blendFunc);
     virtual const BlendFunc &getBlendFunc() const;
 
-    virtual void draw(Renderer *renderer, const kmMat4 &transform, bool transformUpdated) override;
+    virtual void draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated) override;
     
     void clear();
 private:

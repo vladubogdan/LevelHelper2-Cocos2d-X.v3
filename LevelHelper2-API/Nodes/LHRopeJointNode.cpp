@@ -676,7 +676,7 @@ __Array* LHRopeJointNode::thickLinePointsFrom(const Point& start, const Point& e
 }
 
 void LHRopeJointNode::visit(Renderer *renderer,
-                            const kmMat4& parentTransform,
+                            const Mat4& parentTransform,
                             bool parentTransformUpdated)
 {
     Point anchorA = getAnchorA();

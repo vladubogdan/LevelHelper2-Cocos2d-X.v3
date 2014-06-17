@@ -39,8 +39,7 @@ public:
     static  bool isLHNode(Node* obj){return (0 != dynamic_cast<LHNode*>(obj));}
     virtual bool isNode(){return true;}
     
-    //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
-    virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
 };
 
 #endif //__LEVELHELPER_API_NODE_H__

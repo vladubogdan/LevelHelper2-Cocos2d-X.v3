@@ -161,7 +161,7 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
-void LHAsset::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+void LHAsset::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
     visitActiveAnimation();
     Node::visit(renderer, parentTransform, parentTransformUpdated);

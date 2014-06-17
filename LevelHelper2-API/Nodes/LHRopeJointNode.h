@@ -42,8 +42,7 @@ public:
     static  bool isLHRopeJointNode(Node* obj){return (0 != dynamic_cast<LHRopeJointNode*>(obj));}
     virtual bool isRopeJointNode(){return true;}
     
-    //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
-    virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
     
     
     virtual void removeFromParent();

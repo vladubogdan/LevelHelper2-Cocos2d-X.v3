@@ -57,8 +57,8 @@ public:
     virtual const BlendFunc &getBlendFunc() const;
 
     
-    void textureDraw(const kmMat4 &transform, bool transformUpdated);
-    virtual void draw(Renderer *renderer, const kmMat4 &transform, bool transformUpdated) override;
+    void textureDraw(const Mat4 &transform, bool transformUpdated);
+    virtual void draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated) override;
     
     virtual void drawTriangle(const Point &p1, const Point &p2, const Point &p3,
                               const Color4F &colorA, const Color4F &colorB, const Color4F &colorC,

@@ -107,7 +107,7 @@ void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, const 
 }
 
 
-void LHDrawNode::draw(Renderer *renderer, const kmMat4 &transform, bool transformUpdated)
+void LHDrawNode::draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated)
 {
 	GL::bindTexture2D(_texture->getName());
 	

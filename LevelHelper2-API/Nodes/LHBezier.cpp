@@ -16,7 +16,7 @@
 typedef struct _LH_V2F_C4B
 {
 	//! vertices (2F)
-	Vertex2F		vertices;
+	Vec2		vertices;
 	//! colors (4B)
 	Color4B		colors;
 } lhV2F_C4B;
@@ -221,7 +221,7 @@ std::vector<Point> LHBezier::linePoints(){
     return _linePoints;
 }
 
-void LHBezier::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+void LHBezier::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
     visitActiveAnimation();
     DrawNode::visit(renderer, parentTransform, parentTransformUpdated);

@@ -108,8 +108,7 @@ void LHParallax::followNode(Node* node){
     _followedNode = node;
 }
 
-
-void LHParallax::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+void LHParallax::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
     visitActiveAnimation();
     transformLayerPositions();

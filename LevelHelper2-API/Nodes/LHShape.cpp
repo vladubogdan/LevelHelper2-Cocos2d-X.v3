@@ -239,9 +239,9 @@ void LHShape::drawTriangle(const Point &p1,
     Color4B colB = Color4B(colorB);
     Color4B colC = Color4B(colorC);
     
-    V2F_C4B_T2F a = {Vertex2F(p1.x, p1.y), colA, Tex2F(t1.x, t1.y) };
-    V2F_C4B_T2F b = {Vertex2F(p2.x, p2.y), colB, Tex2F(t2.x, t2.y) };
-    V2F_C4B_T2F c = {Vertex2F(p3.x, p3.y), colC, Tex2F(t3.x, t3.y) };
+    V2F_C4B_T2F a = {Vec2(p1.x, p1.y), colA, Tex2F(t1.x, t1.y) };
+    V2F_C4B_T2F b = {Vec2(p2.x, p2.y), colB, Tex2F(t2.x, t2.y) };
+    V2F_C4B_T2F c = {Vec2(p3.x, p3.y), colC, Tex2F(t3.x, t3.y) };
 
     V2F_C4B_T2F_Triangle *triangles = (V2F_C4B_T2F_Triangle *)(_buffer + _bufferCount);
     V2F_C4B_T2F_Triangle triangle = {a, b, c};
@@ -252,14 +252,14 @@ void LHShape::drawTriangle(const Point &p1,
 
 }
 
-void LHShape::draw(Renderer *renderer, const kmMat4 &transform, bool transformUpdated)
+void LHShape::draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated)
 {
     _customCommand.init(_globalZOrder);
     _customCommand.func = CC_CALLBACK_0(LHShape::textureDraw, this, transform, transformUpdated);
     renderer->addCommand(&_customCommand);
 }
 
-void LHShape::textureDraw(const kmMat4 &transform, bool transformUpdated)
+void LHShape::textureDraw(const Mat4 &transform, bool transformUpdated)
 {
     if(_glProgram){
         _glProgram->use();

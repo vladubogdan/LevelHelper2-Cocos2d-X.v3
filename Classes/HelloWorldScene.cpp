@@ -53,7 +53,7 @@ bool HelloWorld::init()
     return true;
 }
 
-void HelloWorld::draw(Renderer* renderer, const kmMat4 &transform, bool transformUpdated)
+void HelloWorld::draw(Renderer* renderer, const Mat4 &transform, bool transformUpdated)
 //void HelloWorld::draw()
 {
 	_scrollSpeed = cocos2d::Point(-0.5,0);
@@ -72,7 +72,7 @@ void HelloWorld::draw(Renderer* renderer, const kmMat4 &transform, bool transfor
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	// Enable the arrays
-	GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_TEX_COORDS);
+	GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_TEX_COORD);
     
 	_glProgram->use();
 	// Tell Cocos2D to pass the CCNode's position/scale/rotation matrix to the shader (well, that's what Ray says!)

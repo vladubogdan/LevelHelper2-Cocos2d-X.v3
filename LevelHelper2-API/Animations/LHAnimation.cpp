@@ -320,12 +320,10 @@ void LHAnimation::updateNodeWithAnimationProperty(LHAnimationProperty* prop, flo
     {
         animateSpriteFrameChangeWithFrame(beginFrm, animNode);
     }
-    /*
-    else if([prop isKindOfClass:[LHCameraActivateProperty class]] && [node isKindOfClass:[LHCamera class]])
-    {
-        [self animateCameraActivationWithFrame:beginFrm];
-    }
- */
+//    else if([prop isKindOfClass:[LHCameraActivateProperty class]] && [node isKindOfClass:[LHCamera class]])
+//    {
+//        [self animateCameraActivationWithFrame:beginFrm];
+//    }
 }
 
 LHScene* LHAnimation::scene(){

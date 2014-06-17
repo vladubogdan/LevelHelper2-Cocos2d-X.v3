@@ -165,7 +165,7 @@ Point LHCamera::transformToRestrictivePosition(Point position)
     return pt;
 }
 
-void LHCamera::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+void LHCamera::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
     if(!isActive())return;
 

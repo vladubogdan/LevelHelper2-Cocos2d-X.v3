@@ -11,6 +11,7 @@
 #include "LHScene.h"
 #include "LHDevice.h"
 #include "LHNode.h"
+#include "LHGameWorldNode.h"
 
 LHCamera::LHCamera()
 {
@@ -96,7 +97,7 @@ void LHCamera::setActive(bool value){
 Node* LHCamera::followedNode()
 {
     if(_followedNode == nullptr && _followedNodeUUID.length()> 0){
-        _followedNode = ((LHScene*)getScene())->getGameWorld()->getChildNodeWithUUID(_followedNodeUUID);
+        _followedNode = ((LHScene*)getScene())->getGameWorldNode()->getChildNodeWithUUID(_followedNodeUUID);
         if(_followedNode){
             _followedNodeUUID ="";
         }
@@ -122,7 +123,7 @@ void LHCamera::setSceneView(){
     if(_active)
     {
         Point transPoint = transformToRestrictivePosition(getPosition());
-        ((LHScene*)getScene())->getGameWorld()->setPosition(transPoint);
+        ((LHScene*)getScene())->getGameWorldNode()->setPosition(transPoint);
         //((LHScene*)getScene())->setPosition(transPoint);
     }
 }
@@ -137,7 +138,7 @@ Point LHCamera::transformToRestrictivePosition(Point position)
         Size content = followed->getContentSize();
         
         position.x -= content.width*(anchor.x -0.5);
-        position.y -= content.height*(anchor.y -0.5);
+        position.y -= content.height*(anchor.y-0.5);
     }
 
     Size winSize = ((LHScene*)getScene())->getContentSize();

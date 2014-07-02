@@ -112,7 +112,7 @@ public:
     virtual bool isSprite(){return true;}
         
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
-    
+        
 private:
 
 };

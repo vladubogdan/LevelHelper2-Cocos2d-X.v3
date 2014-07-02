@@ -12,6 +12,10 @@
 #include "cocos2d.h"
 #include "LHUserPropertyProtocol.h"
 
+#if LH_USE_BOX2D
+class b2Body;
+#endif
+
 class LHDictionary;
 class LHArray;
 class LHScene;
@@ -119,6 +123,9 @@ public:
 
     
     virtual bool isScene(){return false;}
+    virtual bool isBackUINode(){return false;}
+    virtual bool isGameWorldNode(){return false;}
+    virtual bool isUINode(){return false;}
     virtual bool isSprite(){return false;}
     virtual bool isAsset(){return false;}
     virtual bool isNode(){return false;}
@@ -130,6 +137,7 @@ public:
     virtual bool isParallaxLayer(){return false;}
     virtual bool isRopeJointNode(){return false;}
     virtual bool isWater(){return false;}
+
     
     
     virtual void loadUserPropertyWithDictionary(LHDictionary* dict);
@@ -140,6 +148,21 @@ public:
     std::string uuid;
     std::vector<std::string>tags;
     LHUserPropertyProtocol* userProperty;
+    
+    void visitNodeProtocol();
+    
+    AffineTransform absoluteTransform();
+    
+#if LH_USE_BOX2D
+    
+//    AffineTransform absoluteTransform();
+//    AffineTransform nodeTransform();
+//    void updateTransform();
+//    Point position();
+    
+    Point previousScale;
+    b2Body* _body;
+#endif
 };
 
 #endif //__LEVELHELPER_API_NODE_PROTOCOL_H__

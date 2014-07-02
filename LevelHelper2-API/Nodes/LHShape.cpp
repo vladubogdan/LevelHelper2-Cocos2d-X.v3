@@ -55,7 +55,7 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
         LHScene* scene = (LHScene*)prnt->getScene();
         
         _blendFunc = BlendFunc::ALPHA_PREMULTIPLIED;
-        setShaderProgram(ShaderCache::getInstance()->getProgram(GLProgram::SHADER_NAME_POSITION_LENGTH_TEXTURE_COLOR));
+        setGLProgram(ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_COLOR));
     
         
         if(dict->objectForKey("relativeImagePath"))
@@ -78,7 +78,7 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
                 Texture2D::TexParams texParams = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
                 tex->setTexParameters(texParams);
                 setTexture(tex);
-                _glProgram = ShaderCache::getInstance()->getProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
+                _glProgram = ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
             }
         }
         
@@ -173,8 +173,7 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
         
         
         
-        //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        
         prnt->addChild(this);
         
         
@@ -200,6 +199,9 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
             }
         }
         this->setPosition(pos);
+        
+        //physics body needs to be created before adding this node to the parent
+        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         
         
         LHArray* childrenInfo = dict->arrayForKey("children");
@@ -266,8 +268,8 @@ void LHShape::textureDraw(const Mat4 &transform, bool transformUpdated)
         _glProgram->setUniformsForBuiltins(transform);
     }
     else{
-        getShaderProgram()->use();
-        getShaderProgram()->setUniformsForBuiltins(transform);
+        getGLProgram()->use();
+        getGLProgram()->setUniformsForBuiltins(transform);
     }
     
     GL::blendFunc( _blendFunc.src, _blendFunc.dst );

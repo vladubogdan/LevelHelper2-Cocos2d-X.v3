@@ -30,7 +30,7 @@ public:
     /**
      Creates a new asset node with a specific name.
      @param nm The name of the new asset node. Can be used later to retrieve the asset from the children hierarchy.
-     @param assetFileName The name of the asset that. Do not provide an extension. E.g If file is named "myAsset.lhasset.plist" then yous should pass @"myAsset.lhasset".
+     @param assetFileName The name of the asset file. Do not provide an extension. E.g If file is named "myAsset.lhasset.plist" then yous should pass @"myAsset.lhasset".
      @param prnt The parent node. Must not be nil and must be a children of the LHScene (or subclass of LHScene).
      @return A new asset node.
      * @code

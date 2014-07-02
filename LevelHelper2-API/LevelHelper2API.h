@@ -11,6 +11,11 @@
 
 
 #include "LHScene.h"
+
+#include "LHUINode.h"
+#include "LHBackUINode.h"
+#include "LHGameWorldNode.h"
+
 #include "LHNode.h"
 #include "LHSprite.h"
 #include "LHCamera.h"

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>about</key>
+	<dict>
+		<key>app</key>
+		<string>LevelHelper 2</string>
+		<key>author</key>
+		<string>Vladu Bogdan</string>
+		<key>web</key>
+		<string>http://www.gamedevhelper.com</string>
+	</dict>
+	<key>frames</key>
+	<dict>
+		<key>carBody</key>
+		<dict>
+			<key>frame</key>
+			<string>{{4, 4}, {335, 135}}</string>
+			<key>offset</key>
+			<string>{-2, 13.5}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{10, 14}, {335, 135}}</string>
+			<key>sourceSize</key>
+			<string>{359, 190}</string>
+			<key>uuid</key>
+			<string>9015E100-C10C-4DE0-A4C3-A69E08983DEC</string>
+		</dict>
+		<key>carTyre</key>
+		<dict>
+			<key>frame</key>
+			<string>{{4, 147}, {85, 85}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{4, 3}, {85, 85}}</string>
+			<key>sourceSize</key>
+			<string>{93, 91}</string>
+			<key>uuid</key>
+			<string>F2BF5807-ACFF-44E8-BAA8-94A87CAC4F40</string>
+		</dict>
+		<key>wood</key>
+		<dict>
+			<key>frame</key>
+			<string>{{97, 147}, {256, 64}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {256, 64}}</string>
+			<key>sourceSize</key>
+			<string>{256, 64}</string>
+			<key>uuid</key>
+			<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{357, 236}</string>
+		<key>textureFileName</key>
+		<string>carParts.png</string>
+	</dict>
+</dict>
+</plist>

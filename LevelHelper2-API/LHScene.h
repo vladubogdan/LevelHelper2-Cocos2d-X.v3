@@ -11,7 +11,13 @@
 
 
 #include "cocos2d.h"
+#include "LHConfig.h"
 #include "LHNodeProtocol.h"
+
+
+#if LH_USE_BOX2D
+#include "Box2D/Box2D.h"
+#endif
 
 /**
  LHScene class is used to load a level file into Cocos2d-X v3 engine.
@@ -20,7 +26,9 @@
 using namespace cocos2d;
 
 class LHDevice;
-class LHNode;
+class LHBackUINode;
+class LHGameWorldNode;
+class LHUINode;
 class LHDictionary;
 
 class LHScene : public cocos2d::Scene, public LHNodeProtocol
@@ -37,8 +45,10 @@ public:
     Size        getDesignResolutionSize();
     Point       getDesignOffset();
 
-    LHNode* getGameWorld();
-    LHNode* getUI();
+    LHBackUINode* getBackUINode();
+    LHGameWorldNode* getGameWorldNode();
+    LHUINode* getUINode();
+
     
     
     /**
@@ -73,8 +83,33 @@ public:
     virtual void onEnter();
     virtual void onExit();
     
+    
+#if LH_USE_BOX2D
+    b2World* getBox2dWorld();
+    float getPtm();
+    
+    b2Vec2 metersFromPoint(Point point);
+    Point pointFromMeters(b2Vec2 vec);
+    
+    float metersFromValue(float val);
+    float valueFromMeters(float meter);
+    
+#endif //LH_USE_BOX2D
+    
+    
+    /*Get the global gravity force.
+     */
+    Point getGlobalGravity();
+    /*Sets the global gravity force
+     @param gravity A point representing the gravity force in x and y direction.
+     */
+    void setGlobalGravity(Point gravity);
+    
 private:
     
+    friend class LHBackUINode;
+    friend class LHUINode;
+    friend class LHGameWorldNode;
     friend class LHSprite;
     friend class LHNode;
     friend class LHNodeProtocol;
@@ -85,9 +120,10 @@ private:
     friend class LHParallaxLayer;
     friend class LHParallax;
     friend class LHRopeJointNode;
-    
-    LHNode* _gameWorld;
-    LHNode* _ui;
+
+    LHBackUINode* _backUINode;
+    LHGameWorldNode* _gameWorldNode;
+    LHUINode* _uiNode;
     
     std::vector<LHDevice*> devices;
     Size    designResolutionSize;
@@ -108,6 +144,9 @@ private:
     void performLateLoading();
     
     Point _ropeJointsCutStartPt;
+    
+    void loadGlobalGravityFromDictionary(LHDictionary* dict);
+    void loadPhysicsBoundariesFromDictionary(LHDictionary* dict);
 };
 
 #endif //__LEVELHELPER_API_SCENE_H__

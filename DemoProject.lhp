@@ -18,7 +18,7 @@
 			<key>SuffixName</key>
 			<string>hd</string>
 			<key>color</key>
-			<string>{{0.03942050039768219, 0}, {0.040748734027147293, 1}}</string>
+			<string>{{0.039420325309038162, 0}, {0.040748715400695801, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -46,7 +46,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.039412874728441238, 0}, {0.040892854332923889, 1}}</string>
+			<string>{{0.039420314133167267, 0}, {0.040748875588178635, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -60,7 +60,7 @@
 			<key>SuffixName</key>
 			<string>ipadhd</string>
 			<key>color</key>
-			<string>{{0.039412874728441238, 0}, {0.040892854332923889, 1}}</string>
+			<string>{{0.039420314133167267, 0}, {0.040748875588178635, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -75,6 +75,21 @@
 		<dict>
 			<key>ScenesOptions</key>
 			<dict>
+				<key>cameraDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>cameraFollowDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>introductionDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
 				<key>level01.lhs</key>
 				<dict>
 					<key>publish</key>
@@ -131,6 +146,11 @@
 					<true/>
 				</dict>
 				<key>level10-water.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>tst.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

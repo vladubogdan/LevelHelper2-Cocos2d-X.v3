@@ -153,9 +153,6 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
         
         loadGenericInfoFromDictionary(dict);
 
-
-        //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         
         prnt->addChild(this);
 
@@ -190,8 +187,11 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
         Point anchor = dict->pointForKey("anchor");
         anchor.y = 1.0f - anchor.y;
         this->setAnchorPoint(anchor);
-        
         this->setPosition(pos);
+        
+        //physics body needs to be created before adding this node to the parent
+        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+
         
         LHArray* childrenInfo = dict->arrayForKey("children");
         if(childrenInfo)
@@ -216,6 +216,9 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
+    visitNodeProtocol();
     visitActiveAnimation();
     Sprite::visit(renderer, parentTransform, parentTransformUpdated);
 }
+
+

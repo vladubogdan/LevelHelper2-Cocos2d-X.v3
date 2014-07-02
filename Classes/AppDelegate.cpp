@@ -1,10 +1,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
-#include "LHSceneSubclass.h"
-#include "LHSceneUserProp.h"
-#include "LHSceneCutRope.h"
-#include "LHSceneTags.h"
+#include "LHSceneIntroductionDemo.h"
 
 USING_NS_CC;
 
@@ -30,32 +27,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-
-    // create a scene. it's an autorelease object
-//    auto scene = HelloWorld::createScene();
-
-//    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level01.plist");
-//    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level02-anim.plist");
-//    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level03-physics.plist");
-//    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level03-characterAnimation.plist");
     
-    //BUG IN COCOS2D-X v3.x please see discussion https://github.com/cocos2d/cocos2d-x/pull/5493
-//    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level04-camera.plist");
-    
-//    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level05-shape.plist");
-//    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level06-assets.plist");
-    
-    //Since physics and camera don't go well together in cocos2d-x because of the bug 5493 we simulate the parallax using an animation (for testing)
-    //camera will have to wait until cocos2d-x team fixes the issue or until i add Box2d physics support.
-//      auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level07-parallax.plist");
-    
-//    auto scene = LHSceneCutRope::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level08-ropeJoint.plist");
-    
-//    auto scene = LHSceneUserProp::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level09-customProperties.plist");
-    
-//    auto scene = LHSceneTags::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level09-tags.plist");
-    
-    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level10-water.plist");
+    auto scene = LHSceneIntroductionDemo::create();
     
     // run
     director->runWithScene(scene);

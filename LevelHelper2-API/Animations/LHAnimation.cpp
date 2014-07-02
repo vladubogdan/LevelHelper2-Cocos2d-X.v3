@@ -43,6 +43,8 @@
 
 #include "LHNodeAnimationProtocol.h"
 
+#include "LHGameWorldNode.h"
+
 
 LHAnimation::~LHAnimation()
 {    
@@ -337,16 +339,21 @@ LHScene* LHAnimation::scene(){
 
 Point LHAnimation::convertFramePosition(Point newPos, Node* animNode)
 {
-//    if([animNode isKindOfClass:[LHCamera class]]){
-//        CGSize winSize = [[self scene] contentSize];
-//        return CGPointMake(winSize.width*0.5  - newPos.x,
-//                           -winSize.height*0.5 - newPos.y);
+    LHScene* scene = this->scene();
+    Size winSize = scene->getContentSize();
+    Point offset = scene->getDesignOffset();
+
+//    LHNodeProtocol* protocol = dynamic_cast<LHNodeProtocol*>(animNode);
+//    if(protocol && protocol->isCamera())
+//    {
+//        return Point(newPos.x,
+//                     winSize.height + newPos.y);
+//        
 //    }
     
-    LHScene* scene = this->scene();
-    Point offset = scene->getDesignOffset();
     Node* p = animNode->getParent();
-    if(p == scene->getGameWorld() || p == scene)// LHScene::isLHScene(p))// [p isKindOfClass:[CCPhysicsNode class]])
+    
+    if(p == nullptr || p == scene || p == scene->getGameWorldNode())
     {
         newPos.x += offset.x;
         newPos.y += offset.y;

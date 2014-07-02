@@ -12,9 +12,10 @@
 #include "LHDevice.h"
 #include "LHPointValue.h"
 
+#include "LHConfig.h"
 
 #if LH_USE_BOX2D
-#include "LHb2BuoyancyController.h"
+//#include "LHb2BuoyancyController.h"
 #endif
 
 
@@ -340,7 +341,7 @@ void LHWater::setShapeTriangles(__Array* triangles, const Color4F& c4)
         
         Point pC = valC->getValue();
         pC.y = -pC.y;
-        
+    
         _drawNode->drawTriangle(pA, pB, pC, c4);
     }
 }

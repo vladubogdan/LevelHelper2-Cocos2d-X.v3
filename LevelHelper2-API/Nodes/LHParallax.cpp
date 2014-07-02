@@ -13,6 +13,7 @@
 #include "LHParallaxLayer.h"
 #include "LHDevice.h"
 #include "LHNode.h"
+#include "LHGameWorldNode.h"
 
 LHParallax::LHParallax()
 {
@@ -97,7 +98,7 @@ bool LHParallax::initWithDictionary(LHDictionary* dict, Node* prnt)
 Node* LHParallax::followedNode()
 {
     if(_followedNode == nullptr && _followedNodeUUID.length()> 0){
-        _followedNode = ((LHScene*)getScene())->getGameWorld()->getChildNodeWithUUID(_followedNodeUUID);
+        _followedNode = ((LHScene*)getScene())->getGameWorldNode()->getChildNodeWithUUID(_followedNodeUUID);
         if(_followedNode){
             _followedNodeUUID ="";
         }

@@ -167,8 +167,7 @@ bool LHBezier::initWithDictionary(LHDictionary* dict, Node* prnt)
         }
         CC_SAFE_DELETE(prevValue);
         
-        //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+       
         prnt->addChild(this);
 
         
@@ -196,6 +195,8 @@ bool LHBezier::initWithDictionary(LHDictionary* dict, Node* prnt)
         }
         this->setPosition(pos);
         
+        //physics body needs to be created before adding this node to the parent
+        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         
         LHArray* childrenInfo = dict->arrayForKey("children");
         if(childrenInfo)
@@ -223,6 +224,7 @@ std::vector<Point> LHBezier::linePoints(){
 
 void LHBezier::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
+    visitNodeProtocol();
     visitActiveAnimation();
     DrawNode::visit(renderer, parentTransform, parentTransformUpdated);
 }

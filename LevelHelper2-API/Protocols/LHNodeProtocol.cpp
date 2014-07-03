@@ -9,12 +9,29 @@
 #include "LHNodeProtocol.h"
 #include "LHDictionary.h"
 #include "LHArray.h"
-#include "LHScene.h"
+
+#include "LHConfig.h"
 #include "LHUserProperties.h"
+#include "LHPointValue.h"
+
+#include "LHScene.h"
+#include "LHSprite.h"
 #include "LHShape.h"
 #include "LHBezier.h"
-#include "LHConfig.h"
+#include "LHShape.h"
+#include "LHRopeJointNode.h"
+#include "LHParallax.h"
+#include "LHParallaxLayer.h"
+#include "LHWater.h"
+#include "LHNode.h"
+#include "LHAsset.h"
+#include "LHCamera.h"
+
+
 #include "LHGameWorldNode.h"
+#include "LHUINode.h"
+#include "LHBackUINode.h"
+#include "LHDevice.h"
 
 #if LH_USE_BOX2D
 #include "Box2d/Box2d.h"
@@ -22,8 +39,6 @@
 
 LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
 {
-//    printf("NODE PROTOCOL CONTSTRUCTOR\n");
-    
 #if LH_USE_BOX2D
     _body = nullptr;
 #endif
@@ -31,8 +46,6 @@ LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
 }
 LHNodeProtocol::~LHNodeProtocol()
 {
-//    printf("\nNODE PROTOCOL DEALLOC\n");
-    
     if(userProperty){
         delete userProperty;
         userProperty = NULL;
@@ -77,6 +90,24 @@ void LHNodeProtocol::loadUserPropertyWithDictionary(LHDictionary* dict)
         }
     }
 }
+
+void LHNodeProtocol::loadChildrenFromDictionary(LHDictionary* dict)
+{
+    LHArray* childrenInfo = dict->arrayForKey("children");
+    if(childrenInfo)
+    {
+        Node* node = dynamic_cast<Node*>(this);
+        if(!node)return;
+
+        for(int i = 0; i < childrenInfo->count(); ++i)
+        {
+            LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
+            Node* newNode = LHScene::createLHNodeWithDictionary(childInfo, node);
+            #pragma unused (newNode)
+        }
+    }
+}
+
 
 Node* LHNodeProtocol::getChildNodeWithName(const std::string& name)
 {
@@ -181,6 +212,39 @@ __Array* LHNodeProtocol::getChildrenWithTags(const std::vector<std::string>& tag
     return temp;
 }
 
+Point LHNodeProtocol::positionForNode(Node* node, Point unitPos)
+{
+    LHScene* scene = (LHScene*)node->getScene();
+    
+    Size designSize = scene->getDesignResolutionSize();
+    Point offset    = scene->getDesignOffset();
+    
+    Point designPos = Point();
+    
+    if(node->getParent() == nullptr ||
+       node->getParent() == scene ||
+       node->getParent() == scene->getGameWorldNode() ||
+       node->getParent() == scene->getUINode()  ||
+       node->getParent() == scene->getBackUINode())
+    {
+        designPos = Point(designSize.width*unitPos.x,
+                          (designSize.height - designSize.height*unitPos.y));
+        designPos.x += offset.x;
+        designPos.y += offset.y;
+        
+    }
+    else{
+        designPos = Point(designSize.width*unitPos.x,
+                          (node->getParent()->getContentSize().height - designSize.height*unitPos.y));
+        
+        Node* p = node->getParent();
+        designPos.x += p->getContentSize().width*0.5;
+        designPos.y -= p->getContentSize().height*0.5;
+    }
+    
+    return designPos;
+}
+
 void LHNodeProtocol::loadGenericInfoFromDictionary(LHDictionary* dict){
     
     if(dict->objectForKey("name"))
@@ -189,6 +253,64 @@ void LHNodeProtocol::loadGenericInfoFromDictionary(LHDictionary* dict){
     setUuid(dict->stringForKey("uuid"));
     setTags(dict->arrayForKey("tags"));
     loadUserPropertyWithDictionary(dict);
+    
+}
+void LHNodeProtocol::loadTransformationInfoFromDictionary(LHDictionary* dict)
+{
+    Node* node = dynamic_cast<Node*>(this);
+    if(!node)return;
+    
+    
+    if(dict->objectForKey("size")){
+        node->setContentSize(dict->sizeForKey("size"));
+    }
+    
+    if(dict->objectForKey("colorOverlay")){
+        node->setColor(dict->colorForKey("colorOverlay"));
+    }
+    
+    if(dict->objectForKey("alpha")){
+        node->setOpacity(dict->floatForKey("alpha"));
+    }
+    if(dict->objectForKey("rotation")){
+        node->setRotation(dict->floatForKey("rotation"));
+    }
+    
+    if(dict->objectForKey("zOrder")){
+        node->setZOrder(dict->floatForKey("zOrder"));
+    }
+    
+    
+    if(dict->objectForKey("scale")){
+        Point scl = dict->pointForKey("scale");
+        node->setScaleX(scl.x);
+        node->setScaleY(scl.y);
+    }
+    
+    
+    if(dict->objectForKey("anchor")){
+        Point anchor = dict->pointForKey("anchor");
+        anchor.y = 1.0f - anchor.y;
+        node->setAnchorPoint(anchor);
+    }
+    
+    if(dict->objectForKey("generalPosition"))
+    {
+        Point unitPos   = dict->pointForKey("generalPosition");
+        Point pos       = LHNodeProtocol::positionForNode(node, unitPos);
+        
+        LHDictionary* devPositions = dict->dictForKey("devicePositions");
+        if(devPositions)
+        {
+            std::string unitPosStr = LHDevice::devicePosition(devPositions, LH_SCREEN_RESOLUTION);
+            
+            if(unitPosStr.length()>0){
+                Point unitPos = PointFromString(unitPosStr);
+                pos = LHScene::positionForNode(node, unitPos);
+            }
+        }
+        node->setPosition(pos);
+    }
 }
 
 #if LH_USE_BOX2D
@@ -352,14 +474,6 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
                 Point ptB = triangles[i+1];
                 Point ptC = triangles[i+2];
                 
-//                ptA.y = -ptA.y;
-//                ptB.y = -ptB.y;
-//                ptC.y = -ptC.y;
-                
-//                ptA.x *= scaleX; ptA.y *= scaleY;
-//                ptB.x *= scaleX; ptB.y *= scaleY;
-//                ptC.x *= scaleX; ptC.y *= scaleY;
-                
                 b2Vec2 *verts = new b2Vec2[3];
                 
                 verts[2] = scene->metersFromPoint(ptA);
@@ -391,6 +505,7 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
             
             std::vector< b2Vec2 > verts;
             
+            LHPointValue* lastPt = nullptr;
             for(int i = 0; i < points.size(); ++i)
             {
                 Point pt = points[i];
@@ -398,7 +513,21 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
                 pt.x *= scaleX;
                 pt.y *= scaleY;
                 
-                verts.push_back(scene->metersFromPoint(pt));
+                b2Vec2 v2 = scene->metersFromPoint(pt);
+                if(lastPt != nullptr)
+                {
+                    Point oldPt = lastPt->getValue();
+                    b2Vec2 v1 = b2Vec2(oldPt.x, oldPt.y);
+                    
+                    if(b2DistanceSquared(v1, v2) > b2_linearSlop * b2_linearSlop)
+                    {
+                        verts.push_back(v2);
+                    }
+                }
+                else{
+                    verts.push_back(v2);
+                }
+                lastPt = LHPointValue::create(Point(v2.x, v2.y));
             }
             
             b2Shape* shape = new b2ChainShape();
@@ -503,6 +632,11 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
 }
 
 #else //chipmunk
+
+void LHNodeProtocol::visitNodeProtocol()
+{
+    //nothing to do in chipmunk - update is handled by cocos2d
+}
 
 void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
@@ -733,3 +867,129 @@ void LHNodeProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scen
 }
 
 #endif
+
+
+Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
+{
+    
+    std::string nodeType = childInfo->stringForKey("nodeType");
+    
+    LHScene* scene = NULL;
+    
+    if( LHScene::isLHScene(prnt)){
+        scene = (LHScene*)prnt;
+    }
+    else if(LHScene::isLHScene(prnt->getScene())){
+        scene = (LHScene*)prnt->getScene();
+    }
+    
+    
+    if(nodeType == "LHGameWorldNode")
+    {
+        return LHGameWorldNode::nodeWithDictionary(childInfo, prnt);
+    }
+    else if(nodeType == "LHBackUINode")
+    {
+        return LHBackUINode::nodeWithDictionary(childInfo, prnt);
+    }
+    else if(nodeType == "LHUINode")
+    {
+        return LHUINode::nodeWithDictionary(childInfo, prnt);
+    }
+    else if(nodeType == "LHSprite")
+    {
+        LHSprite* spr = LHSprite::spriteNodeWithDictionary(childInfo, prnt);
+        return spr;
+    }
+    else if(nodeType == "LHNode")
+    {
+        LHNode* nd = LHNode::nodeWithDictionary(childInfo, prnt);
+        return nd;
+    }
+    else if(nodeType == "LHCamera")
+    {
+        LHCamera* cm = LHCamera::cameraWithDictionary(childInfo, prnt);
+        return cm;
+    }
+    else if(nodeType == "LHBezier")
+    {
+        LHBezier* bez = LHBezier::bezierNodeWithDictionary(childInfo, prnt);
+        return bez;
+    }
+    else if(nodeType == "LHTexturedShape")
+    {
+        LHShape* sp = LHShape::shapeNodeWithDictionary(childInfo, prnt);
+        return sp;
+    }
+    else if(nodeType == "LHAsset")
+    {
+        LHAsset* as = LHAsset::assetNodeWithDictionary(childInfo, prnt);
+        return as;
+    }
+    else if(nodeType == "LHParallax")
+    {
+        LHParallax* pr = LHParallax::parallaxWithDictionary(childInfo, prnt);
+        return pr;
+    }
+    else if(nodeType == "LHParallaxLayer")
+    {
+        LHParallaxLayer* lh = LHParallaxLayer::parallaxLayerWithDictionary(childInfo, prnt);
+        return lh;
+    }
+    else if(nodeType == "LHRopeJoint")
+    {
+        if(scene)
+        {
+            LHRopeJointNode* jt = LHRopeJointNode::ropeJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
+    else if(nodeType == "LHWaves")
+    {
+        LHWater* wt = LHWater::waterWithDictionary(childInfo, prnt);
+        return wt;
+    }
+    //    else if([nodeType isEqualToString:@"LHAreaGravity"])
+    //    {
+    //        LHGravityArea* gv = [LHGravityArea gravityAreaWithDictionary:childInfo
+    //                                                              parent:prnt];
+    //        return gv;
+    //    }
+    //    else if([nodeType isEqualToString:@"LHWeldJoint"])
+    //    {
+    //        LHWeldJointNode* jt = [LHWeldJointNode weldJointNodeWithDictionary:childInfo
+    //                                                                    parent:prnt];
+    //        [scene addDebugJointNode:jt];
+    //        [scene addLateLoadingNode:jt];
+    //    }
+    //    else if([nodeType isEqualToString:@"LHRevoluteJoint"]){
+    //
+    //        LHRevoluteJointNode* jt = [LHRevoluteJointNode revoluteJointNodeWithDictionary:childInfo
+    //                                                                                parent:prnt];
+    //
+    //        [scene addDebugJointNode:jt];
+    //        [scene addLateLoadingNode:jt];
+    //    }
+    //    else if([nodeType isEqualToString:@"LHDistanceJoint"]){
+    //
+    //        LHDistanceJointNode* jt = [LHDistanceJointNode distanceJointNodeWithDictionary:childInfo
+    //                                                                                parent:prnt];
+    //        [scene addLateLoadingNode:jt];
+    //
+    //    }
+    //    else if([nodeType isEqualToString:@"LHPrismaticJoint"]){
+    //
+    //        LHPrismaticJointNode* jt = [LHPrismaticJointNode prismaticJointNodeWithDictionary:childInfo
+    //                                                                                   parent:prnt];
+    //        [scene addDebugJointNode:jt];
+    //        [scene addLateLoadingNode:jt];
+    //    }
+    
+    
+    else{
+        printf("UNKNOWN NODE TYPE %s\n", nodeType.c_str());
+    }
+    
+    return NULL;
+}
+

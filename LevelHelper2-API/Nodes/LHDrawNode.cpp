@@ -43,12 +43,14 @@ bool LHDrawNode::init()
 {
     if(Node::init())
     {
-        _physicsBody = NULL;
+        _physicsBody = nullptr;
+        _trianglePoints = nullptr;
+        _uvPoints = nullptr;
+        _colors = nullptr;
         
         _blendFunc = BlendFunc::ALPHA_PREMULTIPLIED;
-        //setShaderProgram(ShaderCache::getInstance()->getProgram(GLProgram::SHADER_NAME_POSITION_LENGTH_TEXTURE_COLOR));
-        _glProgram = cocos2d::ShaderCache::getInstance()->getProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE)  ;
-
+        _glProgram = ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_COLOR);
+        
         clear();
         
         return true;
@@ -58,8 +60,9 @@ bool LHDrawNode::init()
 
 void LHDrawNode::clear()
 {
-    CC_SAFE_DELETE(_trianglePoints);
-    CC_SAFE_DELETE(_uvPoints);
+    CC_SAFE_DELETE_ARRAY(_trianglePoints);
+    CC_SAFE_DELETE_ARRAY(_uvPoints);
+    CC_SAFE_DELETE_ARRAY(_colors);
 }
 
 void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, const Color4F& c4)
@@ -73,9 +76,15 @@ void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, const 
 
     _trianglePoints = new cocos2d::Point[_numberOfTriangles*3];
     _uvPoints = new cocos2d::Point[_numberOfTriangles*3];
+    _colors = new Color4F[_numberOfTriangles*3];
+    
+    
+    this->setColor(Color3B(c4.r*255.0f, c4.g*255, c4.b*255));
+    this->setOpacity(c4.a);
     
     int p = 0;
     int u = 0;
+    int c = 0;
         
     for(int i = 0; i < triangles->count(); i+=3)
     {
@@ -103,33 +112,45 @@ void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, const 
         _uvPoints[u++] = ua;
         _uvPoints[u++] = ub;
         _uvPoints[u++] = uc;
+        
+        _colors[c++] = c4;
+        _colors[c++] = c4;
+        _colors[c++] = c4;
     }
 }
 
 
 void LHDrawNode::draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated)
 {
-	GL::bindTexture2D(_texture->getName());
-	
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    if(_texture)
+    {
+        GL::blendFunc(_blendFunc.src, _blendFunc.dst);
+        GL::bindTexture2D(_texture->getName());
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POS_COLOR_TEX);
+    }
+    else{
+        GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_COLOR);
+    }
+    
 
-//	GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_TEX_COORDS);
-    //VERTEX_ATTRIB_FLAG_TEX_COORDS its named VERTEX_ATTRIB_FLAG_TEX_COORD in 3.1 so we use the value instead (which is the same on all cocos2d-x versions)
-    GL::enableVertexAttribs(1 << 0 | 1 << 2);
-        
+    
 	_glProgram->use();
-	
     _glProgram->setUniformsForBuiltins();
 	
-//    glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _trianglePoints);
-//	glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORDS, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _uvPoints);
-
-    //VERTEX_ATTRIB_TEX_COORDS is named VERTEX_ATTRIB_TEX_COORD in 3.1 so we use the value instead (which is the same on all cocos2d-x versions)
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _trianglePoints);
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _uvPoints);
+	glVertexAttribPointer(1, 4, GL_FLOAT, GL_TRUE, sizeof(cocos2d::Color4F), _colors);
+
+    if(_texture){
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _uvPoints);
+    }
     
 	glDrawArrays(GL_TRIANGLES, 0, _numberOfTriangles*3);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    CC_INCREMENT_GL_DRAWN_BATCHES_AND_VERTICES(1,_numberOfTriangles*3);
+    CHECK_GL_ERROR_DEBUG();
 }
 
 Texture2D* LHDrawNode::getTexture() const{
@@ -138,6 +159,7 @@ Texture2D* LHDrawNode::getTexture() const{
 
 void LHDrawNode::setTexture(Texture2D *texture){
     _texture = texture;
+    _glProgram = ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
 }
 
 void LHDrawNode::setBlendFunc(const BlendFunc &blendFunc){

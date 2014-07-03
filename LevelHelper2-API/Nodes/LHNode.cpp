@@ -64,59 +64,17 @@ bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
-        
-        loadGenericInfoFromDictionary(dict);
-        
-        //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-        
         prnt->addChild(this);
         
-        this->setContentSize(dict->sizeForKey("size"));
+        this->loadGenericInfoFromDictionary(dict);
+        this->loadTransformationInfoFromDictionary(dict);
         
-        Point unitPos   = dict->pointForKey("generalPosition");
-        Point pos       = LHScene::positionForNode(this, unitPos);
+        //physics body needs to be created before adding this node to the parent
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         
-        LHDictionary* devPositions = dict->dictForKey("devicePositions");
-        if(devPositions)
-        {
-            std::string unitPosStr = LHDevice::devicePosition(devPositions, LH_SCREEN_RESOLUTION);
-            
-            if(unitPosStr.length()>0){
-                Point unitPos = PointFromString(unitPosStr);
-                pos = LHScene::positionForNode(this, unitPos);
-            }
-        }
-
-        this->setOpacity(dict->floatForKey("alpha"));
-        this->setRotation(dict->floatForKey("rotation"));
-        this->setZOrder(dict->floatForKey("zOrder"));
+        this->loadChildrenFromDictionary(dict);
         
-        
-        Point scl = dict->pointForKey("scale");
-        this->setScaleX(scl.x);
-        this->setScaleY(scl.y);
-        
-        
-        Point anchor = dict->pointForKey("anchor");
-        anchor.y = 1.0f - anchor.y;
-        this->setAnchorPoint(anchor);
-        
-        this->setPosition(pos);
-        
-        LHArray* childrenInfo = dict->arrayForKey("children");
-        if(childrenInfo)
-        {
-            for(int i = 0; i < childrenInfo->count(); ++i)
-            {
-                LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
-                
-                Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
-                #pragma unused (node)
-            }
-        }
-        
-        createAnimationsFromDictionary(dict);
+        this->createAnimationsFromDictionary(dict);
         
         return true;
     }
@@ -125,6 +83,7 @@ bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
+    visitNodeProtocol();
     visitActiveAnimation();
     Node::visit(renderer, parentTransform, parentTransformUpdated);
 }

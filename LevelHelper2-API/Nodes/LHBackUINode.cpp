@@ -40,31 +40,14 @@ bool LHBackUINode::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
-        
-        loadGenericInfoFromDictionary(dict);
-        
-        //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-        
         prnt->addChild(this);
+        
+        this->loadGenericInfoFromDictionary(dict);
         
         this->setPosition(Point(0,0));
         this->setContentSize(prnt->getScene()->getContentSize());
         
-        
-        LHArray* childrenInfo = dict->arrayForKey("children");
-        if(childrenInfo)
-        {
-            for(int i = 0; i < childrenInfo->count(); ++i)
-            {
-                LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
-                
-                Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
-                #pragma unused (node)
-            }
-        }
-        
-        createAnimationsFromDictionary(dict);
+        this->loadChildrenFromDictionary(dict);
         
         return true;
     }
@@ -73,6 +56,5 @@ bool LHBackUINode::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 void LHBackUINode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
-    visitActiveAnimation();
     Node::visit(renderer, parentTransform, parentTransformUpdated);
 }

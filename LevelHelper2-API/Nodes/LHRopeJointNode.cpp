@@ -13,7 +13,11 @@
 #include "LHUtils.h"
 #include "LHDrawNode.h"
 #include "LHPointValue.h"
+#include "LHGameWorldNode.h"
 
+#if LH_USE_BOX2D
+#include "Box2d/Box2d.h"
+#endif
 
 double bisection(double g0, double g1, double epsilon,
                  double (*fp)(double, void *), void *data)
@@ -71,9 +75,7 @@ LHRopeJointNode::LHRopeJointNode()
 {
     cutJointA = nullptr;
     cutJointB = nullptr;
-    joint = nullptr;
-    nodeA = nullptr;
-    nodeB = nullptr;
+
     ropeShape = nullptr;
     cutAShapeNode = nullptr;
     cutBShapeNode = nullptr;
@@ -82,18 +84,13 @@ LHRopeJointNode::LHRopeJointNode()
 
 LHRopeJointNode::~LHRopeJointNode()
 {
-    nodeA = nullptr;
-    nodeB = nullptr;
-
     ropeShape = nullptr;
-    joint = nullptr;
-    
+
     cutAShapeNode = nullptr;
     cutJointA = nullptr;
     
     cutBShapeNode = nullptr;
     cutJointB = nullptr;
-
 }
 
 LHRopeJointNode* LHRopeJointNode::ropeJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
@@ -115,10 +112,14 @@ bool LHRopeJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
-        
-        loadGenericInfoFromDictionary(dict);
-        
         prnt->addChild(this);
+        
+        this->loadGenericInfoFromDictionary(dict);
+        
+        this->loadTransformationInfoFromDictionary(dict);
+        
+        this->loadJointInfoFromDictionary(dict);
+        
         
         _thickness  = dict->floatForKey("thickness");
         _segments   = dict->intForKey("segments");
@@ -134,7 +135,7 @@ bool LHRopeJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
             ropeShape = shape;
             ropeShape->setLocalZOrder(1);
             
-            if(dict->objectForKey("relativeImagePath"))
+            if(dict->objectForKey("relativeImagePath") && dict->boolForKey("useTexture"))
             {
             std::string imgRelPath = dict->stringForKey("relativeImagePath");
             LHScene* scene = (LHScene*)prnt->getScene();
@@ -161,17 +162,8 @@ bool LHRopeJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         }
         
         colorInfo = dict->rectForKey("colorOverlay");
-        colorInfo.size.height = dict->floatForKey("alpha")/255.0f;
         alphaValue = dict->floatForKey("alpha")/255.0f;
-        
-        
-        this->setLocalZOrder(dict->intForKey("zOrder"));
-
-        _nodeAUUID = dict->stringForKey("spriteAUUID");
-        _nodeBUUID = dict->stringForKey("spriteBUUID");
-        
-        _relativePosA = dict->pointForKey("relativePosA");
-        _relativePosB = dict->pointForKey("relativePosB");
+        colorInfo.size.height = alphaValue;
         
         _length     = dict->floatForKey("length");
         
@@ -184,25 +176,15 @@ bool LHRopeJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
-
-Point LHRopeJointNode::getAnchorA()
-{
-    Point pt = nodeA->convertToWorldSpaceAR(Point(_relativePosA.x, -_relativePosA.y));
-    return nodeA->getParent()->convertToNodeSpaceAR(pt);
-}
-
-Point LHRopeJointNode::getAnchorB()
-{
-    Point pt = nodeB->convertToWorldSpaceAR(Point(_relativePosB.x, -_relativePosB.y));
-    return nodeB->getParent()->convertToNodeSpaceAR(pt);
-}
-
-
 bool LHRopeJointNode::canBeCut(){
     return _canBeCut;
 }
 
-void LHRopeJointNode::drawRopeShape(LHDrawNode* shape, Point anchorA, Point anchorB, float length, int no_segments)
+void LHRopeJointNode::drawRopeShape(LHDrawNode* shape,
+                                    Point anchorA,
+                                    Point anchorB,
+                                    float length,
+                                    int no_segments)
 {
     if(shape)
     {
@@ -276,19 +258,17 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
 {
     if(cutJointA || cutJointB) return; //dont cut again
     
-    if(!joint)return;
+    if(!this->getJoint())return;
     
     Point a = this->getAnchorA();
     Point b = this->getAnchorB();
-    
-    LHScene* scene = (LHScene*)this->getScene();
     
     bool flipped = false;
     __Array* rPoints = this->ropePointsFromPointA(a, b, _length, _segments, &flipped);
     
     LHPointValue* prevValue = nullptr;
     float cutLength = 0.0f;
-
+    
     for(size_t i = 0; i < rPoints->count(); ++i)
     {
         LHPointValue* val = (LHPointValue*)rPoints->getObjectAtIndex(i);
@@ -307,17 +287,17 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                 Point interPt = interVal->getValue();
                 
                 //need to destroy the joint and create 2 other joints
-                if(joint){
-                    
-                    _cutTimer = LHUtils::LHMillisecondNow();
-                    
-                    nodeA = joint->getBodyA()->getNode();
-                    nodeB = joint->getBodyB()->getNode();
+                if(this->getJoint()){
+                
+                    LHScene* scene = (LHScene*)this->getScene();
 
-                    float length = _length;
+                    
+                    
+//                    Node* nodeA = this->getNodeA();
+//                    Node* nodeB = this->getNodeB();
+//                    float length = _length;
 
-                    joint->removeFormWorld();
-                    joint = nullptr;
+                    this->removeJoint();
                     
                     if(ropeShape){
                         
@@ -338,6 +318,65 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                     
                     //create a new body at cut position and a joint between bodyA and this new body
                     {
+#if LH_USE_BOX2D
+                        LHGameWorldNode* pNode = scene->getGameWorldNode();
+                        b2World* world = pNode->getBox2dWorld();
+                        b2Vec2 bodyPos = scene->metersFromPoint(interPt);
+                        
+                        b2BodyDef bodyDef;
+                        bodyDef.type = b2_dynamicBody;
+                        bodyDef.position = bodyPos;
+                        cutBodyA = world->CreateBody(&bodyDef);
+                        cutBodyA->SetFixedRotation(false);
+                        cutBodyA->SetGravityScale(1);
+                        cutBodyA->SetSleepingAllowed(true);
+                        
+                        b2FixtureDef fixture;
+                        fixture.density = 1.0f;
+                        fixture.friction = 0.2;
+                        fixture.restitution = 0.2;
+                        fixture.isSensor = true;
+                        
+                        float radius = scene->metersFromValue(_thickness);
+                        
+                        b2Shape* shape = new b2CircleShape();
+                        ((b2CircleShape*)shape)->m_radius = radius*0.5;
+                        
+                        if(shape){
+                            fixture.shape = shape;
+                            cutBodyA->CreateFixture(&fixture);
+                        }
+                        
+                        if(shape){
+                            delete shape;
+                            shape = NULL;
+                        }
+                        
+                        //create joint
+                        b2RopeJointDef jointDef;
+                        
+                        jointDef.localAnchorA = scene->metersFromPoint(this->getLocalAnchorA());
+                        jointDef.localAnchorB = b2Vec2(0,0);
+                        
+                        LHNodeProtocol* nodeAProt = dynamic_cast<LHNodeProtocol*>(this->getNodeA());
+                        if(!nodeAProt)return;
+                        
+                        jointDef.bodyA = nodeAProt->getBox2dBody();
+                        jointDef.bodyB = cutBodyA;
+                        
+                        if(!flipped){
+                            cutJointALength = cutLength;
+                        }
+                        else{
+                            cutJointALength = _length - cutLength;
+                        }
+                        jointDef.maxLength         = scene->metersFromValue(cutJointALength);
+                        jointDef.collideConnected  = this->getCollideConnected();
+                        
+                        cutJointA = (b2RopeJoint*)world->CreateJoint(&jointDef);
+                     
+                        
+#else//chipmunk
                         Node* cutBodyA = Node::create();
                         
                         PhysicsBody* body = PhysicsBody::createCircle(3);
@@ -345,10 +384,8 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                         body->setDynamic(true);
                         
                         cutBodyA->setPosition(interPt);
-                        //body->setDensity(0.1);
-//                        cutBodyA.physicsBody.sensor = YES;
                         
-                        a = Point(_relativePosA.x, -_relativePosA.y);
+                        a = this->getLocalAnchorA();
 
                         this->addChild(cutBodyA);
                         
@@ -356,10 +393,10 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                             cutJointALength = cutLength;
                         }
                         else{
-                            cutJointALength = length - cutLength;
+                            cutJointALength = _length - cutLength;
                         }
                         
-                        cutJointA = PhysicsJointLimit::construct(nodeA->getPhysicsBody(),
+                        cutJointA = PhysicsJointLimit::construct(this->getNodeA()->getPhysicsBody(),
                                                                  body,
                                                                  a,
                                                                  Point(),
@@ -367,11 +404,15 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                                                                  cutJointALength);
                         
                         scene->getPhysicsWorld()->addJoint(cutJointA);
+#endif
                     }
                     
                     //create a new body at cut position and a joint between bodyB and this new body
                     {
 
+#if LH_USE_BOX2D
+                        
+#else//chipmunk
                         Node* cutBodyB = Node::create();
 
                         PhysicsBody* body = PhysicsBody::createCircle(3);
@@ -380,29 +421,29 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                         body->setDynamic(true);
                         cutBodyB->setPosition(interPt);
                         
-//                        cutBodyB.physicsBody.density = 0.1;
-//                        cutBodyB.physicsBody.sensor = YES;
-                        
                         this->addChild(cutBodyB);
 
                         if(!flipped){
-                            cutJointBLength = length - cutLength;
+                            cutJointBLength = _length - cutLength;
                         }
                         else{
                             cutJointBLength = cutLength;
                         }
                         
-                        b = Point(_relativePosB.x, -_relativePosB.y);
+                        b =  this->getLocalAnchorB();
 
 
                         cutJointB = PhysicsJointLimit::construct(body,
-                                                                 nodeB->getPhysicsBody(),
+                                                                 this->getNodeB()->getPhysicsBody(),
                                                                  Point(),
                                                                  b,
                                                                  0,
                                                                  cutJointBLength);
                         
                         scene->getPhysicsWorld()->addJoint(cutJointB);
+                        
+#endif
+                        
                     }
                 }
                 
@@ -415,6 +456,39 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
 
 void LHRopeJointNode::removeFromParent(){
 
+#if LH_USE_BOX2D
+
+    LHScene* scene = (LHScene*)this->getScene();
+    LHGameWorldNode* pNode = scene->getGameWorldNode();
+    if(pNode)
+    {
+        //if we dont have the scene it means the scene was changed so the box2d world will be deleted, deleting the joints also - safe
+        //if we do have the scene it means the node was deleted so we need to delete the joint manually
+        //if we dont have the scene it means
+        b2World* world = pNode->getBox2dWorld();
+        if(world){
+            if(cutJointA)
+            {
+                world->DestroyJoint(cutJointA);
+                cutJointA = NULL;
+            }
+            if(cutBodyA){
+                world->DestroyBody(cutBodyA);
+                cutBodyA = NULL;
+            }
+            
+            if(cutJointB)
+            {
+                world->DestroyJoint(cutJointB);
+                cutJointB = NULL;
+            }
+            if(cutBodyB){
+                world->DestroyBody(cutBodyB);
+                cutBodyB = NULL;
+            }
+        }
+    }
+#else
     if(cutJointA){
         cutJointA->removeFormWorld();
         cutJointA = nullptr;
@@ -424,12 +498,10 @@ void LHRopeJointNode::removeFromParent(){
         cutJointB->removeFormWorld();
         cutJointB = nullptr;
     }
+#endif
     
-    if(joint){
-        joint->removeFormWorld();
-        joint = nullptr;
-    }
-    
+    this->removeJoint();
+        
     Node::removeFromParent();
 }
 
@@ -679,35 +751,46 @@ void LHRopeJointNode::visit(Renderer *renderer,
                             const Mat4& parentTransform,
                             bool parentTransformUpdated)
 {
-    Point anchorA = getAnchorA();
-    Point anchorB = getAnchorB();
+    
+    if(!this->getNodeA() || !this->getNodeB())return;
     
     
-    if(isnan(anchorA.x) || isnan(anchorA.y) || isnan(anchorB.x) || isnan(anchorB.y)){
-        return;
-    }
-
+    Point anchorA = this->getAnchorA();
+    Point anchorB = this->getAnchorB();
+    
     if(ropeShape){
         drawRopeShape(ropeShape, anchorA, anchorB, _length, _segments);
     }
     
-    long currentTimer = LHUtils::LHMillisecondNow();
-    
     if(_removeAfterCut && cutAShapeNode && cutBShapeNode){
+
+        if(_cutTimer == -1)
+        {
+            _cutTimer = LHUtils::LHMillisecondNow();
+        }
+        unsigned long long currentTimer = LHUtils::LHMillisecondNow();
+
         
-        float unit = (currentTimer - _cutTimer)/_fadeOutDelay;
+        float unit = (currentTimer - _cutTimer)/_fadeOutDelay/1000.0;
         alphaValue = colorInfo.size.height;
         alphaValue -= alphaValue*unit;
         
-        if(unit >=1){
+//        CCLOG("UNIT %f %f", unit, alphaValue);
+        
+        if(unit >=1.0f)
+        {
             this->removeFromParent();
             return;
         }
     }
 
+#if LH_USE_BOX2D
+    
+#else
     if(cutAShapeNode){
+        
         Point pt = cutJointA->getBodyB()->getNode()->convertToWorldSpaceAR(Point());
-        Point B = nodeA->getParent()->convertToNodeSpaceAR(pt);
+        Point B = this->getNodeA()->getParent()->convertToNodeSpaceAR(pt);
         
         this->drawRopeShape(cutAShapeNode, anchorA, B, cutJointALength, _segments);
     }
@@ -715,41 +798,86 @@ void LHRopeJointNode::visit(Renderer *renderer,
     if(cutBShapeNode){
         
         Point pt = cutJointB->getBodyA()->getNode()->convertToWorldSpaceAR(Point());
-        Point A = nodeB->getParent()->convertToNodeSpaceAR(pt);
+        Point A = this->getNodeB()->getParent()->convertToNodeSpaceAR(pt);
         
         this->drawRopeShape(cutBShapeNode, A, anchorB, cutJointBLength, _segments);
     }
-
+#endif
+    
     Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 bool LHRopeJointNode::lateLoading()
 {
-    if(_nodeAUUID.length() == 0 || _nodeBUUID.length() == 0)
-        return false;
+    this->findConnectedNodes();
     
-    LHScene* scene = (LHScene*)this->getScene();
+    Node* nodeA = this->getNodeA();
+    Node* nodeB = this->getNodeB();
     
-    if(LHScene::isLHScene(scene))
+    Point relativePosA = this->getLocalAnchorA();
+    Point relativePosB = this->getLocalAnchorB();
+    
+    if(nodeA && nodeB)
     {
-        nodeA = scene->getChildNodeWithUUID(_nodeAUUID);
-        nodeB = scene->getChildNodeWithUUID(_nodeBUUID);
-    }
-    
-    if(nodeA && nodeB && nodeA->getPhysicsBody() && nodeB->getPhysicsBody())
-    {
-        joint = PhysicsJointLimit::construct(nodeA->getPhysicsBody(),
-                                             nodeB->getPhysicsBody(),
-                                             Point(_relativePosA.x,
-                                                   -_relativePosA.y),
-                                             Point(_relativePosB.x,
-                                                   -_relativePosB.y),
-                                             0,
-                                             _length);
+        
 
-        scene->getPhysicsWorld()->addJoint(joint);
+#if LH_USE_BOX2D
+        LHScene* scene = (LHScene*)this->getScene();
+        LHGameWorldNode* pNode = scene->getGameWorldNode();
+        b2World* world = pNode->getBox2dWorld();
+        if(world == nullptr)return false;
+        
+        LHNodeProtocol* nodeAProt = dynamic_cast<LHNodeProtocol*>(this->getNodeA());
+        if(!nodeAProt)return false;
 
-        return true;
+        LHNodeProtocol* nodeBProt = dynamic_cast<LHNodeProtocol*>(this->getNodeB());
+        if(!nodeBProt)return false;
+
+        
+        b2Body* bodyA = nodeAProt->getBox2dBody();
+        b2Body* bodyB = nodeBProt->getBox2dBody();
+        
+        if(!bodyA || !bodyB)return false;
+        
+        b2Vec2 posA = scene->metersFromPoint(relativePosA);
+        b2Vec2 posB = scene->metersFromPoint(relativePosB);
+        
+        b2RopeJointDef jointDef;
+        
+        jointDef.localAnchorA = posA;
+        jointDef.localAnchorB = posB;
+        
+        jointDef.bodyA = bodyA;
+        jointDef.bodyB = bodyB;
+        
+        jointDef.maxLength = scene->metersFromValue(_length);
+        
+        jointDef.collideConnected = this->getCollideConnected();
+        
+        b2RopeJoint* joint = (b2RopeJoint*)world->CreateJoint(&jointDef);
+
+        this->setJoint(joint);
+        
+#else//chipmunk
+        if(nodeA->getPhysicsBody() && nodeB->getPhysicsBody())
+        {
+            PhysicsJointLimit* joint = PhysicsJointLimit::construct(nodeA->getPhysicsBody(),
+                                                                    nodeB->getPhysicsBody(),
+                                                                    relativePosA,
+                                                                    relativePosB,
+                                                                    0,
+                                                                    _length);
+
+            this->getScene()->getPhysicsWorld()->addJoint(joint);
+
+            this->setJoint(joint);
+            
+            return true;
+        }
+#endif
+        
+        
     }
+
     return false;
 }

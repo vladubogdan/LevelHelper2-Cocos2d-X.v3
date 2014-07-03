@@ -25,7 +25,7 @@ public:
                                                 const std::string& folder,
                                                 const std::string& suffix);
 
-    static long LHMillisecondNow();
+    static unsigned long long LHMillisecondNow();
 
     //this methods are also available in cocos2d-x but it seams various versions have them in different places
     //so for simplicity and making the API work will all cocos2d-x v3 versions - I have my own methods over here.

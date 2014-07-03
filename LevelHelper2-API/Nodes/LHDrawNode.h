@@ -41,6 +41,8 @@ private:
     
     cocos2d::Point* _trianglePoints;
     cocos2d::Point* _uvPoints;
+    Color4F*        _colors;
+    
     int             _numberOfTriangles;
 
 };

@@ -142,51 +142,32 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     bool ret = Scene::initWithPhysics();
     if(ret)
     {
+        this->loadGenericInfoFromDictionary(dict);
+        
         setContentSize(sceneSize);
-        
-        
-        loadGenericInfoFromDictionary(dict);
+        this->setPosition(Point());
         this->setName(plistLevelFile);
         
-//            [self setName:levelPlistFile];
-//            _uuid = [[NSString alloc] initWithString:[dict objectForKey:@"uuid"]];
-//            _userProperty = [LHUtils userPropertyForNode:self fromDictionary:dict];
-//            [LHUtils tagsFromDictionary:dict
-//                           savedToArray:&_tags];
-        
-            LHDictionary* tracedFixInfo = dict->dictForKey("tracedFixtures");
-            if(tracedFixInfo){
-                _tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
-                _tracedFixtures->retain();
-            }
+        LHDictionary* tracedFixInfo = dict->dictForKey("tracedFixtures");
+        if(tracedFixInfo){
+            _tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
+            _tracedFixtures->retain();
+        }
 
-
-        
         
         
         //load background color
         Color3B backgroundClr = dict->colorForKey("backgroundColor");
         glClearColor(backgroundClr.r, backgroundClr.g, backgroundClr.b, 1.0f);
 
-        
-        
-        LHArray* childrenInfo = dict->arrayForKey("children");
-        for(int i = 0; i < childrenInfo->count(); ++i)
-        {
-            LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
-            
-            Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
-            
-            if(node){
-                
-            }
-        }
-        
-        //getPhysicsWorld()->setDebugDrawMask(true ? PhysicsWorld::DEBUGDRAW_ALL : PhysicsWorld::DEBUGDRAW_NONE);
 
         
-        this->loadGlobalGravityFromDictionary(dict);
+        this->loadChildrenFromDictionary(dict);
         
+        getPhysicsWorld()->setDebugDrawMask(true ? PhysicsWorld::DEBUGDRAW_ALL : PhysicsWorld::DEBUGDRAW_NONE);
+
+        
+        this->loadGlobalGravityFromDictionary(dict);        
         this->loadPhysicsBoundariesFromDictionary(dict);
         
         
@@ -418,131 +399,6 @@ void LHScene::performLateLoading(){
 }
 
 
-Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
-{
-    
-    std::string nodeType = childInfo->stringForKey("nodeType");
-    
-    LHScene* scene = NULL;
-    if( LHScene::isLHScene(prnt)){
-        scene = (LHScene*)prnt;
-    }
-    else if(LHScene::isLHScene(prnt->getScene())){
-        scene = (LHScene*)prnt->getScene();
-    }
-    
-
-    if(nodeType == "LHGameWorldNode")
-    {
-        return LHGameWorldNode::nodeWithDictionary(childInfo, prnt);
-    }
-    else if(nodeType == "LHBackUINode")
-    {
-        return LHBackUINode::nodeWithDictionary(childInfo, prnt);
-    }
-    else if(nodeType == "LHUINode")
-    {
-        return LHUINode::nodeWithDictionary(childInfo, prnt);
-    }
-    else if(nodeType == "LHSprite")
-    {
-        LHSprite* spr = LHSprite::spriteNodeWithDictionary(childInfo, prnt);
-        return spr;
-    }
-    else if(nodeType == "LHNode")
-    {
-        LHNode* nd = LHNode::nodeWithDictionary(childInfo, prnt);
-        return nd;
-    }
-    else if(nodeType == "LHCamera")
-    {
-        LHCamera* cm = LHCamera::cameraWithDictionary(childInfo, prnt);
-        return cm;
-    }
-    else if(nodeType == "LHBezier")
-    {
-        LHBezier* bez = LHBezier::bezierNodeWithDictionary(childInfo, prnt);
-        return bez;
-    }
-    else if(nodeType == "LHTexturedShape")
-    {
-        LHShape* sp = LHShape::shapeNodeWithDictionary(childInfo, prnt);
-        return sp;
-    }
-    else if(nodeType == "LHAsset")
-    {
-        LHAsset* as = LHAsset::assetNodeWithDictionary(childInfo, prnt);
-        return as;
-    }
-    else if(nodeType == "LHParallax")
-    {
-        LHParallax* pr = LHParallax::parallaxWithDictionary(childInfo, prnt);
-        return pr;
-    }
-    else if(nodeType == "LHParallaxLayer")
-    {
-        LHParallaxLayer* lh = LHParallaxLayer::parallaxLayerWithDictionary(childInfo, prnt);
-        return lh;
-    }
-    else if(nodeType == "LHRopeJoint")
-    {
-        if(scene)
-        {
-            LHRopeJointNode* jt = LHRopeJointNode::ropeJointNodeWithDictionary(childInfo, prnt);
-            scene->addLateLoadingNode(jt);
-        }
-    }
-    else if(nodeType == "LHWaves")
-    {
-        LHWater* wt = LHWater::waterWithDictionary(childInfo, prnt);
-        return wt;
-    }
-//    else if([nodeType isEqualToString:@"LHAreaGravity"])
-//    {
-//        LHGravityArea* gv = [LHGravityArea gravityAreaWithDictionary:childInfo
-//                                                              parent:prnt];
-//        return gv;
-//    }
-    //    else if([nodeType isEqualToString:@"LHWeldJoint"])
-    //    {
-    //        LHWeldJointNode* jt = [LHWeldJointNode weldJointNodeWithDictionary:childInfo
-    //                                                                    parent:prnt];
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-    //    else if([nodeType isEqualToString:@"LHRevoluteJoint"]){
-    //
-    //        LHRevoluteJointNode* jt = [LHRevoluteJointNode revoluteJointNodeWithDictionary:childInfo
-    //                                                                                parent:prnt];
-    //
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-//    else if([nodeType isEqualToString:@"LHDistanceJoint"]){
-//        
-//        LHDistanceJointNode* jt = [LHDistanceJointNode distanceJointNodeWithDictionary:childInfo
-//                                                                                parent:prnt];
-//        [scene addLateLoadingNode:jt];
-//        
-//    }
-    //    else if([nodeType isEqualToString:@"LHPrismaticJoint"]){
-    //
-    //        LHPrismaticJointNode* jt = [LHPrismaticJointNode prismaticJointNodeWithDictionary:childInfo
-    //                                                                                   parent:prnt];
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-    
-    
-    else{
-        printf("UNKNOWN NODE TYPE %s\n", nodeType.c_str());
-    }
-    
-    return NULL;
-}
-
-
-
 __Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
 {
     return (__Array*)_tracedFixtures->objectForKey(uuid);
@@ -623,38 +479,7 @@ __Dictionary* LHScene::assetInfoForFile(const std::string& assetFileName)
 }
 
 
-Point LHScene::positionForNode(Node* node, Point unitPos)
-{
-    LHScene* scene = (LHScene*)node->getScene();
 
-    Size designSize = scene->getDesignResolutionSize();
-    Point offset    = scene->getDesignOffset();
-    
-    Point designPos = Point();
-    
-    if(node->getParent() == nullptr ||
-       node->getParent() == scene ||
-       node->getParent() == scene->getGameWorldNode() ||
-       node->getParent() == scene->getUINode()  ||
-       node->getParent() == scene->getBackUINode())
-    {
-        designPos = Point(designSize.width*unitPos.x,
-                          (designSize.height - designSize.height*unitPos.y));
-        designPos.x += offset.x;
-        designPos.y += offset.y;
-
-    }
-    else{
-        designPos = Point(designSize.width*unitPos.x,
-                          (node->getParent()->getContentSize().height - designSize.height*unitPos.y));
-        
-        Node* p = node->getParent();
-        designPos.x += p->getContentSize().width*0.5;
-        designPos.y -= p->getContentSize().height*0.5;
-    }
-    
-    return designPos;
-}
 
 
 #pragma mark - TOUCHES

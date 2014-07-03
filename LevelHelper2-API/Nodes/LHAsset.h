@@ -41,6 +41,7 @@ public:
      */
     static LHAsset* createWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
     
+    static LHAsset* assetNodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHAsset();
     virtual ~LHAsset();
@@ -52,9 +53,7 @@ public:
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
     
 private:
-    friend class LHScene;
     
-    static LHAsset* assetNodeWithDictionary(LHDictionary* dict, Node* prnt);
     bool initWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
     bool initWithDictionary(LHDictionary* dict, Node* prnt);
 };

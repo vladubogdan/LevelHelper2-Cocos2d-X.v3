@@ -50,14 +50,16 @@ std::string LHUtils::getImagePathWithFilename(const std::string& filename,
     return folder + suffix + "/" + filename;
 }
 
-long LHUtils::LHMillisecondNow()
+unsigned long long LHUtils::LHMillisecondNow()
 {
-    long lLastTime;
+//    long lLastTime = 0;
     struct timeval stCurrentTime;
     
     gettimeofday(&stCurrentTime,NULL);
-    lLastTime = stCurrentTime.tv_sec*1000+stCurrentTime.tv_usec*0.001; //millseconds
-    return lLastTime;
+//    lLastTime = stCurrentTime.tv_sec*1000+stCurrentTime.tv_usec*0.001; //millseconds
+//    return lLastTime;
+    return (unsigned long long)stCurrentTime.tv_sec * 1000 + (unsigned long long)stCurrentTime.tv_usec*0.001;
+    
 }
 
 LHPointValue* LHUtils::LHLinesIntersection(const Point& p1, const Point& p2, const Point& p3, const Point& p4)

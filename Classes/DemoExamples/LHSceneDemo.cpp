@@ -3,6 +3,10 @@
 #include "LHSceneIntroductionDemo.h"
 #include "LHSceneCameraDemo.h"
 #include "LHSceneCameraFollowDemo.h"
+#include "LHSceneParallaxDemo.h"
+#include "LHSceneCharacterAnimationDemo.h"
+#include "LHSceneAssetDemo.h"
+#include "LHSceneRopeJointDemo.h"
 
 LHSceneDemo* LHSceneDemo::create()
 {
@@ -27,9 +31,28 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     /*INITIALIZE YOUR CONTENT HERE*/
     /*AT THIS POINT EVERYTHING IS LOADED AND YOU CAN ACCESS YOUR OBJECTS*/
     
-    availableScenes["LHSceneIntroductionDemo"] = (createFuncPtrType)&LHSceneIntroductionDemo::create;
-    availableScenes["LHSceneCameraDemo"] = (createFuncPtrType)&LHSceneCameraDemo::create;
-    availableScenes["LHSceneCameraFollowDemo"] = (createFuncPtrType)&LHSceneCameraFollowDemo::create;
+    sceneNames.push_back("LHSceneIntroductionDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
+
+    sceneNames.push_back("LHSceneCameraDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneCameraDemo::create);
+
+    sceneNames.push_back("LHSceneCameraFollowDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneCameraFollowDemo::create);
+
+    sceneNames.push_back("LHSceneParallaxDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneParallaxDemo::create);
+
+    sceneNames.push_back("LHSceneCharacterAnimationDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneCharacterAnimationDemo::create);
+
+    sceneNames.push_back("LHSceneAssetDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneAssetDemo::create);
+
+    sceneNames.push_back("LHSceneRopeJointDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneRopeJointDemo::create);
+
+    
     
     Size size = this->getContentSize();
     {
@@ -82,51 +105,38 @@ void LHSceneDemo::previousDemo(Ref *pSender, Widget::TouchEventType type)
     if (type != ui::Widget::TouchEventType::ENDED) return;
     
 
-    typedef std::map<std::string, createFuncPtrType >::reverse_iterator it_type;
-    
-    for(it_type iterator = availableScenes.rbegin(); iterator != availableScenes.rend(); iterator++) {
-
-        std::string className = iterator->first;
-        std::string currentName = this->className();
+    for(size_t i = 0; i < sceneNames.size(); ++i)
+    {
+        std::string className  = sceneNames[i];
+        std::string currentName= this->className();
         
         if(className == currentName)
         {
-            it_type newIdx = iterator;
-            newIdx++;
-            if(newIdx == availableScenes.rend()){
-                newIdx = availableScenes.rbegin();
+            int newIdx = i-1;
+            if(newIdx < 0){
+                newIdx = sceneNames.size()-1;
             }
-
             
-            std::string newClassname = newIdx->first;
-            
-            createFuncPtrType func = newIdx->second;
-            
+            createFuncPtrType func = sceneCreators[newIdx];
             LHSceneDemo* demo = func();
-            
             Director::getInstance()->replaceScene(demo);
             return;
         }
     }
-
-    
-    
 }
 
 void LHSceneDemo::restartDemo(Ref *pSender, Widget::TouchEventType type)
 {
     if (type != ui::Widget::TouchEventType::ENDED) return;
     
-    typedef std::map<std::string, createFuncPtrType >::iterator it_type;
-    
-    for(it_type iterator = availableScenes.begin(); iterator != availableScenes.end(); iterator++) {
-        
-        std::string className = iterator->first;
-        std::string currentName = this->className();
+    for(size_t i = 0; i < sceneNames.size(); ++i)
+    {
+        std::string className  = sceneNames[i];
+        std::string currentName= this->className();
         
         if(className == currentName)
         {
-            createFuncPtrType func = iterator->second;
+            createFuncPtrType func = sceneCreators[i];
             LHSceneDemo* demo = func();
             Director::getInstance()->replaceScene(demo);
             return;
@@ -138,27 +148,20 @@ void LHSceneDemo::nextDemo(Ref *pSender, Widget::TouchEventType type)
 {
     if (type != ui::Widget::TouchEventType::ENDED) return;
     
-    typedef std::map<std::string, createFuncPtrType >::iterator it_type;
-    
-    for(it_type iterator = availableScenes.begin(); iterator != availableScenes.end(); iterator++) {
-
-        std::string className = iterator->first;
-        std::string currentName = this->className();
+    for(size_t i = 0; i < sceneNames.size(); ++i)
+    {
+        std::string className  = sceneNames[i];
+        std::string currentName= this->className();
 
         if(className == currentName)
         {
-            it_type newIdx = iterator;
-            newIdx++;
-            if(newIdx == availableScenes.end()){
-                newIdx = availableScenes.begin();
+            int newIdx = i+1;
+            if(newIdx >= sceneNames.size()){
+                newIdx = 0;
             }
             
-            std::string newClassname = newIdx->first;
-            
-            createFuncPtrType func = newIdx->second;
-
+            createFuncPtrType func = sceneCreators[newIdx];
             LHSceneDemo* demo = func();
-            
             Director::getInstance()->replaceScene(demo);
             return;
         }

@@ -15,7 +15,8 @@
 
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
-#include "LHNodeAnimationProtocol.h"
+#include "LHJointNodeProtocol.h"
+#include "LHConfig.h"
 
 using namespace cocos2d;
 
@@ -29,7 +30,12 @@ class LHScene;
 class LHDrawNode;
 class LHPointValue;
 
-class LHRopeJointNode : public Node, public LHNodeProtocol
+#if LH_USE_BOX2D
+class b2RopeJoint;
+class b2Body;
+#endif
+
+class LHRopeJointNode : public Node, public LHNodeProtocol, public LHJointNodeProtocol
 {
 public:
     
@@ -44,18 +50,7 @@ public:
     
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
     
-    
     virtual void removeFromParent();
-    
-    /**
-     Returns the point where the joint is connected by the first body. In scene coordinates.
-     */
-    Point getAnchorA();
-    
-    /**
-     Returns the point where the joint is connected by the second body. In scene coordinates.
-     */
-    Point getAnchorB();
     
     /**
      Returns whether or not this rope joint can be cut.
@@ -72,9 +67,6 @@ public:
     virtual bool lateLoading();
     
 private:
-    PhysicsJointLimit* joint;
-    PhysicsJointLimit* cutJointA;
-    PhysicsJointLimit* cutJointB;
     
     float   _thickness;
     int     _segments;
@@ -82,25 +74,36 @@ private:
     float   _fadeOutDelay;
     bool    _removeAfterCut;
     
-    std::string _nodeAUUID;
-    std::string _nodeBUUID;
-    Point _relativePosA;
-    Point _relativePosB;
-    float _length;
+    float   _length;
     
-    float _uRepetitions;
-    float _vRepetitions;
+    float   _uRepetitions;
+    float   _vRepetitions;
     
-    Node* nodeA;
-    Node* nodeB;
-    
-    Rect colorInfo;
-    float alphaValue;
+    Rect    colorInfo;
+    float   alphaValue;
     
     LHDrawNode* ropeShape;
+
     LHDrawNode* cutAShapeNode;
     LHDrawNode* cutBShapeNode;
-    long _cutTimer;
+
+#if LH_USE_BOX2D
+    
+    b2RopeJoint* cutJointA;
+    b2RopeJoint* cutJointB;
+    b2Body* cutBodyA;
+    b2Body* cutBodyB;
+    
+#else//chipmunk
+    
+    PhysicsJointLimit* cutJointA;
+    PhysicsJointLimit* cutJointB;
+    
+#endif
+
+    
+    
+    unsigned long long _cutTimer;
     
     float cutJointALength;
     float cutJointBLength;

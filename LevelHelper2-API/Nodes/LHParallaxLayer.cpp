@@ -42,44 +42,17 @@ bool LHParallaxLayer::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
-        
-        loadGenericInfoFromDictionary(dict);
-
         prnt->addChild(this);
         
-        Point unitPos   = dict->pointForKey("generalPosition");
-        Point pos       = LHScene::positionForNode(this, unitPos);
-        
-        LHDictionary* devPositions = dict->dictForKey("devicePositions");
-        if(devPositions)
-        {
-            std::string unitPosStr = LHDevice::devicePosition(devPositions, LH_SCREEN_RESOLUTION);
-            
-            if(unitPosStr.length()>0){
-                Point unitPos = PointFromString(unitPosStr);
-                pos = LHScene::positionForNode(this, unitPos);
-            }
-        }
-        
-        this->setZOrder(dict->floatForKey("zOrder"));
+        this->loadGenericInfoFromDictionary(dict);
+
+        this->loadTransformationInfoFromDictionary(dict);
         
         _xRatio = dict->floatForKey("xRatio");
         _yRatio = dict->floatForKey("yRatio");
 
-        LHArray* childrenInfo = dict->arrayForKey("children");
-        if(childrenInfo)
-        {
-            for(int i = 0; i < childrenInfo->count(); ++i)
-            {
-                LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
-                
-                Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
-#pragma unused (node)
-            }
-        }
-        
-        this->setPosition(pos);
-        
+        this->loadChildrenFromDictionary(dict);
+
         return true;
     }
     

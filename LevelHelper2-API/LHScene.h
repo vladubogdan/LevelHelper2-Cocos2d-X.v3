@@ -67,8 +67,6 @@ public:
     __Dictionary* assetInfoForFile(const std::string& assetFileName);
 
     
-    static Point positionForNode(Node* node, Point unitPos);
-    
     static  bool isLHScene(Node* obj){return (0 != dynamic_cast<LHScene*>(obj));}
     virtual bool isScene(){return true;};
     
@@ -135,8 +133,6 @@ private:
     __Dictionary*   _tracedFixtures;
     __Dictionary*   _loadedAssetsInformations;
     __Array*        _lateLoadingNodes;
-    
-    static Node* createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt);
     
     void createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName);
     

@@ -31,7 +31,8 @@ private:
     
     typedef LHSceneDemo* (*createFuncPtrType)(void);
     
-    std::map<std::string, createFuncPtrType> availableScenes;
+    std::vector<std::string> sceneNames;
+    std::vector<createFuncPtrType> sceneCreators;
   
    
 };

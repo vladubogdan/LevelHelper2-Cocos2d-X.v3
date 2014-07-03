@@ -71,18 +71,19 @@ bool LHBezier::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(DrawNode::init())
     {
         _physicsBody = NULL;
+        prnt->addChild(this);
         
-        loadGenericInfoFromDictionary(dict);
-
+        this->loadGenericInfoFromDictionary(dict);
+        this->loadTransformationInfoFromDictionary(dict);
+        
+        this->setContentSize(Size());
+        
         float alpha = dict->floatForKey("alpha");
-        this->setOpacity(alpha);
-        this->setRotation(dict->floatForKey("rotation"));
-        this->setZOrder(dict->floatForKey("zOrder"));
-        
+
         clear();
         
-        Color3B overlay = dict->colorForKey("colorOverlay");
         
+        Color3B overlay = dict->colorForKey("colorOverlay");
         Color4F colorOverlay(overlay.r/255.0f, overlay.g/255.0f, overlay.b/255.0f, alpha/255.0f);
         
         LHArray* points = dict->arrayForKey("points");
@@ -168,49 +169,9 @@ bool LHBezier::initWithDictionary(LHDictionary* dict, Node* prnt)
         CC_SAFE_DELETE(prevValue);
         
        
-        prnt->addChild(this);
-
-        
-        Point scl = dict->pointForKey("scale");
-        this->setScaleX(scl.x);
-        this->setScaleY(scl.y);
-        
-        
-        Point anchor = dict->pointForKey("anchor");
-        anchor.y = 1.0f - anchor.y;
-        this->setAnchorPoint(anchor);
-
-        Point unitPos   = dict->pointForKey("generalPosition");
-        Point pos       = LHScene::positionForNode(this, unitPos);
-        
-        LHDictionary* devPositions = dict->dictForKey("devicePositions");
-        if(devPositions)
-        {
-            std::string unitPosStr = LHDevice::devicePosition(devPositions, LH_SCREEN_RESOLUTION);
-            
-            if(unitPosStr.length()>0){
-                Point unitPos = PointFromString(unitPosStr);
-                pos = LHScene::positionForNode(this, unitPos);
-            }
-        }
-        this->setPosition(pos);
-        
-        //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-        
-        LHArray* childrenInfo = dict->arrayForKey("children");
-        if(childrenInfo)
-        {
-            for(int i = 0; i < childrenInfo->count(); ++i)
-            {
-                LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
-                
-                Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
-#pragma unused (node)
-            }
-        }
-        
-        createAnimationsFromDictionary(dict);
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        this->loadChildrenFromDictionary(dict);
+        this->createAnimationsFromDictionary(dict);
         
         return true;
     }

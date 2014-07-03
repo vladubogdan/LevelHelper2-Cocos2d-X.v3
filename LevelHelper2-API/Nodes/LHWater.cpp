@@ -148,15 +148,13 @@ bool LHWater::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
-        
-        loadGenericInfoFromDictionary(dict);
-        
         prnt->addChild(this);
-       
+        
+        this->loadGenericInfoFromDictionary(dict);
+        this->loadTransformationInfoFromDictionary(dict);
         
         _drawNode = DrawNode::create();
         this->addChild(_drawNode);
-        
         
         _width      = dict->floatForKey("width");
         _height     = dict->floatForKey("height");
@@ -178,33 +176,7 @@ bool LHWater::initWithDictionary(LHDictionary* dict, Node* prnt)
         _splashTime      = dict->floatForKey("splashT");
 
     
-        this->setContentSize(dict->sizeForKey("size"));
-        
-        Point unitPos   = dict->pointForKey("generalPosition");
-        Point pos       = LHScene::positionForNode(this, unitPos);
-        
-        LHDictionary* devPositions = dict->dictForKey("devicePositions");
-        if(devPositions)
-        {
-            std::string unitPosStr = LHDevice::devicePosition(devPositions, LH_SCREEN_RESOLUTION);
-            
-            if(unitPosStr.length()>0){
-                Point unitPos = PointFromString(unitPosStr);
-                pos = LHScene::positionForNode(this, unitPos);
-            }
-        }
-        
         float alpha = dict->floatForKey("alpha");
-        this->setOpacity(alpha);
-        
-//        this->setRotation(dict->floatForKey("rotation"));
-//        this->setZOrder(dict->floatForKey("zOrder"));
-        
-        Point scl = dict->pointForKey("scale");
-        this->setScaleX(scl.x);
-        this->setScaleY(scl.y);
-        
-        this->setPosition(pos);
 
         _drawNode->clear();
         

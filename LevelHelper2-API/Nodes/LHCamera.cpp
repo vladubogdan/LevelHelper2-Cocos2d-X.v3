@@ -43,33 +43,19 @@ bool LHCamera::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
-        loadGenericInfoFromDictionary(dict);
         prnt->addChild(this);
         
-        Point unitPos   = dict->pointForKey("generalPosition");
-        Point pos       = LHScene::positionForNode(this, unitPos);
+        this->loadGenericInfoFromDictionary(dict);
+        this->loadTransformationInfoFromDictionary(dict);
         
-        LHDictionary* devPositions = dict->dictForKey("devicePositions");
-        if(devPositions)
-        {
-            std::string unitPosStr = LHDevice::devicePosition(devPositions, LH_SCREEN_RESOLUTION);
-            
-            if(unitPosStr.length()>0){
-                Point unitPos = PointFromString(unitPosStr);
-                pos = LHScene::positionForNode(this, unitPos);
-            }
-        }
-        this->setPosition(pos);
-
         if(dict->objectForKey("followedNodeUUID")){
             _followedNodeUUID = dict->stringForKey("followedNodeUUID");
         }
         
         _active     = dict->boolForKey("activeCamera");
         _restricted = dict->boolForKey("restrictToGameWorld");
-
         
-        createAnimationsFromDictionary(dict);
+        this->createAnimationsFromDictionary(dict);
         
         return true;
     }

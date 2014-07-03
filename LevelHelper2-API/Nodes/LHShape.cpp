@@ -43,20 +43,20 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(DrawNode::init())
     {
         _physicsBody = NULL;
+        _texture = nullptr;
+        _glProgram = nullptr;
         
-        loadGenericInfoFromDictionary(dict);
+        prnt->addChild(this);
+        
+        this->loadGenericInfoFromDictionary(dict);
+
+        this->loadTransformationInfoFromDictionary(dict);
+        
+        this->setContentSize(Size());
         
         float alpha = dict->floatForKey("alpha");
-        this->setOpacity(alpha);
-        this->setRotation(dict->floatForKey("rotation"));
-        this->setZOrder(dict->floatForKey("zOrder"));
 
-                
         LHScene* scene = (LHScene*)prnt->getScene();
-        
-        _blendFunc = BlendFunc::ALPHA_PREMULTIPLIED;
-        setGLProgram(ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_COLOR));
-    
         
         if(dict->objectForKey("relativeImagePath"))
         {
@@ -93,7 +93,7 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
         Color4F c4(overlay.r*255.0f,
                    overlay.g*255.0f,
                    overlay.b*255.0f,
-                   alpha);
+                   alpha*255.0f);
         
         
         LHArray* points = dict->arrayForKey("points");
@@ -168,55 +168,23 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
                 uvC = Point();
             }
 
-            drawTriangle(posA, posB, posC, c4A, c4B, c4C, uvA, uvB, uvC);
-        }
-        
-        
-        
-        
-        prnt->addChild(this);
-        
-        
-        Point scl = dict->pointForKey("scale");
-        this->setScaleX(scl.x);
-        this->setScaleY(scl.y);
-        
-        Point anchor = dict->pointForKey("anchor");
-        anchor.y = 1.0f - anchor.y;
-        this->setAnchorPoint(anchor);
-        
-        Point unitPos   = dict->pointForKey("generalPosition");
-        Point pos       = LHScene::positionForNode(this, unitPos);
-        
-        LHDictionary* devPositions = dict->dictForKey("devicePositions");
-        if(devPositions)
-        {
-            std::string unitPosStr = LHDevice::devicePosition(devPositions, LH_SCREEN_RESOLUTION);
-            
-            if(unitPosStr.length()>0){
-                Point unitPos = PointFromString(unitPosStr);
-                pos = LHScene::positionForNode(this, unitPos);
+            if(_texture){
+                drawTriangle(posA, posB, posC, c4A, c4B, c4C, uvA, uvB, uvC);
             }
+            else{
+                DrawNode::drawTriangle(posA, posB, posC, c4);
+            }
+            
         }
-        this->setPosition(pos);
+        
+        
         
         //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         
+        this->loadChildrenFromDictionary(dict);
         
-        LHArray* childrenInfo = dict->arrayForKey("children");
-        if(childrenInfo)
-        {
-            for(int i = 0; i < childrenInfo->count(); ++i)
-            {
-                LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
-                
-                Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
-#pragma unused (node)
-            }
-        }
-        
-        createAnimationsFromDictionary(dict);
+        this->createAnimationsFromDictionary(dict);
         
         
         return true;
@@ -251,14 +219,19 @@ void LHShape::drawTriangle(const Point &p1,
     
     _bufferCount += vertex_count;
     _dirty = true;
-
 }
 
 void LHShape::draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated)
 {
-    _customCommand.init(_globalZOrder);
-    _customCommand.func = CC_CALLBACK_0(LHShape::textureDraw, this, transform, transformUpdated);
-    renderer->addCommand(&_customCommand);
+    if(_texture)
+    {
+        _customCommand.init(_globalZOrder);
+        _customCommand.func = CC_CALLBACK_0(LHShape::textureDraw, this, transform, transformUpdated);
+        renderer->addCommand(&_customCommand);
+    }
+    else{
+        DrawNode::draw(renderer, transform, transformUpdated);
+    }
 }
 
 void LHShape::textureDraw(const Mat4 &transform, bool transformUpdated)
@@ -272,11 +245,11 @@ void LHShape::textureDraw(const Mat4 &transform, bool transformUpdated)
         getGLProgram()->setUniformsForBuiltins(transform);
     }
     
-    GL::blendFunc( _blendFunc.src, _blendFunc.dst );
     
     if(_texture)
     {
         GL::bindTexture2D( _texture->getName() );
+        GL::blendFunc(_blendFunc.src, _blendFunc.dst);
     }
     
     if (_dirty)
@@ -285,6 +258,7 @@ void LHShape::textureDraw(const Mat4 &transform, bool transformUpdated)
         glBufferData(GL_ARRAY_BUFFER, sizeof(V2F_C4B_T2F)*_bufferCapacity, _buffer, GL_STREAM_DRAW);
         _dirty = false;
     }
+
     if (Configuration::getInstance()->supportsShareableVAO())
     {
         GL::bindVAO(_vao);
@@ -301,7 +275,7 @@ void LHShape::textureDraw(const Mat4 &transform, bool transformUpdated)
         glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_COLOR, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(V2F_C4B_T2F), (GLvoid *)offsetof(V2F_C4B_T2F, colors));
         
         // texcood
-        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORDS, 2, GL_FLOAT, GL_FALSE, sizeof(V2F_C4B_T2F), (GLvoid *)offsetof(V2F_C4B_T2F, texCoords));
+        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORD, 2, GL_FLOAT, GL_FALSE, sizeof(V2F_C4B_T2F), (GLvoid *)offsetof(V2F_C4B_T2F, texCoords));
     }
     
     glDrawArrays(GL_TRIANGLES, 0, _bufferCount);
@@ -336,6 +310,13 @@ void LHShape::setBlendFunc(const BlendFunc &blendFunc){
 
 const BlendFunc &LHShape::getBlendFunc() const{
     return _blendFunc;
+}
+
+void LHShape::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+{
+    visitNodeProtocol();
+    visitActiveAnimation();
+    DrawNode::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 /*

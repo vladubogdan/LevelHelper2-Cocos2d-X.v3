@@ -5,7 +5,7 @@
 	<key>aspect</key>
 	<integer>2</integer>
 	<key>backgroundColor</key>
-	<string>{{1, 0.99997437000274658}, {0.99999129772186279, 1}}</string>
+	<string>{{1, 1}, {1, 1}}</string>
 	<key>children</key>
 	<array>
 		<dict>
@@ -428,7 +428,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>1D98FF07-A892-4EF5-A3F1-052606B6A870</string>
+						<string>D8AE9133-C756-4A31-96FE-F6F337B425CD</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -657,66 +657,11 @@
 					<key>anchor</key>
 					<string>{0.5, 0.5}</string>
 					<key>colorOverlay</key>
-					<string>{{0.34743508696556091, 1}, {0.99971848726272583, 1}}</string>
+					<string>{{1, 0.15004223749901491}, {0.02658317565917967, 1}}</string>
 					<key>generalPosition</key>
-					<string>{0.79575838512783603, 0.53169551609390475}</string>
+					<string>{0.91666666648754047, 0.50000002113852049}</string>
 					<key>name</key>
 					<string>UntitledTexturedShape</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>2</integer>
-						<key>type</key>
-						<integer>2</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHTexturedShape</string>
 					<key>parentUUID</key>
@@ -725,35 +670,35 @@
 					<array>
 						<dict>
 							<key>point</key>
-							<string>{66.004413604736328, -2.1133346557617188}</string>
+							<string>{48.000000171961119, -288.00001352865308}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{139.78444948958759, 77.896140573031687}</string>
+							<string>{48.000000171961119, 287.99998647134692}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{45.713333857255975, 121.58899328184992}</string>
+							<string>{16.000000171961119, 287.99998647134692}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{1.8734261307688485, -95.368405501567565}</string>
+							<string>{16.000000171961119, 319.99998647134692}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{-83.995586395263643, 84.489205722682158}</string>
+							<string>{-47.999999828038881, 319.99998647134692}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{-139.78443961881067, -4.8766330435777263}</string>
+							<string>{-47.999999828038881, -320.00001352865308}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{-83.995586395263715, -88.715875034205553}</string>
+							<string>{16.000000171961119, -320.00001352865308}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{36.695464055697016, -121.58899422512786}</string>
+							<string>{16.000000171961119, -288.00001352865308}</string>
 						</dict>
 					</array>
 					<key>rotation</key>
@@ -761,7 +706,7 @@
 					<key>scale</key>
 					<string>{1, 1}</string>
 					<key>size</key>
-					<string>{279.56890869140625, 243.17799377441406}</string>
+					<string>{96, 640}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -774,7 +719,7 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{1.8734261307688485, -95.368405501567565}</string>
+							<string>{16.000000171961119, -288.00001352865308}</string>
 							<key>uv</key>
 							<string>{0.890625, 0.5}</string>
 						</dict>
@@ -784,7 +729,7 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{-83.995586395263643, 84.489205722682158}</string>
+							<string>{48.000000171961119, -288.00001352865308}</string>
 							<key>uv</key>
 							<string>{0.3046875, 0.83829116821289062}</string>
 						</dict>
@@ -794,7 +739,7 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{-139.78443961881067, -4.8766330435777263}</string>
+							<string>{48.000000171961119, 287.99998647134692}</string>
 							<key>uv</key>
 							<string>{0.3046875, 0.16170883178710938}</string>
 						</dict>
@@ -804,7 +749,7 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{1.8734261307688485, -95.368405501567565}</string>
+							<string>{16.000000171961119, -288.00001352865308}</string>
 							<key>uv</key>
 							<string>{-2.8421708795129297e-16, -7.5976052116288884e-09}</string>
 						</dict>
@@ -814,7 +759,7 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{-139.78443961881067, -4.8766330435777263}</string>
+							<string>{48.000000171961119, 287.99998647134692}</string>
 							<key>uv</key>
 							<string>{1, 0.5}</string>
 						</dict>
@@ -824,9 +769,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{-83.995586395263715, -88.715875034205553}</string>
+							<string>{16.000000171961119, 287.99998647134692}</string>
 							<key>uv</key>
-							<string>{0.44745767116546631, 0.73840832710266113}</string>
+							<string>{0.47040912508964539, 0.74239683151245117}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -834,9 +779,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{1.8734261307688485, -95.368405501567565}</string>
+							<string>{16.000000171961119, 287.99998647134692}</string>
 							<key>uv</key>
-							<string>{0.36891651153564453, 0.90371423959732056}</string>
+							<string>{0.3552585244178772, 0.88386404514312744}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -844,9 +789,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{-83.995586395263715, -88.715875034205553}</string>
+							<string>{16.000000171961119, 319.99998647134692}</string>
 							<key>uv</key>
-							<string>{1, 0.41179519891738892}</string>
+							<string>{1, 0.40789714455604553}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -854,9 +799,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{36.695464055697016, -121.58899422512786}</string>
+							<string>{-47.999999828038881, 319.99998647134692}</string>
 							<key>uv</key>
-							<string>{0.86472612619400024, 1}</string>
+							<string>{0.84799116849899292, 1}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -864,9 +809,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{1.8734261307688485, -95.368405501567565}</string>
+							<string>{16.000000171961119, 287.99998647134692}</string>
 							<key>uv</key>
-							<string>{0.58205717802047729, 0.50574976205825806}</string>
+							<string>{0.45782917737960815, 0.71375244855880737}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -874,9 +819,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{36.695464055697016, -121.58899422512786}</string>
+							<string>{-47.999999828038881, 319.99998647134692}</string>
 							<key>uv</key>
-							<string>{1, 0.41179519891738892}</string>
+							<string>{1, 0.94736844301223755}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -884,9 +829,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{66.004413604736328, -2.1133346557617188}</string>
+							<string>{-47.999999828038881, -320.00001352865308}</string>
 							<key>uv</key>
-							<string>{0.95228022336959839, 0.61104238033294678}</string>
+							<string>{0.66666668653488159, 0.94736844301223755}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -894,9 +839,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{45.713333857255975, 121.58899328184992}</string>
+							<string>{16.000000171961119, -288.00001352865308}</string>
 							<key>uv</key>
-							<string>{0.39015358686447144, 0.50574976205825806}</string>
+							<string>{0.49329552054405212, 2.2560170620522513e-08}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -904,9 +849,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{1.8734261307688485, -95.368405501567565}</string>
+							<string>{16.000000171961119, 287.99998647134692}</string>
 							<key>uv</key>
-							<string>{0.67030107975006104, 0.41179519891738892}</string>
+							<string>{0.66666668653488159, 0.94738781452178955}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -914,9 +859,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{66.004413604736328, -2.1133346557617188}</string>
+							<string>{-47.999999828038881, -320.00001352865308}</string>
 							<key>uv</key>
-							<string>{0.57962685823440552, 1}</string>
+							<string>{1.7912616945281457e-09, 0.00036856246879324317}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -924,9 +869,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{45.713333857255975, 121.58899328184992}</string>
+							<string>{16.000000171961119, -288.00001352865308}</string>
 							<key>uv</key>
-							<string>{3.4093275758095842e-08, 0.13518132269382477}</string>
+							<string>{0.80000001192092896, -2.2251073872325833e-08}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -934,9 +879,9 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{66.004413604736328, -2.1133346557617188}</string>
+							<string>{-47.999999828038881, -320.00001352865308}</string>
 							<key>uv</key>
-							<string>{0.39015358686447144, 0.57256311178207397}</string>
+							<string>{1, 0.94736838340759277}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
@@ -944,13 +889,13 @@
 							<key>color</key>
 							<string>{{1, 1}, {1, 1}}</string>
 							<key>point</key>
-							<string>{139.78444948958759, 77.896140573031687}</string>
+							<string>{16.000000171961119, -320.00001352865308}</string>
 							<key>uv</key>
-							<string>{0.0073564741760492325, 0.43351560831069946}</string>
+							<string>{0.80000001192092896, 0.94736838340759277}</string>
 						</dict>
 					</array>
 					<key>uuid</key>
-					<string>7B02BD51-996A-4771-97E5-0991F97705C5</string>
+					<string>21C7FA25-7273-41F6-BA98-A98BCD402874</string>
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
@@ -962,86 +907,71 @@
 					<key>colorOverlay</key>
 					<string>{{1, 1}, {1, 1}}</string>
 					<key>generalPosition</key>
-					<string>{0.21677581538720539, 0.41289155078325557}</string>
+					<string>{0.033333333333333333, 0.050000000000000003}</string>
 					<key>imageFileName</key>
-					<string>cartoonRope.png</string>
+					<string>carParts.png</string>
 					<key>name</key>
-					<string>cartoonRope</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>fixtureUUID</key>
-						<string>60ED77A9-BAEC-4EC7-8170-EE76CF0FDD3E</string>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>5</integer>
-						<key>type</key>
-						<integer>2</integer>
-					</dict>
+					<string>carTyre</string>
 					<key>nodeType</key>
 					<string>LHSprite</string>
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativeImagePath</key>
-					<string>DEMO_INDIVIDUAL_IMAGES_EXAMPLE/</string>
+					<string>DEMO_PUBLISH_FOLDER/</string>
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
 					<string>{1, 1}</string>
 					<key>size</key>
-					<string>{64, 64}</string>
+					<string>{47, 46}</string>
+					<key>spriteName</key>
+					<string>carTyre</string>
+					<key>spriteUUID</key>
+					<string>F2BF5807-ACFF-44E8-BAA8-94A87CAC4F40</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
 					</array>
 					<key>uuid</key>
-					<string>B6A8613B-AD8F-40DC-8CF3-DB4917AE73BE</string>
+					<string>B4AF9859-ED9C-47CB-8341-3D9A48E566BB</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.5, 0.5}</string>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>generalPosition</key>
+					<string>{0.066666666666666666, 0.97499999999999998}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>wood</string>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1, 1}</string>
+					<key>size</key>
+					<string>{128, 32}</string>
+					<key>spriteName</key>
+					<string>wood</string>
+					<key>spriteUUID</key>
+					<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>883E665C-C7AF-4925-9FD3-3B42EC9252C6</string>
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
@@ -1055,64 +985,9 @@
 					<key>colorOverlay</key>
 					<string>{{0, 0}, {0, 1}}</string>
 					<key>generalPosition</key>
-					<string>{0.49018566592563978, 0.82851498761792308}</string>
+					<string>{0.25000004537413983, 0.49999999270714673}</string>
 					<key>name</key>
 					<string>UntitledBezier</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>3</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHBezier</string>
 					<key>parentUUID</key>
@@ -1121,27 +996,39 @@
 					<array>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-441.46014022827148, 13.901393890380859}</string>
+							<string>{-145.51214772462845, -188.04173249006271}</string>
 							<key>ctrl2</key>
-							<string>{-441.46014022827148, 13.901393890380859}</string>
+							<string>{-145.51214772462845, -188.04173249006271}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
-							<true/>
+							<false/>
 							<key>mainPt</key>
-							<string>{-441.46014022827148, -86.098606109619141}</string>
+							<string>{-144.00004355917423, -287.99999533257392}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{441.46014404296875, 151.32030868530273}</string>
+							<string>{-144.04815907874519, 44.471894562733041}</string>
 							<key>ctrl2</key>
-							<string>{441.46014404296875, 151.32030868530273}</string>
+							<string>{-144.04815907874519, 24.471894562733041}</string>
+							<key>hasCtrl1</key>
+							<false/>
+							<key>hasCtrl2</key>
+							<false/>
+							<key>mainPt</key>
+							<string>{-144.00004355917423, 32.000004667426083}</string>
+						</dict>
+						<dict>
+							<key>ctrl1</key>
+							<string>{-144.00004355917423, 288.00000466742608}</string>
+							<key>ctrl2</key>
+							<string>{135.97517263889313, 381.81066513061523}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{441.46014404296875, 51.320308685302734}</string>
+							<string>{143.99995644082577, 288.00000466742608}</string>
 						</dict>
 					</array>
 					<key>rotation</key>
@@ -1149,13 +1036,13 @@
 					<key>scale</key>
 					<string>{1, 1}</string>
 					<key>size</key>
-					<string>{882.9202880859375, 172.19721984863281}</string>
+					<string>{288.0001220703125, 576}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
 					</array>
 					<key>uuid</key>
-					<string>BF37EAC5-BE69-43EF-923F-69BA8799BC4A</string>
+					<string>6A235656-7EAB-43EF-B567-08A978BA998B</string>
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
@@ -1280,7 +1167,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>1D98FF07-A892-4EF5-A3F1-052606B6A870</key>
+		<key>D8AE9133-C756-4A31-96FE-F6F337B425CD</key>
 		<array>
 			<array>
 				<string>{-54, 16.5}</string>
@@ -1343,19 +1230,6 @@
 				<string>{-12.5, -31}</string>
 				<string>{-6, -31.5}</string>
 				<string>{-19, -29}</string>
-			</array>
-		</array>
-		<key>60ED77A9-BAEC-4EC7-8170-EE76CF0FDD3E</key>
-		<array>
-			<array>
-				<string>{-28, 31.5}</string>
-				<string>{-32, 10.5}</string>
-				<string>{-30, -13.5}</string>
-				<string>{-27.5, -32}</string>
-				<string>{23.5, -32}</string>
-				<string>{31.5, -12.5}</string>
-				<string>{31.5, 12.5}</string>
-				<string>{24.5, 31.5}</string>
 			</array>
 		</array>
 	</dict>

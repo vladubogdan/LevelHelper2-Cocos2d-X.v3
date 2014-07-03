@@ -64,9 +64,11 @@ public:
                               const Color4F &colorA, const Color4F &colorB, const Color4F &colorC,
                               const Point& t1, const Point& t2, const Point& t3);
     
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+    
 private:
     Texture2D* _texture;
-    BlendFunc  _blendFunc;            /// It's required for TextureProtocol inheritance
+//    BlendFunc  _blendFunc;            /// It's required for TextureProtocol inheritance
     
     std::vector<Point> _triangles;
     std::vector<Point> _outline;

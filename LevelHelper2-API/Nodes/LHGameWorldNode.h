@@ -12,7 +12,6 @@
 
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
-#include "LHNodeAnimationProtocol.h"
 #include "LHConfig.h"
 
 
@@ -31,7 +30,7 @@ using namespace cocos2d;
 class LHDictionary;
 class LHScene;
 
-class LHGameWorldNode : public Node, public LHNodeProtocol, public LHNodeAnimationProtocol
+class LHGameWorldNode : public Node, public LHNodeProtocol
 {
 public:
  

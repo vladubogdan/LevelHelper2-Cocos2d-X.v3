@@ -1060,7 +1060,7 @@
 							<key>relativeImagePath</key>
 							<string>DEMO_PUBLISH_FOLDER/</string>
 							<key>rotation</key>
-							<real>306.64208984375</real>
+							<real>-11.89794921875</real>
 							<key>scale</key>
 							<string>{1, 1}</string>
 							<key>size</key>
@@ -1651,27 +1651,14 @@
 			</array>
 			<key>colorOverlay</key>
 			<string>{{1, 1}, {1, 1}}</string>
-			<key>devicePositions</key>
-			<dict>
-				<key>1024x768</key>
-				<string>{0.006227210278545196, 0.0061048659088555725}</string>
-				<key>1136x640</key>
-				<string>{0.15493894901398264, 0.74743530476116571}</string>
-				<key>2048x1536</key>
-				<string>{0.13645541882585915, 0.84622397374893943}</string>
-				<key>960x640</key>
-				<string>{0.0062222993369990343, 0.0065466394036775453}</string>
-			</dict>
 			<key>generalPosition</key>
-			<string>{0.0062222993369990343, 0.0065466394036775453}</string>
+			<string>{0, 0}</string>
 			<key>name</key>
 			<string>Officer</string>
 			<key>nodeType</key>
 			<string>LHNode</string>
 			<key>parentUUID</key>
-			<string>BA02E6E8-7F83-424C-B281-9F9BA8986382</string>
-			<key>perDevicePosition</key>
-			<true/>
+			<string>5A536366-60FB-4674-9ADF-D363DE09DBFA</string>
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
@@ -1697,7 +1684,7 @@
 	<key>nodeType</key>
 	<string>LHAsset</string>
 	<key>parentUUID</key>
-	<string>889A9461-5741-48D3-9D65-A66BA875D764</string>
+	<string>E53DE3DE-3F0F-4BA9-B882-E01A6546241B</string>
 	<key>rotation</key>
 	<real>0.0</real>
 	<key>scale</key>
@@ -1709,7 +1696,7 @@
 		<string>DEFAULT</string>
 	</array>
 	<key>uuid</key>
-	<string>BA02E6E8-7F83-424C-B281-9F9BA8986382</string>
+	<string>5A536366-60FB-4674-9ADF-D363DE09DBFA</string>
 	<key>zOrder</key>
 	<integer>0</integer>
 </dict>

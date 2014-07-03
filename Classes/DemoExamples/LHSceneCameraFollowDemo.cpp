@@ -57,14 +57,14 @@ bool LHSceneCameraFollowDemo::initWithContentOfFile(const std::string& plistLeve
 bool LHSceneCameraFollowDemo::onTouchBegan(Touch* touch, Event* event)
 {
     
-//    Point curGravity = [self globalGravity];
+    Point curGravity = this->getGlobalGravity();
     if(didChangeX){
-//        [self setGlobalGravity:CGPointMake(curGravity.x, -curGravity.y)];
+        this->setGlobalGravity(Point(curGravity.x, -curGravity.y));
         didChangeX = false;
     }
     else{
         didChangeX = true;
-//        [self setGlobalGravity:CGPointMake(-curGravity.x, curGravity.y)];
+        this->setGlobalGravity(Point(-curGravity.x, curGravity.y));
     }
 
     //dont forget to call super

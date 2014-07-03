@@ -140,9 +140,15 @@ public:
 
     
     
-    virtual void loadUserPropertyWithDictionary(LHDictionary* dict);
-    virtual void loadGenericInfoFromDictionary(LHDictionary* dict);
-    virtual void loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene);
+    void loadUserPropertyWithDictionary(LHDictionary* dict);
+    void loadGenericInfoFromDictionary(LHDictionary* dict);
+    void loadTransformationInfoFromDictionary(LHDictionary* dict);
+    void loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene);
+
+    void loadChildrenFromDictionary(LHDictionary* dict);
+
+    static Point positionForNode(Node* node, Point unitPos);
+    static Node* createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt);
     
     std::string name;
     std::string uuid;
@@ -153,12 +159,11 @@ public:
     
     AffineTransform absoluteTransform();
     
-#if LH_USE_BOX2D
     
-//    AffineTransform absoluteTransform();
-//    AffineTransform nodeTransform();
-//    void updateTransform();
-//    Point position();
+    
+#if LH_USE_BOX2D
+
+    b2Body* getBox2dBody(){return _body;}
     
     Point previousScale;
     b2Body* _body;

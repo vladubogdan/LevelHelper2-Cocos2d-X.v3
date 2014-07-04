@@ -467,7 +467,7 @@
 		1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "LevelHelper2-Cocos2d-X.v3 iOS.app"; path = "LevelHelper2-Cocos2d-X.v3 + Chipmunk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 + Chipmunk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -739,7 +739,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 iOS.app */,
+				1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk.app */,
 				5087E76F17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 Mac.app */,
 				6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk copy.app */,
 			);
@@ -1058,7 +1058,7 @@
 			);
 			name = "LevelHelper2-Cocos2d-X.v3 + Chipmunk";
 			productName = iphone;
-			productReference = 1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 iOS.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5087E73D17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 Mac */ = {

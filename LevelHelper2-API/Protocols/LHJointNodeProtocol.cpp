@@ -122,7 +122,25 @@ b2Joint* LHJointNodeProtocol::getJoint(){
 
 void LHJointNodeProtocol::removeJoint()
 {
+    Node* node = dynamic_cast<Node*>(this);
+    if(!node)return;
     
+    LHScene* scene = (LHScene*)node->getScene();
+    
+    if(scene)
+    {
+        //if we dont have the scene it means the scene was changed so the box2d world will be deleted, deleting the joints also - safe
+        //if we do have the scene it means the node was deleted so we need to delete the joint manually
+        if(_joint){
+            LHGameWorldNode* pNode = scene->getGameWorldNode();
+            //if we dont have the scene it means
+            b2World* world = pNode->getBox2dWorld();
+            if(world){
+                world->DestroyJoint(_joint);
+                _joint = NULL;
+            }
+        }
+    }
 }
 
 

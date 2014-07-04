@@ -50,10 +50,7 @@ bool LHParallax::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->loadGenericInfoFromDictionary(dict);
         
         this->loadTransformationInfoFromDictionary(dict);
-        
-        //physics body needs to be created before adding this node to the parent
-        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-        
+                
         this->loadChildrenFromDictionary(dict);
         
         if(dict->objectForKey("followedNodeUUID")){

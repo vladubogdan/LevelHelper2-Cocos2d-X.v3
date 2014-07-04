@@ -15,7 +15,7 @@
 
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
-#include "LHJointNodeProtocol.h"
+#include "LHJointsProtocol.h"
 #include "LHConfig.h"
 
 using namespace cocos2d;
@@ -28,14 +28,13 @@ using namespace cocos2d;
 class LHDictionary;
 class LHScene;
 class LHDrawNode;
-class LHPointValue;
 
 #if LH_USE_BOX2D
 class b2RopeJoint;
 class b2Body;
 #endif
 
-class LHRopeJointNode : public Node, public LHNodeProtocol, public LHJointNodeProtocol
+class LHRopeJointNode : public Node, public LHNodeProtocol, public LHJointsProtocol
 {
 public:
     

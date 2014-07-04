@@ -149,23 +149,14 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(initResult)
     {
         _physicsBody = NULL;
-
-#if LH_USE_BOX2D == 0
-        //cocos2d/chipmunk required that we load the body prior adding the sprite to the parent
-        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-#endif
-        
-        prnt->addChild(this);
         Size curSize = this->getContentSize();
         this->loadGenericInfoFromDictionary(dict);
-        this->loadTransformationInfoFromDictionary(dict);
         this->setContentSize(curSize);
         
-#if LH_USE_BOX2D
         this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-#endif
+        prnt->addChild(this);
+        this->loadTransformationInfoFromDictionary(dict);
 
-        
         this->loadChildrenFromDictionary(dict);
         this->createAnimationsFromDictionary(dict);
         
@@ -178,9 +169,43 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
-    visitNodeProtocol();
+    visitPhysicsProtocol();
     visitActiveAnimation();
     Sprite::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
+void LHSprite::setPosition(const cocos2d::Vec2 &pos)
+{
+    Sprite::setPosition(pos);
+    this->updatePhysicsTransform();
+}
+
+void LHSprite::setRotation(float rotation)
+{
+    Sprite::setRotation(rotation);
+    this->updatePhysicsTransform();
+}
+
+void LHSprite::setScaleX(float scaleX){
+    Sprite::setScaleX(scaleX);
+    this->updatePhysicsScale();    
+}
+void LHSprite::setScaleY(float scaleY){
+    Sprite::setScaleY(scaleY);
+    this->updatePhysicsScale();
+}
+
+void LHSprite::setScale(float scaleX, float scaleY){
+    Sprite::setScale(scaleX, scaleY);
+    this->updatePhysicsScale();
+}
+
+#if LH_USE_BOX2D
+void LHSprite::updatePosition(const cocos2d::Vec2 &pos){
+    Sprite::setPosition(pos);
+}
+void LHSprite::updateRotation(float rotation){
+    Sprite::setRotation(rotation);
+}
+#endif
 

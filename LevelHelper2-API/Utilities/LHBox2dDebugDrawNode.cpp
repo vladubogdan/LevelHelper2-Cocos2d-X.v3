@@ -8,6 +8,7 @@
 
 #include "LHBox2dDebugDrawNode.h"
 #include "LHGameWorldNode.h"
+#include "LHConfig.h"
 
 #if LH_USE_BOX2D
 
@@ -209,11 +210,15 @@ bool LHBox2dDebugDrawNode::init()
 
 void LHBox2dDebugDrawNode::onDraw(const Mat4 &transform, bool transformUpdated)
 {
+#if LH_DEBUG
+    
     this->clear();
     if(_drawState){
         ((LHGameWorldNode*)this->getParent())->getBox2dWorld()->DrawDebugData();
         DrawNode::onDraw(transform, transformUpdated);
     }
+    
+#endif
 }
 
 #endif

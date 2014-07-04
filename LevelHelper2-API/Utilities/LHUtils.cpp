@@ -7,15 +7,12 @@
 //
 
 #include "LHUtils.h"
-#include "LHPointValue.h"
+#include "LHValue.h"
 
 std::string LHUtils::getLastPathComponent(const std::string& path)
 {
     
     size_t lastSlashPos = path.find_last_of("/");
-    
-//    printf("PATH IS %s length %d slashPos %d\n", path.c_str(), path.length(), lastSlashPos);
-
     
     if(lastSlashPos != std::string::npos && lastSlashPos != path.length()-1) {
         return path.substr(lastSlashPos + 1, path.length() - lastSlashPos);
@@ -26,8 +23,6 @@ std::string LHUtils::getLastPathComponent(const std::string& path)
     if(lastSlashPos-1 > 0)
     {
         lastSlashPos = path.find_last_of("/", lastSlashPos-1);
-//        printf("NOW slashPos %d\n", lastSlashPos);
-        
         if(lastSlashPos != std::string::npos) {
             return path.substr(lastSlashPos + 1, path.length() - lastSlashPos);
         }
@@ -62,7 +57,7 @@ unsigned long long LHUtils::LHMillisecondNow()
     
 }
 
-LHPointValue* LHUtils::LHLinesIntersection(const Point& p1, const Point& p2, const Point& p3, const Point& p4)
+LHValue* LHUtils::LHLinesIntersection(const Point& p1, const Point& p2, const Point& p3, const Point& p4)
 {
     // Store the values for fast access and easy
     // equations-to-code conversion
@@ -85,7 +80,7 @@ LHPointValue* LHUtils::LHLinesIntersection(const Point& p1, const Point& p2, con
         y < fmin(y3, y4) || y > fmax(y3, y4) ) return NULL;
     
     // Return the point of intersection
-    return LHPointValue::create(Point(x, y));;
+    return LHValue::create(Point(x, y));;
 }
 
 Point LHUtils::LHPointNormalize(const Point& pt)
@@ -104,4 +99,8 @@ Point LHUtils::LHPointScaled(const Point& pt, float val)
 float LHUtils::LHPointLength(const Point& pt)
 {
     return sqrtf(pt.x*pt.x + pt.y*pt.y);
+}
+
+float LHUtils::LHRandomFloat(float Min, float Max){
+    return ((arc4random()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
 }

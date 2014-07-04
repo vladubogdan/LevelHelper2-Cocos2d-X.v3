@@ -91,7 +91,8 @@ b2World* LHGameWorldNode::getBox2dWorld()
         _box2dWorld = new b2World(gravity);
         _box2dWorld->SetAllowSleeping(true);
         _box2dWorld->SetContinuousPhysics(true);
-        
+
+#if LH_DEBUG
         LHBox2dDebugDrawNode* drawNode = LHBox2dDebugDrawNode::create();
         drawNode->setLocalZOrder(99999);
         _box2dWorld->SetDebugDraw(drawNode->getDebug());
@@ -107,6 +108,8 @@ b2World* LHGameWorldNode::getBox2dWorld()
         
         this->addChild(drawNode);
         _debugNode = drawNode;
+#endif
+        
     }
     return _box2dWorld;
 }
@@ -133,8 +136,11 @@ void LHGameWorldNode::step(float dt, Renderer *renderer, const Mat4& parentTrans
 		this->getBox2dWorld()->Step(deltaTime,VELOCITY_ITERATIONS,POSITION_ITERATIONS);
 		stepsPerformed++;
 	}
-	this->getBox2dWorld()->ClearForces ();    
+	this->getBox2dWorld()->ClearForces ();
+    
+#if LH_DEBUG
     _debugNode->onDraw(parentTransform, parentTransformUpdated);
+#endif
 }
 
 Point LHGameWorldNode::getGravity(){

@@ -9,9 +9,8 @@
 #define __LEVELHELPER_API_H__
 
 
-
+#include "LHConfig.h"
 #include "LHScene.h"
-
 #include "LHUINode.h"
 #include "LHBackUINode.h"
 #include "LHGameWorldNode.h"
@@ -38,6 +37,9 @@
 #include "LHNodeAnimationProtocol.h"
 #include "LHUserPropertyProtocol.h"
 #include "LHUserProperties.h"
+
+#include "LHUtils.h"
+
 
 
 #endif //__LEVELHELPER_API_H__

@@ -13,18 +13,20 @@
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
+#include "LHPhysicsProtocol.h"
 
 using namespace cocos2d;
 
 /**
  LHShape class is used to load and display a shape from a level file.
  Users can retrieve a shape objects by calling the scene (LHScene) childNodeWithName: method.
- Note: While the class cannot yet display textures but only colored shape, I hope that in the future Apple will add this functionality into SpriteKit.
  */
 
+class LHDrawNode;
+class LHScene;
 class LHDictionary;
 
-class LHShape : public DrawNode, public LHNodeProtocol, public LHNodeAnimationProtocol, public TextureProtocol
+class LHShape : public Node, public LHNodeProtocol, public LHNodeAnimationProtocol, public LHPhysicsProtocol
 {
 public:
     
@@ -37,9 +39,6 @@ public:
     static  bool isLHShape(Node* obj){return (0 != dynamic_cast<LHShape*>(obj));}
     virtual bool isShape(){return true;}
     
-    //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
-    //virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
-  
     /**
      Returns the triangle points used in the drawing of the shape and the physical body.
      */
@@ -50,30 +49,27 @@ public:
      */
     const std::vector<Point>& outlinePoints() const;
     
-    virtual Texture2D* getTexture() const;
-    virtual void setTexture(Texture2D *texture);
-    
-    virtual void setBlendFunc(const BlendFunc &blendFunc);
-    virtual const BlendFunc &getBlendFunc() const;
-
-    
-    void textureDraw(const Mat4 &transform, bool transformUpdated);
-    virtual void draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated) override;
-    
-    virtual void drawTriangle(const Point &p1, const Point &p2, const Point &p3,
-                              const Color4F &colorA, const Color4F &colorB, const Color4F &colorC,
-                              const Point& t1, const Point& t2, const Point& t3);
-    
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
     
-private:
-    Texture2D* _texture;
-//    BlendFunc  _blendFunc;            /// It's required for TextureProtocol inheritance
+    virtual void setPosition(const cocos2d::Vec2 &pos);
+    virtual void setRotation(float rotation);
     
+    virtual void setScaleX(float scaleX);
+    virtual void setScaleY(float scaleY);
+    virtual void setScale(float scaleX, float scaleY);
+    
+#if LH_USE_BOX2D
+    virtual void updatePosition(const cocos2d::Vec2 &pos);
+    virtual void updateRotation(float rotation);
+#endif
+    
+private:
     std::vector<Point> _triangles;
     std::vector<Point> _outline;
     
-    GLProgram* _glProgram;
+    LHDrawNode*        _drawNode;
+    
+    void loadShapeFromDictionary(LHDictionary* dict, LHScene* scene);
 };
 
 

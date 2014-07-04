@@ -10,6 +10,8 @@
 #include "LHDictionary.h"
 #include "LHArray.h"
 #include "LHDevice.h"
+#include "LHConfig.h"
+
 
 #include "LHSprite.h"
 #include "LHNode.h"
@@ -164,8 +166,10 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         this->loadChildrenFromDictionary(dict);
         
-        getPhysicsWorld()->setDebugDrawMask(true ? PhysicsWorld::DEBUGDRAW_ALL : PhysicsWorld::DEBUGDRAW_NONE);
-
+#if LH_DEBUG
+        getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+#endif
+        
         
         this->loadGlobalGravityFromDictionary(dict);        
         this->loadPhysicsBoundariesFromDictionary(dict);
@@ -545,9 +549,8 @@ Point LHScene::getGlobalGravity()
 #if LH_USE_BOX2D
     return this->getGameWorldNode()->getGravity();
 #else
-    this->getPhysicsWorld()->getGravity();
+    return this->getPhysicsWorld()->getGravity();
 #endif
-    
 }
 /*Sets the global gravity force
  @param gravity A point representing the gravity force in x and y direction.

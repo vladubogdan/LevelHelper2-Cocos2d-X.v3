@@ -7,7 +7,7 @@
 //
 
 #include "LHDrawNode.h"
-#include "LHPointValue.h"
+#include "LHValue.h"
 
 LHDrawNode::LHDrawNode()
 {
@@ -75,8 +75,8 @@ void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, const 
     _numberOfTriangles = (int)triangles->count();
 
     _trianglePoints = new cocos2d::Point[_numberOfTriangles*3];
-    _uvPoints = new cocos2d::Point[_numberOfTriangles*3];
-    _colors = new Color4F[_numberOfTriangles*3];
+    _uvPoints       = new cocos2d::Point[_numberOfTriangles*3];
+    _colors         = new Color4F[_numberOfTriangles*3];
     
     
     this->setColor(Color3B(c4.r*255.0f, c4.g*255, c4.b*255));
@@ -88,22 +88,22 @@ void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, const 
         
     for(int i = 0; i < triangles->count(); i+=3)
     {
-        LHPointValue* valA = (LHPointValue*)triangles->getObjectAtIndex(i);
-        LHPointValue* valB = (LHPointValue*)triangles->getObjectAtIndex(i+1);
-        LHPointValue* valC = (LHPointValue*)triangles->getObjectAtIndex(i+2);
+        LHValue* valA = (LHValue*)triangles->getObjectAtIndex(i);
+        LHValue* valB = (LHValue*)triangles->getObjectAtIndex(i+1);
+        LHValue* valC = (LHValue*)triangles->getObjectAtIndex(i+2);
         
-        LHPointValue* uvA = (LHPointValue*)uvPoints->getObjectAtIndex(i);
-        LHPointValue* uvB = (LHPointValue*)uvPoints->getObjectAtIndex(i+1);
-        LHPointValue* uvC = (LHPointValue*)uvPoints->getObjectAtIndex(i+2);
+        LHValue* uvA = (LHValue*)uvPoints->getObjectAtIndex(i);
+        LHValue* uvB = (LHValue*)uvPoints->getObjectAtIndex(i+1);
+        LHValue* uvC = (LHValue*)uvPoints->getObjectAtIndex(i+2);
         
         
-        Point pa = valA->getValue();
-        Point pb = valB->getValue();
-        Point pc = valC->getValue();
+        Point pa = valA->getPoint();
+        Point pb = valB->getPoint();
+        Point pc = valC->getPoint();
         
-        Point ua = uvA->getValue();
-        Point ub = uvB->getValue();
-        Point uc = uvC->getValue();
+        Point ua = uvA->getPoint();
+        Point ub = uvB->getPoint();
+        Point uc = uvC->getPoint();
         
         _trianglePoints[p++] = pa;
         _trianglePoints[p++] = pb;
@@ -119,6 +119,65 @@ void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, const 
     }
 }
 
+void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, __Array* colors)
+{
+    this->clear();
+    
+    _blendFunc.src = GL_SRC_ALPHA;
+    _blendFunc.dst = GL_ONE_MINUS_SRC_ALPHA;
+    
+    _numberOfTriangles = (int)triangles->count();
+    
+    _trianglePoints = new cocos2d::Point[_numberOfTriangles*3];
+    _uvPoints       = new cocos2d::Point[_numberOfTriangles*3];
+    _colors         = new Color4F[_numberOfTriangles*3];
+    
+    
+    this->setColor(Color3B::WHITE);
+    this->setOpacity(1);
+    
+    int p = 0;
+    int u = 0;
+    int c = 0;
+    
+    
+    for(int i = 0; i < triangles->count(); i+=3)
+    {
+        LHValue* valA = (LHValue*)triangles->getObjectAtIndex(i);
+        LHValue* valB = (LHValue*)triangles->getObjectAtIndex(i+1);
+        LHValue* valC = (LHValue*)triangles->getObjectAtIndex(i+2);
+        
+        LHValue* uvA = (LHValue*)uvPoints->getObjectAtIndex(i);
+        LHValue* uvB = (LHValue*)uvPoints->getObjectAtIndex(i+1);
+        LHValue* uvC = (LHValue*)uvPoints->getObjectAtIndex(i+2);
+        
+        LHValue* colorA = (LHValue*)colors->getObjectAtIndex(i);
+        LHValue* colorB = (LHValue*)colors->getObjectAtIndex(i+1);
+        LHValue* colorC = (LHValue*)colors->getObjectAtIndex(i+2);
+        
+        Point pa = valA->getPoint();
+        Point pb = valB->getPoint();
+        Point pc = valC->getPoint();
+        
+        Point ua = uvA->getPoint();
+        Point ub = uvB->getPoint();
+        Point uc = uvC->getPoint();
+        
+        _trianglePoints[p++] = pa;
+        _trianglePoints[p++] = pb;
+        _trianglePoints[p++] = pc;
+        
+        _uvPoints[u++] = ua;
+        _uvPoints[u++] = ub;
+        _uvPoints[u++] = uc;
+        
+        _colors[c++] = colorA->getColor4F();
+        _colors[c++] = colorB->getColor4F();
+        _colors[c++] = colorC->getColor4F();
+    }
+}
+
+
 
 void LHDrawNode::draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated)
 {
@@ -133,8 +192,6 @@ void LHDrawNode::draw(Renderer *renderer, const Mat4 &transform, bool transformU
     else{
         GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_COLOR);
     }
-    
-
     
 	_glProgram->use();
     _glProgram->setUniformsForBuiltins();

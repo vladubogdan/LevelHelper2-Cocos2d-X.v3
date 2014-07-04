@@ -10,7 +10,7 @@
 #include "LHDictionary.h"
 #include "LHScene.h"
 #include "LHDevice.h"
-#include "LHPointValue.h"
+#include "LHValue.h"
 
 #include "LHConfig.h"
 
@@ -301,17 +301,17 @@ void LHWater::setShapeTriangles(__Array* triangles, const Color4F& c4)
     
     for(int i = 0; i < triangles->count(); i+=3)
     {
-        LHPointValue* valA = (LHPointValue*)triangles->getObjectAtIndex(i);
-        LHPointValue* valB = (LHPointValue*)triangles->getObjectAtIndex(i+1);
-        LHPointValue* valC = (LHPointValue*)triangles->getObjectAtIndex(i+2);
+        LHValue* valA = (LHValue*)triangles->getObjectAtIndex(i);
+        LHValue* valB = (LHValue*)triangles->getObjectAtIndex(i+1);
+        LHValue* valC = (LHValue*)triangles->getObjectAtIndex(i+2);
         
-        Point pA = valA->getValue();
+        Point pA = valA->getPoint();
         pA.y = -pA.y;
         
-        Point pB = valB->getValue();
+        Point pB = valB->getPoint();
         pB.y = -pB.y;
         
-        Point pC = valC->getValue();
+        Point pC = valC->getPoint();
         pC.y = -pC.y;
     
         _drawNode->drawTriangle(pA, pB, pC, c4);
@@ -357,17 +357,17 @@ void LHWater::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
         float firstX = -_width*0.5;
         float firstY = _height*0.5;
         
-        LHPointValue* first = LHPointValue::create(Point(firstX, firstY));
+        LHValue* first = LHValue::create(Point(firstX, firstY));
         trianglePts->addObject(first);
         
-        LHPointValue* prevDown = first;
+        LHValue* prevDown = first;
         
         float x = -_width*0.5;
         float y = points[0] + oy;
         
-        trianglePts->addObject(LHPointValue::create(Point(x, y)));
+        trianglePts->addObject(LHValue::create(Point(x, y)));
 
-        LHPointValue* prev = nullptr;
+        LHValue* prev = nullptr;
         
         for(int i = 1; i < (int)points.size(); ++i)
         {
@@ -379,13 +379,13 @@ void LHWater::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
                 trianglePts->addObject(prev);
             }
             
-            LHPointValue* curValue = LHPointValue::create(Point(x, y));
+            LHValue* curValue = LHValue::create(Point(x, y));
             trianglePts->addObject(curValue);
             
             trianglePts->addObject(curValue);
             
             
-            LHPointValue* down = LHPointValue::create(Point(x, firstY));
+            LHValue* down = LHValue::create(Point(x, firstY));
             trianglePts->addObject(down);
             trianglePts->addObject(prevDown);
             prevDown = down;
@@ -396,11 +396,11 @@ void LHWater::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
         
         x = _width*0.5;
         y = _height*0.5;
-        trianglePts->addObject(LHPointValue::create(Point(x, y)));
+        trianglePts->addObject(LHValue::create(Point(x, y)));
         
         x = _width + ox;
         y = -_height*0.5;
-        trianglePts->addObject(LHPointValue::create(Point(x, y)));
+        trianglePts->addObject(LHValue::create(Point(x, y)));
         trianglePts->addObject(first);
         
 

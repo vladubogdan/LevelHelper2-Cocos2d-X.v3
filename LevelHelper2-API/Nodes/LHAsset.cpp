@@ -104,8 +104,18 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 void LHAsset::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
-    visitNodeProtocol();
+    visitPhysicsProtocol();
     visitActiveAnimation();
     Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
+
+
+#if LH_USE_BOX2D
+void LHAsset::updatePosition(const cocos2d::Vec2 &pos){
+    Node::setPosition(pos);
+}
+void LHAsset::updateRotation(float rotation){
+    Node::setRotation(rotation);
+}
+#endif
 

@@ -1,16 +1,17 @@
 //
-//  LHJointNodeProtocol.cpp
+//  LHJointsProtocol.cpp
 //  LevelHelper2-Cocos2d-X-v3
 //
 //  Created by Bogdan Vladu on 24/03/14.
 //  Copyright (c) 2014 GameDevHelper.com. All rights reserved.
 //
 
-#include "LHJointNodeProtocol.h"
+#include "LHJointsProtocol.h"
+
 #include "LHDictionary.h"
 #include "LHArray.h"
 #include "LHConfig.h"
-#include "LHPointValue.h"
+#include "LHValue.h"
 
 #include "LHScene.h"
 
@@ -22,30 +23,30 @@
 #include "Box2d/Box2d.h"
 #endif
 
-LHJointNodeProtocol::LHJointNodeProtocol()
+LHJointsProtocol::LHJointsProtocol()
 {
     _joint = nullptr;
     _nodeA = nullptr;
     _nodeB = nullptr;
 }
 
-LHJointNodeProtocol::~LHJointNodeProtocol()
+LHJointsProtocol::~LHJointsProtocol()
 {
 
 }
 
-Point LHJointNodeProtocol::getAnchorA(){
+Point LHJointsProtocol::getAnchorA(){
     Point pt = _nodeA->convertToWorldSpaceAR(this->getLocalAnchorA());
     return _nodeA->getParent()->convertToNodeSpaceAR(pt);
     
 }
 
-Point LHJointNodeProtocol::getAnchorB(){
+Point LHJointsProtocol::getAnchorB(){
     Point pt = _nodeB->convertToWorldSpaceAR(this->getLocalAnchorB());
     return _nodeB->getParent()->convertToNodeSpaceAR(pt);
 }
 
-void LHJointNodeProtocol::findConnectedNodes()
+void LHJointsProtocol::findConnectedNodes()
 {
     if(_nodeAUUID.length() == 0 || _nodeBUUID.length() == 0)
         return;
@@ -60,7 +61,7 @@ void LHJointNodeProtocol::findConnectedNodes()
     _nodeB = scene->getChildNodeWithUUID(_nodeBUUID);
 }
 
-void LHJointNodeProtocol::loadJointInfoFromDictionary(LHDictionary* dict)
+void LHJointsProtocol::loadJointInfoFromDictionary(LHDictionary* dict)
 {
     _joint = nullptr;
     _nodeA = nullptr;
@@ -89,17 +90,17 @@ void LHJointNodeProtocol::loadJointInfoFromDictionary(LHDictionary* dict)
     _collideConnected = dict->boolForKey("collideConnected");
 }
 
-bool LHJointNodeProtocol::getCollideConnected(){
+bool LHJointsProtocol::getCollideConnected(){
     return _collideConnected;
 }
 
-Point LHJointNodeProtocol::getLocalAnchorA()
+Point LHJointsProtocol::getLocalAnchorA()
 {
     return Point(_relativePosA.x,
                  -_relativePosA.y);
 }
 
-Point LHJointNodeProtocol::getLocalAnchorB()
+Point LHJointsProtocol::getLocalAnchorB()
 {
     return Point( _relativePosB.x,
                  -_relativePosB.y);
@@ -112,15 +113,15 @@ Point LHJointNodeProtocol::getLocalAnchorB()
 
 #if LH_USE_BOX2D
 
-void LHJointNodeProtocol::setJoint(b2Joint* jt){
+void LHJointsProtocol::setJoint(b2Joint* jt){
     _joint = jt;
 }
 
-b2Joint* LHJointNodeProtocol::getJoint(){
+b2Joint* LHJointsProtocol::getJoint(){
     return _joint;
 }
 
-void LHJointNodeProtocol::removeJoint()
+void LHJointsProtocol::removeJoint()
 {
     Node* node = dynamic_cast<Node*>(this);
     if(!node)return;
@@ -147,15 +148,15 @@ void LHJointNodeProtocol::removeJoint()
 #else//chipmunk
 
 
-void LHJointNodeProtocol::setJoint(PhysicsJoint* jt){
+void LHJointsProtocol::setJoint(PhysicsJoint* jt){
     _joint = jt;
 }
 
-PhysicsJoint* LHJointNodeProtocol::getJoint(){
+PhysicsJoint* LHJointsProtocol::getJoint(){
     return _joint;
 }
 
-void LHJointNodeProtocol::removeJoint()
+void LHJointsProtocol::removeJoint()
 {
     if(_joint){
         _joint->removeFormWorld();

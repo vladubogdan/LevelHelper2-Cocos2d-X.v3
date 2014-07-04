@@ -12,8 +12,10 @@
 #include "LHDevice.h"
 #include "LHUtils.h"
 #include "LHDrawNode.h"
-#include "LHPointValue.h"
+#include "LHValue.h"
 #include "LHGameWorldNode.h"
+#include "LHPhysicsProtocol.h"
+
 
 #if LH_USE_BOX2D
 #include "Box2d/Box2d.h"
@@ -193,8 +195,8 @@ void LHRopeJointNode::drawRopeShape(LHDrawNode* shape,
         
         __Array* sPoints = this->shapePointsFromRopePoints(rPoints, _thickness, isFlipped);
         
-        LHPointValue* prevA = nullptr;
-        LHPointValue* prevB = nullptr;
+        LHValue* prevA = nullptr;
+        LHValue* prevB = nullptr;
         float prevV = 0.0f;
         if(isFlipped){
             prevV = 1.0f;
@@ -207,13 +209,13 @@ void LHRopeJointNode::drawRopeShape(LHDrawNode* shape,
         
         for(int i = 0; i < sPoints->count(); i+=2)
         {
-            LHPointValue* valA = (LHPointValue*)sPoints->getObjectAtIndex(i);
-            LHPointValue* valB = (LHPointValue*)sPoints->getObjectAtIndex(i+1);
+            LHValue* valA = (LHValue*)sPoints->getObjectAtIndex(i);
+            LHValue* valB = (LHValue*)sPoints->getObjectAtIndex(i+1);
             
             if(prevA && prevB)
             {
-                Point pa = prevA->getValue();
-                Point a  = valA->getValue();
+                Point pa = prevA->getPoint();
+                Point a  = valA->getPoint();
                 
                 triangles->addObject(prevA);
                 triangles->addObject(valA);
@@ -231,13 +233,13 @@ void LHRopeJointNode::drawRopeShape(LHDrawNode* shape,
                     texV = 1.0f - (currentLength/_length)*_vRepetitions;
                 }
 
-                uvPoints->addObject(LHPointValue::create(Point(1.0f*_uRepetitions, prevV)));
-                uvPoints->addObject(LHPointValue::create(Point(1.0f*_uRepetitions, texV)));
-                uvPoints->addObject(LHPointValue::create(Point(0.0f, texV)));
+                uvPoints->addObject(LHValue::create(Point(1.0f*_uRepetitions, prevV)));
+                uvPoints->addObject(LHValue::create(Point(1.0f*_uRepetitions, texV)));
+                uvPoints->addObject(LHValue::create(Point(0.0f, texV)));
                 
-                uvPoints->addObject(LHPointValue::create(Point(0.0f, texV)));
-                uvPoints->addObject(LHPointValue::create(Point(1.0f*_uRepetitions, prevV)));
-                uvPoints->addObject(LHPointValue::create(Point(0.0f, prevV)));
+                uvPoints->addObject(LHValue::create(Point(0.0f, texV)));
+                uvPoints->addObject(LHValue::create(Point(1.0f*_uRepetitions, prevV)));
+                uvPoints->addObject(LHValue::create(Point(0.0f, prevV)));
                 
                 prevV = texV;
 
@@ -266,25 +268,25 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
     bool flipped = false;
     __Array* rPoints = this->ropePointsFromPointA(a, b, _length, _segments, &flipped);
     
-    LHPointValue* prevValue = nullptr;
+    LHValue* prevValue = nullptr;
     float cutLength = 0.0f;
     
     for(size_t i = 0; i < rPoints->count(); ++i)
     {
-        LHPointValue* val = (LHPointValue*)rPoints->getObjectAtIndex(i);
+        LHValue* val = (LHValue*)rPoints->getObjectAtIndex(i);
 
         if(prevValue)
         {
-            Point ropeA = prevValue->getValue();
-            Point ropeB = val->getValue();
+            Point ropeA = prevValue->getPoint();
+            Point ropeB = val->getPoint();
             
             cutLength += ropeA.getDistance(ropeB);
             
-            LHPointValue* interVal = LHUtils::LHLinesIntersection(ropeA, ropeB, ptA, ptB);
+            LHValue* interVal = LHUtils::LHLinesIntersection(ropeA, ropeB, ptA, ptB);
             
             if(interVal != nullptr)
             {
-                Point interPt = interVal->getValue();
+                Point interPt = interVal->getPoint();
                 
                 //need to destroy the joint and create 2 other joints
                 if(this->getJoint()){
@@ -358,7 +360,7 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                         jointDef.localAnchorA = scene->metersFromPoint(this->getLocalAnchorA());
                         jointDef.localAnchorB = b2Vec2(0,0);
                         
-                        LHNodeProtocol* nodeAProt = dynamic_cast<LHNodeProtocol*>(this->getNodeA());
+                        LHPhysicsProtocol* nodeAProt = dynamic_cast<LHPhysicsProtocol*>(this->getNodeA());
                         if(!nodeAProt)return;
                         
                         jointDef.bodyA = nodeAProt->getBox2dBody();
@@ -452,13 +454,13 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                         jointDef.localAnchorA = b2Vec2(0,0);
                         jointDef.localAnchorB = scene->metersFromPoint(this->getLocalAnchorB());
                         
-                        LHNodeProtocol* nodeBProt = dynamic_cast<LHNodeProtocol*>(this->getNodeB());
-                        if(!nodeBProt)return;
-
+                        
                         
                         jointDef.bodyA = cutBodyB;
-                        jointDef.bodyB = nodeBProt->getBox2dBody();
+                        jointDef.bodyB = LH_GET_BOX2D_BODY(this->getNodeB());
                         
+
+                            
                         if(!flipped){
                             cutJointBLength = _length - cutLength;
                         }
@@ -667,7 +669,7 @@ __Array* LHRopeJointNode::ropePointsFromPointA(Point a, Point b, float ropeLengt
         Point point(x, fcat(x, constants));
         point = PointApplyAffineTransform(point, transform);
         
-        rPoints->addObject(LHPointValue::create(point));
+        rPoints->addObject(LHValue::create(point));
         
         if(point == prevPt){
             break;//safety check
@@ -680,22 +682,22 @@ __Array* LHRopeJointNode::ropePointsFromPointA(Point a, Point b, float ropeLengt
 
     if(Point((int)b.x, (int)b.y) != Point((int)lastPt.x, (int)lastPt.y))
     {
-        rPoints->addObject(LHPointValue::create(b));
+        rPoints->addObject(LHValue::create(b));
     }
     
     if(!ropeIsFlipped && rPoints->count() > 0){
         
-        LHPointValue* firstPtVal = (LHPointValue*)rPoints->getObjectAtIndex(0);
-        Point firstPt = firstPtVal->getValue();
+        LHValue* firstPtVal = (LHValue*)rPoints->getObjectAtIndex(0);
+        Point firstPt = firstPtVal->getPoint();
         
         if(Point((int)a.x, (int)a.y) != Point((int)firstPt.x, (int)firstPt.y))
         {
-            rPoints->insertObject(LHPointValue::create(a), 0);
+            rPoints->insertObject(LHValue::create(a), 0);
         }
 
         if(a != firstPt)
         {
-            rPoints->insertObject(LHPointValue::create(a), 0);
+            rPoints->insertObject(LHValue::create(a), 0);
         }
     }
     
@@ -709,57 +711,57 @@ __Array* LHRopeJointNode::shapePointsFromRopePoints(__Array* rPoints, float thic
     bool first = true;
     bool added = false;
     
-    LHPointValue* prvVal = nullptr;
+    LHValue* prvVal = nullptr;
     
     int count = rPoints->count();
     
-    LHPointValue* lastPt = nullptr;
+    LHValue* lastPt = nullptr;
     if(count > 0){
-        lastPt = (LHPointValue*)rPoints->getObjectAtIndex(count-1);
+        lastPt = (LHValue*)rPoints->getObjectAtIndex(count-1);
     }
     
     for(size_t i = 0; i < count; ++i)
     {
-        LHPointValue* ptVal = (LHPointValue*)rPoints->getObjectAtIndex(i);
+        LHValue* ptVal = (LHValue*)rPoints->getObjectAtIndex(i);
         
         if(prvVal != nullptr)
         {
-            Point prevPt = prvVal->getValue();
-            Point pt = ptVal->getValue();
+            Point prevPt = prvVal->getPoint();
+            Point pt = ptVal->getPoint();
             
             __Array* points = thickLinePointsFrom(prevPt, pt, thick);
             
             
             if((ptVal == lastPt) && !added){
                 if(flipped){
-                    LHPointValue* ptVal0 = (LHPointValue*)points->getObjectAtIndex(0);
+                    LHValue* ptVal0 = (LHValue*)points->getObjectAtIndex(0);
                     shapePoints->addObject(ptVal0);
                     
-                    LHPointValue* ptVal1 = (LHPointValue*)points->getObjectAtIndex(1);
+                    LHValue* ptVal1 = (LHValue*)points->getObjectAtIndex(1);
                     shapePoints->addObject(ptVal1);
                 }
                 else{
-                    LHPointValue* ptVal1 = (LHPointValue*)points->getObjectAtIndex(1);
+                    LHValue* ptVal1 = (LHValue*)points->getObjectAtIndex(1);
                     shapePoints->addObject(ptVal1);
                     
-                    LHPointValue* ptVal0 = (LHPointValue*)points->getObjectAtIndex(0);
+                    LHValue* ptVal0 = (LHValue*)points->getObjectAtIndex(0);
                     shapePoints->addObject(ptVal0);
                 }
                 added = true;
             }
             else{
                 if(flipped){
-                    LHPointValue* ptVal2 = (LHPointValue*)points->getObjectAtIndex(2);
+                    LHValue* ptVal2 = (LHValue*)points->getObjectAtIndex(2);
                     shapePoints->addObject(ptVal2);
                     
-                    LHPointValue* ptVal3 = (LHPointValue*)points->getObjectAtIndex(3);
+                    LHValue* ptVal3 = (LHValue*)points->getObjectAtIndex(3);
                     shapePoints->addObject(ptVal3);
                 }
                 else{
-                    LHPointValue* ptVal3 = (LHPointValue*)points->getObjectAtIndex(3);
+                    LHValue* ptVal3 = (LHValue*)points->getObjectAtIndex(3);
                     shapePoints->addObject(ptVal3);
                     
-                    LHPointValue* ptVal2 = (LHPointValue*)points->getObjectAtIndex(2);
+                    LHValue* ptVal2 = (LHValue*)points->getObjectAtIndex(2);
                     shapePoints->addObject(ptVal2);
                 }
             }
@@ -797,12 +799,12 @@ __Array* LHRopeJointNode::thickLinePointsFrom(const Point& start, const Point& e
     __Array* array = __Array::create();
 
     //G+B
-    array->addObject(LHPointValue::create(four));
-    array->addObject(LHPointValue::create(three));
+    array->addObject(LHValue::create(four));
+    array->addObject(LHValue::create(three));
     
     //C+P
-    array->addObject(LHPointValue::create(one));
-    array->addObject(LHPointValue::create(two));
+    array->addObject(LHValue::create(one));
+    array->addObject(LHValue::create(two));
 
     return array;
 }
@@ -909,15 +911,8 @@ bool LHRopeJointNode::lateLoading()
         b2World* world = pNode->getBox2dWorld();
         if(world == nullptr)return false;
         
-        LHNodeProtocol* nodeAProt = dynamic_cast<LHNodeProtocol*>(this->getNodeA());
-        if(!nodeAProt)return false;
-
-        LHNodeProtocol* nodeBProt = dynamic_cast<LHNodeProtocol*>(this->getNodeB());
-        if(!nodeBProt)return false;
-
-        
-        b2Body* bodyA = nodeAProt->getBox2dBody();
-        b2Body* bodyB = nodeBProt->getBox2dBody();
+        b2Body* bodyA = LH_GET_BOX2D_BODY(this->getNodeA());
+        b2Body* bodyB = LH_GET_BOX2D_BODY(this->getNodeB());
         
         if(!bodyA || !bodyB)return false;
         

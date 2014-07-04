@@ -54,10 +54,6 @@ bool LHSceneAssetDemo::initWithContentOfFile(const std::string& plistLevelFile)
     return retValue;
 }
 
-float randomFloat(float Min, float Max){
-    return ((arc4random()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
-}
-
 bool LHSceneAssetDemo::onTouchBegan(Touch* touch, Event* event)
 {
     Point location = touch->getLocation();
@@ -71,10 +67,10 @@ bool LHSceneAssetDemo::onTouchBegan(Touch* touch, Event* event)
     
     asset->setPosition(location);
     
-    asset->setScaleX(randomFloat(0.15, 0.8f));
-    asset->setScaleY(randomFloat(0.15, 0.8f));
+    asset->setScaleX(LHUtils::LHRandomFloat(0.15, 0.8f));
+    asset->setScaleY(LHUtils::LHRandomFloat(0.15, 0.8f));
     
-    float zRot = randomFloat(-45, 45.0f);
+    float zRot = LHUtils::LHRandomFloat(-45, 45.0f);
     asset->setRotation(zRot);
     
     //dont forget to call super

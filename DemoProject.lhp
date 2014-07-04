@@ -170,6 +170,11 @@
 					<key>publish</key>
 					<true/>
 				</dict>
+				<key>shapesDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
 				<key>tst.lhs</key>
 				<dict>
 					<key>publish</key>

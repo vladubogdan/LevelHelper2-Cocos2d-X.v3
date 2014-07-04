@@ -11,11 +11,14 @@
 #include "LHScene.h"
 #include "LHDevice.h"
 #include "LHUtils.h"
+#include "LHDrawNode.h"
+#include "LHValue.h"
+#include "LHConfig.h"
+
 
 LHShape::LHShape()
 {
-    _texture = nullptr;
-    _glProgram = nullptr;
+    _drawNode = NULL;
 }
 
 LHShape::~LHShape()
@@ -40,250 +43,191 @@ LHShape* LHShape::shapeNodeWithDictionary(LHDictionary* dict, Node* prnt)
 
 bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
 {
-    if(DrawNode::init())
+    if(Node::init())
     {
         _physicsBody = NULL;
-        _texture = nullptr;
-        _glProgram = nullptr;
+       
+        LHScene* scene = (LHScene*)prnt->getScene();
+        
+        this->loadGenericInfoFromDictionary(dict);
+        
+        this->loadShapeFromDictionary(dict, scene);
+
+        this->setScaleX(1);
+        this->setScaleY(1);
+
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         
         prnt->addChild(this);
         
-        this->loadGenericInfoFromDictionary(dict);
-
         this->loadTransformationInfoFromDictionary(dict);
         
-        this->setContentSize(Size());
-        
-        float alpha = dict->floatForKey("alpha");
-
-        LHScene* scene = (LHScene*)prnt->getScene();
-        
-        if(dict->objectForKey("relativeImagePath"))
-        {
-            std::string imgRelPath = dict->stringForKey("relativeImagePath");
-
-            std::string filename = LHUtils::getLastPathComponent(imgRelPath);
-            std::string foldername = LHUtils::removeLastPathComponent(imgRelPath);
-            foldername = LHUtils::getLastPathComponent(foldername);
-            
-            
-            std::string imagePath = LHUtils::getImagePathWithFilename(filename,
-                                                                      foldername,
-                                                                      scene->getCurrentDeviceSuffix());
-
-            
-            Texture2D* tex = Director::getInstance()->getTextureCache()->addImage(imagePath);
-
-            if(tex){
-                Texture2D::TexParams texParams = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
-                tex->setTexParameters(texParams);
-                setTexture(tex);
-                _glProgram = ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
-            }
-        }
-        
-    
-        clear();
-        
-        
-        LHArray* triangles = dict->arrayForKey("triangles");
-
-        Color3B overlay = dict->colorForKey("colorOverlay");
-        
-        Color4F c4(overlay.r*255.0f,
-                   overlay.g*255.0f,
-                   overlay.b*255.0f,
-                   alpha*255.0f);
-        
-        
-        LHArray* points = dict->arrayForKey("points");
-     
-        for(int i = 0; i < points->count(); ++i)
-        {
-            LHDictionary* dict = points->dictAtIndex(i);
-            Point pt = dict->pointForKey("point");
-            pt.y = -pt.y;
-            _outline.push_back(pt);
-        }
-        
-        
-        for(int i = 0; i < triangles->count(); i+=3)
-        {
-            LHDictionary* dictA = triangles->dictAtIndex(i);
-            LHDictionary* dictB = triangles->dictAtIndex(i+1);
-            LHDictionary* dictC = triangles->dictAtIndex(i+2);
-            
-            Color4F c4A;
-            Color4F c4B;
-            Color4F c4C;
-            
-            if(!_texture){
-                c4A = c4;
-                c4B = c4;
-                c4C = c4;
-            }
-            else{
-                
-                float alpha= dictA->floatForKey("alpha");
-                Color3B color = dictA->colorForKey("color");
-                c4A     = Color4F(color.r*255.0f,
-                              color.g*255.0f,
-                              color.b*255.0f,
-                              alpha*255.0f);
-                
-                alpha   = dictB->floatForKey("alpha");
-                color   = dictB->colorForKey("color");
-                c4B     = Color4F(color.r*255.0f,
-                                  color.g*255.0f,
-                                  color.b*255.0f,
-                                  alpha*255.0f);
-                
-                alpha   = dictC->floatForKey("alpha");
-                color   = dictC->colorForKey("color");
-                c4C     = Color4F(color.r*255.0f,
-                                  color.g*255.0f,
-                                  color.b*255.0f,
-                                  alpha*255.0f);
-            }
-            
-            Point posA = dictA->pointForKey("point");
-            posA.y = -posA.y;
-            Point uvA = dictA->pointForKey("uv");
-            
-            Point posB = dictB->pointForKey("point");
-            posB.y = -posB.y;
-            Point uvB = dictB->pointForKey("uv");
-            
-            Point posC = dictC->pointForKey("point");
-            posC.y = -posC.y;
-            Point uvC = dictC->pointForKey("uv");
-            
-            _triangles.push_back(posA);
-            _triangles.push_back(posB);
-            _triangles.push_back(posC);
-            
-            if(!_texture){
-                uvA = Point();
-                uvB = Point();
-                uvC = Point();
-            }
-
-            if(_texture){
-                drawTriangle(posA, posB, posC, c4A, c4B, c4C, uvA, uvB, uvC);
-            }
-            else{
-                DrawNode::drawTriangle(posA, posB, posC, c4);
-            }
-            
-        }
-        
-        
-        
-        //physics body needs to be created before adding this node to the parent
-        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-        
         this->loadChildrenFromDictionary(dict);
-        
         this->createAnimationsFromDictionary(dict);
-        
         
         return true;
     }
     return false;
 }
 
-void LHShape::drawTriangle(const Point &p1,
-                           const Point &p2,
-                           const Point &p3,
-                           const Color4F &colorA,
-                           const Color4F &colorB,
-                           const Color4F &colorC,
-                           const Point& t1,
-                           const Point& t2,
-                           const Point& t3)
-{
-    unsigned int vertex_count = 2*3;
-    ensureCapacity(vertex_count);
-    
-    Color4B colA = Color4B(colorA);
-    Color4B colB = Color4B(colorB);
-    Color4B colC = Color4B(colorC);
-    
-    V2F_C4B_T2F a = {Vec2(p1.x, p1.y), colA, Tex2F(t1.x, t1.y) };
-    V2F_C4B_T2F b = {Vec2(p2.x, p2.y), colB, Tex2F(t2.x, t2.y) };
-    V2F_C4B_T2F c = {Vec2(p3.x, p3.y), colC, Tex2F(t3.x, t3.y) };
 
-    V2F_C4B_T2F_Triangle *triangles = (V2F_C4B_T2F_Triangle *)(_buffer + _bufferCount);
-    V2F_C4B_T2F_Triangle triangle = {a, b, c};
-    triangles[0] = triangle;
+void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
+{
+    Size size = this->getContentSize();
+    float alpha = dict->floatForKey("alpha");
     
-    _bufferCount += vertex_count;
-    _dirty = true;
+    LHDrawNode* shape = LHDrawNode::create();
+    this->addChild(shape);
+    shape->setPosition(Point(size.width*0.5, size.height*0.5));
+    
+    _drawNode = shape;
+    _drawNode->setLocalZOrder(1);
+    
+    Texture2D* texture = NULL;
+    
+    if(dict->objectForKey("relativeImagePath"))
+    {
+        std::string imgRelPath = dict->stringForKey("relativeImagePath");
+        
+        std::string filename = LHUtils::getLastPathComponent(imgRelPath);
+        std::string foldername = LHUtils::removeLastPathComponent(imgRelPath);
+        foldername = LHUtils::getLastPathComponent(foldername);
+        
+        
+        std::string imagePath = LHUtils::getImagePathWithFilename(filename,
+                                                                  foldername,
+                                                                  scene->getCurrentDeviceSuffix());
+        
+        texture = Director::getInstance()->getTextureCache()->addImage(imagePath);
+        
+        if(texture){
+            Texture2D::TexParams texParams = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
+            texture->setTexParameters(texParams);
+            _drawNode->setTexture(texture);
+        }
+    }
+    
+    
+    
+    LHArray* triangles = dict->arrayForKey("triangles");
+    
+    Color3B overlay = dict->colorForKey("colorOverlay");
+    
+    Color4F c4(overlay.r/255.0f,
+               overlay.g/255.0f,
+               overlay.b/255.0f,
+               alpha/255.0f);
+    
+    
+    LHArray* points = dict->arrayForKey("points");
+    
+    for(int i = 0; i < points->count(); ++i)
+    {
+        LHDictionary* dict = points->dictAtIndex(i);
+        Point pt = dict->pointForKey("point");
+        pt.y = -pt.y;
+        _outline.push_back(pt);
+    }
+    
+    __Array* shapeTriangles = __Array::create();
+    __Array* uvPoints       = __Array::create();
+    __Array* colors         = __Array::create();
+    
+    float scaleX = this->getScaleX();
+    float scaleY = this->getScaleY();
+    
+    for(int i = 0; i < triangles->count(); i+=3)
+    {
+        LHDictionary* dictA = triangles->dictAtIndex(i);
+        LHDictionary* dictB = triangles->dictAtIndex(i+1);
+        LHDictionary* dictC = triangles->dictAtIndex(i+2);
+        
+        Color4F c4A;
+        Color4F c4B;
+        Color4F c4C;
+        
+        if(!texture){
+            c4A = c4;
+            c4B = c4;
+            c4C = c4;
+        }
+        else{
+            
+            float alpha= dictA->floatForKey("alpha");
+            Color3B color = dictA->colorForKey("color");
+            c4A     = Color4F(color.r/255.0f,
+                              color.g/255.0f,
+                              color.b/255.0f,
+                              alpha/255.0f);
+            
+            alpha   = dictB->floatForKey("alpha");
+            color   = dictB->colorForKey("color");
+            c4B     = Color4F(color.r/255.0f,
+                              color.g/255.0f,
+                              color.b/255.0f,
+                              alpha/255.0f);
+            
+            alpha   = dictC->floatForKey("alpha");
+            color   = dictC->colorForKey("color");
+            c4C     = Color4F(color.r/255.0f,
+                              color.g/255.0f,
+                              color.b/255.0f,
+                              alpha/255.0f);
+        }
+        
+        Point posA = dictA->pointForKey("point");
+        posA.y = -posA.y;
+        Point uvA = dictA->pointForKey("uv");
+        
+        Point posB = dictB->pointForKey("point");
+        posB.y = -posB.y;
+        Point uvB = dictB->pointForKey("uv");
+        
+        Point posC = dictC->pointForKey("point");
+        posC.y = -posC.y;
+        Point uvC = dictC->pointForKey("uv");
+        
+        posA.x *= scaleX;
+        posA.y *= scaleY;
+        
+        posB.x *= scaleX;
+        posB.y *= scaleY;
+        
+        posC.x *= scaleX;
+        posC.y *= scaleY;
+        
+        
+        _triangles.push_back(posA);
+        _triangles.push_back(posB);
+        _triangles.push_back(posC);
+        
+        
+        shapeTriangles->addObject(LHValue::create(posA));
+        shapeTriangles->addObject(LHValue::create(posB));
+        shapeTriangles->addObject(LHValue::create(posC));
+        
+        if(!texture){
+            uvA = Point();
+            uvB = Point();
+            uvC = Point();
+        }
+        
+        uvPoints->addObject(LHValue::create(uvA));
+        uvPoints->addObject(LHValue::create(uvB));
+        uvPoints->addObject(LHValue::create(uvC));
+        
+//        c4A.a = 0.2;
+//        c4B.a = 0.2;
+//        c4C.a = 0.2;
+        
+        colors->addObject(LHValue::create(c4A));
+        colors->addObject(LHValue::create(c4B));
+        colors->addObject(LHValue::create(c4C));
+    }
+    
+    _drawNode->setShapeTriangles(shapeTriangles, uvPoints, colors);
 }
 
-void LHShape::draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated)
-{
-    if(_texture)
-    {
-        _customCommand.init(_globalZOrder);
-        _customCommand.func = CC_CALLBACK_0(LHShape::textureDraw, this, transform, transformUpdated);
-        renderer->addCommand(&_customCommand);
-    }
-    else{
-        DrawNode::draw(renderer, transform, transformUpdated);
-    }
-}
-
-void LHShape::textureDraw(const Mat4 &transform, bool transformUpdated)
-{
-    if(_glProgram){
-        _glProgram->use();
-        _glProgram->setUniformsForBuiltins(transform);
-    }
-    else{
-        getGLProgram()->use();
-        getGLProgram()->setUniformsForBuiltins(transform);
-    }
-    
-    
-    if(_texture)
-    {
-        GL::bindTexture2D( _texture->getName() );
-        GL::blendFunc(_blendFunc.src, _blendFunc.dst);
-    }
-    
-    if (_dirty)
-    {
-        glBindBuffer(GL_ARRAY_BUFFER, _vbo);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(V2F_C4B_T2F)*_bufferCapacity, _buffer, GL_STREAM_DRAW);
-        _dirty = false;
-    }
-
-    if (Configuration::getInstance()->supportsShareableVAO())
-    {
-        GL::bindVAO(_vao);
-    }
-    else
-    {
-        GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POS_COLOR_TEX);
-        
-        glBindBuffer(GL_ARRAY_BUFFER, _vbo);
-        // vertex
-        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(V2F_C4B_T2F), (GLvoid *)offsetof(V2F_C4B_T2F, vertices));
-        
-        // color
-        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_COLOR, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(V2F_C4B_T2F), (GLvoid *)offsetof(V2F_C4B_T2F, colors));
-        
-        // texcood
-        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORD, 2, GL_FLOAT, GL_FALSE, sizeof(V2F_C4B_T2F), (GLvoid *)offsetof(V2F_C4B_T2F, texCoords));
-    }
-    
-    glDrawArrays(GL_TRIANGLES, 0, _bufferCount);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    
-    CC_INCREMENT_GL_DRAWN_BATCHES_AND_VERTICES(1,_bufferCount);
-    CHECK_GL_ERROR_DEBUG();
-}
 
 
 const std::vector<Point>& LHShape::trianglePoints() const
@@ -296,42 +240,45 @@ const std::vector<Point>& LHShape::outlinePoints() const
     return _outline;
 }
 
-Texture2D* LHShape::getTexture() const{
-    return _texture;
-}
-
-void LHShape::setTexture(Texture2D *texture){
-    _texture = texture;
-}
-
-void LHShape::setBlendFunc(const BlendFunc &blendFunc){
-    _blendFunc = blendFunc;
-}
-
-const BlendFunc &LHShape::getBlendFunc() const{
-    return _blendFunc;
-}
-
 void LHShape::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
-    visitNodeProtocol();
+    visitPhysicsProtocol();
     visitActiveAnimation();
-    DrawNode::visit(renderer, parentTransform, parentTransformUpdated);
+    Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
-/*
--(void)visit
+
+void LHShape::setPosition(const cocos2d::Vec2 &pos)
 {
-    NSTimeInterval thisTime = [NSDate timeIntervalSinceReferenceDate];
-    float dt = thisTime - lastTime;
-    
-    if(activeAnimation){
-        [activeAnimation updateTimeWithDelta:dt];
-    }
-    
-    [super visit];
-    
-    lastTime = thisTime;
+    Node::setPosition(pos);
+    this->updatePhysicsTransform();
 }
 
-*/
+void LHShape::setRotation(float rotation)
+{
+    Node::setRotation(rotation);
+    this->updatePhysicsTransform();
+}
+
+void LHShape::setScaleX(float scaleX){
+    Node::setScaleX(scaleX);
+    this->updatePhysicsScale();
+}
+void LHShape::setScaleY(float scaleY){
+    Node::setScaleY(scaleY);
+    this->updatePhysicsScale();
+}
+
+void LHShape::setScale(float scaleX, float scaleY){
+    Node::setScale(scaleX, scaleY);
+    this->updatePhysicsScale();
+}
+
+#if LH_USE_BOX2D
+void LHShape::updatePosition(const cocos2d::Vec2 &pos){
+    Node::setPosition(pos);
+}
+void LHShape::updateRotation(float rotation){
+    Node::setRotation(rotation);
+}
+#endif

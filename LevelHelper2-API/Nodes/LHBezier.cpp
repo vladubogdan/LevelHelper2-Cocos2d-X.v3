@@ -71,105 +71,17 @@ bool LHBezier::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(DrawNode::init())
     {
         _physicsBody = NULL;
-        prnt->addChild(this);
         
         this->loadGenericInfoFromDictionary(dict);
+        this->setContentSize(Size());
+        this->loadShapeFromDictionary(dict);
+        
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        
+        prnt->addChild(this);
+        
         this->loadTransformationInfoFromDictionary(dict);
         
-        this->setContentSize(Size());
-        
-        float alpha = dict->floatForKey("alpha");
-
-        clear();
-        
-        
-        Color3B overlay = dict->colorForKey("colorOverlay");
-        Color4F colorOverlay(overlay.r/255.0f, overlay.g/255.0f, overlay.b/255.0f, alpha/255.0f);
-        
-        LHArray* points = dict->arrayForKey("points");
-        bool closed     = dict->boolForKey("closed");
-        
-        Point* prevValue = nullptr;
-        LHDictionary* previousPointDict = nullptr;
-        for(int i = 0; i < points->count(); ++i)
-        {
-            LHDictionary* pointDict = points->dictAtIndex(i);
-
-            if(previousPointDict != nullptr)
-            {
-                Point control1 = previousPointDict->pointForKey("ctrl2");
-                if(!previousPointDict->boolForKey("hasCtrl2")){
-                    control1 = previousPointDict->pointForKey("mainPt");
-                }
-                
-                Point control2 = pointDict->pointForKey("ctrl1");
-                if(!pointDict->boolForKey("hasCtrl1")){
-                    control2 = pointDict->pointForKey("mainPt");
-                }
-                
-                Point vPoint = {0.0f, 0.0f};
-                for(float t = 0.0; t <= (1 + (1.0f / MAX_BEZIER_STEPS)); t += 1.0f / MAX_BEZIER_STEPS)
-                {
-                    vPoint = LHPointOnCurve(previousPointDict->pointForKey("mainPt"),
-                                            control1,
-                                            control2,
-                                            pointDict->pointForKey("mainPt"),
-                                            t);
-                    
-                    Point pt(vPoint.x, -vPoint.y);
-                    
-                    
-                    if(prevValue){
-                        Point prevPt = Point(prevValue->x, prevValue->y);
-                        drawSegment(prevPt, pt, 1, colorOverlay);
-                    }
-                    
-                    CC_SAFE_DELETE(prevValue);
-                    prevValue = new Point(pt);
-                    _linePoints.push_back(pt);
-                }
-            }
-            previousPointDict = pointDict;
-        }
-        if(closed){
-            if(points->count() > 1)
-            {
-                LHDictionary* ptDict = points->dictAtIndex(0);
-                
-                Point control1 = previousPointDict->pointForKey("ctrl2");
-                if(!previousPointDict->boolForKey("hasCtrl2")){
-                    control1 = previousPointDict->pointForKey("mainPt");
-                }
-                
-                Point control2 = ptDict->pointForKey("ctrl1");
-                if(!ptDict->boolForKey("hasCtrl1")){
-                    control2 = ptDict->pointForKey("mainPt");
-                }
-                
-                Point vPoint = {0.0f, 0.0f};
-                for(float t = 0; t <= (1 + (1.0f / MAX_BEZIER_STEPS)); t += 1.0f / MAX_BEZIER_STEPS)
-                {
-                    vPoint = LHPointOnCurve(previousPointDict->pointForKey("mainPt"),
-                                            control1,
-                                            control2,
-                                            ptDict->pointForKey("mainPt"),
-                                            t);
-                    
-                    Point pt(vPoint.x, -vPoint.y);
-                    if(prevValue){
-                        Point prevPt = Point(prevValue->x, prevValue->y);
-                        drawSegment(prevPt, pt, 1, colorOverlay);
-                    }
-                    CC_SAFE_DELETE(prevValue);
-                    prevValue = new Point(pt);
-                    _linePoints.push_back(pt);
-                }
-            }
-        }
-        CC_SAFE_DELETE(prevValue);
-        
-       
-        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         this->loadChildrenFromDictionary(dict);
         this->createAnimationsFromDictionary(dict);
         
@@ -179,13 +91,149 @@ bool LHBezier::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
+void LHBezier::loadShapeFromDictionary(LHDictionary* dict)
+{
+    float alpha = dict->floatForKey("alpha");
+
+    Color3B overlay = dict->colorForKey("colorOverlay");
+    Color4F colorOverlay(overlay.r/255.0f, overlay.g/255.0f, overlay.b/255.0f, alpha/255.0f);
+    
+    LHArray* points = dict->arrayForKey("points");
+    bool closed     = dict->boolForKey("closed");
+    
+//    float scaleX = this->getScaleX();
+//    float scaleY = this->getScaleY();
+    
+    Point* prevValue = nullptr;
+    LHDictionary* previousPointDict = nullptr;
+    for(int i = 0; i < points->count(); ++i)
+    {
+        LHDictionary* pointDict = points->dictAtIndex(i);
+        
+        if(previousPointDict != nullptr)
+        {
+            Point control1 = previousPointDict->pointForKey("ctrl2");
+            if(!previousPointDict->boolForKey("hasCtrl2")){
+                control1 = previousPointDict->pointForKey("mainPt");
+            }
+            
+            Point control2 = pointDict->pointForKey("ctrl1");
+            if(!pointDict->boolForKey("hasCtrl1")){
+                control2 = pointDict->pointForKey("mainPt");
+            }
+            
+            Point vPoint = {0.0f, 0.0f};
+            for(float t = 0.0; t <= (1 + (1.0f / MAX_BEZIER_STEPS)); t += 1.0f / MAX_BEZIER_STEPS)
+            {
+                vPoint = LHPointOnCurve(previousPointDict->pointForKey("mainPt"),
+                                        control1,
+                                        control2,
+                                        pointDict->pointForKey("mainPt"),
+                                        t);
+                
+//                vPoint.x *= scaleX;
+//                vPoint.y *= scaleY;
+                
+                Point pt(vPoint.x, -vPoint.y);
+                
+                
+                if(prevValue){
+                    Point prevPt = Point(prevValue->x, prevValue->y);
+                    
+                    drawSegment(prevPt, pt, 1, colorOverlay);
+                }
+                
+                CC_SAFE_DELETE(prevValue);
+                prevValue = new Point(pt);
+                _linePoints.push_back(pt);
+            }
+        }
+        previousPointDict = pointDict;
+    }
+    if(closed){
+        if(points->count() > 1)
+        {
+            LHDictionary* ptDict = points->dictAtIndex(0);
+            
+            Point control1 = previousPointDict->pointForKey("ctrl2");
+            if(!previousPointDict->boolForKey("hasCtrl2")){
+                control1 = previousPointDict->pointForKey("mainPt");
+            }
+            
+            Point control2 = ptDict->pointForKey("ctrl1");
+            if(!ptDict->boolForKey("hasCtrl1")){
+                control2 = ptDict->pointForKey("mainPt");
+            }
+            
+            Point vPoint = {0.0f, 0.0f};
+            for(float t = 0; t <= (1 + (1.0f / MAX_BEZIER_STEPS)); t += 1.0f / MAX_BEZIER_STEPS)
+            {
+                vPoint = LHPointOnCurve(previousPointDict->pointForKey("mainPt"),
+                                        control1,
+                                        control2,
+                                        ptDict->pointForKey("mainPt"),
+                                        t);
+                
+//                vPoint.x *= scaleX;
+//                vPoint.y *= scaleY;
+                
+                Point pt(vPoint.x, -vPoint.y);
+                if(prevValue){
+                    Point prevPt = Point(prevValue->x, prevValue->y);
+                    drawSegment(prevPt, pt, 1, colorOverlay);
+                }
+                CC_SAFE_DELETE(prevValue);
+                prevValue = new Point(pt);
+                _linePoints.push_back(pt);
+            }
+        }
+    }
+    CC_SAFE_DELETE(prevValue);
+}
+
+
 std::vector<Point> LHBezier::linePoints(){
     return _linePoints;
 }
 
 void LHBezier::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
-    visitNodeProtocol();
+    visitPhysicsProtocol();
     visitActiveAnimation();
     DrawNode::visit(renderer, parentTransform, parentTransformUpdated);
 }
+
+void LHBezier::setPosition(const cocos2d::Vec2 &pos)
+{
+    DrawNode::setPosition(pos);
+    this->updatePhysicsTransform();
+}
+
+void LHBezier::setRotation(float rotation)
+{
+    DrawNode::setRotation(rotation);
+    this->updatePhysicsTransform();
+}
+
+void LHBezier::setScaleX(float scaleX){
+    DrawNode::setScaleX(scaleX);
+    this->updatePhysicsScale();
+}
+void LHBezier::setScaleY(float scaleY){
+    DrawNode::setScaleY(scaleY);
+    this->updatePhysicsScale();
+}
+
+void LHBezier::setScale(float scaleX, float scaleY){
+    DrawNode::setScale(scaleX, scaleY);
+    this->updatePhysicsScale();
+}
+
+#if LH_USE_BOX2D
+void LHBezier::updatePosition(const cocos2d::Vec2 &pos){
+    DrawNode::setPosition(pos);
+}
+void LHBezier::updateRotation(float rotation){
+    DrawNode::setRotation(rotation);
+}
+#endif

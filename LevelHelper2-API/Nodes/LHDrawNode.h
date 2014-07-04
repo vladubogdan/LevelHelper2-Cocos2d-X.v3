@@ -24,6 +24,7 @@ public:
     bool init();
 
     void setShapeTriangles(__Array* triangles, __Array* uvPoints, const Color4F& color);
+    void setShapeTriangles(__Array* triangles, __Array* uvPoints, __Array* colors);
     
     virtual Texture2D* getTexture() const;
     virtual void setTexture(Texture2D *texture);

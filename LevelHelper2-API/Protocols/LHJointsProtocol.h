@@ -1,13 +1,13 @@
 //
-//  LHJointNodeProtocol.h
+//  LHJointsProtocol.h
 //  LevelHelper2-Cocos2d-X-v3
 //
 //  Created by Bogdan Vladu on 24/03/14.
 //  Copyright (c) 2014 GameDevHelper.com. All rights reserved.
 //
 
-#ifndef __LEVELHELPER_API_JOINT_NODE_PROTOCOL_H__
-#define __LEVELHELPER_API_JOINT_NODE_PROTOCOL_H__
+#ifndef __LEVELHELPER_API_JOINTS_PROTOCOL_H__
+#define __LEVELHELPER_API_JOINTS_PROTOCOL_H__
 
 #include "cocos2d.h"
 
@@ -26,12 +26,12 @@ using namespace cocos2d;
 LevelHelper-2 joint nodes conforms to this protocol.
  */
 
-class LHJointNodeProtocol
+class LHJointsProtocol
 {
 public:
 
-    LHJointNodeProtocol();
-    virtual ~LHJointNodeProtocol();
+    LHJointsProtocol();
+    virtual ~LHJointsProtocol();
     
     
     /**
@@ -51,17 +51,17 @@ public:
 #if LH_USE_BOX2D
 
     b2Joint* getJoint();
-
+    void setJoint(b2Joint* jt);
+    
 #else//chipmunk
 
     PhysicsJoint* getJoint();
-
+    void setJoint(PhysicsJoint* jt);
+    
 #endif//LH_USE_BOX2D
     
-    void removeJoint();
     
-    void findConnectedNodes();
-    void loadJointInfoFromDictionary(LHDictionary* dict);
+    void removeJoint();
     
     Node* getNodeA(){return _nodeA;}
     Node* getNodeB(){return _nodeB;}
@@ -70,18 +70,11 @@ public:
     Point getLocalAnchorB();
     
     
+    
+    void loadJointInfoFromDictionary(LHDictionary* dict);
+    void findConnectedNodes();
     bool getCollideConnected();
     
-#if LH_USE_BOX2D
-    
-    void setJoint(b2Joint* jt);
-    
-#else//chipmunk
-    
-    void setJoint(PhysicsJoint* jt);
-    
-#endif//LH_USE_BOX2D
-
 private:
     
     
@@ -104,4 +97,4 @@ private:
 
 };
 
-#endif //__LEVELHELPER_API_JOINT_NODE_PROTOCOL_H__
+#endif //__LEVELHELPER_API_JOINTS_PROTOCOL_H__

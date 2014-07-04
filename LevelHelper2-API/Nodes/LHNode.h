@@ -12,6 +12,7 @@
 
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
+#include "LHPhysicsProtocol.h"
 #include "LHNodeAnimationProtocol.h"
 
 using namespace cocos2d;
@@ -24,7 +25,7 @@ using namespace cocos2d;
 class LHDictionary;
 class LHScene;
 
-class LHNode : public Node, public LHNodeProtocol, public LHNodeAnimationProtocol
+class LHNode : public Node, public LHNodeProtocol, public LHNodeAnimationProtocol, public LHPhysicsProtocol
 {
 public:
  
@@ -40,6 +41,12 @@ public:
     virtual bool isNode(){return true;}
     
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+    
+#if LH_USE_BOX2D
+    virtual void updatePosition(const cocos2d::Vec2 &pos);
+    virtual void updateRotation(float rotation);
+#endif
+    
 };
 
 #endif //__LEVELHELPER_API_NODE_H__

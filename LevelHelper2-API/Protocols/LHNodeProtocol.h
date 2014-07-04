@@ -142,8 +142,7 @@ public:
     
     void loadUserPropertyWithDictionary(LHDictionary* dict);
     void loadGenericInfoFromDictionary(LHDictionary* dict);
-    void loadTransformationInfoFromDictionary(LHDictionary* dict);
-    void loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene);
+    void loadTransformationInfoFromDictionary(LHDictionary* dict);//should always be called after node is added in the parent
 
     void loadChildrenFromDictionary(LHDictionary* dict);
 
@@ -155,19 +154,12 @@ public:
     std::vector<std::string>tags;
     LHUserPropertyProtocol* userProperty;
     
-    void visitNodeProtocol();
-    
-    AffineTransform absoluteTransform();
-    
-    
-    
-#if LH_USE_BOX2D
-
-    b2Body* getBox2dBody(){return _body;}
-    
-    Point previousScale;
-    b2Body* _body;
-#endif
+    /*
+     Get the Node* object from a LHNodeProtocol* object. Helper function in order to not deal with casts.
+     */
+    static Node* LHGetNode(LHNodeProtocol* prot);
 };
+
+#define LH_GET_NODE_FROM_NODE_PROTOCOL LHNodeProtocol::LHGetNode
 
 #endif //__LEVELHELPER_API_NODE_PROTOCOL_H__

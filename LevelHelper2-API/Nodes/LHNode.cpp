@@ -69,7 +69,6 @@ bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->loadGenericInfoFromDictionary(dict);
         this->loadTransformationInfoFromDictionary(dict);
         
-        //physics body needs to be created before adding this node to the parent
         this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         
         this->loadChildrenFromDictionary(dict);
@@ -83,7 +82,17 @@ bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
-    visitNodeProtocol();
+    visitPhysicsProtocol();
     visitActiveAnimation();
     Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
+
+
+#if LH_USE_BOX2D
+void LHNode::updatePosition(const cocos2d::Vec2 &pos){
+    Node::setPosition(pos);
+}
+void LHNode::updateRotation(float rotation){
+    Node::setRotation(rotation);
+}
+#endif

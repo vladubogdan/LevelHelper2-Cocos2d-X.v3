@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
+#include "LHPhysicsProtocol.h"
 
 using namespace cocos2d;
 
@@ -23,7 +24,7 @@ Users can retrieve a bezier objects by calling the scene (LHScene) childNodeWith
 
 class LHDictionary;
 
-class LHBezier : public DrawNode, public LHNodeProtocol, public LHNodeAnimationProtocol
+class LHBezier : public DrawNode, public LHNodeProtocol, public LHNodeAnimationProtocol, public LHPhysicsProtocol
 {
 public:
     
@@ -43,9 +44,22 @@ public:
      */
     std::vector<Point> linePoints();
 
+    virtual void setPosition(const cocos2d::Vec2 &pos);
+    virtual void setRotation(float rotation);
+    
+    virtual void setScaleX(float scaleX);
+    virtual void setScaleY(float scaleY);
+    virtual void setScale(float scaleX, float scaleY);
+    
+#if LH_USE_BOX2D
+    virtual void updatePosition(const cocos2d::Vec2 &pos);
+    virtual void updateRotation(float rotation);
+#endif
     
 private:
     std::vector<Point> _linePoints;
+    
+    void loadShapeFromDictionary(LHDictionary* dict);
 };
 
 #endif // __LEVELHELPER_API_BEZIER_H__

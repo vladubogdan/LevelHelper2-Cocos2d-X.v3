@@ -146,6 +146,15 @@
 		6E0D5A54195061D60036E940 /* LHSceneTags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */; };
 		6E0D5A55195061D60036E940 /* LHSceneUserProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A4D195061D60036E940 /* LHSceneUserProp.cpp */; };
 		6E0D5A56195061D60036E940 /* LHSceneUserProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A4D195061D60036E940 /* LHSceneUserProp.cpp */; };
+		6E11B58819668D2500829937 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */; };
+		6E11B58919668D2500829937 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */; };
+		6E11B58A19668D2500829937 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */; };
+		6E11B58D1966A1C900829937 /* LHSceneShapesDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58B1966A1C900829937 /* LHSceneShapesDemo.cpp */; };
+		6E11B58E1966A1C900829937 /* LHSceneShapesDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58B1966A1C900829937 /* LHSceneShapesDemo.cpp */; };
+		6E11B58F1966A1C900829937 /* LHSceneShapesDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58B1966A1C900829937 /* LHSceneShapesDemo.cpp */; };
+		6E11B5921966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B5901966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp */; };
+		6E11B5931966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B5901966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp */; };
+		6E11B5941966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B5901966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp */; };
 		6E7916541963E74600E68E06 /* LHSceneDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7916521963E74600E68E06 /* LHSceneDemo.cpp */; };
 		6E7916551963E74600E68E06 /* LHSceneDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7916521963E74600E68E06 /* LHSceneDemo.cpp */; };
 		6E7916581963EAE400E68E06 /* LHSceneIntroductionDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7916561963EAE400E68E06 /* LHSceneIntroductionDemo.cpp */; };
@@ -266,9 +275,9 @@
 		6EA7870B196569C300EB15F7 /* LHSceneRopeJointDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA78709196569C300EB15F7 /* LHSceneRopeJointDemo.cpp */; };
 		6EA7870C196569C300EB15F7 /* LHSceneRopeJointDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA78709196569C300EB15F7 /* LHSceneRopeJointDemo.cpp */; };
 		6EA7870D196569C300EB15F7 /* LHSceneRopeJointDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA78709196569C300EB15F7 /* LHSceneRopeJointDemo.cpp */; };
-		6EA7871019657CC900EB15F7 /* LHJointNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7870E19657CC900EB15F7 /* LHJointNodeProtocol.cpp */; };
-		6EA7871119657CC900EB15F7 /* LHJointNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7870E19657CC900EB15F7 /* LHJointNodeProtocol.cpp */; };
-		6EA7871219657CC900EB15F7 /* LHJointNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7870E19657CC900EB15F7 /* LHJointNodeProtocol.cpp */; };
+		6EA7871019657CC900EB15F7 /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7870E19657CC900EB15F7 /* LHJointsProtocol.cpp */; };
+		6EA7871119657CC900EB15F7 /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7870E19657CC900EB15F7 /* LHJointsProtocol.cpp */; };
+		6EA7871219657CC900EB15F7 /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7870E19657CC900EB15F7 /* LHJointsProtocol.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -574,7 +583,7 @@
 		6E0D59EB195061900036E940 /* LHDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDevice.h; sourceTree = "<group>"; };
 		6E0D59EC195061900036E940 /* LHDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDictionary.cpp; sourceTree = "<group>"; };
 		6E0D59ED195061900036E940 /* LHDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDictionary.h; sourceTree = "<group>"; };
-		6E0D59EE195061900036E940 /* LHPointValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPointValue.h; sourceTree = "<group>"; };
+		6E0D59EE195061900036E940 /* LHValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHValue.h; sourceTree = "<group>"; };
 		6E0D59EF195061900036E940 /* LHUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHUtils.cpp; sourceTree = "<group>"; };
 		6E0D59F0195061900036E940 /* LHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUtils.h; sourceTree = "<group>"; };
 		6E0D5A3C195061B00036E940 /* DEMO_PUBLISH_FOLDER */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_PUBLISH_FOLDER; path = ../DEMO_PUBLISH_FOLDER; sourceTree = "<group>"; };
@@ -589,6 +598,12 @@
 		6E0D5A4C195061D60036E940 /* LHSceneTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneTags.h; path = ../Classes/LHSceneTags.h; sourceTree = "<group>"; };
 		6E0D5A4D195061D60036E940 /* LHSceneUserProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneUserProp.cpp; path = ../Classes/LHSceneUserProp.cpp; sourceTree = "<group>"; };
 		6E0D5A4E195061D60036E940 /* LHSceneUserProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneUserProp.h; path = ../Classes/LHSceneUserProp.h; sourceTree = "<group>"; };
+		6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPhysicsProtocol.cpp; sourceTree = "<group>"; };
+		6E11B58719668D2500829937 /* LHPhysicsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPhysicsProtocol.h; sourceTree = "<group>"; };
+		6E11B58B1966A1C900829937 /* LHSceneShapesDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneShapesDemo.cpp; sourceTree = "<group>"; };
+		6E11B58C1966A1C900829937 /* LHSceneShapesDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneShapesDemo.h; sourceTree = "<group>"; };
+		6E11B5901966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHScenePhysicsTransformationsDemo.cpp; sourceTree = "<group>"; };
+		6E11B5911966C09000829937 /* LHScenePhysicsTransformationsDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHScenePhysicsTransformationsDemo.h; sourceTree = "<group>"; };
 		6E7916521963E74600E68E06 /* LHSceneDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneDemo.cpp; sourceTree = "<group>"; };
 		6E7916531963E74600E68E06 /* LHSceneDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneDemo.h; sourceTree = "<group>"; };
 		6E7916561963EAE400E68E06 /* LHSceneIntroductionDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneIntroductionDemo.cpp; sourceTree = "<group>"; };
@@ -617,8 +632,8 @@
 		6EA78705196566BA00EB15F7 /* LHSceneAssetDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneAssetDemo.h; sourceTree = "<group>"; };
 		6EA78709196569C300EB15F7 /* LHSceneRopeJointDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneRopeJointDemo.cpp; sourceTree = "<group>"; };
 		6EA7870A196569C300EB15F7 /* LHSceneRopeJointDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneRopeJointDemo.h; sourceTree = "<group>"; };
-		6EA7870E19657CC900EB15F7 /* LHJointNodeProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHJointNodeProtocol.cpp; sourceTree = "<group>"; };
-		6EA7870F19657CC900EB15F7 /* LHJointNodeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJointNodeProtocol.h; sourceTree = "<group>"; };
+		6EA7870E19657CC900EB15F7 /* LHJointsProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHJointsProtocol.cpp; sourceTree = "<group>"; };
+		6EA7870F19657CC900EB15F7 /* LHJointsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJointsProtocol.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -965,8 +980,10 @@
 				6E0D59E3195061900036E940 /* LHNodeAnimationProtocol.h */,
 				6E0D59E4195061900036E940 /* LHNodeProtocol.cpp */,
 				6E0D59E5195061900036E940 /* LHNodeProtocol.h */,
-				6EA7870E19657CC900EB15F7 /* LHJointNodeProtocol.cpp */,
-				6EA7870F19657CC900EB15F7 /* LHJointNodeProtocol.h */,
+				6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */,
+				6E11B58719668D2500829937 /* LHPhysicsProtocol.h */,
+				6EA7870E19657CC900EB15F7 /* LHJointsProtocol.cpp */,
+				6EA7870F19657CC900EB15F7 /* LHJointsProtocol.h */,
 				6E0D59E6195061900036E940 /* LHUserProperties.h */,
 				6E0D59E7195061900036E940 /* LHUserPropertyProtocol.h */,
 			);
@@ -981,7 +998,7 @@
 				6E0D59EB195061900036E940 /* LHDevice.h */,
 				6E0D59EC195061900036E940 /* LHDictionary.cpp */,
 				6E0D59ED195061900036E940 /* LHDictionary.h */,
-				6E0D59EE195061900036E940 /* LHPointValue.h */,
+				6E0D59EE195061900036E940 /* LHValue.h */,
 				6E0D59EF195061900036E940 /* LHUtils.cpp */,
 				6E0D59F0195061900036E940 /* LHUtils.h */,
 				6E7916DE1964197E00E68E06 /* LHBox2dDebugDrawNode.h */,
@@ -1019,6 +1036,10 @@
 				6EA78705196566BA00EB15F7 /* LHSceneAssetDemo.h */,
 				6EA78709196569C300EB15F7 /* LHSceneRopeJointDemo.cpp */,
 				6EA7870A196569C300EB15F7 /* LHSceneRopeJointDemo.h */,
+				6E11B58B1966A1C900829937 /* LHSceneShapesDemo.cpp */,
+				6E11B58C1966A1C900829937 /* LHSceneShapesDemo.h */,
+				6E11B5901966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp */,
+				6E11B5911966C09000829937 /* LHScenePhysicsTransformationsDemo.h */,
 			);
 			name = DemoExamples;
 			path = ../Classes/DemoExamples;
@@ -1307,6 +1328,7 @@
 				6E0D59F5195061900036E940 /* LHPositionFrame.cpp in Sources */,
 				6E0D5A33195061900036E940 /* LHDictionary.cpp in Sources */,
 				6E0D5A2F195061900036E940 /* LHNodeProtocol.cpp in Sources */,
+				6E11B58819668D2500829937 /* LHPhysicsProtocol.cpp in Sources */,
 				6E0D59F3195061900036E940 /* LHOpacityFrame.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				6E0D5A0D195061900036E940 /* LHRotationProperty.cpp in Sources */,
@@ -1317,6 +1339,7 @@
 				6E0D5A15195061900036E940 /* LHScene.cpp in Sources */,
 				6E0D5A23195061900036E940 /* LHParallaxLayer.cpp in Sources */,
 				6EA78701196565A300EB15F7 /* LHSceneCharacterAnimationDemo.cpp in Sources */,
+				6E11B5921966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
 				6E0D5A55195061D60036E940 /* LHSceneUserProp.cpp in Sources */,
 				6E0D59FF195061900036E940 /* LHCameraActivateProperty.cpp in Sources */,
 				6E7916541963E74600E68E06 /* LHSceneDemo.cpp in Sources */,
@@ -1326,9 +1349,10 @@
 				6E0D5A05195061900036E940 /* LHChildrenRotationsProperty.cpp in Sources */,
 				6E0D5A2D195061900036E940 /* LHNodeAnimationProtocol.cpp in Sources */,
 				6E79165F1963F7AF00E68E06 /* LHSceneCameraDemo.cpp in Sources */,
+				6E11B58D1966A1C900829937 /* LHSceneShapesDemo.cpp in Sources */,
 				6E0D5A01195061900036E940 /* LHChildrenOpacitiesProperty.cpp in Sources */,
 				6E0D5A0F195061900036E940 /* LHScaleProperty.cpp in Sources */,
-				6EA7871019657CC900EB15F7 /* LHJointNodeProtocol.cpp in Sources */,
+				6EA7871019657CC900EB15F7 /* LHJointsProtocol.cpp in Sources */,
 				6E7916671964065C00E68E06 /* LHBackUINode.cpp in Sources */,
 				6E0D59F7195061900036E940 /* LHRotationFrame.cpp in Sources */,
 				6E0D5A13195061900036E940 /* LHAnimation.cpp in Sources */,
@@ -1376,6 +1400,7 @@
 				6E0D5A12195061900036E940 /* LHSpriteFrameProperty.cpp in Sources */,
 				6E0D5A36195061900036E940 /* LHUtils.cpp in Sources */,
 				6E7916701964159D00E68E06 /* LHSceneCameraFollowDemo.cpp in Sources */,
+				6E11B58F1966A1C900829937 /* LHSceneShapesDemo.cpp in Sources */,
 				6E79166C1964065C00E68E06 /* LHUINode.cpp in Sources */,
 				6E0D5A24195061900036E940 /* LHParallaxLayer.cpp in Sources */,
 				6E0D5A2A195061900036E940 /* LHSprite.cpp in Sources */,
@@ -1383,6 +1408,7 @@
 				6E0D5A34195061900036E940 /* LHDictionary.cpp in Sources */,
 				6E0D59FC195061900036E940 /* LHSpriteFrame.cpp in Sources */,
 				6EA78708196566BA00EB15F7 /* LHSceneAssetDemo.cpp in Sources */,
+				6E11B58A19668D2500829937 /* LHPhysicsProtocol.cpp in Sources */,
 				6E0D5A20195061900036E940 /* LHNode.cpp in Sources */,
 				6E79166A1964065C00E68E06 /* LHGameWorldNode.cpp in Sources */,
 				6EA78703196565A300EB15F7 /* LHSceneCharacterAnimationDemo.cpp in Sources */,
@@ -1405,13 +1431,14 @@
 				6E0D5A0A195061900036E940 /* LHOpacityProperty.cpp in Sources */,
 				6E0D5A02195061900036E940 /* LHChildrenOpacitiesProperty.cpp in Sources */,
 				6E0D5A06195061900036E940 /* LHChildrenRotationsProperty.cpp in Sources */,
+				6E11B5941966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
 				6E0D5A32195061900036E940 /* LHDevice.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				6E0D5A26195061900036E940 /* LHRopeJointNode.cpp in Sources */,
 				6E0D5A18195061900036E940 /* LHAsset.cpp in Sources */,
 				6E0D5A46195061D00036E940 /* DemoCustomClass.cpp in Sources */,
 				6E0D5A08195061900036E940 /* LHChildrenScalesProperty.cpp in Sources */,
-				6EA7871219657CC900EB15F7 /* LHJointNodeProtocol.cpp in Sources */,
+				6EA7871219657CC900EB15F7 /* LHJointsProtocol.cpp in Sources */,
 				6E0D59F4195061900036E940 /* LHOpacityFrame.cpp in Sources */,
 				6E0D5A22195061900036E940 /* LHParallax.cpp in Sources */,
 				6E0D5A2E195061900036E940 /* LHNodeAnimationProtocol.cpp in Sources */,
@@ -1435,6 +1462,7 @@
 				6E79169A1964186600E68E06 /* LHPositionFrame.cpp in Sources */,
 				6E79169B1964186600E68E06 /* LHDictionary.cpp in Sources */,
 				6E79169C1964186600E68E06 /* LHNodeProtocol.cpp in Sources */,
+				6E11B58919668D2500829937 /* LHPhysicsProtocol.cpp in Sources */,
 				6E79169D1964186600E68E06 /* LHOpacityFrame.cpp in Sources */,
 				6E79169E1964186600E68E06 /* AppController.mm in Sources */,
 				6E79169F1964186600E68E06 /* LHRotationProperty.cpp in Sources */,
@@ -1445,6 +1473,7 @@
 				6E7916A21964186600E68E06 /* LHScene.cpp in Sources */,
 				6E7916A31964186600E68E06 /* LHParallaxLayer.cpp in Sources */,
 				6EA78702196565A300EB15F7 /* LHSceneCharacterAnimationDemo.cpp in Sources */,
+				6E11B5931966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
 				6E7916A41964186600E68E06 /* LHSceneUserProp.cpp in Sources */,
 				6E7916A51964186600E68E06 /* LHCameraActivateProperty.cpp in Sources */,
 				6E7916A61964186600E68E06 /* LHSceneDemo.cpp in Sources */,
@@ -1454,9 +1483,10 @@
 				6E7916AA1964186600E68E06 /* LHChildrenRotationsProperty.cpp in Sources */,
 				6E7916AB1964186600E68E06 /* LHNodeAnimationProtocol.cpp in Sources */,
 				6E7916AC1964186600E68E06 /* LHSceneCameraDemo.cpp in Sources */,
+				6E11B58E1966A1C900829937 /* LHSceneShapesDemo.cpp in Sources */,
 				6E7916AD1964186600E68E06 /* LHChildrenOpacitiesProperty.cpp in Sources */,
 				6E7916AE1964186600E68E06 /* LHScaleProperty.cpp in Sources */,
-				6EA7871119657CC900EB15F7 /* LHJointNodeProtocol.cpp in Sources */,
+				6EA7871119657CC900EB15F7 /* LHJointsProtocol.cpp in Sources */,
 				6E7916AF1964186600E68E06 /* LHBackUINode.cpp in Sources */,
 				6E7916B01964186600E68E06 /* LHRotationFrame.cpp in Sources */,
 				6E7916B11964186600E68E06 /* LHAnimation.cpp in Sources */,

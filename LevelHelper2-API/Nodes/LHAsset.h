@@ -13,6 +13,8 @@
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
+#include "LHPhysicsProtocol.h"
+
 
 using namespace cocos2d;
 
@@ -23,7 +25,7 @@ using namespace cocos2d;
 
 class LHDictionary;
 
-class LHAsset : public Node, public LHNodeProtocol, public LHNodeAnimationProtocol
+class LHAsset : public Node, public LHNodeProtocol, public LHNodeAnimationProtocol, public LHPhysicsProtocol
 {
 public:
     
@@ -51,6 +53,11 @@ public:
   
     //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+    
+#if LH_USE_BOX2D
+    virtual void updatePosition(const cocos2d::Vec2 &pos);
+    virtual void updateRotation(float rotation);
+#endif
     
 private:
     

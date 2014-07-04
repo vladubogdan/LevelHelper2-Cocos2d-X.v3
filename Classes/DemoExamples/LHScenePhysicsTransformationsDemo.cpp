@@ -75,12 +75,14 @@ bool LHScenePhysicsTransformationsDemo::onTouchBegan(Touch* touch, Event* event)
         Node* node = (Node*)allPhysicalChildren->getObjectAtIndex(i);
         
         if(node && node->getBoundingBox().containsPoint(location))
-        {            
-                node->setPosition(location);
-                node->setRotation(LHUtils::LHRandomFloat(0, 360));
-                node->setScaleX(LHUtils::LHRandomFloat(0.2, 1.5f));
-                node->setScaleY(LHUtils::LHRandomFloat(0.2, 1.5f));
-                return false;
+        {
+//            node->removeFromParent();//this will remove the node together with its physical body (if any)
+        
+            node->setPosition(location);
+            node->setRotation(LHUtils::LHRandomFloat(0, 360));
+            node->setScaleX(LHUtils::LHRandomFloat(0.2, 1.5f));
+            node->setScaleY(LHUtils::LHRandomFloat(0.2, 1.5f));
+            return false;
         }
     }
     //dont forget to call super

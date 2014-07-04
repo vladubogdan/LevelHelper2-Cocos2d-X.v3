@@ -27,10 +27,15 @@ LHGameWorldNode::LHGameWorldNode()
 
 LHGameWorldNode::~LHGameWorldNode()
 {
+    CCLOG("DEALLOC GAME WORLD NODE");
+    
 #if LH_USE_BOX2D
+    //we need to first destroy all children and then destroy box2d world
+    this->removeAllChildren();
     delete _box2dWorld;
     _box2dWorld = nullptr;
 #endif
+
 }
 
 LHGameWorldNode* LHGameWorldNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)

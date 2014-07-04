@@ -54,6 +54,9 @@ LHScene::LHScene()
 
 LHScene::~LHScene()
 {
+    CCLOG("SCENE DEALLOC %p", this);
+    
+    
     for (size_t i = 0; i < devices.size(); ++i)
     {
         LHDevice* dev = devices[i];
@@ -68,8 +71,6 @@ LHScene::~LHScene()
     _backUINode = nullptr;
 
     CC_SAFE_DELETE(_loadedAssetsInformations);
-    
-//    printf("lhscene dealloc\n");
 }
 
 LHScene *LHScene::createWithContentOfFile(const std::string& plistLevelFile)
@@ -144,6 +145,10 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     bool ret = Scene::initWithPhysics();
     if(ret)
     {
+        SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
+        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+
+        
         this->loadGenericInfoFromDictionary(dict);
         
         setContentSize(sceneSize);
@@ -156,7 +161,7 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
             _tracedFixtures->retain();
         }
 
-        
+        CCLOG("CREATE SCENE %p..................................................",this);
         
         //load background color
         Color3B backgroundClr = dict->colorForKey("backgroundColor");

@@ -358,7 +358,9 @@ Point LHAnimation::convertFramePosition(Point newPos, Node* animNode)
         newPos.x += offset.x;
         newPos.y += offset.y;
 
-        newPos.y += p->getContentSize().height;
+        if(p != nullptr){
+            newPos.y += p->getContentSize().height;
+        }
     }
     else{
         Size content = p->getContentSize();

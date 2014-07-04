@@ -247,19 +247,19 @@ void LHShape::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
     Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
-
-void LHShape::setPosition(const cocos2d::Vec2 &pos)
-{
+#if LH_USE_BOX2D
+void LHShape::removeFromParent(){
+    this->removeBody();
+    Node::removeFromParent();
+}
+void LHShape::setPosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
     this->updatePhysicsTransform();
 }
-
-void LHShape::setRotation(float rotation)
-{
+void LHShape::setRotation(float rotation){
     Node::setRotation(rotation);
     this->updatePhysicsTransform();
 }
-
 void LHShape::setScaleX(float scaleX){
     Node::setScaleX(scaleX);
     this->updatePhysicsScale();
@@ -268,13 +268,10 @@ void LHShape::setScaleY(float scaleY){
     Node::setScaleY(scaleY);
     this->updatePhysicsScale();
 }
-
 void LHShape::setScale(float scaleX, float scaleY){
     Node::setScale(scaleX, scaleY);
     this->updatePhysicsScale();
 }
-
-#if LH_USE_BOX2D
 void LHShape::updatePosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
 }

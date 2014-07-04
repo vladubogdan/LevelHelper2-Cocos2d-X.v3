@@ -89,6 +89,30 @@ void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentT
 
 
 #if LH_USE_BOX2D
+void LHNode::removeFromParent(){
+    this->removeBody();
+    Node::removeFromParent();
+}
+void LHNode::setPosition(const cocos2d::Vec2 &pos){
+    Node::setPosition(pos);
+    this->updatePhysicsTransform();
+}
+void LHNode::setRotation(float rotation){
+    Node::setRotation(rotation);
+    this->updatePhysicsTransform();
+}
+void LHNode::setScaleX(float scaleX){
+    Node::setScaleX(scaleX);
+    this->updatePhysicsScale();
+}
+void LHNode::setScaleY(float scaleY){
+    Node::setScaleY(scaleY);
+    this->updatePhysicsScale();
+}
+void LHNode::setScale(float scaleX, float scaleY){
+    Node::setScale(scaleX, scaleY);
+    this->updatePhysicsScale();
+}
 void LHNode::updatePosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
 }
@@ -96,3 +120,4 @@ void LHNode::updateRotation(float rotation){
     Node::setRotation(rotation);
 }
 #endif
+

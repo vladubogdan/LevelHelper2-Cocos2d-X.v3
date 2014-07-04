@@ -111,6 +111,30 @@ void LHAsset::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
 
 
 #if LH_USE_BOX2D
+void LHAsset::removeFromParent(){
+    this->removeBody();
+    Node::removeFromParent();
+}
+void LHAsset::setPosition(const cocos2d::Vec2 &pos){
+    Node::setPosition(pos);
+    this->updatePhysicsTransform();
+}
+void LHAsset::setRotation(float rotation){
+    Node::setRotation(rotation);
+    this->updatePhysicsTransform();
+}
+void LHAsset::setScaleX(float scaleX){
+    Node::setScaleX(scaleX);
+    this->updatePhysicsScale();
+}
+void LHAsset::setScaleY(float scaleY){
+    Node::setScaleY(scaleY);
+    this->updatePhysicsScale();
+}
+void LHAsset::setScale(float scaleX, float scaleY){
+    Node::setScale(scaleX, scaleY);
+    this->updatePhysicsScale();
+}
 void LHAsset::updatePosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
 }
@@ -118,4 +142,5 @@ void LHAsset::updateRotation(float rotation){
     Node::setRotation(rotation);
 }
 #endif
+
 

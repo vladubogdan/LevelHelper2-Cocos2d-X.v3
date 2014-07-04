@@ -104,6 +104,9 @@ void LHSceneShapesDemo::createMouseJointForTouchLocation(Point point)
 #if LH_USE_BOX2D
     b2Body* ourBody = NULL;
     
+    if(this->getBox2dWorld() == NULL)return;
+    
+    
     LHSprite* mouseJointDummySpr = (LHSprite*)this->getChildNodeWithName("dummyBodyForMouseJoint");
     
     CCLOG("MOUSE JOINT SPRITE %p", mouseJointDummySpr);

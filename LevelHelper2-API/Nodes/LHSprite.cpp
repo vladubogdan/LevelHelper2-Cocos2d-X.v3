@@ -174,6 +174,14 @@ void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
     Sprite::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
+#if LH_USE_BOX2D
+void LHSprite::removeFromParent()
+{
+    CCLOG("SPRITE MOVE FROM PARENT %p", this);
+    this->removeBody();
+    Sprite::removeFromParent();
+}
+
 void LHSprite::setPosition(const cocos2d::Vec2 &pos)
 {
     Sprite::setPosition(pos);
@@ -200,7 +208,6 @@ void LHSprite::setScale(float scaleX, float scaleY){
     this->updatePhysicsScale();
 }
 
-#if LH_USE_BOX2D
 void LHSprite::updatePosition(const cocos2d::Vec2 &pos){
     Sprite::setPosition(pos);
 }

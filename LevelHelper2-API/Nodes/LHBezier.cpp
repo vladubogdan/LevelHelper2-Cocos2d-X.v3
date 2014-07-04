@@ -203,18 +203,19 @@ void LHBezier::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
     DrawNode::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
-void LHBezier::setPosition(const cocos2d::Vec2 &pos)
-{
+#if LH_USE_BOX2D
+void LHBezier::removeFromParent(){
+    this->removeBody();
+    DrawNode::removeFromParent();
+}
+void LHBezier::setPosition(const cocos2d::Vec2 &pos){
     DrawNode::setPosition(pos);
     this->updatePhysicsTransform();
 }
-
-void LHBezier::setRotation(float rotation)
-{
+void LHBezier::setRotation(float rotation){
     DrawNode::setRotation(rotation);
     this->updatePhysicsTransform();
 }
-
 void LHBezier::setScaleX(float scaleX){
     DrawNode::setScaleX(scaleX);
     this->updatePhysicsScale();
@@ -223,13 +224,10 @@ void LHBezier::setScaleY(float scaleY){
     DrawNode::setScaleY(scaleY);
     this->updatePhysicsScale();
 }
-
 void LHBezier::setScale(float scaleX, float scaleY){
     DrawNode::setScale(scaleX, scaleY);
     this->updatePhysicsScale();
 }
-
-#if LH_USE_BOX2D
 void LHBezier::updatePosition(const cocos2d::Vec2 &pos){
     DrawNode::setPosition(pos);
 }

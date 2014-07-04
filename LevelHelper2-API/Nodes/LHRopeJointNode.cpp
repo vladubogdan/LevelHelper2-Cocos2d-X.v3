@@ -26,9 +26,8 @@ double bisection(double g0, double g1, double epsilon,
 {
     if(!data)return 0;
     
-    double v0, v1, g, v;
+    double v0, g, v;
     v0 = fp(g0, data);
-    v1 = fp(g1, data);
     
     while(fabs(g1-g0) > fabs(epsilon)){
         g = (g0+g1)/2.0;
@@ -36,7 +35,7 @@ double bisection(double g0, double g1, double epsilon,
         if(v == 0.0)
             return g;
         else if(v*v0 < 0.0){
-            g1 = g;   v1 = v;
+            g1 = g;
         } else {
             g0 = g;   v0 = v;
         }
@@ -584,7 +583,7 @@ __Array* LHRopeJointNode::ropePointsFromPointA(Point a, Point b, float ropeLengt
     double x0, y0, A;
     double delX, delY, guess1, guess2;
     double Q, B, K;
-    double step, x;
+    double step;
     
     float gravityAngle = -gravityDirectionAngle();
     Point c((a.x + b.x)*0.5, (a.y + b.y)*0.5);
@@ -663,7 +662,6 @@ __Array* LHRopeJointNode::ropePointsFromPointA(Point a, Point b, float ropeLengt
     transform = AffineTransformTranslate(transform, -c.x, -c.y);
     
     Point prevPt;
-    x = data[0];
     for(float x= data[0]; x <  data[2]; )
     {
         Point point(x, fcat(x, constants));
@@ -708,7 +706,6 @@ __Array* LHRopeJointNode::shapePointsFromRopePoints(__Array* rPoints, float thic
 {
     __Array* shapePoints = __Array::create();
 
-    bool first = true;
     bool added = false;
     
     LHValue* prvVal = nullptr;
@@ -765,7 +762,6 @@ __Array* LHRopeJointNode::shapePointsFromRopePoints(__Array* rPoints, float thic
                     shapePoints->addObject(ptVal2);
                 }
             }
-            first = false;
         }
         prvVal = ptVal;
     }

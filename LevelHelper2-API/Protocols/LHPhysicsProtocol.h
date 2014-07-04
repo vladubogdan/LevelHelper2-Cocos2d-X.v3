@@ -69,10 +69,18 @@ public:
         return prot->getBox2dBody();
     }
     
+    //following method are mandatory to be overwritten when using box2d in order to compute the transformations
+    virtual void removeFromParent() = 0;
+    virtual void setPosition(const cocos2d::Vec2 &pos) = 0;
+    virtual void setRotation(float rotation) = 0;
+    virtual void setScaleX(float scaleX) = 0;
+    virtual void setScaleY(float scaleY) = 0;
+    virtual void setScale(float scaleX, float scaleY) = 0;
     virtual void updatePosition(const cocos2d::Vec2 &pos) = 0;
     virtual void updateRotation(float rotation) = 0;
     
 private:
+    bool scheduledForRemoval;
     Point previousScale;
     b2Body* _body;
 #endif

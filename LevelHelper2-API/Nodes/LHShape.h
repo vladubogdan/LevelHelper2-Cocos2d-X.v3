@@ -51,17 +51,17 @@ public:
     
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
     
+#if LH_USE_BOX2D
+    virtual void removeFromParent();
     virtual void setPosition(const cocos2d::Vec2 &pos);
     virtual void setRotation(float rotation);
-    
     virtual void setScaleX(float scaleX);
     virtual void setScaleY(float scaleY);
     virtual void setScale(float scaleX, float scaleY);
-    
-#if LH_USE_BOX2D
     virtual void updatePosition(const cocos2d::Vec2 &pos);
     virtual void updateRotation(float rotation);
 #endif
+
     
 private:
     std::vector<Point> _triangles;

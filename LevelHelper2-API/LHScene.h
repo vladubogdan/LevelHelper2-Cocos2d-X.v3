@@ -11,7 +11,13 @@
 
 
 #include "cocos2d.h"
+#include "LHConfig.h"
 #include "LHNodeProtocol.h"
+
+
+#if LH_USE_BOX2D
+#include "Box2D/Box2D.h"
+#endif
 
 /**
  LHScene class is used to load a level file into Cocos2d-X v3 engine.
@@ -19,11 +25,13 @@
  */
 using namespace cocos2d;
 
-class LHCamera;
 class LHDevice;
+class LHBackUINode;
+class LHGameWorldNode;
+class LHUINode;
 class LHDictionary;
 
-class LHScene : public cocos2d::Scene, LHNodeProtocol
+class LHScene : public cocos2d::Scene, public LHNodeProtocol
 {
     
 public:
@@ -33,116 +41,108 @@ public:
     virtual ~LHScene();
     virtual bool initWithContentOfFile(const std::string& plistLevelFile);
     
-    static std::string imagePathWithFilename(const std::string& filename,
-                                             const std::string& folder,
-                                             const std::string& suffix);
-    
     std::string getCurrentDeviceSuffix();
     Size        getDesignResolutionSize();
     Point       getDesignOffset();
 
+    LHBackUINode* getBackUINode();
+    LHGameWorldNode* getGameWorldNode();
+    LHUINode* getUINode();
+
     
-    static Point positionForNode(Node* node, Point unitPos);
+    
+    /**
+     Returns the game world rectangle or CGRectZero if the game world rectangle is not set in the level file.
+     */
+    Rect        getGameWorldRect();
+    
+    /**
+     Returns the informations that can be used to create an asset dynamically by specifying the file name.
+     The asset file must be in the same folder as the scene file.
+     If the asset file is not found it will return nil.
+     
+     @param assetFileName The name of the asset that. Do not provide an extension. E.g If file is named "myAsset.lhasset.plist" then yous should pass @"myAsset.lhasset"
+     @return A dictionary containing the asset information or nullptr.
+     */
+    __Dictionary* assetInfoForFile(const std::string& assetFileName);
+
     
     static  bool isLHScene(Node* obj){return (0 != dynamic_cast<LHScene*>(obj));}
     virtual bool isScene(){return true;};
     
     __Array* tracedFixturesWithUUID(const std::string& uuid);
+    
+    
+    virtual bool onTouchBegan(Touch* touch, Event* event);
+    virtual void onTouchMoved(Touch* touch, Event* event);
+    virtual void onTouchEnded(Touch* touch, Event* event);
+    virtual void onTouchCancelled(Touch *touch, Event *event);
+
+    virtual void onEnter();
+    virtual void onExit();
+    
+    
+#if LH_USE_BOX2D
+    b2World* getBox2dWorld();
+    float getPtm();
+    
+    b2Vec2 metersFromPoint(Point point);
+    Point pointFromMeters(b2Vec2 vec);
+    
+    float metersFromValue(float val);
+    float valueFromMeters(float meter);
+    
+#endif //LH_USE_BOX2D
+    
+    
+    /*Get the global gravity force.
+     */
+    Point getGlobalGravity();
+    /*Sets the global gravity force
+     @param gravity A point representing the gravity force in x and y direction.
+     */
+    void setGlobalGravity(Point gravity);
+    
 private:
     
+    friend class LHBackUINode;
+    friend class LHUINode;
+    friend class LHGameWorldNode;
     friend class LHSprite;
     friend class LHNode;
     friend class LHNodeProtocol;
+    friend class LHBezier;
+    friend class LHCamera;
+    friend class LHShape;
+    friend class LHAsset;
+    friend class LHParallaxLayer;
+    friend class LHParallax;
+    friend class LHRopeJointNode;
+
+    LHBackUINode* _backUINode;
+    LHGameWorldNode* _gameWorldNode;
+    LHUINode* _uiNode;
     
     std::vector<LHDevice*> devices;
     Size    designResolutionSize;
     Point   designOffset;
-    __Dictionary* tracedFixtures;
+    Rect    gameWorldRect;
     
-    static Node* createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt);
+    EventListenerTouchOneByOne* _touchListener;
+    
+    __Dictionary*   _tracedFixtures;
+    __Dictionary*   _loadedAssetsInformations;
+    __Array*        _lateLoadingNodes;
     
     void createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName);
     
+    void addLateLoadingNode(Node* nd);
+    void performLateLoading();
     
-//+(instancetype)sceneWithContentOfFile:(NSString*)levelPlistFile;
-//-(instancetype)initWithContentOfFile:(NSString*)levelPlistFile;
-
-/**
- Returns a CCTexture object that was previously loaded or a new one.
- @param imagePath The path of the image that needs to get returned as a texture.
- @return An initialized CCTexture Object.
- */
-//-(CCTexture*)textureWithImagePath:(NSString*)imagePath;
-
-
-/**
- Returns the game world rectangle or CGRectZero if the game world rectangle is not set in the level file.
- */
-//-(CGRect)gameWorldRect;
-
-/**
- Returns the informations that can be used to create an asset dynamically by specifying the file name. 
- The asset file must be in the same folder as the scene file.
- If the asset file is not found it will return nil.
- 
- @param assetFileName The name of the asset that. Do not provide an extension. E.g If file is named "myAsset.lhasset.plist" then yous should pass @"myAsset.lhasset"
- @return A dictionary containing the asset information or nil.
- */
-//-(NSDictionary*)assetInfoForFile:(NSString*)assetFileName;
-
-
-
-#pragma mark - LHNodeProtocol
-
-/**
- Returns the unique identifier of the node.
- */
-//-(NSString*)uuid;
-
-/**
- Returns all tag values of the node.
- */
-//-(NSArray*)tags;
-
-/**
- Returns the user property object assigned to this object or nil.
- */
-//-(id<LHUserPropertyProtocol>)userProperty;
-
-/**
- Returns the scene to which this node belongs to.
- */
-//-(LHScene*)scene;
-
-/**
- Returns a node with the specified unique name or nil if that node is not found in the children hierarchy.
- @param name The unique name of the node.
- @return A node or or nil.
- */
-//-(CCNode <LHNodeProtocol>*)childNodeWithName:(NSString*)name;
-
-/**
- Returns a node with the specified unique identifier or nil if that node is not found in the children hierarchy.
- @param uuid The unique idenfier of the node.
- @return A node or or nil.
- */
-//-(CCNode <LHNodeProtocol>*)childNodeWithUUID:(NSString*)uuid;
-
-/**
- Returns all children nodes that have the specified tag values.
- @param tagValues An array containing tag names. Array of NSString's.
- @param any Specify if all or just one tag value of the node needs to be in common with the passed ones.
- @return A node or or nil.
- */
-//-(NSMutableArray*)childrenWithTags:(NSArray*)tagValues containsAny:(BOOL)any;
-
-/**
- Returns all children nodes that are of specified class type.
- @param type A "Class" type.
- @return An array with all the found nodes of the specified class.
- */
-//-(NSMutableArray*)childrenOfType:(Class)type;
-
+    Point _ropeJointsCutStartPt;
+    
+    void loadGlobalGravityFromDictionary(LHDictionary* dict);
+    void loadPhysicsBoundariesFromDictionary(LHDictionary* dict);
 };
 
 #endif //__LEVELHELPER_API_SCENE_H__

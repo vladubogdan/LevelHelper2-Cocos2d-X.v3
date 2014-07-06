@@ -1,5 +1,5 @@
 //
-//  LHNode.m
+//  LHNode.cpp
 //  LevelHelper2-Cocos2d-X-v3
 //
 //  Created by Bogdan Vladu on 31/03/14.
@@ -20,6 +20,21 @@ LHNode::~LHNode()
     
 }
 
+LHNode* LHNode::createWithName(const std::string& nm)
+{
+    LHNode *ret = new LHNode();
+    if (ret && ret->initWithName(nm))
+    {
+        ret->autorelease();
+        return ret;
+    }
+    else
+    {
+        CC_SAFE_DELETE(ret);
+        return nullptr;
+    }
+}
+
 LHNode* LHNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHNode *ret = new LHNode();
@@ -34,73 +49,80 @@ LHNode* LHNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
         return nullptr;
     }
 }
-
+bool LHNode::initWithName(const std::string& nm)
+{
+    if(Node::init())
+    {
+        _physicsBody = NULL;
+        setName(nm);
+        return true;
+    }
+    return false;
+}
 bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
 {
     if(Node::init())
     {
-        
         _physicsBody = NULL;
+        this->loadGenericInfoFromDictionary(dict);
         
-        loadGenericInfoFromDictionary(dict);
-        
-        //physics body needs to be created before adding this node to the parent
-        loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-        
+#if LH_USE_BOX2D
         prnt->addChild(this);
-        
-        this->setContentSize(dict->sizeForKey("size"));
-        
-        Point unitPos   = dict->pointForKey("generalPosition");
-        Point pos       = LHScene::positionForNode(this, unitPos);
-        
-        LHDictionary* devPositions = dict->dictForKey("devicePositions");
-        if(devPositions)
-        {
-            std::string unitPosStr = LHDevice::devicePosition(devPositions, LH_SCREEN_RESOLUTION);
-            
-            if(unitPosStr.length()>0){
-                Point unitPos = PointFromString(unitPosStr);
-                pos = LHScene::positionForNode(this, unitPos);
-            }
-        }
+        this->loadTransformationInfoFromDictionary(dict);
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+#else
+        //cocos2d-chipmunk required that the body is loaded before adding the node to the parent
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        prnt->addChild(this);
+        this->loadTransformationInfoFromDictionary(dict);
+#endif
 
-        this->setOpacity(dict->floatForKey("alpha"));
-        this->setRotation(dict->floatForKey("rotation"));
-        this->setZOrder(dict->floatForKey("zOrder"));
+        this->loadChildrenFromDictionary(dict);
+        this->createAnimationsFromDictionary(dict);
         
-        
-        Point scl = dict->pointForKey("scale");
-        this->setScaleX(scl.x);
-        this->setScaleY(scl.y);
-        
-        
-        Point anchor = dict->pointForKey("anchor");
-        anchor.y = 1.0f - anchor.y;
-        this->setAnchorPoint(anchor);
-        
-        this->setPosition(pos);
-        
-        LHArray* childrenInfo = dict->arrayForKey("children");
-        if(childrenInfo)
-        {
-            for(int i = 0; i < childrenInfo->count(); ++i)
-            {
-                LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
-                
-                Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
-                #pragma unused (node)
-            }
-        }
-        
-        createAnimationsFromDictionary(dict, this);
-
+        return true;
     }
-    return true;
+    return false;
 }
 
-void LHNode::visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated)
+void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
+    visitPhysicsProtocol();
     visitActiveAnimation();
     Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
+
+
+#if LH_USE_BOX2D
+void LHNode::removeFromParent(){
+    this->removeBody();
+    Node::removeFromParent();
+}
+void LHNode::setPosition(const cocos2d::Vec2 &pos){
+    Node::setPosition(pos);
+    this->updatePhysicsTransform();
+}
+void LHNode::setRotation(float rotation){
+    Node::setRotation(rotation);
+    this->updatePhysicsTransform();
+}
+void LHNode::setScaleX(float scaleX){
+    Node::setScaleX(scaleX);
+    this->updatePhysicsScale();
+}
+void LHNode::setScaleY(float scaleY){
+    Node::setScaleY(scaleY);
+    this->updatePhysicsScale();
+}
+void LHNode::setScale(float scaleX, float scaleY){
+    Node::setScale(scaleX, scaleY);
+    this->updatePhysicsScale();
+}
+void LHNode::updatePosition(const cocos2d::Vec2 &pos){
+    Node::setPosition(pos);
+}
+void LHNode::updateRotation(float rotation){
+    Node::setRotation(rotation);
+}
+#endif
+

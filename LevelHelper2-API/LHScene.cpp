@@ -10,9 +10,28 @@
 #include "LHDictionary.h"
 #include "LHArray.h"
 #include "LHDevice.h"
+#include "LHConfig.h"
+
 
 #include "LHSprite.h"
 #include "LHNode.h"
+#include "LHCamera.h"
+#include "LHBezier.h"
+#include "LHShape.h"
+#include "LHAsset.h"
+#include "LHParallax.h"
+#include "LHParallaxLayer.h"
+#include "LHRopeJointNode.h"
+
+#include "LHGameWorldNode.h"
+#include "LHUINode.h"
+#include "LHBackUINode.h"
+
+
+#include "LHWater.h"
+
+#include "LHUtils.h"
+
 
 #include <sstream>
 using namespace std;
@@ -22,7 +41,13 @@ using namespace cocos2d;
 
 LHScene::LHScene()
 {
-    tracedFixtures = nullptr;
+    _touchListener = nullptr;
+    _loadedAssetsInformations = nullptr;
+    _tracedFixtures = nullptr;
+    _gameWorldNode = nullptr;
+    _lateLoadingNodes = nullptr;
+    _uiNode = nullptr;
+    _backUINode = nullptr;
     
 //    printf("lhscene constructor\n");
 }
@@ -37,9 +62,31 @@ LHScene::~LHScene()
     }
     devices.clear();
     
-    CC_SAFE_RELEASE(tracedFixtures);
-//    printf("lhscene dealloc\n");
+    CC_SAFE_RELEASE(_tracedFixtures);
+    _gameWorldNode = nullptr;
+    _uiNode = nullptr;
+    _backUINode = nullptr;
+
+    CC_SAFE_DELETE(_loadedAssetsInformations);
 }
+
+LHScene *LHScene::createWithContentOfFile(const std::string& plistLevelFile)
+{
+    //    printf("lhscene createWithcontent\n");
+    
+    LHScene *ret = new LHScene();
+    if (ret && ret->initWithContentOfFile(plistLevelFile))
+    {
+        ret->autorelease();
+        return ret;
+    }
+    else
+    {
+        CC_SAFE_DELETE(ret);
+        return nullptr;
+    }
+}
+
 
 bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 {
@@ -95,101 +142,84 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     bool ret = Scene::initWithPhysics();
     if(ret)
     {
+        SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
+        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+
+        
+        this->loadGenericInfoFromDictionary(dict);
+        
         setContentSize(sceneSize);
-        
-        
-        loadGenericInfoFromDictionary(dict);
+        this->setPosition(Point());
         this->setName(plistLevelFile);
-
         
-//            [self setName:levelPlistFile];
-//            _uuid = [[NSString alloc] initWithString:[dict objectForKey:@"uuid"]];
-//            _userProperty = [LHUtils userPropertyForNode:self fromDictionary:dict];
-//            [LHUtils tagsFromDictionary:dict
-//                           savedToArray:&_tags];
-        
-            LHDictionary* tracedFixInfo = dict->dictForKey("tracedFixtures");
-            if(tracedFixInfo){
-                tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
-                tracedFixtures->retain();
-            }
-
-
-//        PhysicsWorld* world = PhysicsWorld::PhysicsWorld
-//        
-//        PhysicsNode* pNode = PhysicsNode::create();
-//        pNode.contentSize = self.contentSize;
-//        [pNode setDebugDraw:YES];
-//        [super addChild:pNode];
-//        physicsNode = pNode;
-//        
-        
-        
-        getPhysicsWorld()->setDebugDrawMask(true ? PhysicsWorld::DEBUGDRAW_ALL : PhysicsWorld::DEBUGDRAW_NONE);
-
-        
-        if(dict->boolForKey("useGlobalGravity"))
-        {
-            Point gravityVector = dict->pointForKey("globalGravityDirection");
-            float gravityForce  = dict->floatForKey("globalGravityForce");
-            
-            this->getPhysicsWorld()->setGravity(Point(gravityVector.x*gravityForce*100,
-                                                      gravityVector.y*gravityForce*100));
-            
+        LHDictionary* tracedFixInfo = dict->dictForKey("tracedFixtures");
+        if(tracedFixInfo){
+            _tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
+            _tracedFixtures->retain();
         }
+
+        //load background color
+        Color3B backgroundClr = dict->colorForKey("backgroundColor");
+        glClearColor(backgroundClr.r/255.0f, backgroundClr.g/255.0f, backgroundClr.b/255.0f, 1.0f);
+
+        
+        this->loadChildrenFromDictionary(dict);
+        
+#if LH_DEBUG
+        getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+#endif
         
         
-        LHDictionary* phyBoundInfo = dict->dictForKey("physicsBoundaries");
-        if(phyBoundInfo)
+        this->loadGlobalGravityFromDictionary(dict);        
+        this->loadPhysicsBoundariesFromDictionary(dict);
+        
+        
+        
+        
+        
+        
+        LHDictionary* gameWorldInfo = dict->dictForKey("gameWorld");
+        if(gameWorldInfo)
         {
             Size scr = LH_SCREEN_RESOLUTION;
             
             stringstream tempString;
             tempString <<(int)scr.width<<"x"<<(int)scr.height;
             std::string key = tempString.str(); //Converts this into string;
-
+            
             std::string rectInf;
-            if(phyBoundInfo->objectForKey(key)){
-                rectInf = phyBoundInfo->stringForKey(key);
-
+            if(gameWorldInfo->objectForKey(key)){
+                rectInf = gameWorldInfo->stringForKey(key);
+                
             }
             else{
-                rectInf = phyBoundInfo->stringForKey("general");
+                rectInf = gameWorldInfo->stringForKey("general");
             }
             
             if(rectInf.length() > 0){
                 Rect bRect = RectFromString(rectInf);
                 Size designSize = getDesignResolutionSize();
                 Point offset = getDesignOffset();
-                Rect skBRect(bRect.origin.x*designSize.width + offset.x,
-                             bRect.origin.y*designSize.height + offset.y,
-                             bRect.size.width*designSize.width ,
-                             bRect.size.height*designSize.height);
+                
+                gameWorldRect = Rect(bRect.origin.x*designSize.width+ offset.x,
+                                     (1.0f-  bRect.origin.y)*designSize.height + offset.y,
+                                     bRect.size.width*designSize.width ,
+                                     -(bRect.size.height)*designSize.height);
                                 
-                {
-                    createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
-                                                     Point(skBRect.getMaxX(), skBRect.getMinY()),
-                                                     "LHPhysicsBottomBoundary");
-                }
-                
-                {
-                    createPhysicsBoundarySectionFrom(Point(skBRect.getMaxX(), skBRect.getMinY()),
-                                                     Point(skBRect.getMaxX(), skBRect.getMaxY()),
-                                                    "LHPhysicsRightBoundary");
-                    
-                }
-                
-                {
-                    createPhysicsBoundarySectionFrom(Point(skBRect.getMaxX(), skBRect.getMaxY()),
-                                                     Point(skBRect.getMinX(), skBRect.getMaxY()),
-                                                     "LHPhysicsTopBoundary");
-                }
-                
-                {
-                    createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMaxY()),
-                                                     Point(skBRect.getMinX(), skBRect.getMinY()),
-                                                    "LHPhysicsLeftBoundary");
-                }
+//                DrawNode* gw = DrawNode::create();
+//                
+//                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()),
+//                                Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
+//                
+//                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()),
+//                                                 Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
+//                
+//                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()),
+//                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
+//                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()),
+//                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
+//
+//                _gameWorld->addChild(gw);
             }
         }
         
@@ -197,20 +227,9 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         
         
-        LHArray* childrenInfo = dict->arrayForKey("children");
-        for(int i = 0; i < childrenInfo->count(); ++i)
-        {
-            LHDictionary* childInfo = childrenInfo->dictAtIndex(i);
-            
-            Node* node = LHScene::createLHNodeWithDictionary(childInfo, this);
-            
-            if(node){
-                
-            }
-        }
         
         
-        
+        this->performLateLoading();
         
         
         ret = true;
@@ -219,188 +238,173 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     return ret;
 }
 
-
-LHScene *LHScene::createWithContentOfFile(const std::string& plistLevelFile)
+void LHScene::loadGlobalGravityFromDictionary(LHDictionary* dict)
 {
-//    printf("lhscene createWithcontent\n");
-    
-    LHScene *ret = new LHScene();
-    if (ret && ret->initWithContentOfFile(plistLevelFile))
+    if(dict->boolForKey("useGlobalGravity"))
     {
-        ret->autorelease();
-        return ret;
-    }
-    else
-    {
-        CC_SAFE_DELETE(ret);
-        return nullptr;
+        Point gravityVector = dict->pointForKey("globalGravityDirection");
+        float gravityForce  = dict->floatForKey("globalGravityForce");
+        
+        Point gravity = Point(gravityVector.x*gravityForce,
+                              gravityVector.y*gravityForce);
+
+        
+#if LH_USE_BOX2D
+        this->setGlobalGravity(gravity);
+#else//chipmunk
+        this->getPhysicsWorld()->setGravity(Point(gravityVector.x*gravityForce*100,
+                                                  gravityVector.y*gravityForce*100));
+#endif
     }
 }
 
-Node* LHScene::createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt)
+void LHScene::loadPhysicsBoundariesFromDictionary(LHDictionary* dict)
 {
-    
-    std::string nodeType = childInfo->stringForKey("nodeType");
-    
-    LHScene* scene = NULL;
-    if( LHScene::isLHScene(prnt)){
-        scene = (LHScene*)prnt;
-    }
-    else if(LHScene::isLHScene(prnt->getScene())){
-        scene = (LHScene*)prnt->getScene();
-    }
-    
-    
-    if(nodeType == "LHSprite")
+    LHDictionary* phyBoundInfo = dict->dictForKey("physicsBoundaries");
+    if(phyBoundInfo)
     {
-        LHSprite* spr = LHSprite::spriteNodeWithDictionary(childInfo, prnt);
-        return spr;
+        Size scr = LH_SCREEN_RESOLUTION;
+        
+        stringstream tempString;
+        tempString <<(int)scr.width<<"x"<<(int)scr.height;
+        std::string key = tempString.str(); //Converts this into string;
+        
+        std::string rectInf;
+        if(phyBoundInfo->objectForKey(key)){
+            rectInf = phyBoundInfo->stringForKey(key);
+            
+        }
+        else{
+            rectInf = phyBoundInfo->stringForKey("general");
+        }
+        
+        if(rectInf.length() > 0){
+            Rect bRect = RectFromString(rectInf);
+            Size designSize = getDesignResolutionSize();
+            Point offset = getDesignOffset();
+            Rect skBRect(bRect.origin.x*designSize.width + offset.x,
+                         getContentSize().height -  bRect.origin.y*designSize.height + offset.y,
+                         bRect.size.width*designSize.width ,
+                         -bRect.size.height*designSize.height);
+            
+            {
+                createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
+                                                 Point(skBRect.getMaxX(), skBRect.getMinY()),
+                                                 "LHPhysicsBottomBoundary");
+            }
+            
+            {
+                createPhysicsBoundarySectionFrom(Point(skBRect.getMaxX(), skBRect.getMinY()),
+                                                 Point(skBRect.getMaxX(), skBRect.getMaxY()),
+                                                 "LHPhysicsRightBoundary");
+                
+            }
+            
+            {
+                createPhysicsBoundarySectionFrom(Point(skBRect.getMaxX(), skBRect.getMaxY()),
+                                                 Point(skBRect.getMinX(), skBRect.getMaxY()),
+                                                 "LHPhysicsTopBoundary");
+            }
+            
+            {
+                createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMaxY()),
+                                                 Point(skBRect.getMinX(), skBRect.getMinY()),
+                                                 "LHPhysicsLeftBoundary");
+            }
+        }
     }
-    else if(nodeType == "LHNode")
-    {
-        LHNode* nd = LHNode::nodeWithDictionary(childInfo, prnt);
-        return nd;
-    }
-//    else if([nodeType isEqualToString:@"LHBezier"])
-//    {
-//        LHBezier* bez = [LHBezier bezierNodeWithDictionary:childInfo
-//                                                    parent:prnt];
-//        return bez;
-//    }
-//    else if([nodeType isEqualToString:@"LHTexturedShape"])
-//    {
-//        LHShape* sp = [LHShape shapeNodeWithDictionary:childInfo
-//                                                parent:prnt];
-//        return sp;
-//    }
-//    else if([nodeType isEqualToString:@"LHWaves"])
-//    {
-//        LHWater* wt = [LHWater waterNodeWithDictionary:childInfo
-//                                                parent:prnt];
-//        return wt;
-//    }
-//    else if([nodeType isEqualToString:@"LHAreaGravity"])
-//    {
-//        LHGravityArea* gv = [LHGravityArea gravityAreaWithDictionary:childInfo
-//                                                              parent:prnt];
-//        return gv;
-//    }
-//    else if([nodeType isEqualToString:@"LHParallax"])
-//    {
-//        LHParallax* pr = [LHParallax parallaxWithDictionary:childInfo
-//                                                     parent:prnt];
-//        return pr;
-//    }
-//    else if([nodeType isEqualToString:@"LHParallaxLayer"])
-//    {
-//        LHParallaxLayer* lh = [LHParallaxLayer parallaxLayerWithDictionary:childInfo
-//                                                                    parent:prnt];
-//        return lh;
-//    }
-//    else if([nodeType isEqualToString:@"LHAsset"])
-//    {
-//        LHAsset* as = [LHAsset assetWithDictionary:childInfo
-//                                            parent:prnt];
-//        return as;
-//    }
-//    else if([nodeType isEqualToString:@"LHCamera"])
-//    {
-//        if(scene)
-//        {
-//            LHCamera* cm = [LHCamera cameraWithDictionary:childInfo
-//                                                   parent:prnt];
-//            return cm;
-//        }
-//    }
-//    else if([nodeType isEqualToString:@"LHRopeJoint"])
-//    {
-//        if(scene)
-//        {
-//            LHRopeJointNode* jt = [LHRopeJointNode ropeJointNodeWithDictionary:childInfo
-//                                                                        parent:prnt];
-//            [scene addLateLoadingNode:jt];
-//        }
-//    }
-    //    else if([nodeType isEqualToString:@"LHWeldJoint"])
-    //    {
-    //        LHWeldJointNode* jt = [LHWeldJointNode weldJointNodeWithDictionary:childInfo
-    //                                                                    parent:prnt];
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-    //    else if([nodeType isEqualToString:@"LHRevoluteJoint"]){
-    //
-    //        LHRevoluteJointNode* jt = [LHRevoluteJointNode revoluteJointNodeWithDictionary:childInfo
-    //                                                                                parent:prnt];
-    //
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-//    else if([nodeType isEqualToString:@"LHDistanceJoint"]){
-//        
-//        LHDistanceJointNode* jt = [LHDistanceJointNode distanceJointNodeWithDictionary:childInfo
-//                                                                                parent:prnt];
-//        [scene addLateLoadingNode:jt];
-//        
-//    }
-    //    else if([nodeType isEqualToString:@"LHPrismaticJoint"]){
-    //
-    //        LHPrismaticJointNode* jt = [LHPrismaticJointNode prismaticJointNodeWithDictionary:childInfo
-    //                                                                                   parent:prnt];
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-    
-    
-    else{
-        printf("UNKNOWN NODE TYPE %s\n", nodeType.c_str());
-    }
-    
-    return NULL;
 }
 
 void LHScene::createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName)
 {
-    Node* drawNode = Node::create();
+#if LH_USE_BOX2D
+    
+    float PTM_RATIO = this->getPtm();
+    
+    // Define the ground body.
+    b2BodyDef groundBodyDef;
+    groundBodyDef.position.Set(0, 0); // bottom-left corner
+    
+    b2Body* physicsBoundariesBody = this->getBox2dWorld()->CreateBody(&groundBodyDef);
+    
+    // Define the ground box shape.
+    b2EdgeShape groundBox;
+    
+    // top
+    groundBox.Set(b2Vec2(from.x/PTM_RATIO,
+                         from.y/PTM_RATIO),
+                  b2Vec2(to.x/PTM_RATIO,
+                         to.y/PTM_RATIO));
+    physicsBoundariesBody->CreateFixture(&groundBox,0);
+    
+#else //chipmunk
+    LHNode* drawNode = LHNode::createWithName(sectionName);
     PhysicsBody* boundaryBody = PhysicsBody::createEdgeSegment(from, to);
     drawNode->setPhysicsBody(boundaryBody);
-    addChild(drawNode);
+    this->getGameWorldNode()->addChild(drawNode);
+#endif
+    
 }
+
+
+// on "init" you need to initialize your instance
+void LHScene::onEnter()
+{
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->setSwallowTouches(false);
+    listener->onTouchBegan = CC_CALLBACK_2(LHScene::onTouchBegan, this);
+    listener->onTouchMoved = CC_CALLBACK_2(LHScene::onTouchMoved, this);
+    listener->onTouchEnded = CC_CALLBACK_2(LHScene::onTouchEnded, this);
+    listener->onTouchCancelled = CC_CALLBACK_2(LHScene::onTouchCancelled, this);
+    dispatcher->addEventListenerWithFixedPriority(listener, 1);
+    _touchListener = listener;
+    
+    Scene::onEnter();
+}
+
+
+void LHScene::onExit()
+{
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->removeEventListener(_touchListener);
+    _touchListener = nullptr;
+    
+    Scene::onExit();
+}
+
+
+
+
+void LHScene::addLateLoadingNode(Node* node){
+    if(!_lateLoadingNodes) {
+        _lateLoadingNodes = new __Array();
+        _lateLoadingNodes->init();
+    }
+    _lateLoadingNodes->addObject(node);
+}
+
+void LHScene::performLateLoading(){
+    if(!_lateLoadingNodes)return;
+    
+    for(size_t i = 0; i < _lateLoadingNodes->count(); ++i)
+    {
+        Node* node = (Node*)_lateLoadingNodes->getObjectAtIndex(i);
+
+        LHNodeProtocol* protocol = dynamic_cast<LHNodeProtocol*>(node);
+        if(protocol)
+        {
+            protocol->lateLoading();
+        }
+    }
+    
+    CC_SAFE_DELETE(_lateLoadingNodes);
+}
+
 
 __Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
 {
-    return (__Array*)tracedFixtures->objectForKey(uuid);
-}
-
-
-
-
-//Texture2D* LHScene::textureWithImagePath(const std::string& imagePath)
-//{
-//    if(!loadedTextures){
-//        loadedTextures = __Dictionary::create();
-//    }
-//    
-//    Texture2D* texture = NULL;
-//    if(imagePath.length()>0){
-//        texture = (Texture2D*)loadedTextures->objectForKey(imagePath);
-//        if(!texture){
-//            Texture2D::create
-//            texture = [CCTexture textureWithFile:imagePath];
-//            if(texture){
-//                [loadedTextures setObject:texture forKey:imagePath];
-//            }
-//        }
-//    }
-//    
-//    return texture;
-//}
-//
-std::string LHScene::imagePathWithFilename(const std::string& filename,
-                                           const std::string& folder,
-                                           const std::string& suffix)
-{
-    return folder + suffix + "/" + filename;
+    return (__Array*)_tracedFixtures->objectForKey(uuid);
 }
 
 std::string LHScene::getCurrentDeviceSuffix()
@@ -420,922 +424,142 @@ Point LHScene::getDesignOffset(){
     return designOffset;
 }
 
-
-Point LHScene::positionForNode(Node* node, Point unitPos)
-{
-    LHScene* scene = (LHScene*)node->getScene();
-
-    Size designSize = scene->getDesignResolutionSize();
-    Point offset    = scene->getDesignOffset();
-    
-    Point designPos = Point();
-    
-    if(node->getParent() == scene){// scene->physicsNode()){
-        designPos = Point(designSize.width*unitPos.x,
-                          (designSize.height - designSize.height*unitPos.y));
-        designPos.x += offset.x;
-        designPos.y += offset.y;
-
-    }
-    else{
-        designPos = Point(designSize.width*unitPos.x,
-                          (node->getParent()->getContentSize().height - designSize.height*unitPos.y));
-        
-        Node* p = node->getParent();
-        designPos.x += p->getContentSize().width*0.5;
-        designPos.y -= p->getContentSize().height*0.5;
-    }
-    
-    return designPos;
-}
-
-
-
-//#import "LHUtils.h"
-//#import "NSDictionary+LHDictionary.h"
-//#import "LHSprite.h"
-//#import "LHBezier.h"
-//#import "LHShape.h"
-//#import "LHWater.h"
-//#import "LHNode.h"
-//#import "LHAsset.h"
-//#import "LHGravityArea.h"
-//#import "LHParallax.h"
-//#import "LHParallaxLayer.h"
-//#import "LHCamera.h"
-//#import "LHRopeJointNode.h"
-//#import "LHWeldJointNode.h"
-//#import "LHRevoluteJointNode.h"
-//#import "LHDistanceJointNode.h"
-//#import "LHPrismaticJointNode.h"
-
-/*
-@implementation LHScene
-{
-    CCPhysicsNode *__unsafe_unretained physicsNode;
-    
-    NSMutableArray* lateLoadingNodes;//gets nullified after everything is loaded
-    
-    NSString* _uuid;
-    NSArray* _tags;
-    id<LHUserPropertyProtocol> _userProperty;
-    
-    NSMutableDictionary* loadedTextures;
-    NSMutableDictionary* loadedTextureAtlases;
-    NSDictionary* tracedFixtures;
-    
-    NSArray* supportedDevices;
-
-    CGSize  designResolutionSize;
-    CGPoint designOffset;
-    
-    NSString* relativePath;
-    
-    CCNode* touchedNode;
-    BOOL touchedNodeWasDynamic;
-    
-    NSMutableArray* debugJoints;//its only used when in debug mode;
-    CGPoint ropeJointsCutStartPt;
-    
-    NSMutableArray* gravityNodes;
-    
-    NSMutableDictionary* _loadedAssetsInformations;
-    
-    CGRect gameWorldRect;
-    NSMutableArray* cameras;
-    
-    NSTimeInterval previousUpdateTime;
-}
-
-
--(void)dealloc{
-    physicsNode = nil;
-    
-    LH_SAFE_RELEASE(_uuid);
-    LH_SAFE_RELEASE(_userProperty);
-    LH_SAFE_RELEASE(_tags);
-    
-    LH_SAFE_RELEASE(relativePath);
-    LH_SAFE_RELEASE(gravityNodes);
-    LH_SAFE_RELEASE(loadedTextures);
-    LH_SAFE_RELEASE(loadedTextureAtlases);
-    LH_SAFE_RELEASE(tracedFixtures);
-    LH_SAFE_RELEASE(supportedDevices);
-    LH_SAFE_RELEASE(cameras);
-    LH_SAFE_RELEASE(_loadedAssetsInformations);
-    
-    LH_SUPER_DEALLOC();
-}
- 
-
-+(instancetype)sceneWithContentOfFile:(NSString*)levelPlistFile{
-    return LH_AUTORELEASED([[self alloc] initWithContentOfFile:levelPlistFile]);
-}
-
--(instancetype)initWithContentOfFile:(NSString*)levelPlistFile
-{
-    NSString* path = [[NSBundle mainBundle] pathForResource:[levelPlistFile stringByDeletingPathExtension]
-                                                     ofType:[levelPlistFile pathExtension]];
-    
-    if(!path)return nil;
-    
-    NSDictionary* dict = [NSDictionary dictionaryWithContentsOfFile:path];
-    if(!dict)return nil;
-
-    int aspect = [dict intForKey:@"aspect"];
-    CGSize designResolution = [dict sizeForKey:@"designResolution"];
-
-    NSArray* devsInfo = [dict objectForKey:@"devices"];
-    NSMutableArray* devices = [NSMutableArray array];
-    for(NSDictionary* devInf in devsInfo){
-        LHDevice* dev = [LHDevice deviceWithDictionary:devInf];
-        [devices addObject:dev];
-    }
-
-    #if TARGET_OS_IPHONE
-    LHDevice* curDev = [LHUtils currentDeviceFromArray:devices];
-    #else
-    LHDevice* curDev = [LHUtils deviceFromArray:devices withSize:size];
-    #endif
-
-    CGPoint childrenOffset = CGPointZero;
-    
-    CGSize sceneSize = curDev.size;
-    float ratio = curDev.ratio;
-    sceneSize.width = sceneSize.width/ratio;
-    sceneSize.height = sceneSize.height/ratio;
-    
-    aspect = 2;//HARD CODED UNTIL I FIGURE OUT HOW TO DO IT IN v3
-    
-    if(aspect == 0)//exact fit
-    {
-        sceneSize = designResolution;
-    }
-    else if(aspect == 1)//no borders
-    {
-        float scalex = sceneSize.width/designResolution.width;
-        float scaley = sceneSize.height/designResolution.height;
-        scalex = scaley = MAX(scalex, scaley);
-        
-        childrenOffset.x = (sceneSize.width/scalex - designResolution.width)*0.5;
-        childrenOffset.y = (sceneSize.height/scaley - designResolution.height)*0.5;
-        sceneSize = CGSizeMake(sceneSize.width/scalex, sceneSize.height/scaley);
-        
-    }
-    else if(aspect == 2)//show all
-    {
-        [[CCDirector sharedDirector] setDesignSize:designResolution];
-        childrenOffset.x = (sceneSize.width - designResolution.width)*0.5;
-        childrenOffset.y = (sceneSize.height - designResolution.height)*0.5;
-    }
-
-    if (self = [super init])
-    {
-        relativePath = [[NSString alloc] initWithString:[levelPlistFile stringByDeletingLastPathComponent]];
-        
-        designResolutionSize = designResolution;
-        designOffset         = childrenOffset;
-        [[CCDirector sharedDirector] setContentScaleFactor:ratio];
-        
-//        [self setAnchorPoint:CGPointMake(0.5, 0.5)];
-        
-
-        [self setName:levelPlistFile];
-        _uuid = [[NSString alloc] initWithString:[dict objectForKey:@"uuid"]];
-        _userProperty = [LHUtils userPropertyForNode:self fromDictionary:dict];
-        [LHUtils tagsFromDictionary:dict
-                       savedToArray:&_tags];
-        
-        NSDictionary* tracedFixInfo = [dict objectForKey:@"tracedFixtures"];
-        if(tracedFixInfo){
-            tracedFixtures = [[NSDictionary alloc] initWithDictionary:tracedFixInfo];
-        }
-
-        supportedDevices = [[NSArray alloc] initWithArray:devices];
-        
-        CCPhysicsNode* pNode = [CCPhysicsNode node];
-        pNode.contentSize = self.contentSize;
-        [pNode setDebugDraw:YES];
-        [super addChild:pNode];
-        physicsNode = pNode;
-        
-        
-        
-        if([dict boolForKey:@"useGlobalGravity"])
-        {
-            //more or less the same as box2d
-            CGPoint gravityVector = [dict pointForKey:@"globalGravityDirection"];
-            float gravityForce    = [dict floatForKey:@"globalGravityForce"];
-            [physicsNode setGravity:CGPointMake(gravityVector.x*gravityForce,
-                                                gravityVector.y*gravityForce*100)];
-        }
-        
-        
-        //load background color
-        CCColor* backgroundClr = [dict colorForKey:@"backgroundColor"];
-        glClearColor(backgroundClr.red, backgroundClr.green, backgroundClr.blue, 1.0f);
-
-        
-        NSArray* childrenInfo = [dict objectForKey:@"children"];
-        for(NSDictionary* childInfo in childrenInfo)
-        {
-            CCNode* node = [LHScene createLHNodeWithDictionary:childInfo
-                                                        parent:physicsNode];
-            
-            if(node){
-
-            }
-        }
-        
-        
-        
-        NSDictionary* phyBoundInfo = [dict objectForKey:@"physicsBoundaries"];
-        if(phyBoundInfo)
-        {
-            CGSize scr = LH_SCREEN_RESOLUTION;
-
-            NSString* rectInf = [phyBoundInfo objectForKey:[NSString stringWithFormat:@"%dx%d", (int)scr.width, (int)scr.height]];
-            if(!rectInf){
-                rectInf = [phyBoundInfo objectForKey:@"general"];
-            }
-            
-            if(rectInf){
-                CGRect bRect = LHRectFromString(rectInf);
-                CGSize designSize = [self designResolutionSize];
-                CGPoint offset = [self designOffset];
-                CGRect skBRect = CGRectMake(bRect.origin.x*designSize.width + offset.x,
-                                            self.contentSize.height - bRect.origin.y*designSize.height + offset.y,
-                                            bRect.size.width*designSize.width ,
-                                            -bRect.size.height*designSize.height);
-                
-                {
-                    [self createPhysicsBoundarySectionFrom:CGPointMake(CGRectGetMinX(skBRect), CGRectGetMinY(skBRect))
-                                                        to:CGPointMake(CGRectGetMaxX(skBRect), CGRectGetMinY(skBRect))
-                                                  withName:@"LHPhysicsBottomBoundary"];
-                }
-                
-                {
-                    [self createPhysicsBoundarySectionFrom:CGPointMake(CGRectGetMaxX(skBRect), CGRectGetMinY(skBRect))
-                                                        to:CGPointMake(CGRectGetMaxX(skBRect), CGRectGetMaxY(skBRect))
-                                                  withName:@"LHPhysicsRightBoundary"];
-
-                }
-                
-                {
-                    [self createPhysicsBoundarySectionFrom:CGPointMake(CGRectGetMaxX(skBRect), CGRectGetMaxY(skBRect))
-                                                        to:CGPointMake(CGRectGetMinX(skBRect), CGRectGetMaxY(skBRect))
-                                                  withName:@"LHPhysicsTopBoundary"];
-                }
-
-                {
-                    [self createPhysicsBoundarySectionFrom:CGPointMake(CGRectGetMinX(skBRect), CGRectGetMaxY(skBRect))
-                                                        to:CGPointMake(CGRectGetMinX(skBRect), CGRectGetMinY(skBRect))
-                                                  withName:@"LHPhysicsLeftBoundary"];
-                }
-            }
-        }
-
-        NSDictionary* gameWorldInfo = [dict objectForKey:@"gameWorld"];
-        if(gameWorldInfo)
-        {
-#if TARGET_OS_IPHONE
-            CGSize scr = LH_SCREEN_RESOLUTION;
-#else
-            CGSize scr = self.size;
-#endif
-
-            NSString* rectInf = [gameWorldInfo objectForKey:[NSString stringWithFormat:@"%dx%d", (int)scr.width, (int)scr.height]];
-            if(!rectInf){
-                rectInf = [gameWorldInfo objectForKey:@"general"];
-            }
-            
-            if(rectInf){
-                CGRect bRect = LHRectFromString(rectInf);
-                CGSize designSize = [self designResolutionSize];
-                CGPoint offset = [self designOffset];
-
-                gameWorldRect = CGRectMake(bRect.origin.x*designSize.width+ offset.x,
-                                           (1.0f - bRect.origin.y)*designSize.height + offset.y,
-                                           bRect.size.width*designSize.width ,
-                                           -(bRect.size.height)*designSize.height);
-                gameWorldRect.origin.y -= sceneSize.height;
-            }
-        }
-        
-        [self performLateLoading];
-        
-        [self setUserInteractionEnabled:YES];
-
-    }
-    return self;
-}
-
--(CCPhysicsNode*)physicsNode{
-    return physicsNode;
-}
-
-
--(void)performLateLoading{
-    if(!lateLoadingNodes)return;
-    
-    NSMutableArray* lateLoadingToRemove = [NSMutableArray array];
-    for(CCNode* node in lateLoadingNodes){
-        if([node respondsToSelector:@selector(lateLoading)]){
-            if([(id<LHNodeProtocol>)node lateLoading]){
-                [lateLoadingToRemove addObject:node];
-            }
+LHBackUINode* LHScene::getBackUINode(){
+    if(!_backUINode){
+        __Array* children = this->getChildrenOfType<LHBackUINode*>();
+        if(children->count() > 0){
+            _backUINode = (LHBackUINode*)children->getObjectAtIndex(0);
         }
     }
-    [lateLoadingNodes removeObjectsInArray:lateLoadingToRemove];
-    if([lateLoadingNodes count] == 0){
-        LH_SAFE_RELEASE(lateLoadingNodes);
-    }
+    return _backUINode;
 }
-
--(void)addChild:(CCNode *)node{
-    [physicsNode addChild:node];
-}
-
-//-(SKTextureAtlas*)textureAtlasWithImagePath:(NSString*)atlasPath
-//{
-//    if(!loadedTextureAtlases){
-//        loadedTextureAtlases = [[NSMutableDictionary alloc] init];
-//    }
-// 
-//    SKTextureAtlas* textureAtlas = nil;
-//    if(atlasPath){
-//        textureAtlas = [loadedTextureAtlases objectForKey:atlasPath];
-//        if(!textureAtlas){
-//            textureAtlas = [SKTextureAtlas atlasNamed:atlasPath];
-//            if(textureAtlas){
-//                [loadedTextureAtlases setObject:textureAtlas forKey:atlasPath];
-//            }
-//        }
-//    }
-//    
-//    return textureAtlas;
-//}
-
-
-
--(LHCamera*)cameraWithName:(NSString*)name
-{
-    for(LHCamera* cam in cameras){
-        if([[cam name] isEqualToString:name]){
-            return cam;
+LHGameWorldNode* LHScene::getGameWorldNode(){
+    if(!_gameWorldNode){
+        __Array* children = this->getChildrenOfType<LHGameWorldNode*>();
+        if(children->count() > 0){
+            _gameWorldNode = (LHGameWorldNode*)children->getObjectAtIndex(0);
         }
     }
-    return nil;
+    return _gameWorldNode;
 }
--(NSMutableArray*)cameras{
-    return cameras;
+LHUINode* LHScene::getUINode(){
+    if(!_uiNode){
+        __Array* children = this->getChildrenOfType<LHUINode*>();
+        if(children->count() > 0){
+            _uiNode = (LHUINode*)children->getObjectAtIndex(0);
+        }
+    }
+    return _uiNode;
 }
 
--(CGRect)gameWorldRect{
+
+Rect LHScene::getGameWorldRect(){
     return gameWorldRect;
 }
 
--(NSDictionary*)assetInfoForFile:(NSString*)assetFileName{
+__Dictionary* LHScene::assetInfoForFile(const std::string& assetFileName)
+{
     if(!_loadedAssetsInformations){
-        _loadedAssetsInformations = [[NSMutableDictionary alloc] init];
+        _loadedAssetsInformations = new __Dictionary();
+        _loadedAssetsInformations->init();
     }
-    NSDictionary* info = [_loadedAssetsInformations objectForKey:assetFileName];
+    
+    __Dictionary* info = (__Dictionary*)_loadedAssetsInformations->objectForKey(assetFileName);
     if(!info){
-        NSString* path = [[NSBundle mainBundle] pathForResource:assetFileName
-                                                         ofType:@"plist"
-                                                    inDirectory:[self relativePath]];
-        if(path){
-            info = [NSDictionary dictionaryWithContentsOfFile:path];
+        
+        std::string folder = LHUtils::removeLastPathComponent(this->getName());
+        
+        std::string path = FileUtils::getInstance()->fullPathForFilename(folder + assetFileName + ".plist");
+        
+        if(path.length()>0){
+            info =  __Dictionary::createWithContentsOfFile(path.c_str());
             if(info){
-                [_loadedAssetsInformations setObject:info forKey:assetFileName];
+                _loadedAssetsInformations->setObject(info, assetFileName);
             }
         }
     }
     return info;
 }
 
-//#if TARGET_OS_IPHONE
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    
-//    CGVector grv = self.physicsWorld.gravity;
-//    
-//    [self.physicsWorld setGravity:CGVectorMake(grv.dx,
-//                                              -grv.dy)];
-//    
-//    return;
-//    
-//    for (UITouch *touch in touches) {
-//        CGPoint location = [touch locationInNode:self];
-//        
-//        ropeJointsCutStartPt = location;
-//        
-//        NSArray* foundNodes = [self nodesAtPoint:location];
-//        for(SKNode* foundNode in foundNodes)
-//        {
-//            if(foundNode.physicsBody){
-//                touchedNode = foundNode;
-//                touchedNodeWasDynamic = touchedNode.physicsBody.affectedByGravity;
-//                [touchedNode.physicsBody setAffectedByGravity:NO];                
-//                return;
-//            }
-//        }
-//    }
-//}
-//
-//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    for (UITouch *touch in touches) {
-//        CGPoint location = [touch locationInNode:self];
-//
-//        if(touchedNode && touchedNode.physicsBody){
-//            [touchedNode setPosition:location];
-//        }
-//    }
-//}
-//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-//    
-//    for (UITouch *touch in touches) {
-//        CGPoint location = [touch locationInNode:self];
-//        
-//        for(LHRopeJointNode* rope in ropeJoints){
-//            if([rope canBeCut]){
-//                [rope cutWithLineFromPointA:ropeJointsCutStartPt
-//                                   toPointB:location];
-//            }
-//        }
-//    }
-//    
-//    
-//
-//    if(touchedNode){
-//    [touchedNode.physicsBody setAffectedByGravity:touchedNodeWasDynamic];
-//    touchedNode = nil;
-//    }
-//}
-//- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
-//    if(touchedNode){
-//    touchedNode.physicsBody.affectedByGravity = touchedNodeWasDynamic;
-//    touchedNode = nil;
-//    }
-//}
-//#else
-//-(void)mouseDown:(NSEvent *)theEvent{
-//    
-//    CGPoint location = [theEvent locationInNode:self];
-//    
-//    ropeJointsCutStartPt = location;
-//    NSArray* foundNodes = [self nodesAtPoint:location];
-//    for(SKNode* foundNode in foundNodes)
-//    {
-//        if(foundNode.physicsBody){
-//            touchedNode = foundNode;
-//            touchedNodeWasDynamic = touchedNode.physicsBody.affectedByGravity;
-//            [touchedNode.physicsBody setAffectedByGravity:NO];
-//            break;
-//        }
-//    }
-//    
-//    BOOL                dragActive = YES;
-//    NSEvent*            event = NULL;
-//    NSWindow            *targetWindow = [[NSApplication sharedApplication] mainWindow];
-//    
-//    while (dragActive) {
-//        event = [targetWindow nextEventMatchingMask:(NSLeftMouseDraggedMask | NSLeftMouseUpMask)
-//                                          untilDate:[NSDate distantFuture]
-//                                             inMode:NSEventTrackingRunLoopMode
-//                                            dequeue:YES];
-//        if(!event){
-//            continue;
-//        }
-//        switch ([event type])
-//        {
-//            case NSLeftMouseDragged:
-//            {
-//                CGPoint curLocation = [event locationInNode:self];
-//                
-//                if(touchedNode && touchedNode.physicsBody){
-//                    [touchedNode setPosition:curLocation];
-//                }
-//            }
-//                break;
-//                
-//                
-//            case NSLeftMouseUp:
-//                dragActive = NO;
-//                
-//                CGPoint curLocation = [event locationInNode:self];
-//                for(LHRopeJointNode* rope in ropeJoints){
-//                    if([rope canBeCut]){
-//                        [rope cutWithLineFromPointA:ropeJointsCutStartPt
-//                                           toPointB:curLocation];
-//                    }
-//                }
-//                
-//                if(touchedNode){
-//                    [touchedNode.physicsBody setAffectedByGravity:touchedNodeWasDynamic];
-//                    touchedNode = nil;
-//                }
-//                
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//    }
-//}
-//#endif
-
-#pragma mark LHNodeProtocol Required
-
--(NSString*)uuid{
-    return _uuid;
-}
-
--(NSArray*)tags{
-    return _tags;
-}
-
--(id<LHUserPropertyProtocol>)userProperty{
-    return _userProperty;
-}
-
--(LHScene*)scene{
-    return self;
-}
-
--(CCNode <LHNodeProtocol>*)childNodeWithName:(NSString*)name{
-    return [LHScene childNodeWithName:name
-                              forNode:physicsNode];
-}
 
 
--(CCNode <LHNodeProtocol>*)childNodeWithUUID:(NSString*)uuid{
-    return [LHScene childNodeWithUUID:uuid
-                              forNode:physicsNode];
-}
-
--(NSMutableArray*)childrenWithTags:(NSArray*)tagValues
-                       containsAny:(BOOL)any{
-    return [LHScene childrenWithTags:tagValues
-                         containsAny:any
-                            forNode:physicsNode];
-}
 
 
--(NSMutableArray*)childrenOfType:(Class)type{
-    return [LHScene childrenOfType:type
-                           forNode:physicsNode];
-}
-
-#pragma mark - TOUCH SUPPORT
--(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
-
-    //without this touch began is not called
-    CCDirector* dir = [CCDirector sharedDirector];
+#pragma mark - TOUCHES
+bool LHScene::onTouchBegan(Touch* touch, Event* event){
     
-    CGPoint touchLocation = [touch previousLocationInView: [touch view]];
-	touchLocation = [dir convertToGL: touchLocation];
+    _ropeJointsCutStartPt = touch->getLocation();
+    return true;
+}
+void LHScene::onTouchMoved(Touch* touch, Event* event){
     
-    ropeJointsCutStartPt = touchLocation;
+}
+void LHScene::onTouchEnded(Touch* touch, Event* event){
+ 
+    Point location = touch->getLocation();
+    
+//    CCLOG("TOUCH ENDED %f %f", location.x, location.y);
+    
+    __Array* ropeJoints = this->getChildrenOfType<LHRopeJointNode*>();
+    
+    for(size_t i = 0; i< ropeJoints->count(); ++i)
+    {
+        LHRopeJointNode* rope = (LHRopeJointNode*)ropeJoints->getObjectAtIndex(i);
+
+        if(rope->canBeCut())
+        {
+            rope->cutWithLineFromPointA(_ropeJointsCutStartPt,
+                                        location);
+        }
+    }
+}
+void LHScene::onTouchCancelled(Touch *touch, Event *event){
+
 }
 
--(void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
-    
-//    NSLog(@"TOUCH MOVED");
-//    
-////    NSLog(@"SELF CHILDREN %@", [self children]);
-//    
-//    CGPoint touchLoc = [touch locationInNode:self];
-//    
-//    CCDirector* dir = [CCDirector sharedDirector];
-//    
-//    CGPoint touchLocation = [touch previousLocationInView: [touch view]];
-//	touchLocation = [dir convertToGL: touchLocation];
-//    CGPoint previousLoc = [self convertToNodeSpace:touchLocation];
-//    
-//
-//    CGPoint delta = CGPointMake(touchLoc.x - previousLoc.x,
-//                                touchLoc.y - previousLoc.y);
-//    
-//    CGPoint curPos = [self position];
-//    
-//    [self setPosition:CGPointMake(curPos.x + delta.x, curPos.y + delta.y)];
-//    
-//    NSLog(@"NEW POS %f %f", self.position.x, self.position.y);
+#pragma mark - BOX2D SUPPORT
+#if LH_USE_BOX2D
+
+b2World* LHScene::getBox2dWorld(){
+    return this->getGameWorldNode()->getBox2dWorld();
+}
+float LHScene::getPtm(){
+    return 32.0f;
+}
+b2Vec2 LHScene::metersFromPoint(Point point){
+    return b2Vec2(point.x/this->getPtm(), point.y/this->getPtm());
+}
+Point LHScene::pointFromMeters(b2Vec2 vec){
+    return Point(vec.x*this->getPtm(), vec.y*this->getPtm());
 }
 
--(void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+float LHScene::metersFromValue(float val){
+    return val/this->getPtm();
+}
+float LHScene::valueFromMeters(float meter){
+    return meter*this->getPtm();
+}
+
+#endif //LH_USE_BOX2D
+
+
+Point LHScene::getGlobalGravity()
 {
-    CCDirector* dir = [CCDirector sharedDirector];
-    
-    CGPoint touchLocation = [touch previousLocationInView: [touch view]];
-	touchLocation = [dir convertToGL: touchLocation];
-
-    for(LHRopeJointNode* rope in [self childrenOfType:[LHRopeJointNode class]]){
-        if([rope canBeCut]){
-            [rope cutWithLineFromPointA:ropeJointsCutStartPt
-                               toPointB:touchLocation];
-        }
-    }
-}
-
-
-@end
-
-
-#pragma mark - PRIVATES
-
-@implementation LHScene (LH_SCENE_NODES_PRIVATE_UTILS)
-
-+(id)createLHNodeWithDictionary:(NSDictionary*)childInfo
-                         parent:(CCNode*)prnt
-{
-    
-    NSString* nodeType = [childInfo objectForKey:@"nodeType"];
-    
-    LHScene* scene = nil;
-    if([prnt isKindOfClass:[LHScene class]]){
-        scene = (LHScene*)prnt;
-    }
-    else if([[prnt scene] isKindOfClass:[LHScene class]]){
-        scene = (LHScene*)[prnt scene];
-    }
-
-    
-    if([nodeType isEqualToString:@"LHSprite"])
-    {
-        LHSprite* spr = [LHSprite spriteNodeWithDictionary:childInfo
-                                                    parent:prnt];
-        return spr;
-    }
-    else if([nodeType isEqualToString:@"LHNode"])
-    {
-        LHNode* nd = [LHNode nodeWithDictionary:childInfo
-                                         parent:prnt];
-        return nd;
-    }
-    else if([nodeType isEqualToString:@"LHBezier"])
-    {
-        LHBezier* bez = [LHBezier bezierNodeWithDictionary:childInfo
-                                                    parent:prnt];
-        return bez;
-    }
-    else if([nodeType isEqualToString:@"LHTexturedShape"])
-    {
-        LHShape* sp = [LHShape shapeNodeWithDictionary:childInfo
-                                                parent:prnt];
-        return sp;
-    }
-    else if([nodeType isEqualToString:@"LHWaves"])
-    {
-        LHWater* wt = [LHWater waterNodeWithDictionary:childInfo
-                                                parent:prnt];
-        return wt;
-    }
-    else if([nodeType isEqualToString:@"LHAreaGravity"])
-    {
-        LHGravityArea* gv = [LHGravityArea gravityAreaWithDictionary:childInfo
-                                                              parent:prnt];
-        return gv;
-    }
-    else if([nodeType isEqualToString:@"LHParallax"])
-    {
-        LHParallax* pr = [LHParallax parallaxWithDictionary:childInfo
-                                                     parent:prnt];
-        return pr;
-    }
-    else if([nodeType isEqualToString:@"LHParallaxLayer"])
-    {
-        LHParallaxLayer* lh = [LHParallaxLayer parallaxLayerWithDictionary:childInfo
-                                                                    parent:prnt];
-        return lh;
-    }
-    else if([nodeType isEqualToString:@"LHAsset"])
-    {
-        LHAsset* as = [LHAsset assetWithDictionary:childInfo
-                                            parent:prnt];
-        return as;
-    }
-    else if([nodeType isEqualToString:@"LHCamera"])
-    {
-        if(scene)
-        {
-            LHCamera* cm = [LHCamera cameraWithDictionary:childInfo
-                                                    parent:prnt];
-            return cm;
-        }
-    }
-    else if([nodeType isEqualToString:@"LHRopeJoint"])
-    {
-        if(scene)
-        {
-            LHRopeJointNode* jt = [LHRopeJointNode ropeJointNodeWithDictionary:childInfo
-                                                                        parent:prnt];
-            [scene addLateLoadingNode:jt];
-        }
-    }
-//    else if([nodeType isEqualToString:@"LHWeldJoint"])
-//    {
-//        LHWeldJointNode* jt = [LHWeldJointNode weldJointNodeWithDictionary:childInfo
-//                                                                    parent:prnt];
-//        [scene addDebugJointNode:jt];
-//        [scene addLateLoadingNode:jt];
-//    }
-//    else if([nodeType isEqualToString:@"LHRevoluteJoint"]){
-//        
-//        LHRevoluteJointNode* jt = [LHRevoluteJointNode revoluteJointNodeWithDictionary:childInfo
-//                                                                                parent:prnt];
-//
-//        [scene addDebugJointNode:jt];
-//        [scene addLateLoadingNode:jt];
-//    }
-    else if([nodeType isEqualToString:@"LHDistanceJoint"]){
-        
-        LHDistanceJointNode* jt = [LHDistanceJointNode distanceJointNodeWithDictionary:childInfo
-                                                                                parent:prnt];
-        [scene addLateLoadingNode:jt];
-
-    }
-//    else if([nodeType isEqualToString:@"LHPrismaticJoint"]){
-//        
-//        LHPrismaticJointNode* jt = [LHPrismaticJointNode prismaticJointNodeWithDictionary:childInfo
-//                                                                                   parent:prnt];
-//        [scene addDebugJointNode:jt];
-//        [scene addLateLoadingNode:jt];
-//    }
-
-
-    else{
-        NSLog(@"UNKNOWN NODE TYPE %@", nodeType);
-    }
-    
-    return nil;
-}
-
-+(CCNode <LHNodeProtocol>*)childNodeWithName:(NSString*)nameVal
-                                     forNode:(CCNode*)selfNode{
-    for(CCNode<LHNodeProtocol>* node in [selfNode children])
-    {
-        if([node conformsToProtocol:@protocol(LHNodeProtocol)])
-        {
-            if([[node name] isEqualToString:nameVal]){
-                return node;
-            }
-            CCNode <LHNodeProtocol>* retNode = [node childNodeWithName:nameVal];
-            if(retNode){
-                return retNode;
-            }
-        }
-    }
-    return nil;
-}
-
-+(CCNode<LHNodeProtocol>*)childNodeWithUUID:(NSString*)uuid
-                                    forNode:(CCNode*)selfNode{
-    for(CCNode<LHNodeProtocol>* node in [selfNode children])
-    {
-        if([node conformsToProtocol:@protocol(LHNodeProtocol)])
-        {
-            if([[node uuid] isEqualToString:uuid]){
-                return node;
-            }
-            
-            if([node respondsToSelector:@selector(childNodeWithUUID:)])
-            {
-                CCNode<LHNodeProtocol>* retNode = [node childNodeWithUUID:uuid];
-                if(retNode){
-                    return retNode;
-                }
-            }
-        }
-    }
-    return nil;
-}
-
-+(NSMutableArray*)childrenOfType:(Class)type
-                         forNode:(CCNode*)selfNode{
-    
-    NSMutableArray* temp = [NSMutableArray array];
-    for(CCNode* child in [selfNode children]){
-        if([child isKindOfClass:type]){
-            [temp addObject:child];
-        }
-        
-        if([child respondsToSelector:@selector(childrenOfType:)])
-        {
-            NSMutableArray* childArray = [child performSelector:@selector(childrenOfType:)
-                                          withObject:type];
-            if(childArray){
-                [temp addObjectsFromArray:childArray];
-            }
-        }
-    }
-    return temp;
-}
-
-+(NSMutableArray*)childrenWithTags:(NSArray*)tagValues
-                       containsAny:(BOOL)any
-                          forNode:(CCNode*)selfNode
-{
-    NSMutableArray* temp = [NSMutableArray array];
-    for(id<LHNodeProtocol> child in [selfNode children]){
-        if([child conformsToProtocol:@protocol(LHNodeProtocol)])
-        {
-            NSArray* childTags =[child tags];
-
-            int foundCount = 0;
-            BOOL foundAtLeastOne = NO;
-            for(NSString* tg in childTags)
-            {
-                for(NSString* st in tagValues){
-                    if([st isEqualToString:tg])
-                    {
-                        ++foundCount;
-                        foundAtLeastOne = YES;
-                        if(any){
-                            break;
-                        }
-                    }
-                }
-                
-                if(any && foundAtLeastOne){
-                    [temp addObject:child];
-                    break;
-                }
-            }
-            if(!any && foundAtLeastOne && foundCount == [tagValues count] && [childTags count] == [tagValues count]){
-                [temp addObject:child];
-            }
-
-            if([child respondsToSelector:@selector(childrenWithTags:containsAny:)])
-            {
-                NSMutableArray* childArray = [child childrenWithTags:tagValues containsAny:any];
-                if(childArray){
-                    [temp addObjectsFromArray:childArray];
-                }
-            }
-        }
-    }
-    return temp;
-}
-
--(void)addLateLoadingNode:(CCNode*)node{
-    if(!lateLoadingNodes) {
-        lateLoadingNodes = [[NSMutableArray alloc] init];
-    }
-    [lateLoadingNodes addObject:node];
-}
-
--(NSString*)relativePath{
-    return relativePath;
-}
-
--(float)currentDeviceRatio{
-    
-#if TARGET_OS_IPHONE
-    CGSize scrSize = LH_SCREEN_RESOLUTION;
+#if LH_USE_BOX2D
+    return this->getGameWorldNode()->getGravity();
 #else
-    CGSize scrSize = self.size;
+    return this->getPhysicsWorld()->getGravity();
 #endif
-    
-    for(LHDevice* dev in supportedDevices){
-        CGSize devSize = [dev size];
-        if(CGSizeEqualToSize(scrSize, devSize)){
-            return [dev ratio];
-        }
-    }
-    return 1.0f;
 }
-
--(CGSize)designResolutionSize{
-    return designResolutionSize;
-}
--(CGPoint)designOffset{
-    return designOffset;
-}
-
--(NSString*)currentDeviceSuffix:(BOOL)keep2x{
-    
-#if TARGET_OS_IPHONE
-    CGSize scrSize = LH_SCREEN_RESOLUTION;
-#else
-    CGSize scrSize = self.size;
-#endif
-    
-    for(LHDevice* dev in supportedDevices){
-        CGSize devSize = [dev size];
-        if(CGSizeEqualToSize(scrSize, devSize)){
-            NSString* suffix = [dev suffix];
-            if(!keep2x){
-                suffix = [suffix stringByReplacingOccurrencesOfString:@"@2x"
-                                                           withString:@""];
-            }
-            return suffix;
-        }
-    }
-    return @"";
-}
-@end
+/*Sets the global gravity force
+ @param gravity A point representing the gravity force in x and y direction.
  */
+void LHScene::setGlobalGravity(Point gravity)
+{
+#if LH_USE_BOX2D
+    this->getGameWorldNode()->setGravity(gravity);
+#else
+    
+#endif
+}
 

@@ -9,19 +9,26 @@
 #define __LEVELHELPER_API_H__
 
 
-
+#include "LHConfig.h"
 #include "LHScene.h"
+#include "LHUINode.h"
+#include "LHBackUINode.h"
+#include "LHGameWorldNode.h"
+
 #include "LHNode.h"
 #include "LHSprite.h"
+#include "LHCamera.h"
+#include "LHBezier.h"
+#include "LHShape.h"
+#include "LHAsset.h"
+#include "LHParallax.h"
+#include "LHParallaxLayer.h"
 
-//#import "LHAsset.h"
-//#import "LHBezier.h"
-//#import "LHCamera.h"
-//#import "LHParallax.h"
-//#import "LHParallaxLayer.h"
-//#import "LHRopeJointNode.h"
-//#import "LHShape.h"
-//#import "LHWater.h"
+#include "LHRopeJointNode.h"
+
+
+#include "LHWater.h"
+
 //#import "LHAnimation.h"
 //#import "LHDistanceJointNode.h"
 //#import "LHGravityArea.h"
@@ -29,6 +36,10 @@
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
 #include "LHUserPropertyProtocol.h"
+#include "LHUserProperties.h"
+
+#include "LHUtils.h"
+
 
 
 #endif //__LEVELHELPER_API_H__

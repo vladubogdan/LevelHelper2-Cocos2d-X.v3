@@ -1,7 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
-
-#include "LHSceneSubclass.h"
+#include "LHSceneIntroductionDemo.h"
 
 USING_NS_CC;
 
@@ -27,14 +25,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-
-    // create a scene. it's an autorelease object
-//    auto scene = HelloWorld::createScene();
-
-    //auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level01.plist");
-    //auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level02-anim.plist");
-    //auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level03-physics.plist");
-    auto scene = LHSceneSubclass::createWithContentOfFile("DEMO_PUBLISH_FOLDER/level03-characterAnimation.plist");
+    
+    auto scene = LHSceneIntroductionDemo::create();
     
     // run
     director->runWithScene(scene);

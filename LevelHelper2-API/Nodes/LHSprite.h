@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
+#include "LHPhysicsProtocol.h"
 
 using namespace cocos2d;
 
@@ -24,22 +25,109 @@ using namespace cocos2d;
 class LHDictionary;
 class LHScene;
 
-class LHSprite : public Sprite, public LHNodeProtocol, public LHNodeAnimationProtocol
+class LHSprite : public Sprite, public LHNodeProtocol, public LHNodeAnimationProtocol, public LHPhysicsProtocol
 {
 
 public:
 
+    /**
+     * Creates a sprite with an image filename.
+     *
+     * @param   filename A path to image file, e.g., "scene1/monster.png"
+     * @param   folder The folder containing the Cocos2d-x suffix folders. The folder must be added as reference in Xcode. If the suffix folders are added directly in the project this parammeter should be "".
+     * @param   prnt A parent node. Must be in the LHScene hierarchy.
+     * @return  An autoreleased sprite object.
+     Eg:
+     @code
+     INDIVIDUAL_IMAGES_FOLDER/ (added as reference in Xcode - has Blue icon)
+        568/
+            background.png
+        hd/
+            background.png
+        ipad/
+            background.png
+        ipadhd/
+            background.png
+     
+     LHSprite* spr = LHSprite::createWithFile("background.png", "INDIVIDUAL_IMAGES_FOLDER/", this);
+     if(spr){
+        spr->setAnchorPoint(Point(0,0));
+        spr->setPosition(Point(0,0));
+        spr->setLocalZOrder(-4);
+     }
+     @endcode
+     */
+    static LHSprite* createWithFile(const std::string& filename, const std::string& folder, Node* prnt);
+    
+    /**
+     * Creates a sprite with an sprite frame name using a sprite sheet name.
+     *
+     * @param   spriteName A null terminated string which indicates the sprite frame name.
+     * @param   plistFile A null terminated string which indicates the plist containing the info of the sprite to be loaded.
+     * @param   plistFolder A null terminated string which indicates the folder that contains the plist file. The folder must be added as reference in Xcode - blue icon.
+     * @param   prnt A parent node. Must be in the LHScene hierarchy.
+     * @return  An autoreleased sprite object
+     
+     Eg:
+     @code
+     DEMO_PUBLISH_FOLDER/ (added as reference in Xcode - has Blue icon)
+        568/
+            objects.plist
+            objects.png
+        hd/
+            objects.plist
+            objects.png
+        ipad/
+            objects.plist
+            objects.png
+        ipadhd/
+            objects.plist
+            objects.png
+     
+     LHSprite* spr = LHSprite::createWithSpriteName("object_backpack", "objects.plist", "DEMO_PUBLISH_FOLDER/", this->getGameWorld());
+     if(spr){
+        spr->setPosition(Point(400,350));
+     }
+     @endcode
+     */
+    static LHSprite* createWithSpriteName(const std::string& spriteName,
+                                          const std::string& plistFile,
+                                          const std::string& plistFolder,
+                                          Node* prnt);
+
+    
+    
+    
+    
     static LHSprite* spriteNodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHSprite();
     virtual ~LHSprite();
+    
+    bool initWithFilename(const std::string& filename, const std::string& folder, Node* prnt);
+    bool initWithSpriteName(const std::string& spriteName, const std::string& plistFile, const std::string& plistFolder, Node* prnt);
     bool initWithDictionary(LHDictionary* dict, Node* prnt);
 
+    
     static  bool isLHSprite(Node* obj){return (0 != dynamic_cast<LHSprite*>(obj));}
     virtual bool isSprite(){return true;}
         
-    //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
-    virtual void visit(Renderer *renderer, const kmMat4& parentTransform, bool parentTransformUpdated);
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+    
+#if LH_USE_BOX2D
+    virtual void removeFromParent();
+    virtual void setPosition(const cocos2d::Vec2 &pos);
+    virtual void setRotation(float rotation);
+    
+    virtual void setScaleX(float scaleX);
+    virtual void setScaleY(float scaleY);
+    virtual void setScale(float scaleX, float scaleY);
+    
+    virtual void updatePosition(const cocos2d::Vec2 &pos);
+    virtual void updateRotation(float rotation);
+#endif
+    
+    
 private:
 
 };

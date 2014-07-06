@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>2</integer>
+	<key>backgroundColor</key>
+	<string>{{1, 0.99997437000274658}, {0.99999129772186279, 1}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>activeCamera</key>
+			<true/>
+			<key>followedNodeUUID</key>
+			<string>A8F92621-1A35-4E52-9954-059349A23729</string>
+			<key>generalPosition</key>
+			<string>{-2.3669494628906249, -0.71113877296447758}</string>
+			<key>name</key>
+			<string>UntitledCamera</string>
+			<key>nodeType</key>
+			<string>LHCamera</string>
+			<key>parentUUID</key>
+			<string>44907358-DE0E-4DF0-B616-2879FDF66A44</string>
+			<key>restrictToGameWorld</key>
+			<true/>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>D73A9990-C9F7-4A23-96A3-F393C680DA41</string>
+		</dict>
+		<dict>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{-1.3774267385034951, 0.09612545643893497}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain01.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>33BB55F7-1546-4C84-9210-5A72837ADD7F</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.4139032363891602, 2.2281010150909424}</string>
+							<key>size</key>
+							<string>{560, 182}</string>
+							<key>spriteName</key>
+							<string>mountain01.png</string>
+							<key>spriteUUID</key>
+							<string>D80BEA9D-2D06-49F7-B817-3BE7112B7160</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>52F0DC6D-621B-4184-A27C-CCE84724BC74</string>
+							<key>zOrder</key>
+							<integer>-3</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{-0.78909131980232317, -0.030480197323882408}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain01_1.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>33BB55F7-1546-4C84-9210-5A72837ADD7F</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.8778858184814453, 3.0164737701416016}</string>
+							<key>size</key>
+							<string>{560, 182}</string>
+							<key>spriteName</key>
+							<string>mountain01.png</string>
+							<key>spriteUUID</key>
+							<string>D80BEA9D-2D06-49F7-B817-3BE7112B7160</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>0A749C99-D93C-4877-8D8E-465D90298A84</string>
+							<key>zOrder</key>
+							<integer>-3</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{0.044883518454512723, 0.080218741045868569}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain01_2.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>33BB55F7-1546-4C84-9210-5A72837ADD7F</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.5720252990722656, 2.1808831691741943}</string>
+							<key>size</key>
+							<string>{560, 182}</string>
+							<key>spriteName</key>
+							<string>mountain01.png</string>
+							<key>spriteUUID</key>
+							<string>D80BEA9D-2D06-49F7-B817-3BE7112B7160</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>2E6E41C9-8755-42D8-BE82-4063BAE913D6</string>
+							<key>zOrder</key>
+							<integer>-3</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{0.32701064451245543, 0.027130409823334388}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain01_3.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>33BB55F7-1546-4C84-9210-5A72837ADD7F</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.6351559162139893, 2.4910285472869873}</string>
+							<key>size</key>
+							<string>{560, 182}</string>
+							<key>spriteName</key>
+							<string>mountain01.png</string>
+							<key>spriteUUID</key>
+							<string>D80BEA9D-2D06-49F7-B817-3BE7112B7160</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>1E98A489-DFE6-4EFB-B90B-1A1AB147BBF5</string>
+							<key>zOrder</key>
+							<integer>-3</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{1.2992683858047731, 0.025365301714813882}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain01_4.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>33BB55F7-1546-4C84-9210-5A72837ADD7F</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.9409977197647095, 2.513145923614502}</string>
+							<key>size</key>
+							<string>{560, 182}</string>
+							<key>spriteName</key>
+							<string>mountain01.png</string>
+							<key>spriteUUID</key>
+							<string>D80BEA9D-2D06-49F7-B817-3BE7112B7160</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>2B022662-5821-4CCA-AC71-A1FB19D09F54</string>
+							<key>zOrder</key>
+							<integer>-3</integer>
+						</dict>
+					</array>
+					<key>generalPosition</key>
+					<string>{-1.0190241495768229, -0.02930445671081543}</string>
+					<key>name</key>
+					<string>Untitled_1</string>
+					<key>nodeType</key>
+					<string>LHParallaxLayer</string>
+					<key>parentUUID</key>
+					<string>0AC82521-76C6-4536-8D6B-7A7073CD8716</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>33BB55F7-1546-4C84-9210-5A72837ADD7F</string>
+					<key>xRatio</key>
+					<real>0.89999997615814209</real>
+					<key>yRatio</key>
+					<real>0.0</real>
+					<key>zOrder</key>
+					<integer>-1</integer>
+				</dict>
+				<dict>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{-1.4758381030303758, 0.021130180531503485}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain03.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>31E1F0A2-1F5F-4DAA-8788-317CC442C771</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{1125, 277}</string>
+							<key>spriteName</key>
+							<string>mountain03.png</string>
+							<key>spriteUUID</key>
+							<string>ECFBF842-DB73-4B3A-9A1D-B1E0878E6F51</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>EBF98392-479C-49A0-A914-6CF0A5AF7F19</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{-0.34796473461462701, 0.015071221278953217}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain03_1.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>31E1F0A2-1F5F-4DAA-8788-317CC442C771</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{1125, 277}</string>
+							<key>spriteName</key>
+							<string>mountain03.png</string>
+							<key>spriteUUID</key>
+							<string>ECFBF842-DB73-4B3A-9A1D-B1E0878E6F51</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>76B500B1-768F-4CC3-8462-66CA98ABDD23</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{0.68846694687626431, -0.0047771224510196218}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain03_2.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>31E1F0A2-1F5F-4DAA-8788-317CC442C771</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{1125, 277}</string>
+							<key>spriteName</key>
+							<string>mountain03.png</string>
+							<key>spriteUUID</key>
+							<string>ECFBF842-DB73-4B3A-9A1D-B1E0878E6F51</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>59628995-28A1-49B3-8866-9F8468BFC2CA</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{0.20946029017652848, -0.072052554075167669}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain03_3.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>31E1F0A2-1F5F-4DAA-8788-317CC442C771</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{1125, 277}</string>
+							<key>spriteName</key>
+							<string>mountain03.png</string>
+							<key>spriteUUID</key>
+							<string>ECFBF842-DB73-4B3A-9A1D-B1E0878E6F51</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>D1561D3C-95BA-4A5C-9888-758A4BB976AC</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{1.605460381343462, 0.0081765337157722936}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain03_4.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>31E1F0A2-1F5F-4DAA-8788-317CC442C771</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{1125, 277}</string>
+							<key>spriteName</key>
+							<string>mountain03.png</string>
+							<key>spriteUUID</key>
+							<string>ECFBF842-DB73-4B3A-9A1D-B1E0878E6F51</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>B30EE9E2-E38A-486E-9B11-8BB6F6C9B536</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+					</array>
+					<key>generalPosition</key>
+					<string>{-0.71065425872802734, 0.063746309280395513}</string>
+					<key>name</key>
+					<string>Untitled_2</string>
+					<key>nodeType</key>
+					<string>LHParallaxLayer</string>
+					<key>parentUUID</key>
+					<string>0AC82521-76C6-4536-8D6B-7A7073CD8716</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>31E1F0A2-1F5F-4DAA-8788-317CC442C771</string>
+					<key>xRatio</key>
+					<real>0.60000002384185791</real>
+					<key>yRatio</key>
+					<real>0.0</real>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{-2.1909708875087035, 0.027600233789041796}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>16EA7B5E-C7DA-44BE-B53F-493CF4B0EDF6</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{-1.3387361223656786, 0.02659431143600912}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02_1.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>1D93EAAB-082C-4E15-81C3-3ACDE81AD89A</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{-0.57248448850013134, 0.026584923996313847}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02_2.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>774F58DF-F634-4334-9504-E5BC3C6460D1</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{0.1097639645384542, 0.024636165994814975}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02_3.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>6D8202D2-53A9-4164-BDF2-BAD7AA6108ED</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{0.81299441029407449, 0.0065646506534850603}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02_4.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>4F966003-2799-4424-83B3-A59BC690A385</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{2.1456678344229299, -0.04885306763663344}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02_6.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>985DF4EC-6D04-4B48-9043-E2AD2B4EFFC7</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{2.8063286155830629, -0.055782578392350499}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02_7.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{-0.86313241720199585, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>84EAE657-FD10-4BB2-9973-BA1775F6AACA</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{1.3494045585762271, -0.0069501968756554792}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02_5.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{-0.65811657905578613, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>9788D56D-A186-4A99-9A6F-A8DFE9F8AC53</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.5, 0.5}</string>
+							<key>colorOverlay</key>
+							<string>{{1, 1}, {1, 1}}</string>
+							<key>generalPosition</key>
+							<string>{-2.7744721177727367, 0.05771798082298716}</string>
+							<key>imageFileName</key>
+							<string>platformer.png</string>
+							<key>name</key>
+							<string>mountain02_8.png</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1, 1}</string>
+							<key>size</key>
+							<string>{874, 232}</string>
+							<key>spriteName</key>
+							<string>mountain02.png</string>
+							<key>spriteUUID</key>
+							<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>2FC8F6C4-6FE1-4741-AC73-B3AA0F9E0B7C</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+					</array>
+					<key>generalPosition</key>
+					<string>{0.23250522613525396, 0.089414739608764643}</string>
+					<key>name</key>
+					<string>Untitled</string>
+					<key>nodeType</key>
+					<string>LHParallaxLayer</string>
+					<key>parentUUID</key>
+					<string>0AC82521-76C6-4536-8D6B-7A7073CD8716</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>652F257D-A009-400F-9E80-0D3E9B63E50E</string>
+					<key>xRatio</key>
+					<real>0.0</real>
+					<key>yRatio</key>
+					<real>0.0</real>
+					<key>zOrder</key>
+					<integer>1</integer>
+				</dict>
+			</array>
+			<key>followedNodeUUID</key>
+			<string>D73A9990-C9F7-4A23-96A3-F393C680DA41</string>
+			<key>generalPosition</key>
+			<string>{-0.027364748716354369, -0.032105064392089842}</string>
+			<key>name</key>
+			<string>UntitledParallax</string>
+			<key>nodeType</key>
+			<string>LHParallax</string>
+			<key>parentUUID</key>
+			<string>44907358-DE0E-4DF0-B616-2879FDF66A44</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>0AC82521-76C6-4536-8D6B-7A7073CD8716</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{-0.40524493239246717, 0.3290255741729789}</string>
+			<key>imageFileName</key>
+			<string>platformer.png</string>
+			<key>name</key>
+			<string>brick.png</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>44907358-DE0E-4DF0-B616-2879FDF66A44</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{37.295021057128906, 1}</string>
+			<key>size</key>
+			<string>{128, 128}</string>
+			<key>spriteName</key>
+			<string>brick.png</string>
+			<key>spriteUUID</key>
+			<string>4EC4381D-615B-43E4-A952-F710DDE723C7</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>1B4EE0AB-97BE-4036-AC05-022AFFC19F8F</string>
+			<key>zOrder</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>closed</key>
+			<false/>
+			<key>colorOverlay</key>
+			<string>{{0, 0}, {0, 1}}</string>
+			<key>generalPosition</key>
+			<string>{-0.55082365811142608, -0.35220359784122818}</string>
+			<key>name</key>
+			<string>UntitledBezier</string>
+			<key>nodeType</key>
+			<string>LHBezier</string>
+			<key>parentUUID</key>
+			<string>44907358-DE0E-4DF0-B616-2879FDF66A44</string>
+			<key>points</key>
+			<array>
+				<dict>
+					<key>ctrl1</key>
+					<string>{-2178.3629493713379, -190.71552276611328}</string>
+					<key>ctrl2</key>
+					<string>{-2176.8458958864212, 388.54607391357422}</string>
+					<key>hasCtrl1</key>
+					<true/>
+					<key>hasCtrl2</key>
+					<true/>
+					<key>mainPt</key>
+					<string>{-2178.3629493713379, -290.71552276611328}</string>
+				</dict>
+				<dict>
+					<key>ctrl1</key>
+					<string>{1565.3595307218065, 371.49268980965098}</string>
+					<key>ctrl2</key>
+					<string>{3651.3870449066162, 809.14159107208252}</string>
+					<key>hasCtrl1</key>
+					<true/>
+					<key>hasCtrl2</key>
+					<true/>
+					<key>mainPt</key>
+					<string>{2178.3627692365344, 165.24874385843202}</string>
+				</dict>
+			</array>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{4356.72607421875, 581.4310302734375}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>4DAA616D-4478-4F2C-87C2-F34D40AC7EB1</string>
+			<key>zOrder</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.53174275159835815, 0.58284378051757812}</string>
+			<key>animations</key>
+			<array>
+				<dict>
+					<key>active</key>
+					<true/>
+					<key>fps</key>
+					<integer>6</integer>
+					<key>name</key>
+					<string>anim</string>
+					<key>properties</key>
+					<dict>
+						<key>Position</key>
+						<dict>
+							<key>Frames</key>
+							<array>
+								<dict>
+									<key>frameIndex</key>
+									<integer>0</integer>
+									<key>positions</key>
+									<dict>
+										<key>A8F92621-1A35-4E52-9954-059349A23729</key>
+										<string>{-2541.2737122971203, -449.48775224198505}</string>
+									</dict>
+								</dict>
+								<dict>
+									<key>frameIndex</key>
+									<integer>59</integer>
+									<key>positions</key>
+									<dict>
+										<key>A8F92621-1A35-4E52-9954-059349A23729</key>
+										<string>{-464.08082580566406, 0.99559994106402883}</string>
+									</dict>
+								</dict>
+								<dict>
+									<key>frameIndex</key>
+									<integer>134</integer>
+									<key>positions</key>
+									<dict>
+										<key>A8F92621-1A35-4E52-9954-059349A23729</key>
+										<string>{1350.2645721435547, -122.30819778079876}</string>
+									</dict>
+								</dict>
+								<dict>
+									<key>frameIndex</key>
+									<integer>209</integer>
+									<key>positions</key>
+									<dict>
+										<key>A8F92621-1A35-4E52-9954-059349A23729</key>
+										<string>{-464.08082580566406, 0.99559994106402883}</string>
+									</dict>
+								</dict>
+								<dict>
+									<key>frameIndex</key>
+									<integer>259</integer>
+									<key>positions</key>
+									<dict>
+										<key>A8F92621-1A35-4E52-9954-059349A23729</key>
+										<string>{-2541.2737122971203, -449.48775224198505}</string>
+									</dict>
+								</dict>
+							</array>
+							<key>type</key>
+							<string>LHPositionProperty</string>
+						</dict>
+					</dict>
+					<key>repetitions</key>
+					<integer>0</integer>
+					<key>totalFrames</key>
+					<integer>260</integer>
+				</dict>
+			</array>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{-2.6471601169761669, -0.70232461287810166}</string>
+			<key>imageFileName</key>
+			<string>ropeAssets.png</string>
+			<key>name</key>
+			<string>candy</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>44907358-DE0E-4DF0-B616-2879FDF66A44</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1.1162731647491455}</string>
+			<key>size</key>
+			<string>{65, 61}</string>
+			<key>spriteName</key>
+			<string>candy</string>
+			<key>spriteUUID</key>
+			<string>554683CF-2615-41EF-956A-933D6F02D016</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>A8F92621-1A35-4E52-9954-059349A23729</string>
+			<key>zOrder</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960, 640}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960, 640}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136, 640}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024, 768}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048, 1536}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+	</array>
+	<key>gameWorld</key>
+	<dict>
+		<key>1024x768</key>
+		<string>{{-2.8669495582580566, -1.2516072988510132}, {4.5240097045898438, 1.563501238822937}}</string>
+		<key>1136x640</key>
+		<string>{{-2.8669495582580566, -1.2516072988510132}, {4.5240097045898438, 1.563501238822937}}</string>
+		<key>2048x1536</key>
+		<string>{{-2.8669495582580566, -1.2516072988510132}, {4.5240097045898438, 1.563501238822937}}</string>
+		<key>960x640</key>
+		<string>{{-2.8669495582580566, -1.2516072988510132}, {4.5240097045898438, 1.563501238822937}}</string>
+		<key>general</key>
+		<string>{{-2.8669495582580566, -1.2516072988510132}, {4.5240097045898438, 1.563501238822937}}</string>
+	</dict>
+	<key>globalGravityDirection</key>
+	<string>{0, -1}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>1024x768</key>
+		<string>{{-2.7946591377258301, -1.0808767080307007}, {4.3810663223266602, 1.4407200813293457}}</string>
+		<key>1136x640</key>
+		<string>{{-2.7946591377258301, -1.0808767080307007}, {4.3810663223266602, 1.4407200813293457}}</string>
+		<key>2048x1536</key>
+		<string>{{-2.7946591377258301, -1.0808767080307007}, {4.3810663223266602, 1.4407200813293457}}</string>
+		<key>960x640</key>
+		<string>{{-2.7946591377258301, -1.0808767080307007}, {4.3810663223266602, 1.4407200813293457}}</string>
+		<key>general</key>
+		<string>{{-2.7946591377258301, -1.0808767080307007}, {4.3810663223266602, 1.4407200813293457}}</string>
+	</dict>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>44907358-DE0E-4DF0-B616-2879FDF66A44</string>
+</dict>
+</plist>

@@ -27,8 +27,18 @@ void LHNodeAnimationProtocol::setActiveAnimation(LHAnimation* animation)
     _activeAnimation = animation;
 }
 
+LHAnimation* LHNodeAnimationProtocol::getAnimationWithName(const std::string& animName)
+{
+    for(int i = 0; i < _animations->count();++i){
+        LHAnimation* anim = (LHAnimation*)_animations->getObjectAtIndex(i);
+        if(anim->name() == animName){
+            return anim;
+        }
+    }
+    return nullptr;
+}
 
-void LHNodeAnimationProtocol::createAnimationsFromDictionary(LHDictionary* dict, LHNodeAnimationProtocol* node)
+void LHNodeAnimationProtocol::createAnimationsFromDictionary(LHDictionary* dict)
 {
     if(dict->objectForKey("animations"))
     {
@@ -41,7 +51,7 @@ void LHNodeAnimationProtocol::createAnimationsFromDictionary(LHDictionary* dict,
                 _animations = new __Array();
                 _animations->init();
             }
-            LHAnimation* animation = LHAnimation::createWithDictionary(animInf, node);
+            LHAnimation* animation = LHAnimation::createWithDictionary(animInf, this);
             if(animation->isActive()){
                 _activeAnimation = animation;
             }

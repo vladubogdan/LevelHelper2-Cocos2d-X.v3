@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>0</integer>
+	<key>backgroundColor</key>
+	<string>{{1, 0.99997437000274658}, {0.99999129772186279, 1}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.8666666666666667, 0.22500000000000001}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_statue_1</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>440D1272-BD07-47EB-BFEF-86A740732589</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{105, 148}</string>
+			<key>spriteName</key>
+			<string>object_statue</string>
+			<key>spriteUUID</key>
+			<string>0DB4639A-8D34-4D83-8FBD-20753577F85A</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>4A9C4AAE-8FC3-43BB-93FE-54DF0C61C864</string>
+			<key>zOrder</key>
+			<integer>-1</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>177.50534057617188</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{0.25307324528694153, 1}, {0.95429146289825439, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.71666667064030964, 0.5}</string>
+			<key>name</key>
+			<string>UntitledTexturedShape_1</string>
+			<key>nodeType</key>
+			<string>LHTexturedShape</string>
+			<key>parentUUID</key>
+			<string>440D1272-BD07-47EB-BFEF-86A740732589</string>
+			<key>points</key>
+			<array>
+				<dict>
+					<key>point</key>
+					<string>{-48.000003814697266, 256}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-144.00000381469727, 256}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-144.00000381469727, -256}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-48.000003814697266, -256}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-48.000003814697266, -32}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{47.999996185302734, -32}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{47.999996185302734, -256}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{143.99999618530273, -256}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{143.99999618530273, 256}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{47.999996185302734, 256}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{47.999996185302734, 64}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-48.000003814697266, 64}</string>
+				</dict>
+			</array>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{288, 512}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>triangles</key>
+			<array>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, 64}</string>
+					<key>uv</key>
+					<string>{0.890625, 0.5}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, 256}</string>
+					<key>uv</key>
+					<string>{0.3046875, 0.83829116821289062}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-144.00000381469727, 256}</string>
+					<key>uv</key>
+					<string>{0.3046875, 0.16170883178710938}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, 64}</string>
+					<key>uv</key>
+					<string>{0.5955054759979248, 0.5929226279258728}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-144.00000381469727, 256}</string>
+					<key>uv</key>
+					<string>{1, 1}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-144.00000381469727, -256}</string>
+					<key>uv</key>
+					<string>{0.380952388048172, 1}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-144.00000381469727, -256}</string>
+					<key>uv</key>
+					<string>{1, 0.625}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, -256}</string>
+					<key>uv</key>
+					<string>{1, 1}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, -32}</string>
+					<key>uv</key>
+					<string>{0, 1}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, 64}</string>
+					<key>uv</key>
+					<string>{1, 0.34345245361328125}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-144.00000381469727, -256}</string>
+					<key>uv</key>
+					<string>{0, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, -32}</string>
+					<key>uv</key>
+					<string>{0.97902202606201172, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, 64}</string>
+					<key>uv</key>
+					<string>{1, 0.30961456894874573}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, -32}</string>
+					<key>uv</key>
+					<string>{1.9228968639595223e-08, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, -32}</string>
+					<key>uv</key>
+					<string>{0.96782571077346802, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, 64}</string>
+					<key>uv</key>
+					<string>{0.81829833984375, 0.25415802001953125}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-48.000003814697266, 64}</string>
+					<key>uv</key>
+					<string>{-1.9868215517249155e-08, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, -32}</string>
+					<key>uv</key>
+					<string>{0.49999997019767761, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, -32}</string>
+					<key>uv</key>
+					<string>{0.49999997019767761, 0.4375}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, -256}</string>
+					<key>uv</key>
+					<string>{-1.9868215517249155e-08, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{143.99999618530273, -256}</string>
+					<key>uv</key>
+					<string>{0.49999997019767761, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, -32}</string>
+					<key>uv</key>
+					<string>{0.375, 0.625}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{143.99999618530273, -256}</string>
+					<key>uv</key>
+					<string>{0.75, 0.4375}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{143.99999618530273, 256}</string>
+					<key>uv</key>
+					<string>{0.75, 0.625}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, 64}</string>
+					<key>uv</key>
+					<string>{0.375, 0.625}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, -32}</string>
+					<key>uv</key>
+					<string>{0.75, 0.4375}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{143.99999618530273, 256}</string>
+					<key>uv</key>
+					<string>{0.75, 0.625}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, 64}</string>
+					<key>uv</key>
+					<string>{0.33333331346511841, 0.625}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{143.99999618530273, 256}</string>
+					<key>uv</key>
+					<string>{0.66666662693023682, 0.4375}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{47.999996185302734, 256}</string>
+					<key>uv</key>
+					<string>{0.66666662693023682, 0.625}</string>
+				</dict>
+			</array>
+			<key>uuid</key>
+			<string>E586789A-0778-409C-B6D4-F32E70CB7780</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.8666666666666667, 0.80000000000000004}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_statue</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>440D1272-BD07-47EB-BFEF-86A740732589</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{105, 148}</string>
+			<key>spriteName</key>
+			<string>object_statue</string>
+			<key>spriteUUID</key>
+			<string>0DB4639A-8D34-4D83-8FBD-20753577F85A</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>BFED58DB-08C6-4D04-B710-1997C2B08620</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.21666666666666667, 0.10000000000000001}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_bananabunch</string>
+			<key>nodePhysics</key>
+			<dict>
+				<key>allowSleep</key>
+				<true/>
+				<key>bullet</key>
+				<false/>
+				<key>fixedRotation</key>
+				<false/>
+				<key>fixtureUUID</key>
+				<string>79EBD3A4-DB71-426D-8B08-528C2C330609</string>
+				<key>genericFixture</key>
+				<dict>
+					<key>category</key>
+					<integer>1</integer>
+					<key>collisionCategories</key>
+					<array>
+						<string>DEFAULT</string>
+						<string>BlueRobot</string>
+						<string>GreenRobot</string>
+						<string>PinkRobot</string>
+						<string>Category_05</string>
+						<string>Category_06</string>
+						<string>Category_07</string>
+						<string>Category_08</string>
+						<string>Category_09</string>
+						<string>Category_10</string>
+						<string>Category_11</string>
+						<string>Category_12</string>
+						<string>Category_13</string>
+						<string>Category_14</string>
+						<string>Category_15</string>
+						<string>Category_16</string>
+					</array>
+					<key>density</key>
+					<real>0.10000000149011612</real>
+					<key>fixtureID</key>
+					<integer>0</integer>
+					<key>friction</key>
+					<real>0.20000000298023224</real>
+					<key>ignoreCategories</key>
+					<array/>
+					<key>mask</key>
+					<integer>65535</integer>
+					<key>name</key>
+					<string>GenericFixture</string>
+					<key>restitution</key>
+					<real>0.0</real>
+					<key>sensor</key>
+					<false/>
+				</dict>
+				<key>gravityScale</key>
+				<real>1</real>
+				<key>shape</key>
+				<integer>5</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>440D1272-BD07-47EB-BFEF-86A740732589</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{88, 65}</string>
+			<key>spriteName</key>
+			<string>object_bananabunch</string>
+			<key>spriteUUID</key>
+			<string>60F9EAC9-FDD1-4EAB-811D-7A0EF562B591</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>852C1EAB-2D6F-408D-B1F3-127AB0649809</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.31666666666666665, 0.47499999999999998}</string>
+			<key>name</key>
+			<string>UntitledTexturedShape</string>
+			<key>nodePhysics</key>
+			<dict>
+				<key>allowSleep</key>
+				<true/>
+				<key>bullet</key>
+				<false/>
+				<key>fixedRotation</key>
+				<false/>
+				<key>genericFixture</key>
+				<dict>
+					<key>category</key>
+					<integer>1</integer>
+					<key>collisionCategories</key>
+					<array>
+						<string>DEFAULT</string>
+						<string>BlueRobot</string>
+						<string>GreenRobot</string>
+						<string>PinkRobot</string>
+						<string>Category_05</string>
+						<string>Category_06</string>
+						<string>Category_07</string>
+						<string>Category_08</string>
+						<string>Category_09</string>
+						<string>Category_10</string>
+						<string>Category_11</string>
+						<string>Category_12</string>
+						<string>Category_13</string>
+						<string>Category_14</string>
+						<string>Category_15</string>
+						<string>Category_16</string>
+					</array>
+					<key>density</key>
+					<real>0.10000000149011612</real>
+					<key>fixtureID</key>
+					<integer>0</integer>
+					<key>friction</key>
+					<real>0.20000000298023224</real>
+					<key>ignoreCategories</key>
+					<array/>
+					<key>mask</key>
+					<integer>65535</integer>
+					<key>name</key>
+					<string>GenericFixture</string>
+					<key>restitution</key>
+					<real>0.0</real>
+					<key>sensor</key>
+					<false/>
+				</dict>
+				<key>gravityScale</key>
+				<real>1</real>
+				<key>shape</key>
+				<integer>2</integer>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>nodeType</key>
+			<string>LHTexturedShape</string>
+			<key>parentUUID</key>
+			<string>440D1272-BD07-47EB-BFEF-86A740732589</string>
+			<key>points</key>
+			<array>
+				<dict>
+					<key>point</key>
+					<string>{160, 144}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{160, 240}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-160, 240}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-160, -240}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-64, -176}</string>
+				</dict>
+				<dict>
+					<key>point</key>
+					<string>{-64, 144}</string>
+				</dict>
+			</array>
+			<key>relativeImagePath</key>
+			<string>/DEMO_INDIVIDUAL_IMAGES_EXAMPLE/tile.png</string>
+			<key>rotation</key>
+			<real>347.78518676757812</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{320, 480}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>triangles</key>
+			<array>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-160, 240}</string>
+					<key>uv</key>
+					<string>{0, 1}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-160, -240}</string>
+					<key>uv</key>
+					<string>{0, 0}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-64, -176}</string>
+					<key>uv</key>
+					<string>{0.30000001192092896, 0.13333334028720856}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-160, 240}</string>
+					<key>uv</key>
+					<string>{0, 1}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-64, -176}</string>
+					<key>uv</key>
+					<string>{0.30000001192092896, 0.13333334028720856}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-64, 144}</string>
+					<key>uv</key>
+					<string>{0.30000001192092896, 0.80000001192092896}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{160, 240}</string>
+					<key>uv</key>
+					<string>{1, 1}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-160, 240}</string>
+					<key>uv</key>
+					<string>{0, 1}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-64, 144}</string>
+					<key>uv</key>
+					<string>{0.30000001192092896, 0.80000001192092896}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{-64, 144}</string>
+					<key>uv</key>
+					<string>{0.30000001192092896, 0.80000001192092896}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{160, 144}</string>
+					<key>uv</key>
+					<string>{1, 0.80000001192092896}</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>color</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>point</key>
+					<string>{160, 240}</string>
+					<key>uv</key>
+					<string>{1, 1}</string>
+				</dict>
+			</array>
+			<key>uuid</key>
+			<string>3B43E337-DC89-420C-AAA9-50C53950A627</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960, 640}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960, 640}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136, 640}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024, 768}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048, 1536}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+	</array>
+	<key>globalGravityDirection</key>
+	<string>{0, -1}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>1024x768</key>
+		<string>{{0.05000000074505806, 0.02500000037252903}, {0.91666668653488159, 0.92500001192092896}}</string>
+		<key>1136x640</key>
+		<string>{{0.05000000074505806, 0.02500000037252903}, {0.91666668653488159, 0.92500001192092896}}</string>
+		<key>2048x1536</key>
+		<string>{{0.05000000074505806, 0.02500000037252903}, {0.91666668653488159, 0.92500001192092896}}</string>
+		<key>960x640</key>
+		<string>{{0.05000000074505806, 0.02500000037252903}, {0.91666668653488159, 0.92500001192092896}}</string>
+		<key>general</key>
+		<string>{{0.05000000074505806, 0.02500000037252903}, {0.91666668653488159, 0.92500001192092896}}</string>
+	</dict>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>79EBD3A4-DB71-426D-8B08-528C2C330609</key>
+		<array>
+			<array>
+				<string>{2.75, -10}</string>
+				<string>{25.75, -26.5}</string>
+				<string>{30.75, -25.5}</string>
+				<string>{31.25, -16.5}</string>
+				<string>{30.25, 17.5}</string>
+				<string>{19.25, 24}</string>
+				<string>{6.25, 27}</string>
+			</array>
+			<array>
+				<string>{31.25, -16.5}</string>
+				<string>{36.75, -15}</string>
+				<string>{38.25, -11.5}</string>
+				<string>{39.75, 3}</string>
+				<string>{37.25, 9}</string>
+				<string>{30.25, 17.5}</string>
+			</array>
+			<array>
+				<string>{-24.25, -23}</string>
+				<string>{-23.75, -14}</string>
+				<string>{-33.75, -11}</string>
+			</array>
+			<array>
+				<string>{-24.25, -23}</string>
+				<string>{-33.75, -11}</string>
+				<string>{-36.75, -15}</string>
+			</array>
+			<array>
+				<string>{-24.25, -23}</string>
+				<string>{-36.75, -15}</string>
+				<string>{-36.75, -21}</string>
+			</array>
+			<array>
+				<string>{-29.75, -27}</string>
+				<string>{-24.25, -23}</string>
+				<string>{-36.75, -21}</string>
+			</array>
+			<array>
+				<string>{-29.75, -27}</string>
+				<string>{-36.75, -21}</string>
+				<string>{-35.75, -24}</string>
+			</array>
+			<array>
+				<string>{-29.75, -27}</string>
+				<string>{-35.75, -24}</string>
+				<string>{-33.75, -26.5}</string>
+			</array>
+			<array>
+				<string>{-29.75, -27}</string>
+				<string>{-33.75, -26.5}</string>
+				<string>{-33.25, -27}</string>
+			</array>
+			<array>
+				<string>{-33.25, 10.5}</string>
+				<string>{-36.25, 2.5}</string>
+				<string>{-33.75, -11}</string>
+				<string>{-23.75, -14}</string>
+				<string>{-16.25, -9.5}</string>
+				<string>{-25.75, 19}</string>
+			</array>
+			<array>
+				<string>{-17.25, 24}</string>
+				<string>{-25.75, 19}</string>
+				<string>{-16.25, -9.5}</string>
+				<string>{-10.75, -8}</string>
+				<string>{-11.25, 26}</string>
+			</array>
+			<array>
+				<string>{-5.25, 27}</string>
+				<string>{-11.25, 26}</string>
+				<string>{-10.75, -8}</string>
+				<string>{-4.75, -8}</string>
+				<string>{6.25, 27}</string>
+			</array>
+			<array>
+				<string>{6.25, 27}</string>
+				<string>{-4.75, -8}</string>
+				<string>{2.75, -10}</string>
+			</array>
+		</array>
+	</dict>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>440D1272-BD07-47EB-BFEF-86A740732589</string>
+</dict>
+</plist>

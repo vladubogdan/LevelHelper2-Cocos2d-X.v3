@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>0</integer>
+	<key>backgroundColor</key>
+	<string>{{1, 0.99997437000274658}, {0.99999129772186279, 1}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.18237629677945127, 0.75218872931873193}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_banana</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>B8B25168-BBFD-4108-BEC8-F35296433B84</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{92, 64}</string>
+			<key>spriteName</key>
+			<string>object_banana</string>
+			<key>spriteUUID</key>
+			<string>FAE55543-0B9F-4B04-A86D-BAB025D0B01C</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+				<string>FRUIT</string>
+				<string>BANANA</string>
+			</array>
+			<key>uuid</key>
+			<string>3B48DA41-71F7-4E06-A08E-E2AA76544A29</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.17394367943634279, 0.48766235650837186}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_bananabunch</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>B8B25168-BBFD-4108-BEC8-F35296433B84</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{88, 65}</string>
+			<key>spriteName</key>
+			<string>object_bananabunch</string>
+			<key>spriteUUID</key>
+			<string>60F9EAC9-FDD1-4EAB-811D-7A0EF562B591</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+				<string>FRUIT</string>
+				<string>BANANA</string>
+			</array>
+			<key>uuid</key>
+			<string>B6CF1A67-86BB-4C6E-95EE-D0046F4277CE</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.31162271885162529, 0.61599121660110545}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_pineapple</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>B8B25168-BBFD-4108-BEC8-F35296433B84</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{61, 134}</string>
+			<key>spriteName</key>
+			<string>object_pineapple</string>
+			<key>spriteUUID</key>
+			<string>072F5BA2-FB8C-4349-BB62-DFB06F1A6E47</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+				<string>FRUIT</string>
+				<string>PINEAPPLE</string>
+			</array>
+			<key>uuid</key>
+			<string>06732B9C-592F-4F17-BF82-EDC6A3597457</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.58270182628960654, 0.52237305050948635}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_canteen</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>B8B25168-BBFD-4108-BEC8-F35296433B84</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{60, 78}</string>
+			<key>spriteName</key>
+			<string>object_canteen</string>
+			<key>spriteUUID</key>
+			<string>C3F38C64-C80F-4AC6-BA50-91147927289B</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+				<string>OBJECT</string>
+			</array>
+			<key>uuid</key>
+			<string>5A4410D5-D809-41AE-B8DD-BA146F515CF7</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.72719320311928948, 0.53179932024504528}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_backpack</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>B8B25168-BBFD-4108-BEC8-F35296433B84</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{90, 106}</string>
+			<key>spriteName</key>
+			<string>object_backpack</string>
+			<key>spriteUUID</key>
+			<string>79AD2F07-C0BE-4B5A-BB3F-9FAC5F80A471</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+				<string>OBJECT</string>
+			</array>
+			<key>uuid</key>
+			<string>5419C0F1-E7F8-415C-88FD-BEEA7E511D22</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.66648193878257489, 0.81253296890790805}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_hat</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>B8B25168-BBFD-4108-BEC8-F35296433B84</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{122, 75}</string>
+			<key>spriteName</key>
+			<string>object_hat</string>
+			<key>spriteUUID</key>
+			<string>A0CC7494-203E-4C79-A14A-ECA50F1FBA3D</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+				<string>OBJECT</string>
+				<string>HAT</string>
+			</array>
+			<key>uuid</key>
+			<string>41D4B717-6C6D-4AEE-BFF3-FA200FBC29FE</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960, 640}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960, 640}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136, 640}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024, 768}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048, 1536}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+	</array>
+	<key>globalGravityDirection</key>
+	<string>{0, -1}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>B8B25168-BBFD-4108-BEC8-F35296433B84</string>
+</dict>
+</plist>

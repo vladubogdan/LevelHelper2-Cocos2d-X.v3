@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>0</integer>
+	<key>backgroundColor</key>
+	<string>{{1, 0.99997437000274658}, {0.99999129772186279, 1}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.38963785726130784, 0.22643920620466815}</string>
+			<key>imageFileName</key>
+			<string>ropeAssets.png</string>
+			<key>name</key>
+			<string>candy</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>E13369B1-6F55-4B37-8FEB-CCB0EAFC3F97</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{65, 61}</string>
+			<key>spriteName</key>
+			<string>candy</string>
+			<key>spriteUUID</key>
+			<string>554683CF-2615-41EF-956A-933D6F02D016</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>1BE321A2-7115-4153-9949-13E3A4A3F270</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.69122477786052816, 0.2510656715821824}</string>
+			<key>imageFileName</key>
+			<string>robots.png</string>
+			<key>name</key>
+			<string>blueRobot</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>E13369B1-6F55-4B37-8FEB-CCB0EAFC3F97</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{130, 150}</string>
+			<key>spriteName</key>
+			<string>blueRobot</string>
+			<key>spriteUUID</key>
+			<string>2F3A5F3F-DA9C-471B-930F-35601F2AE875</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>78814BE7-7D4D-4158-864A-D701EB156646</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.24487792573830422, 0.35400268553203207}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_hat</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>E13369B1-6F55-4B37-8FEB-CCB0EAFC3F97</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{122, 75}</string>
+			<key>spriteName</key>
+			<string>object_hat</string>
+			<key>spriteUUID</key>
+			<string>A0CC7494-203E-4C79-A14A-ECA50F1FBA3D</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>A48FD446-AE33-4C4B-AA56-8F5B6B84CAF0</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.51464111517901379, 0.26137817180569983}</string>
+			<key>imageFileName</key>
+			<string>objects.png</string>
+			<key>name</key>
+			<string>object_bananabunch</string>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>E13369B1-6F55-4B37-8FEB-CCB0EAFC3F97</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{88, 65}</string>
+			<key>spriteName</key>
+			<string>object_bananabunch</string>
+			<key>spriteUUID</key>
+			<string>60F9EAC9-FDD1-4EAB-811D-7A0EF562B591</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>1999FF4F-A086-46E7-8546-B7908F33D613</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>178.5</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{0.22352941334247589, 0.34509804844856262}, {0.47450980544090271, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0.52532107035319009, 0.730255126953125}</string>
+			<key>height</key>
+			<real>60</real>
+			<key>name</key>
+			<string>UntitledWaterArea</string>
+			<key>nodeType</key>
+			<string>LHWaves</string>
+			<key>numLines</key>
+			<real>100</real>
+			<key>parentUUID</key>
+			<string>E13369B1-6F55-4B37-8FEB-CCB0EAFC3F97</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{13.377304077148438, 4.3835153579711914}</string>
+			<key>size</key>
+			<string>{60, 60}</string>
+			<key>splash</key>
+			<true/>
+			<key>splashH</key>
+			<real>9.1000003814697266</real>
+			<key>splashT</key>
+			<real>30</real>
+			<key>splashW</key>
+			<real>20</real>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>turbulence</key>
+			<true/>
+			<key>turbulenceH</key>
+			<real>4.6999998092651367</real>
+			<key>turbulenceL</key>
+			<real>3.7999999523162842</real>
+			<key>turbulenceV</key>
+			<real>0.40000000596046448</real>
+			<key>turbulenceVelocity</key>
+			<real>0.0</real>
+			<key>uuid</key>
+			<string>89A2AA4E-3199-4104-BC4F-6A7B7E8247EF</string>
+			<key>waterDensity</key>
+			<real>1.8999999761581421</real>
+			<key>width</key>
+			<real>60</real>
+			<key>zOrder</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960, 640}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960, 640}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136, 640}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024, 768}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048, 1536}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+	</array>
+	<key>globalGravityDirection</key>
+	<string>{0, -1}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>960x640</key>
+		<string>{{0.02325764112174511, 0.035402826964855194}, {0.95187419652938843, 0.93697386980056763}}</string>
+		<key>general</key>
+		<string>{{0.02325764112174511, 0.035402826964855194}, {0.95187419652938843, 0.93697386980056763}}</string>
+	</dict>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>tracedFixtures</key>
+	<dict/>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>E13369B1-6F55-4B37-8FEB-CCB0EAFC3F97</string>
+</dict>
+</plist>

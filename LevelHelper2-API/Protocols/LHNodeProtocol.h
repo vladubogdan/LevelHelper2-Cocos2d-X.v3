@@ -12,6 +12,10 @@
 #include "cocos2d.h"
 #include "LHUserPropertyProtocol.h"
 
+#if LH_USE_BOX2D
+class b2Body;
+#endif
+
 class LHDictionary;
 class LHArray;
 class LHScene;
@@ -27,7 +31,7 @@ using namespace cocos2d;
 
 class LHNodeProtocol
 {
-    public:
+public:
 
     LHNodeProtocol();
     virtual ~LHNodeProtocol();
@@ -56,7 +60,19 @@ class LHNodeProtocol
     virtual LHUserPropertyProtocol* getUserProperty(){return userProperty;}
     
     virtual bool lateLoading(){return true;}
-    
+
+    /**
+     Returns a node with the specified unique name or nil if that node is not found in the children hierarchy.
+     @param name The unique name of the node.
+     @return A node or or NULL.
+     @code
+        //make sure you cast to the right type or else you may get partial objects which could cause problems
+        //look inside LevelHelper scene navigator to see what kind of type a node is
+        LHNode* myNode = (LHNode*)this->getChildNodeWithName("myNodeName");
+     @endcode
+     */
+    virtual Node* getChildNodeWithName(const std::string& name);
+
     /**
      Returns a node with the specified unique identifier or nil if that node is not found in the children hierarchy.
      @param uuid The unique idenfier of the node.
@@ -65,18 +81,28 @@ class LHNodeProtocol
     virtual Node* getChildNodeWithUUID(const std::string& uuid);
 
     /**
+     Returns all children nodes that have the specified tag values.
+     @param tagValues An vector containing tag names.
+     @param any Specify if all or just one tag value of the node needs to be in common with the passed ones.
+     @return An array of nodes.
+     */
+    virtual __Array* getChildrenWithTags(const std::vector<std::string>& tagValues, bool any=true);
+    
+
+    
+    /**
      Returns all children nodes that are of specified class type. The type must be compatible with Cocos2d-X __Array type. (must be of Ref type)
      @param type A "Class" type.
      @return An array with all the found nodes of the specified class.
      * @code
      * //this is how you should use this function
-     * __Array* children = myObject->getChildrenOfType<Node*>(NULL);
+     * __Array* children = myObject->getChildrenOfType<Node*>();
      * @endcode
      
      */
     
     template<typename T>
-    __Array* getChildrenOfType(T value)
+    __Array* getChildrenOfType(T value = nullptr)
     {
         Node* node = dynamic_cast<Node*>(this);
         
@@ -102,39 +128,43 @@ class LHNodeProtocol
 
     
     virtual bool isScene(){return false;}
+    virtual bool isBackUINode(){return false;}
+    virtual bool isGameWorldNode(){return false;}
+    virtual bool isUINode(){return false;}
     virtual bool isSprite(){return false;}
+    virtual bool isAsset(){return false;}
     virtual bool isNode(){return false;}
     virtual bool isBezier(){return false;}
     virtual bool isShape(){return false;}
     virtual bool isJoint(){return false;}
+    virtual bool isCamera(){return false;}
+    virtual bool isParallax(){return false;}
+    virtual bool isParallaxLayer(){return false;}
+    virtual bool isRopeJointNode(){return false;}
+    virtual bool isWater(){return false;}
+
     
-    virtual void loadUserPropertyWithDictionary(LHDictionary* dict);
-    virtual void loadGenericInfoFromDictionary(LHDictionary* dict);
-    virtual void loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene);
+    
+    void loadUserPropertyWithDictionary(LHDictionary* dict);
+    void loadGenericInfoFromDictionary(LHDictionary* dict);
+    void loadTransformationInfoFromDictionary(LHDictionary* dict);//should always be called after node is added in the parent
+
+    void loadChildrenFromDictionary(LHDictionary* dict);
+
+    static Point positionForNode(Node* node, Point unitPos);
+    static Node* createLHNodeWithDictionary(LHDictionary* childInfo, Node* prnt);
     
     std::string name;
     std::string uuid;
     std::vector<std::string>tags;
     LHUserPropertyProtocol* userProperty;
+    
+    /*
+     Get the Node* object from a LHNodeProtocol* object. Helper function in order to not deal with casts.
+     */
+    static Node* LHGetNode(LHNodeProtocol* prot);
 };
 
+#define LH_GET_NODE_FROM_NODE_PROTOCOL LHNodeProtocol::LHGetNode
+
 #endif //__LEVELHELPER_API_NODE_PROTOCOL_H__
-
-//@optional
-////////////////////////////////////////////////////////////////////////////////
-
-/**
- Returns a node with the specified unique name or nil if that node is not found in the children hierarchy.
- @param name The unique name of the node.
- @return A node or or nil.
- */
-//-(CCNode <LHNodeProtocol>*)childNodeWithName:(NSString*)name;
-
-/**
- Returns all children nodes that have the specified tag values. 
- @param tagValues An array containing tag names. Array of NSString's.
- @param any Specify if all or just one tag value of the node needs to be in common with the passed ones.
- @return An array of nodes.
- */
-//-(NSMutableArray*)childrenWithTags:(NSArray*)tagValues containsAny:(BOOL)any;
-

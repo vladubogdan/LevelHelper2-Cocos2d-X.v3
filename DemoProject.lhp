@@ -18,7 +18,7 @@
 			<key>SuffixName</key>
 			<string>hd</string>
 			<key>color</key>
-			<string>{{0.29836550354957581, 0}, {0.045973420143127441, 1}}</string>
+			<string>{{0.039420325309038162, 0}, {0.040748715400695801, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -32,7 +32,7 @@
 			<key>SuffixName</key>
 			<string>568</string>
 			<key>color</key>
-			<string>{{1, 1}, {0.078236281871795654, 1}}</string>
+			<string>{{1, 1}, {0.078244850039482117, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -46,7 +46,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.26162603497505188, 0}, {0.9053681492805481, 1}}</string>
+			<string>{{0.039420317858457565, 0}, {0.040748715400695801, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -60,19 +60,51 @@
 			<key>SuffixName</key>
 			<string>ipadhd</string>
 			<key>color</key>
-			<string>{{0.26162603497505188, 0}, {0.9053681492805481, 1}}</string>
+			<string>{{0.039420317858457565, 0}, {0.040748715400695801, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
 	<string>Cocos2d-X</string>
 	<key>options</key>
 	<dict>
+		<key>UserPropertiesGenerationPath</key>
+		<string>DEMO_USER_PROPERTIES_GENERATION_FOLDER</string>
 		<key>name</key>
 		<string>DemoProject</string>
 		<key>publishOptions</key>
 		<dict>
 			<key>ScenesOptions</key>
 			<dict>
+				<key>assetDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>beziersDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>cameraDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>cameraFollowDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>characterAnimationDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>introductionDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
 				<key>level01.lhs</key>
 				<dict>
 					<key>publish</key>
@@ -89,6 +121,66 @@
 					<true/>
 				</dict>
 				<key>level03-physics.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level04-camera.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level05-shape.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level06-assets.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level07-parallax.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level08-ropeJoint.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level09-customProperties.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level09-tags.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>level10-water.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>parallaxDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>ropeJointDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>shapesDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>tst.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

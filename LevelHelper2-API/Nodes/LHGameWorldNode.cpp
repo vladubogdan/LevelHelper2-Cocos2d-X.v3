@@ -27,8 +27,6 @@ LHGameWorldNode::LHGameWorldNode()
 
 LHGameWorldNode::~LHGameWorldNode()
 {
-    CCLOG("DEALLOC GAME WORLD NODE");
-    
 #if LH_USE_BOX2D
     //we need to first destroy all children and then destroy box2d world
     this->removeAllChildren();

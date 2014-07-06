@@ -9,6 +9,7 @@
 #include "LHSceneRopeJointDemo.h"
 #include "LHSceneShapesDemo.h"
 #include "LHScenePhysicsTransformationsDemo.h"
+#include "LHSceneBeziersDemo.h"
 
 
 LHSceneDemo* LHSceneDemo::create()
@@ -57,6 +58,10 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
 
     sceneNames.push_back("LHSceneShapesDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneShapesDemo::create);
+
+    sceneNames.push_back("LHSceneBeziersDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneBeziersDemo::create);
+
     
     sceneNames.push_back("LHScenePhysicsTransformationsDemo");
     sceneCreators.push_back((createFuncPtrType)&LHScenePhysicsTransformationsDemo::create);

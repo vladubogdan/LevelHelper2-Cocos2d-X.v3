@@ -569,7 +569,12 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
 
 void LHPhysicsProtocol::removeBody()
 {
-    
+    Node* node = LH_GET_NODE_FROM_PHYSICS_PROTOCOL(this);
+    if(!node)return;
+    PhysicsBody* body = node->getPhysicsBody();
+    if(body){
+        body->removeFromWorld();
+    }
 }
 
 void LHPhysicsProtocol::updatePhysicsTransform(){

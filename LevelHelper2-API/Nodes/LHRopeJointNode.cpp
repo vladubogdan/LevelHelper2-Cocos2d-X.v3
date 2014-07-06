@@ -113,12 +113,12 @@ bool LHRopeJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
-        prnt->addChild(this);
         
         this->loadGenericInfoFromDictionary(dict);
-        
         this->loadTransformationInfoFromDictionary(dict);
-        
+
+        prnt->addChild(this);
+
         this->loadJointInfoFromDictionary(dict);
         
         
@@ -135,6 +135,7 @@ bool LHRopeJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
             this->addChild(shape);
             ropeShape = shape;
             ropeShape->setLocalZOrder(1);
+            ropeShape->setPositionZ(1);
             
             if(dict->objectForKey("relativeImagePath") && dict->boolForKey("useTexture"))
             {

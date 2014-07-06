@@ -46,7 +46,7 @@ bool LHScenePhysicsTransformationsDemo::initWithContentOfFile(const std::string&
 #if LH_USE_BOX2D
     ttf->setString("PHYSICS TRANSFORMATIONS DEMO\nLevelHelper API takes care of setting the correct transformations when using physics.\nIt handles transformations in both directions from  Box2d to Cocos2d-X and from Cocos2d-X to Box2d.\nClick on a node to transform it with a random scale and rotation.");
 #else
-    ttf->setString("PHYSICS TRANSFORMATIONS DEMO\nCocos2d-X handles the transformations from the physics engine to its own coordinate system.\nClick on a node to transform it with a random scale and rotation.\nNotice that scaling currently does not work.\nIn Xcode, switch to the Box2d target for complete transformations using the LevelHelper API.");
+    ttf->setString("PHYSICS TRANSFORMATIONS DEMO\nWhen using default Cocos2d-X physics engine (Chipmunk),\nCocos2d-X handles the transformations from the physics engine to its own coordinate system.\nClick on a node to transform it with a random scale and rotation.\nNotice that scaling currently does not work.\nIn Xcode, switch to the Box2d target for complete transformations using the LevelHelper API.");
 #endif
     
 #if LH_DEBUG == 0

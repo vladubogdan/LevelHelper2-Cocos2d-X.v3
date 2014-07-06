@@ -42,7 +42,7 @@ bool LHSceneIntroductionDemo::initWithContentOfFile(const std::string& plistLeve
     Size size = this->getContentSize();
     
     Label* ttf = Label::create();
-    ttf->setString("INTRODUCTION\nUse the Previous and Next buttons to toggle between demos.\nUse the Restart button to start the current demo again.\nInvestigate each demo source file and LevelHelper document file for more info on how it was done.\nYou can find all scene files in the DEMO_DOCUMENTS\\levels folder.\nYou can find all source files in the DemoExamples folder located under Classes in Xcode.\nFor acurate FPS count use a real device.\nGo to AppDelegate.cpp to set your own starting scene.");
+    ttf->setString("INTRODUCTION\nUse the Previous and Next buttons to toggle between demos.\nUse the Restart button to start the current demo again.\nInvestigate each demo source file and LevelHelper document file for more info on how it was done.\nYou can find all scene files in the DEMO_DOCUMENTS\\levels folder.\nYou can find all source files in the DemoExamples folder located under Classes in Xcode.\nFor acurate FPS count use a real device and disable debug drawing in LHConfig.h.\nGo to AppDelegate.cpp to set your own starting scene.");
     
     ttf->setTextColor(Color4B::BLACK);
     ttf->setHorizontalAlignment(TextHAlignment::CENTER);

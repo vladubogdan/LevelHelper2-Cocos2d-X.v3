@@ -54,9 +54,6 @@ LHScene::LHScene()
 
 LHScene::~LHScene()
 {
-    CCLOG("SCENE DEALLOC %p", this);
-    
-    
     for (size_t i = 0; i < devices.size(); ++i)
     {
         LHDevice* dev = devices[i];
@@ -161,8 +158,6 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
             _tracedFixtures->retain();
         }
 
-        CCLOG("CREATE SCENE %p..................................................",this);
-        
         //load background color
         Color3B backgroundClr = dict->colorForKey("backgroundColor");
         glClearColor(backgroundClr.r, backgroundClr.g, backgroundClr.b, 1.0f);

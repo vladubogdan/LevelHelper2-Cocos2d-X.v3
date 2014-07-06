@@ -42,7 +42,7 @@ bool LHSceneAssetDemo::initWithContentOfFile(const std::string& plistLevelFile)
     Size size = this->getContentSize();
     
     Label* ttf = Label::create();
-    ttf->setString("ASSETS DEMO\nAssets are special objects that when edited they will change\nto the new edited state everywhere they are used in your project.\n\nClick to create a new officer (asset) of a random scale and rotation.");
+    ttf->setString("ASSETS DEMO\nAssets are special objects that when edited they will change\nto the new edited state everywhere they are used in your project.\nClick to create a new officer (asset) of a random scale and rotation.");
     
     ttf->setTextColor(Color4B::BLACK);
     ttf->setHorizontalAlignment(TextHAlignment::CENTER);
@@ -57,9 +57,6 @@ bool LHSceneAssetDemo::initWithContentOfFile(const std::string& plistLevelFile)
 bool LHSceneAssetDemo::onTouchBegan(Touch* touch, Event* event)
 {
     Point location = touch->getLocation();
-    
-    CCLOG("LOCATION %f %f", location.x, location.y);
-    
     
     LHAsset* asset = LHAsset::createWithName("myNewAsset",
                                              "OfficerAsset.lhasset",

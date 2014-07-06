@@ -271,7 +271,7 @@ void LHNodeProtocol::loadGenericInfoFromDictionary(LHDictionary* dict){
     }
     
     if(dict->objectForKey("zOrder")){
-        node->setZOrder(dict->floatForKey("zOrder"));
+        node->setLocalZOrder(dict->intForKey("zOrder"));
     }
     
     if(dict->objectForKey("scale")){

@@ -18,7 +18,6 @@
 		1AC6FB31180E99EB004C840B /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB09180E9839004C840B /* libcocos2dx-extensions iOS.a */; };
 		1AC6FB32180E99EB004C840B /* libCocosDenshion iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB0F180E9839004C840B /* libCocosDenshion iOS.a */; };
 		1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
-		1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B916D35E4900DB1158 /* CloseNormal.png */; };
 		1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
 		1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */; };
@@ -36,7 +35,6 @@
 		5087E75417EB910900C73F5D /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
 		5087E75517EB910900C73F5D /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */; };
 		5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
-		5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5087E76517EB910900C73F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		5087E76717EB910900C73F5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -138,10 +136,6 @@
 		6E0D5A41195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0D5A3F195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		6E0D5A45195061D00036E940 /* DemoCustomClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A43195061D00036E940 /* DemoCustomClass.cpp */; };
 		6E0D5A46195061D00036E940 /* DemoCustomClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A43195061D00036E940 /* DemoCustomClass.cpp */; };
-		6E0D5A4F195061D60036E940 /* LHSceneCutRope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A47195061D60036E940 /* LHSceneCutRope.cpp */; };
-		6E0D5A50195061D60036E940 /* LHSceneCutRope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A47195061D60036E940 /* LHSceneCutRope.cpp */; };
-		6E0D5A51195061D60036E940 /* LHSceneSubclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A49195061D60036E940 /* LHSceneSubclass.cpp */; };
-		6E0D5A52195061D60036E940 /* LHSceneSubclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A49195061D60036E940 /* LHSceneSubclass.cpp */; };
 		6E0D5A53195061D60036E940 /* LHSceneTags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */; };
 		6E0D5A54195061D60036E940 /* LHSceneTags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */; };
 		6E0D5A55195061D60036E940 /* LHSceneUserProp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A4D195061D60036E940 /* LHSceneUserProp.cpp */; };
@@ -232,16 +226,13 @@
 		6E7916B91964186600E68E06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
 		6E7916BA1964186600E68E06 /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59D9195061900036E940 /* LHRopeJointNode.cpp */; };
 		6E7916BB1964186600E68E06 /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59AF195061900036E940 /* LHAnimationProperty.cpp */; };
-		6E7916BC1964186600E68E06 /* LHSceneSubclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A49195061D60036E940 /* LHSceneSubclass.cpp */; };
 		6E7916BD1964186600E68E06 /* DemoCustomClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A43195061D00036E940 /* DemoCustomClass.cpp */; };
-		6E7916BE1964186600E68E06 /* LHSceneCutRope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A47195061D60036E940 /* LHSceneCutRope.cpp */; };
 		6E7916BF1964186600E68E06 /* LHCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59CF195061900036E940 /* LHCamera.cpp */; };
 		6E7916C01964186600E68E06 /* LHGameWorldNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7916631964065C00E68E06 /* LHGameWorldNode.cpp */; };
 		6E7916C11964186600E68E06 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59EF195061900036E940 /* LHUtils.cpp */; };
 		6E7916C21964186600E68E06 /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59D1195061900036E940 /* LHDrawNode.cpp */; };
 		6E7916C31964186600E68E06 /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59B5195061900036E940 /* LHChildrenPositionsProperty.cpp */; };
 		6E7916C41964186600E68E06 /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59AC195061900036E940 /* LHSpriteFrame.cpp */; };
-		6E7916C51964186600E68E06 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		6E7916C61964186600E68E06 /* LHSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59DD195061900036E940 /* LHSprite.cpp */; };
 		6E7916C71964186600E68E06 /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59B9195061900036E940 /* LHChildrenScalesProperty.cpp */; };
 		6E7916C81964186600E68E06 /* LHSceneCameraFollowDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E79166D1964159D00E68E06 /* LHSceneCameraFollowDemo.cpp */; };
@@ -470,8 +461,6 @@
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		1AFAF8B416D35DE700DB1158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
-		1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
-		1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		1AFAF8B916D35E4900DB1158 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -590,10 +579,6 @@
 		6E0D5A3F195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
 		6E0D5A43195061D00036E940 /* DemoCustomClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoCustomClass.cpp; sourceTree = "<group>"; };
 		6E0D5A44195061D00036E940 /* DemoCustomClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCustomClass.h; sourceTree = "<group>"; };
-		6E0D5A47195061D60036E940 /* LHSceneCutRope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneCutRope.cpp; path = ../Classes/LHSceneCutRope.cpp; sourceTree = "<group>"; };
-		6E0D5A48195061D60036E940 /* LHSceneCutRope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneCutRope.h; path = ../Classes/LHSceneCutRope.h; sourceTree = "<group>"; };
-		6E0D5A49195061D60036E940 /* LHSceneSubclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneSubclass.cpp; path = ../Classes/LHSceneSubclass.cpp; sourceTree = "<group>"; };
-		6E0D5A4A195061D60036E940 /* LHSceneSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneSubclass.h; path = ../Classes/LHSceneSubclass.h; sourceTree = "<group>"; };
 		6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneTags.cpp; path = ../Classes/LHSceneTags.cpp; sourceTree = "<group>"; };
 		6E0D5A4C195061D60036E940 /* LHSceneTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneTags.h; path = ../Classes/LHSceneTags.h; sourceTree = "<group>"; };
 		6E0D5A4D195061D60036E940 /* LHSceneUserProp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneUserProp.cpp; path = ../Classes/LHSceneUserProp.cpp; sourceTree = "<group>"; };
@@ -736,12 +721,6 @@
 				6E0D5A42195061D00036E940 /* DEMO_USER_PROPERTIES_GENERATION_FOLDER */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
-				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
-				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
-				6E0D5A47195061D60036E940 /* LHSceneCutRope.cpp */,
-				6E0D5A48195061D60036E940 /* LHSceneCutRope.h */,
-				6E0D5A49195061D60036E940 /* LHSceneSubclass.cpp */,
-				6E0D5A4A195061D60036E940 /* LHSceneSubclass.h */,
 				6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */,
 				6E0D5A4C195061D60036E940 /* LHSceneTags.h */,
 				6E0D5A4D195061D60036E940 /* LHSceneUserProp.cpp */,
@@ -1367,16 +1346,13 @@
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				6E0D5A25195061900036E940 /* LHRopeJointNode.cpp in Sources */,
 				6E0D59FD195061900036E940 /* LHAnimationProperty.cpp in Sources */,
-				6E0D5A51195061D60036E940 /* LHSceneSubclass.cpp in Sources */,
 				6E0D5A45195061D00036E940 /* DemoCustomClass.cpp in Sources */,
-				6E0D5A4F195061D60036E940 /* LHSceneCutRope.cpp in Sources */,
 				6E0D5A1B195061900036E940 /* LHCamera.cpp in Sources */,
 				6E7916691964065C00E68E06 /* LHGameWorldNode.cpp in Sources */,
 				6E0D5A35195061900036E940 /* LHUtils.cpp in Sources */,
 				6E0D5A1D195061900036E940 /* LHDrawNode.cpp in Sources */,
 				6E0D5A03195061900036E940 /* LHChildrenPositionsProperty.cpp in Sources */,
 				6E0D59FB195061900036E940 /* LHSpriteFrame.cpp in Sources */,
-				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 				6E0D5A29195061900036E940 /* LHSprite.cpp in Sources */,
 				6E0D5A07195061900036E940 /* LHChildrenScalesProperty.cpp in Sources */,
 				6E79166F1964159D00E68E06 /* LHSceneCameraFollowDemo.cpp in Sources */,
@@ -1395,7 +1371,6 @@
 				6E0D59FE195061900036E940 /* LHAnimationProperty.cpp in Sources */,
 				6E0D5A00195061900036E940 /* LHCameraActivateProperty.cpp in Sources */,
 				6E0D59F8195061900036E940 /* LHRotationFrame.cpp in Sources */,
-				6E0D5A52195061D60036E940 /* LHSceneSubclass.cpp in Sources */,
 				6E0D59F6195061900036E940 /* LHPositionFrame.cpp in Sources */,
 				6E0D5A12195061900036E940 /* LHSpriteFrameProperty.cpp in Sources */,
 				6E0D5A36195061900036E940 /* LHUtils.cpp in Sources */,
@@ -1426,14 +1401,12 @@
 				6E7916591963EAE400E68E06 /* LHSceneIntroductionDemo.cpp in Sources */,
 				6E7916681964065C00E68E06 /* LHBackUINode.cpp in Sources */,
 				6E0D5A30195061900036E940 /* LHNodeProtocol.cpp in Sources */,
-				6E0D5A50195061D60036E940 /* LHSceneCutRope.cpp in Sources */,
 				6E0D5A16195061900036E940 /* LHScene.cpp in Sources */,
 				6E0D5A0A195061900036E940 /* LHOpacityProperty.cpp in Sources */,
 				6E0D5A02195061900036E940 /* LHChildrenOpacitiesProperty.cpp in Sources */,
 				6E0D5A06195061900036E940 /* LHChildrenRotationsProperty.cpp in Sources */,
 				6E11B5941966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
 				6E0D5A32195061900036E940 /* LHDevice.cpp in Sources */,
-				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				6E0D5A26195061900036E940 /* LHRopeJointNode.cpp in Sources */,
 				6E0D5A18195061900036E940 /* LHAsset.cpp in Sources */,
 				6E0D5A46195061D00036E940 /* DemoCustomClass.cpp in Sources */,
@@ -1501,16 +1474,13 @@
 				6E7916B91964186600E68E06 /* main.m in Sources */,
 				6E7916BA1964186600E68E06 /* LHRopeJointNode.cpp in Sources */,
 				6E7916BB1964186600E68E06 /* LHAnimationProperty.cpp in Sources */,
-				6E7916BC1964186600E68E06 /* LHSceneSubclass.cpp in Sources */,
 				6E7916BD1964186600E68E06 /* DemoCustomClass.cpp in Sources */,
-				6E7916BE1964186600E68E06 /* LHSceneCutRope.cpp in Sources */,
 				6E7916BF1964186600E68E06 /* LHCamera.cpp in Sources */,
 				6E7916C01964186600E68E06 /* LHGameWorldNode.cpp in Sources */,
 				6E7916C11964186600E68E06 /* LHUtils.cpp in Sources */,
 				6E7916C21964186600E68E06 /* LHDrawNode.cpp in Sources */,
 				6E7916C31964186600E68E06 /* LHChildrenPositionsProperty.cpp in Sources */,
 				6E7916C41964186600E68E06 /* LHSpriteFrame.cpp in Sources */,
-				6E7916C51964186600E68E06 /* HelloWorldScene.cpp in Sources */,
 				6E7916C61964186600E68E06 /* LHSprite.cpp in Sources */,
 				6E7916C71964186600E68E06 /* LHChildrenScalesProperty.cpp in Sources */,
 				6E7916C81964186600E68E06 /* LHSceneCameraFollowDemo.cpp in Sources */,

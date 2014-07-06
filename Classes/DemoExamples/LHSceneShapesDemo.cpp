@@ -49,7 +49,7 @@ bool LHSceneShapesDemo::initWithContentOfFile(const std::string& plistLevelFile)
     Size size = this->getContentSize();
     
     Label* ttf = Label::create();
-    ttf->setString("SHAPES DEMO Example.\nShapes can have solid colors or textured.\nTextured shapes allow to edit each vertex color and opacity.\n\nDrag shapes to move them.");
+    ttf->setString("SHAPES DEMO Example.\nShapes can have solid colors or textured.\nTextured shapes allow to edit each vertex color and opacity.\nDrag shapes to move them.");
     
     ttf->setTextColor(Color4B::BLACK);
     ttf->setHorizontalAlignment(TextHAlignment::CENTER);
@@ -64,9 +64,6 @@ bool LHSceneShapesDemo::initWithContentOfFile(const std::string& plistLevelFile)
 bool LHSceneShapesDemo::onTouchBegan(Touch* touch, Event* event)
 {
     Point touchLocation = touch->getLocation();
-    
-    CCLOG("TOUCH BEGIN SHAPES");
-    
     
     this->createMouseJointForTouchLocation(touchLocation);
     
@@ -99,8 +96,6 @@ void LHSceneShapesDemo::onTouchCancelled(Touch *touch, Event *event){
 
 void LHSceneShapesDemo::createMouseJointForTouchLocation(Point point)
 {
-    CCLOG("CREATE MOUSE JOINT");
-    
 #if LH_USE_BOX2D
     b2Body* ourBody = NULL;
     
@@ -108,19 +103,13 @@ void LHSceneShapesDemo::createMouseJointForTouchLocation(Point point)
     
     if(world == NULL)return;
     
+    LHNode* mouseJointDummyNode = (LHNode*)this->getChildNodeWithName("dummyBodyForMouseJoint");
     
-    LHSprite* mouseJointDummySpr = (LHSprite*)this->getChildNodeWithName("dummyBodyForMouseJoint");
-    
-    CCLOG("MOUSE JOINT SPRITE %p", mouseJointDummySpr);
-    
-    b2Body* mouseJointBody = mouseJointDummySpr->getBox2dBody();
-    
-    CCLOG("MOUSE JOINT BODY %p", mouseJointBody);
+    b2Body* mouseJointBody = mouseJointDummyNode->getBox2dBody();
     
     if(!mouseJointBody)return;
     
-    b2Vec2 pointToTest = this->metersFromPoint(point);
-    
+    b2Vec2 pointToTest = this->metersFromPoint(point);    
     for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
     {
         if(b != mouseJointBody)
@@ -150,8 +139,6 @@ void LHSceneShapesDemo::createMouseJointForTouchLocation(Point point)
     if(ourBody == NULL || mouseJointBody == NULL)
         return;
     
-    CCLOG("WE HAVE BODY %p our %p", mouseJointBody, ourBody);
-    
     b2MouseJointDef md;
     md.bodyA = mouseJointBody;
     md.bodyB = ourBody;
@@ -167,8 +154,6 @@ void LHSceneShapesDemo::createMouseJointForTouchLocation(Point point)
         mouseJoint = NULL;
     }
     mouseJoint = (b2MouseJoint*)world->CreateJoint(&md);
-    
-    CCLOG("DID CREATE MOUSE JOINT %p", mouseJoint);
     
 #else
     

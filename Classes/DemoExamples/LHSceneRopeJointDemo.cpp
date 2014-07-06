@@ -42,7 +42,7 @@ bool LHSceneRopeJointDemo::initWithContentOfFile(const std::string& plistLevelFi
     Size size = this->getContentSize();
     
     Label* ttf = Label::create();
-    ttf->setString("ROPE JOINTS DEMO\nThe left most joint has a bigger z value then the sprites so its draw on top.\nThe middle joint does not use a texture.\nThe right most joint can be cut - Make a line to cut it.");
+    ttf->setString("ROPE JOINTS DEMO\nThe left most joint is thinner and cannot be cut.\nThe middle joint does not use a texture.\nThe right most joint can be cut - Make a line to cut it.");
     
     ttf->setTextColor(Color4B::BLACK);
     ttf->setHorizontalAlignment(TextHAlignment::CENTER);

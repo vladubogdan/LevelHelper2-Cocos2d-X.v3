@@ -5,6 +5,10 @@
 #include "LHSceneDemo.h"
 #include "LHConfig.h"
 
+#if LH_USE_BOX2D
+#include "Box2d/Box2d.h"
+#endif
+
 class LHSceneShapesDemo : public LHSceneDemo
 {
 public:
@@ -27,7 +31,8 @@ private:
 #if LH_USE_BOX2D
     b2MouseJoint* mouseJoint;
     
-#else//spritekit
+#else//chipmunk
+    
     Node* touchedNode;
     bool touchedNodeWasDynamic;
     

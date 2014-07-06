@@ -64,15 +64,20 @@ bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
-        prnt->addChild(this);
-        
         this->loadGenericInfoFromDictionary(dict);
+        
+#if LH_USE_BOX2D
+        prnt->addChild(this);
         this->loadTransformationInfoFromDictionary(dict);
-        
         this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
-        
+#else
+        //cocos2d-chipmunk required that the body is loaded before adding the node to the parent
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        prnt->addChild(this);
+        this->loadTransformationInfoFromDictionary(dict);
+#endif
+
         this->loadChildrenFromDictionary(dict);
-        
         this->createAnimationsFromDictionary(dict);
         
         return true;

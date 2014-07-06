@@ -78,11 +78,20 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
         _physicsBody = NULL;
         
         LHScene* scene = (LHScene*)prnt->getScene();
-        prnt->addChild(this);
-        
         this->loadGenericInfoFromDictionary(dict);
+        
+        
+#if LH_USE_BOX2D
+        prnt->addChild(this);
         this->loadTransformationInfoFromDictionary(dict);
         this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+#else
+        //cocos2d-chipmunk required that the body is loaded before adding the node to the parent
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        prnt->addChild(this);
+        this->loadTransformationInfoFromDictionary(dict);
+#endif
+        
         
         if(dict->objectForKey("assetFile"))
         {

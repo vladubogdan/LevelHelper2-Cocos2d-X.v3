@@ -104,7 +104,9 @@ void LHSceneShapesDemo::createMouseJointForTouchLocation(Point point)
 #if LH_USE_BOX2D
     b2Body* ourBody = NULL;
     
-    if(this->getBox2dWorld() == NULL)return;
+    b2World* world = this->getBox2dWorld();
+    
+    if(world == NULL)return;
     
     
     LHSprite* mouseJointDummySpr = (LHSprite*)this->getChildNodeWithName("dummyBodyForMouseJoint");
@@ -119,7 +121,7 @@ void LHSceneShapesDemo::createMouseJointForTouchLocation(Point point)
     
     b2Vec2 pointToTest = this->metersFromPoint(point);
     
-    for (b2Body* b = this->getBox2dWorld()->GetBodyList(); b; b = b->GetNext())
+    for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
     {
         if(b != mouseJointBody)
         {
@@ -161,10 +163,10 @@ void LHSceneShapesDemo::createMouseJointForTouchLocation(Point point)
     ourBody->SetAwake(true);
     
     if(mouseJoint){
-        this->getBox2dWorld()->DestroyJoint(mouseJoint);
+        world->DestroyJoint(mouseJoint);
         mouseJoint = NULL;
     }
-    mouseJoint = (b2MouseJoint *)this->getBox2dWorld()->CreateJoint(&md);
+    mouseJoint = (b2MouseJoint*)world->CreateJoint(&md);
     
     CCLOG("DID CREATE MOUSE JOINT %p", mouseJoint);
     

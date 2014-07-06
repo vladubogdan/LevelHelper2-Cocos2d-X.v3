@@ -317,15 +317,11 @@ void setupFixtureWithInfo(b2FixtureDef* fixture, LHDictionary* fixInfo)
 
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
-    CCLOG("TRY TO CREATE PHYSICS for %p",this);
     if(!dict)return;
     
     Node* node = LH_GET_NODE_FROM_PHYSICS_PROTOCOL(this);
     if(!node)return;
 
-    CCLOG("HAVE INFO for %p",this);
-
-    
     int shapeType = dict->intForKey("shape");
     int type  = dict->intForKey("type");
     
@@ -335,9 +331,7 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     bodyDef.type = (b2BodyType)type;
     
     Point position = node->convertToWorldSpaceAR(Point());
-    
     b2Vec2 bodyPos = scene->metersFromPoint(position);
-    
     bodyDef.position = bodyPos;
     
     float angle = node->getRotation();
@@ -371,8 +365,6 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     LHDictionary* fixInfo = dict->dictForKey("genericFixture");
     LHArray* fixturesInfo = nullptr;
     
-    CCLOG("SHAPE TYPE for %p %d", this, shapeType);
-    
     if(shapeType == 0)//RECTANGLE
     {
         b2Shape* shape = new b2PolygonShape();
@@ -386,8 +378,6 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
         
         delete shape;
         shape = NULL;
-        
-        CCLOG("CREATE RECTANGLE FOR BODY for %p body %p", this, _body);
     }
     else if(shapeType == 1)//CIRCLE
     {
@@ -532,8 +522,6 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
         int flipx = scaleX < 0 ? -1 : 1;
         int flipy = scaleY < 0 ? -1 : 1;
         
-        CCLOG("CREATE FIXUTRE FOR BODY for %p body %p", this, _body);
-        
         for(int f = 0; f < fixturesInfo->count(); ++f)
         {
             LHArray* fixPoints = fixturesInfo->arrayAtIndex(f);
@@ -572,8 +560,6 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
             }
         }
     }
-    
-    CCLOG("FINAL BODY for %p body %p", this, _body);
 }
 
 #else //chipmunk

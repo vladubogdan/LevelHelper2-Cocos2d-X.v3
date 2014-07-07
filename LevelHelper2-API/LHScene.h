@@ -30,6 +30,9 @@ class LHBackUINode;
 class LHGameWorldNode;
 class LHUINode;
 class LHDictionary;
+#if LH_USE_BOX2D
+class LHBox2dCollisionHandling;
+#endif
 
 class LHScene : public cocos2d::Scene, public LHNodeProtocol
 {
@@ -103,6 +106,20 @@ public:
      */
     void setGlobalGravity(Point gravity);
     
+    
+#pragma mark - COLLISION HANDLING
+
+#if LH_USE_BOX2D
+    virtual bool shouldDisableContactBetweenNodes(Node* nodeA, Node* nodeB){return false;}
+    virtual void didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse){};
+    virtual void didEndContactBetweenNodes(Node* nodeA, Node* nodeB){};
+#else
+    
+    bool onContactBegin(PhysicsContact& contact);
+    
+#endif
+
+    
 private:
     
     friend class LHBackUINode;
@@ -143,6 +160,11 @@ private:
     
     void loadGlobalGravityFromDictionary(LHDictionary* dict);
     void loadPhysicsBoundariesFromDictionary(LHDictionary* dict);
+    
+#if LH_USE_BOX2D
+    LHBox2dCollisionHandling* _box2dCollision;
+#endif
+
 };
 
 #endif //__LEVELHELPER_API_SCENE_H__

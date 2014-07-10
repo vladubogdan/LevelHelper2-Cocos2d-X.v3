@@ -26,6 +26,7 @@
 #include "LHNode.h"
 #include "LHAsset.h"
 #include "LHCamera.h"
+#include "LHGravityArea.h"
 
 
 #include "LHGameWorldNode.h"
@@ -342,13 +343,11 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     }
     else if(nodeType == "LHSprite")
     {
-        LHSprite* spr = LHSprite::spriteNodeWithDictionary(childInfo, prnt);
-        return spr;
+        return LHSprite::spriteNodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHNode")
     {
-        LHNode* nd = LHNode::nodeWithDictionary(childInfo, prnt);
-        return nd;
+        return LHNode::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHCamera")
     {
@@ -357,28 +356,23 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     }
     else if(nodeType == "LHBezier")
     {
-        LHBezier* bez = LHBezier::bezierNodeWithDictionary(childInfo, prnt);
-        return bez;
+        return LHBezier::bezierNodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHTexturedShape")
     {
-        LHShape* sp = LHShape::shapeNodeWithDictionary(childInfo, prnt);
-        return sp;
+        return LHShape::shapeNodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHAsset")
     {
-        LHAsset* as = LHAsset::assetNodeWithDictionary(childInfo, prnt);
-        return as;
+        return LHAsset::assetNodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHParallax")
     {
-        LHParallax* pr = LHParallax::parallaxWithDictionary(childInfo, prnt);
-        return pr;
+        return LHParallax::parallaxWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHParallaxLayer")
     {
-        LHParallaxLayer* lh = LHParallaxLayer::parallaxLayerWithDictionary(childInfo, prnt);
-        return lh;
+        return LHParallaxLayer::parallaxLayerWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHRopeJoint")
     {
@@ -390,15 +384,12 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     }
     else if(nodeType == "LHWaves")
     {
-        LHWater* wt = LHWater::waterWithDictionary(childInfo, prnt);
-        return wt;
+        return LHWater::waterWithDictionary(childInfo, prnt);
     }
-    //    else if([nodeType isEqualToString:@"LHAreaGravity"])
-    //    {
-    //        LHGravityArea* gv = [LHGravityArea gravityAreaWithDictionary:childInfo
-    //                                                              parent:prnt];
-    //        return gv;
-    //    }
+    else if(nodeType == "LHAreaGravity")
+    {
+        return LHGravityArea::gravityAreaWithDictionary(childInfo, prnt);
+    }
     //    else if([nodeType isEqualToString:@"LHWeldJoint"])
     //    {
     //        LHWeldJointNode* jt = [LHWeldJointNode weldJointNodeWithDictionary:childInfo

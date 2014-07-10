@@ -9,13 +9,13 @@
 #define LevelHelper2_API_LHConfig_h
 
 /*
- By default we use the default SpriteKit physics engine. Its done this way in order for user to have a simpler initial setup.
+ By default we use the Box2d physics engine.
  Box2D is the desired physics engine as the simulation will behave exactly like inside LevelHelper 2.
- To enable Box2D usage you need to set LH_USE_BOX2D to 1 or define a LH_USE_BOX2D as a preprocessor macro.
+ To disable Box2D usage you need to set LH_USE_BOX2D to 0 or define a LH_USE_BOX2D=0 as a preprocessor macro.
  You also need to include Box2d library in your Xcode project and header search file. Please read the guide on how to include Box2D further down.
  */
 #ifndef LH_USE_BOX2D
-#define LH_USE_BOX2D 0
+#define LH_USE_BOX2D 1
 #endif
 
 //the demo project uses a preprocessor macro so LH_USE_BOX2D will be 0 in this file.

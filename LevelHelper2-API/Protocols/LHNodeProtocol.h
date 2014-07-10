@@ -142,6 +142,7 @@ public:
     virtual bool isParallaxLayer(){return false;}
     virtual bool isRopeJointNode(){return false;}
     virtual bool isWater(){return false;}
+    virtual bool isGravityArea(){return false;}
 
     
     

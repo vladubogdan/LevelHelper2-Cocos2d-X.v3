@@ -5,7 +5,8 @@
 #ifndef __LEVELHELPER_API_CUSTOM_USER_PROPERTIES_HEADERS__
 #define __LEVELHELPER_API_CUSTOM_USER_PROPERTIES_HEADERS__
 
-#include "DemoCustomClass.h"
+#include "RobotUserProperty.h"
+//If compiler gives an error with "... file not found" you need to add that file into your Xcode project or Make file.
 
 
 #include "LHUserPropertyProtocol.h"
@@ -14,7 +15,7 @@ class LHUserCustomPropertiesManager
 {
 public:
 	static LHUserPropertyProtocol* customClassInstanceWithName(const std::string& className, Node* node){
-		if("DemoCustomClass" == className){ return DemoCustomClass::customClassInstanceWithNode(node);}
+		if("RobotUserProperty" == className){ return RobotUserProperty::customClassInstanceWithNode(node);}
 		return NULL;
 	}
 

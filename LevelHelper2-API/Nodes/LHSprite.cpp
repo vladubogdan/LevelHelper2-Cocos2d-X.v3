@@ -184,7 +184,6 @@ void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
 #if LH_USE_BOX2D
 void LHSprite::removeFromParent()
 {
-    CCLOG("SPRITE MOVE FROM PARENT %p", this);
     this->removeBody();
     Sprite::removeFromParent();
 }

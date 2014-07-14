@@ -26,11 +26,9 @@
 #include "LHGameWorldNode.h"
 #include "LHUINode.h"
 #include "LHBackUINode.h"
-
-
 #include "LHWater.h"
-
 #include "LHUtils.h"
+#include "LHBox2dCollisionHandling.h"
 
 
 #include <sstream>
@@ -54,6 +52,10 @@ LHScene::LHScene()
 
 LHScene::~LHScene()
 {
+#if LH_USE_BOX2D
+    CC_SAFE_DELETE(_box2dCollision);
+#endif
+    
     for (size_t i = 0; i < devices.size(); ++i)
     {
         LHDevice* dev = devices[i];
@@ -231,6 +233,17 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         this->performLateLoading();
         
+        
+#if LH_USE_BOX2D
+        _box2dCollision = new LHBox2dCollisionHandling(this);
+#else//cocos2d-x
+
+        
+#endif
+        
+//        auto contactListener = EventListenerPhysicsContact::create();
+//        contactListener->onContactBegin = CC_CALLBACK_1(LHScene::onContactBegin, this);
+//        _eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
         
         ret = true;
     };
@@ -559,7 +572,33 @@ void LHScene::setGlobalGravity(Point gravity)
 #if LH_USE_BOX2D
     this->getGameWorldNode()->setGravity(gravity);
 #else
-    
+    this->getPhysicsWorld()->setGravity(gravity);
 #endif
 }
+
+
+//#pragma mark - COLLISION HANDLING
+//
+//#if LH_USE_BOX2D
+//
+//#else
+//
+//bool LHScene::onContactBegin(PhysicsContact& contact)
+//{
+//    CCLOG("LHSCENE CONTACT BEGIN");
+//    
+//    return true;
+//    //nothing to do - should be overwritten
+//}
+//int LHScene::collisionPreSolveCallback(PhysicsContact& contact){
+//    //nothing to do - should be overwritten
+//}
+//void LHScene::collisionPostSolveCallback(PhysicsContact& contact){
+//    //nothing to do - should be overwritten
+//}
+//void LHScene::collisionSeparateCallback(PhysicsContact& contact){
+//    //nothing to do - should be overwritten
+//}
+//#endif
+
 

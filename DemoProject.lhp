@@ -68,7 +68,7 @@
 	<key>options</key>
 	<dict>
 		<key>UserPropertiesGenerationPath</key>
-		<string>DEMO_USER_PROPERTIES_GENERATION_FOLDER</string>
+		<string>LevelHelper2-API/UserProperties</string>
 		<key>name</key>
 		<string>DemoProject</string>
 		<key>publishOptions</key>
@@ -96,6 +96,16 @@
 					<true/>
 				</dict>
 				<key>characterAnimationDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>collisionHandlingDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>gravityAreas.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>
@@ -181,6 +191,11 @@
 					<true/>
 				</dict>
 				<key>tst.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>userPropertiesDemo.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

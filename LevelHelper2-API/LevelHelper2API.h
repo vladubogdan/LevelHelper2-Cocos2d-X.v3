@@ -24,15 +24,10 @@
 #include "LHParallax.h"
 #include "LHParallaxLayer.h"
 
-#include "LHRopeJointNode.h"
-
-
 #include "LHWater.h"
+#include "LHAnimation.h"
+#include "LHGravityArea.h"
 
-//#import "LHAnimation.h"
-//#import "LHDistanceJointNode.h"
-//#import "LHGravityArea.h"
-//
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
 #include "LHUserPropertyProtocol.h"
@@ -40,6 +35,7 @@
 
 #include "LHUtils.h"
 
-
+#include "LHRopeJointNode.h"
+//#import "LHDistanceJointNode.h"
 
 #endif //__LEVELHELPER_API_H__

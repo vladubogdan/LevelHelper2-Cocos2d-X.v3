@@ -57,10 +57,9 @@ bool LHSceneUserPropertiesDemo::initWithContentOfFile(const std::string& plistLe
      2. Write a "Class Name" and click enter to create that class.
      3. With the class selected write a "Member Name" and click enter to create that property.
      4. In the list of properties choose the type of property you want (number, string, connection, boolean)
-                    //connection is a way to connect one node to another for fast referencing.
-     5. Set the "Code Generation Path" to the folder named "UserProperties" that comes with LevelHelper2 API
-            //its the folder that contains this files "LHUserProperties.h" and "LH_Set_Code_Generation_Path_To_This_Folder.h"
-
+     //connection is a way to connect one node to another for fast referencing.
+     5. Set the "Code Generation Path" to the LHUserProperties.h file that comes with LH 2 api if not already set.
+     
      //Assigning the property class on a node
      1. Inside the "Level Editor" select the node you want to assign a property to.
      2. Go to the "Properties Inspector" tab - the first tab on the right side.
@@ -68,19 +67,9 @@ bool LHSceneUserPropertiesDemo::initWithContentOfFile(const std::string& plistLe
      4. Select the property class you want from the "User Info" list.
      5. Assign any value you want on the members you have setup for that property class.
      
-     
-     //Generating and adding the property into Xcode
-     1. Save and publish your level.
-     2. Inside Xcode right click on UserProperties folder.
-     3. Choose "Add Files To ...."
-     4. Select any file that is not disabled (disabled means they are already added to the project).
-     5. Select your targets if not already selected.
-     6. Click "Add" button.
-     
-     
      Further down you will see how you can access the properties you have setup.
-     First you search for the node that has the property assign to it. 
-     Then you get the userProperty pointer and convert it to the write property class.
+     First you search for the node that has the property assign to it.
+     Then you get the userProperty pointer and convert it to the right property class.
      Then its a matther of reading/writing the property members.
      */
     
@@ -127,7 +116,7 @@ bool LHSceneUserPropertiesDemo::initWithContentOfFile(const std::string& plistLe
     LHSprite* greenRobot = (LHSprite*)this->getChildNodeWithName("greenRobot");
     if(greenRobot){
         RobotUserProperty* prop = (RobotUserProperty*)greenRobot->getUserProperty();
-        CCLOG("...............Blue Robot - User properites.................");
+        CCLOG("...............Green Robot - User properites.................");
         CCLOG("LIFE (number property) %f", prop->getLife());
         CCLOG("ACTIVATED (boolean property) %d", prop->getActivated());
         CCLOG("MODEL (string property) %s", prop->getModel().c_str());

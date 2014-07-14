@@ -1,10 +1,10 @@
-//This source file was generated automatically by LevelHelper 2
+//This file was generated automatically by LevelHelper 2
 //based on the class template defined by the user.
 //For more info please visit: http://www.gamedevhelper.com
 
-#include "RobotUserProperty.h"
+#include "LHUtils.h"
 #include "LHScene.h"
-#include "LHNodeProtocol.h"
+#include "LHUserProperties.h"
 
 RobotUserProperty* RobotUserProperty::customClassInstanceWithNode(Node* n)
 {
@@ -37,4 +37,28 @@ Node* RobotUserProperty::getConnection(){
 	}
 	return connection;
 }
+
+
+
+SecondProperty* SecondProperty::customClassInstanceWithNode(Node* n)
+{
+	SecondProperty* instance = new SecondProperty();
+	instance->setNode(n);
+	return instance;
+}
+
+void SecondProperty::setPropertiesFromDictionary(LHDictionary* dict)
+{
+
+	if(dict->objectForKey("memberA"))
+		setMemberA(dict->stringForKey("memberA"));
+
+	if(dict->objectForKey("memberB"))
+		setMemberB(dict->floatForKey("memberB"));
+
+	if(dict->objectForKey("memberC"))
+		setMemberC(dict->boolForKey("memberC"));
+
+}
+
 

@@ -4,7 +4,7 @@
 LHSceneShapesDemo* LHSceneShapesDemo::create()
 {
     LHSceneShapesDemo *ret = new LHSceneShapesDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/shapesDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/shapesDemo.lhplist"))
     {
         ret->autorelease();
         return ret;

@@ -127,22 +127,38 @@ void LHAsset::removeFromParent(){
 void LHAsset::setPosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setPosition(child->getPosition());
+    }
 }
 void LHAsset::setRotation(float rotation){
     Node::setRotation(rotation);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setRotation(child->getRotation());
+    }
 }
 void LHAsset::setScaleX(float scaleX){
+    
     Node::setScaleX(scaleX);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHAsset::setScaleY(float scaleY){
     Node::setScaleY(scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleY(child->getScaleY());
+    }
 }
 void LHAsset::setScale(float scaleX, float scaleY){
     Node::setScale(scaleX, scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHAsset::updatePosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);

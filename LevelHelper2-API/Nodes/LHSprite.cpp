@@ -158,6 +158,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->loadTransformationInfoFromDictionary(dict);
         this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
 #else
+        
         //cocos2d-chipmunk required that the body is loaded before adding the node to the parent
         this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
         prnt->addChild(this);
@@ -192,26 +193,43 @@ void LHSprite::setPosition(const cocos2d::Vec2 &pos)
 {
     Sprite::setPosition(pos);
     this->updatePhysicsTransform();
+    
+    for (auto& child : this->getChildren()){
+        child->setPosition(child->getPosition());
+    }
 }
 
 void LHSprite::setRotation(float rotation)
 {
     Sprite::setRotation(rotation);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setRotation(child->getRotation());
+    }
 }
 
 void LHSprite::setScaleX(float scaleX){
+
     Sprite::setScaleX(scaleX);
-    this->updatePhysicsScale();    
+    this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHSprite::setScaleY(float scaleY){
     Sprite::setScaleY(scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleY(child->getScaleY());
+    }
 }
 
 void LHSprite::setScale(float scaleX, float scaleY){
     Sprite::setScale(scaleX, scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 
 void LHSprite::updatePosition(const cocos2d::Vec2 &pos){

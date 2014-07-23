@@ -4,7 +4,7 @@
 LHSceneCharacterAnimationDemo* LHSceneCharacterAnimationDemo::create()
 {
     LHSceneCharacterAnimationDemo *ret = new LHSceneCharacterAnimationDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/characterAnimationDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/characterAnimationDemo.lhplist"))
     {
         ret->autorelease();
         return ret;

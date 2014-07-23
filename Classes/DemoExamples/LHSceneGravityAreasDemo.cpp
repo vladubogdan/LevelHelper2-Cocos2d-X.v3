@@ -4,7 +4,7 @@
 LHSceneGravityAreasDemo* LHSceneGravityAreasDemo::create()
 {
     LHSceneGravityAreasDemo *ret = new LHSceneGravityAreasDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/gravityAreas.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/gravityAreas.lhplist"))
     {
         ret->autorelease();
         return ret;

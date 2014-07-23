@@ -5,7 +5,7 @@
 	<key>aspect</key>
 	<integer>2</integer>
 	<key>backgroundColor</key>
-	<string>{{1, 0.99997437000274658}, {0.99999129772186279, 1}}</string>
+	<string>{{1, 1}, {1, 1}}</string>
 	<key>children</key>
 	<array>
 		<dict>
@@ -2952,33 +2952,12 @@
 						<dict>
 							<key>category</key>
 							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
 							<key>density</key>
 							<real>0.10000000149011612</real>
 							<key>fixtureID</key>
 							<integer>0</integer>
 							<key>friction</key>
 							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
 							<key>mask</key>
 							<integer>65535</integer>
 							<key>name</key>
@@ -3109,33 +3088,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3202,33 +3160,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3295,33 +3232,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3388,33 +3304,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3481,33 +3376,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3574,33 +3448,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3667,33 +3520,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3760,33 +3592,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3853,33 +3664,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -3946,33 +3736,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4039,33 +3808,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4132,33 +3880,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4225,33 +3952,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4318,33 +4024,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4411,33 +4096,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4504,33 +4168,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4597,33 +4240,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4690,33 +4312,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4783,33 +4384,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4876,33 +4456,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -4969,33 +4528,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -5062,33 +4600,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -5155,33 +4672,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -5248,33 +4744,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -5341,33 +4816,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -5434,33 +4888,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -5527,33 +4960,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -5620,33 +5032,12 @@
 								<dict>
 									<key>category</key>
 									<integer>1</integer>
-									<key>collisionCategories</key>
-									<array>
-										<string>DEFAULT</string>
-										<string>BlueRobot</string>
-										<string>GreenRobot</string>
-										<string>PinkRobot</string>
-										<string>Category_05</string>
-										<string>Category_06</string>
-										<string>Category_07</string>
-										<string>Category_08</string>
-										<string>Category_09</string>
-										<string>Category_10</string>
-										<string>Category_11</string>
-										<string>Category_12</string>
-										<string>Category_13</string>
-										<string>Category_14</string>
-										<string>Category_15</string>
-										<string>Category_16</string>
-									</array>
 									<key>density</key>
 									<real>0.10000000149011612</real>
 									<key>fixtureID</key>
 									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
-									<key>ignoreCategories</key>
-									<array/>
 									<key>mask</key>
 									<integer>65535</integer>
 									<key>name</key>
@@ -5761,33 +5152,12 @@
 						<dict>
 							<key>category</key>
 							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
 							<key>density</key>
 							<real>0.10000000149011612</real>
 							<key>fixtureID</key>
 							<integer>0</integer>
 							<key>friction</key>
 							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
 							<key>mask</key>
 							<integer>65535</integer>
 							<key>name</key>

@@ -4,7 +4,7 @@
 LHSceneCollisionHandlingDemo* LHSceneCollisionHandlingDemo::create()
 {
     LHSceneCollisionHandlingDemo *ret = new LHSceneCollisionHandlingDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/collisionHandlingDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/collisionHandlingDemo.lhplist"))
     {
         ret->autorelease();
         return ret;

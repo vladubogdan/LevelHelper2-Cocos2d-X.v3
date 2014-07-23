@@ -260,22 +260,37 @@ void LHShape::removeFromParent(){
 void LHShape::setPosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setPosition(child->getPosition());
+    }
 }
 void LHShape::setRotation(float rotation){
     Node::setRotation(rotation);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setRotation(child->getRotation());
+    }
 }
 void LHShape::setScaleX(float scaleX){
     Node::setScaleX(scaleX);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHShape::setScaleY(float scaleY){
     Node::setScaleY(scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleY(child->getScaleY());
+    }
 }
 void LHShape::setScale(float scaleX, float scaleY){
     Node::setScale(scaleX, scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHShape::updatePosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);

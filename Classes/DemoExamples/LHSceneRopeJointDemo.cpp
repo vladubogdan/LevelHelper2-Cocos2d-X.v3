@@ -4,7 +4,7 @@
 LHSceneRopeJointDemo* LHSceneRopeJointDemo::create()
 {
     LHSceneRopeJointDemo *ret = new LHSceneRopeJointDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/ropeJointDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/ropeJointDemo.lhplist"))
     {
         ret->autorelease();
         return ret;

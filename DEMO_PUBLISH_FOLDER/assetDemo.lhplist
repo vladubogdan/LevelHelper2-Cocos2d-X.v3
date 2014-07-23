@@ -57,9 +57,9 @@
 					<key>colorOverlay</key>
 					<string>{{1, 1}, {1, 1}}</string>
 					<key>generalPosition</key>
-					<string>{0.12240460316340132, 0.7161156058311462}</string>
+					<string>{0.48123291236212629, 0.4675744647960528}</string>
 					<key>name</key>
-					<string>OfficerAsset.lhasset</string>
+					<string>OfficerAsset</string>
 					<key>nodeType</key>
 					<string>LHAsset</string>
 					<key>parentUUID</key>
@@ -75,7 +75,7 @@
 						<string>DEFAULT</string>
 					</array>
 					<key>uuid</key>
-					<string>2262F009-A813-4549-BB22-EB7916C57157</string>
+					<string>590A4166-284F-4B6E-BE9B-D0CE89B72164</string>
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
@@ -179,6 +179,19 @@
 	<real>8</real>
 	<key>nodeType</key>
 	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>1024x768</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>1136x640</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>2048x1536</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>960x640</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>general</key>
+		<string>{{0, 0}, {1, 1}}</string>
+	</dict>
 	<key>sceneFormat</key>
 	<real>1</real>
 	<key>tags</key>

@@ -4,7 +4,7 @@
 LHSceneBeziersDemo* LHSceneBeziersDemo::create()
 {
     LHSceneBeziersDemo *ret = new LHSceneBeziersDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/beziersDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/beziersDemo.lhplist"))
     {
         ret->autorelease();
         return ret;

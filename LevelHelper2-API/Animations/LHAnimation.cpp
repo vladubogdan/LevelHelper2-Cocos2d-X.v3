@@ -203,6 +203,16 @@ void LHAnimation::setCurrentTime(float val){
         if(!didFinishAllRepetitions()){
             _currentTime = 0.0f;
             resetOneShotFrames();
+            
+            if(this->scene()){
+                this->scene()->didFinishedRepetitionOnAnimation(this);
+            }
+        }
+        else{
+            _node->setActiveAnimation(nullptr);
+            if(this->scene()){
+                this->scene()->didFinishedPlayingAnimation(this);
+            }
         }
     }
     _previousTime = _currentTime;

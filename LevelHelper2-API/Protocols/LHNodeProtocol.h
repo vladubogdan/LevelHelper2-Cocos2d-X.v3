@@ -64,7 +64,7 @@ public:
     /**
      Returns a node with the specified unique name or nil if that node is not found in the children hierarchy.
      @param name The unique name of the node.
-     @return A node or or NULL.
+     @return A node or NULL.
      @code
         //make sure you cast to the right type or else you may get partial objects which could cause problems
         //look inside LevelHelper scene navigator to see what kind of type a node is

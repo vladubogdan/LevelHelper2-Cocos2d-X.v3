@@ -4,7 +4,7 @@
 LHScenePhysicsTransformationsDemo* LHScenePhysicsTransformationsDemo::create()
 {
     LHScenePhysicsTransformationsDemo *ret = new LHScenePhysicsTransformationsDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/tst.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/physicsTransformationsDemo.lhplist"))
     {
         ret->autorelease();
         return ret;
@@ -68,6 +68,7 @@ bool LHScenePhysicsTransformationsDemo::onTouchBegan(Touch* touch, Event* event)
 {
     Point location = touch->getLocation();
     
+    
     __Array* allPhysicalChildren = this->getGameWorldNode()->getChildrenOfType<Node*>();
     
     for(int i = 0; i < allPhysicalChildren->count(); ++i)
@@ -77,7 +78,8 @@ bool LHScenePhysicsTransformationsDemo::onTouchBegan(Touch* touch, Event* event)
         if(node && node->getBoundingBox().containsPoint(location))
         {
 //            node->removeFromParent();//this will remove the node together with its physical body (if any)
-        
+            
+            CCLOG("SETTING NODE %p TO LOCATION %f %f", node, location.x, location.y);
             node->setPosition(location);
             node->setRotation(LHUtils::LHRandomFloat(0, 360));
             node->setScaleX(LHUtils::LHRandomFloat(0.2, 1.5f));

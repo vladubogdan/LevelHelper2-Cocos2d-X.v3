@@ -51,99 +51,6 @@
 					<key>anchor</key>
 					<string>{0.5, 0.5}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
-					<key>generalPosition</key>
-					<string>{0.31666666666666665, 0.27500000000000002}</string>
-					<key>imageFileName</key>
-					<string>objects.png</string>
-					<key>name</key>
-					<string>sprite</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
-					<key>nodeType</key>
-					<string>LHSprite</string>
-					<key>parentUUID</key>
-					<string>_GAME_WORLD_NODE_UUID_</string>
-					<key>relativeImagePath</key>
-					<string>DEMO_PUBLISH_FOLDER/</string>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scale</key>
-					<string>{1, 1}</string>
-					<key>size</key>
-					<string>{105, 148}</string>
-					<key>spriteName</key>
-					<string>object_statue</string>
-					<key>spriteUUID</key>
-					<string>0DB4639A-8D34-4D83-8FBD-20753577F85A</string>
-					<key>tags</key>
-					<array>
-						<string>DEFAULT</string>
-					</array>
-					<key>uuid</key>
-					<string>479EBE31-38B8-4B1F-B29E-C04E8959EDB6</string>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-				<dict>
-					<key>alpha</key>
-					<real>255</real>
-					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
-					<key>colorOverlay</key>
 					<string>{{0, 0.01073488149531044}, {0.98624679565429685, 1}}</string>
 					<key>generalPosition</key>
 					<string>{0.65000000000000002, 0.40000000000000002}</string>
@@ -161,33 +68,12 @@
 						<dict>
 							<key>category</key>
 							<integer>1</integer>
-							<key>collisionCategories</key>
-							<array>
-								<string>DEFAULT</string>
-								<string>BlueRobot</string>
-								<string>GreenRobot</string>
-								<string>PinkRobot</string>
-								<string>Category_05</string>
-								<string>Category_06</string>
-								<string>Category_07</string>
-								<string>Category_08</string>
-								<string>Category_09</string>
-								<string>Category_10</string>
-								<string>Category_11</string>
-								<string>Category_12</string>
-								<string>Category_13</string>
-								<string>Category_14</string>
-								<string>Category_15</string>
-								<string>Category_16</string>
-							</array>
 							<key>density</key>
 							<real>0.10000000149011612</real>
 							<key>fixtureID</key>
 							<integer>0</integer>
 							<key>friction</key>
 							<real>0.20000000298023224</real>
-							<key>ignoreCategories</key>
-							<array/>
 							<key>mask</key>
 							<integer>65535</integer>
 							<key>name</key>
@@ -436,8 +322,89 @@
 							<string>{0.80000001192092896, 0.94736838340759277}</string>
 						</dict>
 					</array>
+					<key>userPropertyInfo</key>
+					<dict>
+						<key>life</key>
+						<integer>30</integer>
+					</dict>
+					<key>userPropertyName</key>
+					<string>RobotUserProperty</string>
 					<key>uuid</key>
 					<string>21C7FA25-7273-41F6-BA98-A98BCD402874</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.5, 0.5}</string>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>generalPosition</key>
+					<string>{0.39765624999999999, 0.4921875}</string>
+					<key>imageFileName</key>
+					<string>objects.png</string>
+					<key>name</key>
+					<string>sprite</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>fixtureUUID</key>
+						<string>0017F32E-68FE-4C1A-8927-E31EC4119D56</string>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>fixtureID</key>
+							<integer>0</integer>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>shape</key>
+						<integer>5</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.8714286088943481, 1.5810810327529907}</string>
+					<key>size</key>
+					<string>{105, 148}</string>
+					<key>spriteName</key>
+					<string>object_statue</string>
+					<key>spriteUUID</key>
+					<string>0DB4639A-8D34-4D83-8FBD-20753577F85A</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>479EBE31-38B8-4B1F-B29E-C04E8959EDB6</string>
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
@@ -560,6 +527,57 @@
 	<array>
 		<string>DEFAULT</string>
 	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>0017F32E-68FE-4C1A-8927-E31EC4119D56</key>
+		<array>
+			<array>
+				<string>{-41.5, 65.75}</string>
+				<string>{-44.5, 59.75}</string>
+				<string>{-45, -21.25}</string>
+				<string>{-3, -68.25}</string>
+				<string>{-2.5, -68.75}</string>
+				<string>{28.5, -66.25}</string>
+				<string>{34, -64.25}</string>
+				<string>{-37, 68.75}</string>
+			</array>
+			<array>
+				<string>{-39.5, -58.75}</string>
+				<string>{-35, -62.75}</string>
+				<string>{-3, -68.25}</string>
+				<string>{-45, -21.25}</string>
+				<string>{-44, -43.75}</string>
+				<string>{-42.5, -51.75}</string>
+			</array>
+			<array>
+				<string>{41.5, 66.75}</string>
+				<string>{38, 68.75}</string>
+				<string>{-37, 68.75}</string>
+				<string>{45, 36.75}</string>
+				<string>{45, 60.25}</string>
+				<string>{43.5, 64.25}</string>
+			</array>
+			<array>
+				<string>{45, 36.75}</string>
+				<string>{-37, 68.75}</string>
+				<string>{34, -64.25}</string>
+				<string>{39, -61.25}</string>
+				<string>{46, -43.25}</string>
+				<string>{46.5, -5.75}</string>
+			</array>
+			<array>
+				<string>{43, -57.25}</string>
+				<string>{45, -53.25}</string>
+				<string>{46, -43.25}</string>
+				<string>{39, -61.25}</string>
+			</array>
+			<array>
+				<string>{12.5, -68.75}</string>
+				<string>{28.5, -66.25}</string>
+				<string>{-2.5, -68.75}</string>
+			</array>
+		</array>
+	</dict>
 	<key>useGlobalGravity</key>
 	<true/>
 	<key>uuid</key>

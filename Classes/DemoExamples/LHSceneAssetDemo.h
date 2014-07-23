@@ -19,7 +19,6 @@ public:
     virtual bool onTouchBegan(Touch* touch, Event* event);
     
 private:
-
 };
 
 #endif // __LH_SCENE_ASSET_DEMO_H__

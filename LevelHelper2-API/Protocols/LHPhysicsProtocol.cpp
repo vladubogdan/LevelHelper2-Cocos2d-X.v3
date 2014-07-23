@@ -35,6 +35,8 @@
 #include "LHBackUINode.h"
 #include "LHDevice.h"
 
+#include "NodeTransform.h"
+
 #if LH_USE_BOX2D
 #include "Box2d/Box2d.h"
 #endif
@@ -85,16 +87,26 @@ void LHPhysicsProtocol::updatePhysicsTransform(){
     if(_body && scheduledForRemoval){
         this->removeBody();
     }
-    
+
+    Node* _node = dynamic_cast<Node*>(this);
+    if(!_node)return;
+
     if(_body)
     {
-        Node* _node = dynamic_cast<Node*>(this);
-        if(!_node)return;
-        
         LHScene* scene = (LHScene*)_node->getScene();
+        
         Point worldPos = _node->convertToWorldSpaceAR(Point());
-        b2Vec2 b2Pos = scene->metersFromPoint(worldPos);
-        _body->SetTransform(b2Pos, CC_DEGREES_TO_RADIANS(-_node->getRotation()));
+        if(!LHScene::isLHScene(_node->getParent()) &&
+           !LHGameWorldNode::isLHGameWorldNode(_node->getParent()) &&
+           !LHUINode::isLHUINode(_node->getParent()) &&
+           !LHBackUINode::isLHBackUINode(_node->getParent()))
+        {
+            worldPos = _node->getParent()->convertToWorldSpaceAR(Point());
+        }        
+        b2Vec2 b2Pos = scene->metersFromPoint(worldPos);        
+        float globalAngle =  LHNodeTransform::globalAngleFromLocalAngle(_node, _node->getRotation());
+        _body->SetTransform(b2Pos, CC_DEGREES_TO_RADIANS(-globalAngle));
+        _body->SetAwake(true);
     }
 }
 
@@ -150,6 +162,10 @@ void LHPhysicsProtocol::updatePhysicsScale(){
 
         float scaleX = _node->getScaleX();
         float scaleY = _node->getScaleY();
+        
+        Point globalScale = LHNodeTransform::convertToWorldScale(_node, Point(scaleX, scaleY));
+        scaleX = globalScale.x;
+        scaleY = globalScale.y;
         
         if(scaleX < 0.01 && scaleX > -0.01){
             CCLOG("WARNING - SCALE Y value CANNOT BE 0 - BODY WILL NOT GET SCALED.");
@@ -257,7 +273,9 @@ void LHPhysicsProtocol::updatePhysicsScale(){
 static inline AffineTransform NodeToB2BodyTransform(Node *node)
 {
 	AffineTransform transform = AffineTransformIdentity;
-	for(Node *n = node; n && !LHGameWorldNode::isLHGameWorldNode(n); n = n->getParent()){
+	for(Node *n = node;
+        n && !LHGameWorldNode::isLHGameWorldNode(n) && !LHUINode::isLHUINode(n)&& !LHBackUINode::isLHBackUINode(n);
+        n = n->getParent()){
 		transform = AffineTransformConcat(transform, n->getNodeToParentAffineTransform());
 	}
 	return transform;
@@ -295,10 +313,8 @@ void LHPhysicsProtocol::visitPhysicsProtocol()
         if(!node)return;
 
         AffineTransform trans = b2BodyToParentTransform(node, this);
-        Point localPos = PointApplyAffineTransform(node->getAnchorPointInPoints(), trans);
-        
-        float angle = CC_RADIANS_TO_DEGREES(-_body->GetAngle());
-        
+        Point localPos = PointApplyAffineTransform(node->getAnchorPointInPoints(), trans);        
+        float angle = LHNodeTransform::localAngleFromGlobalAngle(node, CC_RADIANS_TO_DEGREES(-_body->GetAngle()));
         this->updatePosition(localPos);
         this->updateRotation(angle);
     }
@@ -604,15 +620,21 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     __Array* fixShapes = new __Array();
     fixShapes->init();
     
+    Size sizet = node->getContentSize();
+    float scaleX = node->getScaleX();
+    float scaleY = node->getScaleY();
+    sizet.width *= scaleX;
+    sizet.height*= scaleY;
+    
     __Array* fixturesInfo = NULL;
     
     if(shape == 0)//RECTANGLE
     {
-        node->setPhysicsBody(PhysicsBody::createBox(node->getContentSize()));
+        node->setPhysicsBody(PhysicsBody::createBox(sizet));
     }
     else if(shape == 1)//CIRCLE
     {
-        node->setPhysicsBody(PhysicsBody::createCircle(node->getContentSize().width*0.5));
+        node->setPhysicsBody(PhysicsBody::createCircle(sizet.width*0.5));
     }
     else if(shape == 3)//CHAIN
     {
@@ -628,6 +650,10 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
             for(size_t i = 0; i < points.size(); ++i)
             {
                 Point ptB = points[i];
+                
+                ptB.x *= scaleX;
+                ptB.y *= scaleY;
+                
                 if(prevPt)
                 {
                     PhysicsShapeEdgeSegment* shape = PhysicsShapeEdgeSegment::create(Point(prevPt->x, prevPt->y), ptB);
@@ -656,6 +682,9 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
             {
                 Point ptB = points[i];
             
+                ptB.x *= scaleX;
+                ptB.y *= scaleY;
+
                 if(prevPt)
                 {
                     PhysicsShapeEdgeSegment* shape = PhysicsShapeEdgeSegment::create(Point(prevPt->x, prevPt->y), ptB);
@@ -717,6 +746,15 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
                 Point ptB = trianglePoints[i+1];
                 Point ptC = trianglePoints[i+2];
                 
+                ptA.x *= scaleX;
+                ptA.y *= scaleY;
+
+                ptB.x *= scaleX;
+                ptB.y *= scaleY;
+
+                ptC.x *= scaleX;
+                ptC.y *= scaleY;
+                
                 Point* points = new Point[3];
                 
                 points[0] = ptA;
@@ -737,30 +775,49 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
         PhysicsBody* body = PhysicsBody::create();
         node->setPhysicsBody(body);
 
+        int flipx = scaleX < 0 ? -1 : 1;
+        int flipy = scaleY < 0 ? -1 : 1;
+
+        
         for(int f = 0; f < fixturesInfo->count(); ++f)
         {
             LHArray* fixPoints = (LHArray*)fixturesInfo->getObjectAtIndex(f);
 
             int count = (int)fixPoints->count();
-            Point* points = new Point[count];
-            
-            int i = count - 1;
-            for(int j = 0; j< count; ++j)
+            if(count > 2)
             {
-                Point point = fixPoints->pointAtIndex(j);
-                point.y = -point.y;
+                Point* points = new Point[count];
                 
-                points[j] = point;
-                i = i-1;
+//                int i = 0;
+//                for(int j = count-1; j >=0; --j)
+//                {
+//                    const int idx = (flipx < 0 && flipy >= 0) || (flipx >= 0 && flipy < 0) ? count - i - 1 : i;
+                
+                int i = count - 1;
+                for(int j = 0; j< count; ++j)
+                {
+                    
+                    Point point = fixPoints->pointAtIndex(j);
+                    point.y = -point.y;
+                    
+                    point.x *= scaleX;
+                    point.y *= scaleY;
+                    
+                    points[j] = point;
+//                    points[idx] = point;
+                    i = i-1;
+//                    ++i;
+                }
+                
+                PhysicsShapePolygon* shape = PhysicsShapePolygon::create(points, count);
+                fixShapes->addObject(shape);
+                body->addShape(shape);
+                
+                delete[] points;
             }
-            
-            PhysicsShapePolygon* shape = PhysicsShapePolygon::create(points, count);
-            fixShapes->addObject(shape);
-            body->addShape(shape);
-            
-            delete[] points;
         }
     }
+            
 
     CC_SAFE_DELETE(fixShapes);
     

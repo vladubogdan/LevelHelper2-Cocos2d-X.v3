@@ -6,6 +6,29 @@
 #include "LHScene.h"
 #include "LHUserProperties.h"
 
+SecondProperty* SecondProperty::customClassInstanceWithNode(Node* n)
+{
+	SecondProperty* instance = new SecondProperty();
+	instance->setNode(n);
+	return instance;
+}
+
+void SecondProperty::setPropertiesFromDictionary(LHDictionary* dict)
+{
+
+	if(dict->objectForKey("memberA"))
+		setMemberA(dict->stringForKey("memberA"));
+
+	if(dict->objectForKey("memberB"))
+		setMemberB(dict->floatForKey("memberB"));
+
+	if(dict->objectForKey("memberC"))
+		setMemberC(dict->floatForKey("memberC"));
+
+}
+
+
+
 RobotUserProperty* RobotUserProperty::customClassInstanceWithNode(Node* n)
 {
 	RobotUserProperty* instance = new RobotUserProperty();
@@ -36,29 +59,6 @@ Node* RobotUserProperty::getConnection(){
 		connection= scene->getChildNodeWithUUID(connection_uuid);
 	}
 	return connection;
-}
-
-
-
-SecondProperty* SecondProperty::customClassInstanceWithNode(Node* n)
-{
-	SecondProperty* instance = new SecondProperty();
-	instance->setNode(n);
-	return instance;
-}
-
-void SecondProperty::setPropertiesFromDictionary(LHDictionary* dict)
-{
-
-	if(dict->objectForKey("memberA"))
-		setMemberA(dict->stringForKey("memberA"));
-
-	if(dict->objectForKey("memberB"))
-		setMemberB(dict->floatForKey("memberB"));
-
-	if(dict->objectForKey("memberC"))
-		setMemberC(dict->boolForKey("memberC"));
-
 }
 
 

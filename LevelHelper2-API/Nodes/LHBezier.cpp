@@ -216,22 +216,37 @@ void LHBezier::removeFromParent(){
 void LHBezier::setPosition(const cocos2d::Vec2 &pos){
     DrawNode::setPosition(pos);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setPosition(child->getPosition());
+    }
 }
 void LHBezier::setRotation(float rotation){
     DrawNode::setRotation(rotation);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setRotation(child->getRotation());
+    }
 }
 void LHBezier::setScaleX(float scaleX){
     DrawNode::setScaleX(scaleX);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHBezier::setScaleY(float scaleY){
     DrawNode::setScaleY(scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleY(child->getScaleY());
+    }
 }
 void LHBezier::setScale(float scaleX, float scaleY){
     DrawNode::setScale(scaleX, scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHBezier::updatePosition(const cocos2d::Vec2 &pos){
     DrawNode::setPosition(pos);

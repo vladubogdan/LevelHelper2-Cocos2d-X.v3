@@ -18,6 +18,7 @@ class b2Body;
 class LHDictionary;
 class LHArray;
 class LHScene;
+class LHAsset;
 
 using namespace cocos2d;
 
@@ -57,7 +58,7 @@ public:
     /**
      Returns the Box2d body created on this sprite or NULL if sprite has no physics.
      */
-    b2Body* getBox2dBody(){return _body;}
+    b2Body* getBox2dBody(){ return _body;}
 
     /**
      Take the Box2d body from a common Node* object. Helper function in order to not deal with casts.
@@ -80,10 +81,13 @@ public:
     virtual void updateRotation(float rotation) = 0;
     
 private:
+    
     bool scheduledForRemoval;
     Point previousScale;
     b2Body* _body;
 #endif
+    
+    LHAsset* assetParent();
 };
 
 #define LH_GET_BOX2D_BODY LHPhysicsProtocol::LHGetBox2dBody

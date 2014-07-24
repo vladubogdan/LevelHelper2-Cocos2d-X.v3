@@ -249,7 +249,9 @@ void LHShape::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 #if LH_USE_BOX2D

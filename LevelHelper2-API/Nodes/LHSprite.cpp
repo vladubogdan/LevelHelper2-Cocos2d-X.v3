@@ -179,7 +179,8 @@ void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
-    Sprite::visit(renderer, parentTransform, parentTransformUpdated);
+    if(renderer)
+        Sprite::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 #if LH_USE_BOX2D

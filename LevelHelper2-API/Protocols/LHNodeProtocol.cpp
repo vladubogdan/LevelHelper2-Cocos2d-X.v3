@@ -19,7 +19,6 @@
 #include "LHShape.h"
 #include "LHBezier.h"
 #include "LHShape.h"
-#include "LHRopeJointNode.h"
 #include "LHParallax.h"
 #include "LHParallaxLayer.h"
 #include "LHWater.h"
@@ -27,6 +26,14 @@
 #include "LHAsset.h"
 #include "LHCamera.h"
 #include "LHGravityArea.h"
+#include "LHRopeJointNode.h"
+#include "LHRevoluteJointNode.h"
+#include "LHDistanceJointNode.h"
+#include "LHWeldJointNode.h"
+#include "LHPrismaticJointNode.h"
+#include "LHWheelJointNode.h"
+#include "LHPulleyJointNode.h"
+#include "LHGearJointNode.h"
 
 
 #include "LHGameWorldNode.h"
@@ -390,36 +397,63 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     {
         return LHGravityArea::gravityAreaWithDictionary(childInfo, prnt);
     }
-    //    else if([nodeType isEqualToString:@"LHWeldJoint"])
-    //    {
-    //        LHWeldJointNode* jt = [LHWeldJointNode weldJointNodeWithDictionary:childInfo
-    //                                                                    parent:prnt];
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-    //    else if([nodeType isEqualToString:@"LHRevoluteJoint"]){
-    //
-    //        LHRevoluteJointNode* jt = [LHRevoluteJointNode revoluteJointNodeWithDictionary:childInfo
-    //                                                                                parent:prnt];
-    //
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-    //    else if([nodeType isEqualToString:@"LHDistanceJoint"]){
-    //
-    //        LHDistanceJointNode* jt = [LHDistanceJointNode distanceJointNodeWithDictionary:childInfo
-    //                                                                                parent:prnt];
-    //        [scene addLateLoadingNode:jt];
-    //
-    //    }
-    //    else if([nodeType isEqualToString:@"LHPrismaticJoint"]){
-    //
-    //        LHPrismaticJointNode* jt = [LHPrismaticJointNode prismaticJointNodeWithDictionary:childInfo
-    //                                                                                   parent:prnt];
-    //        [scene addDebugJointNode:jt];
-    //        [scene addLateLoadingNode:jt];
-    //    }
-    
+    else if(nodeType == "LHRevoluteJoint")
+    {
+        if(scene)
+        {
+            LHRevoluteJointNode* jt = LHRevoluteJointNode::revoluteJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
+    else if(nodeType == "LHDistanceJoint")
+    {
+        if(scene)
+        {
+            LHDistanceJointNode* jt = LHDistanceJointNode::distanceJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
+    else if(nodeType == "LHWeldJoint")
+    {
+        if(scene)
+        {
+            LHWeldJointNode* jt = LHWeldJointNode::weldJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
+    else if(nodeType == "LHPrismaticJoint")
+    {
+        if(scene)
+        {
+            LHPrismaticJointNode* jt = LHPrismaticJointNode::prismaticJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
+    else if(nodeType == "LHWheelJoint")
+    {
+        if(scene)
+        {
+            LHWheelJointNode* jt = LHWheelJointNode::wheelJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
+    else if(nodeType == "LHPulleyJoint")
+    {
+        if(scene)
+        {
+            LHPulleyJointNode* jt = LHPulleyJointNode::pulleyJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
+    else if(nodeType == "LHGearJoint")
+    {
+        if(scene)
+        {
+            LHGearJointNode* jt = LHGearJointNode::gearJointNodeWithDictionary(childInfo, prnt);
+            scene->addLateLoadingNode(jt);
+        }
+    }
+
     
     else{
         printf("UNKNOWN NODE TYPE %s\n", nodeType.c_str());

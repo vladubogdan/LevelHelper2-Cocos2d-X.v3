@@ -186,7 +186,8 @@ void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, bool 
         }
 	}
     
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 #else //chipmunk
@@ -241,7 +242,8 @@ void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, bool 
     
     world->queryRect(&LHGravityAreaPhysicsQuery, rect, this);
     
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 #endif
 

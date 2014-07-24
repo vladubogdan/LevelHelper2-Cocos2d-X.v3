@@ -885,7 +885,8 @@ void LHRopeJointNode::visit(Renderer *renderer,
     }
 #endif
     
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 bool LHRopeJointNode::lateLoading()
@@ -900,7 +901,10 @@ bool LHRopeJointNode::lateLoading()
     
     if(nodeA && nodeB)
     {
-        
+        //this ensures that all transformations are set on the body prior creating the joint
+        nodeA->setPosition(nodeA->getPosition());
+        nodeB->setPosition(nodeB->getPosition());
+
 
 #if LH_USE_BOX2D
         LHScene* scene = (LHScene*)this->getScene();
@@ -929,7 +933,7 @@ bool LHRopeJointNode::lateLoading()
         jointDef.collideConnected = this->getCollideConnected();
         
         b2RopeJoint* joint = (b2RopeJoint*)world->CreateJoint(&jointDef);
-
+        joint->SetUserData(this);
         this->setJoint(joint);
         
 #else//chipmunk

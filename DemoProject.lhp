@@ -105,6 +105,11 @@
 					<key>publish</key>
 					<true/>
 				</dict>
+				<key>gearJointDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
 				<key>gravityAreas.lhs</key>
 				<dict>
 					<key>publish</key>
@@ -125,6 +130,11 @@
 					<key>publish</key>
 					<true/>
 				</dict>
+				<key>pulleyJointDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
 				<key>ropeJointDemo.lhs</key>
 				<dict>
 					<key>publish</key>
@@ -135,7 +145,17 @@
 					<key>publish</key>
 					<true/>
 				</dict>
+				<key>simpleCar.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
 				<key>userPropertiesDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>weldJointsDemo.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

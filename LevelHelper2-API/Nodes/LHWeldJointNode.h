@@ -1,0 +1,65 @@
+//
+//  LHWeldJointNode.h
+//  LevelHelper2-Cocos2d-X-v3
+//
+//  Created by Bogdan Vladu on 27/03/14.
+//  Copyright (c) 2014 GameDevHelper.com. All rights reserved.
+//
+#ifndef __LEVELHELPER_API_WELD_JOINT_NODE_H__
+#define __LEVELHELPER_API_WELD_JOINT_NODE_H__
+
+
+#include "cocos2d.h"
+#include "LHNodeProtocol.h"
+#include "LHJointsProtocol.h"
+#include "LHConfig.h"
+
+using namespace cocos2d;
+
+/**
+ LHWeldJointNode class is used to load a LevelHelper weld joint.
+ 
+ WARNING - Weld joint is not supported in Chipmunk.
+ 
+ When using Box2d it uses a b2WeldJoint.
+ */
+
+class LHDictionary;
+
+class LHWeldJointNode : public Node, public LHNodeProtocol, public LHJointsProtocol
+{
+public:
+    
+    static LHWeldJointNode* weldJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    
+    LHWeldJointNode();
+    virtual ~LHWeldJointNode();
+    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
+    static  bool isLHWeldJointNode(Node* obj){return (0 != dynamic_cast<LHWeldJointNode*>(obj));}
+    virtual bool isWeldJointNode(){return true;}
+    
+    virtual void removeFromParent();
+    
+    /**
+     Returns the frequency used by this joint.
+     */
+    float getFrequency(){return _frequency;}
+    
+    /**
+     Returns the damping ratio used by this joint.
+     */
+    float getDampingRatio(){return _damping;}
+    
+    
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+    virtual bool lateLoading();
+    
+private:
+    
+    float _frequency;
+    float _damping;
+    
+};
+
+#endif //__LEVELHELPER_API_WELD_JOINT_NODE_H__

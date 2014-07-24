@@ -14,11 +14,12 @@
 
 LHAsset::LHAsset()
 {
+    _tracedFixtures = nullptr;
 }
 
 LHAsset::~LHAsset()
 {
-    
+    CC_SAFE_RELEASE(_tracedFixtures);
 }
 
 LHAsset* LHAsset::createWithName(const std::string& nm, const std::string& assetFileName, Node* prnt)
@@ -47,10 +48,16 @@ bool LHAsset::initWithName(const std::string& nm, const std::string& assetFileNa
         LHDictionary* assetInfo = (LHDictionary*)scene->assetInfoForFile(assetFileName);
         if(assetInfo)
         {
+            LHDictionary* tracedFixInfo = assetInfo->dictForKey("tracedFixtures");
+            if(tracedFixInfo){
+                _tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
+                _tracedFixtures->retain();
+            }
+            
             prnt->addChild(this);
             this->loadChildrenFromDictionary(assetInfo);
         }
-        
+                
         return true;
     }
     return false;
@@ -80,7 +87,6 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
         LHScene* scene = (LHScene*)prnt->getScene();
         this->loadGenericInfoFromDictionary(dict);
         
-        
 #if LH_USE_BOX2D
         prnt->addChild(this);
         this->loadTransformationInfoFromDictionary(dict);
@@ -93,15 +99,25 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
 #endif
         
         
+        bool foundFile = false;
         if(dict->objectForKey("assetFile"))
         {
             LHDictionary* assetInfo = (LHDictionary*)scene->assetInfoForFile(dict->stringForKey("assetFile"));
             if(assetInfo){
+                
+                LHDictionary* tracedFixInfo = assetInfo->dictForKey("tracedFixtures");
+                if(tracedFixInfo){
+                    _tracedFixtures = __Dictionary::createWithDictionary(tracedFixInfo);
+                    _tracedFixtures->retain();
+                }
+
+                foundFile = true;
                 this->loadChildrenFromDictionary(assetInfo);
             }
-            else{
-                CCLOG("WARNING: COULD NOT FIND INFORMATION FOR ASSET %s.", this->getName().c_str());
-            }
+        }
+        if(!foundFile){
+            CCLOG("WARNING: COULD NOT FIND INFORMATION FOR ASSET %s. This usually means that the asset was created but not saved. Check your level and in the Scene Navigator, click on the lock icon next to the asset name.", this->getName().c_str());
+            this->loadChildrenFromDictionary(dict);
         }
 
         this->createAnimationsFromDictionary(dict);
@@ -110,12 +126,18 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
     }
     return false;
 }
+__Array* LHAsset::tracedFixturesWithUUID(const std::string& uuid)
+{
+    if(!_tracedFixtures)return nullptr;
+    return (__Array*)_tracedFixtures->objectForKey(uuid);
+}
 
 void LHAsset::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 

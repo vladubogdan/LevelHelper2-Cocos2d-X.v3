@@ -34,6 +34,7 @@
 #include "LHUINode.h"
 #include "LHBackUINode.h"
 #include "LHDevice.h"
+#include "LHAsset.h"
 
 #include "NodeTransform.h"
 
@@ -44,13 +45,16 @@
 LHPhysicsProtocol::LHPhysicsProtocol()
 {
 #if LH_USE_BOX2D
+    scheduledForRemoval = false;
     _body = NULL;
 #endif
 }
 LHPhysicsProtocol::~LHPhysicsProtocol()
 {
 #if LH_USE_BOX2D
-    this->removeBody();
+    //do not delete the body - its deleted by the world - will also cause crash when using
+    //gear joints
+//    this->removeBody();
 #endif
 }
 
@@ -60,6 +64,16 @@ Node* LHPhysicsProtocol::LHGetNode(LHPhysicsProtocol* prot)
     return dynamic_cast<Node*>(prot);
 }
 
+LHAsset* LHPhysicsProtocol::assetParent()
+{
+    Node* p = LHPhysicsProtocol::LHGetNode(this);
+    while(p && p->getParent()){
+        if(LHAsset::isLHAsset(p))
+            return (LHAsset*)p;
+        p = p->getParent();
+    }
+    return nullptr;
+}
 
 
 #pragma mark - BOX2D SUPPORT
@@ -94,16 +108,9 @@ void LHPhysicsProtocol::updatePhysicsTransform(){
     if(_body)
     {
         LHScene* scene = (LHScene*)_node->getScene();
+        Point worldPos = _node->getParent()->convertToWorldSpace(_node->getPosition());
         
-        Point worldPos = _node->convertToWorldSpaceAR(Point());
-        if(!LHScene::isLHScene(_node->getParent()) &&
-           !LHGameWorldNode::isLHGameWorldNode(_node->getParent()) &&
-           !LHUINode::isLHUINode(_node->getParent()) &&
-           !LHBackUINode::isLHBackUINode(_node->getParent()))
-        {
-            worldPos = _node->getParent()->convertToWorldSpaceAR(Point());
-        }        
-        b2Vec2 b2Pos = scene->metersFromPoint(worldPos);        
+        b2Vec2 b2Pos = scene->metersFromPoint(worldPos);
         float globalAngle =  LHNodeTransform::globalAngleFromLocalAngle(_node, _node->getRotation());
         _body->SetTransform(b2Pos, CC_DEGREES_TO_RADIANS(-globalAngle));
         _body->SetAwake(true);
@@ -346,11 +353,12 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     b2BodyDef bodyDef;
     bodyDef.type = (b2BodyType)type;
     
-    Point position = node->convertToWorldSpaceAR(Point());
+//    Point position = node->convertToWorldSpaceAR(Point());
+    Point position = node->getParent()->convertToWorldSpace(node->getPosition());
     b2Vec2 bodyPos = scene->metersFromPoint(position);
     bodyDef.position = bodyPos;
     
-    float angle = node->getRotation();
+    float angle = LHNodeTransform::globalAngleFromLocalAngle(node, node->getRotation());
     bodyDef.angle = CC_DEGREES_TO_RADIANS(-angle);
     bodyDef.userData = node;
     
@@ -370,6 +378,10 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     
     float scaleX = node->getScaleX();
     float scaleY = node->getScaleY();
+    
+    Point worldScale = LHNodeTransform::convertToWorldScale(node, Point(scaleX, scaleY));
+    scaleX = worldScale.x;
+    scaleY = worldScale.y;
     
     previousScale = Point(scaleX, scaleY);
     
@@ -529,8 +541,13 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     else if(shapeType == 5)//TRACED
     {
         std::string fixUUID = dict->stringForKey("fixtureUUID");
-        fixturesInfo = (LHArray*)scene->tracedFixturesWithUUID(fixUUID);
-        
+        fixturesInfo = (LHArray*)scene->tracedFixturesWithUUID(fixUUID);        
+        if(!fixturesInfo){
+            LHAsset* asset = this->assetParent();
+            if(asset){
+                fixturesInfo = (LHArray*)asset->tracedFixturesWithUUID(fixUUID);
+            }
+        }
     }
     
     if(fixturesInfo)
@@ -572,6 +589,7 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
                 
                 fixture.shape = &shapeDef;
                 _body->CreateFixture(&fixture);
+                
                 delete[] verts;
             }
         }
@@ -726,6 +744,12 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
             if(scene){
                 fixturesInfo = scene->tracedFixturesWithUUID(fixUUID);
             }
+            if(!fixturesInfo){
+                LHAsset* asset = this->assetParent();
+                if(asset){
+                    fixturesInfo = (LHArray*)asset->tracedFixturesWithUUID(fixUUID);
+                }
+            }
         }
     }
     else if(shape == 2)//POLYGON
@@ -775,8 +799,8 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
         PhysicsBody* body = PhysicsBody::create();
         node->setPhysicsBody(body);
 
-        int flipx = scaleX < 0 ? -1 : 1;
-        int flipy = scaleY < 0 ? -1 : 1;
+//        int flipx = scaleX < 0 ? -1 : 1;
+//        int flipy = scaleY < 0 ? -1 : 1;
 
         
         for(int f = 0; f < fixturesInfo->count(); ++f)

@@ -407,7 +407,9 @@ void LHWater::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
         this->setShapeTriangles(trianglePts, colorOverlay);
         
     }
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 
     
 //#if LH_USE_BOX2D

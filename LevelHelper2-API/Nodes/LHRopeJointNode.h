@@ -26,7 +26,6 @@ using namespace cocos2d;
  */
 
 class LHDictionary;
-class LHScene;
 class LHDrawNode;
 
 #if LH_USE_BOX2D

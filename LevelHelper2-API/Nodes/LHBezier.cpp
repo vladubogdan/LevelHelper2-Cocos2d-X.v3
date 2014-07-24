@@ -205,7 +205,8 @@ void LHBezier::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
-    DrawNode::visit(renderer, parentTransform, parentTransformUpdated);
+    if(renderer)
+        DrawNode::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 #if LH_USE_BOX2D

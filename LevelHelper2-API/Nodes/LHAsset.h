@@ -69,9 +69,14 @@ public:
 
     
 private:
+
+    friend class LHPhysicsProtocol;
     
     bool initWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
     bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
+    __Array* tracedFixturesWithUUID(const std::string& uuid);
+    __Dictionary*   _tracedFixtures;
 };
 
 #endif //__LEVELHELPER_API_ASSET_H__

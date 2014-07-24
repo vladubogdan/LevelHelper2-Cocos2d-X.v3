@@ -89,7 +89,9 @@ void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentT
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 

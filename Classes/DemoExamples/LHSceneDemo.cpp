@@ -13,6 +13,10 @@
 #include "LHSceneCollisionHandlingDemo.h"
 #include "LHSceneGravityAreasDemo.h"
 #include "LHSceneUserPropertiesDemo.h"
+#include "LHSceneAssetWithJointsDemo.h"
+#include "LHScenePulleyJointDemo.h"
+#include "LHSceneGearJointDemo.h"
+#include "LHSceneWeldJointsDemo.h"
 
 
 LHSceneDemo* LHSceneDemo::create()
@@ -53,11 +57,23 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneCharacterAnimationDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneCharacterAnimationDemo::create);
 
-    sceneNames.push_back("LHSceneAssetDemo");
-    sceneCreators.push_back((createFuncPtrType)&LHSceneAssetDemo::create);
-
     sceneNames.push_back("LHSceneRopeJointDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneRopeJointDemo::create);
+
+    sceneNames.push_back("LHSceneWeldJointsDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneWeldJointsDemo::create);
+    
+    sceneNames.push_back("LHSceneGearJointDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneGearJointDemo::create);
+    
+    sceneNames.push_back("LHScenePulleyJointDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHScenePulleyJointDemo::create);
+    
+    sceneNames.push_back("LHSceneAssetDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneAssetDemo::create);
+    
+    sceneNames.push_back("LHSceneAssetWithJointsDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneAssetWithJointsDemo::create);
 
     sceneNames.push_back("LHSceneShapesDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneShapesDemo::create);

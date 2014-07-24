@@ -163,5 +163,7 @@ void LHCamera::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
         setPosition(pt);
     }
     setSceneView();
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }

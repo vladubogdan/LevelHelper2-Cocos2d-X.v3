@@ -82,7 +82,8 @@ void LHParallax::visit(Renderer *renderer, const Mat4& parentTransform, bool par
 {
     visitActiveAnimation();
     transformLayerPositions();
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 void LHParallax::transformLayerPositions()

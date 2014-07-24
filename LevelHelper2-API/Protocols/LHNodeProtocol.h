@@ -141,6 +141,13 @@ public:
     virtual bool isParallax(){return false;}
     virtual bool isParallaxLayer(){return false;}
     virtual bool isRopeJointNode(){return false;}
+    virtual bool isRevoluteJointNode(){return false;}
+    virtual bool isDistanceJointNode(){return false;}
+    virtual bool isLHWeldJointNode(){return false;}
+    virtual bool isPrismaticJointNode(){return false;}
+    virtual bool isWheelJointNode(){return false;}
+    virtual bool isPulleyJointNode(){return false;}
+    virtual bool isGearJointNode(){return false;}
     virtual bool isWater(){return false;}
     virtual bool isGravityArea(){return false;}
 

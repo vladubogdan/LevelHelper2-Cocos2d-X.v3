@@ -37,6 +37,16 @@ public:
     virtual void setActiveAnimation(LHAnimation* animation);
 
     /**
+     Returns the active animation on a node or null if no active animation.
+     */
+    LHAnimation* getActiveAnimation();
+    
+    /**
+     Returns all animations available on this node.
+     */
+    __Array* getAnimations();
+    
+    /**
      Get the animation with a specific name or nullptr if not found.
      @param animName The name of the animation.
      */

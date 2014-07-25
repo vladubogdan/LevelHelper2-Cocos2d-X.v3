@@ -100,6 +100,7 @@ bool LHAnimation::initWithDictionary(LHDictionary* dict, LHNodeAnimationProtocol
     }
     
     if(_active){
+        this->restart();
         this->setAnimating(true);
     }
     
@@ -170,15 +171,18 @@ void LHAnimation::resetOneShotFramesStartingFromFrameNumber(int frameNumber){
     }
 }
 void LHAnimation::setAnimating(bool val){
-    resetOneShotFrames();
     _animating = val;
-    _currentRepetition = 0;
 }
 bool LHAnimation::animating(){
     return _animating;
 }
+void LHAnimation::restart(){
+    resetOneShotFrames();
+    _currentRepetition = 0;
+}
 void LHAnimation::updateTimeWithDelta(float delta){
-    setCurrentTime(currentTime() + delta);
+    if(_animating)
+        setCurrentTime(currentTime() + delta);
 }
 void LHAnimation::updateTimeWithValue(float val){
     setCurrentTime(val);

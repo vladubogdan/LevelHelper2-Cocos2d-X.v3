@@ -531,7 +531,7 @@
 		503AE10417EB98FF00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = mac/Prefix.pch; sourceTree = "<group>"; };
 		503AE11117EB99EE00D1A890 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		503AE11A17EB9C5A00D1A890 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		5087E76F17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5087E76F17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 + Box2d - Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 + Box2d - Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5087E77217EB970100C73F5D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5087E77317EB970100C73F5D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5087E77417EB970100C73F5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -672,7 +672,7 @@
 		6E79166D1964159D00E68E06 /* LHSceneCameraFollowDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneCameraFollowDemo.cpp; sourceTree = "<group>"; };
 		6E79166E1964159D00E68E06 /* LHSceneCameraFollowDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneCameraFollowDemo.h; sourceTree = "<group>"; };
 		6E7916711964184E00E68E06 /* LHConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHConfig.h; sourceTree = "<group>"; };
-		6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 + Chipmunk copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7916DD1964186600E68E06 /* Info+Box2d.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info+Box2d.plist"; path = "/Volumes/PersonalFiles/Projects/PrivateProjects/LevelHelper2-API-GITHUB/Cocos2d-X.v3/proj.ios_mac/Info+Box2d.plist"; sourceTree = "<absolute>"; };
 		6E7916DE1964197E00E68E06 /* LHBox2dDebugDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBox2dDebugDrawNode.h; sourceTree = "<group>"; };
 		6E7916DF1964197E00E68E06 /* LHBox2dDebugDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHBox2dDebugDrawNode.cpp; sourceTree = "<group>"; };
@@ -815,8 +815,8 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk.app */,
-				5087E76F17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 Mac.app */,
-				6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk copy.app */,
+				5087E76F17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 + Box2d - Mac.app */,
+				6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1147,9 +1147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk */ = {
+		1D6058900D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Chipmunk" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -1164,14 +1164,14 @@
 				1AC6FB2B180E99E1004C840B /* PBXTargetDependency */,
 				1AC6FB2D180E99E1004C840B /* PBXTargetDependency */,
 			);
-			name = "LevelHelper2-Cocos2d-X.v3 + Chipmunk";
+			name = "LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS";
 			productName = iphone;
 			productReference = 1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5087E73D17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 Mac */ = {
+		5087E73D17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 + Box2d - Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 Mac" */;
+			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Box2d - Mac" */;
 			buildPhases = (
 				5087E74817EB910900C73F5D /* Resources */,
 				5087E75617EB910900C73F5D /* Sources */,
@@ -1186,14 +1186,14 @@
 				1AC6FB1A180E9959004C840B /* PBXTargetDependency */,
 				1AC6FB1C180E9959004C840B /* PBXTargetDependency */,
 			);
-			name = "LevelHelper2-Cocos2d-X.v3 Mac";
+			name = "LevelHelper2-Cocos2d-X.v3 + Box2d - Mac";
 			productName = iphone;
-			productReference = 5087E76F17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 Mac.app */;
+			productReference = 5087E76F17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 + Box2d - Mac.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E7916721964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d */ = {
+		6E7916721964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E7916D91964186600E68E06 /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Box2d" */;
+			buildConfigurationList = 6E7916D91964186600E68E06 /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS" */;
 			buildPhases = (
 				6E79167D1964186600E68E06 /* Resources */,
 				6E7916941964186600E68E06 /* Sources */,
@@ -1208,9 +1208,9 @@
 				6E7916791964186600E68E06 /* PBXTargetDependency */,
 				6E79167B1964186600E68E06 /* PBXTargetDependency */,
 			);
-			name = "LevelHelper2-Cocos2d-X.v3 + Box2d";
+			name = "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS";
 			productName = iphone;
-			productReference = 6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk copy.app */;
+			productReference = 6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1246,9 +1246,9 @@
 			);
 			projectRoot = "";
 			targets = (
-				6E7916721964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d */,
-				1D6058900D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk */,
-				5087E73D17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 Mac */,
+				6E7916721964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS */,
+				5087E73D17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 + Box2d - Mac */,
+				1D6058900D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -1804,7 +1804,7 @@
 					USE_FILE32API,
 					CC_TARGET_OS_MAC,
 					"COCOS2D_DEBUG=1",
-					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"LH_USE_BOX2D=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
@@ -1831,7 +1831,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					USE_FILE32API,
 					CC_TARGET_OS_MAC,
-					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"LH_USE_BOX2D=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
@@ -1870,7 +1870,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info+Box2d.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_NAME = "LevelHelper2-Cocos2d-X.v3 + Chipmunk copy";
+				PRODUCT_NAME = "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1900,7 +1900,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info+Box2d.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_NAME = "LevelHelper2-Cocos2d-X.v3 + Chipmunk copy";
+				PRODUCT_NAME = "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1969,7 +1969,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Chipmunk" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -1978,7 +1978,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 Mac" */ = {
+		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Box2d - Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5087E76D17EB910900C73F5D /* Debug */,
@@ -1987,7 +1987,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		6E7916D91964186600E68E06 /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Box2d" */ = {
+		6E7916D91964186600E68E06 /* Build configuration list for PBXNativeTarget "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E7916DA1964186600E68E06 /* Debug */,

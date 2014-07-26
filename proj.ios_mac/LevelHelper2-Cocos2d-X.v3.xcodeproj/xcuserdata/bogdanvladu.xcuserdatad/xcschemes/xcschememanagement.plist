@@ -4,20 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>LevelHelper2-Cocos2d-X.v3 + Box2d.xcscheme</key>
+		<key>LevelHelper2-Cocos2d-X.v3 + Box2d - Mac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>LevelHelper2-Cocos2d-X.v3 + Chipmunk.xcscheme</key>
+		<key>LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>LevelHelper2-Cocos2d-X.v3 Mac.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>

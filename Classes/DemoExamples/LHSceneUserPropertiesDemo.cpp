@@ -4,7 +4,7 @@
 LHSceneUserPropertiesDemo* LHSceneUserPropertiesDemo::create()
 {
     LHSceneUserPropertiesDemo *ret = new LHSceneUserPropertiesDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/userPropertiesDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/userPropertiesDemo.lhplist"))
     {
         ret->autorelease();
         return ret;
@@ -75,6 +75,9 @@ bool LHSceneUserPropertiesDemo::initWithContentOfFile(const std::string& plistLe
     
     
     
+#ifdef __LH_USER_PROPERTY_ROBOTUSERPROPERTY__
+    //we test for this define here as the user might have this class inside its own project which may have
+    //different properties or no properties defined. We dont want a compilation error if that happens.
     
     
     LHSprite* pinkRobot = (LHSprite*)this->getChildNodeWithName("pinkRobot");
@@ -130,7 +133,7 @@ bool LHSceneUserPropertiesDemo::initWithContentOfFile(const std::string& plistLe
         }
     }
 
-    
+#endif
     
     
         

@@ -4,7 +4,7 @@
 LHSceneCharacterAnimationDemo* LHSceneCharacterAnimationDemo::create()
 {
     LHSceneCharacterAnimationDemo *ret = new LHSceneCharacterAnimationDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/characterAnimationDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/characterAnimationDemo.lhplist"))
     {
         ret->autorelease();
         return ret;
@@ -54,3 +54,20 @@ bool LHSceneCharacterAnimationDemo::initWithContentOfFile(const std::string& pli
     return retValue;
 }
 
+
+bool LHSceneCharacterAnimationDemo::onTouchBegan(Touch* touch, Event* event)
+{
+    
+    LHNode* officerNode = (LHNode*)this->getChildNodeWithName("Officer");
+    
+    if(officerNode)
+    {
+        LHAnimation* anim = officerNode->getActiveAnimation();
+        anim->setAnimating(!anim->animating());
+        CCLOG("ANIMATION: %s %s.", anim->animating() ? "Playing" : "Pausing", anim->name().c_str());
+    }
+
+    
+    //dont forget to call super
+    return LHScene::onTouchBegan(touch, event);
+}

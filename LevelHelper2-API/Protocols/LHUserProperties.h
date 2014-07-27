@@ -9,6 +9,36 @@
 #include "LHUserPropertyProtocol.h"
 
 
+#ifndef __LH_USER_PROPERTY_SECONDPROPERTY__
+#define __LH_USER_PROPERTY_SECONDPROPERTY__
+class SecondProperty : public LHUserPropertyProtocol
+{
+public:
+	std::string getMemberA(){return memberA;}
+	void setMemberA(const std::string& memberAValue){memberA = memberAValue;}
+
+	float getMemberB(){return memberB;}
+	void setMemberB(const float& memberBValue){memberB = memberBValue;}
+
+	float getMemberC(){return memberC;}
+	void setMemberC(const float& memberCValue){memberC = memberCValue;}
+
+	static SecondProperty* customClassInstanceWithNode(Node* node);
+
+	std::string getClassName(){return "SecondProperty";}
+
+	virtual void setPropertiesFromDictionary(LHDictionary* dict);
+
+private:
+	std::string memberA;
+	float memberB;
+	float memberC;
+};
+#endif //__LH_USER_PROPERTY_SECONDPROPERTY__
+
+
+#ifndef __LH_USER_PROPERTY_ROBOTUSERPROPERTY__
+#define __LH_USER_PROPERTY_ROBOTUSERPROPERTY__
 class RobotUserProperty : public LHUserPropertyProtocol
 {
 public:
@@ -37,31 +67,7 @@ private:
 	bool activated;
 	std::string model;
 };
-
-
-class SecondProperty : public LHUserPropertyProtocol
-{
-public:
-	std::string getMemberA(){return memberA;}
-	void setMemberA(const std::string& memberAValue){memberA = memberAValue;}
-
-	float getMemberB(){return memberB;}
-	void setMemberB(const float& memberBValue){memberB = memberBValue;}
-
-	bool getMemberC(){return memberC;}
-	void setMemberC(const bool& memberCValue){memberC = memberCValue;}
-
-	static SecondProperty* customClassInstanceWithNode(Node* node);
-
-	std::string getClassName(){return "SecondProperty";}
-
-	virtual void setPropertiesFromDictionary(LHDictionary* dict);
-
-private:
-	std::string memberA;
-	float memberB;
-	bool memberC;
-};
+#endif //__LH_USER_PROPERTY_ROBOTUSERPROPERTY__
 
 
 
@@ -69,8 +75,8 @@ class LHUserCustomPropertiesManager
 {
 public:
 	static LHUserPropertyProtocol* customClassInstanceWithName(const std::string& className, Node* node){
-		if("RobotUserProperty" == className){ return RobotUserProperty::customClassInstanceWithNode(node);}
 		if("SecondProperty" == className){ return SecondProperty::customClassInstanceWithNode(node);}
+		if("RobotUserProperty" == className){ return RobotUserProperty::customClassInstanceWithNode(node);}
 		return NULL;
 	}
 

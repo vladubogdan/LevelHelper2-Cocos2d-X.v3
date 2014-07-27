@@ -4,7 +4,7 @@
 LHSceneIntroductionDemo* LHSceneIntroductionDemo::create()
 {
     LHSceneIntroductionDemo *ret = new LHSceneIntroductionDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/introductionDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/introductionDemo.lhplist"))
     {
         ret->autorelease();
         return ret;

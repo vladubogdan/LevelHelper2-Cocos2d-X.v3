@@ -89,7 +89,9 @@ void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentT
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+
+    if(renderer)
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
 }
 
 
@@ -101,22 +103,37 @@ void LHNode::removeFromParent(){
 void LHNode::setPosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setPosition(child->getPosition());
+    }
 }
 void LHNode::setRotation(float rotation){
     Node::setRotation(rotation);
     this->updatePhysicsTransform();
+    for (auto& child : this->getChildren()){
+        child->setRotation(child->getRotation());
+    }
 }
-void LHNode::setScaleX(float scaleX){
+void LHNode::setScaleX(float scaleX){    
     Node::setScaleX(scaleX);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHNode::setScaleY(float scaleY){
     Node::setScaleY(scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleY(child->getScaleY());
+    }
 }
 void LHNode::setScale(float scaleX, float scaleY){
     Node::setScale(scaleX, scaleY);
     this->updatePhysicsScale();
+    for (auto& child : this->getChildren()){
+        child->setScaleX(child->getScaleX());
+    }
 }
 void LHNode::updatePosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);

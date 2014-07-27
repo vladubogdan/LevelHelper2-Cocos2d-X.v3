@@ -249,6 +249,10 @@ void LHBox2dCollisionHandling::beginContact(b2Contact* contact)
     Node* nodeA = this->getNodeAFromContact(contact);
     Node* nodeB = this->getNodeBFromContact(contact);
     if(!nodeA || !nodeB)return;
+    
+    //called for sensors
+    _scene->didBeginContactBetweenNodes(nodeA, nodeB, this->getPointFromContact(contact), 0);
+    
 //    [_activeContacts addObject:[LHActiveContact activeContactWithA:nodeA
 //                                                                 b:nodeB
 //                                                          disabled:NO

@@ -4,6 +4,37 @@
 <array>
 	<dict>
 		<key>name</key>
+		<string>SecondProperty</string>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>arrayType</key>
+				<integer>0</integer>
+				<key>name</key>
+				<string>memberA</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>arrayType</key>
+				<integer>0</integer>
+				<key>name</key>
+				<string>memberB</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>arrayType</key>
+				<integer>0</integer>
+				<key>name</key>
+				<string>memberC</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>RobotUserProperty</string>
 		<key>properties</key>
 		<array>
@@ -38,37 +69,6 @@
 				<string>model</string>
 				<key>type</key>
 				<integer>0</integer>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>SecondProperty</string>
-		<key>properties</key>
-		<array>
-			<dict>
-				<key>arrayType</key>
-				<integer>0</integer>
-				<key>name</key>
-				<string>memberA</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>arrayType</key>
-				<integer>0</integer>
-				<key>name</key>
-				<string>memberB</string>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>arrayType</key>
-				<integer>0</integer>
-				<key>name</key>
-				<string>memberC</string>
-				<key>type</key>
-				<integer>2</integer>
 			</dict>
 		</array>
 	</dict>

@@ -4,7 +4,7 @@
 LHSceneParallaxDemo* LHSceneParallaxDemo::create()
 {
     LHSceneParallaxDemo *ret = new LHSceneParallaxDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/parallaxDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/parallaxDemo.lhplist"))
     {
         ret->autorelease();
         return ret;

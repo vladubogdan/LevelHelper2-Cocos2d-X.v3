@@ -1655,10 +1655,97 @@
 			<string>{0, 0}</string>
 			<key>name</key>
 			<string>Officer</string>
+			<key>nodePhysics</key>
+			<dict>
+				<key>allowSleep</key>
+				<true/>
+				<key>bullet</key>
+				<false/>
+				<key>fixedRotation</key>
+				<false/>
+				<key>genericFixture</key>
+				<dict>
+					<key>category</key>
+					<integer>1</integer>
+					<key>density</key>
+					<real>0.10000000149011612</real>
+					<key>fixtureID</key>
+					<integer>0</integer>
+					<key>friction</key>
+					<real>0.20000000298023224</real>
+					<key>mask</key>
+					<integer>65535</integer>
+					<key>name</key>
+					<string>GenericFixture</string>
+					<key>restitution</key>
+					<real>0.0</real>
+					<key>sensor</key>
+					<false/>
+				</dict>
+				<key>gravityScale</key>
+				<real>1</real>
+				<key>ovalShape</key>
+				<array>
+					<array>
+						<string>{-1.7794356347569304e-14, -173.31326293945312}</string>
+						<string>{18.898002624511719, -169.98309326171875}</string>
+						<string>{37.069766998291016, -160.12057495117188}</string>
+						<string>{53.816959381103516, -144.10470581054688}</string>
+						<string>{68.495994567871094, -122.55098724365234}</string>
+						<string>{-53.816959381103516, -144.10470581054688}</string>
+						<string>{-37.069766998291016, -160.12057495117188}</string>
+						<string>{-18.898002624511719, -169.98309326171875}</string>
+					</array>
+					<array>
+						<string>{5.9314523982007504e-15, 173.31326293945312}</string>
+						<string>{-18.898002624511719, 169.98309326171875}</string>
+						<string>{-37.069766998291016, 160.12057495117188}</string>
+						<string>{-53.816959381103516, 144.10470581054688}</string>
+						<string>{68.495994567871094, 122.55098724365234}</string>
+						<string>{53.816959381103516, 144.10470581054688}</string>
+						<string>{37.069766998291016, 160.12057495117188}</string>
+						<string>{18.898002624511719, 169.98309326171875}</string>
+					</array>
+					<array>
+						<string>{-53.816959381103516, -144.10470581054688}</string>
+						<string>{68.495994567871094, -122.55098724365234}</string>
+						<string>{80.542770385742188, -96.287689208984375}</string>
+						<string>{89.494331359863281, -66.324111938476562}</string>
+						<string>{95.006675720214844, -33.811740875244141}</string>
+						<string>{-89.494331359863281, -66.324111938476562}</string>
+						<string>{-80.542770385742188, -96.287689208984375}</string>
+						<string>{-68.495994567871094, -122.55098724365234}</string>
+					</array>
+					<array>
+						<string>{-89.494331359863281, -66.324111938476562}</string>
+						<string>{95.006675720214844, -33.811740875244141}</string>
+						<string>{96.867965698242188, 0}</string>
+						<string>{95.006675720214844, 33.811740875244141}</string>
+						<string>{-89.494331359863281, 66.324111938476562}</string>
+						<string>{-95.006675720214844, 33.811740875244141}</string>
+						<string>{-96.867965698242188, 2.12247533865886e-14}</string>
+						<string>{-95.006675720214844, -33.811740875244141}</string>
+					</array>
+					<array>
+						<string>{95.006675720214844, 33.811740875244141}</string>
+						<string>{89.494331359863281, 66.324111938476562}</string>
+						<string>{80.542770385742188, 96.287689208984375}</string>
+						<string>{68.495994567871094, 122.55098724365234}</string>
+						<string>{-53.816959381103516, 144.10470581054688}</string>
+						<string>{-68.495994567871094, 122.55098724365234}</string>
+						<string>{-80.542770385742188, 96.287689208984375}</string>
+						<string>{-89.494331359863281, 66.324111938476562}</string>
+					</array>
+				</array>
+				<key>shape</key>
+				<integer>4</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
 			<key>nodeType</key>
 			<string>LHNode</string>
 			<key>parentUUID</key>
-			<string>4927A69F-6EAE-427F-93E6-E9C0F4C3C05B</string>
+			<string>00C30FB4-796F-4D4E-A942-646C5C04A1C2</string>
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
@@ -1684,7 +1771,7 @@
 	<key>nodeType</key>
 	<string>LHAsset</string>
 	<key>parentUUID</key>
-	<string>A3C70748-C5AF-4967-8A46-B8CBA349D754</string>
+	<string>8DA21A90-C291-4A5A-93F0-378AAEE1729F</string>
 	<key>rotation</key>
 	<real>0.0</real>
 	<key>scale</key>
@@ -1696,7 +1783,7 @@
 		<string>DEFAULT</string>
 	</array>
 	<key>uuid</key>
-	<string>4927A69F-6EAE-427F-93E6-E9C0F4C3C05B</string>
+	<string>00C30FB4-796F-4D4E-A942-646C5C04A1C2</string>
 	<key>zOrder</key>
 	<integer>0</integer>
 </dict>

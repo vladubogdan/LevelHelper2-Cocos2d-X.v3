@@ -27,6 +27,15 @@ void LHNodeAnimationProtocol::setActiveAnimation(LHAnimation* animation)
     _activeAnimation = animation;
 }
 
+LHAnimation* LHNodeAnimationProtocol::getActiveAnimation()
+{
+    return _activeAnimation;
+}
+
+__Array* LHNodeAnimationProtocol::getAnimations(){
+    return _animations;
+}
+
 LHAnimation* LHNodeAnimationProtocol::getAnimationWithName(const std::string& animName)
 {
     for(int i = 0; i < _animations->count();++i){

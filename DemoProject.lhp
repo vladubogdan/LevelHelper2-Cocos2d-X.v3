@@ -105,6 +105,11 @@
 					<key>publish</key>
 					<true/>
 				</dict>
+				<key>gearJointDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
 				<key>gravityAreas.lhs</key>
 				<dict>
 					<key>publish</key>
@@ -115,67 +120,17 @@
 					<key>publish</key>
 					<true/>
 				</dict>
-				<key>level01.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level02-anim.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level03-characterAnimation.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level03-physics.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level04-camera.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level05-shape.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level06-assets.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level07-parallax.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level08-ropeJoint.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level09-customProperties.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level09-tags.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>level10-water.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
 				<key>parallaxDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>physicsTransformationsDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>pulleyJointDemo.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>
@@ -190,12 +145,17 @@
 					<key>publish</key>
 					<true/>
 				</dict>
-				<key>tst.lhs</key>
+				<key>simpleCar.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>
 				</dict>
 				<key>userPropertiesDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>weldJointsDemo.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

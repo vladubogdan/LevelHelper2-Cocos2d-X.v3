@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>about</key>
+	<dict>
+		<key>app</key>
+		<string>LevelHelper 2</string>
+		<key>author</key>
+		<string>Vladu Bogdan</string>
+		<key>web</key>
+		<string>http://www.gamedevhelper.com</string>
+	</dict>
+	<key>frames</key>
+	<dict>
+		<key>gear-01</key>
+		<dict>
+			<key>frame</key>
+			<string>{{4, 156}, {128, 127}}</string>
+			<key>offset</key>
+			<string>{-1.5, -2}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{7, 11}, {128, 127}}</string>
+			<key>sourceSize</key>
+			<string>{145, 145}</string>
+			<key>uuid</key>
+			<string>CC404270-8DA7-4855-B204-C39A329408AB</string>
+		</dict>
+		<key>gear-02</key>
+		<dict>
+			<key>frame</key>
+			<string>{{140, 156}, {96, 96}}</string>
+			<key>offset</key>
+			<string>{0.5, 2}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{6, 1}, {96, 96}}</string>
+			<key>sourceSize</key>
+			<string>{107, 102}</string>
+			<key>uuid</key>
+			<string>8E586493-92CD-46C0-A9E1-797BA077A9D8</string>
+		</dict>
+		<key>gear-03</key>
+		<dict>
+			<key>frame</key>
+			<string>{{140, 260}, {18, 18}}</string>
+			<key>offset</key>
+			<string>{0.5, -0.5}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 4}, {18, 18}}</string>
+			<key>sourceSize</key>
+			<string>{23, 25}</string>
+			<key>uuid</key>
+			<string>2C67A46B-7636-4F5F-934D-710C5101E53B</string>
+		</dict>
+		<key>gear-04</key>
+		<dict>
+			<key>frame</key>
+			<string>{{4, 4}, {239, 144}}</string>
+			<key>offset</key>
+			<string>{-3.5, 2.5}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{6, 7}, {239, 144}}</string>
+			<key>sourceSize</key>
+			<string>{258, 163}</string>
+			<key>uuid</key>
+			<string>2C8DC458-D888-4A75-B1BC-52015F9DD79A</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{247, 287}</string>
+		<key>textureFileName</key>
+		<string>gear.png</string>
+	</dict>
+</dict>
+</plist>

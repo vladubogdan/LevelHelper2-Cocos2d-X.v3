@@ -4,7 +4,7 @@
 LHSceneCameraFollowDemo* LHSceneCameraFollowDemo::create()
 {
     LHSceneCameraFollowDemo *ret = new LHSceneCameraFollowDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/cameraFollowDemo.plist"))
+    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/cameraFollowDemo.lhplist"))
     {
         ret->autorelease();
         return ret;

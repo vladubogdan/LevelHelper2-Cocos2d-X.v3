@@ -36,6 +36,13 @@
 #include "LHUtils.h"
 
 #include "LHRopeJointNode.h"
-//#import "LHDistanceJointNode.h"
+#include "LHRevoluteJointNode.h"
+#include "LHDistanceJointNode.h"
+#include "LHWeldJointNode.h"
+#include "LHPrismaticJointNode.h"
+#include "LHWheelJointNode.h"
+#include "LHPulleyJointNode.h"
+#include "LHGearJointNode.h"
+
 
 #endif //__LEVELHELPER_API_H__

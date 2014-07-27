@@ -57,8 +57,18 @@ void LHJointsProtocol::findConnectedNodes()
     
     LHScene* scene = (LHScene*)node->getScene();
     
-    _nodeA = scene->getChildNodeWithUUID(_nodeAUUID);
-    _nodeB = scene->getChildNodeWithUUID(_nodeBUUID);
+    LHNodeProtocol* parentProtocol = dynamic_cast<LHNodeProtocol*>(node->getParent());
+    if(parentProtocol)
+    {
+        _nodeA = parentProtocol->getChildNodeWithUUID(_nodeAUUID);
+        _nodeB = parentProtocol->getChildNodeWithUUID(_nodeBUUID);
+    }
+    else{
+        _nodeA = scene->getChildNodeWithUUID(_nodeAUUID);
+        _nodeB = scene->getChildNodeWithUUID(_nodeBUUID);
+    }
+    
+    
 }
 
 void LHJointsProtocol::loadJointInfoFromDictionary(LHDictionary* dict)

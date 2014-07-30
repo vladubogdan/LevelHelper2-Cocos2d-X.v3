@@ -6,11 +6,12 @@
 //  Copyright (c) 2014 VLADU BOGDAN DANIEL PFA. All rights reserved.
 //
 
-#import "LHBox2dCollisionHandling.h"
-#import "LHScene.h"
-#import "LHGameWorldNode.h"
-#import "LHConfig.h"
-#import "LHUtils.h"
+#include "LHBox2dCollisionHandling.h"
+#include "LHScene.h"
+#include "LHGameWorldNode.h"
+#include "LHConfig.h"
+#include "LHUtils.h"
+
 #if LH_USE_BOX2D
 
 #include "Box2d/Box2d.h"

@@ -126,29 +126,37 @@ public:
     /**
      Overwrite this methods to receive collision informations when using Box2d.
      This method is called prior the collision happening and lets the user decide whether or not the collision should happen.
-     @param a First node that participates in the collision.
-     @param b Second node that participates in the collision.
+     
+     Available only when using Box2d.
+     
+     Useful when you have a character that jumps from platform to platform. When the character is under the platform you want to disable collision, but once the character is on top of the platform you want the collision to be triggers in order for the character to stay on top of the platform.
+     
+     @param nodeA First node that participates in the collision.
+     @param nodeB Second node that participates in the collision.
      @return A boolean value telling whether or not the 2 nodes should collide.
-     @discussion Available only when using Box2d.
-     @discussion Useful when you have a character that jumps from platform to platform. When the character is under the platform you want to disable collision, but once the character is on top of the platform you want the collision to be triggers in order for the character to stay on top of the platform.
      */
     virtual bool shouldDisableContactBetweenNodes(Node* nodeA, Node* nodeB){return false;}
     /**
      Overwrite this methods to receive collision informations when using Box2d.
      Called when the collision begins. Called with every new contact point between two nodes. May be called multiple times for same two nodes, because the point at which the nodes are touching has changed.
-     @param a First node that participates in the collision.
-     @param b Second node that participates in the collision.
-     @param scenePt The location where the two nodes collided in scene coordinates.
+     
+     Available only when using Box2d.
+     
+     @param nodeA First node that participates in the collision.
+     @param nodeB Second node that participates in the collision.
+     @param contactPoint The location where the two nodes collided in scene coordinates.
      @param impulse The impulse of the collision.
-     @discussion Available only when using Box2d.
+     
      */
     virtual void didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse){};
     /**
      Overwrite this methods to receive collision informations when using Box2d.
      Called when the collision ends. Called when two nodes no longer collide at a specific point. May be called multiple times for same two nodes, because the point at which the nodes are touching has changed.
-     @param a First node that participates in the collision.
-     @param b Second node that participates in the collision.
-     @discussion Available only when using Box2d.
+     
+     Available only when using Box2d.
+     
+     @param nodeA First node that participates in the collision.
+     @param nodeB Second node that participates in the collision.
      */
     virtual void didEndContactBetweenNodes(Node* nodeA, Node* nodeB){};
 #else

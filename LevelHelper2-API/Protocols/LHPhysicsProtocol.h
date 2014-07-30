@@ -10,6 +10,7 @@
 #define __LEVELHELPER_API_PHYSICS_PROTOCOL_H__
 
 #include "cocos2d.h"
+#include "LHConfig.h"
 
 #if LH_USE_BOX2D
 class b2Body;

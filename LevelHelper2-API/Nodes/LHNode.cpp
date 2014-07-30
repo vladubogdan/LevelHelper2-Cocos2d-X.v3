@@ -10,6 +10,7 @@
 #include "LHDictionary.h"
 #include "LHScene.h"
 #include "LHDevice.h"
+#include "LHConfig.h"
 
 LHNode::LHNode()
 {

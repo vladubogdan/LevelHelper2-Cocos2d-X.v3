@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 GameDevHelper.com. All rights reserved.
 //
 
-#import "LHSpriteFrameProperty.h"
-#import "LHSpriteFrame.h"
+#include "LHSpriteFrameProperty.h"
+#include "LHSpriteFrame.h"
 
 #include "LHDictionary.h"
 #include "LHArray.h"

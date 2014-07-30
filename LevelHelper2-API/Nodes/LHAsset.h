@@ -14,7 +14,7 @@
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
 #include "LHPhysicsProtocol.h"
-
+#include "LHConfig.h"
 
 using namespace cocos2d;
 

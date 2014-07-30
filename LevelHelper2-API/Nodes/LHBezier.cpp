@@ -10,7 +10,7 @@
 #include "LHDictionary.h"
 #include "LHScene.h"
 #include "LHDevice.h"
-
+#include "LHConfig.h"
 
 //! a Point with a vertex point, a tex coord point and a color 4B
 typedef struct _LH_V2F_C4B

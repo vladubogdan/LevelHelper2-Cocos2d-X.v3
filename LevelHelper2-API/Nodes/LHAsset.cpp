@@ -11,6 +11,7 @@
 #include "LHDictionary.h"
 #include "LHScene.h"
 #include "LHDevice.h"
+#include "LHConfig.h"
 
 LHAsset::LHAsset()
 {

@@ -167,7 +167,7 @@
 								<key>fixedRotation</key>
 								<false/>
 								<key>fixtureUUID</key>
-								<string>ADCA7C69-5723-419A-9125-A04C00786E99</string>
+								<string>C27B4AB8-F6DB-4805-8D3F-D618279D6863</string>
 								<key>genericFixture</key>
 								<dict>
 									<key>category</key>
@@ -584,6 +584,14 @@
 			<key>suffix</key>
 			<string>ipadhd</string>
 		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1280, 720}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
 	</array>
 	<key>globalGravityDirection</key>
 	<string>{0, -1}</string>
@@ -612,7 +620,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>ADCA7C69-5723-419A-9125-A04C00786E99</key>
+		<key>C27B4AB8-F6DB-4805-8D3F-D618279D6863</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>

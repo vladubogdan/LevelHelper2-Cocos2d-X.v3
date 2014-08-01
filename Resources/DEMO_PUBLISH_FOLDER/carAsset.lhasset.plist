@@ -32,7 +32,7 @@
 				<key>fixedRotation</key>
 				<false/>
 				<key>fixtureUUID</key>
-				<string>EA07E057-74DD-4EC2-A932-ED2F8E009009</string>
+				<string>2EF75115-3A65-4874-9002-33DDA8246F48</string>
 				<key>genericFixture</key>
 				<dict>
 					<key>category</key>
@@ -62,7 +62,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>AD25C145-C2EA-4359-9DA0-1986419C1404</string>
+			<string>E0B15B68-A488-4794-B1DB-5958D7C76BFD</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -102,7 +102,7 @@
 			<key>nodeType</key>
 			<string>LHRevoluteJoint</string>
 			<key>parentUUID</key>
-			<string>AD25C145-C2EA-4359-9DA0-1986419C1404</string>
+			<string>E0B15B68-A488-4794-B1DB-5958D7C76BFD</string>
 			<key>relativePosA</key>
 			<string>{0, 0}</string>
 			<key>spriteAUUID</key>
@@ -136,7 +136,7 @@
 			<key>nodeType</key>
 			<string>LHRevoluteJoint</string>
 			<key>parentUUID</key>
-			<string>AD25C145-C2EA-4359-9DA0-1986419C1404</string>
+			<string>E0B15B68-A488-4794-B1DB-5958D7C76BFD</string>
 			<key>relativePosA</key>
 			<string>{0, 0}</string>
 			<key>spriteAUUID</key>
@@ -202,7 +202,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>AD25C145-C2EA-4359-9DA0-1986419C1404</string>
+			<string>E0B15B68-A488-4794-B1DB-5958D7C76BFD</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -274,7 +274,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>AD25C145-C2EA-4359-9DA0-1986419C1404</string>
+			<string>E0B15B68-A488-4794-B1DB-5958D7C76BFD</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -306,7 +306,7 @@
 	<key>nodeType</key>
 	<string>LHAsset</string>
 	<key>parentUUID</key>
-	<string>8DA21A90-C291-4A5A-93F0-378AAEE1729F</string>
+	<string>EC0FA371-37FA-49A5-BB4E-02409E63F6A6</string>
 	<key>rotation</key>
 	<real>0.0</real>
 	<key>scale</key>
@@ -319,7 +319,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>EA07E057-74DD-4EC2-A932-ED2F8E009009</key>
+		<key>2EF75115-3A65-4874-9002-33DDA8246F48</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>
@@ -379,7 +379,7 @@
 		</array>
 	</dict>
 	<key>uuid</key>
-	<string>AD25C145-C2EA-4359-9DA0-1986419C1404</string>
+	<string>E0B15B68-A488-4794-B1DB-5958D7C76BFD</string>
 	<key>zOrder</key>
 	<integer>0</integer>
 </dict>

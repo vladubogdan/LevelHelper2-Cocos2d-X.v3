@@ -9,3 +9,8 @@
 /cocos2d/build/.DS_Store
 proj.android/obj/local
 proj.android/libs/armeabi
+Resources/.DS_Store
+proj.android/assets
+proj.android/bin
+cocos2d/cocos/platform/android/java/bin
+cocos2d/cocos/platform/android/java/gen

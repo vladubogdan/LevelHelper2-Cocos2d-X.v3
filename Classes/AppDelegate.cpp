@@ -1,6 +1,8 @@
 #include "AppDelegate.h"
 #include "LHSceneIntroductionDemo.h"
 
+#include "HelloWorldScene.h"
+
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -27,6 +29,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
     
     auto scene = LHSceneIntroductionDemo::create();
+//    auto scene = HelloWorld::createScene();
     
     // run
     director->runWithScene(scene);

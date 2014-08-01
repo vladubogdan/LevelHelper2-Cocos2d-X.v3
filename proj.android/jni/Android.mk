@@ -59,6 +59,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../LevelHelper2-API/Nodes/LHWater.cpp \
                    ../../LevelHelper2-API/Nodes/LHWeldJointNode.cpp \
                    ../../LevelHelper2-API/Nodes/LHWheelJointNode.cpp \
+                   ../../Classes/HelloWorldScene.cpp \
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/DemoExamples/LHSceneDemo.cpp \
                    ../../Classes/DemoExamples/LHSceneIntroductionDemo.cpp \

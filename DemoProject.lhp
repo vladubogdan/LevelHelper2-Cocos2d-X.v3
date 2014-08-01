@@ -62,6 +62,20 @@
 			<key>color</key>
 			<string>{{0.039420317858457565, 0}, {0.040748715400695801, 1}}</string>
 		</dict>
+		<dict>
+			<key>DeviceName</key>
+			<string>Android</string>
+			<key>ScaleRatio</key>
+			<real>1</real>
+			<key>ScreenHeight</key>
+			<integer>720</integer>
+			<key>ScreenWidth</key>
+			<integer>1280</integer>
+			<key>SuffixName</key>
+			<string>ipad</string>
+			<key>color</key>
+			<string>{{0.79354822635650635, 0.28250035643577576}, {0.73535686731338501, 1}}</string>
+		</dict>
 	</array>
 	<key>engine</key>
 	<string>Cocos2d-X</string>
@@ -164,7 +178,7 @@
 			<key>publisherPluginName</key>
 			<string>Cocos2d-X</string>
 			<key>selectedPublishTypeName</key>
-			<string>Current Scene Only</string>
+			<string>All Selected Scenes</string>
 		</dict>
 	</dict>
 	<key>uuid</key>

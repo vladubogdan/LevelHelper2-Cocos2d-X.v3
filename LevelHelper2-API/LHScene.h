@@ -187,6 +187,7 @@ private:
     LHUINode* _uiNode;
     
     std::vector<LHDevice*> devices;
+    LHDevice*              _currentDev;
     Size    designResolutionSize;
     Point   designOffset;
     Rect    gameWorldRect;

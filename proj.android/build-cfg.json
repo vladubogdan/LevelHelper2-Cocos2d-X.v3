@@ -2,8 +2,7 @@
     "ndk_module_path" :[
         "../cocos2d",
         "../cocos2d/cocos",
-        "../cocos2d/external",
-        "../LevelHelper2-API",
+        "../cocos2d/external"
     ],
     "copy_resources": [
         {

@@ -135,6 +135,14 @@
 			<key>suffix</key>
 			<string>ipadhd</string>
 		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1280, 720}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
 	</array>
 	<key>globalGravityDirection</key>
 	<string>{0, -1}</string>
@@ -147,6 +155,8 @@
 		<key>1024x768</key>
 		<string>{{0, 0}, {1, 1}}</string>
 		<key>1136x640</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>1280x720</key>
 		<string>{{0, 0}, {1, 1}}</string>
 		<key>2048x1536</key>
 		<string>{{0, 0}, {1, 1}}</string>
@@ -161,67 +171,6 @@
 	<array>
 		<string>DEFAULT</string>
 	</array>
-	<key>tracedFixtures</key>
-	<dict>
-		<key>C212E09E-13F1-4954-96A1-5B7E82934AF7</key>
-		<array>
-			<array>
-				<string>{-40.75, -37.5}</string>
-				<string>{-37.25, -40}</string>
-				<string>{-41.25, -34.5}</string>
-			</array>
-			<array>
-				<string>{10.25, -37}</string>
-				<string>{10.25, -35}</string>
-				<string>{-36.75, -40.5}</string>
-				<string>{5.75, -40.5}</string>
-				<string>{8.75, -39}</string>
-			</array>
-			<array>
-				<string>{82.25, 4.5}</string>
-				<string>{82.25, 22}</string>
-				<string>{17.25, -22.5}</string>
-				<string>{42.25, -19.5}</string>
-				<string>{52.25, -16.5}</string>
-				<string>{63.75, -11}</string>
-				<string>{75.25, -2.5}</string>
-			</array>
-			<array>
-				<string>{-83.75, 24}</string>
-				<string>{-84.75, 21}</string>
-				<string>{-84.75, -7.5}</string>
-				<string>{-83.75, -10}</string>
-				<string>{-46.75, -22.5}</string>
-				<string>{79.25, 26}</string>
-				<string>{-80.25, 26.5}</string>
-				<string>{-81.75, 26}</string>
-			</array>
-			<array>
-				<string>{81.75, 23.5}</string>
-				<string>{79.25, 26}</string>
-				<string>{-46.75, -22.5}</string>
-				<string>{-37.25, -40}</string>
-				<string>{-36.75, -40.5}</string>
-				<string>{17.25, -22.5}</string>
-				<string>{82.25, 22}</string>
-			</array>
-			<array>
-				<string>{10.25, -35}</string>
-				<string>{17.25, -22.5}</string>
-				<string>{-36.75, -40.5}</string>
-			</array>
-			<array>
-				<string>{-54.75, -22.5}</string>
-				<string>{-46.75, -22.5}</string>
-				<string>{-83.75, -10}</string>
-			</array>
-			<array>
-				<string>{-41.25, -34.5}</string>
-				<string>{-37.25, -40}</string>
-				<string>{-46.75, -22.5}</string>
-			</array>
-		</array>
-	</dict>
 	<key>useGlobalGravity</key>
 	<true/>
 	<key>uuid</key>

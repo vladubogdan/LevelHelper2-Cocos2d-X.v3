@@ -133,12 +133,17 @@
 		6E0D5A34195061900036E940 /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59EC195061900036E940 /* LHDictionary.cpp */; };
 		6E0D5A35195061900036E940 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59EF195061900036E940 /* LHUtils.cpp */; };
 		6E0D5A36195061900036E940 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D59EF195061900036E940 /* LHUtils.cpp */; };
-		6E0D5A3D195061B00036E940 /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0D5A3C195061B00036E940 /* DEMO_PUBLISH_FOLDER */; };
-		6E0D5A3E195061B00036E940 /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0D5A3C195061B00036E940 /* DEMO_PUBLISH_FOLDER */; };
-		6E0D5A40195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0D5A3F195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
-		6E0D5A41195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0D5A3F195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		6E0D5A53195061D60036E940 /* LHSceneTags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */; };
 		6E0D5A54195061D60036E940 /* LHSceneTags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */; };
+		6E0EEEFC198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */; };
+		6E0EEEFD198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */; };
+		6E0EEEFE198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */; };
+		6E0EEF26198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
+		6E0EEF27198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
+		6E0EEF28198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
+		6E0EEF29198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
+		6E0EEF2A198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
+		6E0EEF2B198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
 		6E11B58819668D2500829937 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */; };
 		6E11B58919668D2500829937 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */; };
 		6E11B58A19668D2500829937 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */; };
@@ -195,8 +200,6 @@
 		6E79166F1964159D00E68E06 /* LHSceneCameraFollowDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E79166D1964159D00E68E06 /* LHSceneCameraFollowDemo.cpp */; };
 		6E7916701964159D00E68E06 /* LHSceneCameraFollowDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E79166D1964159D00E68E06 /* LHSceneCameraFollowDemo.cpp */; };
 		6E79167E1964186600E68E06 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77617EB970100C73F5D /* Icon-120.png */; };
-		6E79167F1964186600E68E06 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0D5A3F195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
-		6E7916801964186600E68E06 /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0D5A3C195061B00036E940 /* DEMO_PUBLISH_FOLDER */; };
 		6E7916811964186600E68E06 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77B17EB970100C73F5D /* Icon-76.png */; };
 		6E7916821964186600E68E06 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77417EB970100C73F5D /* Default@2x.png */; };
 		6E7916831964186600E68E06 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
@@ -516,7 +519,7 @@
 		1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "LevelHelper2-Cocos2d-X.v3 + Chipmunk.app"; path = "LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -627,10 +630,12 @@
 		6E0D59EE195061900036E940 /* LHValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHValue.h; sourceTree = "<group>"; };
 		6E0D59EF195061900036E940 /* LHUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHUtils.cpp; sourceTree = "<group>"; };
 		6E0D59F0195061900036E940 /* LHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUtils.h; sourceTree = "<group>"; };
-		6E0D5A3C195061B00036E940 /* DEMO_PUBLISH_FOLDER */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_PUBLISH_FOLDER; path = ../DEMO_PUBLISH_FOLDER; sourceTree = "<group>"; };
-		6E0D5A3F195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
 		6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneTags.cpp; path = ../Classes/LHSceneTags.cpp; sourceTree = "<group>"; };
 		6E0D5A4C195061D60036E940 /* LHSceneTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneTags.h; path = ../Classes/LHSceneTags.h; sourceTree = "<group>"; };
+		6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		6E0EEEFB198A2A3C002CDE7F /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
+		6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../Resources/DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
+		6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_PUBLISH_FOLDER; path = ../Resources/DEMO_PUBLISH_FOLDER; sourceTree = "<group>"; };
 		6E11B58619668D2500829937 /* LHPhysicsProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPhysicsProtocol.cpp; sourceTree = "<group>"; };
 		6E11B58719668D2500829937 /* LHPhysicsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPhysicsProtocol.h; sourceTree = "<group>"; };
 		6E11B58B1966A1C900829937 /* LHSceneShapesDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneShapesDemo.cpp; sourceTree = "<group>"; };
@@ -806,6 +811,8 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				6E0D5A4B195061D60036E940 /* LHSceneTags.cpp */,
 				6E0D5A4C195061D60036E940 /* LHSceneTags.h */,
+				6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */,
+				6E0EEEFB198A2A3C002CDE7F /* HelloWorldScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -814,7 +821,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk.app */,
+				1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS.app */,
 				5087E76F17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 + Box2d - Mac.app */,
 				6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app */,
 			);
@@ -841,8 +848,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				6E0D5A3F195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */,
-				6E0D5A3C195061B00036E940 /* DEMO_PUBLISH_FOLDER */,
+				6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */,
+				6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */,
 				6E0D599F195061900036E940 /* LevelHelper2-API */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
 				15AA9C4015B7EC450033D6C2 /* Classes */,
@@ -1166,7 +1173,7 @@
 			);
 			name = "LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS";
 			productName = iphone;
-			productReference = 1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5087E73D17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 + Box2d - Mac */ = {
@@ -1332,8 +1339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
-				6E0D5A40195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
-				6E0D5A3D195061B00036E940 /* DEMO_PUBLISH_FOLDER in Resources */,
+				6E0EEF28198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
@@ -1351,6 +1357,7 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				6E0EEF2B198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
@@ -1361,8 +1368,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
-				6E0D5A41195061BC0036E940 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
-				6E0D5A3E195061B00036E940 /* DEMO_PUBLISH_FOLDER in Resources */,
+				6E0EEF27198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
+				6E0EEF2A198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
 				6E79165C1963F1F600E68E06 /* emptyButtonTexture.png in Resources */,
@@ -1375,8 +1382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E79167E1964186600E68E06 /* Icon-120.png in Resources */,
-				6E79167F1964186600E68E06 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
-				6E7916801964186600E68E06 /* DEMO_PUBLISH_FOLDER in Resources */,
+				6E0EEF26198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				6E7916811964186600E68E06 /* Icon-76.png in Resources */,
 				6E7916821964186600E68E06 /* Default@2x.png in Resources */,
 				6E7916831964186600E68E06 /* Icon-100.png in Resources */,
@@ -1394,6 +1400,7 @@
 				6E79168F1964186600E68E06 /* Icon-144.png in Resources */,
 				6E7916901964186600E68E06 /* Icon-80.png in Resources */,
 				6E7916911964186600E68E06 /* Icon-57.png in Resources */,
+				6E0EEF29198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */,
 				6E7916921964186600E68E06 /* Default.png in Resources */,
 				6E7916931964186600E68E06 /* Icon-58.png in Resources */,
 			);
@@ -1436,6 +1443,7 @@
 				6E0D5A23195061900036E940 /* LHParallaxLayer.cpp in Sources */,
 				6EA78701196565A300EB15F7 /* LHSceneCharacterAnimationDemo.cpp in Sources */,
 				6E11B5921966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
+				6E0EEEFE198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */,
 				6E9DA2F519725BDC00F9FA85 /* LHSceneUserPropertiesDemo.cpp in Sources */,
 				6ED55BE5196AAB8000F6C4B4 /* LHSceneCollisionHandlingDemo.cpp in Sources */,
 				6ED55BEC196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp in Sources */,
@@ -1548,6 +1556,7 @@
 				6E216B991980E10300C1F7CF /* LHWheelJointNode.cpp in Sources */,
 				6E0D5A32195061900036E940 /* LHDevice.cpp in Sources */,
 				6E0D5A26195061900036E940 /* LHRopeJointNode.cpp in Sources */,
+				6E0EEEFD198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */,
 				6E0D5A18195061900036E940 /* LHAsset.cpp in Sources */,
 				6EBA7A3219693F1A004E4B2D /* LHSceneBeziersDemo.cpp in Sources */,
 				6ED55BE7196AAB8000F6C4B4 /* LHSceneCollisionHandlingDemo.cpp in Sources */,
@@ -1598,6 +1607,7 @@
 				6E7916A31964186600E68E06 /* LHParallaxLayer.cpp in Sources */,
 				6EA78702196565A300EB15F7 /* LHSceneCharacterAnimationDemo.cpp in Sources */,
 				6E11B5931966C09000829937 /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
+				6E0EEEFC198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */,
 				6E9DA2F419725BDC00F9FA85 /* LHSceneUserPropertiesDemo.cpp in Sources */,
 				6ED55BE6196AAB8000F6C4B4 /* LHSceneCollisionHandlingDemo.cpp in Sources */,
 				6ED55BED196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp in Sources */,

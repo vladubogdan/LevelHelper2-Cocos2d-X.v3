@@ -39,6 +39,7 @@ using namespace cocos2d;
 
 LHScene::LHScene()
 {
+    _currentDev = nullptr;
     _touchListener = nullptr;
     _loadedAssetsInformations = nullptr;
     _tracedFixtures = nullptr;
@@ -52,6 +53,8 @@ LHScene::LHScene()
 
 LHScene::~LHScene()
 {
+    _currentDev = nullptr;
+    
 #if LH_USE_BOX2D
     CC_SAFE_DELETE(_box2dCollision);
 #endif
@@ -97,6 +100,7 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     LHDictionary* dict = (LHDictionary*)__Dictionary::createWithContentsOfFile(fullPath.c_str());
     
     int aspect = dict->intForKey("aspect");
+    
     
     designResolutionSize = dict->sizeForKey("designResolution");
     LHArray* devsInfo = dict->arrayForKey("devices");
@@ -144,9 +148,10 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     bool ret = Scene::initWithPhysics();
     if(ret)
     {
+        _currentDev = curDev;
+    
         SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
         Director::getInstance()->getTextureCache()->removeUnusedTextures();
-
         
         this->loadGenericInfoFromDictionary(dict);
         
@@ -174,8 +179,6 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         
         this->loadGlobalGravityFromDictionary(dict);        
         this->loadPhysicsBoundariesFromDictionary(dict);
-        
-        
         
         
         
@@ -422,8 +425,11 @@ __Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
 
 std::string LHScene::getCurrentDeviceSuffix()
 {
-    LHDevice* dev = LHDevice::currentDeviceFromArray(devices);
+    if(_currentDev){
+        return _currentDev->getSuffix();
+    }
     
+    LHDevice* dev = LHDevice::currentDeviceFromArray(devices);
     if(dev){
         return dev->getSuffix();
     }

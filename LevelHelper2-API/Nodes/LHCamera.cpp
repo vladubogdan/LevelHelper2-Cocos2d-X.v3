@@ -118,13 +118,9 @@ Point LHCamera::transformToRestrictivePosition(Point position)
 {
     Node* followed = followedNode();
     if(followed){
-        position = followed->getPosition();
-
-        Point anchor = followed->getAnchorPoint();
-        Size content = followed->getContentSize();
         
-        position.x -= content.width*(anchor.x -0.5);
-        position.y -= content.height*(anchor.y-0.5);
+        position = followed->convertToWorldSpaceAR(Point());
+        position = ((LHScene*)getScene())->getGameWorldNode()->convertToNodeSpaceAR(position);
     }
 
     Size winSize = ((LHScene*)getScene())->getContentSize();
@@ -152,7 +148,11 @@ Point LHCamera::transformToRestrictivePosition(Point position)
     return pt;
 }
 
+#if COCOS2D_VERSION >= 0x00030200
+void LHCamera::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHCamera::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     if(!isActive())return;
 
@@ -165,5 +165,11 @@ void LHCamera::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
     setSceneView();
     
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }

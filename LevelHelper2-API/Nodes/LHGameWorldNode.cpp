@@ -65,19 +65,44 @@ bool LHGameWorldNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         
         this->loadChildrenFromDictionary(dict);
         
+        this->scheduleUpdate();
+        
         return true;
     }
     return false;
 }
 
-void LHGameWorldNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+void LHGameWorldNode::update(float delta)
 {
 #if LH_USE_BOX2D
-    float dt = Director::getInstance()->getDeltaTime();
-    this->step(dt, renderer, parentTransform, parentTransformUpdated);
+    this->step(delta);
+#endif
+}
+
+#if COCOS2D_VERSION >= 0x00030200
+void LHGameWorldNode::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
+void LHGameWorldNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
+{
+#if LH_USE_BOX2D
+    #if LH_DEBUG
+        #if COCOS2D_VERSION >= 0x00030200
+            _debugNode->onDraw(parentTransform, parentFlags);
+        #else
+            _debugNode->onDraw(parentTransform, parentTransformUpdated);
+        #endif
+    #endif
 #endif
     
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
+    if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
+        Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 #pragma mark - BOX2D SUPPORT
@@ -123,7 +148,7 @@ const int32 VELOCITY_ITERATIONS = 8;
 const int32 POSITION_ITERATIONS = 8;
 const int32 MAXIMUM_NUMBER_OF_STEPS = 24;
 
-void LHGameWorldNode::step(float dt, Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+void LHGameWorldNode::step(float dt)
 {
     if(!this->getBox2dWorld())return;
         
@@ -140,10 +165,6 @@ void LHGameWorldNode::step(float dt, Renderer *renderer, const Mat4& parentTrans
 		stepsPerformed++;
 	}
 	this->getBox2dWorld()->ClearForces ();
-    
-#if LH_DEBUG
-    _debugNode->onDraw(parentTransform, parentTransformUpdated);
-#endif
 }
 
 Point LHGameWorldNode::getGravity(){

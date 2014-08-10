@@ -14,7 +14,7 @@
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
 #include "LHPhysicsProtocol.h"
-
+#include "LHConfig.h"
 
 using namespace cocos2d;
 
@@ -51,8 +51,13 @@ public:
     static  bool isLHAsset(Node* obj){return (0 != dynamic_cast<LHAsset*>(obj));}
     virtual bool isAsset(){return true;}
   
-    //for some reason cocos2d-x people decided to make "visit()" method final - so we use this one instead
+    
+#if COCOS2D_VERSION >= 0x00030200
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags);
+#else
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+#endif
+
     
 #if LH_USE_BOX2D
     virtual void removeFromParent();

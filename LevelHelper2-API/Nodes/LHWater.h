@@ -38,13 +38,15 @@ public:
     static  bool isLHWater(Node* obj){return (0 != dynamic_cast<LHWater*>(obj));}
     virtual bool isWater(){return true;}
     
+#if COCOS2D_VERSION >= 0x00030200
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags);
+#else
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+#endif
+
 private:
     DrawNode* _drawNode;
     
-//    GLProgram* _glProgram;
-//    cocos2d::Point* _trianglePoints;
-//    int             _numberOfPoints;
     Color4F colorOverlay;
     
     

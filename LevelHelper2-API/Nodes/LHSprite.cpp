@@ -175,12 +175,23 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
+#if COCOS2D_VERSION >= 0x00030200
+void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
+
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Sprite::visit(renderer, parentTransform, parentFlags);
+#else
         Sprite::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 #if LH_USE_BOX2D

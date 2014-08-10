@@ -62,6 +62,20 @@
 			<key>color</key>
 			<string>{{0.039420317858457565, 0}, {0.040748715400695801, 1}}</string>
 		</dict>
+		<dict>
+			<key>DeviceName</key>
+			<string>Android</string>
+			<key>ScaleRatio</key>
+			<real>1</real>
+			<key>ScreenHeight</key>
+			<integer>720</integer>
+			<key>ScreenWidth</key>
+			<integer>1280</integer>
+			<key>SuffixName</key>
+			<string>ipad</string>
+			<key>color</key>
+			<string>{{0.069449819624423981, 0}, {0.067148961126804352, 1}}</string>
+		</dict>
 	</array>
 	<key>engine</key>
 	<string>Cocos2d-X</string>

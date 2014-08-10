@@ -34,9 +34,7 @@ public:
     bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     static  bool isLHBackUINode(Node* obj){return (0 != dynamic_cast<LHBackUINode*>(obj));}
-    virtual bool isBackUINode(){return true;}
-    
-    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+    virtual bool isBackUINode(){return true;}    
 };
 
 #endif //__LEVELHELPER_API_BACK_UI_NODE_H__

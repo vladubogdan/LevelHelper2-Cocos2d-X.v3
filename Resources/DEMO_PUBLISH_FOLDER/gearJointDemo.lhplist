@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>2</integer>
+	<key>backgroundColor</key>
+	<string>{{1, 1}, {1, 1}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0, 0}</string>
+			<key>name</key>
+			<string>BACK USER INTERFACE</string>
+			<key>nodeType</key>
+			<string>LHBackUINode</string>
+			<key>parentUUID</key>
+			<string>8B8109D0-CE84-4C5D-8450-2960117B6DBF</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{128, 128}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>C6209199-934A-4C7F-A75B-D598BCA84F26</string>
+			<key>zOrder</key>
+			<integer>-1</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.5, 0.5}</string>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>generalPosition</key>
+					<string>{0.48643952184356748, 0.88369267565140031}</string>
+					<key>imageFileName</key>
+					<string>gear.png</string>
+					<key>name</key>
+					<string>AllBodiesMustBeDynamic-Box2dRequirementForGearJoints</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>fixtureUUID</key>
+						<string>61F3AEC1-6B03-460E-9A98-F9DFAA2E40B0</string>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>230</real>
+							<key>fixtureID</key>
+							<integer>0</integer>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>shape</key>
+						<integer>5</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{2, 2}</string>
+					<key>size</key>
+					<string>{129, 82}</string>
+					<key>spriteName</key>
+					<string>gear-04</string>
+					<key>spriteUUID</key>
+					<string>2C8DC458-D888-4A75-B1BC-52015F9DD79A</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>5077D37F-B714-459B-8127-2E391111C392</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.5, 0.5}</string>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>generalPosition</key>
+					<string>{0.582125464991744, 0.79924886582011823}</string>
+					<key>imageFileName</key>
+					<string>gear.png</string>
+					<key>name</key>
+					<string>gear-03</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>fixtureID</key>
+							<integer>0</integer>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>shape</key>
+						<integer>1</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{2, 2}</string>
+					<key>size</key>
+					<string>{12, 13}</string>
+					<key>spriteName</key>
+					<string>gear-03</string>
+					<key>spriteUUID</key>
+					<string>2C67A46B-7636-4F5F-934D-710C5101E53B</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>F084B30E-1576-49A7-A316-D2F3B7ACEFCB</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.5, 0.5}</string>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>generalPosition</key>
+					<string>{0.48767643529766552, 0.74598747778509278}</string>
+					<key>imageFileName</key>
+					<string>gear.png</string>
+					<key>name</key>
+					<string>gear-01</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>fixtureUUID</key>
+						<string>DD395753-80E6-4496-A98B-EB8312BF2167</string>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>fixtureID</key>
+							<integer>0</integer>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>shape</key>
+						<integer>5</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{2, 2}</string>
+					<key>size</key>
+					<string>{73, 73}</string>
+					<key>spriteName</key>
+					<string>gear-01</string>
+					<key>spriteUUID</key>
+					<string>CC404270-8DA7-4855-B204-C39A329408AB</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>BE1A1B35-5570-4163-805C-C65834C9759F</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.5, 0.5}</string>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>generalPosition</key>
+					<string>{0.37790949646344718, 0.85431561684526969}</string>
+					<key>imageFileName</key>
+					<string>gear.png</string>
+					<key>name</key>
+					<string>gear-02</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>fixtureUUID</key>
+						<string>8B3BEFD1-27A3-41BD-B249-17CB45C91A59</string>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>fixtureID</key>
+							<integer>0</integer>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>shape</key>
+						<integer>5</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{2, 2}</string>
+					<key>size</key>
+					<string>{54, 51}</string>
+					<key>spriteName</key>
+					<string>gear-02</string>
+					<key>spriteUUID</key>
+					<string>8E586493-92CD-46C0-A9E1-797BA077A9D8</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>B918536B-11FA-494D-9D23-BB8DBF19924F</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>collideConnected</key>
+					<false/>
+					<key>enableLimit</key>
+					<false/>
+					<key>enableMotor</key>
+					<false/>
+					<key>lowerAngle</key>
+					<real>0.0</real>
+					<key>maxMotorTorque</key>
+					<real>0.0</real>
+					<key>motorSpeed</key>
+					<real>0.0</real>
+					<key>name</key>
+					<string>UntitledRevoluteJoint</string>
+					<key>nodeType</key>
+					<string>LHRevoluteJoint</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativePosA</key>
+					<string>{0, 0}</string>
+					<key>spriteAUUID</key>
+					<string>B918536B-11FA-494D-9D23-BB8DBF19924F</string>
+					<key>spriteBUUID</key>
+					<string>5077D37F-B714-459B-8127-2E391111C392</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>upperAngle</key>
+					<real>0.0</real>
+					<key>uuid</key>
+					<string>6E80FDB7-A756-4082-9828-F582E0926991</string>
+				</dict>
+				<dict>
+					<key>collideConnected</key>
+					<false/>
+					<key>enableLimit</key>
+					<false/>
+					<key>enableMotor</key>
+					<false/>
+					<key>lowerAngle</key>
+					<real>0.0</real>
+					<key>maxMotorTorque</key>
+					<real>0.0</real>
+					<key>motorSpeed</key>
+					<real>0.0</real>
+					<key>name</key>
+					<string>UntitledRevoluteJoint_1</string>
+					<key>nodeType</key>
+					<string>LHRevoluteJoint</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativePosA</key>
+					<string>{0, 0}</string>
+					<key>spriteAUUID</key>
+					<string>BE1A1B35-5570-4163-805C-C65834C9759F</string>
+					<key>spriteBUUID</key>
+					<string>5077D37F-B714-459B-8127-2E391111C392</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>upperAngle</key>
+					<real>0.0</real>
+					<key>uuid</key>
+					<string>831CA875-F026-4841-A850-A17730A93400</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>collideConnected</key>
+					<false/>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>gearRatio</key>
+					<real>1</real>
+					<key>jointAUUID</key>
+					<string>6E80FDB7-A756-4082-9828-F582E0926991</string>
+					<key>jointBUUID</key>
+					<string>831CA875-F026-4841-A850-A17730A93400</string>
+					<key>name</key>
+					<string>GearJoint1</string>
+					<key>nodeType</key>
+					<string>LHGearJoint</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>spriteAUUID</key>
+					<string>B918536B-11FA-494D-9D23-BB8DBF19924F</string>
+					<key>spriteBUUID</key>
+					<string>BE1A1B35-5570-4163-805C-C65834C9759F</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>CBCF001A-00AF-4F72-94B8-5337A71C02C6</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>axis</key>
+					<string>{0, 1}</string>
+					<key>collideConnected</key>
+					<false/>
+					<key>enablePrismaticLimit</key>
+					<true/>
+					<key>enablePrismaticMotor</key>
+					<false/>
+					<key>lowerTranslation</key>
+					<real>-80</real>
+					<key>maxMotorForce</key>
+					<real>0.0</real>
+					<key>name</key>
+					<string>UntitledPrismaticJoint</string>
+					<key>nodeType</key>
+					<string>LHPrismaticJoint</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>prismaticMotorSpeed</key>
+					<real>0.0</real>
+					<key>relativePosA</key>
+					<string>{0, 0}</string>
+					<key>spriteAUUID</key>
+					<string>F084B30E-1576-49A7-A316-D2F3B7ACEFCB</string>
+					<key>spriteBUUID</key>
+					<string>5077D37F-B714-459B-8127-2E391111C392</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>upperTranslation</key>
+					<real>0.0</real>
+					<key>uuid</key>
+					<string>45BCC07C-724C-4FD7-9CDD-BED8CA86E383</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>collideConnected</key>
+					<false/>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>gearRatio</key>
+					<real>1</real>
+					<key>jointAUUID</key>
+					<string>45BCC07C-724C-4FD7-9CDD-BED8CA86E383</string>
+					<key>jointBUUID</key>
+					<string>831CA875-F026-4841-A850-A17730A93400</string>
+					<key>name</key>
+					<string>GearJoint2</string>
+					<key>nodeType</key>
+					<string>LHGearJoint</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>spriteAUUID</key>
+					<string>F084B30E-1576-49A7-A316-D2F3B7ACEFCB</string>
+					<key>spriteBUUID</key>
+					<string>BE1A1B35-5570-4163-805C-C65834C9759F</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>C54A45A6-7541-465B-A01C-CB87869E586C</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.5, 0.5}</string>
+					<key>colorOverlay</key>
+					<string>{{1, 1}, {1, 1}}</string>
+					<key>generalPosition</key>
+					<string>{-0.24245793024698895, -0.0039560452103614809}</string>
+					<key>name</key>
+					<string>dummyBodyForMouseJoint</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>fixtureID</key>
+							<integer>0</integer>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>shape</key>
+						<integer>0</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHNode</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1, 1}</string>
+					<key>size</key>
+					<string>{35.104572296142578, 31.758199691772461}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>10523BBC-92C8-48EF-96AC-2539098FB70A</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0, 0}</string>
+			<key>name</key>
+			<string>GAME WORLD</string>
+			<key>nodeType</key>
+			<string>LHGameWorldNode</string>
+			<key>parentUUID</key>
+			<string>8B8109D0-CE84-4C5D-8450-2960117B6DBF</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{128, 128}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>C8684141-AA8E-4EDE-B132-BF5ACBE7E448</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.5, 0.5}</string>
+			<key>colorOverlay</key>
+			<string>{{1, 1}, {1, 1}}</string>
+			<key>generalPosition</key>
+			<string>{0, 0}</string>
+			<key>name</key>
+			<string>FRONT USER INTERFACE</string>
+			<key>nodeType</key>
+			<string>LHUINode</string>
+			<key>parentUUID</key>
+			<string>8B8109D0-CE84-4C5D-8450-2960117B6DBF</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1, 1}</string>
+			<key>size</key>
+			<string>{128, 128}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>25782117-ACC8-45F3-80E7-C64919D8AB10</string>
+			<key>zOrder</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960, 640}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960, 640}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136, 640}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024, 768}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048, 1536}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1280, 720}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+	</array>
+	<key>globalGravityDirection</key>
+	<string>{0, -1}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>1024x768</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>1136x640</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>2048x1536</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>960x640</key>
+		<string>{{0, 0}, {1, 1}}</string>
+		<key>general</key>
+		<string>{{0, 0}, {1, 1}}</string>
+	</dict>
+	<key>sceneFormat</key>
+	<real>1</real>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>61F3AEC1-6B03-460E-9A98-F9DFAA2E40B0</key>
+		<array>
+			<array>
+				<string>{-46.5, 15.75}</string>
+				<string>{-46, 18.75}</string>
+				<string>{-61.5, 34.25}</string>
+				<string>{-61.5, 19.75}</string>
+				<string>{-56, 15.25}</string>
+				<string>{-48.5, 15.25}</string>
+			</array>
+			<array>
+				<string>{-50.5, -26.25}</string>
+				<string>{-47, -22.75}</string>
+				<string>{-48.5, 15.25}</string>
+				<string>{-56, 15.25}</string>
+				<string>{-57.5, -22.75}</string>
+				<string>{-54, -26.25}</string>
+			</array>
+			<array>
+				<string>{55.5, -37.25}</string>
+				<string>{55.5, 19.25}</string>
+				<string>{37, -37.25}</string>
+			</array>
+			<array>
+				<string>{5, 16.25}</string>
+				<string>{5.5, 19.25}</string>
+				<string>{-6.5, 19.75}</string>
+				<string>{-4, 15.25}</string>
+				<string>{3.5, 15.25}</string>
+			</array>
+			<array>
+				<string>{-5.5, 15.75}</string>
+				<string>{-4, 15.25}</string>
+				<string>{-6.5, 19.75}</string>
+			</array>
+			<array>
+				<string>{2, -30.75}</string>
+				<string>{4, -29.25}</string>
+				<string>{5, -27.25}</string>
+				<string>{3.5, 15.25}</string>
+				<string>{-4, 15.25}</string>
+				<string>{-5.5, -27.25}</string>
+				<string>{-4.5, -29.25}</string>
+				<string>{-2.5, -30.75}</string>
+			</array>
+			<array>
+				<string>{-46, 18.75}</string>
+				<string>{-6.5, 19.75}</string>
+				<string>{57.5, 34.25}</string>
+				<string>{-61.5, 34.25}</string>
+			</array>
+			<array>
+				<string>{57.5, 19.75}</string>
+				<string>{57.5, 34.25}</string>
+				<string>{55.5, 19.25}</string>
+			</array>
+			<array>
+				<string>{55.5, 19.25}</string>
+				<string>{57.5, 34.25}</string>
+				<string>{37, -36.75}</string>
+				<string>{37, -37.25}</string>
+			</array>
+			<array>
+				<string>{-6.5, 19.75}</string>
+				<string>{5.5, 19.25}</string>
+				<string>{36.5, 19.75}</string>
+				<string>{57.5, 34.25}</string>
+			</array>
+			<array>
+				<string>{36.5, 19.75}</string>
+				<string>{37, -36.75}</string>
+				<string>{57.5, 34.25}</string>
+			</array>
+		</array>
+		<key>8B3BEFD1-27A3-41BD-B249-17CB45C91A59</key>
+		<array>
+			<array>
+				<string>{-15.75, -20}</string>
+				<string>{-11.75, -17}</string>
+				<string>{-15.75, -13}</string>
+				<string>{-18.75, -17}</string>
+			</array>
+			<array>
+				<string>{-18.75, 14.5}</string>
+				<string>{-15.75, 10.5}</string>
+				<string>{11.75, -17}</string>
+				<string>{-11.75, 14.5}</string>
+				<string>{-15.75, 17.5}</string>
+			</array>
+			<array>
+				<string>{15.75, 17.5}</string>
+				<string>{11.75, 14.5}</string>
+				<string>{15.75, 10.5}</string>
+				<string>{18.75, 14.5}</string>
+			</array>
+			<array>
+				<string>{18.75, -17}</string>
+				<string>{15.75, -13}</string>
+				<string>{11.75, -17}</string>
+				<string>{15.75, -20}</string>
+			</array>
+			<array>
+				<string>{-23.75, -3}</string>
+				<string>{-19.25, -4.5}</string>
+				<string>{-19.25, 2}</string>
+				<string>{-23.75, 0.5}</string>
+			</array>
+			<array>
+				<string>{-1.75, 22.5}</string>
+				<string>{-3.25, 18}</string>
+				<string>{3.25, 18}</string>
+				<string>{1.75, 22.5}</string>
+			</array>
+			<array>
+				<string>{23.75, 0.5}</string>
+				<string>{19.25, 2}</string>
+				<string>{19.25, -4.5}</string>
+				<string>{23.75, -3}</string>
+			</array>
+			<array>
+				<string>{1.75, -25}</string>
+				<string>{3.25, -20.5}</string>
+				<string>{-2.25, -22}</string>
+				<string>{-2.25, -24.5}</string>
+				<string>{-1.75, -25}</string>
+			</array>
+			<array>
+				<string>{-7.75, -19.5}</string>
+				<string>{-3.25, -20.5}</string>
+				<string>{3.25, -20.5}</string>
+				<string>{7.75, -19.5}</string>
+				<string>{11.75, -17}</string>
+				<string>{-15.75, 10.5}</string>
+				<string>{-15.75, -13}</string>
+				<string>{-11.75, -17}</string>
+			</array>
+			<array>
+				<string>{-18.25, -9}</string>
+				<string>{-15.75, -13}</string>
+				<string>{-15.75, 10.5}</string>
+				<string>{-18.25, 6.5}</string>
+				<string>{-19.25, 2}</string>
+				<string>{-19.25, -4.5}</string>
+			</array>
+			<array>
+				<string>{-7.75, 17}</string>
+				<string>{-11.75, 14.5}</string>
+				<string>{11.75, -17}</string>
+				<string>{15.75, -13}</string>
+				<string>{15.75, 10.5}</string>
+				<string>{11.75, 14.5}</string>
+				<string>{3.25, 18}</string>
+				<string>{-3.25, 18}</string>
+			</array>
+			<array>
+				<string>{7.75, 17}</string>
+				<string>{3.25, 18}</string>
+				<string>{11.75, 14.5}</string>
+			</array>
+			<array>
+				<string>{18.25, 6.5}</string>
+				<string>{15.75, 10.5}</string>
+				<string>{15.75, -13}</string>
+				<string>{18.25, -9}</string>
+				<string>{19.25, -4.5}</string>
+				<string>{19.25, 2}</string>
+			</array>
+			<array>
+				<string>{-2.25, -22}</string>
+				<string>{3.25, -20.5}</string>
+				<string>{-3.25, -20.5}</string>
+			</array>
+		</array>
+		<key>DD395753-80E6-4496-A98B-EB8312BF2167</key>
+		<array>
+			<array>
+				<string>{29.25, 10.75}</string>
+				<string>{23.75, 9.75}</string>
+				<string>{24.75, -1.75}</string>
+				<string>{30.75, -0.25}</string>
+				<string>{30.75, 2.75}</string>
+			</array>
+			<array>
+				<string>{-5.75, 32.25}</string>
+				<string>{-15.25, 29.25}</string>
+				<string>{-13.75, 23.75}</string>
+				<string>{-2.75, 26.25}</string>
+			</array>
+			<array>
+				<string>{-22.75, -23.25}</string>
+				<string>{-14.25, -28.75}</string>
+				<string>{-12.75, -28.25}</string>
+				<string>{-10.25, -24.25}</string>
+				<string>{-19.75, -17.75}</string>
+			</array>
+			<array>
+				<string>{20.75, -23.25}</string>
+				<string>{17.75, -17.75}</string>
+				<string>{6.75, -24.25}</string>
+				<string>{12.25, -28.75}</string>
+			</array>
+			<array>
+				<string>{-27.25, -17.75}</string>
+				<string>{-21.75, -15.25}</string>
+				<string>{-26.75, -5.25}</string>
+				<string>{-31.25, -7.25}</string>
+				<string>{-31.75, -8.75}</string>
+			</array>
+			<array>
+				<string>{25.75, -17.25}</string>
+				<string>{29.75, -7.75}</string>
+				<string>{24.75, -5.25}</string>
+				<string>{19.75, -15.25}</string>
+			</array>
+			<array>
+				<string>{25.75, 18.25}</string>
+				<string>{19.25, 25.25}</string>
+				<string>{14.75, 21.75}</string>
+				<string>{22.25, 12.25}</string>
+			</array>
+			<array>
+				<string>{-31.75, 9.75}</string>
+				<string>{-32.75, -0.25}</string>
+				<string>{-27.25, -1.25}</string>
+				<string>{-25.25, 10.25}</string>
+			</array>
+			<array>
+				<string>{-21.25, 25.25}</string>
+				<string>{-28.25, 17.25}</string>
+				<string>{-24.25, 13.25}</string>
+				<string>{-16.25, 21.75}</string>
+			</array>
+			<array>
+				<string>{2.75, 32.25}</string>
+				<string>{1.25, 26.75}</string>
+				<string>{11.75, 24.25}</string>
+				<string>{13.25, 29.25}</string>
+			</array>
+			<array>
+				<string>{4.25, -30.75}</string>
+				<string>{4.25, -25.25}</string>
+				<string>{-6.25, -30.25}</string>
+				<string>{-6.25, -30.75}</string>
+			</array>
+			<array>
+				<string>{11.75, 24.25}</string>
+				<string>{1.25, 26.75}</string>
+				<string>{-2.75, 26.25}</string>
+				<string>{-13.75, 23.75}</string>
+				<string>{-16.25, 21.75}</string>
+				<string>{-21.75, -15.25}</string>
+				<string>{-6.75, -24.75}</string>
+				<string>{13.25, 22.25}</string>
+			</array>
+			<array>
+				<string>{24.75, -5.25}</string>
+				<string>{24.75, -1.75}</string>
+				<string>{23.75, 9.75}</string>
+				<string>{22.25, 12.25}</string>
+				<string>{4.25, -25.25}</string>
+				<string>{6.75, -24.25}</string>
+				<string>{17.75, -17.75}</string>
+				<string>{19.75, -15.25}</string>
+			</array>
+			<array>
+				<string>{-10.25, -24.25}</string>
+				<string>{-6.75, -24.75}</string>
+				<string>{-21.75, -15.25}</string>
+				<string>{-19.75, -17.75}</string>
+			</array>
+			<array>
+				<string>{-24.25, 13.25}</string>
+				<string>{-25.25, 10.25}</string>
+				<string>{-27.25, -1.25}</string>
+				<string>{-26.75, -5.25}</string>
+				<string>{-21.75, -15.25}</string>
+				<string>{-16.25, 21.75}</string>
+			</array>
+			<array>
+				<string>{14.75, 21.75}</string>
+				<string>{13.25, 22.25}</string>
+				<string>{-6.75, -24.75}</string>
+				<string>{-6.25, -30.25}</string>
+				<string>{4.25, -25.25}</string>
+				<string>{22.25, 12.25}</string>
+			</array>
+		</array>
+	</dict>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>8B8109D0-CE84-4C5D-8450-2960117B6DBF</string>
+</dict>
+</plist>

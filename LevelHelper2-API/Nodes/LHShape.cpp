@@ -221,6 +221,9 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
         uvPoints->addObject(LHValue::create(uvB));
         uvPoints->addObject(LHValue::create(uvC));
         
+        CCLOG("UV %f %f / %f %f / %f %f", uvA.x, uvA.y, uvB.x, uvB.y, uvC.x, uvC.y);
+        
+        
 //        c4A.a = 0.2;
 //        c4B.a = 0.2;
 //        c4C.a = 0.2;
@@ -245,13 +248,23 @@ const std::vector<Point>& LHShape::outlinePoints() const
     return _outline;
 }
 
+#if COCOS2D_VERSION >= 0x00030200
+void LHShape::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHShape::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
     
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 #if LH_USE_BOX2D

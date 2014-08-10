@@ -126,7 +126,11 @@ Node* LHNodeProtocol::getChildNodeWithName(const std::string& name)
         LHNodeProtocol* nProt = dynamic_cast<LHNodeProtocol*>(n);
         if(nProt)
         {
+#if COCOS2D_VERSION >= 0x00030200
+            if(n->getName() == name)
+#else
             if(nProt->getName() == name)
+#endif                            
             {
                 return n;
             }
@@ -252,16 +256,25 @@ Point LHNodeProtocol::positionForNode(Node* node, Point unitPos)
 }
 
 void LHNodeProtocol::loadGenericInfoFromDictionary(LHDictionary* dict){
-    
+
+    Node* node = LH_GET_NODE_FROM_NODE_PROTOCOL(this);
+    if(!node)return;
+
     if(dict->objectForKey("name"))
+    {
+
+#if COCOS2D_VERSION >= 0x00030200
+        node->setName(dict->stringForKey("name"));
+#else
         setName(dict->stringForKey("name"));
+#endif
+        
+    }
     
     setUuid(dict->stringForKey("uuid"));
     setTags(dict->arrayForKey("tags"));
     loadUserPropertyWithDictionary(dict);
     
-    Node* node = LH_GET_NODE_FROM_NODE_PROTOCOL(this);
-    if(!node)return;
     
     if(dict->objectForKey("size")){
         node->setContentSize(dict->sizeForKey("size"));

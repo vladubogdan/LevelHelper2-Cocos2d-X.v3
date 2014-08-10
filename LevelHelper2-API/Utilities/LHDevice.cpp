@@ -38,6 +38,11 @@ LHDevice* LHDevice::deviceFromArrayWithSize(const std::vector<LHDevice*>& device
             return dev;
         }
     }
+    
+    if(devices.size()>0){
+        return devices[0];
+    }
+    
     return NULL;
 }
 

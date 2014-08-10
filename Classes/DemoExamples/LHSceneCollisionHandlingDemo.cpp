@@ -54,7 +54,7 @@ bool LHSceneCollisionHandlingDemo::initWithContentOfFile(const std::string& plis
     ttf->setHorizontalAlignment(TextHAlignment::CENTER);
     ttf->setPosition(Point(size.width*0.5, size.height*0.5));
     ttf->setSystemFontSize(20);
-    this->addChild(ttf);//add the text to the ui element as we dont want it to move with the camera
+    this->getUINode()->addChild(ttf);//add the text to the ui element as we dont want it to move with the camera
         
     return retValue;
 }
@@ -62,6 +62,36 @@ bool LHSceneCollisionHandlingDemo::initWithContentOfFile(const std::string& plis
 #if LH_USE_BOX2D
 bool LHSceneCollisionHandlingDemo::shouldDisableContactBetweenNodes(Node* nodeA, Node* nodeB){
     
+#if COCOS2D_VERSION >= 0x00030200
+    
+    if(nodeA && nodeB)
+    {
+        CCLOG("SHOULD DISABLE CONTACT BETWEEN %s and %s", nodeA->getName().c_str(), nodeB->getName().c_str());
+        
+        if(
+           (nodeA->getName() == "carTyre" && nodeB->getName() == "shouldNotCollide") ||
+           (nodeB->getName() == "carTyre" && nodeA->getName() == "shouldNotCollide")
+           )
+        {
+            if(nodeA->getName() == "carTyre")
+            {
+                if(nodeA->getPosition().y < nodeB->getPosition().y){
+                    return true;
+                }
+            }
+            
+            if(nodeB->getName() == "carTyre")
+            {
+                if(nodeB->getPosition().y < nodeA->getPosition().y){
+                    return true;
+                }
+            }
+        }
+    }
+    
+#else
+
+        
     //ensure that the nodes received comes from a LevelHelper API object
     LHNodeProtocol* a = dynamic_cast<LHNodeProtocol*>(nodeA);
     LHNodeProtocol* b = dynamic_cast<LHNodeProtocol*>(nodeB);
@@ -91,6 +121,9 @@ bool LHSceneCollisionHandlingDemo::shouldDisableContactBetweenNodes(Node* nodeA,
         }
     }
         
+#endif
+            
+        
     return false;
 }
 void LHSceneCollisionHandlingDemo::didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse)
@@ -101,8 +134,17 @@ void LHSceneCollisionHandlingDemo::didBeginContactBetweenNodes(Node* nodeA, Node
     
     if(a && b)
     {
+#if COCOS2D_VERSION >= 0x00030200
+        CCLOG("DID BEGIN CONTACT %s %s scenePt %f %f impulse %f", nodeA->getName().c_str(), nodeB->getName().c_str(),
+              contactPoint.x, contactPoint.y, impulse);
+
+#else
         CCLOG("DID BEGIN CONTACT %s %s scenePt %f %f impulse %f", a->getName().c_str(), b->getName().c_str(), contactPoint.x, contactPoint.y, impulse);
+#endif
+                
     }
+    
+    
 }
 void LHSceneCollisionHandlingDemo::didEndContactBetweenNodes(Node* nodeA, Node* nodeB)
 {
@@ -112,7 +154,12 @@ void LHSceneCollisionHandlingDemo::didEndContactBetweenNodes(Node* nodeA, Node* 
     
     if(a && b)
     {
+#if COCOS2D_VERSION >= 0x00030200
+        CCLOG("DID END CONTACT BETWEEN A:%s AND B:%s", nodeA->getName().c_str(), nodeB->getName().c_str());
+#else
         CCLOG("DID END CONTACT BETWEEN A:%s AND B:%s", a->getName().c_str(), b->getName().c_str());
+#endif
+        
     }
 }
 #else

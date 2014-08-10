@@ -71,9 +71,14 @@ public:
      */
     float getMotorSpeed(){return _motorSpeed;}
     
-    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
     virtual bool lateLoading();
-    
+
+#if COCOS2D_VERSION >= 0x00030200
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags);
+#else
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+#endif
+
 private:
     
     bool _enableLimit;

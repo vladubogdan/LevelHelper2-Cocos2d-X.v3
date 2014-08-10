@@ -137,7 +137,11 @@ Rect LHGravityArea::globalRect(){
 }
 
 #if LH_USE_BOX2D
+#if COCOS2D_VERSION >= 0x00030200
+void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     LHScene* scene = (LHScene*)this->getScene();
     LHGameWorldNode* pNode = scene->getGameWorldNode();
@@ -187,7 +191,13 @@ void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, bool 
 	}
     
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 #else //chipmunk
@@ -234,7 +244,11 @@ bool LHGravityAreaPhysicsQuery(PhysicsWorld& world, PhysicsShape& shape, void* i
     return  true;//continue
 }
 
+#if COCOS2D_VERSION >= 0x00030200
+void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     Rect rect = this->globalRect();
     
@@ -243,7 +257,13 @@ void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, bool 
     world->queryRect(&LHGravityAreaPhysicsQuery, rect, this);
     
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 #endif
 

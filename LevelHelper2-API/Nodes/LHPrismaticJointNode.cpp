@@ -80,14 +80,24 @@ void LHPrismaticJointNode::removeFromParent()
     Node::removeFromParent();
 }
 
+#if COCOS2D_VERSION >= 0x00030200
+void LHPrismaticJointNode::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHPrismaticJointNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     if(!this->getNodeA() ||  !this->getNodeB()){
         this->lateLoading();
     }
     
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 bool LHPrismaticJointNode::lateLoading()

@@ -107,7 +107,7 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
         button->setEnabled(true);
         button->setTouchEnabled(true);
         button->addTouchEventListener(CC_CALLBACK_2(LHSceneDemo::previousDemo, this));
-        this->addChild(button);
+        this->getUINode()->addChild(button);
     }
 
     {
@@ -121,7 +121,7 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
         button->setEnabled(true);
         button->setTouchEnabled(true);
         button->addTouchEventListener(CC_CALLBACK_2(LHSceneDemo::restartDemo, this));
-        this->addChild(button);
+        this->getUINode()->addChild(button);
     }
 
     {
@@ -135,7 +135,7 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
         button->setEnabled(true);
         button->setTouchEnabled(true);
         button->addTouchEventListener(CC_CALLBACK_2(LHSceneDemo::nextDemo, this));
-        this->addChild(button);
+        this->getUINode()->addChild(button);
     }
     
     return retValue;

@@ -8,6 +8,8 @@
 #include <vector>
 #include <typeinfo>
 
+#include "extensions/cocos-ext.h"
+
 USING_NS_CC;
 using namespace cocos2d::ui;
 

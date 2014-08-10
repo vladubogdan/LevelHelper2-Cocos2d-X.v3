@@ -14,6 +14,7 @@
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
 #include "LHPhysicsProtocol.h"
+#include "LHConfig.h"
 
 using namespace cocos2d;
 
@@ -37,7 +38,11 @@ public:
     static  bool isLHBezier(Node* obj){return (0 != dynamic_cast<LHBezier*>(obj));}
     virtual bool isBezier(){return true;}
     
+#if COCOS2D_VERSION >= 0x00030200
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags);
+#else
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+#endif
     
     /**
      Returns the points used to draw this bezier node. Array of NSValue with CGPoints;

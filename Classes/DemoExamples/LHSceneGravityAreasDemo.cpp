@@ -48,7 +48,7 @@ bool LHSceneGravityAreasDemo::initWithContentOfFile(const std::string& plistLeve
     ttf->setHorizontalAlignment(TextHAlignment::CENTER);
     ttf->setPosition(Point(size.width*0.5, size.height*0.5));
     ttf->setSystemFontSize(20);
-    this->addChild(ttf);//add the text to the ui element as we dont want it to move with the camera
+    this->getUINode()->addChild(ttf);//add the text to the ui element as we dont want it to move with the camera
     
         
     return retValue;

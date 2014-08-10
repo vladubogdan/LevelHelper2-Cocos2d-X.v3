@@ -39,8 +39,12 @@ public:
     /**
      Returns the unique name of the node.
      */
+    
+#if COCOS2D_VERSION < 0x00030200
     virtual std::string getName(){return name;}
     virtual void setName(const std::string& value){name = std::string(value);}
+#endif
+    
     
     /**
      Returns the unique identifier of the node.

@@ -37,7 +37,6 @@ public:
     static  bool isLHUINode(Node* obj){return (0 != dynamic_cast<LHUINode*>(obj));}
     virtual bool isUINode(){return true;}
     
-    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
 };
 
 #endif //__LEVELHELPER_API_UI_NODE_H__

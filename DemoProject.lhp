@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.73797774314880371, 0.16586895287036896}, {0.67999488115310669, 1}}</string>
+			<string>{{0.069449819624423981, 0}, {0.067148961126804352, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -160,11 +160,6 @@
 					<true/>
 				</dict>
 				<key>simpleCar.lhs</key>
-				<dict>
-					<key>publish</key>
-					<true/>
-				</dict>
-				<key>testTrace.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

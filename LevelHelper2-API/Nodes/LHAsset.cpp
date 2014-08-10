@@ -133,13 +133,28 @@ __Array* LHAsset::tracedFixturesWithUUID(const std::string& uuid)
     return (__Array*)_tracedFixtures->objectForKey(uuid);
 }
 
+
+#if COCOS2D_VERSION >= 0x00030200
+void LHAsset::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHAsset::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
+
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
+    
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
+
+
 
 
 #if LH_USE_BOX2D

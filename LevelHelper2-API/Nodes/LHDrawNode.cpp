@@ -178,8 +178,20 @@ void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, __Arra
 }
 
 
-
+#if COCOS2D_VERSION >= 0x00030200
+void LHDrawNode::draw(Renderer *renderer, const Mat4& transform, uint32_t flags)
+{
+    onDraw(transform, flags);
+}
+#else
 void LHDrawNode::draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated)
+{
+    onDraw(transform, 0);
+}
+#endif
+
+
+void LHDrawNode::onDraw(const Mat4 &transform, uint32_t flags)
 {
     if(_texture)
     {
@@ -198,7 +210,7 @@ void LHDrawNode::draw(Renderer *renderer, const Mat4 &transform, bool transformU
 	
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _trianglePoints);
 	glVertexAttribPointer(1, 4, GL_FLOAT, GL_TRUE, sizeof(cocos2d::Color4F), _colors);
-
+    
     if(_texture){
         glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _uvPoints);
     }

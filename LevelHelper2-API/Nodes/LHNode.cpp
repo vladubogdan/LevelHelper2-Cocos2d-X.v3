@@ -86,13 +86,23 @@ bool LHNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
+#if COCOS2D_VERSION >= 0x00030200
+void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
 
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 

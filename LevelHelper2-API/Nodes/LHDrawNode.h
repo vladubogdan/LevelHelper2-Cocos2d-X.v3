@@ -32,9 +32,16 @@ public:
     virtual void setBlendFunc(const BlendFunc &blendFunc);
     virtual const BlendFunc &getBlendFunc() const;
 
+#if COCOS2D_VERSION >= 0x00030200
+    virtual void draw(Renderer *renderer, const Mat4& transform, uint32_t flags);
+#else
     virtual void draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated) override;
+#endif
     
     void clear();
+    
+    void onDraw(const Mat4 &transform, uint32_t flags);
+    
 private:
     BlendFunc  _blendFunc;            /// It's required for TextureProtocol inheritance
     Texture2D* _texture;
@@ -45,7 +52,6 @@ private:
     Color4F*        _colors;
     
     int             _numberOfTriangles;
-
 };
 
 

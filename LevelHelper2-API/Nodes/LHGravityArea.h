@@ -37,9 +37,15 @@ public:
     static  bool isLHGravityArea(Node* obj){return (0 != dynamic_cast<LHGravityArea*>(obj));}
     virtual bool isGravityArea(){return true;}
     
-    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
     
+    
+#if COCOS2D_VERSION >= 0x00030200
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags);
+#else
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+#endif
 
+    
     /**
      Returns whether or not this gravity area is a radial.
      */

@@ -43,8 +43,13 @@ public:
     static  bool isLHGameWorldNode(Node* obj){return (0 != dynamic_cast<LHGameWorldNode*>(obj));}
     virtual bool isGameWorldNode(){return true;}
     
+#if COCOS2D_VERSION >= 0x00030200
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags);
+#else
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+#endif
     
+    void update(float delta);
     
 #if LH_USE_BOX2D
     b2World* getBox2dWorld();
@@ -57,7 +62,7 @@ public:
 private:
 
 #if LH_USE_BOX2D
-    void step(float dt, Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+    void step(float dt);
     
     b2World* _box2dWorld;
 #endif

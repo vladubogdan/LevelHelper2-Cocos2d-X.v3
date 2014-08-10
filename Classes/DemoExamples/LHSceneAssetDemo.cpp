@@ -43,11 +43,11 @@ bool LHSceneAssetDemo::initWithContentOfFile(const std::string& plistLevelFile)
     Label* ttf = Label::create();
     
     
-#if LH_USE_BOX2D
+//#if LH_USE_BOX2D
     ttf->setString("ASSETS DEMO\nAssets are special objects that when edited they will change\nto the new edited state everywhere they are used in your project.\nClick to create a new officer (asset) of a random scale and rotation.");
-#else
-    ttf->setString("ASSETS DEMO\nAssets are special objects that when edited they will change\nto the new edited state everywhere they are used in your project.\nClick to create a new officer (asset) of a random scale and rotation.\nChipmunk detected:\nSorry but currently Cocos2d-X has a bug where it does not update children physics body position.\nWhen using Chipmunk and having physics bodies\non children of the node that gets transformed the bodies will not get updated.\nSwitch to the Box2d target for correct physics transformations.\nCheck LHSceneAssetDemo source code for a possible work around.");
-#endif
+//#else
+//    ttf->setString("ASSETS DEMO\nAssets are special objects that when edited they will change\nto the new edited state everywhere they are used in your project.\nClick to create a new officer (asset) of a random scale and rotation.\nChipmunk detected:\nSorry but currently Cocos2d-X has a bug where it does not update children physics body position.\nWhen using Chipmunk and having physics bodies\non children of the node that gets transformed the bodies will not get updated.\nSwitch to the Box2d target for correct physics transformations.\nCheck LHSceneAssetDemo source code for a possible work around.");
+//#endif
 
     
     
@@ -55,7 +55,7 @@ bool LHSceneAssetDemo::initWithContentOfFile(const std::string& plistLevelFile)
     ttf->setHorizontalAlignment(TextHAlignment::CENTER);
     ttf->setPosition(Point(size.width*0.5, size.height*0.5));
     ttf->setSystemFontSize(20);
-    this->addChild(ttf);//add the text to the ui element as we dont want it to move with the camera
+    this->getUINode()->addChild(ttf);//add the text to the ui element as we dont want it to move with the camera
     
         
     return retValue;

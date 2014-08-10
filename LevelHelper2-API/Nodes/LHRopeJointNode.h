@@ -46,7 +46,13 @@ public:
     static  bool isLHRopeJointNode(Node* obj){return (0 != dynamic_cast<LHRopeJointNode*>(obj));}
     virtual bool isRopeJointNode(){return true;}
     
+
+#if COCOS2D_VERSION >= 0x00030200
+    virtual void visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags);
+#else
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
+#endif
+
     
     virtual void removeFromParent();
     

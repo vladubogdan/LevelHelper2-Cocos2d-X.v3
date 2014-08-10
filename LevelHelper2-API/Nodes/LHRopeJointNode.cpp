@@ -806,9 +806,12 @@ __Array* LHRopeJointNode::thickLinePointsFrom(const Point& start, const Point& e
     return array;
 }
 
-void LHRopeJointNode::visit(Renderer *renderer,
-                            const Mat4& parentTransform,
-                            bool parentTransformUpdated)
+
+#if COCOS2D_VERSION >= 0x00030200
+void LHRopeJointNode::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
+void LHRopeJointNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     
     if(!this->getNodeA() || !this->getNodeB())return;
@@ -886,7 +889,13 @@ void LHRopeJointNode::visit(Renderer *renderer,
 #endif
     
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 bool LHRopeJointNode::lateLoading()

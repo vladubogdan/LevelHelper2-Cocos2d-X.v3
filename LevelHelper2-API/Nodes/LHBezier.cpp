@@ -201,12 +201,23 @@ std::vector<Point> LHBezier::linePoints(){
     return _linePoints;
 }
 
+#if COCOS2D_VERSION >= 0x00030200
+void LHBezier::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHBezier::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     visitPhysicsProtocol();
     visitActiveAnimation();
+    
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        DrawNode::visit(renderer, parentTransform, parentFlags);
+#else
         DrawNode::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 #if LH_USE_BOX2D

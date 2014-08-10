@@ -53,8 +53,3 @@ bool LHBackUINode::initWithDictionary(LHDictionary* dict, Node* prnt)
     }
     return false;
 }
-
-void LHBackUINode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
-{
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
-}

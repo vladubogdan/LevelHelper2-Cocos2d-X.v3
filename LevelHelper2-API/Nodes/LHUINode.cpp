@@ -53,8 +53,3 @@ bool LHUINode::initWithDictionary(LHDictionary* dict, Node* prnt)
     }
     return false;
 }
-
-void LHUINode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
-{
-    Node::visit(renderer, parentTransform, parentTransformUpdated);
-}

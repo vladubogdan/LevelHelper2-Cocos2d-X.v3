@@ -100,14 +100,24 @@ void LHGearJointNode::findConnectedJoints()
 }
 
 
+#if COCOS2D_VERSION >= 0x00030200
+void LHGearJointNode::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
+#else
 void LHGearJointNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
+#endif
 {
     if(!this->getNodeA() ||  !this->getNodeB()){
         this->lateLoading();
     }
     
     if(renderer)
+    {
+#if COCOS2D_VERSION >= 0x00030200
+        Node::visit(renderer, parentTransform, parentFlags);
+#else
         Node::visit(renderer, parentTransform, parentTransformUpdated);
+#endif
+    }
 }
 
 bool LHGearJointNode::lateLoading()

@@ -118,13 +118,9 @@ Point LHCamera::transformToRestrictivePosition(Point position)
 {
     Node* followed = followedNode();
     if(followed){
-        position = followed->getPosition();
-
-        Point anchor = followed->getAnchorPoint();
-        Size content = followed->getContentSize();
         
-        position.x -= content.width*(anchor.x -0.5);
-        position.y -= content.height*(anchor.y-0.5);
+        position = followed->convertToWorldSpaceAR(Point());
+        position = ((LHScene*)getScene())->getGameWorldNode()->convertToNodeSpaceAR(position);
     }
 
     Size winSize = ((LHScene*)getScene())->getContentSize();

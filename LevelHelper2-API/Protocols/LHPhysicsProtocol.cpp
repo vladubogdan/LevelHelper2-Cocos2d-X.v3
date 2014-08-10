@@ -338,6 +338,45 @@ void setupFixtureWithInfo(b2FixtureDef* fixture, LHDictionary* fixInfo)
     fixture->filter.categoryBits= fixInfo->intForKey("category");
 }
 
+bool lhTestb2Polygon(const b2Vec2* vertices, int32 count)
+{
+	if(count < 3 || count > b2_maxPolygonVertices)
+        return false;
+    
+	int32 n = b2Min(count, b2_maxPolygonVertices);
+    
+	// Perform welding and copy vertices into local buffer.
+	b2Vec2 ps[b2_maxPolygonVertices];
+	int32 tempCount = 0;
+	for (int32 i = 0; i < n; ++i)
+	{
+		b2Vec2 v = vertices[i];
+        
+		bool unique = true;
+		for (int32 j = 0; j < tempCount; ++j)
+		{
+			if (b2DistanceSquared(v, ps[j]) < 0.5f * b2_linearSlop)
+			{
+				unique = false;
+				break;
+			}
+		}
+        
+		if (unique)
+		{
+			ps[tempCount++] = v;
+		}
+	}
+    
+	n = tempCount;
+	if (n < 3)
+	{
+        return false;
+	}
+
+    return true;
+}
+
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
     if(!dict)return;
@@ -560,6 +599,7 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
             LHArray* fixPoints = fixturesInfo->arrayAtIndex(f);
 
             int count = (int)fixPoints->count();
+            
             if(count > 2)
             {
                 b2Vec2 *verts = new b2Vec2[count];
@@ -577,19 +617,24 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
                     
                     point.y = -point.y;
                     
-                    verts[idx] = scene->metersFromPoint(point);
+                    b2Vec2 vec = scene->metersFromPoint(point);
+
+                    verts[idx] = vec;
                     ++i;
                 }
                 
-                shapeDef.Set(verts, count);
-                
-                b2FixtureDef fixture;
-                
-                setupFixtureWithInfo(&fixture, fixInfo);
-                
-                fixture.shape = &shapeDef;
-                _body->CreateFixture(&fixture);
-                
+                if(lhTestb2Polygon(verts, count))
+                {
+                    shapeDef.Set(verts, count);
+                    
+                    b2FixtureDef fixture;
+                    
+                    setupFixtureWithInfo(&fixture, fixInfo);
+                    
+                    fixture.shape = &shapeDef;
+                    _body->CreateFixture(&fixture);
+                }
+
                 delete[] verts;
             }
         }

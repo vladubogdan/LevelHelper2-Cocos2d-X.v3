@@ -54,6 +54,9 @@ public:
     
 #if LH_USE_BOX2D
 
+    __Array* jointList();
+    bool removeAllAttachedJoints();
+    
     AffineTransform absoluteTransform();
 
     /**
@@ -72,7 +75,6 @@ public:
     }
     
     //following method are mandatory to be overwritten when using box2d in order to compute the transformations
-    virtual void removeFromParent() = 0;
     virtual void setPosition(const cocos2d::Vec2 &pos) = 0;
     virtual void setRotation(float rotation) = 0;
     virtual void setScaleX(float scaleX) = 0;

@@ -39,8 +39,6 @@ public:
     static  bool isLHWeldJointNode(Node* obj){return (0 != dynamic_cast<LHWeldJointNode*>(obj));}
     virtual bool isWeldJointNode(){return true;}
     
-    virtual void removeFromParent();
-    
     /**
      Returns the frequency used by this joint.
      */

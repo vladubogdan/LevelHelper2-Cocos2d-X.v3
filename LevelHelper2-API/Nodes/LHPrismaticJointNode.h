@@ -39,8 +39,6 @@ public:
     static  bool isLHPrismaticJointNode(Node* obj){return (0 != dynamic_cast<LHPrismaticJointNode*>(obj));}
     virtual bool isPrismaticJointNode(){return true;}
     
-    virtual void removeFromParent();
-    
     /**
      Returns whether or not the limit is enabled on the joint.
      */

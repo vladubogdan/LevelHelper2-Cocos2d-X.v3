@@ -107,10 +107,6 @@ void LHNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentT
 
 
 #if LH_USE_BOX2D
-void LHNode::removeFromParent(){
-    this->removeBody();
-    Node::removeFromParent();
-}
 void LHNode::setPosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
     this->updatePhysicsTransform();

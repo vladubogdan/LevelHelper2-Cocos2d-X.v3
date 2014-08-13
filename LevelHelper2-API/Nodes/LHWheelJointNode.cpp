@@ -73,12 +73,6 @@ bool LHWheelJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
-void LHWheelJointNode::removeFromParent()
-{
-    this->removeJoint();
-    Node::removeFromParent();
-}
-
 #if COCOS2D_VERSION >= 0x00030200
 void LHWheelJointNode::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
 #else

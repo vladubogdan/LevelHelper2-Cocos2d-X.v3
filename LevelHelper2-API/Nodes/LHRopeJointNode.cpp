@@ -256,7 +256,7 @@ void LHRopeJointNode::drawRopeShape(LHDrawNode* shape,
 }
 
 
-void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
+void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& touchB)
 {
     if(cutJointA || cutJointB) return; //dont cut again
     
@@ -264,6 +264,10 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
     
     Point a = this->getAnchorA();
     Point b = this->getAnchorB();
+    
+    Point ptA = this->convertToNodeSpace(touchA);
+    Point ptB = this->convertToNodeSpace(touchB);
+    
     
     bool flipped = false;
     __Array* rPoints = this->ropePointsFromPointA(a, b, _length, _segments, &flipped);
@@ -293,12 +297,6 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
                 
                     LHScene* scene = (LHScene*)this->getScene();
 
-                    
-                    
-//                    Node* nodeA = this->getNodeA();
-//                    Node* nodeB = this->getNodeB();
-//                    float length = _length;
-
                     this->removeJoint();
                     
                     if(ropeShape){
@@ -323,6 +321,7 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
 #if LH_USE_BOX2D
                         LHGameWorldNode* pNode = scene->getGameWorldNode();
                         b2World* world = pNode->getBox2dWorld();
+                        interPt = this->convertToWorldSpace(interPt);
                         b2Vec2 bodyPos = scene->metersFromPoint(interPt);
                         
                         b2BodyDef bodyDef;
@@ -516,56 +515,57 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& ptA, const Point& ptB)
     }
 }
 
-void LHRopeJointNode::removeFromParent(){
 
-#if LH_USE_BOX2D
-
-    LHScene* scene = (LHScene*)this->getScene();
-    LHGameWorldNode* pNode = scene->getGameWorldNode();
-    if(pNode)
-    {
-        //if we dont have the scene it means the scene was changed so the box2d world will be deleted, deleting the joints also - safe
-        //if we do have the scene it means the node was deleted so we need to delete the joint manually
-        //if we dont have the scene it means
-        b2World* world = pNode->getBox2dWorld();
-        if(world){
-            if(cutJointA)
-            {
-                world->DestroyJoint(cutJointA);
-                cutJointA = NULL;
-            }
-            if(cutBodyA){
-                world->DestroyBody(cutBodyA);
-                cutBodyA = NULL;
-            }
-            
-            if(cutJointB)
-            {
-                world->DestroyJoint(cutJointB);
-                cutJointB = NULL;
-            }
-            if(cutBodyB){
-                world->DestroyBody(cutBodyB);
-                cutBodyB = NULL;
-            }
-        }
-    }
-#else
-    if(cutJointA){
-        cutJointA->removeFormWorld();
-        cutJointA = nullptr;
-    }
-    
-    if(cutJointB){
-        cutJointB->removeFormWorld();
-        cutJointB = nullptr;
-    }
-#endif
-    
-    this->removeJoint();
-        
-    Node::removeFromParent();
-}
+//void LHRopeJointNode::removeFromParent(){
+//
+//#if LH_USE_BOX2D
+//
+//    LHScene* scene = (LHScene*)this->getScene();
+//    LHGameWorldNode* pNode = scene->getGameWorldNode();
+//    if(pNode)
+//    {
+//        //if we dont have the scene it means the scene was changed so the box2d world will be deleted, deleting the joints also - safe
+//        //if we do have the scene it means the node was deleted so we need to delete the joint manually
+//        //if we dont have the scene it means
+//        b2World* world = pNode->getBox2dWorld();
+//        if(world){
+//            if(cutJointA)
+//            {
+//                world->DestroyJoint(cutJointA);
+//                cutJointA = NULL;
+//            }
+//            if(cutBodyA){
+//                world->DestroyBody(cutBodyA);
+//                cutBodyA = NULL;
+//            }
+//            
+//            if(cutJointB)
+//            {
+//                world->DestroyJoint(cutJointB);
+//                cutJointB = NULL;
+//            }
+//            if(cutBodyB){
+//                world->DestroyBody(cutBodyB);
+//                cutBodyB = NULL;
+//            }
+//        }
+//    }
+//#else
+//    if(cutJointA){
+//        cutJointA->removeFormWorld();
+//        cutJointA = nullptr;
+//    }
+//    
+//    if(cutJointB){
+//        cutJointB->removeFormWorld();
+//        cutJointB = nullptr;
+//    }
+//#endif
+//    
+//    this->removeJoint();
+//        
+//    Node::removeFromParent();
+//}
 
 
 
@@ -831,9 +831,9 @@ void LHRopeJointNode::visit(Renderer *renderer, const Mat4& parentTransform, boo
             _cutTimer = LHUtils::LHMillisecondNow();
         }
         unsigned long long currentTimer = LHUtils::LHMillisecondNow();
-
         
-        float unit = (currentTimer - _cutTimer)/_fadeOutDelay/1000.0;
+        float unit = (currentTimer - _cutTimer)/(_fadeOutDelay*1000.0);
+        
         alphaValue = colorInfo.size.height;
         alphaValue -= alphaValue*unit;
         
@@ -847,26 +847,21 @@ void LHRopeJointNode::visit(Renderer *renderer, const Mat4& parentTransform, boo
 #if LH_USE_BOX2D
 
     if(cutAShapeNode){
-        Node* nodeA = this->getNodeA();
-        
+
         b2Vec2 pos = cutBodyA->GetPosition();
         LHScene* scene = (LHScene*)this->getScene();
-        
         Point worldPos = scene->pointFromMeters(pos);
-        Point B = nodeA->getParent()->convertToNodeSpaceAR(worldPos);
+        Point B = this->convertToNodeSpaceAR(worldPos);
 
         this->drawRopeShape(cutAShapeNode, anchorA, B, cutJointALength, _segments);
     }
     
     if(cutBShapeNode){
-        Node* nodeB = this->getNodeB();
-        
         b2Vec2 pos = cutBodyB->GetPosition();
         LHScene* scene = (LHScene*)this->getScene();
         
         Point worldPos = scene->pointFromMeters(pos);
-        Point A = nodeB->getParent()->convertToNodeSpaceAR(worldPos);
-
+        Point A = this->convertToNodeSpaceAR(worldPos);
         this->drawRopeShape(cutBShapeNode, A, anchorB, cutJointBLength, _segments);
     }
     

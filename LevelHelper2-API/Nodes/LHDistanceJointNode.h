@@ -39,8 +39,6 @@ public:
     static  bool isLHDistanceJointNode(Node* obj){return (0 != dynamic_cast<LHDistanceJointNode*>(obj));}
     virtual bool isDistanceJointNode(){return true;}
     
-    virtual void removeFromParent();
-    
     /**
      Returns the damping ratio of the joint.
      */

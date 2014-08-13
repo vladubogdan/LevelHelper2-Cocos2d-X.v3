@@ -40,9 +40,6 @@ public:
     static  bool isLHWheelJointNode(Node* obj){return (0 != dynamic_cast<LHWheelJointNode*>(obj));}
     virtual bool isWheelJointNode(){return true;}
     
-    virtual void removeFromParent();
-    
-    
     /**
      Returns whether or not the motor is enabled on the joint.
      */

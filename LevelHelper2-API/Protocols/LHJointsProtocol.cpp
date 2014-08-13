@@ -32,18 +32,40 @@ LHJointsProtocol::LHJointsProtocol()
 
 LHJointsProtocol::~LHJointsProtocol()
 {
-
+#if LH_USE_BOX2D
+    if(_joint &&
+       _joint->GetBodyA() &&
+       _joint->GetBodyA()->GetWorld() &&
+       _joint->GetBodyA()->GetWorld()->GetContactManager().m_contactListener != NULL)
+    {
+        //do not remove the joint if the scene is deallocing as the box2d world will be deleted
+        //so we dont need to do this manualy
+        //in some cases the nodes will be retained and removed after the box2d world is already deleted and we may have a crash
+        this->removeJoint();
+    }
+#else
+    this->removeJoint();
+#endif
+    
 }
 
 Point LHJointsProtocol::getAnchorA(){
     Point pt = _nodeA->convertToWorldSpaceAR(this->getLocalAnchorA());
-    return _nodeA->getParent()->convertToNodeSpaceAR(pt);
+    
+    Node* _node = dynamic_cast<Node*>(this);
+    if(!_node)return Point();
+    
+    return _node->convertToNodeSpaceAR(pt);
     
 }
 
 Point LHJointsProtocol::getAnchorB(){
     Point pt = _nodeB->convertToWorldSpaceAR(this->getLocalAnchorB());
-    return _nodeB->getParent()->convertToNodeSpaceAR(pt);
+    
+    Node* _node = dynamic_cast<Node*>(this);
+    if(!_node)return Point();
+    
+    return _node->convertToNodeSpaceAR(pt);
 }
 
 void LHJointsProtocol::findConnectedNodes()
@@ -63,12 +85,13 @@ void LHJointsProtocol::findConnectedNodes()
         _nodeA = parentProtocol->getChildNodeWithUUID(_nodeAUUID);
         _nodeB = parentProtocol->getChildNodeWithUUID(_nodeBUUID);
     }
-    else{
+    if(!_nodeA){
         _nodeA = scene->getChildNodeWithUUID(_nodeAUUID);
+        
+    }
+    if(!_nodeB){
         _nodeB = scene->getChildNodeWithUUID(_nodeBUUID);
     }
-    
-    
 }
 
 void LHJointsProtocol::loadJointInfoFromDictionary(LHDictionary* dict)
@@ -125,6 +148,7 @@ Point LHJointsProtocol::getLocalAnchorB()
 
 void LHJointsProtocol::setJoint(b2Joint* jt){
     _joint = jt;
+    _joint->SetUserData(dynamic_cast<Node*>(this));
 }
 
 b2Joint* LHJointsProtocol::getJoint(){
@@ -133,9 +157,10 @@ b2Joint* LHJointsProtocol::getJoint(){
 
 void LHJointsProtocol::removeJoint()
 {
+    
     Node* node = dynamic_cast<Node*>(this);
     if(!node)return;
-    
+
     LHScene* scene = (LHScene*)node->getScene();
     
     if(scene)

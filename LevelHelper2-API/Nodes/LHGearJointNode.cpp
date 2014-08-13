@@ -29,8 +29,6 @@ LHGearJointNode::LHGearJointNode()
 
 LHGearJointNode::~LHGearJointNode()
 {
-    this->removeFromParent();
-    
     _jointA = nullptr;
     _jointB = nullptr;
 }
@@ -69,12 +67,6 @@ bool LHGearJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         return true;
     }
     return false;
-}
-
-void LHGearJointNode::removeFromParent()
-{
-    this->removeJoint();
-    Node::removeFromParent();
 }
 
 void LHGearJointNode::findConnectedJoints()

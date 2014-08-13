@@ -221,10 +221,6 @@ void LHBezier::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
 }
 
 #if LH_USE_BOX2D
-void LHBezier::removeFromParent(){
-    this->removeBody();
-    DrawNode::removeFromParent();
-}
 void LHBezier::setPosition(const cocos2d::Vec2 &pos){
     DrawNode::setPosition(pos);
     this->updatePhysicsTransform();

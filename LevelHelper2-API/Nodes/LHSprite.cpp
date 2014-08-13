@@ -195,11 +195,6 @@ void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
 }
 
 #if LH_USE_BOX2D
-void LHSprite::removeFromParent()
-{
-    this->removeBody();
-    Sprite::removeFromParent();
-}
 
 void LHSprite::setPosition(const cocos2d::Vec2 &pos)
 {

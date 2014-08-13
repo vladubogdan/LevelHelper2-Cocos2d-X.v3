@@ -74,12 +74,6 @@ bool LHPrismaticJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
-void LHPrismaticJointNode::removeFromParent()
-{
-    this->removeJoint();
-    Node::removeFromParent();
-}
-
 #if COCOS2D_VERSION >= 0x00030200
 void LHPrismaticJointNode::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
 #else

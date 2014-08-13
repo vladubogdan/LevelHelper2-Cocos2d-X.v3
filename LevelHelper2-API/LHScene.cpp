@@ -59,6 +59,8 @@ LHScene::~LHScene()
     CC_SAFE_DELETE(_box2dCollision);
 #endif
     
+    this->removeAllChildren();
+    
     for (size_t i = 0; i < devices.size(); ++i)
     {
         LHDevice* dev = devices[i];
@@ -557,6 +559,22 @@ float LHScene::metersFromValue(float val){
 }
 float LHScene::valueFromMeters(float meter){
     return meter*this->getPtm();
+}
+
+void LHScene::setBox2dFixedTimeStep(float val){
+    this->getGameWorldNode()->setBox2dFixedTimeStep(val);
+}
+void LHScene::setBox2dMinimumTimeStep(float val){
+    this->getGameWorldNode()->setBox2dMinimumTimeStep(val);
+}
+void LHScene::setBox2dVelocityIterations(int val){
+    this->getGameWorldNode()->setBox2dVelocityIterations(val);
+}
+void LHScene::setBox2dPositionIterations(int val){
+    this->getGameWorldNode()->setBox2dPositionIterations(val);
+}
+void LHScene::setBox2dMaxSteps(int val){
+    this->getGameWorldNode()->setBox2dMaxSteps(val);
 }
 
 #endif //LH_USE_BOX2D

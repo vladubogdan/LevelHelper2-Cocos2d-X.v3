@@ -58,6 +58,9 @@ public:
     virtual std::vector<std::string> getTags(){return tags;}
     virtual void setTags(LHArray* _tags_);
     
+    virtual bool containsTag(const std::string& tagName);
+    
+    
     /**
      Returns the user property object assigned to this object or nil.
      */
@@ -175,6 +178,12 @@ public:
      Get the Node* object from a LHNodeProtocol* object. Helper function in order to not deal with casts.
      */
     static Node* LHGetNode(LHNodeProtocol* prot);
+    
+    /*
+     Get the LHNodeProtocol* object from a Node in order to access the user properties and tags. If node is not a subclass of LHNodeProtocol kind it will return null.
+     */
+    static LHNodeProtocol* LHGetNodeProtocol(Node* node);
+    
 };
 
 #define LH_GET_NODE_FROM_NODE_PROTOCOL LHNodeProtocol::LHGetNode

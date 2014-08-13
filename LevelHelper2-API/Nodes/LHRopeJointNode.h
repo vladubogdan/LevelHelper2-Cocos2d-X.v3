@@ -54,8 +54,6 @@ public:
 #endif
 
     
-    virtual void removeFromParent();
-    
     /**
      Returns whether or not this rope joint can be cut.
      */

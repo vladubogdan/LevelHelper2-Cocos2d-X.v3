@@ -52,9 +52,13 @@ LHPhysicsProtocol::LHPhysicsProtocol()
 LHPhysicsProtocol::~LHPhysicsProtocol()
 {
 #if LH_USE_BOX2D
-    //do not delete the body - its deleted by the world - will also cause crash when using
-    //gear joints
-//    this->removeBody();
+    if(_body && _body->GetWorld() && _body->GetWorld()->GetContactManager().m_contactListener != NULL)
+    {
+        //do not remove the body if the scene is deallocing as the box2d world will be deleted
+        //so we dont need to do this manualy
+        //in some cases the nodes will be retained and removed after the box2d world is already deleted and we may have a crash
+        this->removeBody();
+    }
 #endif
 }
 
@@ -79,12 +83,54 @@ LHAsset* LHPhysicsProtocol::assetParent()
 #pragma mark - BOX2D SUPPORT
 
 #if LH_USE_BOX2D
+
+__Array* LHPhysicsProtocol::jointList(){
+    
+    __Array* array = __Array::create();
+    
+    if(_body != NULL){
+        b2JointEdge* jtList = _body->GetJointList();
+        while (jtList) {
+            
+            if(jtList->joint && jtList->joint->GetUserData())
+            {
+                Node* ourNode = (Node*)jtList->joint->GetUserData();
+                if(ourNode != NULL)
+                {
+                    array->addObject(ourNode);
+                }
+            }
+            jtList = jtList->next;
+        }
+    }
+    return array;
+}
+
+bool LHPhysicsProtocol::removeAllAttachedJoints(){
+    __Array* list = this->jointList();
+    if(list)
+    {
+        for(size_t i = 0; i < list->count(); ++i)
+        {
+            Node* jt = (Node*)list->getObjectAtIndex(i);
+            if(jt){
+                jt->removeFromParent();
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+
 void LHPhysicsProtocol::removeBody()
 {
     if(_body){
         b2World* world = _body->GetWorld();
         if(world){
+            _body->SetUserData(NULL);
             if(!world->IsLocked()){
+                this->removeAllAttachedJoints();
                 world->DestroyBody(_body);
                 _body = NULL;
                 scheduledForRemoval = false;

@@ -17,7 +17,7 @@
 #include "LHScenePulleyJointDemo.h"
 #include "LHSceneGearJointDemo.h"
 #include "LHSceneWeldJointsDemo.h"
-
+#include "LHSceneRemoveOnCollisionDemo.h"
 
 LHSceneDemo* LHSceneDemo::create()
 {
@@ -44,7 +44,7 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     
     sceneNames.push_back("LHSceneIntroductionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
-
+    
     sceneNames.push_back("LHSceneCameraDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneCameraDemo::create);
 
@@ -87,6 +87,10 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneCollisionHandlingDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneCollisionHandlingDemo::create);
 
+    sceneNames.push_back("LHSceneRemoveOnCollisionDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneRemoveOnCollisionDemo::create);
+
+    
     sceneNames.push_back("LHSceneGravityAreasDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneGravityAreasDemo::create);
 

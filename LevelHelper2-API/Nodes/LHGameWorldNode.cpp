@@ -17,6 +17,8 @@
 #include "Box2D/Box2D.h"
 #endif
 
+
+
 LHGameWorldNode::LHGameWorldNode()
 {
 #if LH_USE_BOX2D
@@ -29,7 +31,12 @@ LHGameWorldNode::~LHGameWorldNode()
 {
 #if LH_USE_BOX2D
     //we need to first destroy all children and then destroy box2d world
+    
+    _scheduledBeginContact.clear();
+    _scheduledEndContact.clear();
+    
     this->removeAllChildren();
+    
     delete _box2dWorld;
     _box2dWorld = nullptr;
 #endif
@@ -57,6 +64,14 @@ bool LHGameWorldNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     {
         _physicsBody = NULL;
         prnt->addChild(this);
+        
+#if LH_USE_BOX2D
+        FIXED_TIMESTEP = 1.0f / 120.0f;
+        MINIMUM_TIMESTEP = 1.0f / 600.0f;
+        VELOCITY_ITERATIONS = 8;
+        POSITION_ITERATIONS = 8;
+        MAXIMUM_NUMBER_OF_STEPS = 2;
+#endif
         
         this->loadGenericInfoFromDictionary(dict);
         
@@ -142,12 +157,6 @@ b2World* LHGameWorldNode::getBox2dWorld()
     return _box2dWorld;
 }
 
-const float32 FIXED_TIMESTEP = 1.0f / 24.0f;
-const float32 MINIMUM_TIMESTEP = 1.0f / 600.0f;
-const int32 VELOCITY_ITERATIONS = 8;
-const int32 POSITION_ITERATIONS = 8;
-const int32 MAXIMUM_NUMBER_OF_STEPS = 24;
-
 void LHGameWorldNode::step(float dt)
 {
     if(!this->getBox2dWorld())return;
@@ -163,8 +172,66 @@ void LHGameWorldNode::step(float dt)
 		}
 		this->getBox2dWorld()->Step(deltaTime,VELOCITY_ITERATIONS,POSITION_ITERATIONS);
 		stepsPerformed++;
+        this->afterStep(dt); // process collisions and result from callbacks called by the step
 	}
 	this->getBox2dWorld()->ClearForces ();
+}
+
+void LHGameWorldNode::afterStep(float dt)
+{
+    for(size_t i = 0; i < _scheduledBeginContact.size(); ++i)
+    {
+        LHScheduledContactInfo info = _scheduledBeginContact[i];
+        if(info.getNodeA() && info.getNodeB()){
+            ((LHScene*)this->getScene())->didBeginContactBetweenNodes(info.getNodeA(),
+                                                                      info.getNodeB(),
+                                                                      info.getContactPoint(),
+                                                                      info.getImpulse());
+        }
+    }
+    _scheduledBeginContact.clear();
+
+    
+    for(size_t i = 0; i < _scheduledEndContact.size(); ++i)
+    {
+        LHScheduledContactInfo info = _scheduledEndContact[i];
+        if(info.getNodeA() && info.getNodeB()){
+            ((LHScene*)this->getScene())->didEndContactBetweenNodes(info.getNodeA(),
+                                                                    info.getNodeB());
+        }
+    }
+    _scheduledEndContact.clear();
+}
+
+
+void LHGameWorldNode::scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nodeB, Point contactPoint, float impulse)
+{
+    for(size_t i = 0; i < _scheduledBeginContact.size(); ++i)
+    {
+        LHScheduledContactInfo info = _scheduledBeginContact[i];
+        if((info.getNodeA() == nodeA && info.getNodeB() == nodeB) ||
+           (info.getNodeA() == nodeB && info.getNodeB() == nodeA)
+           ){
+            return;
+        }
+    }
+    
+    _scheduledBeginContact.push_back(LHScheduledContactInfo(nodeA, nodeB, contactPoint, impulse));
+}
+
+void LHGameWorldNode::scheduleDidEndContactBetweenNodeA(Node* nodeA, Node* nodeB)
+{
+    for(size_t i = 0; i < _scheduledEndContact.size(); ++i)
+    {
+        LHScheduledContactInfo info = _scheduledEndContact[i];
+        if((info.getNodeA() == nodeA && info.getNodeB() == nodeB) ||
+           (info.getNodeA() == nodeB && info.getNodeB() == nodeA)
+           ){
+            return;
+        }
+    }
+
+    _scheduledEndContact.push_back(LHScheduledContactInfo(nodeA, nodeB, Point(), 0));
 }
 
 Point LHGameWorldNode::getGravity(){

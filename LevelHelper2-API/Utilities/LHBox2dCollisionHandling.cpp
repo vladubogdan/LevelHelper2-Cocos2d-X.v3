@@ -200,13 +200,13 @@ b2Body* LHBox2dCollisionHandling::getBodyBFromContact(b2Contact* contact)
 
 Node* LHBox2dCollisionHandling::getNodeAFromContact(b2Contact* contact){
     b2Body* bodyA = this->getBodyAFromContact(contact);
-    if(!bodyA)return NULL;
+    if(!bodyA || !bodyA->GetUserData())return NULL;
     return (Node*)bodyA->GetUserData();
 }
 
 Node* LHBox2dCollisionHandling::getNodeBFromContact(b2Contact* contact){
     b2Body* bodyB = this->getBodyBFromContact(contact);
-    if(!bodyB)return NULL;
+    if(!bodyB || !bodyB->GetUserData())return NULL;
     return (Node*)bodyB->GetUserData();
 }
 Point LHBox2dCollisionHandling::getPointFromContact(b2Contact* contact)
@@ -242,7 +242,8 @@ void LHBox2dCollisionHandling::postSolve(b2Contact* contact, const b2ContactImpu
     {
         impulse = contactImpulse->normalImpulses[0];
     }
-    _scene->didBeginContactBetweenNodes(nodeA, nodeB, this->getPointFromContact(contact), impulse);
+    _scene->getGameWorldNode()->scheduleDidBeginContactBetweenNodeA(nodeA, nodeB, this->getPointFromContact(contact), impulse);
+    
     //at this point send the info to the scene
 }
 void LHBox2dCollisionHandling::beginContact(b2Contact* contact)
@@ -252,12 +253,8 @@ void LHBox2dCollisionHandling::beginContact(b2Contact* contact)
     if(!nodeA || !nodeB)return;
     
     //called for sensors
-    _scene->didBeginContactBetweenNodes(nodeA, nodeB, this->getPointFromContact(contact), 0);
+    _scene->getGameWorldNode()->scheduleDidBeginContactBetweenNodeA(nodeA, nodeB, this->getPointFromContact(contact), 0);
     
-//    [_activeContacts addObject:[LHActiveContact activeContactWithA:nodeA
-//                                                                 b:nodeB
-//                                                          disabled:NO
-//                                                      contactPoint:[self getPointFromContact:contact]]];
 }
 void LHBox2dCollisionHandling::endContact(b2Contact* contact)
 {
@@ -265,7 +262,7 @@ void LHBox2dCollisionHandling::endContact(b2Contact* contact)
     Node* nodeB = this->getNodeBFromContact(contact);
     if(!nodeA || !nodeB)return;
 
-    _scene->didEndContactBetweenNodes(nodeA, nodeB);
+    _scene->getGameWorldNode()->scheduleDidEndContactBetweenNodeA(nodeA, nodeB);
 }
 
 

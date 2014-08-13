@@ -121,7 +121,7 @@ public:
 
     
 #if LH_USE_BOX2D
-    virtual void removeFromParent();
+
     virtual void setPosition(const cocos2d::Vec2 &pos);
     virtual void setRotation(float rotation);
     

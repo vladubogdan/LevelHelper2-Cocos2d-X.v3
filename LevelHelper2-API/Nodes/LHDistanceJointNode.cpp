@@ -66,12 +66,6 @@ bool LHDistanceJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
     return false;
 }
 
-void LHDistanceJointNode::removeFromParent()
-{
-    this->removeJoint();
-    Node::removeFromParent();
-}
-
 #if COCOS2D_VERSION >= 0x00030200
 void LHDistanceJointNode::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)
 #else

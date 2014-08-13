@@ -61,6 +61,19 @@ void LHNodeProtocol::setTags(LHArray* _tags_)
     }
 }
 
+bool LHNodeProtocol::containsTag(const std::string& tagName)
+{
+    for(size_t i = 0; i < tags.size(); ++i){
+        std::string curTag = tags[i];
+        if(curTag == tagName)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 std::string LHNodeProtocol::getUuid()
 {
     return uuid;
@@ -75,6 +88,10 @@ Node* LHNodeProtocol::LHGetNode(LHNodeProtocol* prot)
     return dynamic_cast<Node*>(prot);
 }
 
+LHNodeProtocol* LHNodeProtocol::LHGetNodeProtocol(Node* node)
+{
+    return dynamic_cast<LHNodeProtocol*>(node);
+}
 
 
 void LHNodeProtocol::loadUserPropertyWithDictionary(LHDictionary* dict)

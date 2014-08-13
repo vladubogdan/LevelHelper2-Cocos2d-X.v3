@@ -39,8 +39,6 @@ public:
     static  bool isLHRevoluteJointNode(Node* obj){return (0 != dynamic_cast<LHRevoluteJointNode*>(obj));}
     virtual bool isRevoluteJointNode(){return true;}
     
-    virtual void removeFromParent();
-    
     /**
      Returns whether or not the limit is enabled on the joint.
      */

@@ -39,8 +39,6 @@ public:
     static  bool isLHPulleyJointNode(Node* obj){return (0 != dynamic_cast<LHPulleyJointNode*>(obj));}
     virtual bool isPulleyJointNode(){return true;}
     
-    virtual void removeFromParent();
-    
     /**
      Returns the first ground anchor in scene coordinates.
      */

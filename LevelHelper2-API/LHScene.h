@@ -97,6 +97,13 @@ public:
     float metersFromValue(float val);
     float valueFromMeters(float meter);
     
+    void setBox2dFixedTimeStep(float val); //default 1.0f / 120.0f;
+    void setBox2dMinimumTimeStep(float val); //default 1.0f/600f;
+    void setBox2dVelocityIterations(int val);//default 8
+    void setBox2dPositionIterations(int val);//default 8
+    void setBox2dMaxSteps(int val); //default 1
+
+    
 #endif //LH_USE_BOX2D
     
     

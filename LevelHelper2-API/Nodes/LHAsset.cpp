@@ -158,10 +158,6 @@ void LHAsset::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
 
 
 #if LH_USE_BOX2D
-void LHAsset::removeFromParent(){
-    this->removeBody();
-    Node::removeFromParent();
-}
 void LHAsset::setPosition(const cocos2d::Vec2 &pos){
     Node::setPosition(pos);
     this->updatePhysicsTransform();

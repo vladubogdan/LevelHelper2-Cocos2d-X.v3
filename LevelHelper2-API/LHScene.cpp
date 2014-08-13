@@ -59,8 +59,6 @@ LHScene::~LHScene()
     CC_SAFE_DELETE(_box2dCollision);
 #endif
     
-    this->removeAllChildren();
-    
     for (size_t i = 0; i < devices.size(); ++i)
     {
         LHDevice* dev = devices[i];

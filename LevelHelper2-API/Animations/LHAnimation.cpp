@@ -182,7 +182,9 @@ void LHAnimation::restart(){
 }
 void LHAnimation::updateTimeWithDelta(float delta){
     if(_animating)
+    {
         setCurrentTime(currentTime() + delta);
+    }
 }
 void LHAnimation::updateTimeWithValue(float val){
     setCurrentTime(val);

@@ -71,8 +71,10 @@ void LHNodeAnimationProtocol::createAnimationsFromDictionary(LHDictionary* dict)
 
 void LHNodeAnimationProtocol::visitActiveAnimation()
 {
-    float dt = Director::getInstance()->getDeltaTime();
-    if(_activeAnimation){
-        _activeAnimation->updateTimeWithDelta(dt);
+    if(!Director::getInstance()->isPaused()){
+        float dt = Director::getInstance()->getDeltaTime();
+        if(_activeAnimation){
+            _activeAnimation->updateTimeWithDelta(dt);
+        }
     }
 }

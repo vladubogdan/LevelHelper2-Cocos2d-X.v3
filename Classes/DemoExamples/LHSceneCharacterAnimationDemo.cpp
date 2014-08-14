@@ -58,6 +58,15 @@ bool LHSceneCharacterAnimationDemo::initWithContentOfFile(const std::string& pli
 bool LHSceneCharacterAnimationDemo::onTouchBegan(Touch* touch, Event* event)
 {
     
+//    if(Director::getInstance()->isPaused())
+//    {
+//        Director::getInstance()->resume();
+//    }
+//    else{
+//        Director::getInstance()->pause();
+//    }
+    
+    
     LHNode* officerNode = (LHNode*)this->getChildNodeWithName("Officer");
     
     if(officerNode)

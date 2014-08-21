@@ -51,157 +51,11 @@
 					<key>anchor</key>
 					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{0.195850, 1.000000}, {0.251142, 1.000000}}</string>
-					<key>generalPosition</key>
-					<string>{0.130911, 0.185989}</string>
-					<key>name</key>
-					<string>triangleShape</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>2</integer>
-						<key>type</key>
-						<integer>2</integer>
-					</dict>
-					<key>nodeType</key>
-					<string>LHTexturedShape</string>
-					<key>parentUUID</key>
-					<string>_GAME_WORLD_NODE_UUID_</string>
-					<key>points</key>
-					<array>
-						<dict>
-							<key>point</key>
-							<string>{75.000000, 0.000000}</string>
-						</dict>
-						<dict>
-							<key>point</key>
-							<string>{-75.000000, 86.602540}</string>
-						</dict>
-						<dict>
-							<key>point</key>
-							<string>{-75.000000, -86.602540}</string>
-						</dict>
-					</array>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scale</key>
-					<string>{1.000000, 1.000000}</string>
-					<key>size</key>
-					<string>{150.000000, 173.205078}</string>
-					<key>tags</key>
-					<array>
-						<string>DEFAULT</string>
-					</array>
-					<key>triangles</key>
-					<array>
-						<dict>
-							<key>alpha</key>
-							<real>255</real>
-							<key>color</key>
-							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
-							<key>point</key>
-							<string>{75.000000, 0.000000}</string>
-							<key>uv</key>
-							<string>{0.890625, 0.500000}</string>
-						</dict>
-						<dict>
-							<key>alpha</key>
-							<real>255</real>
-							<key>color</key>
-							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
-							<key>point</key>
-							<string>{-75.000000, 86.602540}</string>
-							<key>uv</key>
-							<string>{0.304688, 0.838291}</string>
-						</dict>
-						<dict>
-							<key>alpha</key>
-							<real>255</real>
-							<key>color</key>
-							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
-							<key>point</key>
-							<string>{-75.000000, -86.602540}</string>
-							<key>uv</key>
-							<string>{0.304688, 0.161709}</string>
-						</dict>
-					</array>
-					<key>uuid</key>
-					<string>830C2E4F-0FD5-4109-A026-AB220C63A4E5</string>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-				<dict>
-					<key>alpha</key>
-					<real>255</real>
-					<key>anchor</key>
-					<string>{0.500000, 0.500000}</string>
-					<key>colorOverlay</key>
 					<string>{{1.000000, 0.446110}, {0.525587, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.444798, 0.203526}</string>
+					<string>{0.576229, 0.232813}</string>
 					<key>name</key>
 					<string>circleLikeShape</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>2</integer>
-						<key>type</key>
-						<integer>2</integer>
-					</dict>
 					<key>nodeType</key>
 					<string>LHTexturedShape</string>
 					<key>parentUUID</key>
@@ -1567,9 +1421,9 @@
 					<key>colorOverlay</key>
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.766667, 0.225000}</string>
+					<string>{-0.575000, -0.112500}</string>
 					<key>name</key>
-					<string>texturedShapeNoAlpha</string>
+					<string>dummyBodyForMouseJoint</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
@@ -1600,10 +1454,116 @@
 						<key>gravityScale</key>
 						<real>1</real>
 						<key>shape</key>
-						<integer>2</integer>
+						<integer>0</integer>
 						<key>type</key>
-						<integer>2</integer>
+						<integer>0</integer>
 					</dict>
+					<key>nodeType</key>
+					<string>LHNode</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{80.000000, 80.000000}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>D2AB203A-BA06-449D-81CB-91E24978F593</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.474118, 0.181014}</string>
+					<key>imageFileName</key>
+					<string>objects.png</string>
+					<key>name</key>
+					<string>object_bananabunch</string>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{88.000000, 65.000000}</string>
+					<key>spriteName</key>
+					<string>object_bananabunch</string>
+					<key>spriteUUID</key>
+					<string>60F9EAC9-FDD1-4EAB-811D-7A0EF562B591</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>3D518101-BF39-4E84-9051-177F65E5E298</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.512663, 0.448826}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.652908, 0.132096}</string>
+					<key>imageFileName</key>
+					<string>objects.png</string>
+					<key>name</key>
+					<string>object_hat</string>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{122.000000, 75.000000}</string>
+					<key>spriteName</key>
+					<string>object_hat</string>
+					<key>spriteUUID</key>
+					<string>A0CC7494-203E-4C79-A14A-ECA50F1FBA3D</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>774AA825-1EBE-4B30-B17E-FE53FC7D64AF</string>
+					<key>zOrder</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.766667, 0.225000}</string>
+					<key>name</key>
+					<string>texturedShapeNoAlpha</string>
 					<key>nodeType</key>
 					<string>LHTexturedShape</string>
 					<key>parentUUID</key>
@@ -1739,7 +1699,85 @@
 					<key>uuid</key>
 					<string>9C6E4614-9DCE-4BFC-9958-C31B986E2FC5</string>
 					<key>zOrder</key>
-					<integer>0</integer>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{0.195850, 1.000000}, {0.251142, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.607293, 0.338969}</string>
+					<key>name</key>
+					<string>triangleShape</string>
+					<key>nodeType</key>
+					<string>LHTexturedShape</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>points</key>
+					<array>
+						<dict>
+							<key>point</key>
+							<string>{75.000000, 0.000000}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{-75.000000, 86.602540}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{-75.000000, -86.602540}</string>
+						</dict>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{150.000000, 173.205078}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>triangles</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{75.000000, 0.000000}</string>
+							<key>uv</key>
+							<string>{0.890625, 0.500000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-75.000000, 86.602540}</string>
+							<key>uv</key>
+							<string>{0.304688, 0.838291}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-75.000000, -86.602540}</string>
+							<key>uv</key>
+							<string>{0.304688, 0.161709}</string>
+						</dict>
+					</array>
+					<key>uuid</key>
+					<string>830C2E4F-0FD5-4109-A026-AB220C63A4E5</string>
+					<key>zOrder</key>
+					<integer>3</integer>
 				</dict>
 				<dict>
 					<key>alpha</key>
@@ -1749,61 +1787,35 @@
 					<key>colorOverlay</key>
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{-0.575000, -0.112500}</string>
+					<string>{0.648596, 0.385637}</string>
+					<key>imageFileName</key>
+					<string>objects.png</string>
 					<key>name</key>
-					<string>dummyBodyForMouseJoint</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
+					<string>object_statue</string>
 					<key>nodeType</key>
-					<string>LHNode</string>
+					<string>LHSprite</string>
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
 					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{80.000000, 80.000000}</string>
+					<string>{105.000000, 148.000000}</string>
+					<key>spriteName</key>
+					<string>object_statue</string>
+					<key>spriteUUID</key>
+					<string>0DB4639A-8D34-4D83-8FBD-20753577F85A</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
 					</array>
 					<key>uuid</key>
-					<string>D2AB203A-BA06-449D-81CB-91E24978F593</string>
+					<string>497214C5-EDAB-4859-9632-67604C9BFCA3</string>
 					<key>zOrder</key>
-					<integer>0</integer>
+					<integer>4</integer>
 				</dict>
 			</array>
 			<key>colorOverlay</key>
@@ -1934,7 +1946,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>FBDDFE00-B5C1-49D5-B4C3-3635160E0297</key>
+		<key>F030EA17-CE75-4119-940C-341832C8E3C7</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>

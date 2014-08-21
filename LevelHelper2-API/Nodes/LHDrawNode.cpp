@@ -15,6 +15,7 @@ LHDrawNode::LHDrawNode()
     _glProgram = nullptr;
     _trianglePoints = nullptr;
     _uvPoints = nullptr;
+    _blendFunc = BlendFunc::ALPHA_PREMULTIPLIED;
 }
 
 LHDrawNode::~LHDrawNode()
@@ -205,8 +206,10 @@ void LHDrawNode::onDraw(const Mat4 &transform, uint32_t flags)
         GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_COLOR);
     }
     
-	_glProgram->use();
-    _glProgram->setUniformsForBuiltins();
+    if(_glProgram){
+        _glProgram->use();
+        _glProgram->setUniformsForBuiltins(transform);
+    }
 	
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(cocos2d::Point), _trianglePoints);
 	glVertexAttribPointer(1, 4, GL_FLOAT, GL_TRUE, sizeof(cocos2d::Color4F), _colors);

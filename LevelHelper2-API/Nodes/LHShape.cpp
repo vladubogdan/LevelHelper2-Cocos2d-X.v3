@@ -220,13 +220,7 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
         uvPoints->addObject(LHValue::create(uvA));
         uvPoints->addObject(LHValue::create(uvB));
         uvPoints->addObject(LHValue::create(uvC));
-        
-        CCLOG("UV %f %f / %f %f / %f %f", uvA.x, uvA.y, uvB.x, uvB.y, uvC.x, uvC.y);
-        
-        
-//        c4A.a = 0.2;
-//        c4B.a = 0.2;
-//        c4C.a = 0.2;
+
         
         colors->addObject(LHValue::create(c4A));
         colors->addObject(LHValue::create(c4B));

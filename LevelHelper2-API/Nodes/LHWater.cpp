@@ -11,7 +11,7 @@
 #include "LHScene.h"
 #include "LHDevice.h"
 #include "LHValue.h"
-
+#include "LHDrawNode.h"
 #include "LHConfig.h"
 
 #if LH_USE_BOX2D
@@ -148,19 +148,23 @@ bool LHWater::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
+        
+        _drawNode = LHDrawNode::create();
+        this->addChild(_drawNode);
+        
         prnt->addChild(this);
         
         this->loadGenericInfoFromDictionary(dict);
         this->loadTransformationInfoFromDictionary(dict);
         
-        _drawNode = DrawNode::create();
-        this->addChild(_drawNode);
-        
+        //reset size set by node protocol
+        this->setContentSize(Size());
+
+
         _width      = dict->floatForKey("width");
         _height     = dict->floatForKey("height");
         _numLines   = dict->floatForKey("numLines");
         
-        //_waves = [[NSMutableArray alloc] init];
         _waterDensity = dict->floatForKey("waterDensity");
         _lineWidth = _width / _numLines;
         
@@ -175,6 +179,7 @@ bool LHWater::initWithDictionary(LHDictionary* dict, Node* prnt)
         _splashWidth     = dict->floatForKey("splashW");
         _splashTime      = dict->floatForKey("splashT");
 
+        
     
         float alpha = dict->floatForKey("alpha");
 
@@ -183,6 +188,8 @@ bool LHWater::initWithDictionary(LHDictionary* dict, Node* prnt)
         Color3B overlay = dict->colorForKey("colorOverlay");
         colorOverlay = Color4F(overlay.r/255.0f, overlay.g/255.0f, overlay.b/255.0f, alpha/255.0f);
 
+        _drawNode->setOpacity(alpha);
+        
         this->createTurbulence();
         
         return true;
@@ -299,6 +306,10 @@ void LHWater::setShapeTriangles(__Array* triangles, const Color4F& c4)
 {
     _drawNode->clear();
     
+    __Array* shapeTriangles = __Array::create();
+    __Array* uvPoints       = __Array::create();
+    __Array* colors         = __Array::create();
+    
     for(int i = 0; i < triangles->count(); i+=3)
     {
         LHValue* valA = (LHValue*)triangles->getObjectAtIndex(i);
@@ -313,9 +324,21 @@ void LHWater::setShapeTriangles(__Array* triangles, const Color4F& c4)
         
         Point pC = valC->getPoint();
         pC.y = -pC.y;
+        
+        shapeTriangles->addObject(LHValue::create(pA));
+        shapeTriangles->addObject(LHValue::create(pB));
+        shapeTriangles->addObject(LHValue::create(pC));
+        
+        uvPoints->addObject(LHValue::create(Point()));
+        uvPoints->addObject(LHValue::create(Point()));
+        uvPoints->addObject(LHValue::create(Point()));
     
-        _drawNode->drawTriangle(pA, pB, pC, c4);
+        colors->addObject(LHValue::create(c4));
+        colors->addObject(LHValue::create(c4));
+        colors->addObject(LHValue::create(c4));
     }
+    
+    _drawNode->setShapeTriangles(shapeTriangles, uvPoints, colors);
 }
 
 

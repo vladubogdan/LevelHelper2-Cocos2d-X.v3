@@ -320,6 +320,9 @@
 		6ED55BEC196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED55BEA196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp */; };
 		6ED55BED196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED55BEA196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp */; };
 		6ED55BEE196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED55BEA196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp */; };
+		6EF5DDA619A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5DDA419A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp */; };
+		6EF5DDA719A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5DDA419A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp */; };
+		6EF5DDA819A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5DDA419A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp */; };
 		6EF78E6E1980C104006DD0C2 /* LHSceneAssetWithJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF78E6C1980C104006DD0C2 /* LHSceneAssetWithJointsDemo.cpp */; };
 		6EF78E6F1980C104006DD0C2 /* LHSceneAssetWithJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF78E6C1980C104006DD0C2 /* LHSceneAssetWithJointsDemo.cpp */; };
 		6EF78E701980C104006DD0C2 /* LHSceneAssetWithJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF78E6C1980C104006DD0C2 /* LHSceneAssetWithJointsDemo.cpp */; };
@@ -709,6 +712,8 @@
 		6ED55BE4196AAB8000F6C4B4 /* LHSceneCollisionHandlingDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneCollisionHandlingDemo.h; sourceTree = "<group>"; };
 		6ED55BEA196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHBox2dCollisionHandling.cpp; sourceTree = "<group>"; };
 		6ED55BEB196AB5EF00F6C4B4 /* LHBox2dCollisionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBox2dCollisionHandling.h; sourceTree = "<group>"; };
+		6EF5DDA419A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneWaterAreaDemo.cpp; sourceTree = "<group>"; };
+		6EF5DDA519A5A4EA00D5D289 /* LHSceneWaterAreaDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneWaterAreaDemo.h; sourceTree = "<group>"; };
 		6EF78E6C1980C104006DD0C2 /* LHSceneAssetWithJointsDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneAssetWithJointsDemo.cpp; sourceTree = "<group>"; };
 		6EF78E6D1980C104006DD0C2 /* LHSceneAssetWithJointsDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneAssetWithJointsDemo.h; sourceTree = "<group>"; };
 		6EF78E731980C4E4006DD0C2 /* LHRevoluteJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHRevoluteJointNode.cpp; sourceTree = "<group>"; };
@@ -1141,6 +1146,8 @@
 				6EA86E43196E758F00513A9E /* LHSceneGravityAreasDemo.h */,
 				6E9DA2F219725BDC00F9FA85 /* LHSceneUserPropertiesDemo.cpp */,
 				6E9DA2F319725BDC00F9FA85 /* LHSceneUserPropertiesDemo.h */,
+				6EF5DDA419A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp */,
+				6EF5DDA519A5A4EA00D5D289 /* LHSceneWaterAreaDemo.h */,
 			);
 			name = DemoExamples;
 			path = ../Classes/DemoExamples;
@@ -1478,6 +1485,7 @@
 				6E0D5A53195061D60036E940 /* LHSceneTags.cpp in Sources */,
 				6E7916E01964197E00E68E06 /* LHBox2dDebugDrawNode.cpp in Sources */,
 				6E0D59F9195061900036E940 /* LHScaleFrame.cpp in Sources */,
+				6EF5DDA819A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp in Sources */,
 				6E0D5A11195061900036E940 /* LHSpriteFrameProperty.cpp in Sources */,
 				6E0D5A09195061900036E940 /* LHOpacityProperty.cpp in Sources */,
 				6E6F6E50199A7E2F00987EA6 /* LHSceneRemoveOnCollisionDemo.cpp in Sources */,
@@ -1556,6 +1564,7 @@
 				6E7916681964065C00E68E06 /* LHBackUINode.cpp in Sources */,
 				6E0D5A30195061900036E940 /* LHNodeProtocol.cpp in Sources */,
 				6EA86E46196E758F00513A9E /* LHSceneGravityAreasDemo.cpp in Sources */,
+				6EF5DDA719A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp in Sources */,
 				6E0D5A16195061900036E940 /* LHScene.cpp in Sources */,
 				6E0D5A0A195061900036E940 /* LHOpacityProperty.cpp in Sources */,
 				6E02B9B0197F7CF90077349C /* NodeTransform.cpp in Sources */,
@@ -1644,6 +1653,7 @@
 				6E7916B41964186600E68E06 /* LHSceneTags.cpp in Sources */,
 				6E7916E11964197E00E68E06 /* LHBox2dDebugDrawNode.cpp in Sources */,
 				6E7916B51964186600E68E06 /* LHScaleFrame.cpp in Sources */,
+				6EF5DDA619A5A4EA00D5D289 /* LHSceneWaterAreaDemo.cpp in Sources */,
 				6E7916B61964186600E68E06 /* LHSpriteFrameProperty.cpp in Sources */,
 				6E7916B71964186600E68E06 /* LHOpacityProperty.cpp in Sources */,
 				6E6F6E4E199A7E2F00987EA6 /* LHSceneRemoveOnCollisionDemo.cpp in Sources */,

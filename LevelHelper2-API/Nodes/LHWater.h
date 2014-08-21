@@ -24,6 +24,7 @@ using namespace cocos2d;
 class LHDictionary;
 class LHScene;
 class LHWave;
+class LHDrawNode;
 
 class LHWater : public Node, public LHNodeProtocol, public LHNodeAnimationProtocol
 {
@@ -45,7 +46,7 @@ public:
 #endif
 
 private:
-    DrawNode* _drawNode;
+    LHDrawNode* _drawNode;
     
     Color4F colorOverlay;
     
@@ -69,7 +70,6 @@ private:
     
     std::vector<LHWave*> waves;
     
-//    void clear();
     void setShapeTriangles(__Array* triangles, const Color4F& c4);
     
     void createTurbulence();

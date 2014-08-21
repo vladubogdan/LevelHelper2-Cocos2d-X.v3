@@ -18,6 +18,7 @@
 #include "LHSceneGearJointDemo.h"
 #include "LHSceneWeldJointsDemo.h"
 #include "LHSceneRemoveOnCollisionDemo.h"
+#include "LHSceneWaterAreaDemo.h"
 
 LHSceneDemo* LHSceneDemo::create()
 {
@@ -90,12 +91,14 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneRemoveOnCollisionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneRemoveOnCollisionDemo::create);
 
-    
     sceneNames.push_back("LHSceneGravityAreasDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneGravityAreasDemo::create);
 
     sceneNames.push_back("LHSceneUserPropertiesDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneUserPropertiesDemo::create);
+
+    sceneNames.push_back("LHSceneWaterAreaDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneWaterAreaDemo::create);
 
     
     

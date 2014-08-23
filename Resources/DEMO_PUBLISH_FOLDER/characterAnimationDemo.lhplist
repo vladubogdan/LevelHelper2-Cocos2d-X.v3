@@ -5,18 +5,18 @@
 	<key>aspect</key>
 	<integer>2</integer>
 	<key>backgroundColor</key>
-	<string>{{1, 1}, {1, 1}}</string>
+	<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 	<key>children</key>
 	<array>
 		<dict>
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -26,9 +26,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -42,14 +42,14 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>children</key>
 			<array>
 				<dict>
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>animations</key>
 					<array>
 						<dict>
@@ -77,7 +77,7 @@
 													<key>positions</key>
 													<dict>
 														<key>3E83A94D-393D-4DB0-9015-911B3AB4C9FA</key>
-														<string>{3.7343022196715197, -40.446936095171054}</string>
+														<string>{3.734302, -40.446936}</string>
 													</dict>
 												</dict>
 												<dict>
@@ -86,7 +86,7 @@
 													<key>positions</key>
 													<dict>
 														<key>3E83A94D-393D-4DB0-9015-911B3AB4C9FA</key>
-														<string>{3.7343022196715197, -40.446936095171054}</string>
+														<string>{3.734302, -40.446936}</string>
 													</dict>
 												</dict>
 												<dict>
@@ -95,7 +95,7 @@
 													<key>positions</key>
 													<dict>
 														<key>3E83A94D-393D-4DB0-9015-911B3AB4C9FA</key>
-														<string>{106.57885156691225, 8.1549052729648963}</string>
+														<string>{106.578852, 8.154905}</string>
 													</dict>
 												</dict>
 												<dict>
@@ -104,7 +104,7 @@
 													<key>positions</key>
 													<dict>
 														<key>3E83A94D-393D-4DB0-9015-911B3AB4C9FA</key>
-														<string>{72.644986064548561, -18.421647133752202}</string>
+														<string>{72.644986, -18.421647}</string>
 													</dict>
 												</dict>
 												<dict>
@@ -113,7 +113,7 @@
 													<key>positions</key>
 													<dict>
 														<key>3E83A94D-393D-4DB0-9015-911B3AB4C9FA</key>
-														<string>{22.483973638785756, -50.223716498205448}</string>
+														<string>{22.483974, -50.223716}</string>
 													</dict>
 												</dict>
 												<dict>
@@ -122,7 +122,7 @@
 													<key>positions</key>
 													<dict>
 														<key>3E83A94D-393D-4DB0-9015-911B3AB4C9FA</key>
-														<string>{3.7343022196715197, -40.446936095171054}</string>
+														<string>{3.734302, -40.446936}</string>
 													</dict>
 												</dict>
 											</array>
@@ -679,18 +679,18 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.46979895234107971, 0.045409064739942551}</string>
+							<string>{0.469799, 0.045409}</string>
 							<key>children</key>
 							<array>
 								<dict>
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.5, 0.5}</string>
+									<string>{0.500000, 0.500000}</string>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{-0.0019094111631563493, -0.082381477818968915}</string>
+									<string>{-0.001909, -0.082381}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -704,9 +704,9 @@
 									<key>rotation</key>
 									<real>0.0</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{68, 50}</string>
+									<string>{68.000000, 50.000000}</string>
 									<key>spriteName</key>
 									<string>pelvis.png</string>
 									<key>spriteUUID</key>
@@ -724,25 +724,25 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.47391897439956665, 0.13728436827659607}</string>
+									<string>{0.473919, 0.137284}</string>
 									<key>children</key>
 									<array>
 										<dict>
 											<key>alpha</key>
 											<real>255</real>
 											<key>anchor</key>
-											<string>{0.45018437504768372, 0.14011798799037933}</string>
+											<string>{0.450184, 0.140118}</string>
 											<key>children</key>
 											<array>
 												<dict>
 													<key>alpha</key>
 													<real>255</real>
 													<key>anchor</key>
-													<string>{0.27164581418037415, 0.32847562432289124}</string>
+													<string>{0.271646, 0.328476}</string>
 													<key>colorOverlay</key>
-													<string>{{1, 1}, {1, 1}}</string>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 													<key>generalPosition</key>
-													<string>{-0.0040177217955594223, 0.034891857727332012}</string>
+													<string>{-0.004018, 0.034892}</string>
 													<key>imageFileName</key>
 													<string>officer.png</string>
 													<key>name</key>
@@ -756,9 +756,9 @@
 													<key>rotation</key>
 													<real>1.1981198787689209</real>
 													<key>scale</key>
-													<string>{1, 1}</string>
+													<string>{1.000000, 1.000000}</string>
 													<key>size</key>
-													<string>{58, 30}</string>
+													<string>{58.000000, 30.000000}</string>
 													<key>spriteName</key>
 													<string>foot_LEFT.png</string>
 													<key>spriteUUID</key>
@@ -774,9 +774,9 @@
 												</dict>
 											</array>
 											<key>colorOverlay</key>
-											<string>{{1, 1}, {1, 1}}</string>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 											<key>generalPosition</key>
-											<string>{0.00097772865983400208, 0.036626229711367309}</string>
+											<string>{0.000978, 0.036626}</string>
 											<key>imageFileName</key>
 											<string>officer.png</string>
 											<key>name</key>
@@ -790,9 +790,9 @@
 											<key>rotation</key>
 											<real>3.8631041049957275</real>
 											<key>scale</key>
-											<string>{1, 1}</string>
+											<string>{1.000000, 1.000000}</string>
 											<key>size</key>
-											<string>{40, 66}</string>
+											<string>{40.000000, 66.000000}</string>
 											<key>spriteName</key>
 											<string>leg_lower_L_outline.png</string>
 											<key>spriteUUID</key>
@@ -808,9 +808,9 @@
 										</dict>
 									</array>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{0.015046128089828652, -0.065425083693552558}</string>
+									<string>{0.015046, -0.065425}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -824,9 +824,9 @@
 									<key>rotation</key>
 									<real>356.06317138671875</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{38, 74}</string>
+									<string>{38.000000, 74.000000}</string>
 									<key>spriteName</key>
 									<string>leg_upper_L_outline.png</string>
 									<key>spriteUUID</key>
@@ -844,25 +844,25 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.55787175893783569, 0.097570821642875671}</string>
+									<string>{0.557872, 0.097571}</string>
 									<key>children</key>
 									<array>
 										<dict>
 											<key>alpha</key>
 											<real>255</real>
 											<key>anchor</key>
-											<string>{0.7326505184173584, 0.24834446609020233}</string>
+											<string>{0.732651, 0.248344}</string>
 											<key>children</key>
 											<array>
 												<dict>
 													<key>alpha</key>
 													<real>255</real>
 													<key>anchor</key>
-													<string>{0.24622276425361633, 0.26522743701934814}</string>
+													<string>{0.246223, 0.265227}</string>
 													<key>colorOverlay</key>
-													<string>{{1, 1}, {1, 1}}</string>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 													<key>generalPosition</key>
-													<string>{-0.0078580837587944926, 0.037690172836798763}</string>
+													<string>{-0.007858, 0.037690}</string>
 													<key>imageFileName</key>
 													<string>officer.png</string>
 													<key>name</key>
@@ -876,9 +876,9 @@
 													<key>rotation</key>
 													<real>357.92868041992188</real>
 													<key>scale</key>
-													<string>{1, 1}</string>
+													<string>{1.000000, 1.000000}</string>
 													<key>size</key>
-													<string>{58, 30}</string>
+													<string>{58.000000, 30.000000}</string>
 													<key>spriteName</key>
 													<string>foot_RIGHT.png</string>
 													<key>spriteUUID</key>
@@ -894,9 +894,9 @@
 												</dict>
 											</array>
 											<key>colorOverlay</key>
-											<string>{{1, 1}, {1, 1}}</string>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 											<key>generalPosition</key>
-											<string>{0.0022093323968301803, 0.038417068792190492}</string>
+											<string>{0.002209, 0.038417}</string>
 											<key>imageFileName</key>
 											<string>officer.png</string>
 											<key>name</key>
@@ -910,9 +910,9 @@
 											<key>rotation</key>
 											<real>5.8066048622131348</real>
 											<key>scale</key>
-											<string>{1, 1}</string>
+											<string>{1.000000, 1.000000}</string>
 											<key>size</key>
-											<string>{42, 63}</string>
+											<string>{42.000000, 63.000000}</string>
 											<key>spriteName</key>
 											<string>leg_lower_R_outline.png</string>
 											<key>spriteUUID</key>
@@ -928,9 +928,9 @@
 										</dict>
 									</array>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{-0.016650290175189635, -0.059108761340702198}</string>
+									<string>{-0.016650, -0.059109}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -944,9 +944,9 @@
 									<key>rotation</key>
 									<real>358.30905151367188</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{45, 69}</string>
+									<string>{45.000000, 69.000000}</string>
 									<key>spriteName</key>
 									<string>leg_upper_R_outline.png</string>
 									<key>spriteUUID</key>
@@ -962,9 +962,9 @@
 								</dict>
 							</array>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.015198149407967775, 0.032704379323428331}</string>
+							<string>{-0.015198, 0.032704}</string>
 							<key>name</key>
 							<string>lowerBody</string>
 							<key>nodeType</key>
@@ -974,9 +974,9 @@
 							<key>rotation</key>
 							<real>0.57369029521942139</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{116.54508209228516, 144.56781005859375}</string>
+							<string>{116.545082, 144.567810}</string>
 							<key>tags</key>
 							<array>
 								<string>DEFAULT</string>
@@ -990,32 +990,32 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.44440919160842896, 0.90037292242050171}</string>
+							<string>{0.444409, 0.900373}</string>
 							<key>children</key>
 							<array>
 								<dict>
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.22857189178466797, 0.15189126133918762}</string>
+									<string>{0.228572, 0.151891}</string>
 									<key>children</key>
 									<array>
 										<dict>
 											<key>alpha</key>
 											<real>255</real>
 											<key>anchor</key>
-											<string>{0.13908813893795013, 0.28713369369506836}</string>
+											<string>{0.139088, 0.287134}</string>
 											<key>children</key>
 											<array>
 												<dict>
 													<key>alpha</key>
 													<real>255</real>
 													<key>anchor</key>
-													<string>{0.24079601466655731, 0.45777952671051025}</string>
+													<string>{0.240796, 0.457780}</string>
 													<key>colorOverlay</key>
-													<string>{{1, 1}, {1, 1}}</string>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 													<key>generalPosition</key>
-													<string>{0.013528772415309713, -0.0012630087925814769}</string>
+													<string>{0.013529, -0.001263}</string>
 													<key>imageFileName</key>
 													<string>officer.png</string>
 													<key>name</key>
@@ -1029,9 +1029,9 @@
 													<key>rotation</key>
 													<real>8.4649419784545898</real>
 													<key>scale</key>
-													<string>{1, 1}</string>
+													<string>{1.000000, 1.000000}</string>
 													<key>size</key>
-													<string>{31, 35}</string>
+													<string>{31.000000, 35.000000}</string>
 													<key>spriteName</key>
 													<string>hand_L_outline.png</string>
 													<key>spriteUUID</key>
@@ -1047,9 +1047,9 @@
 												</dict>
 											</array>
 											<key>colorOverlay</key>
-											<string>{{1, 1}, {1, 1}}</string>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 											<key>generalPosition</key>
-											<string>{0.01336355538954089, 0.025298711109749839}</string>
+											<string>{0.013364, 0.025299}</string>
 											<key>imageFileName</key>
 											<string>officer.png</string>
 											<key>name</key>
@@ -1063,9 +1063,9 @@
 											<key>rotation</key>
 											<real>7.1650009155273438</real>
 											<key>scale</key>
-											<string>{1, 1}</string>
+											<string>{1.000000, 1.000000}</string>
 											<key>size</key>
-											<string>{51, 29}</string>
+											<string>{51.000000, 29.000000}</string>
 											<key>spriteName</key>
 											<string>forearm_L_outline.png</string>
 											<key>spriteUUID</key>
@@ -1081,9 +1081,9 @@
 										</dict>
 									</array>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{0.013813679393315563, 0.033720379907407415}</string>
+									<string>{0.013814, 0.033720}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -1097,9 +1097,9 @@
 									<key>rotation</key>
 									<real>-11.89794921875</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{44, 63}</string>
+									<string>{44.000000, 63.000000}</string>
 									<key>spriteName</key>
 									<string>shoulder_L_outline.png</string>
 									<key>spriteUUID</key>
@@ -1117,25 +1117,25 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.33748188614845276, 0.84348529577255249}</string>
+									<string>{0.337482, 0.843485}</string>
 									<key>children</key>
 									<array>
 										<dict>
 											<key>alpha</key>
 											<real>255</real>
 											<key>anchor</key>
-											<string>{0.38864982128143311, 0.93079876899719238}</string>
+											<string>{0.388650, 0.930799}</string>
 											<key>children</key>
 											<array>
 												<dict>
 													<key>alpha</key>
 													<real>255</real>
 													<key>anchor</key>
-													<string>{0.5, 0.5}</string>
+													<string>{0.500000, 0.500000}</string>
 													<key>colorOverlay</key>
-													<string>{{1, 1}, {1, 1}}</string>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 													<key>generalPosition</key>
-													<string>{0.02068051810546952, 0.03215019373708583}</string>
+													<string>{0.020681, 0.032150}</string>
 													<key>imageFileName</key>
 													<string>officer.png</string>
 													<key>name</key>
@@ -1149,9 +1149,9 @@
 													<key>rotation</key>
 													<real>-1.9139679670333862</real>
 													<key>scale</key>
-													<string>{1, 1}</string>
+													<string>{1.000000, 1.000000}</string>
 													<key>size</key>
-													<string>{24, 16}</string>
+													<string>{24.000000, 16.000000}</string>
 													<key>spriteName</key>
 													<string>mouth.png</string>
 													<key>spriteUUID</key>
@@ -1169,11 +1169,11 @@
 													<key>alpha</key>
 													<real>255</real>
 													<key>anchor</key>
-													<string>{0.25314894318580627, 0.2715039849281311}</string>
+													<string>{0.253149, 0.271504}</string>
 													<key>colorOverlay</key>
-													<string>{{1, 1}, {1, 1}}</string>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 													<key>generalPosition</key>
-													<string>{0.0064735426762267661, -0.0044527141789890033}</string>
+													<string>{0.006474, -0.004453}</string>
 													<key>imageFileName</key>
 													<string>officer.png</string>
 													<key>name</key>
@@ -1187,9 +1187,9 @@
 													<key>rotation</key>
 													<real>-1.9139679670333862</real>
 													<key>scale</key>
-													<string>{1, 1}</string>
+													<string>{1.000000, 1.000000}</string>
 													<key>size</key>
-													<string>{38, 25}</string>
+													<string>{38.000000, 25.000000}</string>
 													<key>spriteName</key>
 													<string>eyes_OPEN.png</string>
 													<key>spriteUUID</key>
@@ -1207,11 +1207,11 @@
 													<key>alpha</key>
 													<real>255</real>
 													<key>anchor</key>
-													<string>{0.5, 0.5}</string>
+													<string>{0.500000, 0.500000}</string>
 													<key>colorOverlay</key>
-													<string>{{1, 1}, {1, 1}}</string>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 													<key>generalPosition</key>
-													<string>{-0.000742683047450754, -0.013593555420707526}</string>
+													<string>{-0.000743, -0.013594}</string>
 													<key>imageFileName</key>
 													<string>officer.png</string>
 													<key>name</key>
@@ -1225,9 +1225,9 @@
 													<key>rotation</key>
 													<real>-1.9139679670333862</real>
 													<key>scale</key>
-													<string>{1, 1}</string>
+													<string>{1.000000, 1.000000}</string>
 													<key>size</key>
-													<string>{72, 69}</string>
+													<string>{72.000000, 69.000000}</string>
 													<key>spriteName</key>
 													<string>hair.png</string>
 													<key>spriteUUID</key>
@@ -1245,11 +1245,11 @@
 													<key>alpha</key>
 													<real>255</real>
 													<key>anchor</key>
-													<string>{0.5, 0.5}</string>
+													<string>{0.500000, 0.500000}</string>
 													<key>colorOverlay</key>
-													<string>{{1, 1}, {1, 1}}</string>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 													<key>generalPosition</key>
-													<string>{0.0038898981454911661, -0.063198337648704778}</string>
+													<string>{0.003890, -0.063198}</string>
 													<key>imageFileName</key>
 													<string>officer.png</string>
 													<key>name</key>
@@ -1263,9 +1263,9 @@
 													<key>rotation</key>
 													<real>-720.5911865234375</real>
 													<key>scale</key>
-													<string>{1, 1}</string>
+													<string>{1.000000, 1.000000}</string>
 													<key>size</key>
-													<string>{100, 58}</string>
+													<string>{100.000000, 58.000000}</string>
 													<key>spriteName</key>
 													<string>hat.png</string>
 													<key>spriteUUID</key>
@@ -1281,9 +1281,9 @@
 												</dict>
 											</array>
 											<key>colorOverlay</key>
-											<string>{{1, 1}, {1, 1}}</string>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 											<key>generalPosition</key>
-											<string>{-0.0027485261617955395, 0.0015691837201957763}</string>
+											<string>{-0.002749, 0.001569}</string>
 											<key>imageFileName</key>
 											<string>officer.png</string>
 											<key>name</key>
@@ -1297,9 +1297,9 @@
 											<key>rotation</key>
 											<real>1.6841177940368652</real>
 											<key>scale</key>
-											<string>{1, 1}</string>
+											<string>{1.000000, 1.000000}</string>
 											<key>size</key>
-											<string>{71, 83}</string>
+											<string>{71.000000, 83.000000}</string>
 											<key>spriteName</key>
 											<string>head.png</string>
 											<key>spriteUUID</key>
@@ -1315,9 +1315,9 @@
 										</dict>
 									</array>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{-0.0049474972174751979, 0.0010971798421587132}</string>
+									<string>{-0.004947, 0.001097}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -1331,9 +1331,9 @@
 									<key>rotation</key>
 									<real>359.82867431640625</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{33, 28}</string>
+									<string>{33.000000, 28.000000}</string>
 									<key>spriteName</key>
 									<string>neck_outline.png</string>
 									<key>spriteUUID</key>
@@ -1351,11 +1351,11 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.5, 0.5}</string>
+									<string>{0.500000, 0.500000}</string>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{0.0033416783739334951, 0.1398601103160626}</string>
+									<string>{0.003342, 0.139860}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -1369,9 +1369,9 @@
 									<key>rotation</key>
 									<real>-359.287841796875</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{71, 21}</string>
+									<string>{71.000000, 21.000000}</string>
 									<key>spriteName</key>
 									<string>gun-belt.png</string>
 									<key>spriteUUID</key>
@@ -1389,11 +1389,11 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.43700125813484192, 0.81601619720458984}</string>
+									<string>{0.437001, 0.816016}</string>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{-0.002654737265582578, 0.11789666820754086}</string>
+									<string>{-0.002655, 0.117897}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -1407,9 +1407,9 @@
 									<key>rotation</key>
 									<real>-357.94183349609375</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{77, 104}</string>
+									<string>{77.000000, 104.000000}</string>
 									<key>spriteName</key>
 									<string>torso_outline.png</string>
 									<key>spriteUUID</key>
@@ -1427,11 +1427,11 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.5, 0.5}</string>
+									<string>{0.500000, 0.500000}</string>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{0.0027910680061346226, 0.065768078306406519}</string>
+									<string>{0.002791, 0.065768}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -1445,9 +1445,9 @@
 									<key>rotation</key>
 									<real>-1.4785642623901367</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{76, 93}</string>
+									<string>{76.000000, 93.000000}</string>
 									<key>spriteName</key>
 									<string>vest_outline.png</string>
 									<key>spriteUUID</key>
@@ -1465,11 +1465,11 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.31090718507766724, 0.21464477479457855}</string>
+									<string>{0.310907, 0.214645}</string>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{-0.044730741898208491, 0.11715084070173516}</string>
+									<string>{-0.044731, 0.117151}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -1483,9 +1483,9 @@
 									<key>rotation</key>
 									<real>-359.82415771484375</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{31, 42}</string>
+									<string>{31.000000, 42.000000}</string>
 									<key>spriteName</key>
 									<string>gun.png</string>
 									<key>spriteUUID</key>
@@ -1503,11 +1503,11 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.5, 0.5}</string>
+									<string>{0.500000, 0.500000}</string>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{-0.027460901583640524, 0.1398895033318274}</string>
+									<string>{-0.027461, 0.139890}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -1521,9 +1521,9 @@
 									<key>rotation</key>
 									<real>-359.287841796875</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{27, 41}</string>
+									<string>{27.000000, 41.000000}</string>
 									<key>spriteName</key>
 									<string>gun-holster.png</string>
 									<key>spriteUUID</key>
@@ -1541,25 +1541,25 @@
 									<key>alpha</key>
 									<real>255</real>
 									<key>anchor</key>
-									<string>{0.83513325452804565, 0.17859967052936554}</string>
+									<string>{0.835133, 0.178600}</string>
 									<key>children</key>
 									<array>
 										<dict>
 											<key>alpha</key>
 											<real>255</real>
 											<key>anchor</key>
-											<string>{0.70623433589935303, 0.1069457158446312}</string>
+											<string>{0.706234, 0.106946}</string>
 											<key>children</key>
 											<array>
 												<dict>
 													<key>alpha</key>
 													<real>255</real>
 													<key>anchor</key>
-													<string>{0.43002957105636597, 0.13123144209384918}</string>
+													<string>{0.430030, 0.131231}</string>
 													<key>colorOverlay</key>
-													<string>{{1, 1}, {1, 1}}</string>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 													<key>generalPosition</key>
-													<string>{-0.0035423224971301791, 0.030970150130053487}</string>
+													<string>{-0.003542, 0.030970}</string>
 													<key>imageFileName</key>
 													<string>officer.png</string>
 													<key>name</key>
@@ -1573,9 +1573,9 @@
 													<key>rotation</key>
 													<real>356.08987426757812</real>
 													<key>scale</key>
-													<string>{1, 1}</string>
+													<string>{1.000000, 1.000000}</string>
 													<key>size</key>
-													<string>{34, 36}</string>
+													<string>{34.000000, 36.000000}</string>
 													<key>spriteName</key>
 													<string>hand_R_outline.png</string>
 													<key>spriteUUID</key>
@@ -1591,9 +1591,9 @@
 												</dict>
 											</array>
 											<key>colorOverlay</key>
-											<string>{{1, 1}, {1, 1}}</string>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 											<key>generalPosition</key>
-											<string>{-0.012984302640979805, 0.025107004178718473}</string>
+											<string>{-0.012984, 0.025107}</string>
 											<key>imageFileName</key>
 											<string>officer.png</string>
 											<key>name</key>
@@ -1607,9 +1607,9 @@
 											<key>rotation</key>
 											<real>356.3387451171875</real>
 											<key>scale</key>
-											<string>{1, 1}</string>
+											<string>{1.000000, 1.000000}</string>
 											<key>size</key>
-											<string>{32, 54}</string>
+											<string>{32.000000, 54.000000}</string>
 											<key>spriteName</key>
 											<string>forearm_R_outline.png</string>
 											<key>spriteUUID</key>
@@ -1625,9 +1625,9 @@
 										</dict>
 									</array>
 									<key>colorOverlay</key>
-									<string>{{1, 1}, {1, 1}}</string>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 									<key>generalPosition</key>
-									<string>{-0.022170223969201666, 0.026568047874008016}</string>
+									<string>{-0.022170, 0.026568}</string>
 									<key>imageFileName</key>
 									<string>officer.png</string>
 									<key>name</key>
@@ -1641,9 +1641,9 @@
 									<key>rotation</key>
 									<real>-0.84014892578125</real>
 									<key>scale</key>
-									<string>{1, 1}</string>
+									<string>{1.000000, 1.000000}</string>
 									<key>size</key>
-									<string>{54, 54}</string>
+									<string>{54.000000, 54.000000}</string>
 									<key>spriteName</key>
 									<string>shoulder_R_outline.png</string>
 									<key>spriteUUID</key>
@@ -1659,9 +1659,9 @@
 								</dict>
 							</array>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.023220739005605989, 0.025155399996802962}</string>
+							<string>{-0.023221, 0.025155}</string>
 							<key>name</key>
 							<string>upperBody</string>
 							<key>nodeType</key>
@@ -1671,9 +1671,9 @@
 							<key>rotation</key>
 							<real>3.4335906505584717</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{144.59010314941406, 200.13526916503906}</string>
+							<string>{144.590103, 200.135269}</string>
 							<key>tags</key>
 							<array>
 								<string>DEFAULT</string>
@@ -1685,20 +1685,20 @@
 						</dict>
 					</array>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>devicePositions</key>
 					<dict>
 						<key>1024x768</key>
-						<string>{0.90114339192708337, 0.84614772796630855}</string>
+						<string>{0.901143, 0.846148}</string>
 						<key>1136x640</key>
-						<string>{0.11174478928248087, 0.74713648020693335}</string>
+						<string>{0.111745, 0.747136}</string>
 						<key>2048x1536</key>
-						<string>{0.22805582682291667, 0.8454332151075773}</string>
+						<string>{0.228056, 0.845433}</string>
 						<key>960x640</key>
-						<string>{0.50098186273632261, 0.74590849918463387}</string>
+						<string>{0.500982, 0.745908}</string>
 					</dict>
 					<key>generalPosition</key>
-					<string>{0.11174478928248087, 0.74713648020693335}</string>
+					<string>{0.111745, 0.747136}</string>
 					<key>name</key>
 					<string>Officer</string>
 					<key>nodeType</key>
@@ -1710,9 +1710,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{193.73593139648438, 346.62652587890625}</string>
+					<string>{193.735931, 346.626526}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -1724,9 +1724,9 @@
 				</dict>
 			</array>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -1736,9 +1736,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -1752,11 +1752,231 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 0.500000}</string>
+							<key>animations</key>
+							<array>
+								<dict>
+									<key>active</key>
+									<true/>
+									<key>fps</key>
+									<integer>12</integer>
+									<key>name</key>
+									<string>testAnim</string>
+									<key>properties</key>
+									<dict>
+										<key>Children Positions</key>
+										<dict>
+											<key>Frames</key>
+											<array>
+												<dict>
+													<key>frameIndex</key>
+													<integer>0</integer>
+													<key>positions</key>
+													<dict>
+														<key>0AE8FB78-0AAF-4336-ABC5-5BCDC5CF6C93</key>
+														<string>{76.642759, 139.828353}</string>
+														<key>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</key>
+														<string>{-341.236343, -61.461403}</string>
+													</dict>
+												</dict>
+												<dict>
+													<key>frameIndex</key>
+													<integer>9</integer>
+													<key>positions</key>
+													<dict>
+														<key>0AE8FB78-0AAF-4336-ABC5-5BCDC5CF6C93</key>
+														<string>{301.458890, 501.108535}</string>
+														<key>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</key>
+														<string>{-341.236343, -61.461403}</string>
+													</dict>
+												</dict>
+												<dict>
+													<key>frameIndex</key>
+													<integer>19</integer>
+													<key>positions</key>
+													<dict>
+														<key>0AE8FB78-0AAF-4336-ABC5-5BCDC5CF6C93</key>
+														<string>{-546.769615, 510.340612}</string>
+														<key>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</key>
+														<string>{-341.236343, -61.461403}</string>
+													</dict>
+												</dict>
+												<dict>
+													<key>frameIndex</key>
+													<integer>29</integer>
+													<key>positions</key>
+													<dict>
+														<key>0AE8FB78-0AAF-4336-ABC5-5BCDC5CF6C93</key>
+														<string>{76.642759, 139.828353}</string>
+														<key>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</key>
+														<string>{-341.236343, -61.461403}</string>
+													</dict>
+												</dict>
+											</array>
+											<key>type</key>
+											<string>LHChildrenPositionsProperty</string>
+										</dict>
+										<key>Position</key>
+										<dict>
+											<key>Frames</key>
+											<array>
+												<dict>
+													<key>frameIndex</key>
+													<integer>0</integer>
+													<key>positions</key>
+													<dict>
+														<key>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</key>
+														<string>{-341.236340, -61.461404}</string>
+													</dict>
+												</dict>
+												<dict>
+													<key>frameIndex</key>
+													<integer>14</integer>
+													<key>positions</key>
+													<dict>
+														<key>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</key>
+														<string>{359.521839, -91.424623}</string>
+													</dict>
+												</dict>
+												<dict>
+													<key>frameIndex</key>
+													<integer>29</integer>
+													<key>positions</key>
+													<dict>
+														<key>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</key>
+														<string>{-341.236340, -61.461404}</string>
+													</dict>
+												</dict>
+											</array>
+											<key>type</key>
+											<string>LHPositionProperty</string>
+										</dict>
+									</dict>
+									<key>repetitions</key>
+									<integer>0</integer>
+									<key>totalFrames</key>
+									<integer>30</integer>
+								</dict>
+							</array>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.079836, 0.218482}</string>
+									<key>imageFileName</key>
+									<string>objects.png</string>
+									<key>name</key>
+									<string>object_banana</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</string>
+									<key>relativeImagePath</key>
+									<string>DEMO_PUBLISH_FOLDER/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{92.000000, 64.000000}</string>
+									<key>spriteName</key>
+									<string>object_banana</string>
+									<key>spriteUUID</key>
+									<string>FAE55543-0B9F-4B04-A86D-BAB025D0B01C</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>0AE8FB78-0AAF-4336-ABC5-5BCDC5CF6C93</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{-0.355455, -0.096033}</string>
+							<key>imageFileName</key>
+							<string>objects.png</string>
+							<key>name</key>
+							<string>object_hat</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>B55C47A2-CC20-421A-8BB6-3C3E15885F83</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.000000, 1.000000}</string>
+							<key>size</key>
+							<string>{122.000000, 75.000000}</string>
+							<key>spriteName</key>
+							<string>object_hat</string>
+							<key>spriteUUID</key>
+							<string>A0CC7494-203E-4C79-A14A-ECA50F1FBA3D</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>B789B755-BBD3-43F8-B97E-E9A6A6F0000C</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+					</array>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.497090, 0.244601}</string>
+					<key>name</key>
+					<string>UntitledNode</string>
+					<key>nodeType</key>
+					<string>LHNode</string>
+					<key>parentUUID</key>
+					<string>_USER_INTERFACE_NODE_UUID_</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{918.745972, 240.630920}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>B55C47A2-CC20-421A-8BB6-3C3E15885F83</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+			</array>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -1766,9 +1986,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -1780,14 +2000,14 @@
 		</dict>
 	</array>
 	<key>designResolution</key>
-	<string>{960, 640}</string>
+	<string>{960.000000, 640.000000}</string>
 	<key>devices</key>
 	<array>
 		<dict>
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{960, 640}</string>
+			<string>{960.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>hd</string>
 		</dict>
@@ -1795,7 +2015,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1136, 640}</string>
+			<string>{1136.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>568</string>
 		</dict>
@@ -1803,7 +2023,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1024, 768}</string>
+			<string>{1024.000000, 768.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
@@ -1811,7 +2031,7 @@
 			<key>ratio</key>
 			<real>2</real>
 			<key>size</key>
-			<string>{2048, 1536}</string>
+			<string>{2048.000000, 1536.000000}</string>
 			<key>suffix</key>
 			<string>ipadhd</string>
 		</dict>
@@ -1819,13 +2039,13 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1280, 720}</string>
+			<string>{1280.000000, 720.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
-	<string>{0, -1}</string>
+	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
 	<key>nodeType</key>
@@ -1836,6 +2056,67 @@
 	<array>
 		<string>DEFAULT</string>
 	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>B38F6DB8-6E60-4896-9216-74CF4A8232BA</key>
+		<array>
+			<array>
+				<string>{-40.75, -37.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-41.25, -34.5}</string>
+			</array>
+			<array>
+				<string>{10.25, -37}</string>
+				<string>{10.25, -35}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{5.75, -40.5}</string>
+				<string>{8.75, -39}</string>
+			</array>
+			<array>
+				<string>{82.25, 4.5}</string>
+				<string>{82.25, 22}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{42.25, -19.5}</string>
+				<string>{52.25, -16.5}</string>
+				<string>{63.75, -11}</string>
+				<string>{75.25, -2.5}</string>
+			</array>
+			<array>
+				<string>{-83.75, 24}</string>
+				<string>{-84.75, 21}</string>
+				<string>{-84.75, -7.5}</string>
+				<string>{-83.75, -10}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-80.25, 26.5}</string>
+				<string>{-81.75, 26}</string>
+			</array>
+			<array>
+				<string>{81.75, 23.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{82.25, 22}</string>
+			</array>
+			<array>
+				<string>{10.25, -35}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{-36.75, -40.5}</string>
+			</array>
+			<array>
+				<string>{-54.75, -22.5}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-83.75, -10}</string>
+			</array>
+			<array>
+				<string>{-41.25, -34.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-46.75, -22.5}</string>
+			</array>
+		</array>
+	</dict>
 	<key>useGlobalGravity</key>
 	<true/>
 	<key>uuid</key>

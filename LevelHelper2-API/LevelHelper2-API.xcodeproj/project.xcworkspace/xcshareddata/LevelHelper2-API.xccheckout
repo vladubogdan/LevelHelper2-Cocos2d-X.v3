@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9083ABA3-9780-4578-966C-349E1CB7855E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LevelHelper2-API</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2281F8CA-B625-41DE-8F39-84C1C3B5BCA5</key>
+		<string>ssh://github.com/vladubogdan/LevelHelper2-Cocos2d-v3.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LevelHelper2-API/LevelHelper2-API.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2281F8CA-B625-41DE-8F39-84C1C3B5BCA5</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/vladubogdan/LevelHelper2-Cocos2d-v3.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2281F8CA-B625-41DE-8F39-84C1C3B5BCA5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2281F8CA-B625-41DE-8F39-84C1C3B5BCA5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cocos2dv3</string>
+		</dict>
+	</array>
+</dict>
+</plist>

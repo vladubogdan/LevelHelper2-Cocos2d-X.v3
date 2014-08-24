@@ -79,9 +79,6 @@
 		6E0EEEFC198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */; };
 		6E0EEEFD198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */; };
 		6E0EEEFE198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */; };
-		6E0EEF26198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
-		6E0EEF27198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
-		6E0EEF28198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		6E0EEF29198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
 		6E0EEF2A198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
 		6E0EEF2B198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
@@ -190,6 +187,9 @@
 		6E908FD019A8446A0090246B /* LHSceneWeldJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */; };
 		6E908FD119A8446A0090246B /* LHSceneWeldJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */; };
 		6E908FD219A8446A0090246B /* LHSceneWeldJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */; };
+		6EC554CA19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
+		6EC554CB19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
+		6EC554CC19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -467,7 +467,6 @@
 		6E0D5A4C195061D60036E940 /* LHSceneTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneTags.h; path = ../Classes/LHSceneTags.h; sourceTree = "<group>"; };
 		6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		6E0EEEFB198A2A3C002CDE7F /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../Resources/DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
 		6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_PUBLISH_FOLDER; path = ../Resources/DEMO_PUBLISH_FOLDER; sourceTree = "<group>"; };
 		6E79165A1963F1F600E68E06 /* emptyButtonTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyButtonTexture.png; sourceTree = "<group>"; };
 		6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -515,6 +514,7 @@
 		6E908F9419A8446A0090246B /* LHSceneWaterAreaDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneWaterAreaDemo.h; sourceTree = "<group>"; };
 		6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneWeldJointsDemo.cpp; sourceTree = "<group>"; };
 		6E908F9619A8446A0090246B /* LHSceneWeldJointsDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneWeldJointsDemo.h; sourceTree = "<group>"; };
+		6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../Resources/DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
 		6EF1386719A89A5E00CC03F3 /* Application.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Application.mk; path = ../proj.android/jni/Application.mk; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -762,7 +762,7 @@
 		6E908F6D19A8445C0090246B /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				6E0EEF24198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */,
+				6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */,
 				6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */,
 				6E908F6E19A8446A0090246B /* SourceCode */,
 			);
@@ -1047,7 +1047,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
-				6E0EEF28198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
@@ -1068,6 +1067,7 @@
 				6E0EEF2B198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				6EC554CC19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,7 +1076,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
-				6E0EEF27198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
+				6EC554CB19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				6E0EEF2A198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
@@ -1090,7 +1090,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E79167E1964186600E68E06 /* Icon-120.png in Resources */,
-				6E0EEF26198B8A0A002CDE7F /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 				6E7916811964186600E68E06 /* Icon-76.png in Resources */,
 				6E7916821964186600E68E06 /* Default@2x.png in Resources */,
 				6E7916831964186600E68E06 /* Icon-100.png in Resources */,
@@ -1111,6 +1110,7 @@
 				6E0EEF29198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */,
 				6E7916921964186600E68E06 /* Default.png in Resources */,
 				6E7916931964186600E68E06 /* Icon-58.png in Resources */,
+				6EC554CA19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,7 +1128,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo 'SRCROOT:'\"${SRCROOT}/../proj.android/\"\ncd \"${SRCROOT}/../proj.android/\"\n\n#setup this paths as located on your computer\nexport ANT_ROOT=/Volumes/PersonalFiles/apache-ant-1.9.4/bin\nexport NDK_ROOT=/Volumes/PersonalFiles/android-ndk-r9d\nexport ANDROID_SDK_ROOT=/Volumes/PersonalFiles/adt-bundle-mac-x86_64-20140321/sdk/\n\n\nif [ ! -d \"${ANT_ROOT}\" ]; then\necho \"error: \\\"AND_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\nif [ ! -d \"${NDK_ROOT}\" ]; then\necho \"error: \\\"NDK_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\nif [ ! -d \"${ANDROID_SDK_ROOT}\" ]; then\necho \"error: \\\"ANDROID_SDK_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\npython build_native.py\n\n\"${ANDROID_SDK_ROOT}/tools/android\" update project --path \"${SRCROOT}/../cocos2d/cocos/platform/android/java\" --target android-19  --subprojects\n\ncd \"${SRCROOT}/../proj.android/\"\n\n\"${ANT_ROOT}/ant\" -Dsdk.dir=\"$ANDROID_SDK_ROOT\" debug\n\nopen ./bin\n\n\"${ANDROID_SDK_ROOT}/platform-tools/adb\" install -r \"${SRCROOT}/../proj.android/bin/HelloCpp-debug.apk\"\n";
+			shellScript = "\nopen -a Genymotion\n\n`/usr/bin/killall -d \"player\" &> /dev/null`\nlet \"RUNNING = ! $?\"\nif [ $RUNNING == 1 ]; then\n echo \"Genymotion simulator appears to be running.\"\nelse\necho \"warning: No Genymotion simulator running. Please install the simulator from http://www.genymotion.com\"\nfi\n\necho 'SRCROOT:'\"${SRCROOT}/../proj.android/\"\ncd \"${SRCROOT}/../proj.android/\"\n\n#setup this paths as located on your computer\nexport ANT_ROOT=/Volumes/PersonalFiles/apache-ant-1.9.4/bin\nexport NDK_ROOT=/Volumes/PersonalFiles/android-ndk-r9d\nexport ANDROID_SDK_ROOT=/Volumes/PersonalFiles/adt-bundle-mac-x86_64-20140321/sdk/\n\n\nif [ ! -d \"${ANT_ROOT}\" ]; then\necho \"error: \\\"AND_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\nif [ ! -d \"${NDK_ROOT}\" ]; then\necho \"error: \\\"NDK_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\nif [ ! -d \"${ANDROID_SDK_ROOT}\" ]; then\necho \"error: \\\"ANDROID_SDK_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\npython build_native.py\n\n\"${ANDROID_SDK_ROOT}/tools/android\" update project --path \"${SRCROOT}/../cocos2d/cocos/platform/android/java\" --target android-19  --subprojects\n\ncd \"${SRCROOT}/../proj.android/\"\n\n\"${ANT_ROOT}/ant\" -Dsdk.dir=\"$ANDROID_SDK_ROOT\" debug\n\nopen ./bin\n\necho \"warning: Build has finished but may have failed.\"\n\nrm -rf \"${SRCROOT}/../proj.android/assets/\"*\n\necho \"warning: Trying to install to simulator. This will block execution until the device is present.\"\n\n\"${ANDROID_SDK_ROOT}/platform-tools/adb\" install -r \"${SRCROOT}/../proj.android/bin/HelloCpp-debug.apk\";\n\n\"${ANDROID_SDK_ROOT}/platform-tools/adb\" shell am start -n org.cocos2dx.hellocpp/org.cocos2dx.cpp.AppActivity\n\n#get app activity\n#\"${ANDROID_SDK_ROOT}/build-tools/android-4.4.2/aapt\" dump xmltree HelloCpp-debug.apk AndroidManifest.xml";
 		};
 /* End PBXShellScriptBuildPhase section */
 

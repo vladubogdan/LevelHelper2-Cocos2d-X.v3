@@ -5,18 +5,18 @@
 	<key>aspect</key>
 	<integer>2</integer>
 	<key>backgroundColor</key>
-	<string>{{1, 1}, {1, 1}}</string>
+	<string>{{0.693850, 0.693807}, {0.693834, 1.000000}}</string>
 	<key>children</key>
 	<array>
 		<dict>
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -26,9 +26,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -42,18 +42,18 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>children</key>
 			<array>
 				<dict>
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.28462748393067161, 0.59473190150456501}</string>
+					<string>{0.284627, 0.594732}</string>
 					<key>imageFileName</key>
 					<string>pulleyParts.png</string>
 					<key>name</key>
@@ -67,7 +67,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>771FBAD5-35D1-4024-8E96-1FAAD53F6882</string>
+						<string>95881A56-0C4B-47E1-A6B2-3960BC05F407</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -103,9 +103,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{136, 195}</string>
+					<string>{136.000000, 195.000000}</string>
 					<key>spriteName</key>
 					<string>weights_pulley-03</string>
 					<key>spriteUUID</key>
@@ -123,11 +123,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.59984950131523262, 0.3844164472713601}</string>
+					<string>{0.599850, 0.384416}</string>
 					<key>imageFileName</key>
 					<string>pulleyParts.png</string>
 					<key>name</key>
@@ -141,7 +141,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>6492EEEA-3118-4D05-ACDF-52F748127044</string>
+						<string>CC4F5947-6522-465D-9CCD-0475B0C6C0D9</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -177,9 +177,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{205, 299}</string>
+					<string>{205.000000, 299.000000}</string>
 					<key>spriteName</key>
 					<string>weights_pulley-02</string>
 					<key>spriteUUID</key>
@@ -199,11 +199,11 @@
 					<key>collideConnected</key>
 					<false/>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>groundAnchorA</key>
-					<string>{271.74053955078125, 39.895965576171875}</string>
+					<string>{271.740480, 39.895680}</string>
 					<key>groundAnchorB</key>
-					<string>{578.3134765625, 42.108188629150391}</string>
+					<string>{578.313600, 42.108160}</string>
 					<key>lengthA</key>
 					<real>2</real>
 					<key>lengthB</key>
@@ -217,9 +217,9 @@
 					<key>ratio</key>
 					<real>1</real>
 					<key>relativePosA</key>
-					<string>{-0.78115680254995823, -85.99845658801496}</string>
+					<string>{-0.781157, -85.998457}</string>
 					<key>relativePosB</key>
-					<string>{2.4305694885551929, -136.88838662207127}</string>
+					<string>{2.430569, -136.888387}</string>
 					<key>spriteAUUID</key>
 					<string>B16A2271-4EB0-461C-8400-C80D4BD39C72</string>
 					<key>spriteBUUID</key>
@@ -237,11 +237,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{-0.43668020566304527, -0.17709909677505492}</string>
+					<string>{-0.436680, -0.177099}</string>
 					<key>name</key>
 					<string>dummyBodyForMouseJoint</string>
 					<key>nodePhysics</key>
@@ -285,9 +285,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{57.532451629638672, 39.586673736572266}</string>
+					<string>{57.532452, 39.586674}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -299,9 +299,9 @@
 				</dict>
 			</array>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -311,9 +311,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -327,11 +327,11 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -341,9 +341,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -355,14 +355,14 @@
 		</dict>
 	</array>
 	<key>designResolution</key>
-	<string>{960, 640}</string>
+	<string>{960.000000, 640.000000}</string>
 	<key>devices</key>
 	<array>
 		<dict>
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{960, 640}</string>
+			<string>{960.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>hd</string>
 		</dict>
@@ -370,7 +370,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1136, 640}</string>
+			<string>{1136.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>568</string>
 		</dict>
@@ -378,7 +378,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1024, 768}</string>
+			<string>{1024.000000, 768.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
@@ -386,7 +386,7 @@
 			<key>ratio</key>
 			<real>2</real>
 			<key>size</key>
-			<string>{2048, 1536}</string>
+			<string>{2048.000000, 1536.000000}</string>
 			<key>suffix</key>
 			<string>ipadhd</string>
 		</dict>
@@ -394,13 +394,13 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1280, 720}</string>
+			<string>{1280.000000, 720.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
-	<string>{0, -1}</string>
+	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
 	<key>nodeType</key>
@@ -408,15 +408,15 @@
 	<key>physicsBoundaries</key>
 	<dict>
 		<key>1024x768</key>
-		<string>{{0, 0}, {1, 1}}</string>
+		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
 		<key>1136x640</key>
-		<string>{{0, 0}, {1, 1}}</string>
+		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
 		<key>2048x1536</key>
-		<string>{{0, 0}, {1, 1}}</string>
+		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
 		<key>960x640</key>
-		<string>{{0, 0}, {1, 1}}</string>
+		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
 		<key>general</key>
-		<string>{{0, 0}, {1, 1}}</string>
+		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
 	</dict>
 	<key>sceneFormat</key>
 	<real>1</real>
@@ -426,7 +426,115 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>6492EEEA-3118-4D05-ACDF-52F748127044</key>
+		<key>95881A56-0C4B-47E1-A6B2-3960BC05F407</key>
+		<array>
+			<array>
+				<string>{-14.75, -73.5}</string>
+				<string>{-16.25, -75}</string>
+				<string>{-15.25, -81}</string>
+				<string>{-12.75, -85}</string>
+				<string>{-10.75, -80}</string>
+				<string>{-12.25, -73.5}</string>
+			</array>
+			<array>
+				<string>{-10.75, -80}</string>
+				<string>{-12.75, -85}</string>
+				<string>{-7.75, -88.5}</string>
+				<string>{-7.25, -84}</string>
+			</array>
+			<array>
+				<string>{-7.25, -84}</string>
+				<string>{-7.75, -88.5}</string>
+				<string>{-4.75, -89}</string>
+				<string>{-3.25, -85.5}</string>
+			</array>
+			<array>
+				<string>{-3.25, -85.5}</string>
+				<string>{-4.75, -89}</string>
+				<string>{-4.25, -89.5}</string>
+				<string>{0.75, -89.5}</string>
+				<string>{1.75, -85}</string>
+			</array>
+			<array>
+				<string>{34.25, -46.5}</string>
+				<string>{42.75, -38}</string>
+				<string>{55.75, 66}</string>
+				<string>{42.75, 85.5}</string>
+				<string>{29.75, 86}</string>
+				<string>{-49.25, 85.5}</string>
+				<string>{-17.25, -47}</string>
+			</array>
+			<array>
+				<string>{6.25, -87.5}</string>
+				<string>{10.75, -83}</string>
+				<string>{12.75, -78}</string>
+				<string>{12.75, -72}</string>
+				<string>{0.75, -89.5}</string>
+			</array>
+			<array>
+				<string>{9.25, -54}</string>
+				<string>{12.25, -47}</string>
+				<string>{-17.25, -47}</string>
+				<string>{0.75, -59.5}</string>
+				<string>{5.25, -57.5}</string>
+			</array>
+			<array>
+				<string>{-42.75, -44.5}</string>
+				<string>{-38.75, -46.5}</string>
+				<string>{-17.25, -47}</string>
+				<string>{-49.25, 85.5}</string>
+				<string>{-59.25, 78.5}</string>
+				<string>{-60.75, 75}</string>
+				<string>{-46.75, -39.5}</string>
+			</array>
+			<array>
+				<string>{55.25, 77}</string>
+				<string>{51.25, 82}</string>
+				<string>{48.25, 84}</string>
+				<string>{42.75, 85.5}</string>
+				<string>{55.75, 66}</string>
+				<string>{56.75, 69}</string>
+				<string>{56.75, 72}</string>
+			</array>
+			<array>
+				<string>{11.25, -67.5}</string>
+				<string>{0.75, -59.5}</string>
+				<string>{-17.25, -47}</string>
+				<string>{6.75, -68.5}</string>
+				<string>{12.75, -72}</string>
+			</array>
+			<array>
+				<string>{-10.75, -57}</string>
+				<string>{6.75, -68.5}</string>
+				<string>{-17.25, -47}</string>
+			</array>
+			<array>
+				<string>{-56.25, 82}</string>
+				<string>{-59.25, 78.5}</string>
+				<string>{-49.25, 85.5}</string>
+			</array>
+			<array>
+				<string>{6.75, -68.5}</string>
+				<string>{7.75, -71.5}</string>
+				<string>{12.75, -72}</string>
+			</array>
+			<array>
+				<string>{7.75, -71.5}</string>
+				<string>{7.25, -79}</string>
+				<string>{12.75, -72}</string>
+			</array>
+			<array>
+				<string>{1.75, -85}</string>
+				<string>{0.75, -89.5}</string>
+				<string>{5.75, -82}</string>
+			</array>
+			<array>
+				<string>{7.25, -79}</string>
+				<string>{5.75, -82}</string>
+				<string>{12.75, -72}</string>
+			</array>
+		</array>
+		<key>CC4F5947-6522-465D-9CCD-0475B0C6C0D9</key>
 		<array>
 			<array>
 				<string>{-19, -113.5}</string>
@@ -582,114 +690,6 @@
 				<string>{13, -128}</string>
 				<string>{15, -136}</string>
 				<string>{15.5, -122.5}</string>
-			</array>
-		</array>
-		<key>771FBAD5-35D1-4024-8E96-1FAAD53F6882</key>
-		<array>
-			<array>
-				<string>{-14.75, -73.5}</string>
-				<string>{-16.25, -75}</string>
-				<string>{-15.25, -81}</string>
-				<string>{-12.75, -85}</string>
-				<string>{-10.75, -80}</string>
-				<string>{-12.25, -73.5}</string>
-			</array>
-			<array>
-				<string>{-10.75, -80}</string>
-				<string>{-12.75, -85}</string>
-				<string>{-7.75, -88.5}</string>
-				<string>{-7.25, -84}</string>
-			</array>
-			<array>
-				<string>{-7.25, -84}</string>
-				<string>{-7.75, -88.5}</string>
-				<string>{-4.75, -89}</string>
-				<string>{-3.25, -85.5}</string>
-			</array>
-			<array>
-				<string>{-3.25, -85.5}</string>
-				<string>{-4.75, -89}</string>
-				<string>{-4.25, -89.5}</string>
-				<string>{0.75, -89.5}</string>
-				<string>{1.75, -85}</string>
-			</array>
-			<array>
-				<string>{34.25, -46.5}</string>
-				<string>{42.75, -38}</string>
-				<string>{55.75, 66}</string>
-				<string>{42.75, 85.5}</string>
-				<string>{29.75, 86}</string>
-				<string>{-49.25, 85.5}</string>
-				<string>{-17.25, -47}</string>
-			</array>
-			<array>
-				<string>{6.25, -87.5}</string>
-				<string>{10.75, -83}</string>
-				<string>{12.75, -78}</string>
-				<string>{12.75, -72}</string>
-				<string>{0.75, -89.5}</string>
-			</array>
-			<array>
-				<string>{9.25, -54}</string>
-				<string>{12.25, -47}</string>
-				<string>{-17.25, -47}</string>
-				<string>{0.75, -59.5}</string>
-				<string>{5.25, -57.5}</string>
-			</array>
-			<array>
-				<string>{-42.75, -44.5}</string>
-				<string>{-38.75, -46.5}</string>
-				<string>{-17.25, -47}</string>
-				<string>{-49.25, 85.5}</string>
-				<string>{-59.25, 78.5}</string>
-				<string>{-60.75, 75}</string>
-				<string>{-46.75, -39.5}</string>
-			</array>
-			<array>
-				<string>{55.25, 77}</string>
-				<string>{51.25, 82}</string>
-				<string>{48.25, 84}</string>
-				<string>{42.75, 85.5}</string>
-				<string>{55.75, 66}</string>
-				<string>{56.75, 69}</string>
-				<string>{56.75, 72}</string>
-			</array>
-			<array>
-				<string>{11.25, -67.5}</string>
-				<string>{0.75, -59.5}</string>
-				<string>{-17.25, -47}</string>
-				<string>{6.75, -68.5}</string>
-				<string>{12.75, -72}</string>
-			</array>
-			<array>
-				<string>{-10.75, -57}</string>
-				<string>{6.75, -68.5}</string>
-				<string>{-17.25, -47}</string>
-			</array>
-			<array>
-				<string>{-56.25, 82}</string>
-				<string>{-59.25, 78.5}</string>
-				<string>{-49.25, 85.5}</string>
-			</array>
-			<array>
-				<string>{6.75, -68.5}</string>
-				<string>{7.75, -71.5}</string>
-				<string>{12.75, -72}</string>
-			</array>
-			<array>
-				<string>{7.75, -71.5}</string>
-				<string>{7.25, -79}</string>
-				<string>{12.75, -72}</string>
-			</array>
-			<array>
-				<string>{1.75, -85}</string>
-				<string>{0.75, -89.5}</string>
-				<string>{5.75, -82}</string>
-			</array>
-			<array>
-				<string>{7.25, -79}</string>
-				<string>{5.75, -82}</string>
-				<string>{12.75, -72}</string>
 			</array>
 		</array>
 	</dict>

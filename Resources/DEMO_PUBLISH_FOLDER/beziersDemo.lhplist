@@ -5,18 +5,18 @@
 	<key>aspect</key>
 	<integer>2</integer>
 	<key>backgroundColor</key>
-	<string>{{0.4377643443, 0.40846997280000003}, {0.44652515409999999, 1}}</string>
+	<string>{{0.437764, 0.408470}, {0.446525, 1.000000}}</string>
 	<key>children</key>
 	<array>
 		<dict>
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -26,9 +26,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -42,20 +42,20 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>children</key>
 			<array>
 				<dict>
 					<key>alpha</key>
 					<real>171.11683654785156</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>closed</key>
 					<false/>
 					<key>colorOverlay</key>
-					<string>{{1, 0.11364340037107468}, {0.12940965592861176, 1}}</string>
+					<string>{{1.000000, 0.113643}, {0.129410, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.49999998410542806, 0.57500001192092898}</string>
+					<string>{0.500000, 0.575000}</string>
 					<key>name</key>
 					<string>UntitledBezier</string>
 					<key>nodeType</key>
@@ -66,35 +66,35 @@
 					<array>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-416.0563268661499, -54.57335090637207}</string>
+							<string>{-416.056327, -54.573351}</string>
 							<key>ctrl2</key>
-							<string>{-6.4134597664633475e-05, 260.00007319450378}</string>
+							<string>{-0.000064, 260.000073}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{-416.00006413459766, -155.99992680549622}</string>
+							<string>{-416.000064, -155.999927}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-6.4134597607790056e-05, 260.00007319450378}</string>
+							<string>{-0.000064, 260.000073}</string>
 							<key>ctrl2</key>
-							<string>{410.51399827003479, -50.104598522186279}</string>
+							<string>{410.513998, -50.104599}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{415.99993586540234, -155.99992680549622}</string>
+							<string>{415.999936, -155.999927}</string>
 						</dict>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{832.00018310546875, 312.00015258789062}</string>
+					<string>{832.000183, 312.000153}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -108,13 +108,13 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>closed</key>
 					<false/>
 					<key>colorOverlay</key>
-					<string>{{0, 0.18643209338188171}, {1, 1}}</string>
+					<string>{{0.000000, 0.186432}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.5, 0.90000000000000002}</string>
+					<string>{0.500000, 0.900000}</string>
 					<key>name</key>
 					<string>UntitledBezier_1</string>
 					<key>nodeType</key>
@@ -125,35 +125,35 @@
 					<array>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-413.62656211853027, 99.726581573486328}</string>
+							<string>{-413.626562, 99.726582}</string>
 							<key>ctrl2</key>
-							<string>{-413.62656211853027, 99.726581573486328}</string>
+							<string>{-413.626562, 99.726582}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<false/>
 							<key>mainPt</key>
-							<string>{-416, 0}</string>
+							<string>{-416.000000, 0.000000}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{418.33203125, 98.093769073486328}</string>
+							<string>{418.332031, 98.093769}</string>
 							<key>ctrl2</key>
-							<string>{418.33203125, 98.093769073486328}</string>
+							<string>{418.332031, 98.093769}</string>
 							<key>hasCtrl1</key>
 							<false/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{416, 0}</string>
+							<string>{416.000000, 0.000000}</string>
 						</dict>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{832, 0}</string>
+					<string>{832.000000, 0.000000}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -167,13 +167,13 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>closed</key>
 					<true/>
 					<key>colorOverlay</key>
-					<string>{{0.90408140420913696, 0.99916273355484009}, {0.13692420721054077, 1}}</string>
+					<string>{{0.904081, 0.999163}, {0.136924, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.5, 0.23750000596046447}</string>
+					<string>{0.500000, 0.237500}</string>
 					<key>name</key>
 					<string>UntitledBezier_2</string>
 					<key>nodeType</key>
@@ -184,59 +184,59 @@
 					<array>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-174.71705627441406, 166.94826889038086}</string>
+							<string>{-174.717056, 166.948269}</string>
 							<key>ctrl2</key>
-							<string>{-174.71705627441406, 166.94826889038086}</string>
+							<string>{-174.717056, 166.948269}</string>
 							<key>hasCtrl1</key>
 							<false/>
 							<key>hasCtrl2</key>
 							<false/>
 							<key>mainPt</key>
-							<string>{-186, 64.000001907348633}</string>
+							<string>{-186.000000, 64.000002}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{117.27953099812316, 74.109091947516902}</string>
+							<string>{117.279531, 74.109092}</string>
 							<key>ctrl2</key>
-							<string>{210, 64}</string>
+							<string>{210.000000, 64.000000}</string>
 							<key>hasCtrl1</key>
 							<false/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{114, 64}</string>
+							<string>{114.000000, 64.000000}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{210, -64}</string>
+							<string>{210.000000, -64.000000}</string>
 							<key>ctrl2</key>
-							<string>{113.40339076028704, -72.517579055856004}</string>
+							<string>{113.403391, -72.517579}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<false/>
 							<key>mainPt</key>
-							<string>{114, -64}</string>
+							<string>{114.000000, -64.000000}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-74.741767932377911, -52.871063287108683}</string>
+							<string>{-74.741768, -52.871063}</string>
 							<key>ctrl2</key>
-							<string>{-74.741767932377911, -72.871063287108683}</string>
+							<string>{-74.741768, -72.871063}</string>
 							<key>hasCtrl1</key>
 							<false/>
 							<key>hasCtrl2</key>
 							<false/>
 							<key>mainPt</key>
-							<string>{-78, -64}</string>
+							<string>{-78.000000, -64.000000}</string>
 						</dict>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{372, 128.00001525878906}</string>
+					<string>{372.000000, 128.000015}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -250,11 +250,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{0.885079026222229, 1}, {0.11245584487915039, 1}}</string>
+					<string>{{0.885079, 1.000000}, {0.112456, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.5, 0.51250000596046452}</string>
+					<string>{0.500000, 0.512500}</string>
 					<key>name</key>
 					<string>TexturedShape+UntitledBezier</string>
 					<key>nodeType</key>
@@ -265,115 +265,115 @@
 					<array>
 						<dict>
 							<key>point</key>
-							<string>{-186, 64.000001907348633}</string>
+							<string>{-186.000000, 64.000002}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{113.99999999997911, 63.999999999995453}</string>
+							<string>{114.000000, 64.000000}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{136.00000583182555, 61.481484267860651}</string>
+							<string>{136.000006, 61.481484}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{145.5, 58.5}</string>
+							<string>{145.500000, 58.500000}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{153.99999092426151, 54.518513470888138}</string>
+							<string>{153.999991, 54.518513}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{168, 44}</string>
+							<string>{168.000000, 44.000000}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{173.5000179335475, 37.685192346572876}</string>
+							<string>{173.500018, 37.685192}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{177.99999761581421, 30.8148193359375}</string>
+							<string>{177.999998, 30.814819}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{181.49997369199991, 23.500000715255737}</string>
+							<string>{181.499974, 23.500001}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{183.99999904632568, 15.851858139038086}</string>
+							<string>{183.999999, 15.851858}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{185.50001326203346, 7.9814920425415039}</string>
+							<string>{185.500013, 7.981492}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{185.9999937415123, 1.1444091796875e-05}</string>
+							<string>{185.999994, 0.000011}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{185.49999649822712, -7.9814753532409668}</string>
+							<string>{185.499996, -7.981475}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{184.0000044554472, -15.851847171783447}</string>
+							<string>{184.000004, -15.851847}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{181.5, -23.5}</string>
+							<string>{181.500000, -23.500000}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{177.99999135732651, -30.814817428588867}</string>
+							<string>{177.999991, -30.814817}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{173.49998557940125, -37.685191035270691}</string>
+							<string>{173.499986, -37.685191}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{167.99999979883432, -44.000012159347534}</string>
+							<string>{168.000000, -44.000012}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{161.49998937919736, -49.648158431053162}</string>
+							<string>{161.499989, -49.648158}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{153.9999748505652, -54.518526911735535}</string>
+							<string>{153.999975, -54.518527}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{145.49998092278838, -58.500012516975403}</string>
+							<string>{145.499981, -58.500013}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{135.99996710428968, -61.481489345431328}</string>
+							<string>{135.999967, -61.481489}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{114, -64}</string>
+							<string>{114.000000, -64.000000}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{-77.999999999986272, -63.999999999995453}</string>
+							<string>{-78.000000, -64.000000}</string>
 						</dict>
 						<dict>
 							<key>point</key>
-							<string>{-185.99999999998218, 64.000001907338628}</string>
+							<string>{-186.000000, 64.000002}</string>
 						</dict>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{372, 128.00001525878906}</string>
+					<string>{372.000000, 128.000015}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -384,721 +384,721 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{113.99999999997911, 63.999999999995453}</string>
+							<string>{114.000000, 64.000000}</string>
 							<key>uv</key>
-							<string>{0.80645161867141724, 0.99999994039535522}</string>
+							<string>{0.806452, 1.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{-186, 64.000001907348633}</string>
+							<string>{-186.000000, 64.000002}</string>
 							<key>uv</key>
-							<string>{0, 0.99999994039535522}</string>
+							<string>{0.000000, 1.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{-185.99999999998218, 64.000001907338628}</string>
+							<string>{-186.000000, 64.000002}</string>
 							<key>uv</key>
-							<string>{4.7904331190859115e-14, 0.99999994039535522}</string>
+							<string>{0.000000, 1.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{113.99999999997911, 63.999999999995453}</string>
+							<string>{114.000000, 64.000000}</string>
 							<key>uv</key>
-							<string>{0.80645161867141724, 0.99999994039535522}</string>
+							<string>{0.806452, 1.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{-185.99999999998218, 64.000001907338628}</string>
+							<string>{-186.000000, 64.000002}</string>
 							<key>uv</key>
-							<string>{4.7904331190859115e-14, 0.99999994039535522}</string>
+							<string>{0.000000, 1.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{-77.999999999986272, -63.999999999995453}</string>
+							<string>{-78.000000, -64.000000}</string>
 							<key>uv</key>
-							<string>{0.29032257199287415, 5.9604673197100055e-08}</string>
+							<string>{0.290323, 0.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{113.99999999997911, 63.999999999995453}</string>
+							<string>{114.000000, 64.000000}</string>
 							<key>uv</key>
-							<string>{0.80645161867141724, 0.99999994039535522}</string>
+							<string>{0.806452, 1.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{-77.999999999986272, -63.999999999995453}</string>
+							<string>{-78.000000, -64.000000}</string>
 							<key>uv</key>
-							<string>{0.29032257199287415, 5.9604673197100055e-08}</string>
+							<string>{0.290323, 0.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{114, -64}</string>
+							<string>{114.000000, -64.000000}</string>
 							<key>uv</key>
-							<string>{0.80645161867141724, 5.9604637669963267e-08}</string>
+							<string>{0.806452, 0.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{136.00000583182555, 61.481484267860651}</string>
+							<string>{136.000006, 61.481484}</string>
 							<key>uv</key>
-							<string>{0.86559140682220459, 0.98032402992248535}</string>
+							<string>{0.865591, 0.980324}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{113.99999999997911, 63.999999999995453}</string>
+							<string>{114.000000, 64.000000}</string>
 							<key>uv</key>
-							<string>{0.80645161867141724, 0.99999994039535522}</string>
+							<string>{0.806452, 1.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{114, -64}</string>
+							<string>{114.000000, -64.000000}</string>
 							<key>uv</key>
-							<string>{0.80645161867141724, 5.9604637669963267e-08}</string>
+							<string>{0.806452, 0.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{136.00000583182555, 61.481484267860651}</string>
+							<string>{136.000006, 61.481484}</string>
 							<key>uv</key>
-							<string>{0.86559140682220459, 0.98032402992248535}</string>
+							<string>{0.865591, 0.980324}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{114, -64}</string>
+							<string>{114.000000, -64.000000}</string>
 							<key>uv</key>
-							<string>{0.80645161867141724, 5.9604637669963267e-08}</string>
+							<string>{0.806452, 0.000000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{135.99996710428968, -61.481489345431328}</string>
+							<string>{135.999967, -61.481489}</string>
 							<key>uv</key>
-							<string>{0.86559128761291504, 0.019675921648740768}</string>
+							<string>{0.865591, 0.019676}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{145.5, 58.5}</string>
+							<string>{145.500000, 58.500000}</string>
 							<key>uv</key>
-							<string>{0.8911290168762207, 0.95703119039535522}</string>
+							<string>{0.891129, 0.957031}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{136.00000583182555, 61.481484267860651}</string>
+							<string>{136.000006, 61.481484}</string>
 							<key>uv</key>
-							<string>{0.86559140682220459, 0.98032402992248535}</string>
+							<string>{0.865591, 0.980324}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{135.99996710428968, -61.481489345431328}</string>
+							<string>{135.999967, -61.481489}</string>
 							<key>uv</key>
-							<string>{0.86559128761291504, 0.019675921648740768}</string>
+							<string>{0.865591, 0.019676}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{145.5, 58.5}</string>
+							<string>{145.500000, 58.500000}</string>
 							<key>uv</key>
-							<string>{0.8911290168762207, 0.95703119039535522}</string>
+							<string>{0.891129, 0.957031}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{135.99996710428968, -61.481489345431328}</string>
+							<string>{135.999967, -61.481489}</string>
 							<key>uv</key>
-							<string>{0.86559128761291504, 0.019675921648740768}</string>
+							<string>{0.865591, 0.019676}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{145.49998092278838, -58.500012516975403}</string>
+							<string>{145.499981, -58.500013}</string>
 							<key>uv</key>
-							<string>{0.89112895727157593, 0.042968705296516418}</string>
+							<string>{0.891129, 0.042969}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{145.5, 58.5}</string>
+							<string>{145.500000, 58.500000}</string>
 							<key>uv</key>
-							<string>{0.8911290168762207, 0.95703119039535522}</string>
+							<string>{0.891129, 0.957031}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{145.49998092278838, -58.500012516975403}</string>
+							<string>{145.499981, -58.500013}</string>
 							<key>uv</key>
-							<string>{0.89112895727157593, 0.042968705296516418}</string>
+							<string>{0.891129, 0.042969}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{153.9999748505652, -54.518526911735535}</string>
+							<string>{153.999975, -54.518527}</string>
 							<key>uv</key>
-							<string>{0.91397839784622192, 0.074074059724807739}</string>
+							<string>{0.913978, 0.074074}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{153.99999092426151, 54.518513470888138}</string>
+							<string>{153.999991, 54.518513}</string>
 							<key>uv</key>
-							<string>{0.9139784574508667, 0.9259258508682251}</string>
+							<string>{0.913978, 0.925926}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{145.5, 58.5}</string>
+							<string>{145.500000, 58.500000}</string>
 							<key>uv</key>
-							<string>{0.8911290168762207, 0.95703119039535522}</string>
+							<string>{0.891129, 0.957031}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{153.9999748505652, -54.518526911735535}</string>
+							<string>{153.999975, -54.518527}</string>
 							<key>uv</key>
-							<string>{0.91397839784622192, 0.074074059724807739}</string>
+							<string>{0.913978, 0.074074}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{153.99999092426151, 54.518513470888138}</string>
+							<string>{153.999991, 54.518513}</string>
 							<key>uv</key>
-							<string>{0.9139784574508667, 0.9259258508682251}</string>
+							<string>{0.913978, 0.925926}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{153.9999748505652, -54.518526911735535}</string>
+							<string>{153.999975, -54.518527}</string>
 							<key>uv</key>
-							<string>{0.91397839784622192, 0.074074059724807739}</string>
+							<string>{0.913978, 0.074074}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{153.9999748505652, -54.518526911735535}</string>
+							<string>{153.999975, -54.518527}</string>
 							<key>uv</key>
-							<string>{0.91397839784622192, 0.074074059724807739}</string>
+							<string>{0.913978, 0.074074}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998937919736, -49.648158431053162}</string>
+							<string>{161.499989, -49.648158}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.11212380975484848}</string>
+							<string>{0.934140, 0.112124}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998937919736, -49.648158431053162}</string>
+							<string>{161.499989, -49.648158}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.11212380975484848}</string>
+							<string>{0.934140, 0.112124}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{167.99999979883432, -44.000012159347534}</string>
+							<string>{168.000000, -44.000012}</string>
 							<key>uv</key>
-							<string>{0.95161288976669312, 0.15624994039535522}</string>
+							<string>{0.951613, 0.156250}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{167.99999979883432, -44.000012159347534}</string>
+							<string>{168.000000, -44.000012}</string>
 							<key>uv</key>
-							<string>{0.95161288976669312, 0.15624994039535522}</string>
+							<string>{0.951613, 0.156250}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{173.49998557940125, -37.685191035270691}</string>
+							<string>{173.499986, -37.685191}</string>
 							<key>uv</key>
-							<string>{0.96639782190322876, 0.20558448135852814}</string>
+							<string>{0.966398, 0.205584}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{173.49998557940125, -37.685191035270691}</string>
+							<string>{173.499986, -37.685191}</string>
 							<key>uv</key>
-							<string>{0.96639782190322876, 0.20558448135852814}</string>
+							<string>{0.966398, 0.205584}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{177.99999135732651, -30.814817428588867}</string>
+							<string>{177.999991, -30.814817}</string>
 							<key>uv</key>
-							<string>{0.97849458456039429, 0.25925925374031067}</string>
+							<string>{0.978495, 0.259259}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{177.99999135732651, -30.814817428588867}</string>
+							<string>{177.999991, -30.814817}</string>
 							<key>uv</key>
-							<string>{0.97849458456039429, 0.25925925374031067}</string>
+							<string>{0.978495, 0.259259}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{181.5, -23.5}</string>
+							<string>{181.500000, -23.500000}</string>
 							<key>uv</key>
-							<string>{0.98790323734283447, 0.31640627980232239}</string>
+							<string>{0.987903, 0.316406}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{181.5, -23.5}</string>
+							<string>{181.500000, -23.500000}</string>
 							<key>uv</key>
-							<string>{0.98790323734283447, 0.31640627980232239}</string>
+							<string>{0.987903, 0.316406}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{184.0000044554472, -15.851847171783447}</string>
+							<string>{184.000004, -15.851847}</string>
 							<key>uv</key>
-							<string>{0.99462366104125977, 0.37615746259689331}</string>
+							<string>{0.994624, 0.376157}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{184.0000044554472, -15.851847171783447}</string>
+							<string>{184.000004, -15.851847}</string>
 							<key>uv</key>
-							<string>{0.99462366104125977, 0.37615746259689331}</string>
+							<string>{0.994624, 0.376157}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{185.49999649822712, -7.9814753532409668}</string>
+							<string>{185.499996, -7.981475}</string>
 							<key>uv</key>
-							<string>{0.99865591526031494, 0.43764472007751465}</string>
+							<string>{0.998656, 0.437645}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{185.49999649822712, -7.9814753532409668}</string>
+							<string>{185.499996, -7.981475}</string>
 							<key>uv</key>
-							<string>{0.99865591526031494, 0.43764472007751465}</string>
+							<string>{0.998656, 0.437645}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{185.9999937415123, 1.1444091796875e-05}</string>
+							<string>{185.999994, 0.000011}</string>
 							<key>uv</key>
-							<string>{1, 0.50000005960464478}</string>
+							<string>{1.000000, 0.500000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{185.9999937415123, 1.1444091796875e-05}</string>
+							<string>{185.999994, 0.000011}</string>
 							<key>uv</key>
-							<string>{1, 0.50000005960464478}</string>
+							<string>{1.000000, 0.500000}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{185.50001326203346, 7.9814920425415039}</string>
+							<string>{185.500013, 7.981492}</string>
 							<key>uv</key>
-							<string>{0.99865597486495972, 0.5623553991317749}</string>
+							<string>{0.998656, 0.562355}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{168, 44}</string>
+							<string>{168.000000, 44.000000}</string>
 							<key>uv</key>
-							<string>{0.95161288976669312, 0.84374994039535522}</string>
+							<string>{0.951613, 0.843750}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{161.49998731724918, 49.648141920566559}</string>
+							<string>{161.499987, 49.648142}</string>
 							<key>uv</key>
-							<string>{0.93413972854614258, 0.88787603378295898}</string>
+							<string>{0.934140, 0.887876}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{185.50001326203346, 7.9814920425415039}</string>
+							<string>{185.500013, 7.981492}</string>
 							<key>uv</key>
-							<string>{0.99865597486495972, 0.5623553991317749}</string>
+							<string>{0.998656, 0.562355}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{168, 44}</string>
+							<string>{168.000000, 44.000000}</string>
 							<key>uv</key>
-							<string>{0.95161288976669312, 0.84374994039535522}</string>
+							<string>{0.951613, 0.843750}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{185.50001326203346, 7.9814920425415039}</string>
+							<string>{185.500013, 7.981492}</string>
 							<key>uv</key>
-							<string>{0.99865597486495972, 0.5623553991317749}</string>
+							<string>{0.998656, 0.562355}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{183.99999904632568, 15.851858139038086}</string>
+							<string>{183.999999, 15.851858}</string>
 							<key>uv</key>
-							<string>{0.99462366104125977, 0.62384265661239624}</string>
+							<string>{0.994624, 0.623843}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{173.5000179335475, 37.685192346572876}</string>
+							<string>{173.500018, 37.685192}</string>
 							<key>uv</key>
-							<string>{0.96639788150787354, 0.79441553354263306}</string>
+							<string>{0.966398, 0.794416}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{168, 44}</string>
+							<string>{168.000000, 44.000000}</string>
 							<key>uv</key>
-							<string>{0.95161288976669312, 0.84374994039535522}</string>
+							<string>{0.951613, 0.843750}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{183.99999904632568, 15.851858139038086}</string>
+							<string>{183.999999, 15.851858}</string>
 							<key>uv</key>
-							<string>{0.99462366104125977, 0.62384265661239624}</string>
+							<string>{0.994624, 0.623843}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{177.99999761581421, 30.8148193359375}</string>
+							<string>{177.999998, 30.814819}</string>
 							<key>uv</key>
-							<string>{0.97849464416503906, 0.74074077606201172}</string>
+							<string>{0.978495, 0.740741}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{173.5000179335475, 37.685192346572876}</string>
+							<string>{173.500018, 37.685192}</string>
 							<key>uv</key>
-							<string>{0.96639788150787354, 0.79441553354263306}</string>
+							<string>{0.966398, 0.794416}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{183.99999904632568, 15.851858139038086}</string>
+							<string>{183.999999, 15.851858}</string>
 							<key>uv</key>
-							<string>{0.99462366104125977, 0.62384265661239624}</string>
+							<string>{0.994624, 0.623843}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{177.99999761581421, 30.8148193359375}</string>
+							<string>{177.999998, 30.814819}</string>
 							<key>uv</key>
-							<string>{0.97849464416503906, 0.74074077606201172}</string>
+							<string>{0.978495, 0.740741}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{183.99999904632568, 15.851858139038086}</string>
+							<string>{183.999999, 15.851858}</string>
 							<key>uv</key>
-							<string>{0.99462366104125977, 0.62384265661239624}</string>
+							<string>{0.994624, 0.623843}</string>
 						</dict>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>color</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>point</key>
-							<string>{181.49997369199991, 23.500000715255737}</string>
+							<string>{181.499974, 23.500001}</string>
 							<key>uv</key>
-							<string>{0.9879031777381897, 0.68359375}</string>
+							<string>{0.987903, 0.683594}</string>
 						</dict>
 					</array>
 					<key>uuid</key>
@@ -1108,9 +1108,9 @@
 				</dict>
 			</array>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -1120,9 +1120,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -1136,11 +1136,11 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -1150,9 +1150,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -1164,14 +1164,14 @@
 		</dict>
 	</array>
 	<key>designResolution</key>
-	<string>{960, 640}</string>
+	<string>{960.000000, 640.000000}</string>
 	<key>devices</key>
 	<array>
 		<dict>
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{960, 640}</string>
+			<string>{960.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>hd</string>
 		</dict>
@@ -1179,7 +1179,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1136, 640}</string>
+			<string>{1136.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>568</string>
 		</dict>
@@ -1187,7 +1187,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1024, 768}</string>
+			<string>{1024.000000, 768.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
@@ -1195,7 +1195,7 @@
 			<key>ratio</key>
 			<real>2</real>
 			<key>size</key>
-			<string>{2048, 1536}</string>
+			<string>{2048.000000, 1536.000000}</string>
 			<key>suffix</key>
 			<string>ipadhd</string>
 		</dict>
@@ -1203,13 +1203,13 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1280, 720}</string>
+			<string>{1280.000000, 720.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
-	<string>{0, -1}</string>
+	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
 	<key>nodeType</key>

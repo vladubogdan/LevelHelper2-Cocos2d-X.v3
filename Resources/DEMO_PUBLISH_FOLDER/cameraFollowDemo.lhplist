@@ -5,25 +5,25 @@
 	<key>aspect</key>
 	<integer>2</integer>
 	<key>backgroundColor</key>
-	<string>{{1, 1}, {1, 1}}</string>
+	<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 	<key>children</key>
 	<array>
 		<dict>
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>children</key>
 			<array>
 				<dict>
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>imageFileName</key>
 					<string>sky.png</string>
 					<key>name</key>
@@ -37,9 +37,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{960, 640}</string>
+					<string>{960.000000, 640.000000}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -51,9 +51,9 @@
 				</dict>
 			</array>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -63,9 +63,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -79,25 +79,25 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>children</key>
 			<array>
 				<dict>
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>children</key>
 					<array>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 2.4750000000000001}</string>
+							<string>{0.300000, 2.475000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -111,9 +111,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -131,11 +131,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 2.2749999999999999}</string>
+							<string>{0.300000, 2.275000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -149,9 +149,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -169,11 +169,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 2.0750000000000002}</string>
+							<string>{0.300000, 2.075000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -187,9 +187,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -207,11 +207,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 1.875}</string>
+							<string>{0.300000, 1.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -225,9 +225,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -245,11 +245,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 1.675}</string>
+							<string>{0.300000, 1.675000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -263,9 +263,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -283,11 +283,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 1.4750000000000001}</string>
+							<string>{0.300000, 1.475000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -301,9 +301,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -321,11 +321,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 1.2749999999999999}</string>
+							<string>{0.300000, 1.275000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -339,9 +339,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -359,11 +359,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 1.075}</string>
+							<string>{0.300000, 1.075000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -377,9 +377,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -397,11 +397,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 0.875}</string>
+							<string>{0.300000, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -415,9 +415,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -435,11 +435,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.43333333333333335, 0.875}</string>
+							<string>{0.433333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -453,9 +453,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -473,11 +473,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.56666666666666665, 0.875}</string>
+							<string>{0.566667, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -491,9 +491,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -511,11 +511,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.69999999999999996, 0.875}</string>
+							<string>{0.700000, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -529,9 +529,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -549,11 +549,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.83333333333333337, 0.875}</string>
+							<string>{0.833333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -567,9 +567,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -587,11 +587,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.96666666666666667, 0.875}</string>
+							<string>{0.966667, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -605,9 +605,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -625,11 +625,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.1000000000000001, 0.875}</string>
+							<string>{1.100000, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -643,9 +643,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -663,11 +663,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.2333333333333334, 0.875}</string>
+							<string>{1.233333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -681,9 +681,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -701,11 +701,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.3666666666666667, 0.875}</string>
+							<string>{1.366667, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -719,9 +719,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -739,11 +739,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.5, 0.875}</string>
+							<string>{1.500000, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -757,9 +757,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -777,11 +777,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.6333333333333333, 0.875}</string>
+							<string>{1.633333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -795,9 +795,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -815,11 +815,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.7666666666666666, 0.875}</string>
+							<string>{1.766667, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -833,9 +833,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -853,11 +853,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.8999999999999999, 0.875}</string>
+							<string>{1.900000, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -871,9 +871,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -891,11 +891,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.0333333333333332, 0.875}</string>
+							<string>{2.033333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -909,9 +909,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -929,11 +929,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.1666666666666665, 0.875}</string>
+							<string>{2.166667, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -947,9 +947,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -967,11 +967,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.2999999999999998, 0.875}</string>
+							<string>{2.300000, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -985,9 +985,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1005,11 +1005,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.4333333333333331, 0.875}</string>
+							<string>{2.433333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1023,9 +1023,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1043,11 +1043,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.5666666666666669, 0.875}</string>
+							<string>{2.566667, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1061,9 +1061,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1081,11 +1081,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.7000000000000002, 0.875}</string>
+							<string>{2.700000, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1099,9 +1099,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1119,11 +1119,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.8333333333333335, 0.875}</string>
+							<string>{2.833333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1137,9 +1137,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1157,11 +1157,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.9666666666666668, 0.875}</string>
+							<string>{2.966667, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1175,9 +1175,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1195,11 +1195,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.1000000000000001, 0.875}</string>
+							<string>{3.100000, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1213,9 +1213,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1233,11 +1233,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 0.875}</string>
+							<string>{3.233333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1251,9 +1251,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1271,11 +1271,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 1.075}</string>
+							<string>{3.233333, 1.075000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1289,9 +1289,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1309,11 +1309,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 1.2749999999999999}</string>
+							<string>{3.233333, 1.275000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1327,9 +1327,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1347,11 +1347,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 1.4750000000000001}</string>
+							<string>{3.233333, 1.475000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1365,9 +1365,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1385,11 +1385,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 1.675}</string>
+							<string>{3.233333, 1.675000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1403,9 +1403,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1423,11 +1423,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 1.875}</string>
+							<string>{3.233333, 1.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1441,9 +1441,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1461,11 +1461,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 2.0750000000000002}</string>
+							<string>{3.233333, 2.075000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1479,9 +1479,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1499,11 +1499,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 2.2749999999999999}</string>
+							<string>{3.233333, 2.275000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1517,9 +1517,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1537,11 +1537,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 2.4750000000000001}</string>
+							<string>{3.233333, 2.475000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1555,9 +1555,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1575,11 +1575,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 2.6749999999999998}</string>
+							<string>{3.233333, 2.675000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1593,9 +1593,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1613,11 +1613,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 2.875}</string>
+							<string>{3.233333, 2.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1631,9 +1631,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1651,11 +1651,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 3.0750000000000002}</string>
+							<string>{3.233333, 3.075000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1669,9 +1669,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1689,11 +1689,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 3.2749999999999999}</string>
+							<string>{3.233333, 3.275000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1707,9 +1707,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1727,11 +1727,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 3.4750000000000001}</string>
+							<string>{3.233333, 3.475000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1745,9 +1745,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1765,11 +1765,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 3.6749999999999998}</string>
+							<string>{3.233333, 3.675000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1783,9 +1783,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1803,11 +1803,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.2333333333333334, 3.875}</string>
+							<string>{3.233333, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1821,9 +1821,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1841,11 +1841,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{3.1000000000000001, 3.875}</string>
+							<string>{3.100000, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1859,9 +1859,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1879,11 +1879,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.9666666666666668, 3.875}</string>
+							<string>{2.966667, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1897,9 +1897,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1917,11 +1917,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.8333333333333335, 3.875}</string>
+							<string>{2.833333, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1935,9 +1935,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1955,11 +1955,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.7000000000000002, 3.875}</string>
+							<string>{2.700000, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -1973,9 +1973,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -1993,11 +1993,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.5666666666666669, 3.875}</string>
+							<string>{2.566667, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2011,9 +2011,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2031,11 +2031,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.4333333333333331, 3.875}</string>
+							<string>{2.433333, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2049,9 +2049,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2069,11 +2069,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.2999999999999998, 3.875}</string>
+							<string>{2.300000, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2087,9 +2087,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2107,11 +2107,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.1666666666666665, 3.875}</string>
+							<string>{2.166667, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2125,9 +2125,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2145,11 +2145,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.0333333333333332, 3.875}</string>
+							<string>{2.033333, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2163,9 +2163,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2183,11 +2183,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.8999999999999999, 3.875}</string>
+							<string>{1.900000, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2201,9 +2201,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2221,11 +2221,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.7666666666666666, 3.875}</string>
+							<string>{1.766667, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2239,9 +2239,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2259,11 +2259,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.6333333333333333, 3.875}</string>
+							<string>{1.633333, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2277,9 +2277,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2297,11 +2297,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.5, 3.875}</string>
+							<string>{1.500000, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2315,9 +2315,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2335,11 +2335,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.3666666666666667, 3.875}</string>
+							<string>{1.366667, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2353,9 +2353,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2373,11 +2373,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.2333333333333334, 3.875}</string>
+							<string>{1.233333, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2391,9 +2391,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2411,11 +2411,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.1000000000000001, 3.875}</string>
+							<string>{1.100000, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2429,9 +2429,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2449,11 +2449,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.96666666666666667, 3.875}</string>
+							<string>{0.966667, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2467,9 +2467,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2487,11 +2487,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.83333333333333337, 3.875}</string>
+							<string>{0.833333, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2505,9 +2505,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2525,11 +2525,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.69999999999999996, 3.875}</string>
+							<string>{0.700000, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2543,9 +2543,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2563,11 +2563,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.56666666666666665, 3.875}</string>
+							<string>{0.566667, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2581,9 +2581,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2601,11 +2601,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.43333333333333335, 3.875}</string>
+							<string>{0.433333, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2619,9 +2619,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2639,11 +2639,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 3.875}</string>
+							<string>{0.300000, 3.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2657,9 +2657,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2677,11 +2677,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 3.6749999999999998}</string>
+							<string>{0.300000, 3.675000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2695,9 +2695,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2715,11 +2715,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 3.4750000000000001}</string>
+							<string>{0.300000, 3.475000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2733,9 +2733,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2753,11 +2753,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 3.2749999999999999}</string>
+							<string>{0.300000, 3.275000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2771,9 +2771,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2791,11 +2791,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 3.0750000000000002}</string>
+							<string>{0.300000, 3.075000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2809,9 +2809,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2829,11 +2829,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 2.875}</string>
+							<string>{0.300000, 2.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2847,9 +2847,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2867,11 +2867,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.29999999999999999, 2.6749999999999998}</string>
+							<string>{0.300000, 2.675000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -2885,9 +2885,9 @@
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -2903,9 +2903,9 @@
 						</dict>
 					</array>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{-1.0666666666666667, -1.925}</string>
+					<string>{-1.066667, -1.925000}</string>
 					<key>name</key>
 					<string>bricks</string>
 					<key>nodeType</key>
@@ -2915,9 +2915,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{256, 256}</string>
+					<string>{256.000000, 256.000000}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -2931,13 +2931,13 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>closed</key>
 					<false/>
 					<key>colorOverlay</key>
-					<string>{{0, 0}, {0, 1}}</string>
+					<string>{{0.000000, 0.000000}, {0.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.6823010540914668, 0.42816825223602811}</string>
+					<string>{0.682301, 0.428168}</string>
 					<key>name</key>
 					<string>UntitledBezier</string>
 					<key>nodePhysics</key>
@@ -2982,71 +2982,71 @@
 					<array>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-1207.0518612861633, -150.91494750976562}</string>
+							<string>{-1207.051861, -150.914948}</string>
 							<key>ctrl2</key>
-							<string>{-1439.0090119278082, 1293.972318568942}</string>
+							<string>{-1439.009012, 1293.972319}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{-1199.0090119278082, -242.027681431058}</string>
+							<string>{-1199.009012, -242.027681}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-848.91241234895074, 748.72735587668126}</string>
+							<string>{-848.912412, 748.727356}</string>
 							<key>ctrl2</key>
-							<string>{1040.9909880721918, 957.972318568942}</string>
+							<string>{1040.990988, 957.972319}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{32.99098807219184, 781.972318568942}</string>
+							<string>{32.990988, 781.972319}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{1415.189993199145, 1010.1369303853483}</string>
+							<string>{1415.189993, 1010.136930}</string>
 							<key>ctrl2</key>
-							<string>{1392.9909880721918, -1234.027681431058}</string>
+							<string>{1392.990988, -1234.027681}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{1184.9909880721918, -178.027681431058}</string>
+							<string>{1184.990988, -178.027681}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{1157.2884619796625, -819.73062332558925}</string>
+							<string>{1157.288462, -819.730623}</string>
 							<key>ctrl2</key>
-							<string>{-1178.7115380203375, -659.73062332558925}</string>
+							<string>{-1178.711538, -659.730623}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{-63.00901192780816, -674.027681431058}</string>
+							<string>{-63.009012, -674.027681}</string>
 						</dict>
 						<dict>
 							<key>ctrl1</key>
-							<string>{-1247.0090119278082, -1154.027681431058}</string>
+							<string>{-1247.009012, -1154.027681}</string>
 							<key>ctrl2</key>
-							<string>{-1182.7005206346512, -142.51573705673218}</string>
+							<string>{-1182.700521, -142.515737}</string>
 							<key>hasCtrl1</key>
 							<true/>
 							<key>hasCtrl2</key>
 							<true/>
 							<key>mainPt</key>
-							<string>{-1199.0090119278082, -258.027681431058}</string>
+							<string>{-1199.009012, -258.027681}</string>
 						</dict>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{2504.652587890625, 1753.33251953125}</string>
+					<string>{2504.652588, 1753.332520}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -3060,18 +3060,18 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>children</key>
 					<array>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.4169496038565073, 2.0438309599165478}</string>
+							<string>{2.416950, 2.043831}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3119,9 +3119,9 @@
 							<key>rotation</key>
 							<real>15.003446578979492</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3139,11 +3139,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.4096864293679912, 1.7751825056954502}</string>
+							<string>{1.409686, 1.775183}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3191,9 +3191,9 @@
 							<key>rotation</key>
 							<real>6.648033618927002</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3211,11 +3211,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.5751952331428678, 2.6127978080839935}</string>
+							<string>{1.575195, 2.612798}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3263,9 +3263,9 @@
 							<key>rotation</key>
 							<real>6.9808955192565918</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3283,11 +3283,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.83232010378512145, 1.0631548953208352}</string>
+							<string>{0.832320, 1.063155}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3335,9 +3335,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3355,11 +3355,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.8333333333333333, 0.875}</string>
+							<string>{1.833333, 0.875000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3407,9 +3407,9 @@
 							<key>rotation</key>
 							<real>329.60305786132812</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3427,11 +3427,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.7833333333333332, 1.2250000000000001}</string>
+							<string>{2.783333, 1.225000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3479,9 +3479,9 @@
 							<key>rotation</key>
 							<real>28.255607604980469</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3499,11 +3499,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.3223038069764459, 1.5736759415687556}</string>
+							<string>{2.322304, 1.573676}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3551,9 +3551,9 @@
 							<key>rotation</key>
 							<real>334.39627075195312</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3571,11 +3571,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.0819798397066007, 1.3909754707877042}</string>
+							<string>{2.081980, 1.390975}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3623,9 +3623,9 @@
 							<key>rotation</key>
 							<real>347.47802734375</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3643,11 +3643,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.91983813322776242, 1.8562975624421718}</string>
+							<string>{0.919838, 1.856298}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3695,9 +3695,9 @@
 							<key>rotation</key>
 							<real>10.519115447998047</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3715,11 +3715,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.88197981447573803, 2.5909754489932113}</string>
+							<string>{0.881980, 2.590975}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3767,9 +3767,9 @@
 							<key>rotation</key>
 							<real>347.47802734375</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3787,11 +3787,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.6865047929098922, 1.7812975961645399}</string>
+							<string>{2.686505, 1.781298}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3839,9 +3839,9 @@
 							<key>rotation</key>
 							<real>10.519115447998047</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3859,11 +3859,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.6486464741578675, 2.51597548271558}</string>
+							<string>{2.648646, 2.515975}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3911,9 +3911,9 @@
 							<key>rotation</key>
 							<real>347.47802734375</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -3931,11 +3931,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.8381010341415969, 1.8751494615063051}</string>
+							<string>{1.838101, 1.875149}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -3983,9 +3983,9 @@
 							<key>rotation</key>
 							<real>338.54550170898438</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4003,11 +4003,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.0653413670439345, 2.5284415360332515}</string>
+							<string>{2.065341, 2.528442}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4055,9 +4055,9 @@
 							<key>rotation</key>
 							<real>315.50442504882812</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4075,11 +4075,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.2027726125807214, 0.89819616576658734}</string>
+							<string>{1.202773, 0.898196}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4127,9 +4127,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4147,11 +4147,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.3024375969326933, 0.87265642690214307}</string>
+							<string>{2.302438, 0.872656}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4199,9 +4199,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4219,11 +4219,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.7166666666666668, 0.72499999999999998}</string>
+							<string>{2.716667, 0.725000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4271,9 +4271,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4291,11 +4291,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.502498884704174, 1.2657667758972344}</string>
+							<string>{2.502499, 1.265767}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4343,9 +4343,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4363,11 +4363,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.2268337349845926, 2.5069308748701102}</string>
+							<string>{1.226834, 2.506931}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4415,9 +4415,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4435,11 +4435,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.73862146363900483, 1.4639685914531455}</string>
+							<string>{0.738621, 1.463969}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4487,9 +4487,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4507,11 +4507,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.69999999999999996, 2.1749999999999998}</string>
+							<string>{0.700000, 2.175000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4559,9 +4559,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4579,11 +4579,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.8333333333333335, 2.1499999999999999}</string>
+							<string>{2.833333, 2.150000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4631,9 +4631,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4651,11 +4651,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.78333333333333333, 0.75}</string>
+							<string>{0.783333, 0.750000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4703,9 +4703,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4723,11 +4723,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.9017997459565028, 1.4983800290810283}</string>
+							<string>{1.901800, 1.498380}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4775,9 +4775,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4795,11 +4795,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.6264186318146174, 1.1877361526824453}</string>
+							<string>{1.626419, 1.187736}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4847,9 +4847,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4867,11 +4867,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.2501779524378829, 1.411208867746333}</string>
+							<string>{1.250178, 1.411209}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4919,9 +4919,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -4939,11 +4939,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{1.6601131644919194, 2.1879529784210243}</string>
+							<string>{1.660113, 2.187953}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -4991,9 +4991,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -5011,11 +5011,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{2.3898103877847401, 2.6246153031639046}</string>
+							<string>{2.389810, 2.624615}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
 							<key>name</key>
@@ -5063,9 +5063,9 @@
 							<key>rotation</key>
 							<real>341.04071044921875</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 128}</string>
+							<string>{128.000000, 128.000000}</string>
 							<key>spriteName</key>
 							<string>brick.png</string>
 							<key>spriteUUID</key>
@@ -5081,9 +5081,9 @@
 						</dict>
 					</array>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{-1.0833333333333333, -1.2250000000000001}</string>
+					<string>{-1.083333, -1.225000}</string>
 					<key>name</key>
 					<string>insideBricks</string>
 					<key>nodeType</key>
@@ -5093,9 +5093,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{256, 256}</string>
+					<string>{256.000000, 256.000000}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -5111,7 +5111,7 @@
 					<key>followedNodeUUID</key>
 					<string>5BF32D1B-03D7-4B3A-942F-4D9C52F039A1</string>
 					<key>generalPosition</key>
-					<string>{0.66666666666666663, 0.29999999999999999}</string>
+					<string>{0.666667, 0.300000}</string>
 					<key>name</key>
 					<string>UntitledCamera</string>
 					<key>nodeType</key>
@@ -5131,11 +5131,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.66666666666666663, 0.29999999999999999}</string>
+					<string>{0.666667, 0.300000}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -5183,9 +5183,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{47, 46}</string>
+					<string>{47.000000, 46.000000}</string>
 					<key>spriteName</key>
 					<string>carTyre</string>
 					<key>spriteUUID</key>
@@ -5201,9 +5201,9 @@
 				</dict>
 			</array>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -5213,9 +5213,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -5229,11 +5229,11 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -5243,9 +5243,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -5257,14 +5257,14 @@
 		</dict>
 	</array>
 	<key>designResolution</key>
-	<string>{960, 640}</string>
+	<string>{960.000000, 640.000000}</string>
 	<key>devices</key>
 	<array>
 		<dict>
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{960, 640}</string>
+			<string>{960.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>hd</string>
 		</dict>
@@ -5272,7 +5272,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1136, 640}</string>
+			<string>{1136.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>568</string>
 		</dict>
@@ -5280,7 +5280,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1024, 768}</string>
+			<string>{1024.000000, 768.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
@@ -5288,7 +5288,7 @@
 			<key>ratio</key>
 			<real>2</real>
 			<key>size</key>
-			<string>{2048, 1536}</string>
+			<string>{2048.000000, 1536.000000}</string>
 			<key>suffix</key>
 			<string>ipadhd</string>
 		</dict>
@@ -5296,7 +5296,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1280, 720}</string>
+			<string>{1280.000000, 720.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
@@ -5304,12 +5304,12 @@
 	<key>gameWorld</key>
 	<dict>
 		<key>960x640</key>
-		<string>{{-0.75422501564025879, -1.0501859188079834}, {2.9350335597991943, 3.0081882476806641}}</string>
+		<string>{{-0.754225, -1.050186}, {2.935034, 3.008188}}</string>
 		<key>general</key>
-		<string>{{-0.75422501564025879, -1.0501859188079834}, {2.9350335597991943, 3.0081882476806641}}</string>
+		<string>{{-0.754225, -1.050186}, {2.935034, 3.008188}}</string>
 	</dict>
 	<key>globalGravityDirection</key>
-	<string>{0, -1}</string>
+	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
 	<key>nodeType</key>
@@ -5320,6 +5320,67 @@
 	<array>
 		<string>DEFAULT</string>
 	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>686C24AD-2B29-41F2-A747-10128F74A493</key>
+		<array>
+			<array>
+				<string>{-40.75, -37.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-41.25, -34.5}</string>
+			</array>
+			<array>
+				<string>{10.25, -37}</string>
+				<string>{10.25, -35}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{5.75, -40.5}</string>
+				<string>{8.75, -39}</string>
+			</array>
+			<array>
+				<string>{82.25, 4.5}</string>
+				<string>{82.25, 22}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{42.25, -19.5}</string>
+				<string>{52.25, -16.5}</string>
+				<string>{63.75, -11}</string>
+				<string>{75.25, -2.5}</string>
+			</array>
+			<array>
+				<string>{-83.75, 24}</string>
+				<string>{-84.75, 21}</string>
+				<string>{-84.75, -7.5}</string>
+				<string>{-83.75, -10}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-80.25, 26.5}</string>
+				<string>{-81.75, 26}</string>
+			</array>
+			<array>
+				<string>{81.75, 23.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{82.25, 22}</string>
+			</array>
+			<array>
+				<string>{10.25, -35}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{-36.75, -40.5}</string>
+			</array>
+			<array>
+				<string>{-54.75, -22.5}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-83.75, -10}</string>
+			</array>
+			<array>
+				<string>{-41.25, -34.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-46.75, -22.5}</string>
+			</array>
+		</array>
+	</dict>
 	<key>useGlobalGravity</key>
 	<true/>
 	<key>uuid</key>

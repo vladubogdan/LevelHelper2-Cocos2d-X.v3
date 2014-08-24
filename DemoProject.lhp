@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.056972704827785492, 0}, {0.056383904069662094, 1}}</string>
+			<string>{{0.039425481110811234, 0}, {0.040754690766334534, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -170,6 +170,11 @@
 					<true/>
 				</dict>
 				<key>userPropertiesDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>waterArea.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

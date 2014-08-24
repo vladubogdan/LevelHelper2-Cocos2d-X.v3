@@ -5,18 +5,18 @@
 	<key>aspect</key>
 	<integer>2</integer>
 	<key>backgroundColor</key>
-	<string>{{1, 1}, {1, 1}}</string>
+	<string>{{0.739066, 0.739020}, {0.739049, 1.000000}}</string>
 	<key>children</key>
 	<array>
 		<dict>
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -26,9 +26,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -42,7 +42,7 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>children</key>
 			<array>
 				<dict>
@@ -59,7 +59,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{69.645363057256475, 5.4016535712898417}</string>
+					<string>{69.645363, 5.401654}</string>
 					<key>spriteAUUID</key>
 					<string>973E765E-A9E0-47DF-A1C0-C481B27DEAA7</string>
 					<key>spriteBUUID</key>
@@ -85,7 +85,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{55.037111228532012, 4.7169487559531831}</string>
+					<string>{55.037111, 4.716949}</string>
 					<key>spriteAUUID</key>
 					<string>441B5829-21EA-4AE4-8D8E-573DE0FBCBC0</string>
 					<key>spriteBUUID</key>
@@ -111,7 +111,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{59.594783845825987, -0.58941265701997736}</string>
+					<string>{59.594784, -0.589413}</string>
 					<key>spriteAUUID</key>
 					<string>8CB88EC9-39D5-42A4-8FAB-CAE2FBB269F1</string>
 					<key>spriteBUUID</key>
@@ -137,7 +137,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{55.364579404530346, 4.7722839544755402}</string>
+					<string>{55.364579, 4.772284}</string>
 					<key>spriteAUUID</key>
 					<string>C85344A3-8BE8-4CD7-B545-C57C7350E073</string>
 					<key>spriteBUUID</key>
@@ -163,7 +163,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{60.593260484063947, 0.36596251909645616}</string>
+					<string>{60.593260, 0.365963}</string>
 					<key>spriteAUUID</key>
 					<string>AE5BF6BC-5D26-432D-9558-36F1A5C3A42E</string>
 					<key>spriteBUUID</key>
@@ -189,7 +189,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{61.422913693515454, 0.88133619719542367}</string>
+					<string>{61.422914, 0.881336}</string>
 					<key>spriteAUUID</key>
 					<string>5EA35FC7-F1AA-4BB2-A78C-36868BEE730B</string>
 					<key>spriteBUUID</key>
@@ -215,7 +215,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{61.438561265202964, -0.74542155383466024}</string>
+					<string>{61.438561, -0.745422}</string>
 					<key>spriteAUUID</key>
 					<string>451EE788-D3AD-432F-9C00-8AD0AD9C8D4B</string>
 					<key>spriteBUUID</key>
@@ -241,7 +241,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{57.207312885451188, 0.33087004608506732}</string>
+					<string>{57.207313, 0.330870}</string>
 					<key>spriteAUUID</key>
 					<string>1341A9DA-37B9-472B-B739-C44795FA6144</string>
 					<key>spriteBUUID</key>
@@ -267,7 +267,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{59.485457494860043, 2.2036845167976935}</string>
+					<string>{59.485457, 2.203685}</string>
 					<key>spriteAUUID</key>
 					<string>9EF01D37-3B99-4B38-BB49-6AB83A282EF7</string>
 					<key>spriteBUUID</key>
@@ -293,7 +293,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{59.105111545270233, 1.2573837597905708}</string>
+					<string>{59.105112, 1.257384}</string>
 					<key>spriteAUUID</key>
 					<string>2103D0AE-6B26-4457-97E5-1883D4C155A6</string>
 					<key>spriteBUUID</key>
@@ -319,7 +319,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{60.530976066875837, 0.096304779568868071}</string>
+					<string>{60.530976, 0.096305}</string>
 					<key>spriteAUUID</key>
 					<string>A3A9CDAF-AC52-45EF-9F36-733883866056</string>
 					<key>spriteBUUID</key>
@@ -345,7 +345,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{61.999965752555795, -0.17576363004229734}</string>
+					<string>{61.999966, -0.175764}</string>
 					<key>spriteAUUID</key>
 					<string>C535D418-5616-4AD7-AC6D-4AC3ED8AF8C7</string>
 					<key>spriteBUUID</key>
@@ -371,7 +371,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{60.071021516982796, 0.99442762937508178}</string>
+					<string>{60.071022, 0.994428}</string>
 					<key>spriteAUUID</key>
 					<string>287EBC83-03BA-47F8-993C-EC700A476B2A</string>
 					<key>spriteBUUID</key>
@@ -397,7 +397,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{59.80739431991276, 0.068576089693578979}</string>
+					<string>{59.807394, 0.068576}</string>
 					<key>spriteAUUID</key>
 					<string>26F16D65-B2D3-4620-9A87-CCA7CD707768</string>
 					<key>spriteBUUID</key>
@@ -423,7 +423,7 @@
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>relativePosA</key>
-					<string>{60.348167459042315, 1.6997254440389042}</string>
+					<string>{60.348167, 1.699725}</string>
 					<key>spriteAUUID</key>
 					<string>26B502BF-5CEE-4536-919E-6DED06031A93</string>
 					<key>spriteBUUID</key>
@@ -439,11 +439,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.43260746490301194, -0.34095943530327599}</string>
+					<string>{0.432607, -0.340959}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -491,9 +491,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{47, 46}</string>
+					<string>{47.000000, 46.000000}</string>
 					<key>spriteName</key>
 					<string>carTyre</string>
 					<key>spriteUUID</key>
@@ -511,11 +511,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.75452815531404149, -0.88472326230169196}</string>
+					<string>{0.754528, -0.884723}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -563,9 +563,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{47, 46}</string>
+					<string>{47.000000, 46.000000}</string>
 					<key>spriteName</key>
 					<string>carTyre</string>
 					<key>spriteUUID</key>
@@ -583,11 +583,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.18242342791746247, -1.1630609419541795}</string>
+					<string>{0.182423, -1.163061}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -635,9 +635,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{47, 46}</string>
+					<string>{47.000000, 46.000000}</string>
 					<key>spriteName</key>
 					<string>carTyre</string>
 					<key>spriteUUID</key>
@@ -655,11 +655,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.53552111477055608, -1.5195972462026881}</string>
+					<string>{0.535521, -1.519597}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -707,9 +707,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{47, 46}</string>
+					<string>{47.000000, 46.000000}</string>
 					<key>spriteName</key>
 					<string>carTyre</string>
 					<key>spriteUUID</key>
@@ -727,11 +727,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{-0.067782541135574984, -1.6582804889179408}</string>
+					<string>{-0.067783, -1.658280}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -779,9 +779,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{47, 46}</string>
+					<string>{47.000000, 46.000000}</string>
 					<key>spriteName</key>
 					<string>carTyre</string>
 					<key>spriteUUID</key>
@@ -799,11 +799,11 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{1.067922105498982, -1.6884698143944714}</string>
+					<string>{1.067922, -1.688470}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -851,9 +851,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{47, 46}</string>
+					<string>{47.000000, 46.000000}</string>
 					<key>spriteName</key>
 					<string>carTyre</string>
 					<key>spriteUUID</key>
@@ -871,18 +871,18 @@
 					<key>alpha</key>
 					<real>255</real>
 					<key>anchor</key>
-					<string>{0.5, 0.5}</string>
+					<string>{0.500000, 0.500000}</string>
 					<key>children</key>
 					<array>
 						<dict>
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.90207952596302332, -0.22911033171661602}</string>
+							<string>{0.902080, -0.229110}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -930,9 +930,9 @@
 							<key>rotation</key>
 							<real>300.31939697265625</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -950,11 +950,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.82368049621582029, -0.047325038909912111}</string>
+							<string>{0.823680, -0.047325}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1002,9 +1002,9 @@
 							<key>rotation</key>
 							<real>309.76589965820312</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1022,11 +1022,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.71834831237792973, 0.084734916687011719}</string>
+							<string>{0.718348, 0.084735}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1074,9 +1074,9 @@
 							<key>rotation</key>
 							<real>329.70645141601562</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1094,11 +1094,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.59335784912109379, 0.17284581661224366}</string>
+							<string>{0.593358, 0.172846}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1146,9 +1146,9 @@
 							<key>rotation</key>
 							<real>336.229736328125</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1166,11 +1166,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.46060523986816404, 0.23065111637115479}</string>
+							<string>{0.460605, 0.230651}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1218,9 +1218,9 @@
 							<key>rotation</key>
 							<real>345.51144409179688</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1238,11 +1238,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.32497552235921223, 0.27088859081268313}</string>
+							<string>{0.324976, 0.270889}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1290,9 +1290,9 @@
 							<key>rotation</key>
 							<real>349.02523803710938</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1310,11 +1310,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.1877031962076823, 0.29585497379302977}</string>
+							<string>{0.187703, 0.295855}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1362,9 +1362,9 @@
 							<key>rotation</key>
 							<real>354.90829467773438</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1382,11 +1382,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{0.049626731872558595, 0.30732018947601319}</string>
+							<string>{0.049627, 0.307320}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1434,9 +1434,9 @@
 							<key>rotation</key>
 							<real>357.55734252929688</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1454,11 +1454,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.088656361897786459, 0.3074143171310425}</string>
+							<string>{-0.088656, 0.307414}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1506,9 +1506,9 @@
 							<key>rotation</key>
 							<real>0.15701751410961151</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1526,11 +1526,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.22673870722452799, 0.29614078998565674}</string>
+							<string>{-0.226739, 0.296141}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1578,9 +1578,9 @@
 							<key>rotation</key>
 							<real>2.8060274124145508</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1598,11 +1598,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.36404504776000979, 0.27159721851348878}</string>
+							<string>{-0.364045, 0.271597}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1650,9 +1650,9 @@
 							<key>rotation</key>
 							<real>8.6890316009521484</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1670,11 +1670,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.49970889488855996, 0.23160908222198487}</string>
+							<string>{-0.499709, 0.231609}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1722,9 +1722,9 @@
 							<key>rotation</key>
 							<real>12.202853202819824</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1742,11 +1742,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.6325438499450684, 0.17421367168426513}</string>
+							<string>{-0.632544, 0.174214}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1794,9 +1794,9 @@
 							<key>rotation</key>
 							<real>16.365573883056641</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1814,11 +1814,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.75772768656412759, 0.086756420135498044}</string>
+							<string>{-0.757728, 0.086756}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1866,9 +1866,9 @@
 							<key>rotation</key>
 							<real>28.007822036743164</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1886,11 +1886,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.86366446812947595, -0.044188737869262695}</string>
+							<string>{-0.863664, -0.044189}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -1938,9 +1938,9 @@
 							<key>rotation</key>
 							<real>47.948345184326172</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -1958,11 +1958,11 @@
 							<key>alpha</key>
 							<real>255</real>
 							<key>anchor</key>
-							<string>{0.5, 0.5}</string>
+							<string>{0.500000, 0.500000}</string>
 							<key>colorOverlay</key>
-							<string>{{1, 1}, {1, 1}}</string>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 							<key>generalPosition</key>
-							<string>{-0.91287415822347007, -0.24076496064662933}</string>
+							<string>{-0.912874, -0.240765}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
 							<key>name</key>
@@ -2010,9 +2010,9 @@
 							<key>rotation</key>
 							<real>80.012306213378906</real>
 							<key>scale</key>
-							<string>{1, 1}</string>
+							<string>{1.000000, 1.000000}</string>
 							<key>size</key>
-							<string>{128, 32}</string>
+							<string>{128.000000, 32.000000}</string>
 							<key>spriteName</key>
 							<string>wood</string>
 							<key>spriteUUID</key>
@@ -2028,9 +2028,9 @@
 						</dict>
 					</array>
 					<key>colorOverlay</key>
-					<string>{{1, 1}, {1, 1}}</string>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.49763816197713218, 0.27810723781585694}</string>
+					<string>{0.497638, 0.278107}</string>
 					<key>name</key>
 					<string>bridgeParts</string>
 					<key>nodeType</key>
@@ -2040,9 +2040,9 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1, 1}</string>
+					<string>{1.000000, 1.000000}</string>
 					<key>size</key>
-					<string>{1821.24072265625, 462.384521484375}</string>
+					<string>{1821.240723, 462.384521}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
@@ -2054,9 +2054,9 @@
 				</dict>
 			</array>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -2066,9 +2066,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -2082,11 +2082,11 @@
 			<key>alpha</key>
 			<real>255</real>
 			<key>anchor</key>
-			<string>{0.5, 0.5}</string>
+			<string>{0.500000, 0.500000}</string>
 			<key>colorOverlay</key>
-			<string>{{1, 1}, {1, 1}}</string>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -2096,9 +2096,9 @@
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>size</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>tags</key>
 			<array>
 				<string>DEFAULT</string>
@@ -2110,14 +2110,14 @@
 		</dict>
 	</array>
 	<key>designResolution</key>
-	<string>{960, 640}</string>
+	<string>{960.000000, 640.000000}</string>
 	<key>devices</key>
 	<array>
 		<dict>
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{960, 640}</string>
+			<string>{960.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>hd</string>
 		</dict>
@@ -2125,7 +2125,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1136, 640}</string>
+			<string>{1136.000000, 640.000000}</string>
 			<key>suffix</key>
 			<string>568</string>
 		</dict>
@@ -2133,7 +2133,7 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1024, 768}</string>
+			<string>{1024.000000, 768.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
@@ -2141,7 +2141,7 @@
 			<key>ratio</key>
 			<real>2</real>
 			<key>size</key>
-			<string>{2048, 1536}</string>
+			<string>{2048.000000, 1536.000000}</string>
 			<key>suffix</key>
 			<string>ipadhd</string>
 		</dict>
@@ -2149,13 +2149,13 @@
 			<key>ratio</key>
 			<real>1</real>
 			<key>size</key>
-			<string>{1280, 720}</string>
+			<string>{1280.000000, 720.000000}</string>
 			<key>suffix</key>
 			<string>ipad</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
-	<string>{0, -1}</string>
+	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
 	<key>nodeType</key>

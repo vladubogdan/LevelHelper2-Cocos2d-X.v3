@@ -94,7 +94,7 @@ LHRopeJointNode::~LHRopeJointNode()
     cutJointB = nullptr;
 }
 
-LHRopeJointNode* LHRopeJointNode::ropeJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHRopeJointNode* LHRopeJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHRopeJointNode *ret = new LHRopeJointNode();
     if (ret && ret->initWithDictionary(dict, prnt))

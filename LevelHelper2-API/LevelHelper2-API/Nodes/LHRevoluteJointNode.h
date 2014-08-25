@@ -30,7 +30,7 @@ class LHRevoluteJointNode : public Node, public LHNodeProtocol, public LHJointsP
 {
 public:
     
-    static LHRevoluteJointNode* revoluteJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHRevoluteJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHRevoluteJointNode();
     virtual ~LHRevoluteJointNode();

@@ -30,7 +30,7 @@ class LHGearJointNode : public Node, public LHNodeProtocol, public LHJointsProto
 {
 public:
     
-    static LHGearJointNode* gearJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHGearJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHGearJointNode();
     virtual ~LHGearJointNode();

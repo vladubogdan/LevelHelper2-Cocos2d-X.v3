@@ -99,14 +99,15 @@ public:
     
     
     
-    static LHSprite* spriteNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHSprite* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHSprite();
     virtual ~LHSprite();
     
     bool initWithFilename(const std::string& filename, const std::string& folder, Node* prnt);
     bool initWithSpriteName(const std::string& spriteName, const std::string& plistFile, const std::string& plistFolder, Node* prnt);
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
 
     
     static  bool isLHSprite(Node* obj){return (0 != dynamic_cast<LHSprite*>(obj));}

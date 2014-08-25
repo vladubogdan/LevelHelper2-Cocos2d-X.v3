@@ -26,7 +26,7 @@ LHShape::~LHShape()
     
 }
 
-LHShape* LHShape::shapeNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHShape* LHShape::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHShape *ret = new LHShape();
     if (ret && ret->initWithDictionary(dict, prnt))

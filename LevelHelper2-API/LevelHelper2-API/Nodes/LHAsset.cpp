@@ -64,7 +64,7 @@ bool LHAsset::initWithName(const std::string& nm, const std::string& assetFileNa
     return false;
 }
 
-LHAsset* LHAsset::assetNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHAsset* LHAsset::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHAsset *ret = new LHAsset();
     if (ret && ret->initWithDictionary(dict, prnt))

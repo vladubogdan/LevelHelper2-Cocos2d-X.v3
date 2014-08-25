@@ -365,6 +365,29 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
         scene = (LHScene*)prnt->getScene();
     }
     
+    std::string subclassNodeType = "";
+    if(childInfo->objectForKey("subclassNodeType")){
+        subclassNodeType = childInfo->stringForKey("subclassNodeType");
+    }
+    
+    if(subclassNodeType.length()>0)
+    {
+        LevelHelperNodeTypeSubclass subclassType = scene->createNodeObjectForSubclassWithName(subclassNodeType, nodeType);
+        if(subclassType){
+            Node* node = subclassType(childInfo, prnt);
+            if(node){
+                LHJointsProtocol* jt = dynamic_cast<LHJointsProtocol*>(node);
+                if(jt){
+                    scene->addLateLoadingNode(node);
+                }
+            }
+            return node;
+        }
+        else{
+            printf("\n\nWARNING: Expected a class of type %s subclassed from %s but nothing was returned. Check your \"createNodeObjectForSubclassWithName\" method and make sure you return a valid creation function.\n\n", subclassNodeType.c_str(), nodeType.c_str());
+        }
+    }
+    
     
     if(nodeType == "LHGameWorldNode")
     {
@@ -380,7 +403,7 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     }
     else if(nodeType == "LHSprite")
     {
-        return LHSprite::spriteNodeWithDictionary(childInfo, prnt);
+        return LHSprite::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHNode")
     {
@@ -388,50 +411,50 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     }
     else if(nodeType == "LHCamera")
     {
-        LHCamera* cm = LHCamera::cameraWithDictionary(childInfo, prnt);
+        LHCamera* cm = LHCamera::nodeWithDictionary(childInfo, prnt);
         return cm;
     }
     else if(nodeType == "LHBezier")
     {
-        return LHBezier::bezierNodeWithDictionary(childInfo, prnt);
+        return LHBezier::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHTexturedShape")
     {
-        return LHShape::shapeNodeWithDictionary(childInfo, prnt);
+        return LHShape::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHAsset")
     {
-        return LHAsset::assetNodeWithDictionary(childInfo, prnt);
+        return LHAsset::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHParallax")
     {
-        return LHParallax::parallaxWithDictionary(childInfo, prnt);
+        return LHParallax::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHParallaxLayer")
     {
-        return LHParallaxLayer::parallaxLayerWithDictionary(childInfo, prnt);
+        return LHParallaxLayer::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHRopeJoint")
     {
         if(scene)
         {
-            LHRopeJointNode* jt = LHRopeJointNode::ropeJointNodeWithDictionary(childInfo, prnt);
+            LHRopeJointNode* jt = LHRopeJointNode::nodeWithDictionary(childInfo, prnt);
             scene->addLateLoadingNode(jt);
         }
     }
     else if(nodeType == "LHWaves")
     {
-        return LHWater::waterWithDictionary(childInfo, prnt);
+        return LHWater::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHAreaGravity")
     {
-        return LHGravityArea::gravityAreaWithDictionary(childInfo, prnt);
+        return LHGravityArea::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHRevoluteJoint")
     {
         if(scene)
         {
-            LHRevoluteJointNode* jt = LHRevoluteJointNode::revoluteJointNodeWithDictionary(childInfo, prnt);
+            LHRevoluteJointNode* jt = LHRevoluteJointNode::nodeWithDictionary(childInfo, prnt);
             scene->addLateLoadingNode(jt);
         }
     }
@@ -439,7 +462,7 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     {
         if(scene)
         {
-            LHDistanceJointNode* jt = LHDistanceJointNode::distanceJointNodeWithDictionary(childInfo, prnt);
+            LHDistanceJointNode* jt = LHDistanceJointNode::nodeWithDictionary(childInfo, prnt);
             scene->addLateLoadingNode(jt);
         }
     }
@@ -447,7 +470,7 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     {
         if(scene)
         {
-            LHWeldJointNode* jt = LHWeldJointNode::weldJointNodeWithDictionary(childInfo, prnt);
+            LHWeldJointNode* jt = LHWeldJointNode::nodeWithDictionary(childInfo, prnt);
             scene->addLateLoadingNode(jt);
         }
     }
@@ -455,7 +478,7 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     {
         if(scene)
         {
-            LHPrismaticJointNode* jt = LHPrismaticJointNode::prismaticJointNodeWithDictionary(childInfo, prnt);
+            LHPrismaticJointNode* jt = LHPrismaticJointNode::nodeWithDictionary(childInfo, prnt);
             scene->addLateLoadingNode(jt);
         }
     }
@@ -463,7 +486,7 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     {
         if(scene)
         {
-            LHWheelJointNode* jt = LHWheelJointNode::wheelJointNodeWithDictionary(childInfo, prnt);
+            LHWheelJointNode* jt = LHWheelJointNode::nodeWithDictionary(childInfo, prnt);
             scene->addLateLoadingNode(jt);
         }
     }
@@ -471,7 +494,7 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     {
         if(scene)
         {
-            LHPulleyJointNode* jt = LHPulleyJointNode::pulleyJointNodeWithDictionary(childInfo, prnt);
+            LHPulleyJointNode* jt = LHPulleyJointNode::nodeWithDictionary(childInfo, prnt);
             scene->addLateLoadingNode(jt);
         }
     }
@@ -479,7 +502,7 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     {
         if(scene)
         {
-            LHGearJointNode* jt = LHGearJointNode::gearJointNodeWithDictionary(childInfo, prnt);
+            LHGearJointNode* jt = LHGearJointNode::nodeWithDictionary(childInfo, prnt);
             scene->addLateLoadingNode(jt);
         }
     }

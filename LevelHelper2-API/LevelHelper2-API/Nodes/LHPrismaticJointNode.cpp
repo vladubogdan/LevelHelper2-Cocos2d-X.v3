@@ -31,7 +31,7 @@ LHPrismaticJointNode::~LHPrismaticJointNode()
 
 }
 
-LHPrismaticJointNode* LHPrismaticJointNode::prismaticJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHPrismaticJointNode* LHPrismaticJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHPrismaticJointNode *ret = new LHPrismaticJointNode();
     if (ret && ret->initWithDictionary(dict, prnt))

@@ -51,7 +51,7 @@ LHBezier::~LHBezier()
     
 }
 
-LHBezier* LHBezier::bezierNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHBezier* LHBezier::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHBezier *ret = new LHBezier();
     if (ret && ret->initWithDictionary(dict, prnt))

@@ -27,7 +27,7 @@ class LHGravityArea : public Node, public LHNodeProtocol
 {
 public:
     
-    static LHGravityArea* gravityAreaWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHGravityArea* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHGravityArea();
     virtual ~LHGravityArea();

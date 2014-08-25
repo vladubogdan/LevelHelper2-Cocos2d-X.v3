@@ -28,7 +28,7 @@ class LHParallaxLayer : public Node, public LHNodeProtocol
 {
 public:
     
-    static LHParallaxLayer* parallaxLayerWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHParallaxLayer* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHParallaxLayer();
     virtual ~LHParallaxLayer();

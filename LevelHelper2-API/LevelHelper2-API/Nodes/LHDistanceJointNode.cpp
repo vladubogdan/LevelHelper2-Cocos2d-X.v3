@@ -31,7 +31,7 @@ LHDistanceJointNode::~LHDistanceJointNode()
 
 }
 
-LHDistanceJointNode* LHDistanceJointNode::distanceJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHDistanceJointNode* LHDistanceJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHDistanceJointNode *ret = new LHDistanceJointNode();
     if (ret && ret->initWithDictionary(dict, prnt))

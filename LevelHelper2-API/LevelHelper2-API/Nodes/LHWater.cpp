@@ -128,7 +128,7 @@ LHWater::~LHWater()
     clearWaves();
 }
 
-LHWater* LHWater::waterWithDictionary(LHDictionary* dict, Node* prnt)
+LHWater* LHWater::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHWater *ret = new LHWater();
     if (ret && ret->initWithDictionary(dict, prnt))

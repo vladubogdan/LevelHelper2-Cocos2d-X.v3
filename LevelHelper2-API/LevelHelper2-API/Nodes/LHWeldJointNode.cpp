@@ -31,7 +31,7 @@ LHWeldJointNode::~LHWeldJointNode()
 
 }
 
-LHWeldJointNode* LHWeldJointNode::weldJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHWeldJointNode* LHWeldJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHWeldJointNode *ret = new LHWeldJointNode();
     if (ret && ret->initWithDictionary(dict, prnt))

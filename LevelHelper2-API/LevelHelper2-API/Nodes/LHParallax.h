@@ -28,7 +28,7 @@ class LHParallax : public Node, public LHNodeProtocol, public LHNodeAnimationPro
 {
 public:
     
-    static LHParallax* parallaxWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHParallax* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHParallax();
     virtual ~LHParallax();

@@ -29,7 +29,7 @@ class LHBezier : public DrawNode, public LHNodeProtocol, public LHNodeAnimationP
 {
 public:
     
-    static LHBezier* bezierNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHBezier* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHBezier();
     virtual ~LHBezier();

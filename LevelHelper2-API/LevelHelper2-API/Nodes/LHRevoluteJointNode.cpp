@@ -31,7 +31,7 @@ LHRevoluteJointNode::~LHRevoluteJointNode()
 
 }
 
-LHRevoluteJointNode* LHRevoluteJointNode::revoluteJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHRevoluteJointNode* LHRevoluteJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHRevoluteJointNode *ret = new LHRevoluteJointNode();
     if (ret && ret->initWithDictionary(dict, prnt))

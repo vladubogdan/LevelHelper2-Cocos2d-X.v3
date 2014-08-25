@@ -30,7 +30,7 @@ class LHWeldJointNode : public Node, public LHNodeProtocol, public LHJointsProto
 {
 public:
     
-    static LHWeldJointNode* weldJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHWeldJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHWeldJointNode();
     virtual ~LHWeldJointNode();

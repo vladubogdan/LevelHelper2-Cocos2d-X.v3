@@ -19,6 +19,7 @@
 #include "LHSceneWeldJointsDemo.h"
 #include "LHSceneRemoveOnCollisionDemo.h"
 #include "LHSceneWaterAreaDemo.h"
+#include "LHSceneNodesSubclassingDemo.h"
 
 LHSceneDemo* LHSceneDemo::create()
 {
@@ -45,6 +46,10 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     
     sceneNames.push_back("LHSceneIntroductionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
+
+    sceneNames.push_back("LHSceneNodesSubclassingDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneNodesSubclassingDemo::create);
+
     
     sceneNames.push_back("LHSceneCameraDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneCameraDemo::create);

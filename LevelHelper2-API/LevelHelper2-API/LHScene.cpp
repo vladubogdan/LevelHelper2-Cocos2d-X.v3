@@ -122,8 +122,6 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     
     Size sceneSize = curDev->getSize();
     
-    CCLOG("CURRENT DEVICE %f %f", sceneSize.width, sceneSize.height);
-
     float ratio = curDev->getRatio();
     sceneSize.width = sceneSize.width/ratio;
     sceneSize.height = sceneSize.height/ratio;

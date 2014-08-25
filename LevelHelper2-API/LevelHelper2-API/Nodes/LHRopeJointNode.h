@@ -37,7 +37,7 @@ class LHRopeJointNode : public Node, public LHNodeProtocol, public LHJointsProto
 {
 public:
     
-    static LHRopeJointNode* ropeJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHRopeJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHRopeJointNode();
     virtual ~LHRopeJointNode();

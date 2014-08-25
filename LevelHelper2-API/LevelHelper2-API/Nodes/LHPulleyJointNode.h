@@ -30,7 +30,7 @@ class LHPulleyJointNode : public Node, public LHNodeProtocol, public LHJointsPro
 {
 public:
     
-    static LHPulleyJointNode* pulleyJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHPulleyJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHPulleyJointNode();
     virtual ~LHPulleyJointNode();

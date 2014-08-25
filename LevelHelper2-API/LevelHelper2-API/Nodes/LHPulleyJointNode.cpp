@@ -31,7 +31,7 @@ LHPulleyJointNode::~LHPulleyJointNode()
 
 }
 
-LHPulleyJointNode* LHPulleyJointNode::pulleyJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHPulleyJointNode* LHPulleyJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHPulleyJointNode *ret = new LHPulleyJointNode();
     if (ret && ret->initWithDictionary(dict, prnt))

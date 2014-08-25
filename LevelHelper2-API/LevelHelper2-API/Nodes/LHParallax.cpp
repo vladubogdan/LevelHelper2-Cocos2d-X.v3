@@ -26,7 +26,7 @@ LHParallax::~LHParallax()
     _followedNode = nullptr;
 }
 
-LHParallax* LHParallax::parallaxWithDictionary(LHDictionary* dict, Node* prnt)
+LHParallax* LHParallax::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHParallax *ret = new LHParallax();
     if (ret && ret->initWithDictionary(dict, prnt))

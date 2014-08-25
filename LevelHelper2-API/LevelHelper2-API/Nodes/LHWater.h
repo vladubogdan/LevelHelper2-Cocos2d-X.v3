@@ -30,7 +30,7 @@ class LHWater : public Node, public LHNodeProtocol, public LHNodeAnimationProtoc
 {
 public:
     
-    static LHWater* waterWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHWater* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHWater();
     virtual ~LHWater();

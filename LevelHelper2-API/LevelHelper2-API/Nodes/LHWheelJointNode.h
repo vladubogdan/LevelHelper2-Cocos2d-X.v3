@@ -31,7 +31,7 @@ class LHWheelJointNode : public Node, public LHNodeProtocol, public LHJointsProt
 {
 public:
     
-    static LHWheelJointNode* wheelJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHWheelJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHWheelJointNode();
     virtual ~LHWheelJointNode();

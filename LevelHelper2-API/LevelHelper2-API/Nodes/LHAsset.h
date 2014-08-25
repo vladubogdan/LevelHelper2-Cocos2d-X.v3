@@ -43,7 +43,7 @@ public:
      */
     static LHAsset* createWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
     
-    static LHAsset* assetNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHAsset* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHAsset();
     virtual ~LHAsset();

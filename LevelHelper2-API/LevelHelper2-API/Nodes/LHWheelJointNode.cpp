@@ -31,7 +31,7 @@ LHWheelJointNode::~LHWheelJointNode()
 
 }
 
-LHWheelJointNode* LHWheelJointNode::wheelJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHWheelJointNode* LHWheelJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHWheelJointNode *ret = new LHWheelJointNode();
     if (ret && ret->initWithDictionary(dict, prnt))

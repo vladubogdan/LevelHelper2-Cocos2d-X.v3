@@ -30,7 +30,7 @@ class LHDistanceJointNode : public Node, public LHNodeProtocol, public LHJointsP
 {
 public:
     
-    static LHDistanceJointNode* distanceJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHDistanceJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHDistanceJointNode();
     virtual ~LHDistanceJointNode();

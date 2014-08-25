@@ -33,7 +33,7 @@ LHGearJointNode::~LHGearJointNode()
     _jointB = nullptr;
 }
 
-LHGearJointNode* LHGearJointNode::gearJointNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHGearJointNode* LHGearJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHGearJointNode *ret = new LHGearJointNode();
     if (ret && ret->initWithDictionary(dict, prnt))

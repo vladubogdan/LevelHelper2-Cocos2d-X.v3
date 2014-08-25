@@ -190,6 +190,15 @@
 		6EC554CA19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		6EC554CB19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		6EC554CC19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
+		6EC554F119AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554EF19AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp */; };
+		6EC554F219AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554EF19AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp */; };
+		6EC554F319AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554EF19AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp */; };
+		6EC554F819AB35E000CF0760 /* BlueRobotSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554F619AB35E000CF0760 /* BlueRobotSprite.cpp */; };
+		6EC554F919AB35E000CF0760 /* BlueRobotSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554F619AB35E000CF0760 /* BlueRobotSprite.cpp */; };
+		6EC554FA19AB35E000CF0760 /* BlueRobotSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554F619AB35E000CF0760 /* BlueRobotSprite.cpp */; };
+		6EC554FD19AB3BD400CF0760 /* MyCustomNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554FB19AB3BD400CF0760 /* MyCustomNode.cpp */; };
+		6EC554FE19AB3BD400CF0760 /* MyCustomNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554FB19AB3BD400CF0760 /* MyCustomNode.cpp */; };
+		6EC554FF19AB3BD400CF0760 /* MyCustomNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC554FB19AB3BD400CF0760 /* MyCustomNode.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -515,6 +524,12 @@
 		6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneWeldJointsDemo.cpp; sourceTree = "<group>"; };
 		6E908F9619A8446A0090246B /* LHSceneWeldJointsDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneWeldJointsDemo.h; sourceTree = "<group>"; };
 		6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../Resources/DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
+		6EC554EF19AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneNodesSubclassingDemo.cpp; sourceTree = "<group>"; };
+		6EC554F019AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneNodesSubclassingDemo.h; sourceTree = "<group>"; };
+		6EC554F619AB35E000CF0760 /* BlueRobotSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlueRobotSprite.cpp; sourceTree = "<group>"; };
+		6EC554F719AB35E000CF0760 /* BlueRobotSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueRobotSprite.h; sourceTree = "<group>"; };
+		6EC554FB19AB3BD400CF0760 /* MyCustomNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyCustomNode.cpp; sourceTree = "<group>"; };
+		6EC554FC19AB3BD400CF0760 /* MyCustomNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomNode.h; sourceTree = "<group>"; };
 		6EF1386719A89A5E00CC03F3 /* Application.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Application.mk; path = ../proj.android/jni/Application.mk; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -772,8 +787,16 @@
 		6E908F6E19A8446A0090246B /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				6E908F7D19A8446A0090246B /* LHSceneDemo.cpp */,
+				6E908F7E19A8446A0090246B /* LHSceneDemo.h */,
 				6E908F6F19A8446A0090246B /* LHSceneAssetDemo.cpp */,
 				6E908F7019A8446A0090246B /* LHSceneAssetDemo.h */,
+				6EC554EF19AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp */,
+				6EC554F019AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.h */,
+				6EC554F619AB35E000CF0760 /* BlueRobotSprite.cpp */,
+				6EC554F719AB35E000CF0760 /* BlueRobotSprite.h */,
+				6EC554FB19AB3BD400CF0760 /* MyCustomNode.cpp */,
+				6EC554FC19AB3BD400CF0760 /* MyCustomNode.h */,
 				6E908F7119A8446A0090246B /* LHSceneAssetWithJointsDemo.cpp */,
 				6E908F7219A8446A0090246B /* LHSceneAssetWithJointsDemo.h */,
 				6E908F7319A8446A0090246B /* LHSceneBeziersDemo.cpp */,
@@ -786,8 +809,6 @@
 				6E908F7A19A8446A0090246B /* LHSceneCharacterAnimationDemo.h */,
 				6E908F7B19A8446A0090246B /* LHSceneCollisionHandlingDemo.cpp */,
 				6E908F7C19A8446A0090246B /* LHSceneCollisionHandlingDemo.h */,
-				6E908F7D19A8446A0090246B /* LHSceneDemo.cpp */,
-				6E908F7E19A8446A0090246B /* LHSceneDemo.h */,
 				6E908F7F19A8446A0090246B /* LHSceneGearJointDemo.cpp */,
 				6E908F8019A8446A0090246B /* LHSceneGearJointDemo.h */,
 				6E908F8119A8446A0090246B /* LHSceneGravityAreasDemo.cpp */,
@@ -1141,9 +1162,11 @@
 				6E908FC019A8446A0090246B /* LHScenePulleyJointDemo.cpp in Sources */,
 				6E908FD219A8446A0090246B /* LHSceneWeldJointsDemo.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				6EC554F319AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp in Sources */,
 				6E908FCF19A8446A0090246B /* LHSceneWaterAreaDemo.cpp in Sources */,
 				6E908F9C19A8446A0090246B /* LHSceneAssetWithJointsDemo.cpp in Sources */,
 				6E908FB719A8446A0090246B /* LHSceneIntroductionDemo.cpp in Sources */,
+				6EC554FF19AB3BD400CF0760 /* MyCustomNode.cpp in Sources */,
 				6E908FBD19A8446A0090246B /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
 				6E908FBA19A8446A0090246B /* LHSceneParallaxDemo.cpp in Sources */,
 				6E0EEEFE198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */,
@@ -1161,6 +1184,7 @@
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				6E908F9919A8446A0090246B /* LHSceneAssetDemo.cpp in Sources */,
 				6E908FAE19A8446A0090246B /* LHSceneDemo.cpp in Sources */,
+				6EC554FA19AB35E000CF0760 /* BlueRobotSprite.cpp in Sources */,
 				6E908FA219A8446A0090246B /* LHSceneCameraDemo.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
@@ -1172,12 +1196,15 @@
 			files = (
 				6E908FA419A8446A0090246B /* LHSceneCameraFollowDemo.cpp in Sources */,
 				6E908FB319A8446A0090246B /* LHSceneGravityAreasDemo.cpp in Sources */,
+				6EC554F219AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp in Sources */,
+				6EC554FE19AB3BD400CF0760 /* MyCustomNode.cpp in Sources */,
 				6E908FAA19A8446A0090246B /* LHSceneCollisionHandlingDemo.cpp in Sources */,
 				6E0D5A54195061D60036E940 /* LHSceneTags.cpp in Sources */,
 				6E908FB919A8446A0090246B /* LHSceneParallaxDemo.cpp in Sources */,
 				6E908F9B19A8446A0090246B /* LHSceneAssetWithJointsDemo.cpp in Sources */,
 				6E908FC519A8446A0090246B /* LHSceneRopeJointDemo.cpp in Sources */,
 				6E908FCB19A8446A0090246B /* LHSceneUserPropertiesDemo.cpp in Sources */,
+				6EC554F919AB35E000CF0760 /* BlueRobotSprite.cpp in Sources */,
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
 				6E908FB019A8446A0090246B /* LHSceneGearJointDemo.cpp in Sources */,
 				6E0EEEFD198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */,
@@ -1205,9 +1232,11 @@
 				6E908FBE19A8446A0090246B /* LHScenePulleyJointDemo.cpp in Sources */,
 				6E908FD019A8446A0090246B /* LHSceneWeldJointsDemo.cpp in Sources */,
 				6E79169E1964186600E68E06 /* AppController.mm in Sources */,
+				6EC554F119AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp in Sources */,
 				6E908FCD19A8446A0090246B /* LHSceneWaterAreaDemo.cpp in Sources */,
 				6E908F9A19A8446A0090246B /* LHSceneAssetWithJointsDemo.cpp in Sources */,
 				6E908FB519A8446A0090246B /* LHSceneIntroductionDemo.cpp in Sources */,
+				6EC554FD19AB3BD400CF0760 /* MyCustomNode.cpp in Sources */,
 				6E908FBB19A8446A0090246B /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
 				6E908FB819A8446A0090246B /* LHSceneParallaxDemo.cpp in Sources */,
 				6E0EEEFC198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */,
@@ -1225,6 +1254,7 @@
 				6E7916B81964186600E68E06 /* AppDelegate.cpp in Sources */,
 				6E908F9719A8446A0090246B /* LHSceneAssetDemo.cpp in Sources */,
 				6E908FAC19A8446A0090246B /* LHSceneDemo.cpp in Sources */,
+				6EC554F819AB35E000CF0760 /* BlueRobotSprite.cpp in Sources */,
 				6E908FA019A8446A0090246B /* LHSceneCameraDemo.cpp in Sources */,
 				6E7916B91964186600E68E06 /* main.m in Sources */,
 			);

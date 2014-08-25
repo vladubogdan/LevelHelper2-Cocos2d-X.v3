@@ -22,7 +22,7 @@ LHParallaxLayer::~LHParallaxLayer()
     
 }
 
-LHParallaxLayer* LHParallaxLayer::parallaxLayerWithDictionary(LHDictionary* dict, Node* prnt)
+LHParallaxLayer* LHParallaxLayer::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHParallaxLayer *ret = new LHParallaxLayer();
     if (ret && ret->initWithDictionary(dict, prnt))

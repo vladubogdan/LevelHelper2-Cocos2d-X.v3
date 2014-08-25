@@ -37,6 +37,8 @@ class LHRopeJointNode;
 class LHBox2dCollisionHandling;
 #endif
 
+typedef Node* (*LevelHelperNodeTypeSubclass)(LHDictionary* dict, Node* prnt);
+
 class LHScene : public cocos2d::Scene, public LHNodeProtocol
 {
     
@@ -88,6 +90,26 @@ public:
     virtual void onExit();
     
     
+#pragma mark- NODES SUBCLASSING
+    
+    /**
+     Overwrite this method to return your own class type for specific nodes.
+     Setup the class type in "Subclass" property of LevelHelper 2.
+     Check LHSceneNodesSubclassingDemo for how to use this method.
+
+     Your need to implement this function
+        static YourClassType* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+     and overwrite this method
+        virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+     
+     @param subclassTypeName The name of the your custom class.
+     @param lhTypeName The name of the original LevelHelper node class type. Your class must be a subclass of this type.
+     */
+    virtual LevelHelperNodeTypeSubclass createNodeObjectForSubclassWithName(const std::string subclassTypeName,
+                                                                            const std::string lhTypeName)
+    {return nullptr;}
+
+    
 #if LH_USE_BOX2D
     b2World* getBox2dWorld();
     float getPtm();
@@ -121,18 +143,18 @@ public:
     /**
      Overwrite this method to receive notifications when an animation has finished playing a repetition.
      */
-    virtual void didFinishedPlayingAnimation(LHAnimation* anim){};
+    virtual void didFinishedPlayingAnimation(LHAnimation* anim){}
     /**
      Overwrite this method to receive notifications when an animation has finished playing a repetition.
      */
-    virtual void didFinishedRepetitionOnAnimation(LHAnimation* anim){};
+    virtual void didFinishedRepetitionOnAnimation(LHAnimation* anim){}
 
 #pragma mark- ROPE CUTTING
     
     /**
      Overwrite this method to receive notifications when a rope joint is cut.
      */
-    virtual void didCutRopeJoint(LHRopeJointNode* joint){};
+    virtual void didCutRopeJoint(LHRopeJointNode* joint){}
 
     
 #pragma mark - COLLISION HANDLING
@@ -163,7 +185,7 @@ public:
      @param impulse The impulse of the collision.
      
      */
-    virtual void didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse){};
+    virtual void didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse){}
     /**
      Overwrite this methods to receive collision informations when using Box2d.
      Called when the collision ends. Called when two nodes no longer collide at a specific point. May be called multiple times for same two nodes, because the point at which the nodes are touching has changed.
@@ -173,7 +195,7 @@ public:
      @param nodeA First node that participates in the collision.
      @param nodeB Second node that participates in the collision.
      */
-    virtual void didEndContactBetweenNodes(Node* nodeA, Node* nodeB){};
+    virtual void didEndContactBetweenNodes(Node* nodeA, Node* nodeB){}
 #else
     
     bool onContactBegin(PhysicsContact& contact);

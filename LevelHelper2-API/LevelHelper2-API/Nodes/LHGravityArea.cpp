@@ -22,7 +22,7 @@ LHGravityArea::~LHGravityArea()
     
 }
 
-LHGravityArea* LHGravityArea::gravityAreaWithDictionary(LHDictionary* dict, Node* prnt)
+LHGravityArea* LHGravityArea::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHGravityArea *ret = new LHGravityArea();
     if (ret && ret->initWithDictionary(dict, prnt))

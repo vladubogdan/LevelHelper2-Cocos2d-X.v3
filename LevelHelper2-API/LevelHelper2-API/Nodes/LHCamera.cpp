@@ -23,7 +23,7 @@ LHCamera::~LHCamera()
     _followedNode = nullptr;
 }
 
-LHCamera* LHCamera::cameraWithDictionary(LHDictionary* dict, Node* prnt)
+LHCamera* LHCamera::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHCamera *ret = new LHCamera();
     if (ret && ret->initWithDictionary(dict, prnt))

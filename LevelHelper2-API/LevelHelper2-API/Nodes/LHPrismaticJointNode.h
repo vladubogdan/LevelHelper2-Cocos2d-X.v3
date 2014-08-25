@@ -30,7 +30,7 @@ class LHPrismaticJointNode : public Node, public LHNodeProtocol, public LHJoints
 {
 public:
     
-    static LHPrismaticJointNode* prismaticJointNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHPrismaticJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHPrismaticJointNode();
     virtual ~LHPrismaticJointNode();

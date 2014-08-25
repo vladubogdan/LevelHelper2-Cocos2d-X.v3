@@ -28,7 +28,7 @@ class LHCamera : public Node, public LHNodeProtocol, public LHNodeAnimationProto
 {
 public:
     
-    static LHCamera* cameraWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHCamera* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHCamera();
     virtual ~LHCamera();

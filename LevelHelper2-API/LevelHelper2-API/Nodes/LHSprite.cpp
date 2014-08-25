@@ -95,7 +95,7 @@ bool LHSprite::initWithSpriteName(const std::string& spriteName,
 
 
 
-LHSprite* LHSprite::spriteNodeWithDictionary(LHDictionary* dict, Node* prnt)
+LHSprite* LHSprite::nodeWithDictionary(LHDictionary* dict, Node* prnt)
 {
     LHSprite *ret = new LHSprite();
     if (ret && ret->initWithDictionary(dict, prnt))

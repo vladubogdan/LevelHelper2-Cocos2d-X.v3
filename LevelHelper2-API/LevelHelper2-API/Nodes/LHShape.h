@@ -30,7 +30,7 @@ class LHShape : public Node, public LHNodeProtocol, public LHNodeAnimationProtoc
 {
 public:
     
-    static LHShape* shapeNodeWithDictionary(LHDictionary* dict, Node* prnt);
+    static LHShape* nodeWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHShape();
     virtual ~LHShape();

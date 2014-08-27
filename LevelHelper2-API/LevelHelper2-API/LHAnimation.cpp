@@ -178,6 +178,7 @@ bool LHAnimation::animating(){
 }
 void LHAnimation::restart(){
     resetOneShotFrames();
+    _currentTime = 0;
     _currentRepetition = 0;
 }
 void LHAnimation::updateTimeWithDelta(float delta){
@@ -215,7 +216,7 @@ void LHAnimation::setCurrentTime(float val){
             }
         }
         else{
-            _node->setActiveAnimation(nullptr);
+            _node->setActiveAnimation(NULL);
             if(this->scene()){
                 this->scene()->didFinishedPlayingAnimation(this);
             }

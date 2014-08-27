@@ -25,6 +25,9 @@ LHNodeAnimationProtocol::~LHNodeAnimationProtocol()
 void LHNodeAnimationProtocol::setActiveAnimation(LHAnimation* animation)
 {
     _activeAnimation = animation;
+    if(_activeAnimation){
+        _activeAnimation->setAnimating(true);
+    }
 }
 
 LHAnimation* LHNodeAnimationProtocol::getActiveAnimation()

@@ -29,12 +29,12 @@ class LHParallaxLayer : public Node, public LHNodeProtocol
 public:
     
     static LHParallaxLayer* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     LHParallaxLayer();
     virtual ~LHParallaxLayer();
-    bool initWithName(const std::string& nm);
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
-    
+        
     static  bool isLHParallaxLayer(Node* obj){return (0 != dynamic_cast<LHParallaxLayer*>(obj));}
     virtual bool isParallaxLayer(){return true;}
     

@@ -29,10 +29,11 @@ class LHCamera : public Node, public LHNodeProtocol, public LHNodeAnimationProto
 public:
     
     static LHCamera* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     LHCamera();
     virtual ~LHCamera();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     static  bool isLHCamera(Node* obj){return (0 != dynamic_cast<LHCamera*>(obj));}
     virtual bool isCamera(){return true;}

@@ -31,10 +31,12 @@ class LHPrismaticJointNode : public Node, public LHNodeProtocol, public LHJoints
 public:
     
     static LHPrismaticJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     LHPrismaticJointNode();
     virtual ~LHPrismaticJointNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHPrismaticJointNode(Node* obj){return (0 != dynamic_cast<LHPrismaticJointNode*>(obj));}
     virtual bool isPrismaticJointNode(){return true;}

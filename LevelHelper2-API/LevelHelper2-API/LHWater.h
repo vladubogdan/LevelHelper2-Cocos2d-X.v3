@@ -31,10 +31,10 @@ class LHWater : public Node, public LHNodeProtocol, public LHNodeAnimationProtoc
 public:
     
     static LHWater* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHWater();
     virtual ~LHWater();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     static  bool isLHWater(Node* obj){return (0 != dynamic_cast<LHWater*>(obj));}
     virtual bool isWater(){return true;}

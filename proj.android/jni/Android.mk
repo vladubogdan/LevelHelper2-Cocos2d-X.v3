@@ -15,12 +15,6 @@ FILE_LIST += $(wildcard $(LOCAL_PATH)/../../Classes/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/../../Demo/SourceCode/*.cpp)
 #FILE_LIST += $(wildcard $(LOCAL_PATH)/../../cocos2d/cocos/base/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Protocols/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Utilities/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Animations/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Animations/AnimationFrames/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Animations/AnimationProperties/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Nodes/*.cpp)
 
 LOCAL_SRC_FILES := hellocpp/main.cpp
 LOCAL_SRC_FILES += $(FILE_LIST:$(LOCAL_PATH)/%=%)
@@ -31,15 +25,8 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../cocos2d/cocos/ui
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../cocos2d/external
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../cocos2d/external/Box2D
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Protocols
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Utilities
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Animations
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Animations/AnimationFrames
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Animations/AnimationProperties
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/Nodes
 
 					
-
 LOCAL_WHOLE_STATIC_LIBRARIES := cocos2dx_static
 LOCAL_WHOLE_STATIC_LIBRARIES += cocosdenshion_static
 LOCAL_WHOLE_STATIC_LIBRARIES += box2d_static

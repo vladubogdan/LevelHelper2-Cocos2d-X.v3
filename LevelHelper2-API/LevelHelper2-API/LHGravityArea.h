@@ -28,11 +28,12 @@ class LHGravityArea : public Node, public LHNodeProtocol
 public:
     
     static LHGravityArea* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHGravityArea();
     virtual ~LHGravityArea();
 
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHGravityArea(Node* obj){return (0 != dynamic_cast<LHGravityArea*>(obj));}
     virtual bool isGravityArea(){return true;}

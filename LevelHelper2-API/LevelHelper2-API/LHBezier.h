@@ -30,10 +30,12 @@ class LHBezier : public DrawNode, public LHNodeProtocol, public LHNodeAnimationP
 public:
     
     static LHBezier* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     LHBezier();
     virtual ~LHBezier();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHBezier(Node* obj){return (0 != dynamic_cast<LHBezier*>(obj));}
     virtual bool isBezier(){return true;}

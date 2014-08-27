@@ -31,11 +31,11 @@ class LHPulleyJointNode : public Node, public LHNodeProtocol, public LHJointsPro
 public:
     
     static LHPulleyJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHPulleyJointNode();
     virtual ~LHPulleyJointNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
-    
+        
     static  bool isLHPulleyJointNode(Node* obj){return (0 != dynamic_cast<LHPulleyJointNode*>(obj));}
     virtual bool isPulleyJointNode(){return true;}
     

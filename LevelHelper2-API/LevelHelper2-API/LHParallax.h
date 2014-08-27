@@ -29,12 +29,11 @@ class LHParallax : public Node, public LHNodeProtocol, public LHNodeAnimationPro
 public:
     
     static LHParallax* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHParallax();
     virtual ~LHParallax();
 
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
-    
     static  bool isLHParallax(Node* obj){return (0 != dynamic_cast<LHParallax*>(obj));}
     virtual bool isParallax(){return true;}
     

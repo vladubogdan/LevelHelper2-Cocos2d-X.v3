@@ -31,10 +31,11 @@ class LHWeldJointNode : public Node, public LHNodeProtocol, public LHJointsProto
 public:
     
     static LHWeldJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHWeldJointNode();
     virtual ~LHWeldJointNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHWeldJointNode(Node* obj){return (0 != dynamic_cast<LHWeldJointNode*>(obj));}
     virtual bool isWeldJointNode(){return true;}

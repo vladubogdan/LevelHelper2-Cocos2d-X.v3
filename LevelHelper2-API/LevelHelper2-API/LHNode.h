@@ -31,12 +31,13 @@ class LHNode : public Node, public LHNodeProtocol, public LHNodeAnimationProtoco
 public:
  
     static LHNode* createWithName(const std::string& nm);
+    virtual bool initWithName(const std::string& nm);
+        
     static LHNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
-
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     LHNode();
     virtual ~LHNode();
-    bool initWithName(const std::string& nm);
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     static  bool isLHNode(Node* obj){return (0 != dynamic_cast<LHNode*>(obj));}
     virtual bool isNode(){return true;}

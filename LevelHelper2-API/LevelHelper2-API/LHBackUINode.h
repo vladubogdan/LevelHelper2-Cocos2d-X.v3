@@ -28,10 +28,11 @@ class LHBackUINode : public Node, public LHNodeProtocol
 public:
  
     static LHBackUINode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
-
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     LHBackUINode();
     virtual ~LHBackUINode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHBackUINode(Node* obj){return (0 != dynamic_cast<LHBackUINode*>(obj));}
     virtual bool isBackUINode(){return true;}    

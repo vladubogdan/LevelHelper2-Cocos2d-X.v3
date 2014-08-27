@@ -31,10 +31,12 @@ class LHGearJointNode : public Node, public LHNodeProtocol, public LHJointsProto
 public:
     
     static LHGearJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     LHGearJointNode();
     virtual ~LHGearJointNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHGearJointNode(Node* obj){return (0 != dynamic_cast<LHGearJointNode*>(obj));}
     virtual bool isGearJointNode(){return true;}

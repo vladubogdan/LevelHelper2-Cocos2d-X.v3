@@ -65,10 +65,11 @@ class LHGameWorldNode : public Node, public LHNodeProtocol
 public:
  
     static LHGameWorldNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
 
     LHGameWorldNode();
-    virtual ~LHGameWorldNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual ~LHGameWorldNode();    
     
     static  bool isLHGameWorldNode(Node* obj){return (0 != dynamic_cast<LHGameWorldNode*>(obj));}
     virtual bool isGameWorldNode(){return true;}

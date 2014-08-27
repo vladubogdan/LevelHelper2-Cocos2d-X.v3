@@ -31,6 +31,9 @@ bool MyCustomNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         //retrieve elements from the LHSprite object here
 
         this->addChildRepresentation();
+        
+        printf("Did create node of type MyCustomNode with name %s.\n", this->getName().c_str());
+        
     }
     
     return status;

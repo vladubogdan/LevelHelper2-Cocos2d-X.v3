@@ -29,6 +29,8 @@ bool BlueRobotSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     
     if(status){
         //retrieve elements from the LHSprite object here
+        
+        printf("Did create node of type BlueRobotSprite with name %s.\n", this->getName().c_str());
     }
     
     return status;

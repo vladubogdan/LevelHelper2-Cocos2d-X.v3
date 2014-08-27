@@ -32,11 +32,11 @@ class LHWheelJointNode : public Node, public LHNodeProtocol, public LHJointsProt
 public:
     
     static LHWheelJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHWheelJointNode();
     virtual ~LHWheelJointNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
-    
+        
     static  bool isLHWheelJointNode(Node* obj){return (0 != dynamic_cast<LHWheelJointNode*>(obj));}
     virtual bool isWheelJointNode(){return true;}
     

@@ -8,162 +8,162 @@
 
 /* Begin PBXBuildFile section */
 		6E80C4D319A7683B002EEA12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E80C4D219A7683B002EEA12 /* Foundation.framework */; };
-		6E90915519A845BD0090246B /* LHFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E419A845BD0090246B /* LHFrame.cpp */; };
-		6E90915619A845BD0090246B /* LHFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E419A845BD0090246B /* LHFrame.cpp */; };
-		6E90915719A845BD0090246B /* LHFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E419A845BD0090246B /* LHFrame.cpp */; };
-		6E90915819A845BD0090246B /* LHOpacityFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E619A845BD0090246B /* LHOpacityFrame.cpp */; };
-		6E90915919A845BD0090246B /* LHOpacityFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E619A845BD0090246B /* LHOpacityFrame.cpp */; };
-		6E90915A19A845BD0090246B /* LHOpacityFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E619A845BD0090246B /* LHOpacityFrame.cpp */; };
-		6E90915B19A845BD0090246B /* LHPositionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E819A845BD0090246B /* LHPositionFrame.cpp */; };
-		6E90915C19A845BD0090246B /* LHPositionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E819A845BD0090246B /* LHPositionFrame.cpp */; };
-		6E90915D19A845BD0090246B /* LHPositionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090E819A845BD0090246B /* LHPositionFrame.cpp */; };
-		6E90915E19A845BD0090246B /* LHRotationFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EA19A845BD0090246B /* LHRotationFrame.cpp */; };
-		6E90915F19A845BD0090246B /* LHRotationFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EA19A845BD0090246B /* LHRotationFrame.cpp */; };
-		6E90916019A845BD0090246B /* LHRotationFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EA19A845BD0090246B /* LHRotationFrame.cpp */; };
-		6E90916119A845BD0090246B /* LHScaleFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EC19A845BD0090246B /* LHScaleFrame.cpp */; };
-		6E90916219A845BD0090246B /* LHScaleFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EC19A845BD0090246B /* LHScaleFrame.cpp */; };
-		6E90916319A845BD0090246B /* LHScaleFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EC19A845BD0090246B /* LHScaleFrame.cpp */; };
-		6E90916419A845BD0090246B /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EE19A845BD0090246B /* LHSpriteFrame.cpp */; };
-		6E90916519A845BD0090246B /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EE19A845BD0090246B /* LHSpriteFrame.cpp */; };
-		6E90916619A845BD0090246B /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090EE19A845BD0090246B /* LHSpriteFrame.cpp */; };
-		6E90916719A845BD0090246B /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F119A845BD0090246B /* LHAnimationProperty.cpp */; };
-		6E90916819A845BD0090246B /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F119A845BD0090246B /* LHAnimationProperty.cpp */; };
-		6E90916919A845BD0090246B /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F119A845BD0090246B /* LHAnimationProperty.cpp */; };
-		6E90916A19A845BD0090246B /* LHCameraActivateProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F319A845BD0090246B /* LHCameraActivateProperty.cpp */; };
-		6E90916B19A845BD0090246B /* LHCameraActivateProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F319A845BD0090246B /* LHCameraActivateProperty.cpp */; };
-		6E90916C19A845BD0090246B /* LHCameraActivateProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F319A845BD0090246B /* LHCameraActivateProperty.cpp */; };
-		6E90916D19A845BD0090246B /* LHChildrenOpacitiesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F519A845BD0090246B /* LHChildrenOpacitiesProperty.cpp */; };
-		6E90916E19A845BD0090246B /* LHChildrenOpacitiesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F519A845BD0090246B /* LHChildrenOpacitiesProperty.cpp */; };
-		6E90916F19A845BD0090246B /* LHChildrenOpacitiesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F519A845BD0090246B /* LHChildrenOpacitiesProperty.cpp */; };
-		6E90917019A845BD0090246B /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F719A845BD0090246B /* LHChildrenPositionsProperty.cpp */; };
-		6E90917119A845BD0090246B /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F719A845BD0090246B /* LHChildrenPositionsProperty.cpp */; };
-		6E90917219A845BD0090246B /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F719A845BD0090246B /* LHChildrenPositionsProperty.cpp */; };
-		6E90917319A845BD0090246B /* LHChildrenRotationsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F919A845BD0090246B /* LHChildrenRotationsProperty.cpp */; };
-		6E90917419A845BD0090246B /* LHChildrenRotationsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F919A845BD0090246B /* LHChildrenRotationsProperty.cpp */; };
-		6E90917519A845BD0090246B /* LHChildrenRotationsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090F919A845BD0090246B /* LHChildrenRotationsProperty.cpp */; };
-		6E90917619A845BD0090246B /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FB19A845BD0090246B /* LHChildrenScalesProperty.cpp */; };
-		6E90917719A845BD0090246B /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FB19A845BD0090246B /* LHChildrenScalesProperty.cpp */; };
-		6E90917819A845BD0090246B /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FB19A845BD0090246B /* LHChildrenScalesProperty.cpp */; };
-		6E90917919A845BD0090246B /* LHOpacityProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FD19A845BD0090246B /* LHOpacityProperty.cpp */; };
-		6E90917A19A845BD0090246B /* LHOpacityProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FD19A845BD0090246B /* LHOpacityProperty.cpp */; };
-		6E90917B19A845BD0090246B /* LHOpacityProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FD19A845BD0090246B /* LHOpacityProperty.cpp */; };
-		6E90917C19A845BD0090246B /* LHPositionProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FF19A845BD0090246B /* LHPositionProperty.cpp */; };
-		6E90917D19A845BD0090246B /* LHPositionProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FF19A845BD0090246B /* LHPositionProperty.cpp */; };
-		6E90917E19A845BD0090246B /* LHPositionProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9090FF19A845BD0090246B /* LHPositionProperty.cpp */; };
-		6E90917F19A845BD0090246B /* LHRotationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910119A845BD0090246B /* LHRotationProperty.cpp */; };
-		6E90918019A845BD0090246B /* LHRotationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910119A845BD0090246B /* LHRotationProperty.cpp */; };
-		6E90918119A845BD0090246B /* LHRotationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910119A845BD0090246B /* LHRotationProperty.cpp */; };
-		6E90918219A845BD0090246B /* LHScaleProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910319A845BD0090246B /* LHScaleProperty.cpp */; };
-		6E90918319A845BD0090246B /* LHScaleProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910319A845BD0090246B /* LHScaleProperty.cpp */; };
-		6E90918419A845BD0090246B /* LHScaleProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910319A845BD0090246B /* LHScaleProperty.cpp */; };
-		6E90918519A845BD0090246B /* LHSpriteFrameProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910519A845BD0090246B /* LHSpriteFrameProperty.cpp */; };
-		6E90918619A845BD0090246B /* LHSpriteFrameProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910519A845BD0090246B /* LHSpriteFrameProperty.cpp */; };
-		6E90918719A845BD0090246B /* LHSpriteFrameProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910519A845BD0090246B /* LHSpriteFrameProperty.cpp */; };
-		6E90918819A845BD0090246B /* LHAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910719A845BD0090246B /* LHAnimation.cpp */; };
-		6E90918919A845BD0090246B /* LHAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910719A845BD0090246B /* LHAnimation.cpp */; };
-		6E90918A19A845BD0090246B /* LHAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910719A845BD0090246B /* LHAnimation.cpp */; };
 		6E90918B19A845BD0090246B /* LHScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910B19A845BD0090246B /* LHScene.cpp */; };
 		6E90918C19A845BD0090246B /* LHScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910B19A845BD0090246B /* LHScene.cpp */; };
 		6E90918D19A845BD0090246B /* LHScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910B19A845BD0090246B /* LHScene.cpp */; };
-		6E90918E19A845BD0090246B /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910E19A845BD0090246B /* LHAsset.cpp */; };
-		6E90918F19A845BD0090246B /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910E19A845BD0090246B /* LHAsset.cpp */; };
-		6E90919019A845BD0090246B /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910E19A845BD0090246B /* LHAsset.cpp */; };
-		6E90919119A845BD0090246B /* LHBackUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911019A845BD0090246B /* LHBackUINode.cpp */; };
-		6E90919219A845BD0090246B /* LHBackUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911019A845BD0090246B /* LHBackUINode.cpp */; };
-		6E90919319A845BD0090246B /* LHBackUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911019A845BD0090246B /* LHBackUINode.cpp */; };
-		6E90919419A845BD0090246B /* LHBezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911219A845BD0090246B /* LHBezier.cpp */; };
-		6E90919519A845BD0090246B /* LHBezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911219A845BD0090246B /* LHBezier.cpp */; };
-		6E90919619A845BD0090246B /* LHBezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911219A845BD0090246B /* LHBezier.cpp */; };
-		6E90919719A845BD0090246B /* LHCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911419A845BD0090246B /* LHCamera.cpp */; };
-		6E90919819A845BD0090246B /* LHCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911419A845BD0090246B /* LHCamera.cpp */; };
-		6E90919919A845BD0090246B /* LHCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911419A845BD0090246B /* LHCamera.cpp */; };
-		6E90919A19A845BD0090246B /* LHDistanceJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911619A845BD0090246B /* LHDistanceJointNode.cpp */; };
-		6E90919B19A845BD0090246B /* LHDistanceJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911619A845BD0090246B /* LHDistanceJointNode.cpp */; };
-		6E90919C19A845BD0090246B /* LHDistanceJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911619A845BD0090246B /* LHDistanceJointNode.cpp */; };
-		6E90919D19A845BD0090246B /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911819A845BD0090246B /* LHDrawNode.cpp */; };
-		6E90919E19A845BD0090246B /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911819A845BD0090246B /* LHDrawNode.cpp */; };
-		6E90919F19A845BD0090246B /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911819A845BD0090246B /* LHDrawNode.cpp */; };
-		6E9091A019A845BD0090246B /* LHGameWorldNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911A19A845BD0090246B /* LHGameWorldNode.cpp */; };
-		6E9091A119A845BD0090246B /* LHGameWorldNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911A19A845BD0090246B /* LHGameWorldNode.cpp */; };
-		6E9091A219A845BD0090246B /* LHGameWorldNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911A19A845BD0090246B /* LHGameWorldNode.cpp */; };
-		6E9091A319A845BD0090246B /* LHGearJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911C19A845BD0090246B /* LHGearJointNode.cpp */; };
-		6E9091A419A845BD0090246B /* LHGearJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911C19A845BD0090246B /* LHGearJointNode.cpp */; };
-		6E9091A519A845BD0090246B /* LHGearJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911C19A845BD0090246B /* LHGearJointNode.cpp */; };
-		6E9091A619A845BD0090246B /* LHGravityArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911E19A845BD0090246B /* LHGravityArea.cpp */; };
-		6E9091A719A845BD0090246B /* LHGravityArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911E19A845BD0090246B /* LHGravityArea.cpp */; };
-		6E9091A819A845BD0090246B /* LHGravityArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90911E19A845BD0090246B /* LHGravityArea.cpp */; };
-		6E9091A919A845BD0090246B /* LHNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912019A845BD0090246B /* LHNode.cpp */; };
-		6E9091AA19A845BD0090246B /* LHNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912019A845BD0090246B /* LHNode.cpp */; };
-		6E9091AB19A845BD0090246B /* LHNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912019A845BD0090246B /* LHNode.cpp */; };
-		6E9091AC19A845BD0090246B /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912219A845BD0090246B /* LHParallax.cpp */; };
-		6E9091AD19A845BD0090246B /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912219A845BD0090246B /* LHParallax.cpp */; };
-		6E9091AE19A845BD0090246B /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912219A845BD0090246B /* LHParallax.cpp */; };
-		6E9091AF19A845BD0090246B /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912419A845BD0090246B /* LHParallaxLayer.cpp */; };
-		6E9091B019A845BD0090246B /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912419A845BD0090246B /* LHParallaxLayer.cpp */; };
-		6E9091B119A845BD0090246B /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912419A845BD0090246B /* LHParallaxLayer.cpp */; };
-		6E9091B219A845BD0090246B /* LHPrismaticJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912619A845BD0090246B /* LHPrismaticJointNode.cpp */; };
-		6E9091B319A845BD0090246B /* LHPrismaticJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912619A845BD0090246B /* LHPrismaticJointNode.cpp */; };
-		6E9091B419A845BD0090246B /* LHPrismaticJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912619A845BD0090246B /* LHPrismaticJointNode.cpp */; };
-		6E9091B519A845BD0090246B /* LHPulleyJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912819A845BD0090246B /* LHPulleyJointNode.cpp */; };
-		6E9091B619A845BD0090246B /* LHPulleyJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912819A845BD0090246B /* LHPulleyJointNode.cpp */; };
-		6E9091B719A845BD0090246B /* LHPulleyJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912819A845BD0090246B /* LHPulleyJointNode.cpp */; };
-		6E9091B819A845BD0090246B /* LHRevoluteJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912A19A845BD0090246B /* LHRevoluteJointNode.cpp */; };
-		6E9091B919A845BD0090246B /* LHRevoluteJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912A19A845BD0090246B /* LHRevoluteJointNode.cpp */; };
-		6E9091BA19A845BD0090246B /* LHRevoluteJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912A19A845BD0090246B /* LHRevoluteJointNode.cpp */; };
-		6E9091BB19A845BD0090246B /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912C19A845BD0090246B /* LHRopeJointNode.cpp */; };
-		6E9091BC19A845BD0090246B /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912C19A845BD0090246B /* LHRopeJointNode.cpp */; };
-		6E9091BD19A845BD0090246B /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912C19A845BD0090246B /* LHRopeJointNode.cpp */; };
-		6E9091BE19A845BD0090246B /* LHShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912E19A845BD0090246B /* LHShape.cpp */; };
-		6E9091BF19A845BD0090246B /* LHShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912E19A845BD0090246B /* LHShape.cpp */; };
-		6E9091C019A845BD0090246B /* LHShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90912E19A845BD0090246B /* LHShape.cpp */; };
-		6E9091C119A845BD0090246B /* LHSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913019A845BD0090246B /* LHSprite.cpp */; };
-		6E9091C219A845BD0090246B /* LHSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913019A845BD0090246B /* LHSprite.cpp */; };
-		6E9091C319A845BD0090246B /* LHSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913019A845BD0090246B /* LHSprite.cpp */; };
-		6E9091C419A845BD0090246B /* LHUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913219A845BD0090246B /* LHUINode.cpp */; };
-		6E9091C519A845BD0090246B /* LHUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913219A845BD0090246B /* LHUINode.cpp */; };
-		6E9091C619A845BD0090246B /* LHUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913219A845BD0090246B /* LHUINode.cpp */; };
-		6E9091C719A845BD0090246B /* LHWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913419A845BD0090246B /* LHWater.cpp */; };
-		6E9091C819A845BD0090246B /* LHWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913419A845BD0090246B /* LHWater.cpp */; };
-		6E9091C919A845BD0090246B /* LHWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913419A845BD0090246B /* LHWater.cpp */; };
-		6E9091CA19A845BD0090246B /* LHWeldJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913619A845BD0090246B /* LHWeldJointNode.cpp */; };
-		6E9091CB19A845BD0090246B /* LHWeldJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913619A845BD0090246B /* LHWeldJointNode.cpp */; };
-		6E9091CC19A845BD0090246B /* LHWeldJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913619A845BD0090246B /* LHWeldJointNode.cpp */; };
-		6E9091CD19A845BD0090246B /* LHWheelJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913819A845BD0090246B /* LHWheelJointNode.cpp */; };
-		6E9091CE19A845BD0090246B /* LHWheelJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913819A845BD0090246B /* LHWheelJointNode.cpp */; };
-		6E9091CF19A845BD0090246B /* LHWheelJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913819A845BD0090246B /* LHWheelJointNode.cpp */; };
-		6E9091D019A845BD0090246B /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913B19A845BD0090246B /* LHJointsProtocol.cpp */; };
-		6E9091D119A845BD0090246B /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913B19A845BD0090246B /* LHJointsProtocol.cpp */; };
-		6E9091D219A845BD0090246B /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913B19A845BD0090246B /* LHJointsProtocol.cpp */; };
-		6E9091D319A845BD0090246B /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913D19A845BD0090246B /* LHNodeAnimationProtocol.cpp */; };
-		6E9091D419A845BD0090246B /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913D19A845BD0090246B /* LHNodeAnimationProtocol.cpp */; };
-		6E9091D519A845BD0090246B /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913D19A845BD0090246B /* LHNodeAnimationProtocol.cpp */; };
-		6E9091D619A845BD0090246B /* LHNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913F19A845BD0090246B /* LHNodeProtocol.cpp */; };
-		6E9091D719A845BD0090246B /* LHNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913F19A845BD0090246B /* LHNodeProtocol.cpp */; };
-		6E9091D819A845BD0090246B /* LHNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90913F19A845BD0090246B /* LHNodeProtocol.cpp */; };
-		6E9091D919A845BD0090246B /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914119A845BD0090246B /* LHPhysicsProtocol.cpp */; };
-		6E9091DA19A845BD0090246B /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914119A845BD0090246B /* LHPhysicsProtocol.cpp */; };
-		6E9091DB19A845BD0090246B /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914119A845BD0090246B /* LHPhysicsProtocol.cpp */; };
-		6E9091DC19A845BD0090246B /* LHUserProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914319A845BD0090246B /* LHUserProperties.cpp */; };
-		6E9091DD19A845BD0090246B /* LHUserProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914319A845BD0090246B /* LHUserProperties.cpp */; };
-		6E9091DE19A845BD0090246B /* LHUserProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914319A845BD0090246B /* LHUserProperties.cpp */; };
-		6E9091DF19A845BD0090246B /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914819A845BD0090246B /* LHBox2dCollisionHandling.cpp */; };
-		6E9091E019A845BD0090246B /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914819A845BD0090246B /* LHBox2dCollisionHandling.cpp */; };
-		6E9091E119A845BD0090246B /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914819A845BD0090246B /* LHBox2dCollisionHandling.cpp */; };
-		6E9091E219A845BD0090246B /* LHBox2dDebugDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914A19A845BD0090246B /* LHBox2dDebugDrawNode.cpp */; };
-		6E9091E319A845BD0090246B /* LHBox2dDebugDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914A19A845BD0090246B /* LHBox2dDebugDrawNode.cpp */; };
-		6E9091E419A845BD0090246B /* LHBox2dDebugDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914A19A845BD0090246B /* LHBox2dDebugDrawNode.cpp */; };
-		6E9091E519A845BD0090246B /* LHDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914C19A845BD0090246B /* LHDevice.cpp */; };
-		6E9091E619A845BD0090246B /* LHDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914C19A845BD0090246B /* LHDevice.cpp */; };
-		6E9091E719A845BD0090246B /* LHDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914C19A845BD0090246B /* LHDevice.cpp */; };
-		6E9091E819A845BD0090246B /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914E19A845BD0090246B /* LHDictionary.cpp */; };
-		6E9091E919A845BD0090246B /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914E19A845BD0090246B /* LHDictionary.cpp */; };
-		6E9091EA19A845BD0090246B /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90914E19A845BD0090246B /* LHDictionary.cpp */; };
-		6E9091EB19A845BD0090246B /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90915019A845BD0090246B /* LHUtils.cpp */; };
-		6E9091EC19A845BD0090246B /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90915019A845BD0090246B /* LHUtils.cpp */; };
-		6E9091ED19A845BD0090246B /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90915019A845BD0090246B /* LHUtils.cpp */; };
-		6E9091EE19A845BD0090246B /* NodeTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90915319A845BD0090246B /* NodeTransform.cpp */; };
-		6E9091EF19A845BD0090246B /* NodeTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90915319A845BD0090246B /* NodeTransform.cpp */; };
-		6E9091F019A845BD0090246B /* NodeTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90915319A845BD0090246B /* NodeTransform.cpp */; };
+		6EC556EA19ADF53400CF0760 /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556BE19ADF53400CF0760 /* LHAsset.cpp */; };
+		6EC556EB19ADF53400CF0760 /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556BE19ADF53400CF0760 /* LHAsset.cpp */; };
+		6EC556EC19ADF53400CF0760 /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556BE19ADF53400CF0760 /* LHAsset.cpp */; };
+		6EC556ED19ADF53400CF0760 /* LHBackUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C019ADF53400CF0760 /* LHBackUINode.cpp */; };
+		6EC556EE19ADF53400CF0760 /* LHBackUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C019ADF53400CF0760 /* LHBackUINode.cpp */; };
+		6EC556EF19ADF53400CF0760 /* LHBackUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C019ADF53400CF0760 /* LHBackUINode.cpp */; };
+		6EC556F019ADF53400CF0760 /* LHBezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C219ADF53400CF0760 /* LHBezier.cpp */; };
+		6EC556F119ADF53400CF0760 /* LHBezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C219ADF53400CF0760 /* LHBezier.cpp */; };
+		6EC556F219ADF53400CF0760 /* LHBezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C219ADF53400CF0760 /* LHBezier.cpp */; };
+		6EC556F319ADF53400CF0760 /* LHCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C419ADF53400CF0760 /* LHCamera.cpp */; };
+		6EC556F419ADF53400CF0760 /* LHCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C419ADF53400CF0760 /* LHCamera.cpp */; };
+		6EC556F519ADF53400CF0760 /* LHCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C419ADF53400CF0760 /* LHCamera.cpp */; };
+		6EC556F619ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C619ADF53400CF0760 /* LHDistanceJointNode.cpp */; };
+		6EC556F719ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C619ADF53400CF0760 /* LHDistanceJointNode.cpp */; };
+		6EC556F819ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C619ADF53400CF0760 /* LHDistanceJointNode.cpp */; };
+		6EC556F919ADF53400CF0760 /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C819ADF53400CF0760 /* LHDrawNode.cpp */; };
+		6EC556FA19ADF53400CF0760 /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C819ADF53400CF0760 /* LHDrawNode.cpp */; };
+		6EC556FB19ADF53400CF0760 /* LHDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556C819ADF53400CF0760 /* LHDrawNode.cpp */; };
+		6EC556FC19ADF53400CF0760 /* LHGameWorldNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CA19ADF53400CF0760 /* LHGameWorldNode.cpp */; };
+		6EC556FD19ADF53400CF0760 /* LHGameWorldNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CA19ADF53400CF0760 /* LHGameWorldNode.cpp */; };
+		6EC556FE19ADF53400CF0760 /* LHGameWorldNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CA19ADF53400CF0760 /* LHGameWorldNode.cpp */; };
+		6EC556FF19ADF53400CF0760 /* LHGearJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CC19ADF53400CF0760 /* LHGearJointNode.cpp */; };
+		6EC5570019ADF53400CF0760 /* LHGearJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CC19ADF53400CF0760 /* LHGearJointNode.cpp */; };
+		6EC5570119ADF53400CF0760 /* LHGearJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CC19ADF53400CF0760 /* LHGearJointNode.cpp */; };
+		6EC5570219ADF53400CF0760 /* LHGravityArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CE19ADF53400CF0760 /* LHGravityArea.cpp */; };
+		6EC5570319ADF53400CF0760 /* LHGravityArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CE19ADF53400CF0760 /* LHGravityArea.cpp */; };
+		6EC5570419ADF53400CF0760 /* LHGravityArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556CE19ADF53400CF0760 /* LHGravityArea.cpp */; };
+		6EC5570519ADF53400CF0760 /* LHNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D019ADF53400CF0760 /* LHNode.cpp */; };
+		6EC5570619ADF53400CF0760 /* LHNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D019ADF53400CF0760 /* LHNode.cpp */; };
+		6EC5570719ADF53400CF0760 /* LHNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D019ADF53400CF0760 /* LHNode.cpp */; };
+		6EC5570819ADF53400CF0760 /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D219ADF53400CF0760 /* LHParallax.cpp */; };
+		6EC5570919ADF53400CF0760 /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D219ADF53400CF0760 /* LHParallax.cpp */; };
+		6EC5570A19ADF53400CF0760 /* LHParallax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D219ADF53400CF0760 /* LHParallax.cpp */; };
+		6EC5570B19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D419ADF53400CF0760 /* LHParallaxLayer.cpp */; };
+		6EC5570C19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D419ADF53400CF0760 /* LHParallaxLayer.cpp */; };
+		6EC5570D19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D419ADF53400CF0760 /* LHParallaxLayer.cpp */; };
+		6EC5570E19ADF53400CF0760 /* LHPrismaticJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D619ADF53400CF0760 /* LHPrismaticJointNode.cpp */; };
+		6EC5570F19ADF53400CF0760 /* LHPrismaticJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D619ADF53400CF0760 /* LHPrismaticJointNode.cpp */; };
+		6EC5571019ADF53400CF0760 /* LHPrismaticJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D619ADF53400CF0760 /* LHPrismaticJointNode.cpp */; };
+		6EC5571119ADF53400CF0760 /* LHPulleyJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D819ADF53400CF0760 /* LHPulleyJointNode.cpp */; };
+		6EC5571219ADF53400CF0760 /* LHPulleyJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D819ADF53400CF0760 /* LHPulleyJointNode.cpp */; };
+		6EC5571319ADF53400CF0760 /* LHPulleyJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556D819ADF53400CF0760 /* LHPulleyJointNode.cpp */; };
+		6EC5571419ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DA19ADF53400CF0760 /* LHRevoluteJointNode.cpp */; };
+		6EC5571519ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DA19ADF53400CF0760 /* LHRevoluteJointNode.cpp */; };
+		6EC5571619ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DA19ADF53400CF0760 /* LHRevoluteJointNode.cpp */; };
+		6EC5571719ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DC19ADF53400CF0760 /* LHRopeJointNode.cpp */; };
+		6EC5571819ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DC19ADF53400CF0760 /* LHRopeJointNode.cpp */; };
+		6EC5571919ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DC19ADF53400CF0760 /* LHRopeJointNode.cpp */; };
+		6EC5571A19ADF53400CF0760 /* LHShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DE19ADF53400CF0760 /* LHShape.cpp */; };
+		6EC5571B19ADF53400CF0760 /* LHShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DE19ADF53400CF0760 /* LHShape.cpp */; };
+		6EC5571C19ADF53400CF0760 /* LHShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556DE19ADF53400CF0760 /* LHShape.cpp */; };
+		6EC5571D19ADF53400CF0760 /* LHSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E019ADF53400CF0760 /* LHSprite.cpp */; };
+		6EC5571E19ADF53400CF0760 /* LHSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E019ADF53400CF0760 /* LHSprite.cpp */; };
+		6EC5571F19ADF53400CF0760 /* LHSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E019ADF53400CF0760 /* LHSprite.cpp */; };
+		6EC5572019ADF53400CF0760 /* LHUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E219ADF53400CF0760 /* LHUINode.cpp */; };
+		6EC5572119ADF53400CF0760 /* LHUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E219ADF53400CF0760 /* LHUINode.cpp */; };
+		6EC5572219ADF53400CF0760 /* LHUINode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E219ADF53400CF0760 /* LHUINode.cpp */; };
+		6EC5572319ADF53400CF0760 /* LHWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E419ADF53400CF0760 /* LHWater.cpp */; };
+		6EC5572419ADF53400CF0760 /* LHWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E419ADF53400CF0760 /* LHWater.cpp */; };
+		6EC5572519ADF53400CF0760 /* LHWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E419ADF53400CF0760 /* LHWater.cpp */; };
+		6EC5572619ADF53400CF0760 /* LHWeldJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E619ADF53400CF0760 /* LHWeldJointNode.cpp */; };
+		6EC5572719ADF53400CF0760 /* LHWeldJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E619ADF53400CF0760 /* LHWeldJointNode.cpp */; };
+		6EC5572819ADF53400CF0760 /* LHWeldJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E619ADF53400CF0760 /* LHWeldJointNode.cpp */; };
+		6EC5572919ADF53400CF0760 /* LHWheelJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E819ADF53400CF0760 /* LHWheelJointNode.cpp */; };
+		6EC5572A19ADF53400CF0760 /* LHWheelJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E819ADF53400CF0760 /* LHWheelJointNode.cpp */; };
+		6EC5572B19ADF53400CF0760 /* LHWheelJointNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556E819ADF53400CF0760 /* LHWheelJointNode.cpp */; };
+		6EC5572E19ADF54300CF0760 /* LHAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5572C19ADF54300CF0760 /* LHAnimation.cpp */; };
+		6EC5572F19ADF54300CF0760 /* LHAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5572C19ADF54300CF0760 /* LHAnimation.cpp */; };
+		6EC5573019ADF54300CF0760 /* LHAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5572C19ADF54300CF0760 /* LHAnimation.cpp */; };
+		6EC5574319ADF56600CF0760 /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573119ADF56600CF0760 /* LHAnimationProperty.cpp */; };
+		6EC5574419ADF56600CF0760 /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573119ADF56600CF0760 /* LHAnimationProperty.cpp */; };
+		6EC5574519ADF56600CF0760 /* LHAnimationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573119ADF56600CF0760 /* LHAnimationProperty.cpp */; };
+		6EC5574619ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573319ADF56600CF0760 /* LHCameraActivateProperty.cpp */; };
+		6EC5574719ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573319ADF56600CF0760 /* LHCameraActivateProperty.cpp */; };
+		6EC5574819ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573319ADF56600CF0760 /* LHCameraActivateProperty.cpp */; };
+		6EC5574919ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573519ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp */; };
+		6EC5574A19ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573519ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp */; };
+		6EC5574B19ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573519ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp */; };
+		6EC5574C19ADF56600CF0760 /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573719ADF56600CF0760 /* LHChildrenPositionsProperty.cpp */; };
+		6EC5574D19ADF56600CF0760 /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573719ADF56600CF0760 /* LHChildrenPositionsProperty.cpp */; };
+		6EC5574E19ADF56600CF0760 /* LHChildrenPositionsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573719ADF56600CF0760 /* LHChildrenPositionsProperty.cpp */; };
+		6EC5574F19ADF56600CF0760 /* LHChildrenRotationsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573919ADF56600CF0760 /* LHChildrenRotationsProperty.cpp */; };
+		6EC5575019ADF56600CF0760 /* LHChildrenRotationsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573919ADF56600CF0760 /* LHChildrenRotationsProperty.cpp */; };
+		6EC5575119ADF56600CF0760 /* LHChildrenRotationsProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573919ADF56600CF0760 /* LHChildrenRotationsProperty.cpp */; };
+		6EC5575219ADF56600CF0760 /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573B19ADF56600CF0760 /* LHChildrenScalesProperty.cpp */; };
+		6EC5575319ADF56600CF0760 /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573B19ADF56600CF0760 /* LHChildrenScalesProperty.cpp */; };
+		6EC5575419ADF56600CF0760 /* LHChildrenScalesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573B19ADF56600CF0760 /* LHChildrenScalesProperty.cpp */; };
+		6EC5575519ADF56600CF0760 /* LHRotationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573D19ADF56600CF0760 /* LHRotationProperty.cpp */; };
+		6EC5575619ADF56600CF0760 /* LHRotationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573D19ADF56600CF0760 /* LHRotationProperty.cpp */; };
+		6EC5575719ADF56600CF0760 /* LHRotationProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573D19ADF56600CF0760 /* LHRotationProperty.cpp */; };
+		6EC5575819ADF56600CF0760 /* LHScaleProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573F19ADF56600CF0760 /* LHScaleProperty.cpp */; };
+		6EC5575919ADF56600CF0760 /* LHScaleProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573F19ADF56600CF0760 /* LHScaleProperty.cpp */; };
+		6EC5575A19ADF56600CF0760 /* LHScaleProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5573F19ADF56600CF0760 /* LHScaleProperty.cpp */; };
+		6EC5575B19ADF56600CF0760 /* LHSpriteFrameProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5574119ADF56600CF0760 /* LHSpriteFrameProperty.cpp */; };
+		6EC5575C19ADF56600CF0760 /* LHSpriteFrameProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5574119ADF56600CF0760 /* LHSpriteFrameProperty.cpp */; };
+		6EC5575D19ADF56600CF0760 /* LHSpriteFrameProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5574119ADF56600CF0760 /* LHSpriteFrameProperty.cpp */; };
+		6EC5576A19ADF58800CF0760 /* LHFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5575E19ADF58800CF0760 /* LHFrame.cpp */; };
+		6EC5576B19ADF58800CF0760 /* LHFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5575E19ADF58800CF0760 /* LHFrame.cpp */; };
+		6EC5576C19ADF58800CF0760 /* LHFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5575E19ADF58800CF0760 /* LHFrame.cpp */; };
+		6EC5576D19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576019ADF58800CF0760 /* LHOpacityFrame.cpp */; };
+		6EC5576E19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576019ADF58800CF0760 /* LHOpacityFrame.cpp */; };
+		6EC5576F19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576019ADF58800CF0760 /* LHOpacityFrame.cpp */; };
+		6EC5577019ADF58800CF0760 /* LHPositionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576219ADF58800CF0760 /* LHPositionFrame.cpp */; };
+		6EC5577119ADF58800CF0760 /* LHPositionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576219ADF58800CF0760 /* LHPositionFrame.cpp */; };
+		6EC5577219ADF58800CF0760 /* LHPositionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576219ADF58800CF0760 /* LHPositionFrame.cpp */; };
+		6EC5577319ADF58800CF0760 /* LHRotationFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576419ADF58800CF0760 /* LHRotationFrame.cpp */; };
+		6EC5577419ADF58800CF0760 /* LHRotationFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576419ADF58800CF0760 /* LHRotationFrame.cpp */; };
+		6EC5577519ADF58800CF0760 /* LHRotationFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576419ADF58800CF0760 /* LHRotationFrame.cpp */; };
+		6EC5577619ADF58800CF0760 /* LHScaleFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576619ADF58800CF0760 /* LHScaleFrame.cpp */; };
+		6EC5577719ADF58800CF0760 /* LHScaleFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576619ADF58800CF0760 /* LHScaleFrame.cpp */; };
+		6EC5577819ADF58800CF0760 /* LHScaleFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576619ADF58800CF0760 /* LHScaleFrame.cpp */; };
+		6EC5577919ADF58800CF0760 /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576819ADF58800CF0760 /* LHSpriteFrame.cpp */; };
+		6EC5577A19ADF58800CF0760 /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576819ADF58800CF0760 /* LHSpriteFrame.cpp */; };
+		6EC5577B19ADF58800CF0760 /* LHSpriteFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5576819ADF58800CF0760 /* LHSpriteFrame.cpp */; };
+		6EC5578019ADF59C00CF0760 /* LHOpacityProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5577C19ADF59C00CF0760 /* LHOpacityProperty.cpp */; };
+		6EC5578119ADF59C00CF0760 /* LHOpacityProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5577C19ADF59C00CF0760 /* LHOpacityProperty.cpp */; };
+		6EC5578219ADF59C00CF0760 /* LHOpacityProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5577C19ADF59C00CF0760 /* LHOpacityProperty.cpp */; };
+		6EC5578319ADF59C00CF0760 /* LHPositionProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5577E19ADF59C00CF0760 /* LHPositionProperty.cpp */; };
+		6EC5578419ADF59C00CF0760 /* LHPositionProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5577E19ADF59C00CF0760 /* LHPositionProperty.cpp */; };
+		6EC5578519ADF59C00CF0760 /* LHPositionProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5577E19ADF59C00CF0760 /* LHPositionProperty.cpp */; };
+		6EC5579119ADF5BB00CF0760 /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578619ADF5BB00CF0760 /* LHJointsProtocol.cpp */; };
+		6EC5579219ADF5BB00CF0760 /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578619ADF5BB00CF0760 /* LHJointsProtocol.cpp */; };
+		6EC5579319ADF5BB00CF0760 /* LHJointsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578619ADF5BB00CF0760 /* LHJointsProtocol.cpp */; };
+		6EC5579419ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578819ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp */; };
+		6EC5579519ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578819ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp */; };
+		6EC5579619ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578819ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp */; };
+		6EC5579719ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578A19ADF5BB00CF0760 /* LHNodeProtocol.cpp */; };
+		6EC5579819ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578A19ADF5BB00CF0760 /* LHNodeProtocol.cpp */; };
+		6EC5579919ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578A19ADF5BB00CF0760 /* LHNodeProtocol.cpp */; };
+		6EC5579A19ADF5BC00CF0760 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578C19ADF5BB00CF0760 /* LHPhysicsProtocol.cpp */; };
+		6EC5579B19ADF5BC00CF0760 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578C19ADF5BB00CF0760 /* LHPhysicsProtocol.cpp */; };
+		6EC5579C19ADF5BC00CF0760 /* LHPhysicsProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578C19ADF5BB00CF0760 /* LHPhysicsProtocol.cpp */; };
+		6EC5579D19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578E19ADF5BB00CF0760 /* LHUserProperties.cpp */; };
+		6EC5579E19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578E19ADF5BB00CF0760 /* LHUserProperties.cpp */; };
+		6EC5579F19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5578E19ADF5BB00CF0760 /* LHUserProperties.cpp */; };
+		6EC557AE19ADF5D500CF0760 /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A119ADF5D400CF0760 /* LHBox2dCollisionHandling.cpp */; };
+		6EC557AF19ADF5D500CF0760 /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A119ADF5D400CF0760 /* LHBox2dCollisionHandling.cpp */; };
+		6EC557B019ADF5D500CF0760 /* LHBox2dCollisionHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A119ADF5D400CF0760 /* LHBox2dCollisionHandling.cpp */; };
+		6EC557B119ADF5D500CF0760 /* LHBox2dDebugDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A319ADF5D400CF0760 /* LHBox2dDebugDrawNode.cpp */; };
+		6EC557B219ADF5D500CF0760 /* LHBox2dDebugDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A319ADF5D400CF0760 /* LHBox2dDebugDrawNode.cpp */; };
+		6EC557B319ADF5D500CF0760 /* LHBox2dDebugDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A319ADF5D400CF0760 /* LHBox2dDebugDrawNode.cpp */; };
+		6EC557B419ADF5D500CF0760 /* LHDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A519ADF5D400CF0760 /* LHDevice.cpp */; };
+		6EC557B519ADF5D500CF0760 /* LHDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A519ADF5D400CF0760 /* LHDevice.cpp */; };
+		6EC557B619ADF5D500CF0760 /* LHDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A519ADF5D400CF0760 /* LHDevice.cpp */; };
+		6EC557B719ADF5D500CF0760 /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A719ADF5D400CF0760 /* LHDictionary.cpp */; };
+		6EC557B819ADF5D500CF0760 /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A719ADF5D400CF0760 /* LHDictionary.cpp */; };
+		6EC557B919ADF5D500CF0760 /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A719ADF5D400CF0760 /* LHDictionary.cpp */; };
+		6EC557BA19ADF5D500CF0760 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A919ADF5D400CF0760 /* LHUtils.cpp */; };
+		6EC557BB19ADF5D500CF0760 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A919ADF5D400CF0760 /* LHUtils.cpp */; };
+		6EC557BC19ADF5D500CF0760 /* LHUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557A919ADF5D400CF0760 /* LHUtils.cpp */; };
+		6EC557BD19ADF5D500CF0760 /* NodeTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557AC19ADF5D500CF0760 /* NodeTransform.cpp */; };
+		6EC557BE19ADF5D500CF0760 /* NodeTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557AC19ADF5D500CF0760 /* NodeTransform.cpp */; };
+		6EC557BF19ADF5D500CF0760 /* NodeTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557AC19ADF5D500CF0760 /* NodeTransform.cpp */; };
 		6EDE843D19A483A200599C48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDE843C19A483A200599C48 /* Foundation.framework */; };
 		6EDE86DD19A4898100599C48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDE843C19A483A200599C48 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -172,119 +172,120 @@
 		6E80035419A84A8E00284D21 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
 		6E80C4B719A75ABC002EEA12 /* LH_API_VERSION.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LH_API_VERSION.plist; sourceTree = "<group>"; };
 		6E80C4D219A7683B002EEA12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6E9090E419A845BD0090246B /* LHFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHFrame.cpp; sourceTree = "<group>"; };
-		6E9090E519A845BD0090246B /* LHFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHFrame.h; sourceTree = "<group>"; };
-		6E9090E619A845BD0090246B /* LHOpacityFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHOpacityFrame.cpp; sourceTree = "<group>"; };
-		6E9090E719A845BD0090246B /* LHOpacityFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHOpacityFrame.h; sourceTree = "<group>"; };
-		6E9090E819A845BD0090246B /* LHPositionFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPositionFrame.cpp; sourceTree = "<group>"; };
-		6E9090E919A845BD0090246B /* LHPositionFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPositionFrame.h; sourceTree = "<group>"; };
-		6E9090EA19A845BD0090246B /* LHRotationFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHRotationFrame.cpp; sourceTree = "<group>"; };
-		6E9090EB19A845BD0090246B /* LHRotationFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRotationFrame.h; sourceTree = "<group>"; };
-		6E9090EC19A845BD0090246B /* LHScaleFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHScaleFrame.cpp; sourceTree = "<group>"; };
-		6E9090ED19A845BD0090246B /* LHScaleFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHScaleFrame.h; sourceTree = "<group>"; };
-		6E9090EE19A845BD0090246B /* LHSpriteFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSpriteFrame.cpp; sourceTree = "<group>"; };
-		6E9090EF19A845BD0090246B /* LHSpriteFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSpriteFrame.h; sourceTree = "<group>"; };
-		6E9090F119A845BD0090246B /* LHAnimationProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHAnimationProperty.cpp; sourceTree = "<group>"; };
-		6E9090F219A845BD0090246B /* LHAnimationProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAnimationProperty.h; sourceTree = "<group>"; };
-		6E9090F319A845BD0090246B /* LHCameraActivateProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHCameraActivateProperty.cpp; sourceTree = "<group>"; };
-		6E9090F419A845BD0090246B /* LHCameraActivateProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCameraActivateProperty.h; sourceTree = "<group>"; };
-		6E9090F519A845BD0090246B /* LHChildrenOpacitiesProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHChildrenOpacitiesProperty.cpp; sourceTree = "<group>"; };
-		6E9090F619A845BD0090246B /* LHChildrenOpacitiesProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHChildrenOpacitiesProperty.h; sourceTree = "<group>"; };
-		6E9090F719A845BD0090246B /* LHChildrenPositionsProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHChildrenPositionsProperty.cpp; sourceTree = "<group>"; };
-		6E9090F819A845BD0090246B /* LHChildrenPositionsProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHChildrenPositionsProperty.h; sourceTree = "<group>"; };
-		6E9090F919A845BD0090246B /* LHChildrenRotationsProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHChildrenRotationsProperty.cpp; sourceTree = "<group>"; };
-		6E9090FA19A845BD0090246B /* LHChildrenRotationsProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHChildrenRotationsProperty.h; sourceTree = "<group>"; };
-		6E9090FB19A845BD0090246B /* LHChildrenScalesProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHChildrenScalesProperty.cpp; sourceTree = "<group>"; };
-		6E9090FC19A845BD0090246B /* LHChildrenScalesProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHChildrenScalesProperty.h; sourceTree = "<group>"; };
-		6E9090FD19A845BD0090246B /* LHOpacityProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHOpacityProperty.cpp; sourceTree = "<group>"; };
-		6E9090FE19A845BD0090246B /* LHOpacityProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHOpacityProperty.h; sourceTree = "<group>"; };
-		6E9090FF19A845BD0090246B /* LHPositionProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPositionProperty.cpp; sourceTree = "<group>"; };
-		6E90910019A845BD0090246B /* LHPositionProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPositionProperty.h; sourceTree = "<group>"; };
-		6E90910119A845BD0090246B /* LHRotationProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHRotationProperty.cpp; sourceTree = "<group>"; };
-		6E90910219A845BD0090246B /* LHRotationProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRotationProperty.h; sourceTree = "<group>"; };
-		6E90910319A845BD0090246B /* LHScaleProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHScaleProperty.cpp; sourceTree = "<group>"; };
-		6E90910419A845BD0090246B /* LHScaleProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHScaleProperty.h; sourceTree = "<group>"; };
-		6E90910519A845BD0090246B /* LHSpriteFrameProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSpriteFrameProperty.cpp; sourceTree = "<group>"; };
-		6E90910619A845BD0090246B /* LHSpriteFrameProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSpriteFrameProperty.h; sourceTree = "<group>"; };
-		6E90910719A845BD0090246B /* LHAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHAnimation.cpp; sourceTree = "<group>"; };
-		6E90910819A845BD0090246B /* LHAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAnimation.h; sourceTree = "<group>"; };
 		6E90910919A845BD0090246B /* LevelHelper2API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelHelper2API.h; sourceTree = "<group>"; };
 		6E90910A19A845BD0090246B /* LHConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHConfig.h; sourceTree = "<group>"; };
 		6E90910B19A845BD0090246B /* LHScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHScene.cpp; sourceTree = "<group>"; };
 		6E90910C19A845BD0090246B /* LHScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHScene.h; sourceTree = "<group>"; };
-		6E90910E19A845BD0090246B /* LHAsset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHAsset.cpp; sourceTree = "<group>"; };
-		6E90910F19A845BD0090246B /* LHAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAsset.h; sourceTree = "<group>"; };
-		6E90911019A845BD0090246B /* LHBackUINode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHBackUINode.cpp; sourceTree = "<group>"; };
-		6E90911119A845BD0090246B /* LHBackUINode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBackUINode.h; sourceTree = "<group>"; };
-		6E90911219A845BD0090246B /* LHBezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHBezier.cpp; sourceTree = "<group>"; };
-		6E90911319A845BD0090246B /* LHBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBezier.h; sourceTree = "<group>"; };
-		6E90911419A845BD0090246B /* LHCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHCamera.cpp; sourceTree = "<group>"; };
-		6E90911519A845BD0090246B /* LHCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCamera.h; sourceTree = "<group>"; };
-		6E90911619A845BD0090246B /* LHDistanceJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDistanceJointNode.cpp; sourceTree = "<group>"; };
-		6E90911719A845BD0090246B /* LHDistanceJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDistanceJointNode.h; sourceTree = "<group>"; };
-		6E90911819A845BD0090246B /* LHDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDrawNode.cpp; sourceTree = "<group>"; };
-		6E90911919A845BD0090246B /* LHDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDrawNode.h; sourceTree = "<group>"; };
-		6E90911A19A845BD0090246B /* LHGameWorldNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHGameWorldNode.cpp; sourceTree = "<group>"; };
-		6E90911B19A845BD0090246B /* LHGameWorldNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHGameWorldNode.h; sourceTree = "<group>"; };
-		6E90911C19A845BD0090246B /* LHGearJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHGearJointNode.cpp; sourceTree = "<group>"; };
-		6E90911D19A845BD0090246B /* LHGearJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHGearJointNode.h; sourceTree = "<group>"; };
-		6E90911E19A845BD0090246B /* LHGravityArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHGravityArea.cpp; sourceTree = "<group>"; };
-		6E90911F19A845BD0090246B /* LHGravityArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHGravityArea.h; sourceTree = "<group>"; };
-		6E90912019A845BD0090246B /* LHNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHNode.cpp; sourceTree = "<group>"; };
-		6E90912119A845BD0090246B /* LHNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHNode.h; sourceTree = "<group>"; };
-		6E90912219A845BD0090246B /* LHParallax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHParallax.cpp; sourceTree = "<group>"; };
-		6E90912319A845BD0090246B /* LHParallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHParallax.h; sourceTree = "<group>"; };
-		6E90912419A845BD0090246B /* LHParallaxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHParallaxLayer.cpp; sourceTree = "<group>"; };
-		6E90912519A845BD0090246B /* LHParallaxLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHParallaxLayer.h; sourceTree = "<group>"; };
-		6E90912619A845BD0090246B /* LHPrismaticJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPrismaticJointNode.cpp; sourceTree = "<group>"; };
-		6E90912719A845BD0090246B /* LHPrismaticJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPrismaticJointNode.h; sourceTree = "<group>"; };
-		6E90912819A845BD0090246B /* LHPulleyJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPulleyJointNode.cpp; sourceTree = "<group>"; };
-		6E90912919A845BD0090246B /* LHPulleyJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPulleyJointNode.h; sourceTree = "<group>"; };
-		6E90912A19A845BD0090246B /* LHRevoluteJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHRevoluteJointNode.cpp; sourceTree = "<group>"; };
-		6E90912B19A845BD0090246B /* LHRevoluteJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRevoluteJointNode.h; sourceTree = "<group>"; };
-		6E90912C19A845BD0090246B /* LHRopeJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHRopeJointNode.cpp; sourceTree = "<group>"; };
-		6E90912D19A845BD0090246B /* LHRopeJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRopeJointNode.h; sourceTree = "<group>"; };
-		6E90912E19A845BD0090246B /* LHShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHShape.cpp; sourceTree = "<group>"; };
-		6E90912F19A845BD0090246B /* LHShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHShape.h; sourceTree = "<group>"; };
-		6E90913019A845BD0090246B /* LHSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSprite.cpp; sourceTree = "<group>"; };
-		6E90913119A845BD0090246B /* LHSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSprite.h; sourceTree = "<group>"; };
-		6E90913219A845BD0090246B /* LHUINode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHUINode.cpp; sourceTree = "<group>"; };
-		6E90913319A845BD0090246B /* LHUINode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUINode.h; sourceTree = "<group>"; };
-		6E90913419A845BD0090246B /* LHWater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHWater.cpp; sourceTree = "<group>"; };
-		6E90913519A845BD0090246B /* LHWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHWater.h; sourceTree = "<group>"; };
-		6E90913619A845BD0090246B /* LHWeldJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHWeldJointNode.cpp; sourceTree = "<group>"; };
-		6E90913719A845BD0090246B /* LHWeldJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHWeldJointNode.h; sourceTree = "<group>"; };
-		6E90913819A845BD0090246B /* LHWheelJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHWheelJointNode.cpp; sourceTree = "<group>"; };
-		6E90913919A845BD0090246B /* LHWheelJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHWheelJointNode.h; sourceTree = "<group>"; };
-		6E90913B19A845BD0090246B /* LHJointsProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHJointsProtocol.cpp; sourceTree = "<group>"; };
-		6E90913C19A845BD0090246B /* LHJointsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJointsProtocol.h; sourceTree = "<group>"; };
-		6E90913D19A845BD0090246B /* LHNodeAnimationProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHNodeAnimationProtocol.cpp; sourceTree = "<group>"; };
-		6E90913E19A845BD0090246B /* LHNodeAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHNodeAnimationProtocol.h; sourceTree = "<group>"; };
-		6E90913F19A845BD0090246B /* LHNodeProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHNodeProtocol.cpp; sourceTree = "<group>"; };
-		6E90914019A845BD0090246B /* LHNodeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHNodeProtocol.h; sourceTree = "<group>"; };
-		6E90914119A845BD0090246B /* LHPhysicsProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPhysicsProtocol.cpp; sourceTree = "<group>"; };
-		6E90914219A845BD0090246B /* LHPhysicsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPhysicsProtocol.h; sourceTree = "<group>"; };
-		6E90914319A845BD0090246B /* LHUserProperties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHUserProperties.cpp; sourceTree = "<group>"; };
-		6E90914419A845BD0090246B /* LHUserProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserProperties.h; sourceTree = "<group>"; };
-		6E90914519A845BD0090246B /* LHUserPropertyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUserPropertyProtocol.h; sourceTree = "<group>"; };
-		6E90914719A845BD0090246B /* LHArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHArray.h; sourceTree = "<group>"; };
-		6E90914819A845BD0090246B /* LHBox2dCollisionHandling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHBox2dCollisionHandling.cpp; sourceTree = "<group>"; };
-		6E90914919A845BD0090246B /* LHBox2dCollisionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBox2dCollisionHandling.h; sourceTree = "<group>"; };
-		6E90914A19A845BD0090246B /* LHBox2dDebugDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHBox2dDebugDrawNode.cpp; sourceTree = "<group>"; };
-		6E90914B19A845BD0090246B /* LHBox2dDebugDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBox2dDebugDrawNode.h; sourceTree = "<group>"; };
-		6E90914C19A845BD0090246B /* LHDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDevice.cpp; sourceTree = "<group>"; };
-		6E90914D19A845BD0090246B /* LHDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDevice.h; sourceTree = "<group>"; };
-		6E90914E19A845BD0090246B /* LHDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDictionary.cpp; sourceTree = "<group>"; };
-		6E90914F19A845BD0090246B /* LHDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDictionary.h; sourceTree = "<group>"; };
-		6E90915019A845BD0090246B /* LHUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHUtils.cpp; sourceTree = "<group>"; };
-		6E90915119A845BD0090246B /* LHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHUtils.h; sourceTree = "<group>"; };
-		6E90915219A845BD0090246B /* LHValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHValue.h; sourceTree = "<group>"; };
-		6E90915319A845BD0090246B /* NodeTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeTransform.cpp; sourceTree = "<group>"; };
-		6E90915419A845BD0090246B /* NodeTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeTransform.h; sourceTree = "<group>"; };
 		6E9FD24E19A4F77E0046CDBD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6E9FD25019A4F7A60046CDBD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E9FD25219A4F7AB0046CDBD /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		6E9FD2BF19A4FEBF0046CDBD /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../build/Release-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		6EC556BE19ADF53400CF0760 /* LHAsset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHAsset.cpp; path = "LevelHelper2-API/LHAsset.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556BF19ADF53400CF0760 /* LHAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHAsset.h; path = "LevelHelper2-API/LHAsset.h"; sourceTree = SOURCE_ROOT; };
+		6EC556C019ADF53400CF0760 /* LHBackUINode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBackUINode.cpp; path = "LevelHelper2-API/LHBackUINode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556C119ADF53400CF0760 /* LHBackUINode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHBackUINode.h; path = "LevelHelper2-API/LHBackUINode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556C219ADF53400CF0760 /* LHBezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBezier.cpp; path = "LevelHelper2-API/LHBezier.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556C319ADF53400CF0760 /* LHBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHBezier.h; path = "LevelHelper2-API/LHBezier.h"; sourceTree = SOURCE_ROOT; };
+		6EC556C419ADF53400CF0760 /* LHCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHCamera.cpp; path = "LevelHelper2-API/LHCamera.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556C519ADF53400CF0760 /* LHCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHCamera.h; path = "LevelHelper2-API/LHCamera.h"; sourceTree = SOURCE_ROOT; };
+		6EC556C619ADF53400CF0760 /* LHDistanceJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHDistanceJointNode.cpp; path = "LevelHelper2-API/LHDistanceJointNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556C719ADF53400CF0760 /* LHDistanceJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHDistanceJointNode.h; path = "LevelHelper2-API/LHDistanceJointNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556C819ADF53400CF0760 /* LHDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHDrawNode.cpp; path = "LevelHelper2-API/LHDrawNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556C919ADF53400CF0760 /* LHDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHDrawNode.h; path = "LevelHelper2-API/LHDrawNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556CA19ADF53400CF0760 /* LHGameWorldNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHGameWorldNode.cpp; path = "LevelHelper2-API/LHGameWorldNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556CB19ADF53400CF0760 /* LHGameWorldNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHGameWorldNode.h; path = "LevelHelper2-API/LHGameWorldNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556CC19ADF53400CF0760 /* LHGearJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHGearJointNode.cpp; path = "LevelHelper2-API/LHGearJointNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556CD19ADF53400CF0760 /* LHGearJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHGearJointNode.h; path = "LevelHelper2-API/LHGearJointNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556CE19ADF53400CF0760 /* LHGravityArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHGravityArea.cpp; path = "LevelHelper2-API/LHGravityArea.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556CF19ADF53400CF0760 /* LHGravityArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHGravityArea.h; path = "LevelHelper2-API/LHGravityArea.h"; sourceTree = SOURCE_ROOT; };
+		6EC556D019ADF53400CF0760 /* LHNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHNode.cpp; path = "LevelHelper2-API/LHNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556D119ADF53400CF0760 /* LHNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHNode.h; path = "LevelHelper2-API/LHNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556D219ADF53400CF0760 /* LHParallax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHParallax.cpp; path = "LevelHelper2-API/LHParallax.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556D319ADF53400CF0760 /* LHParallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHParallax.h; path = "LevelHelper2-API/LHParallax.h"; sourceTree = SOURCE_ROOT; };
+		6EC556D419ADF53400CF0760 /* LHParallaxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHParallaxLayer.cpp; path = "LevelHelper2-API/LHParallaxLayer.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556D519ADF53400CF0760 /* LHParallaxLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHParallaxLayer.h; path = "LevelHelper2-API/LHParallaxLayer.h"; sourceTree = SOURCE_ROOT; };
+		6EC556D619ADF53400CF0760 /* LHPrismaticJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHPrismaticJointNode.cpp; path = "LevelHelper2-API/LHPrismaticJointNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556D719ADF53400CF0760 /* LHPrismaticJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHPrismaticJointNode.h; path = "LevelHelper2-API/LHPrismaticJointNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556D819ADF53400CF0760 /* LHPulleyJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHPulleyJointNode.cpp; path = "LevelHelper2-API/LHPulleyJointNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556D919ADF53400CF0760 /* LHPulleyJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHPulleyJointNode.h; path = "LevelHelper2-API/LHPulleyJointNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556DA19ADF53400CF0760 /* LHRevoluteJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHRevoluteJointNode.cpp; path = "LevelHelper2-API/LHRevoluteJointNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556DB19ADF53400CF0760 /* LHRevoluteJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHRevoluteJointNode.h; path = "LevelHelper2-API/LHRevoluteJointNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556DC19ADF53400CF0760 /* LHRopeJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHRopeJointNode.cpp; path = "LevelHelper2-API/LHRopeJointNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556DD19ADF53400CF0760 /* LHRopeJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHRopeJointNode.h; path = "LevelHelper2-API/LHRopeJointNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556DE19ADF53400CF0760 /* LHShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHShape.cpp; path = "LevelHelper2-API/LHShape.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556DF19ADF53400CF0760 /* LHShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHShape.h; path = "LevelHelper2-API/LHShape.h"; sourceTree = SOURCE_ROOT; };
+		6EC556E019ADF53400CF0760 /* LHSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSprite.cpp; path = "LevelHelper2-API/LHSprite.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556E119ADF53400CF0760 /* LHSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSprite.h; path = "LevelHelper2-API/LHSprite.h"; sourceTree = SOURCE_ROOT; };
+		6EC556E219ADF53400CF0760 /* LHUINode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHUINode.cpp; path = "LevelHelper2-API/LHUINode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556E319ADF53400CF0760 /* LHUINode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHUINode.h; path = "LevelHelper2-API/LHUINode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556E419ADF53400CF0760 /* LHWater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHWater.cpp; path = "LevelHelper2-API/LHWater.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556E519ADF53400CF0760 /* LHWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHWater.h; path = "LevelHelper2-API/LHWater.h"; sourceTree = SOURCE_ROOT; };
+		6EC556E619ADF53400CF0760 /* LHWeldJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHWeldJointNode.cpp; path = "LevelHelper2-API/LHWeldJointNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556E719ADF53400CF0760 /* LHWeldJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHWeldJointNode.h; path = "LevelHelper2-API/LHWeldJointNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC556E819ADF53400CF0760 /* LHWheelJointNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHWheelJointNode.cpp; path = "LevelHelper2-API/LHWheelJointNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC556E919ADF53400CF0760 /* LHWheelJointNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHWheelJointNode.h; path = "LevelHelper2-API/LHWheelJointNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC5572C19ADF54300CF0760 /* LHAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHAnimation.cpp; path = "LevelHelper2-API/LHAnimation.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5572D19ADF54300CF0760 /* LHAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHAnimation.h; path = "LevelHelper2-API/LHAnimation.h"; sourceTree = SOURCE_ROOT; };
+		6EC5573119ADF56600CF0760 /* LHAnimationProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHAnimationProperty.cpp; path = "LevelHelper2-API/LHAnimationProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5573219ADF56600CF0760 /* LHAnimationProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHAnimationProperty.h; path = "LevelHelper2-API/LHAnimationProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5573319ADF56600CF0760 /* LHCameraActivateProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHCameraActivateProperty.cpp; path = "LevelHelper2-API/LHCameraActivateProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5573419ADF56600CF0760 /* LHCameraActivateProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHCameraActivateProperty.h; path = "LevelHelper2-API/LHCameraActivateProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5573519ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHChildrenOpacitiesProperty.cpp; path = "LevelHelper2-API/LHChildrenOpacitiesProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5573619ADF56600CF0760 /* LHChildrenOpacitiesProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHChildrenOpacitiesProperty.h; path = "LevelHelper2-API/LHChildrenOpacitiesProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5573719ADF56600CF0760 /* LHChildrenPositionsProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHChildrenPositionsProperty.cpp; path = "LevelHelper2-API/LHChildrenPositionsProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5573819ADF56600CF0760 /* LHChildrenPositionsProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHChildrenPositionsProperty.h; path = "LevelHelper2-API/LHChildrenPositionsProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5573919ADF56600CF0760 /* LHChildrenRotationsProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHChildrenRotationsProperty.cpp; path = "LevelHelper2-API/LHChildrenRotationsProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5573A19ADF56600CF0760 /* LHChildrenRotationsProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHChildrenRotationsProperty.h; path = "LevelHelper2-API/LHChildrenRotationsProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5573B19ADF56600CF0760 /* LHChildrenScalesProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHChildrenScalesProperty.cpp; path = "LevelHelper2-API/LHChildrenScalesProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5573C19ADF56600CF0760 /* LHChildrenScalesProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHChildrenScalesProperty.h; path = "LevelHelper2-API/LHChildrenScalesProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5573D19ADF56600CF0760 /* LHRotationProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHRotationProperty.cpp; path = "LevelHelper2-API/LHRotationProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5573E19ADF56600CF0760 /* LHRotationProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHRotationProperty.h; path = "LevelHelper2-API/LHRotationProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5573F19ADF56600CF0760 /* LHScaleProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHScaleProperty.cpp; path = "LevelHelper2-API/LHScaleProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5574019ADF56600CF0760 /* LHScaleProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHScaleProperty.h; path = "LevelHelper2-API/LHScaleProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5574119ADF56600CF0760 /* LHSpriteFrameProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSpriteFrameProperty.cpp; path = "LevelHelper2-API/LHSpriteFrameProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5574219ADF56600CF0760 /* LHSpriteFrameProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSpriteFrameProperty.h; path = "LevelHelper2-API/LHSpriteFrameProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5575E19ADF58800CF0760 /* LHFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHFrame.cpp; path = "LevelHelper2-API/LHFrame.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5575F19ADF58800CF0760 /* LHFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHFrame.h; path = "LevelHelper2-API/LHFrame.h"; sourceTree = SOURCE_ROOT; };
+		6EC5576019ADF58800CF0760 /* LHOpacityFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHOpacityFrame.cpp; path = "LevelHelper2-API/LHOpacityFrame.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5576119ADF58800CF0760 /* LHOpacityFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHOpacityFrame.h; path = "LevelHelper2-API/LHOpacityFrame.h"; sourceTree = SOURCE_ROOT; };
+		6EC5576219ADF58800CF0760 /* LHPositionFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHPositionFrame.cpp; path = "LevelHelper2-API/LHPositionFrame.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5576319ADF58800CF0760 /* LHPositionFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHPositionFrame.h; path = "LevelHelper2-API/LHPositionFrame.h"; sourceTree = SOURCE_ROOT; };
+		6EC5576419ADF58800CF0760 /* LHRotationFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHRotationFrame.cpp; path = "LevelHelper2-API/LHRotationFrame.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5576519ADF58800CF0760 /* LHRotationFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHRotationFrame.h; path = "LevelHelper2-API/LHRotationFrame.h"; sourceTree = SOURCE_ROOT; };
+		6EC5576619ADF58800CF0760 /* LHScaleFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHScaleFrame.cpp; path = "LevelHelper2-API/LHScaleFrame.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5576719ADF58800CF0760 /* LHScaleFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHScaleFrame.h; path = "LevelHelper2-API/LHScaleFrame.h"; sourceTree = SOURCE_ROOT; };
+		6EC5576819ADF58800CF0760 /* LHSpriteFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSpriteFrame.cpp; path = "LevelHelper2-API/LHSpriteFrame.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5576919ADF58800CF0760 /* LHSpriteFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSpriteFrame.h; path = "LevelHelper2-API/LHSpriteFrame.h"; sourceTree = SOURCE_ROOT; };
+		6EC5577C19ADF59C00CF0760 /* LHOpacityProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHOpacityProperty.cpp; path = "LevelHelper2-API/LHOpacityProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5577D19ADF59C00CF0760 /* LHOpacityProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHOpacityProperty.h; path = "LevelHelper2-API/LHOpacityProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5577E19ADF59C00CF0760 /* LHPositionProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHPositionProperty.cpp; path = "LevelHelper2-API/LHPositionProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5577F19ADF59C00CF0760 /* LHPositionProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHPositionProperty.h; path = "LevelHelper2-API/LHPositionProperty.h"; sourceTree = SOURCE_ROOT; };
+		6EC5578619ADF5BB00CF0760 /* LHJointsProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHJointsProtocol.cpp; path = "LevelHelper2-API/LHJointsProtocol.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5578719ADF5BB00CF0760 /* LHJointsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHJointsProtocol.h; path = "LevelHelper2-API/LHJointsProtocol.h"; sourceTree = SOURCE_ROOT; };
+		6EC5578819ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHNodeAnimationProtocol.cpp; path = "LevelHelper2-API/LHNodeAnimationProtocol.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5578919ADF5BB00CF0760 /* LHNodeAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHNodeAnimationProtocol.h; path = "LevelHelper2-API/LHNodeAnimationProtocol.h"; sourceTree = SOURCE_ROOT; };
+		6EC5578A19ADF5BB00CF0760 /* LHNodeProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHNodeProtocol.cpp; path = "LevelHelper2-API/LHNodeProtocol.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5578B19ADF5BB00CF0760 /* LHNodeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHNodeProtocol.h; path = "LevelHelper2-API/LHNodeProtocol.h"; sourceTree = SOURCE_ROOT; };
+		6EC5578C19ADF5BB00CF0760 /* LHPhysicsProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHPhysicsProtocol.cpp; path = "LevelHelper2-API/LHPhysicsProtocol.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5578D19ADF5BB00CF0760 /* LHPhysicsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHPhysicsProtocol.h; path = "LevelHelper2-API/LHPhysicsProtocol.h"; sourceTree = SOURCE_ROOT; };
+		6EC5578E19ADF5BB00CF0760 /* LHUserProperties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHUserProperties.cpp; path = "LevelHelper2-API/LHUserProperties.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC5578F19ADF5BB00CF0760 /* LHUserProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHUserProperties.h; path = "LevelHelper2-API/LHUserProperties.h"; sourceTree = SOURCE_ROOT; };
+		6EC5579019ADF5BB00CF0760 /* LHUserPropertyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHUserPropertyProtocol.h; path = "LevelHelper2-API/LHUserPropertyProtocol.h"; sourceTree = SOURCE_ROOT; };
+		6EC557A019ADF5D400CF0760 /* LHArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHArray.h; path = "LevelHelper2-API/LHArray.h"; sourceTree = SOURCE_ROOT; };
+		6EC557A119ADF5D400CF0760 /* LHBox2dCollisionHandling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBox2dCollisionHandling.cpp; path = "LevelHelper2-API/LHBox2dCollisionHandling.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC557A219ADF5D400CF0760 /* LHBox2dCollisionHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHBox2dCollisionHandling.h; path = "LevelHelper2-API/LHBox2dCollisionHandling.h"; sourceTree = SOURCE_ROOT; };
+		6EC557A319ADF5D400CF0760 /* LHBox2dDebugDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBox2dDebugDrawNode.cpp; path = "LevelHelper2-API/LHBox2dDebugDrawNode.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC557A419ADF5D400CF0760 /* LHBox2dDebugDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHBox2dDebugDrawNode.h; path = "LevelHelper2-API/LHBox2dDebugDrawNode.h"; sourceTree = SOURCE_ROOT; };
+		6EC557A519ADF5D400CF0760 /* LHDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHDevice.cpp; path = "LevelHelper2-API/LHDevice.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC557A619ADF5D400CF0760 /* LHDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHDevice.h; path = "LevelHelper2-API/LHDevice.h"; sourceTree = SOURCE_ROOT; };
+		6EC557A719ADF5D400CF0760 /* LHDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHDictionary.cpp; path = "LevelHelper2-API/LHDictionary.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC557A819ADF5D400CF0760 /* LHDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHDictionary.h; path = "LevelHelper2-API/LHDictionary.h"; sourceTree = SOURCE_ROOT; };
+		6EC557A919ADF5D400CF0760 /* LHUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHUtils.cpp; path = "LevelHelper2-API/LHUtils.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC557AA19ADF5D400CF0760 /* LHUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHUtils.h; path = "LevelHelper2-API/LHUtils.h"; sourceTree = SOURCE_ROOT; };
+		6EC557AB19ADF5D400CF0760 /* LHValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHValue.h; path = "LevelHelper2-API/LHValue.h"; sourceTree = SOURCE_ROOT; };
+		6EC557AC19ADF5D500CF0760 /* NodeTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NodeTransform.cpp; path = "LevelHelper2-API/NodeTransform.cpp"; sourceTree = SOURCE_ROOT; };
+		6EC557AD19ADF5D500CF0760 /* NodeTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NodeTransform.h; path = "LevelHelper2-API/NodeTransform.h"; sourceTree = SOURCE_ROOT; };
+		6EC557C019ADF86700CF0760 /* LH_COCOS2DX_PROJECT_TEMPLATE.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = LH_COCOS2DX_PROJECT_TEMPLATE.plist; path = ../LH_COCOS2DX_PROJECT_TEMPLATE.plist; sourceTree = "<group>"; };
 		6EDE843919A483A200599C48 /* libLevelHelper2-API.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libLevelHelper2-API.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDE843C19A483A200599C48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EDE844A19A483A200599C48 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -328,10 +329,10 @@
 		6E9090E219A845BD0090246B /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				6EC5572C19ADF54300CF0760 /* LHAnimation.cpp */,
+				6EC5572D19ADF54300CF0760 /* LHAnimation.h */,
 				6E9090E319A845BD0090246B /* AnimationFrames */,
 				6E9090F019A845BD0090246B /* AnimationProperties */,
-				6E90910719A845BD0090246B /* LHAnimation.cpp */,
-				6E90910819A845BD0090246B /* LHAnimation.h */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -339,18 +340,18 @@
 		6E9090E319A845BD0090246B /* AnimationFrames */ = {
 			isa = PBXGroup;
 			children = (
-				6E9090E419A845BD0090246B /* LHFrame.cpp */,
-				6E9090E519A845BD0090246B /* LHFrame.h */,
-				6E9090E619A845BD0090246B /* LHOpacityFrame.cpp */,
-				6E9090E719A845BD0090246B /* LHOpacityFrame.h */,
-				6E9090E819A845BD0090246B /* LHPositionFrame.cpp */,
-				6E9090E919A845BD0090246B /* LHPositionFrame.h */,
-				6E9090EA19A845BD0090246B /* LHRotationFrame.cpp */,
-				6E9090EB19A845BD0090246B /* LHRotationFrame.h */,
-				6E9090EC19A845BD0090246B /* LHScaleFrame.cpp */,
-				6E9090ED19A845BD0090246B /* LHScaleFrame.h */,
-				6E9090EE19A845BD0090246B /* LHSpriteFrame.cpp */,
-				6E9090EF19A845BD0090246B /* LHSpriteFrame.h */,
+				6EC5575E19ADF58800CF0760 /* LHFrame.cpp */,
+				6EC5575F19ADF58800CF0760 /* LHFrame.h */,
+				6EC5576019ADF58800CF0760 /* LHOpacityFrame.cpp */,
+				6EC5576119ADF58800CF0760 /* LHOpacityFrame.h */,
+				6EC5576219ADF58800CF0760 /* LHPositionFrame.cpp */,
+				6EC5576319ADF58800CF0760 /* LHPositionFrame.h */,
+				6EC5576419ADF58800CF0760 /* LHRotationFrame.cpp */,
+				6EC5576519ADF58800CF0760 /* LHRotationFrame.h */,
+				6EC5576619ADF58800CF0760 /* LHScaleFrame.cpp */,
+				6EC5576719ADF58800CF0760 /* LHScaleFrame.h */,
+				6EC5576819ADF58800CF0760 /* LHSpriteFrame.cpp */,
+				6EC5576919ADF58800CF0760 /* LHSpriteFrame.h */,
 			);
 			path = AnimationFrames;
 			sourceTree = "<group>";
@@ -358,28 +359,28 @@
 		6E9090F019A845BD0090246B /* AnimationProperties */ = {
 			isa = PBXGroup;
 			children = (
-				6E9090F119A845BD0090246B /* LHAnimationProperty.cpp */,
-				6E9090F219A845BD0090246B /* LHAnimationProperty.h */,
-				6E9090F319A845BD0090246B /* LHCameraActivateProperty.cpp */,
-				6E9090F419A845BD0090246B /* LHCameraActivateProperty.h */,
-				6E9090F519A845BD0090246B /* LHChildrenOpacitiesProperty.cpp */,
-				6E9090F619A845BD0090246B /* LHChildrenOpacitiesProperty.h */,
-				6E9090F719A845BD0090246B /* LHChildrenPositionsProperty.cpp */,
-				6E9090F819A845BD0090246B /* LHChildrenPositionsProperty.h */,
-				6E9090F919A845BD0090246B /* LHChildrenRotationsProperty.cpp */,
-				6E9090FA19A845BD0090246B /* LHChildrenRotationsProperty.h */,
-				6E9090FB19A845BD0090246B /* LHChildrenScalesProperty.cpp */,
-				6E9090FC19A845BD0090246B /* LHChildrenScalesProperty.h */,
-				6E9090FD19A845BD0090246B /* LHOpacityProperty.cpp */,
-				6E9090FE19A845BD0090246B /* LHOpacityProperty.h */,
-				6E9090FF19A845BD0090246B /* LHPositionProperty.cpp */,
-				6E90910019A845BD0090246B /* LHPositionProperty.h */,
-				6E90910119A845BD0090246B /* LHRotationProperty.cpp */,
-				6E90910219A845BD0090246B /* LHRotationProperty.h */,
-				6E90910319A845BD0090246B /* LHScaleProperty.cpp */,
-				6E90910419A845BD0090246B /* LHScaleProperty.h */,
-				6E90910519A845BD0090246B /* LHSpriteFrameProperty.cpp */,
-				6E90910619A845BD0090246B /* LHSpriteFrameProperty.h */,
+				6EC5577C19ADF59C00CF0760 /* LHOpacityProperty.cpp */,
+				6EC5577D19ADF59C00CF0760 /* LHOpacityProperty.h */,
+				6EC5577E19ADF59C00CF0760 /* LHPositionProperty.cpp */,
+				6EC5577F19ADF59C00CF0760 /* LHPositionProperty.h */,
+				6EC5573119ADF56600CF0760 /* LHAnimationProperty.cpp */,
+				6EC5573219ADF56600CF0760 /* LHAnimationProperty.h */,
+				6EC5573319ADF56600CF0760 /* LHCameraActivateProperty.cpp */,
+				6EC5573419ADF56600CF0760 /* LHCameraActivateProperty.h */,
+				6EC5573519ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp */,
+				6EC5573619ADF56600CF0760 /* LHChildrenOpacitiesProperty.h */,
+				6EC5573719ADF56600CF0760 /* LHChildrenPositionsProperty.cpp */,
+				6EC5573819ADF56600CF0760 /* LHChildrenPositionsProperty.h */,
+				6EC5573919ADF56600CF0760 /* LHChildrenRotationsProperty.cpp */,
+				6EC5573A19ADF56600CF0760 /* LHChildrenRotationsProperty.h */,
+				6EC5573B19ADF56600CF0760 /* LHChildrenScalesProperty.cpp */,
+				6EC5573C19ADF56600CF0760 /* LHChildrenScalesProperty.h */,
+				6EC5573D19ADF56600CF0760 /* LHRotationProperty.cpp */,
+				6EC5573E19ADF56600CF0760 /* LHRotationProperty.h */,
+				6EC5573F19ADF56600CF0760 /* LHScaleProperty.cpp */,
+				6EC5574019ADF56600CF0760 /* LHScaleProperty.h */,
+				6EC5574119ADF56600CF0760 /* LHSpriteFrameProperty.cpp */,
+				6EC5574219ADF56600CF0760 /* LHSpriteFrameProperty.h */,
 			);
 			path = AnimationProperties;
 			sourceTree = "<group>";
@@ -387,50 +388,50 @@
 		6E90910D19A845BD0090246B /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				6E90910E19A845BD0090246B /* LHAsset.cpp */,
-				6E90910F19A845BD0090246B /* LHAsset.h */,
-				6E90911019A845BD0090246B /* LHBackUINode.cpp */,
-				6E90911119A845BD0090246B /* LHBackUINode.h */,
-				6E90911219A845BD0090246B /* LHBezier.cpp */,
-				6E90911319A845BD0090246B /* LHBezier.h */,
-				6E90911419A845BD0090246B /* LHCamera.cpp */,
-				6E90911519A845BD0090246B /* LHCamera.h */,
-				6E90911619A845BD0090246B /* LHDistanceJointNode.cpp */,
-				6E90911719A845BD0090246B /* LHDistanceJointNode.h */,
-				6E90911819A845BD0090246B /* LHDrawNode.cpp */,
-				6E90911919A845BD0090246B /* LHDrawNode.h */,
-				6E90911A19A845BD0090246B /* LHGameWorldNode.cpp */,
-				6E90911B19A845BD0090246B /* LHGameWorldNode.h */,
-				6E90911C19A845BD0090246B /* LHGearJointNode.cpp */,
-				6E90911D19A845BD0090246B /* LHGearJointNode.h */,
-				6E90911E19A845BD0090246B /* LHGravityArea.cpp */,
-				6E90911F19A845BD0090246B /* LHGravityArea.h */,
-				6E90912019A845BD0090246B /* LHNode.cpp */,
-				6E90912119A845BD0090246B /* LHNode.h */,
-				6E90912219A845BD0090246B /* LHParallax.cpp */,
-				6E90912319A845BD0090246B /* LHParallax.h */,
-				6E90912419A845BD0090246B /* LHParallaxLayer.cpp */,
-				6E90912519A845BD0090246B /* LHParallaxLayer.h */,
-				6E90912619A845BD0090246B /* LHPrismaticJointNode.cpp */,
-				6E90912719A845BD0090246B /* LHPrismaticJointNode.h */,
-				6E90912819A845BD0090246B /* LHPulleyJointNode.cpp */,
-				6E90912919A845BD0090246B /* LHPulleyJointNode.h */,
-				6E90912A19A845BD0090246B /* LHRevoluteJointNode.cpp */,
-				6E90912B19A845BD0090246B /* LHRevoluteJointNode.h */,
-				6E90912C19A845BD0090246B /* LHRopeJointNode.cpp */,
-				6E90912D19A845BD0090246B /* LHRopeJointNode.h */,
-				6E90912E19A845BD0090246B /* LHShape.cpp */,
-				6E90912F19A845BD0090246B /* LHShape.h */,
-				6E90913019A845BD0090246B /* LHSprite.cpp */,
-				6E90913119A845BD0090246B /* LHSprite.h */,
-				6E90913219A845BD0090246B /* LHUINode.cpp */,
-				6E90913319A845BD0090246B /* LHUINode.h */,
-				6E90913419A845BD0090246B /* LHWater.cpp */,
-				6E90913519A845BD0090246B /* LHWater.h */,
-				6E90913619A845BD0090246B /* LHWeldJointNode.cpp */,
-				6E90913719A845BD0090246B /* LHWeldJointNode.h */,
-				6E90913819A845BD0090246B /* LHWheelJointNode.cpp */,
-				6E90913919A845BD0090246B /* LHWheelJointNode.h */,
+				6EC556BE19ADF53400CF0760 /* LHAsset.cpp */,
+				6EC556BF19ADF53400CF0760 /* LHAsset.h */,
+				6EC556C019ADF53400CF0760 /* LHBackUINode.cpp */,
+				6EC556C119ADF53400CF0760 /* LHBackUINode.h */,
+				6EC556C219ADF53400CF0760 /* LHBezier.cpp */,
+				6EC556C319ADF53400CF0760 /* LHBezier.h */,
+				6EC556C419ADF53400CF0760 /* LHCamera.cpp */,
+				6EC556C519ADF53400CF0760 /* LHCamera.h */,
+				6EC556C619ADF53400CF0760 /* LHDistanceJointNode.cpp */,
+				6EC556C719ADF53400CF0760 /* LHDistanceJointNode.h */,
+				6EC556C819ADF53400CF0760 /* LHDrawNode.cpp */,
+				6EC556C919ADF53400CF0760 /* LHDrawNode.h */,
+				6EC556CA19ADF53400CF0760 /* LHGameWorldNode.cpp */,
+				6EC556CB19ADF53400CF0760 /* LHGameWorldNode.h */,
+				6EC556CC19ADF53400CF0760 /* LHGearJointNode.cpp */,
+				6EC556CD19ADF53400CF0760 /* LHGearJointNode.h */,
+				6EC556CE19ADF53400CF0760 /* LHGravityArea.cpp */,
+				6EC556CF19ADF53400CF0760 /* LHGravityArea.h */,
+				6EC556D019ADF53400CF0760 /* LHNode.cpp */,
+				6EC556D119ADF53400CF0760 /* LHNode.h */,
+				6EC556D219ADF53400CF0760 /* LHParallax.cpp */,
+				6EC556D319ADF53400CF0760 /* LHParallax.h */,
+				6EC556D419ADF53400CF0760 /* LHParallaxLayer.cpp */,
+				6EC556D519ADF53400CF0760 /* LHParallaxLayer.h */,
+				6EC556D619ADF53400CF0760 /* LHPrismaticJointNode.cpp */,
+				6EC556D719ADF53400CF0760 /* LHPrismaticJointNode.h */,
+				6EC556D819ADF53400CF0760 /* LHPulleyJointNode.cpp */,
+				6EC556D919ADF53400CF0760 /* LHPulleyJointNode.h */,
+				6EC556DA19ADF53400CF0760 /* LHRevoluteJointNode.cpp */,
+				6EC556DB19ADF53400CF0760 /* LHRevoluteJointNode.h */,
+				6EC556DC19ADF53400CF0760 /* LHRopeJointNode.cpp */,
+				6EC556DD19ADF53400CF0760 /* LHRopeJointNode.h */,
+				6EC556DE19ADF53400CF0760 /* LHShape.cpp */,
+				6EC556DF19ADF53400CF0760 /* LHShape.h */,
+				6EC556E019ADF53400CF0760 /* LHSprite.cpp */,
+				6EC556E119ADF53400CF0760 /* LHSprite.h */,
+				6EC556E219ADF53400CF0760 /* LHUINode.cpp */,
+				6EC556E319ADF53400CF0760 /* LHUINode.h */,
+				6EC556E419ADF53400CF0760 /* LHWater.cpp */,
+				6EC556E519ADF53400CF0760 /* LHWater.h */,
+				6EC556E619ADF53400CF0760 /* LHWeldJointNode.cpp */,
+				6EC556E719ADF53400CF0760 /* LHWeldJointNode.h */,
+				6EC556E819ADF53400CF0760 /* LHWheelJointNode.cpp */,
+				6EC556E919ADF53400CF0760 /* LHWheelJointNode.h */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -438,17 +439,17 @@
 		6E90913A19A845BD0090246B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				6E90913B19A845BD0090246B /* LHJointsProtocol.cpp */,
-				6E90913C19A845BD0090246B /* LHJointsProtocol.h */,
-				6E90913D19A845BD0090246B /* LHNodeAnimationProtocol.cpp */,
-				6E90913E19A845BD0090246B /* LHNodeAnimationProtocol.h */,
-				6E90913F19A845BD0090246B /* LHNodeProtocol.cpp */,
-				6E90914019A845BD0090246B /* LHNodeProtocol.h */,
-				6E90914119A845BD0090246B /* LHPhysicsProtocol.cpp */,
-				6E90914219A845BD0090246B /* LHPhysicsProtocol.h */,
-				6E90914319A845BD0090246B /* LHUserProperties.cpp */,
-				6E90914419A845BD0090246B /* LHUserProperties.h */,
-				6E90914519A845BD0090246B /* LHUserPropertyProtocol.h */,
+				6EC5578619ADF5BB00CF0760 /* LHJointsProtocol.cpp */,
+				6EC5578719ADF5BB00CF0760 /* LHJointsProtocol.h */,
+				6EC5578819ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp */,
+				6EC5578919ADF5BB00CF0760 /* LHNodeAnimationProtocol.h */,
+				6EC5578A19ADF5BB00CF0760 /* LHNodeProtocol.cpp */,
+				6EC5578B19ADF5BB00CF0760 /* LHNodeProtocol.h */,
+				6EC5578C19ADF5BB00CF0760 /* LHPhysicsProtocol.cpp */,
+				6EC5578D19ADF5BB00CF0760 /* LHPhysicsProtocol.h */,
+				6EC5578E19ADF5BB00CF0760 /* LHUserProperties.cpp */,
+				6EC5578F19ADF5BB00CF0760 /* LHUserProperties.h */,
+				6EC5579019ADF5BB00CF0760 /* LHUserPropertyProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -456,20 +457,20 @@
 		6E90914619A845BD0090246B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				6E90914719A845BD0090246B /* LHArray.h */,
-				6E90914819A845BD0090246B /* LHBox2dCollisionHandling.cpp */,
-				6E90914919A845BD0090246B /* LHBox2dCollisionHandling.h */,
-				6E90914A19A845BD0090246B /* LHBox2dDebugDrawNode.cpp */,
-				6E90914B19A845BD0090246B /* LHBox2dDebugDrawNode.h */,
-				6E90914C19A845BD0090246B /* LHDevice.cpp */,
-				6E90914D19A845BD0090246B /* LHDevice.h */,
-				6E90914E19A845BD0090246B /* LHDictionary.cpp */,
-				6E90914F19A845BD0090246B /* LHDictionary.h */,
-				6E90915019A845BD0090246B /* LHUtils.cpp */,
-				6E90915119A845BD0090246B /* LHUtils.h */,
-				6E90915219A845BD0090246B /* LHValue.h */,
-				6E90915319A845BD0090246B /* NodeTransform.cpp */,
-				6E90915419A845BD0090246B /* NodeTransform.h */,
+				6EC557A019ADF5D400CF0760 /* LHArray.h */,
+				6EC557A119ADF5D400CF0760 /* LHBox2dCollisionHandling.cpp */,
+				6EC557A219ADF5D400CF0760 /* LHBox2dCollisionHandling.h */,
+				6EC557A319ADF5D400CF0760 /* LHBox2dDebugDrawNode.cpp */,
+				6EC557A419ADF5D400CF0760 /* LHBox2dDebugDrawNode.h */,
+				6EC557A519ADF5D400CF0760 /* LHDevice.cpp */,
+				6EC557A619ADF5D400CF0760 /* LHDevice.h */,
+				6EC557A719ADF5D400CF0760 /* LHDictionary.cpp */,
+				6EC557A819ADF5D400CF0760 /* LHDictionary.h */,
+				6EC557A919ADF5D400CF0760 /* LHUtils.cpp */,
+				6EC557AA19ADF5D400CF0760 /* LHUtils.h */,
+				6EC557AB19ADF5D400CF0760 /* LHValue.h */,
+				6EC557AC19ADF5D500CF0760 /* NodeTransform.cpp */,
+				6EC557AD19ADF5D500CF0760 /* NodeTransform.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -477,6 +478,7 @@
 		6EDE843019A483A200599C48 = {
 			isa = PBXGroup;
 			children = (
+				6EC557C019ADF86700CF0760 /* LH_COCOS2DX_PROJECT_TEMPLATE.plist */,
 				6E80C4B719A75ABC002EEA12 /* LH_API_VERSION.plist */,
 				6EDE843E19A483A200599C48 /* LevelHelper2-API */,
 				6EDE843B19A483A200599C48 /* Frameworks */,
@@ -538,7 +540,6 @@
 			buildPhases = (
 				6EDE843519A483A200599C48 /* Sources */,
 				6EDE843619A483A200599C48 /* Frameworks */,
-				6E80039C19A84FF000284D21 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -555,7 +556,6 @@
 			buildPhases = (
 				6EDE86AB19A4898100599C48 /* Sources */,
 				6EDE86DB19A4898100599C48 /* Frameworks */,
-				6E80039719A84CD700284D21 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -572,7 +572,6 @@
 			buildPhases = (
 				6EDE8B1119A4986C00599C48 /* Sources */,
 				6EDE8B4119A4986C00599C48 /* Frameworks */,
-				6E80039B19A84FE200284D21 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -611,105 +610,63 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		6E80039719A84CD700284D21 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo 'SRCROOT:'${SRCROOT}\ncd \"${SRCROOT}\"\n\necho 'Copying LevelHelper2-API Headers into Library..'\ncd ../\nfor H in `find ./LevelHelper2-API -name \"*.h\"`;  do\necho \"${H}\"\n#this preserves folder structure\n#ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${H}\"\n\n#this does not preserve folder structure\nditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/include/${PRODUCT_NAME}/\"\n\ndone";
-		};
-		6E80039B19A84FE200284D21 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo 'SRCROOT:'${SRCROOT}\ncd \"${SRCROOT}\"\n\necho 'Copying LevelHelper2-API Headers into Library..'\ncd ../\nfor H in `find ./LevelHelper2-API -name \"*.h\"`;  do\necho \"${H}\"\n#this preserves folder structure\n#ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${H}\"\n\n#this does not preserve folder structure\nditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/include/${PRODUCT_NAME}/\"\n\ndone";
-		};
-		6E80039C19A84FF000284D21 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo 'SRCROOT:'${SRCROOT}\ncd \"${SRCROOT}\"\n\necho 'Copying LevelHelper2-API Headers into Library..'\ncd ../\nfor H in `find ./LevelHelper2-API -name \"*.h\"`;  do\necho \"${H}\"\n#this preserves folder structure\n#ditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/${H}\"\n\n#this does not preserve folder structure\nditto \"${H}\" \"${BUILT_PRODUCTS_DIR}/include/${PRODUCT_NAME}/\"\n\ndone";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		6EDE843519A483A200599C48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E90918E19A845BD0090246B /* LHAsset.cpp in Sources */,
-				6E90918819A845BD0090246B /* LHAnimation.cpp in Sources */,
-				6E9091C119A845BD0090246B /* LHSprite.cpp in Sources */,
-				6E9091C419A845BD0090246B /* LHUINode.cpp in Sources */,
-				6E9091AC19A845BD0090246B /* LHParallax.cpp in Sources */,
-				6E90916A19A845BD0090246B /* LHCameraActivateProperty.cpp in Sources */,
-				6E9091B819A845BD0090246B /* LHRevoluteJointNode.cpp in Sources */,
-				6E9091E219A845BD0090246B /* LHBox2dDebugDrawNode.cpp in Sources */,
-				6E90916419A845BD0090246B /* LHSpriteFrame.cpp in Sources */,
-				6E9091D319A845BD0090246B /* LHNodeAnimationProtocol.cpp in Sources */,
-				6E90919119A845BD0090246B /* LHBackUINode.cpp in Sources */,
-				6E9091A619A845BD0090246B /* LHGravityArea.cpp in Sources */,
-				6E90917619A845BD0090246B /* LHChildrenScalesProperty.cpp in Sources */,
-				6E90917019A845BD0090246B /* LHChildrenPositionsProperty.cpp in Sources */,
-				6E90915B19A845BD0090246B /* LHPositionFrame.cpp in Sources */,
-				6E9091E519A845BD0090246B /* LHDevice.cpp in Sources */,
-				6E9091AF19A845BD0090246B /* LHParallaxLayer.cpp in Sources */,
-				6E90919D19A845BD0090246B /* LHDrawNode.cpp in Sources */,
-				6E9091A919A845BD0090246B /* LHNode.cpp in Sources */,
-				6E90918219A845BD0090246B /* LHScaleProperty.cpp in Sources */,
-				6E90919A19A845BD0090246B /* LHDistanceJointNode.cpp in Sources */,
-				6E9091D619A845BD0090246B /* LHNodeProtocol.cpp in Sources */,
-				6E9091D019A845BD0090246B /* LHJointsProtocol.cpp in Sources */,
-				6E90916119A845BD0090246B /* LHScaleFrame.cpp in Sources */,
-				6E9091BB19A845BD0090246B /* LHRopeJointNode.cpp in Sources */,
-				6E90917919A845BD0090246B /* LHOpacityProperty.cpp in Sources */,
-				6E90916D19A845BD0090246B /* LHChildrenOpacitiesProperty.cpp in Sources */,
-				6E9091E819A845BD0090246B /* LHDictionary.cpp in Sources */,
-				6E9091CA19A845BD0090246B /* LHWeldJointNode.cpp in Sources */,
-				6E9091EB19A845BD0090246B /* LHUtils.cpp in Sources */,
-				6E9091C719A845BD0090246B /* LHWater.cpp in Sources */,
-				6E90919419A845BD0090246B /* LHBezier.cpp in Sources */,
-				6E9091B219A845BD0090246B /* LHPrismaticJointNode.cpp in Sources */,
-				6E90915519A845BD0090246B /* LHFrame.cpp in Sources */,
-				6E9091B519A845BD0090246B /* LHPulleyJointNode.cpp in Sources */,
-				6E9091A019A845BD0090246B /* LHGameWorldNode.cpp in Sources */,
-				6E90919719A845BD0090246B /* LHCamera.cpp in Sources */,
+				6EC557BD19ADF5D500CF0760 /* NodeTransform.cpp in Sources */,
+				6EC5577919ADF58800CF0760 /* LHSpriteFrame.cpp in Sources */,
+				6EC556FF19ADF53400CF0760 /* LHGearJointNode.cpp in Sources */,
+				6EC5579D19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */,
+				6EC5571719ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */,
+				6EC556F019ADF53400CF0760 /* LHBezier.cpp in Sources */,
+				6EC5571A19ADF53400CF0760 /* LHShape.cpp in Sources */,
+				6EC5570819ADF53400CF0760 /* LHParallax.cpp in Sources */,
+				6EC5570B19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */,
+				6EC557B419ADF5D500CF0760 /* LHDevice.cpp in Sources */,
+				6EC5579A19ADF5BC00CF0760 /* LHPhysicsProtocol.cpp in Sources */,
+				6EC5571D19ADF53400CF0760 /* LHSprite.cpp in Sources */,
+				6EC5572019ADF53400CF0760 /* LHUINode.cpp in Sources */,
+				6EC5578019ADF59C00CF0760 /* LHOpacityProperty.cpp in Sources */,
+				6EC556FC19ADF53400CF0760 /* LHGameWorldNode.cpp in Sources */,
+				6EC5572E19ADF54300CF0760 /* LHAnimation.cpp in Sources */,
+				6EC5570219ADF53400CF0760 /* LHGravityArea.cpp in Sources */,
+				6EC5576D19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */,
+				6EC5574619ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */,
+				6EC5576A19ADF58800CF0760 /* LHFrame.cpp in Sources */,
+				6EC556F619ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */,
+				6EC5575219ADF56600CF0760 /* LHChildrenScalesProperty.cpp in Sources */,
+				6EC5575819ADF56600CF0760 /* LHScaleProperty.cpp in Sources */,
+				6EC5575519ADF56600CF0760 /* LHRotationProperty.cpp in Sources */,
+				6EC5579119ADF5BB00CF0760 /* LHJointsProtocol.cpp in Sources */,
+				6EC557BA19ADF5D500CF0760 /* LHUtils.cpp in Sources */,
+				6EC556ED19ADF53400CF0760 /* LHBackUINode.cpp in Sources */,
+				6EC5571419ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */,
+				6EC5572319ADF53400CF0760 /* LHWater.cpp in Sources */,
+				6EC5577019ADF58800CF0760 /* LHPositionFrame.cpp in Sources */,
+				6EC5579719ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */,
+				6EC5574919ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */,
+				6EC5577619ADF58800CF0760 /* LHScaleFrame.cpp in Sources */,
+				6EC5570519ADF53400CF0760 /* LHNode.cpp in Sources */,
+				6EC557AE19ADF5D500CF0760 /* LHBox2dCollisionHandling.cpp in Sources */,
 				6E90918B19A845BD0090246B /* LHScene.cpp in Sources */,
-				6E90917F19A845BD0090246B /* LHRotationProperty.cpp in Sources */,
-				6E9091A319A845BD0090246B /* LHGearJointNode.cpp in Sources */,
-				6E9091EE19A845BD0090246B /* NodeTransform.cpp in Sources */,
-				6E90915819A845BD0090246B /* LHOpacityFrame.cpp in Sources */,
-				6E90918519A845BD0090246B /* LHSpriteFrameProperty.cpp in Sources */,
-				6E90917319A845BD0090246B /* LHChildrenRotationsProperty.cpp in Sources */,
-				6E90915E19A845BD0090246B /* LHRotationFrame.cpp in Sources */,
-				6E9091BE19A845BD0090246B /* LHShape.cpp in Sources */,
-				6E9091D919A845BD0090246B /* LHPhysicsProtocol.cpp in Sources */,
-				6E90916719A845BD0090246B /* LHAnimationProperty.cpp in Sources */,
-				6E9091DF19A845BD0090246B /* LHBox2dCollisionHandling.cpp in Sources */,
-				6E9091DC19A845BD0090246B /* LHUserProperties.cpp in Sources */,
-				6E9091CD19A845BD0090246B /* LHWheelJointNode.cpp in Sources */,
-				6E90917C19A845BD0090246B /* LHPositionProperty.cpp in Sources */,
+				6EC5570E19ADF53400CF0760 /* LHPrismaticJointNode.cpp in Sources */,
+				6EC5572619ADF53400CF0760 /* LHWeldJointNode.cpp in Sources */,
+				6EC5574F19ADF56600CF0760 /* LHChildrenRotationsProperty.cpp in Sources */,
+				6EC556F919ADF53400CF0760 /* LHDrawNode.cpp in Sources */,
+				6EC5575B19ADF56600CF0760 /* LHSpriteFrameProperty.cpp in Sources */,
+				6EC557B119ADF5D500CF0760 /* LHBox2dDebugDrawNode.cpp in Sources */,
+				6EC5572919ADF53400CF0760 /* LHWheelJointNode.cpp in Sources */,
+				6EC556F319ADF53400CF0760 /* LHCamera.cpp in Sources */,
+				6EC5578319ADF59C00CF0760 /* LHPositionProperty.cpp in Sources */,
+				6EC5574C19ADF56600CF0760 /* LHChildrenPositionsProperty.cpp in Sources */,
+				6EC5577319ADF58800CF0760 /* LHRotationFrame.cpp in Sources */,
+				6EC557B719ADF5D500CF0760 /* LHDictionary.cpp in Sources */,
+				6EC5574319ADF56600CF0760 /* LHAnimationProperty.cpp in Sources */,
+				6EC556EA19ADF53400CF0760 /* LHAsset.cpp in Sources */,
+				6EC5579419ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp in Sources */,
+				6EC5571119ADF53400CF0760 /* LHPulleyJointNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,58 +674,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E90918F19A845BD0090246B /* LHAsset.cpp in Sources */,
-				6E90918919A845BD0090246B /* LHAnimation.cpp in Sources */,
-				6E9091C219A845BD0090246B /* LHSprite.cpp in Sources */,
-				6E9091C519A845BD0090246B /* LHUINode.cpp in Sources */,
-				6E9091AD19A845BD0090246B /* LHParallax.cpp in Sources */,
-				6E90916B19A845BD0090246B /* LHCameraActivateProperty.cpp in Sources */,
-				6E9091B919A845BD0090246B /* LHRevoluteJointNode.cpp in Sources */,
-				6E9091E319A845BD0090246B /* LHBox2dDebugDrawNode.cpp in Sources */,
-				6E90916519A845BD0090246B /* LHSpriteFrame.cpp in Sources */,
-				6E9091D419A845BD0090246B /* LHNodeAnimationProtocol.cpp in Sources */,
-				6E90919219A845BD0090246B /* LHBackUINode.cpp in Sources */,
-				6E9091A719A845BD0090246B /* LHGravityArea.cpp in Sources */,
-				6E90917719A845BD0090246B /* LHChildrenScalesProperty.cpp in Sources */,
-				6E90917119A845BD0090246B /* LHChildrenPositionsProperty.cpp in Sources */,
-				6E90915C19A845BD0090246B /* LHPositionFrame.cpp in Sources */,
-				6E9091E619A845BD0090246B /* LHDevice.cpp in Sources */,
-				6E9091B019A845BD0090246B /* LHParallaxLayer.cpp in Sources */,
-				6E90919E19A845BD0090246B /* LHDrawNode.cpp in Sources */,
-				6E9091AA19A845BD0090246B /* LHNode.cpp in Sources */,
-				6E90918319A845BD0090246B /* LHScaleProperty.cpp in Sources */,
-				6E90919B19A845BD0090246B /* LHDistanceJointNode.cpp in Sources */,
-				6E9091D719A845BD0090246B /* LHNodeProtocol.cpp in Sources */,
-				6E9091D119A845BD0090246B /* LHJointsProtocol.cpp in Sources */,
-				6E90916219A845BD0090246B /* LHScaleFrame.cpp in Sources */,
-				6E9091BC19A845BD0090246B /* LHRopeJointNode.cpp in Sources */,
-				6E90917A19A845BD0090246B /* LHOpacityProperty.cpp in Sources */,
-				6E90916E19A845BD0090246B /* LHChildrenOpacitiesProperty.cpp in Sources */,
-				6E9091E919A845BD0090246B /* LHDictionary.cpp in Sources */,
-				6E9091CB19A845BD0090246B /* LHWeldJointNode.cpp in Sources */,
-				6E9091EC19A845BD0090246B /* LHUtils.cpp in Sources */,
-				6E9091C819A845BD0090246B /* LHWater.cpp in Sources */,
-				6E90919519A845BD0090246B /* LHBezier.cpp in Sources */,
-				6E9091B319A845BD0090246B /* LHPrismaticJointNode.cpp in Sources */,
-				6E90915619A845BD0090246B /* LHFrame.cpp in Sources */,
-				6E9091B619A845BD0090246B /* LHPulleyJointNode.cpp in Sources */,
-				6E9091A119A845BD0090246B /* LHGameWorldNode.cpp in Sources */,
-				6E90919819A845BD0090246B /* LHCamera.cpp in Sources */,
+				6EC557BE19ADF5D500CF0760 /* NodeTransform.cpp in Sources */,
+				6EC5577A19ADF58800CF0760 /* LHSpriteFrame.cpp in Sources */,
+				6EC5570019ADF53400CF0760 /* LHGearJointNode.cpp in Sources */,
+				6EC5579E19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */,
+				6EC5571819ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */,
+				6EC556F119ADF53400CF0760 /* LHBezier.cpp in Sources */,
+				6EC5571B19ADF53400CF0760 /* LHShape.cpp in Sources */,
+				6EC5570919ADF53400CF0760 /* LHParallax.cpp in Sources */,
+				6EC5570C19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */,
+				6EC557B519ADF5D500CF0760 /* LHDevice.cpp in Sources */,
+				6EC5579B19ADF5BC00CF0760 /* LHPhysicsProtocol.cpp in Sources */,
+				6EC5571E19ADF53400CF0760 /* LHSprite.cpp in Sources */,
+				6EC5572119ADF53400CF0760 /* LHUINode.cpp in Sources */,
+				6EC5578119ADF59C00CF0760 /* LHOpacityProperty.cpp in Sources */,
+				6EC556FD19ADF53400CF0760 /* LHGameWorldNode.cpp in Sources */,
+				6EC5572F19ADF54300CF0760 /* LHAnimation.cpp in Sources */,
+				6EC5570319ADF53400CF0760 /* LHGravityArea.cpp in Sources */,
+				6EC5576E19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */,
+				6EC5574719ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */,
+				6EC5576B19ADF58800CF0760 /* LHFrame.cpp in Sources */,
+				6EC556F719ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */,
+				6EC5575319ADF56600CF0760 /* LHChildrenScalesProperty.cpp in Sources */,
+				6EC5575919ADF56600CF0760 /* LHScaleProperty.cpp in Sources */,
+				6EC5575619ADF56600CF0760 /* LHRotationProperty.cpp in Sources */,
+				6EC5579219ADF5BB00CF0760 /* LHJointsProtocol.cpp in Sources */,
+				6EC557BB19ADF5D500CF0760 /* LHUtils.cpp in Sources */,
+				6EC556EE19ADF53400CF0760 /* LHBackUINode.cpp in Sources */,
+				6EC5571519ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */,
+				6EC5572419ADF53400CF0760 /* LHWater.cpp in Sources */,
+				6EC5577119ADF58800CF0760 /* LHPositionFrame.cpp in Sources */,
+				6EC5579819ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */,
+				6EC5574A19ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */,
+				6EC5577719ADF58800CF0760 /* LHScaleFrame.cpp in Sources */,
+				6EC5570619ADF53400CF0760 /* LHNode.cpp in Sources */,
+				6EC557AF19ADF5D500CF0760 /* LHBox2dCollisionHandling.cpp in Sources */,
 				6E90918C19A845BD0090246B /* LHScene.cpp in Sources */,
-				6E90918019A845BD0090246B /* LHRotationProperty.cpp in Sources */,
-				6E9091A419A845BD0090246B /* LHGearJointNode.cpp in Sources */,
-				6E9091EF19A845BD0090246B /* NodeTransform.cpp in Sources */,
-				6E90915919A845BD0090246B /* LHOpacityFrame.cpp in Sources */,
-				6E90918619A845BD0090246B /* LHSpriteFrameProperty.cpp in Sources */,
-				6E90917419A845BD0090246B /* LHChildrenRotationsProperty.cpp in Sources */,
-				6E90915F19A845BD0090246B /* LHRotationFrame.cpp in Sources */,
-				6E9091BF19A845BD0090246B /* LHShape.cpp in Sources */,
-				6E9091DA19A845BD0090246B /* LHPhysicsProtocol.cpp in Sources */,
-				6E90916819A845BD0090246B /* LHAnimationProperty.cpp in Sources */,
-				6E9091E019A845BD0090246B /* LHBox2dCollisionHandling.cpp in Sources */,
-				6E9091DD19A845BD0090246B /* LHUserProperties.cpp in Sources */,
-				6E9091CE19A845BD0090246B /* LHWheelJointNode.cpp in Sources */,
-				6E90917D19A845BD0090246B /* LHPositionProperty.cpp in Sources */,
+				6EC5570F19ADF53400CF0760 /* LHPrismaticJointNode.cpp in Sources */,
+				6EC5572719ADF53400CF0760 /* LHWeldJointNode.cpp in Sources */,
+				6EC5575019ADF56600CF0760 /* LHChildrenRotationsProperty.cpp in Sources */,
+				6EC556FA19ADF53400CF0760 /* LHDrawNode.cpp in Sources */,
+				6EC5575C19ADF56600CF0760 /* LHSpriteFrameProperty.cpp in Sources */,
+				6EC557B219ADF5D500CF0760 /* LHBox2dDebugDrawNode.cpp in Sources */,
+				6EC5572A19ADF53400CF0760 /* LHWheelJointNode.cpp in Sources */,
+				6EC556F419ADF53400CF0760 /* LHCamera.cpp in Sources */,
+				6EC5578419ADF59C00CF0760 /* LHPositionProperty.cpp in Sources */,
+				6EC5574D19ADF56600CF0760 /* LHChildrenPositionsProperty.cpp in Sources */,
+				6EC5577419ADF58800CF0760 /* LHRotationFrame.cpp in Sources */,
+				6EC557B819ADF5D500CF0760 /* LHDictionary.cpp in Sources */,
+				6EC5574419ADF56600CF0760 /* LHAnimationProperty.cpp in Sources */,
+				6EC556EB19ADF53400CF0760 /* LHAsset.cpp in Sources */,
+				6EC5579519ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp in Sources */,
+				6EC5571219ADF53400CF0760 /* LHPulleyJointNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,58 +733,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E90919019A845BD0090246B /* LHAsset.cpp in Sources */,
-				6E90918A19A845BD0090246B /* LHAnimation.cpp in Sources */,
-				6E9091C319A845BD0090246B /* LHSprite.cpp in Sources */,
-				6E9091C619A845BD0090246B /* LHUINode.cpp in Sources */,
-				6E9091AE19A845BD0090246B /* LHParallax.cpp in Sources */,
-				6E90916C19A845BD0090246B /* LHCameraActivateProperty.cpp in Sources */,
-				6E9091BA19A845BD0090246B /* LHRevoluteJointNode.cpp in Sources */,
-				6E9091E419A845BD0090246B /* LHBox2dDebugDrawNode.cpp in Sources */,
-				6E90916619A845BD0090246B /* LHSpriteFrame.cpp in Sources */,
-				6E9091D519A845BD0090246B /* LHNodeAnimationProtocol.cpp in Sources */,
-				6E90919319A845BD0090246B /* LHBackUINode.cpp in Sources */,
-				6E9091A819A845BD0090246B /* LHGravityArea.cpp in Sources */,
-				6E90917819A845BD0090246B /* LHChildrenScalesProperty.cpp in Sources */,
-				6E90917219A845BD0090246B /* LHChildrenPositionsProperty.cpp in Sources */,
-				6E90915D19A845BD0090246B /* LHPositionFrame.cpp in Sources */,
-				6E9091E719A845BD0090246B /* LHDevice.cpp in Sources */,
-				6E9091B119A845BD0090246B /* LHParallaxLayer.cpp in Sources */,
-				6E90919F19A845BD0090246B /* LHDrawNode.cpp in Sources */,
-				6E9091AB19A845BD0090246B /* LHNode.cpp in Sources */,
-				6E90918419A845BD0090246B /* LHScaleProperty.cpp in Sources */,
-				6E90919C19A845BD0090246B /* LHDistanceJointNode.cpp in Sources */,
-				6E9091D819A845BD0090246B /* LHNodeProtocol.cpp in Sources */,
-				6E9091D219A845BD0090246B /* LHJointsProtocol.cpp in Sources */,
-				6E90916319A845BD0090246B /* LHScaleFrame.cpp in Sources */,
-				6E9091BD19A845BD0090246B /* LHRopeJointNode.cpp in Sources */,
-				6E90917B19A845BD0090246B /* LHOpacityProperty.cpp in Sources */,
-				6E90916F19A845BD0090246B /* LHChildrenOpacitiesProperty.cpp in Sources */,
-				6E9091EA19A845BD0090246B /* LHDictionary.cpp in Sources */,
-				6E9091CC19A845BD0090246B /* LHWeldJointNode.cpp in Sources */,
-				6E9091ED19A845BD0090246B /* LHUtils.cpp in Sources */,
-				6E9091C919A845BD0090246B /* LHWater.cpp in Sources */,
-				6E90919619A845BD0090246B /* LHBezier.cpp in Sources */,
-				6E9091B419A845BD0090246B /* LHPrismaticJointNode.cpp in Sources */,
-				6E90915719A845BD0090246B /* LHFrame.cpp in Sources */,
-				6E9091B719A845BD0090246B /* LHPulleyJointNode.cpp in Sources */,
-				6E9091A219A845BD0090246B /* LHGameWorldNode.cpp in Sources */,
-				6E90919919A845BD0090246B /* LHCamera.cpp in Sources */,
+				6EC557BF19ADF5D500CF0760 /* NodeTransform.cpp in Sources */,
+				6EC5577B19ADF58800CF0760 /* LHSpriteFrame.cpp in Sources */,
+				6EC5570119ADF53400CF0760 /* LHGearJointNode.cpp in Sources */,
+				6EC5579F19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */,
+				6EC5571919ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */,
+				6EC556F219ADF53400CF0760 /* LHBezier.cpp in Sources */,
+				6EC5571C19ADF53400CF0760 /* LHShape.cpp in Sources */,
+				6EC5570A19ADF53400CF0760 /* LHParallax.cpp in Sources */,
+				6EC5570D19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */,
+				6EC557B619ADF5D500CF0760 /* LHDevice.cpp in Sources */,
+				6EC5579C19ADF5BC00CF0760 /* LHPhysicsProtocol.cpp in Sources */,
+				6EC5571F19ADF53400CF0760 /* LHSprite.cpp in Sources */,
+				6EC5572219ADF53400CF0760 /* LHUINode.cpp in Sources */,
+				6EC5578219ADF59C00CF0760 /* LHOpacityProperty.cpp in Sources */,
+				6EC556FE19ADF53400CF0760 /* LHGameWorldNode.cpp in Sources */,
+				6EC5573019ADF54300CF0760 /* LHAnimation.cpp in Sources */,
+				6EC5570419ADF53400CF0760 /* LHGravityArea.cpp in Sources */,
+				6EC5576F19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */,
+				6EC5574819ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */,
+				6EC5576C19ADF58800CF0760 /* LHFrame.cpp in Sources */,
+				6EC556F819ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */,
+				6EC5575419ADF56600CF0760 /* LHChildrenScalesProperty.cpp in Sources */,
+				6EC5575A19ADF56600CF0760 /* LHScaleProperty.cpp in Sources */,
+				6EC5575719ADF56600CF0760 /* LHRotationProperty.cpp in Sources */,
+				6EC5579319ADF5BB00CF0760 /* LHJointsProtocol.cpp in Sources */,
+				6EC557BC19ADF5D500CF0760 /* LHUtils.cpp in Sources */,
+				6EC556EF19ADF53400CF0760 /* LHBackUINode.cpp in Sources */,
+				6EC5571619ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */,
+				6EC5572519ADF53400CF0760 /* LHWater.cpp in Sources */,
+				6EC5577219ADF58800CF0760 /* LHPositionFrame.cpp in Sources */,
+				6EC5579919ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */,
+				6EC5574B19ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */,
+				6EC5577819ADF58800CF0760 /* LHScaleFrame.cpp in Sources */,
+				6EC5570719ADF53400CF0760 /* LHNode.cpp in Sources */,
+				6EC557B019ADF5D500CF0760 /* LHBox2dCollisionHandling.cpp in Sources */,
 				6E90918D19A845BD0090246B /* LHScene.cpp in Sources */,
-				6E90918119A845BD0090246B /* LHRotationProperty.cpp in Sources */,
-				6E9091A519A845BD0090246B /* LHGearJointNode.cpp in Sources */,
-				6E9091F019A845BD0090246B /* NodeTransform.cpp in Sources */,
-				6E90915A19A845BD0090246B /* LHOpacityFrame.cpp in Sources */,
-				6E90918719A845BD0090246B /* LHSpriteFrameProperty.cpp in Sources */,
-				6E90917519A845BD0090246B /* LHChildrenRotationsProperty.cpp in Sources */,
-				6E90916019A845BD0090246B /* LHRotationFrame.cpp in Sources */,
-				6E9091C019A845BD0090246B /* LHShape.cpp in Sources */,
-				6E9091DB19A845BD0090246B /* LHPhysicsProtocol.cpp in Sources */,
-				6E90916919A845BD0090246B /* LHAnimationProperty.cpp in Sources */,
-				6E9091E119A845BD0090246B /* LHBox2dCollisionHandling.cpp in Sources */,
-				6E9091DE19A845BD0090246B /* LHUserProperties.cpp in Sources */,
-				6E9091CF19A845BD0090246B /* LHWheelJointNode.cpp in Sources */,
-				6E90917E19A845BD0090246B /* LHPositionProperty.cpp in Sources */,
+				6EC5571019ADF53400CF0760 /* LHPrismaticJointNode.cpp in Sources */,
+				6EC5572819ADF53400CF0760 /* LHWeldJointNode.cpp in Sources */,
+				6EC5575119ADF56600CF0760 /* LHChildrenRotationsProperty.cpp in Sources */,
+				6EC556FB19ADF53400CF0760 /* LHDrawNode.cpp in Sources */,
+				6EC5575D19ADF56600CF0760 /* LHSpriteFrameProperty.cpp in Sources */,
+				6EC557B319ADF5D500CF0760 /* LHBox2dDebugDrawNode.cpp in Sources */,
+				6EC5572B19ADF53400CF0760 /* LHWheelJointNode.cpp in Sources */,
+				6EC556F519ADF53400CF0760 /* LHCamera.cpp in Sources */,
+				6EC5578519ADF59C00CF0760 /* LHPositionProperty.cpp in Sources */,
+				6EC5574E19ADF56600CF0760 /* LHChildrenPositionsProperty.cpp in Sources */,
+				6EC5577519ADF58800CF0760 /* LHRotationFrame.cpp in Sources */,
+				6EC557B919ADF5D500CF0760 /* LHDictionary.cpp in Sources */,
+				6EC5574519ADF56600CF0760 /* LHAnimationProperty.cpp in Sources */,
+				6EC556EC19ADF53400CF0760 /* LHAsset.cpp in Sources */,
+				6EC5579619ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp in Sources */,
+				6EC5571319ADF53400CF0760 /* LHPulleyJointNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

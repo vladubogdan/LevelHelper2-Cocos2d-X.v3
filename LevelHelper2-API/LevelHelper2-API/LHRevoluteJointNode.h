@@ -31,10 +31,12 @@ class LHRevoluteJointNode : public Node, public LHNodeProtocol, public LHJointsP
 public:
     
     static LHRevoluteJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     LHRevoluteJointNode();
     virtual ~LHRevoluteJointNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHRevoluteJointNode(Node* obj){return (0 != dynamic_cast<LHRevoluteJointNode*>(obj));}
     virtual bool isRevoluteJointNode(){return true;}

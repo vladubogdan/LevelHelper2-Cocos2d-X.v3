@@ -31,10 +31,12 @@ class LHDistanceJointNode : public Node, public LHNodeProtocol, public LHJointsP
 public:
     
     static LHDistanceJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     LHDistanceJointNode();
     virtual ~LHDistanceJointNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHDistanceJointNode(Node* obj){return (0 != dynamic_cast<LHDistanceJointNode*>(obj));}
     virtual bool isDistanceJointNode(){return true;}

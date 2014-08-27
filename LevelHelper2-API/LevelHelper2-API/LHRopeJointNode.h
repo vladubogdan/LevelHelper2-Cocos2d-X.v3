@@ -38,10 +38,11 @@ class LHRopeJointNode : public Node, public LHNodeProtocol, public LHJointsProto
 public:
     
     static LHRopeJointNode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHRopeJointNode();
     virtual ~LHRopeJointNode();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHRopeJointNode(Node* obj){return (0 != dynamic_cast<LHRopeJointNode*>(obj));}
     virtual bool isRopeJointNode(){return true;}

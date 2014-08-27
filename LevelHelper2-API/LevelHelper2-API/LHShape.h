@@ -31,10 +31,11 @@ class LHShape : public Node, public LHNodeProtocol, public LHNodeAnimationProtoc
 public:
     
     static LHShape* nodeWithDictionary(LHDictionary* dict, Node* prnt);
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
     
     LHShape();
     virtual ~LHShape();
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHShape(Node* obj){return (0 != dynamic_cast<LHShape*>(obj));}
     virtual bool isShape(){return true;}

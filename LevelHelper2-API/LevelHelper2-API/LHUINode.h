@@ -28,11 +28,12 @@ class LHUINode : public Node, public LHNodeProtocol
 public:
  
     static LHUINode* nodeWithDictionary(LHDictionary* dict, Node* prnt);
-
+    virtual bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     LHUINode();
     virtual ~LHUINode();
 
-    bool initWithDictionary(LHDictionary* dict, Node* prnt);
+    
     
     static  bool isLHUINode(Node* obj){return (0 != dynamic_cast<LHUINode*>(obj));}
     virtual bool isUINode(){return true;}

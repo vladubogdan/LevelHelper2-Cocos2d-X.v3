@@ -134,8 +134,6 @@ bool LHRopeJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
             LHDrawNode* shape = LHDrawNode::create();
             this->addChild(shape);
             ropeShape = shape;
-            ropeShape->setLocalZOrder(1);
-            ropeShape->setPositionZ(1);
             
             if(dict->objectForKey("relativeImagePath") && dict->boolForKey("useTexture"))
             {

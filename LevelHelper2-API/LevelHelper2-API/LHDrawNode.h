@@ -52,6 +52,8 @@ private:
     Color4F*        _colors;
     
     int             _numberOfTriangles;
+    
+    CustomCommand _customCommand;
 };
 
 

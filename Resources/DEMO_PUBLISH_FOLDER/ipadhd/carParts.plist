@@ -16,45 +16,45 @@
 		<key>carBody</key>
 		<dict>
 			<key>frame</key>
-			<string>{{4, 4}, {335, 135}}</string>
+			<string>{{4.000000, 97.000000}, {335.000000, 135.000000}}</string>
 			<key>offset</key>
-			<string>{-2, 13.5}</string>
+			<string>{-2.000000, 13.500000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{10, 14}, {335, 135}}</string>
+			<string>{{10.000000, 14.000000}, {335.000000, 135.000000}}</string>
 			<key>sourceSize</key>
-			<string>{359, 190}</string>
+			<string>{359.000000, 190.000000}</string>
 			<key>uuid</key>
 			<string>9015E100-C10C-4DE0-A4C3-A69E08983DEC</string>
 		</dict>
 		<key>carTyre</key>
 		<dict>
 			<key>frame</key>
-			<string>{{4, 147}, {85, 85}}</string>
+			<string>{{268.000000, 4.000000}, {85.000000, 85.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{4, 3}, {85, 85}}</string>
+			<string>{{4.000000, 3.000000}, {85.000000, 85.000000}}</string>
 			<key>sourceSize</key>
-			<string>{93, 91}</string>
+			<string>{93.000000, 91.000000}</string>
 			<key>uuid</key>
 			<string>F2BF5807-ACFF-44E8-BAA8-94A87CAC4F40</string>
 		</dict>
 		<key>wood</key>
 		<dict>
 			<key>frame</key>
-			<string>{{97, 147}, {256, 64}}</string>
+			<string>{{4.000000, 4.000000}, {256.000000, 64.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {256, 64}}</string>
+			<string>{{0.000000, 0.000000}, {256.000000, 64.000000}}</string>
 			<key>sourceSize</key>
-			<string>{256, 64}</string>
+			<string>{256.000000, 64.000000}</string>
 			<key>uuid</key>
 			<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
 		</dict>
@@ -64,7 +64,7 @@
 		<key>format</key>
 		<integer>2</integer>
 		<key>size</key>
-		<string>{357, 236}</string>
+		<string>{357.000000, 236.000000}</string>
 		<key>textureFileName</key>
 		<string>carParts.png</string>
 	</dict>

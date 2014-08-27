@@ -44,6 +44,8 @@
 #include "LHNodeAnimationProtocol.h"
 
 #include "LHGameWorldNode.h"
+#include "LHBackUINode.h"
+#include "LHUINode.h"
 
 
 LHAnimation::~LHAnimation()
@@ -369,7 +371,11 @@ Point LHAnimation::convertFramePosition(Point newPos, Node* animNode)
     
     Node* p = animNode->getParent();
     
-    if(p == nullptr || p == scene || p == scene->getGameWorldNode())
+    if(p == nullptr ||
+       p == scene ||
+       p == scene->getGameWorldNode() ||
+       p == scene->getUINode() ||
+       p == scene->getBackUINode())
     {
         newPos.x += offset.x;
         newPos.y += offset.y;

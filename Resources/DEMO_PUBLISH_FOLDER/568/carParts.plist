@@ -16,45 +16,45 @@
 		<key>carBody</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2, 2}, {168, 68}}</string>
+			<string>{{2.000000, 49.000000}, {168.000000, 68.000000}}</string>
 			<key>offset</key>
-			<string>{-1, 6.5}</string>
+			<string>{-1.000000, 6.500000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{5, 7}, {168, 68}}</string>
+			<string>{{5.000000, 7.000000}, {168.000000, 68.000000}}</string>
 			<key>sourceSize</key>
-			<string>{180, 95}</string>
+			<string>{180.000000, 95.000000}</string>
 			<key>uuid</key>
 			<string>9015E100-C10C-4DE0-A4C3-A69E08983DEC</string>
 		</dict>
 		<key>carTyre</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2, 74}, {43, 43}}</string>
+			<string>{{134.000000, 3.000000}, {43.000000, 43.000000}}</string>
 			<key>offset</key>
-			<string>{0, -0.5}</string>
+			<string>{0.000000, -0.500000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{2, 2}, {43, 43}}</string>
+			<string>{{2.000000, 2.000000}, {43.000000, 43.000000}}</string>
 			<key>sourceSize</key>
-			<string>{47, 46}</string>
+			<string>{47.000000, 46.000000}</string>
 			<key>uuid</key>
 			<string>F2BF5807-ACFF-44E8-BAA8-94A87CAC4F40</string>
 		</dict>
 		<key>wood</key>
 		<dict>
 			<key>frame</key>
-			<string>{{49, 74}, {128, 32}}</string>
+			<string>{{2.000000, 2.000000}, {128.000000, 32.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {128, 32}}</string>
+			<string>{{0.000000, 0.000000}, {128.000000, 32.000000}}</string>
 			<key>sourceSize</key>
-			<string>{128, 32}</string>
+			<string>{128.000000, 32.000000}</string>
 			<key>uuid</key>
 			<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
 		</dict>
@@ -64,7 +64,7 @@
 		<key>format</key>
 		<integer>2</integer>
 		<key>size</key>
-		<string>{178, 118}</string>
+		<string>{178.000000, 118.000000}</string>
 		<key>textureFileName</key>
 		<string>carParts.png</string>
 	</dict>

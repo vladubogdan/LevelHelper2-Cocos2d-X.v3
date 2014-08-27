@@ -182,7 +182,10 @@ void LHDrawNode::setShapeTriangles(__Array* triangles, __Array* uvPoints, __Arra
 #if COCOS2D_VERSION >= 0x00030200
 void LHDrawNode::draw(Renderer *renderer, const Mat4& transform, uint32_t flags)
 {
-    onDraw(transform, flags);
+    _customCommand.init(_globalZOrder);
+    _customCommand.func = CC_CALLBACK_0(LHDrawNode::onDraw, this, transform, flags);
+    renderer->addCommand(&_customCommand);
+//    onDraw(transform, flags);
 }
 #else
 void LHDrawNode::draw(Renderer *renderer, const Mat4 &transform, bool transformUpdated)

@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.039423193782567978, 0}, {0.040752105414867401, 1}}</string>
+			<string>{{0.039421211928129196, 0}, {0.04074980691075325, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>

@@ -86,7 +86,6 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
     shape->setPosition(Point(size.width*0.5, size.height*0.5));
     
     _drawNode = shape;
-    _drawNode->setLocalZOrder(1);
     
     Texture2D* texture = NULL;
     

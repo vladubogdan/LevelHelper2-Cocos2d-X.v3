@@ -39,6 +39,8 @@ LHGameWorldNode::~LHGameWorldNode()
     
     delete _box2dWorld;
     _box2dWorld = nullptr;
+    
+    _debugNode = nullptr;
 #endif
 
 }
@@ -101,13 +103,10 @@ void LHGameWorldNode::visit(Renderer *renderer, const Mat4& parentTransform, boo
 #endif
 {
 #if LH_USE_BOX2D
-    #if LH_DEBUG
-        #if COCOS2D_VERSION >= 0x00030200
-            _debugNode->onDraw(parentTransform, parentFlags);
-        #else
-            _debugNode->onDraw(parentTransform, parentTransformUpdated);
-        #endif
-    #endif
+#if LH_DEBUG
+    _debugNode->clear();
+    this->getBox2dWorld()->DrawDebugData();
+#endif
 #endif
     
     if(renderer)

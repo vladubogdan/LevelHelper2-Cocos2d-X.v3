@@ -70,6 +70,8 @@ bool LHSceneGearJointDemo::initWithContentOfFile(const std::string& plistLevelFi
 bool LHSceneGearJointDemo::onTouchBegan(Touch* touch, Event* event)
 {
     Point touchLocation = touch->getLocation();
+    touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
+
     
     this->createMouseJointForTouchLocation(touchLocation);
     
@@ -79,6 +81,8 @@ bool LHSceneGearJointDemo::onTouchBegan(Touch* touch, Event* event)
 void LHSceneGearJointDemo::onTouchMoved(Touch* touch, Event* event){
 
     Point touchLocation = touch->getLocation();
+    touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
+
 
     this->setTargetOnMouseJoint(touchLocation);
     

@@ -64,6 +64,8 @@ bool LHSceneShapesDemo::initWithContentOfFile(const std::string& plistLevelFile)
 bool LHSceneShapesDemo::onTouchBegan(Touch* touch, Event* event)
 {
     Point touchLocation = touch->getLocation();
+    touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
+
     
     this->createMouseJointForTouchLocation(touchLocation);
     
@@ -73,6 +75,8 @@ bool LHSceneShapesDemo::onTouchBegan(Touch* touch, Event* event)
 void LHSceneShapesDemo::onTouchMoved(Touch* touch, Event* event){
 
     Point touchLocation = touch->getLocation();
+    touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
+
 
     this->setTargetOnMouseJoint(touchLocation);
     

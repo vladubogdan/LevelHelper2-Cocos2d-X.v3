@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.039421211928129196, 0}, {0.04074980691075325, 1}}</string>
+			<string>{{0.03942059725522995, 0}, {0.040749069303274155, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -83,6 +83,8 @@
 	<dict>
 		<key>UserPropertiesGenerationPath</key>
 		<string>LevelHelper2-API/UserProperties</string>
+		<key>ignoredFolders</key>
+		<array/>
 		<key>name</key>
 		<string>DemoProject</string>
 		<key>publishOptions</key>
@@ -105,6 +107,11 @@
 					<true/>
 				</dict>
 				<key>cameraFollowDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>cameraPhysicsTest.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

@@ -67,8 +67,6 @@ public:
 
     static  bool isDebugDrawNode(Node* obj){return (0 != dynamic_cast<LHBox2dDebugDrawNode*>(obj));}
     
-    void onDraw(const Mat4 &transform, bool transformUpdated);
-    
     LHBox2dDebug* getDebug();
     bool drawState(){return _drawState;}
     void setDrawState(bool val){_drawState = val;}

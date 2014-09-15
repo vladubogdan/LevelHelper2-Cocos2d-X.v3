@@ -1,102 +1,83 @@
+//
+//  CameraPhysicsTest
 
-#include "LHScenePulleyJointDemo.h"
+//
+//
 
-LHScenePulleyJointDemo* LHScenePulleyJointDemo::create()
+#include "CameraPhysicsTest.h"
+
+USING_NS_CC;
+CameraPhysicsTest* CameraPhysicsTest::create()
 {
-    LHScenePulleyJointDemo *ret = new LHScenePulleyJointDemo();
-    if (ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/pulleyJointDemo.lhplist"))
+    CameraPhysicsTest* ret = new CameraPhysicsTest();
+    if(ret && ret->initWithContentOfFile("DEMO_PUBLISH_FOLDER/cameraPhysicsTest.lhplist"))
     {
         ret->autorelease();
         return ret;
     }
-    else
-    {
+    else{
         CC_SAFE_DELETE(ret);
         return nullptr;
     }
 }
 
-LHScenePulleyJointDemo::LHScenePulleyJointDemo()
-{
-    /*INITIALIZE YOUR CONTENT HERE*/
-    /*AT THIS POINT NOTHING IS LOADED*/
-#if LH_USE_BOX2D
-    mouseJoint = NULL;
-#else
-    touchedNode = NULL;
-#endif
-    
+std::string CameraPhysicsTest::className(){
+    return "CameraPhysicsTest";
 }
 
-LHScenePulleyJointDemo::~LHScenePulleyJointDemo()
-{
-    //nothing to release
+
+CameraPhysicsTest::CameraPhysicsTest(){
+    //initialize your content here
+    
+    mouseJoint = NULL;
+}
+CameraPhysicsTest::~CameraPhysicsTest(){
+    //release your content here
+    
     this->destroyMouseJoint();
 }
-
-std::string LHScenePulleyJointDemo::className(){
-    return "LHScenePulleyJointDemo";
-}
-
-bool LHScenePulleyJointDemo::initWithContentOfFile(const std::string& plistLevelFile)
+bool CameraPhysicsTest::initWithContentOfFile(const std::string& plistLevelFile)
 {
-    bool retValue = LHSceneDemo::initWithContentOfFile(plistLevelFile);
-    
-    /*INITIALIZE YOUR CONTENT HERE*/
-    /*AT THIS POINT EVERYTHING IS LOADED AND YOU CAN ACCESS YOUR OBJECTS*/
-    
-
-    Size size = this->getContentSize();
-    
-    Label* ttf = Label::create();
-
-#if LH_USE_BOX2D
-    ttf->setString("PULLEY JOINT DEMO Example.\nDrag the weights around.");
-#else
-    ttf->setString("PULLEY JOINT DEMO Example.\nSorry, this demo is not available when using Chipmunk.\nPlease switch to Box2d target in Xcode.");
-#endif
-    
-    
-    ttf->setTextColor(Color4B::BLACK);
-    ttf->setHorizontalAlignment(TextHAlignment::CENTER);
-    ttf->setPosition(Point(size.width*0.5, size.height*0.5));
-    ttf->setSystemFontSize(20);
-    this->getUINode()->addChild(ttf);//add the text to the ui element as we dont want it to move with the camera
-    
+    bool returnValue = LHScene::initWithContentOfFile(plistLevelFile);
+    if(returnValue){
+        //retrieve objects from level here
         
-    return retValue;
+    
+    }
+    
+    return returnValue;
 }
 
-bool LHScenePulleyJointDemo::onTouchBegan(Touch* touch, Event* event)
+
+bool CameraPhysicsTest::onTouchBegan(Touch* touch, Event* event)
 {
     Point touchLocation = touch->getLocation();
     touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
-
     
     this->createMouseJointForTouchLocation(touchLocation);
     
     //dont forget to call super
     return LHScene::onTouchBegan(touch, event);
 }
-void LHScenePulleyJointDemo::onTouchMoved(Touch* touch, Event* event){
-
+void CameraPhysicsTest::onTouchMoved(Touch* touch, Event* event){
+    
     Point touchLocation = touch->getLocation();
     touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
-
-
+    
+    
     this->setTargetOnMouseJoint(touchLocation);
     
     //dont forget to call super
     LHScene::onTouchMoved(touch, event);
 }
-void LHScenePulleyJointDemo::onTouchEnded(Touch* touch, Event* event){
+void CameraPhysicsTest::onTouchEnded(Touch* touch, Event* event){
     
     this->destroyMouseJoint();
     
     LHScene::onTouchEnded(touch, event);
 }
-void LHScenePulleyJointDemo::onTouchCancelled(Touch *touch, Event *event){
-
+void CameraPhysicsTest::onTouchCancelled(Touch *touch, Event *event){
+    
     this->destroyMouseJoint();
     
     LHScene::onTouchCancelled(touch, event);
@@ -104,7 +85,7 @@ void LHScenePulleyJointDemo::onTouchCancelled(Touch *touch, Event *event){
 
 
 
-void LHScenePulleyJointDemo::createMouseJointForTouchLocation(Point point)
+void CameraPhysicsTest::createMouseJointForTouchLocation(Point point)
 {
 #if LH_USE_BOX2D
     b2Body* ourBody = NULL;
@@ -119,7 +100,7 @@ void LHScenePulleyJointDemo::createMouseJointForTouchLocation(Point point)
     
     if(!mouseJointBody)return;
     
-    b2Vec2 pointToTest = this->metersFromPoint(point);    
+    b2Vec2 pointToTest = this->metersFromPoint(point);
     for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
     {
         if(b != mouseJointBody)
@@ -165,21 +146,23 @@ void LHScenePulleyJointDemo::createMouseJointForTouchLocation(Point point)
     }
     mouseJoint = (b2MouseJoint*)world->CreateJoint(&md);
     
+    
 #endif
 }
 
-void LHScenePulleyJointDemo::setTargetOnMouseJoint(Point point)
+void CameraPhysicsTest::setTargetOnMouseJoint(Point point)
 {
 #if LH_USE_BOX2D
     if(mouseJoint == 0)
         return;
     
     b2Vec2 locationWorld = b2Vec2(this->metersFromPoint(point));
+    
     mouseJoint->SetTarget(locationWorld);
 #endif
 }
 
-void LHScenePulleyJointDemo::destroyMouseJoint()
+void CameraPhysicsTest::destroyMouseJoint()
 {
 #if LH_USE_BOX2D
     if(mouseJoint){

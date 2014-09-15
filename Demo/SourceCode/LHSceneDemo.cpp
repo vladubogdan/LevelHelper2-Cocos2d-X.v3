@@ -21,6 +21,8 @@
 #include "LHSceneWaterAreaDemo.h"
 #include "LHSceneNodesSubclassingDemo.h"
 
+#include "CameraPhysicsTest.h"
+
 LHSceneDemo* LHSceneDemo::create()
 {
     printf("THIS CLASS SHOULD NOT BE INSTANTIATED DIRECTLY - USE A SUBCLASS\n");
@@ -47,6 +49,9 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneIntroductionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
 
+//    sceneNames.push_back("CameraPhysicsTest");
+//    sceneCreators.push_back((createFuncPtrType)&CameraPhysicsTest::create);
+    
     sceneNames.push_back("LHSceneNodesSubclassingDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneNodesSubclassingDemo::create);
 

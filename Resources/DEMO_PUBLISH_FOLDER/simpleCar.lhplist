@@ -17,6 +17,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -56,12 +58,18 @@
 					<string>{{0.000000, 0.000000}, {0.000000, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.872518, 0.824930}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledBezier</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
@@ -87,6 +95,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>3</integer>
 						<key>type</key>
@@ -156,18 +168,24 @@
 							<string>{0.001618, 0.008135}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>carBody</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
 								<false/>
 								<key>fixtureUUID</key>
-								<string>5C10437E-1547-4CE7-8DAC-9DAD2544CF6F</string>
+								<string>0586553F-7492-44F3-A23E-3A552215F327</string>
 								<key>genericFixture</key>
 								<dict>
 									<key>category</key>
@@ -189,6 +207,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>5</integer>
 								<key>type</key>
@@ -226,6 +248,8 @@
 							<false/>
 							<key>enableMotor</key>
 							<false/>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>lowerAngle</key>
 							<real>0.0</real>
 							<key>maxMotorTorque</key>
@@ -259,6 +283,8 @@
 							<key>enableLimit</key>
 							<false/>
 							<key>enableMotor</key>
+							<false/>
+							<key>invisibleInEditor</key>
 							<false/>
 							<key>lowerAngle</key>
 							<real>0.0</real>
@@ -298,12 +324,18 @@
 							<string>{0.055127, 0.045796}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>frontWheel</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -329,6 +361,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>1</integer>
 								<key>type</key>
@@ -370,12 +406,18 @@
 							<string>{-0.053585, 0.044945}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>backWheel</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -401,6 +443,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>1</integer>
 								<key>type</key>
@@ -436,6 +482,8 @@
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.622659, 0.483766}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>carNode</string>
 					<key>nodeType</key>
@@ -470,6 +518,8 @@
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.230663, 0.321092}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>carAsset</string>
 					<key>nodeType</key>
@@ -496,6 +546,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -526,6 +578,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -586,17 +640,27 @@
 		</dict>
 		<dict>
 			<key>ratio</key>
-			<real>1</real>
+			<real>1.2000000476837158</real>
 			<key>size</key>
-			<string>{1280.000000, 720.000000}</string>
+			<string>{1334.000000, 750.000000}</string>
 			<key>suffix</key>
-			<string>ipad</string>
+			<string>iphone6</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2208.000000, 1242.000000}</string>
+			<key>suffix</key>
+			<string>iphone6plus</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
 	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
+	<key>invisibleInEditor</key>
+	<false/>
 	<key>nodeType</key>
 	<string>LHScene</string>
 	<key>physicsBoundaries</key>
@@ -620,7 +684,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>5C10437E-1547-4CE7-8DAC-9DAD2544CF6F</key>
+		<key>0586553F-7492-44F3-A23E-3A552215F327</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>

@@ -19,8 +19,7 @@ LHSprite::LHSprite()
 
 LHSprite::~LHSprite()
 {
-    CCLOG("...................................");
-    CCLOG("SPRITE DEALLOC %s %p", this->getName().c_str(), this);
+    this->shouldRemoveBody();    
 }
 
 LHSprite* LHSprite::createWithFile(const std::string& filename, const std::string& folder, Node* prnt)

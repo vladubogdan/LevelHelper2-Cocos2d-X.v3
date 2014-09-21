@@ -17,6 +17,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -54,12 +56,18 @@
 					<string>{{0.000000, 0.010735}, {0.986247, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.650000, 0.400000}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>shape</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
@@ -85,6 +93,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>2</integer>
 						<key>type</key>
@@ -139,6 +151,10 @@
 					<array>
 						<string>DEFAULT</string>
 					</array>
+					<key>tileScale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>tileTexture</key>
+					<false/>
 					<key>triangles</key>
 					<array>
 						<dict>
@@ -345,18 +361,24 @@
 					<string>{0.397656, 0.492188}</string>
 					<key>imageFileName</key>
 					<string>objects.png</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>sprite</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>034B1D9E-9C6B-4B6D-B5D8-66AD5380C3A6</string>
+						<string>EDD63F96-0B44-463C-BF90-1A09B4CDB985</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -378,6 +400,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>5</integer>
 						<key>type</key>
@@ -413,6 +439,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -443,6 +471,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -503,17 +533,27 @@
 		</dict>
 		<dict>
 			<key>ratio</key>
-			<real>1</real>
+			<real>1.2000000476837158</real>
 			<key>size</key>
-			<string>{1280.000000, 720.000000}</string>
+			<string>{1334.000000, 750.000000}</string>
 			<key>suffix</key>
-			<string>ipad</string>
+			<string>iphone6</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2208.000000, 1242.000000}</string>
+			<key>suffix</key>
+			<string>iphone6plus</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
 	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
+	<key>invisibleInEditor</key>
+	<false/>
 	<key>nodeType</key>
 	<string>LHScene</string>
 	<key>physicsBoundaries</key>
@@ -522,12 +562,16 @@
 		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
 		<key>1136x640</key>
 		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
+		<key>1334x750</key>
+		<string>{{0.000000, 0.025000}, {1.000000, 0.950000}}</string>
 		<key>2048x1536</key>
 		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
+		<key>2208x1242</key>
+		<string>{{0.000000, 0.025000}, {1.000000, 0.950000}}</string>
 		<key>960x640</key>
 		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
 		<key>general</key>
-		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
+		<string>{{0.000000, 0.025000}, {1.000000, 0.950000}}</string>
 	</dict>
 	<key>sceneFormat</key>
 	<real>1</real>
@@ -537,7 +581,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>034B1D9E-9C6B-4B6D-B5D8-66AD5380C3A6</key>
+		<key>EDD63F96-0B44-463C-BF90-1A09B4CDB985</key>
 		<array>
 			<array>
 				<string>{-41.5, 65.75}</string>

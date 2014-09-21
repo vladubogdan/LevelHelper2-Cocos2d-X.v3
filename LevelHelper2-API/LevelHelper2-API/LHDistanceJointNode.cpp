@@ -28,7 +28,7 @@ LHDistanceJointNode::LHDistanceJointNode()
 
 LHDistanceJointNode::~LHDistanceJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHDistanceJointNode* LHDistanceJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)

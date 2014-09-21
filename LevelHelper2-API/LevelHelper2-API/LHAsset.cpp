@@ -20,7 +20,7 @@ LHAsset::LHAsset()
 
 LHAsset::~LHAsset()
 {
-    CCLOG("ASSET DEALLOC");
+    this->shouldRemoveBody();
     CC_SAFE_RELEASE(_tracedFixtures);
 }
 

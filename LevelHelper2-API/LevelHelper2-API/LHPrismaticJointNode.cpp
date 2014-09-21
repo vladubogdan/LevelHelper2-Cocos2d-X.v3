@@ -28,7 +28,7 @@ LHPrismaticJointNode::LHPrismaticJointNode()
 
 LHPrismaticJointNode::~LHPrismaticJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHPrismaticJointNode* LHPrismaticJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)

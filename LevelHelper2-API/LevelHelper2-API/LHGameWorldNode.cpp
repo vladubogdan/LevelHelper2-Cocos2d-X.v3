@@ -14,7 +14,7 @@
 
 #if LH_USE_BOX2D
 #include "LHBox2dDebugDrawNode.h"
-#include "Box2D/Box2D.h"
+
 #endif
 
 
@@ -110,7 +110,7 @@ void LHGameWorldNode::onEnter(){
 void LHGameWorldNode::update(float delta)
 {
 #if LH_USE_BOX2D
-//    this->step(delta);
+    this->step(delta);
 #endif
 }
 
@@ -138,11 +138,6 @@ void LHGameWorldNode::visit(Renderer *renderer, const Mat4& parentTransform, boo
         Node::visit(renderer, parentTransform, parentTransformUpdated);
 #endif
     }
-    
-#if LH_USE_BOX2D
-    this->step(Director::getInstance()->getDeltaTime());
-#endif
-
 }
 
 #pragma mark - BOX2D SUPPORT
@@ -156,7 +151,8 @@ b2World* LHGameWorldNode::getBox2dWorld()
         
         b2Vec2 gravity;
         gravity.Set(0.f, 0.0f);
-        _box2dWorld = new b2World(gravity);
+        _box2dWorld = new LHBox2dWorld(gravity, this->getScene());
+//        _box2dWorld = new b2World(gravity);
         _box2dWorld->SetAllowSleeping(true);
         _box2dWorld->SetContinuousPhysics(true);
 
@@ -209,6 +205,9 @@ void LHGameWorldNode::afterStep(float dt)
         LHScheduledContactInfo info = _scheduledBeginContact[i];
         if(info.getNodeA() && info.getNodeB()){
             if(info.getNodeA()->getParent() && info.getNodeB()->getParent()){
+                
+                
+                
                 ((LHScene*)this->getScene())->didBeginContactBetweenNodes(info.getNodeA(),
                                                                           info.getNodeB(),
                                                                           info.getContactPoint(),
@@ -232,6 +231,30 @@ void LHGameWorldNode::afterStep(float dt)
     _scheduledEndContact.clear();
 }
 
+void LHGameWorldNode::removeScheduledContactsWithNode(Node* node){
+    
+    std::vector<LHScheduledContactInfo>::iterator it;
+    for(it = _scheduledBeginContact.begin(); it != _scheduledBeginContact.end();)
+    {
+        if(it->getNodeA() == node || it->getNodeB() == node)
+        {
+            it = _scheduledBeginContact.erase(it);
+        }
+        else{
+            ++it;
+        }
+    }
+    for(it = _scheduledEndContact.begin(); it != _scheduledEndContact.end();)
+    {
+        if(it->getNodeA() == node || it->getNodeB() == node)
+        {
+            it = _scheduledEndContact.erase(it);
+        }
+        else{
+            ++it;
+        }
+    }
+}
 
 void LHGameWorldNode::scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nodeB, Point contactPoint, float impulse)
 {

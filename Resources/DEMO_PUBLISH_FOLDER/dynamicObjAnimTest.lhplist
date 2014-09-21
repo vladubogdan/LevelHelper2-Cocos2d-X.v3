@@ -117,12 +117,16 @@
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
 								<false/>
 								<key>fixtureUUID</key>
-								<string>699C814F-F7E5-4634-91FF-D1B094F8697F</string>
+								<string>3F318574-E83A-46FB-9C63-96EE861640AE</string>
 								<key>genericFixture</key>
 								<dict>
 									<key>category</key>
@@ -144,6 +148,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>5</integer>
 								<key>type</key>
@@ -221,12 +229,16 @@
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>12C7A204-F742-48A7-B8FC-FA10EB7C2B74</string>
+						<string>66EF49D7-F67E-49C1-9B43-965F5B720267</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -248,6 +260,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>5</integer>
 						<key>type</key>
@@ -377,11 +393,19 @@
 		</dict>
 		<dict>
 			<key>ratio</key>
-			<real>1</real>
+			<real>1.2000000476837158</real>
 			<key>size</key>
-			<string>{1280.000000, 720.000000}</string>
+			<string>{1334.000000, 750.000000}</string>
 			<key>suffix</key>
-			<string>ipad</string>
+			<string>iphone6</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2208.000000, 1242.000000}</string>
+			<key>suffix</key>
+			<string>iphone6plus</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
@@ -400,90 +424,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>12C7A204-F742-48A7-B8FC-FA10EB7C2B74</key>
-		<array>
-			<array>
-				<string>{63, 15.5}</string>
-				<string>{-34.5, 15.5}</string>
-				<string>{-64, 5}</string>
-				<string>{-64, -13.5}</string>
-				<string>{-63, -15}</string>
-				<string>{-27.5, -15.5}</string>
-				<string>{63.5, -7}</string>
-			</array>
-			<array>
-				<string>{-63, 12.5}</string>
-				<string>{-64, 5}</string>
-				<string>{-34.5, 15.5}</string>
-				<string>{-61.5, 14}</string>
-			</array>
-			<array>
-				<string>{62.5, -12.5}</string>
-				<string>{63.5, -7}</string>
-				<string>{-27.5, -15.5}</string>
-				<string>{-27, -16}</string>
-				<string>{61, -15}</string>
-			</array>
-		</array>
-		<key>430A02DA-D0E9-4326-95DB-F471E0ED41C9</key>
-		<array>
-			<array>
-				<string>{-40.75, -37.5}</string>
-				<string>{-37.25, -40}</string>
-				<string>{-41.25, -34.5}</string>
-			</array>
-			<array>
-				<string>{10.25, -37}</string>
-				<string>{10.25, -35}</string>
-				<string>{-36.75, -40.5}</string>
-				<string>{5.75, -40.5}</string>
-				<string>{8.75, -39}</string>
-			</array>
-			<array>
-				<string>{82.25, 4.5}</string>
-				<string>{82.25, 22}</string>
-				<string>{17.25, -22.5}</string>
-				<string>{42.25, -19.5}</string>
-				<string>{52.25, -16.5}</string>
-				<string>{63.75, -11}</string>
-				<string>{75.25, -2.5}</string>
-			</array>
-			<array>
-				<string>{-83.75, 24}</string>
-				<string>{-84.75, 21}</string>
-				<string>{-84.75, -7.5}</string>
-				<string>{-83.75, -10}</string>
-				<string>{-46.75, -22.5}</string>
-				<string>{79.25, 26}</string>
-				<string>{-80.25, 26.5}</string>
-				<string>{-81.75, 26}</string>
-			</array>
-			<array>
-				<string>{81.75, 23.5}</string>
-				<string>{79.25, 26}</string>
-				<string>{-46.75, -22.5}</string>
-				<string>{-37.25, -40}</string>
-				<string>{-36.75, -40.5}</string>
-				<string>{17.25, -22.5}</string>
-				<string>{82.25, 22}</string>
-			</array>
-			<array>
-				<string>{10.25, -35}</string>
-				<string>{17.25, -22.5}</string>
-				<string>{-36.75, -40.5}</string>
-			</array>
-			<array>
-				<string>{-54.75, -22.5}</string>
-				<string>{-46.75, -22.5}</string>
-				<string>{-83.75, -10}</string>
-			</array>
-			<array>
-				<string>{-41.25, -34.5}</string>
-				<string>{-37.25, -40}</string>
-				<string>{-46.75, -22.5}</string>
-			</array>
-		</array>
-		<key>699C814F-F7E5-4634-91FF-D1B094F8697F</key>
+		<key>3F318574-E83A-46FB-9C63-96EE861640AE</key>
 		<array>
 			<array>
 				<string>{5.25, 20.25}</string>
@@ -528,6 +469,31 @@
 				<string>{-3.75, -20.75}</string>
 				<string>{-13.75, -16.75}</string>
 				<string>{-10.75, -18.75}</string>
+			</array>
+		</array>
+		<key>66EF49D7-F67E-49C1-9B43-965F5B720267</key>
+		<array>
+			<array>
+				<string>{63, 15.5}</string>
+				<string>{-34.5, 15.5}</string>
+				<string>{-64, 5}</string>
+				<string>{-64, -13.5}</string>
+				<string>{-63, -15}</string>
+				<string>{-27.5, -15.5}</string>
+				<string>{63.5, -7}</string>
+			</array>
+			<array>
+				<string>{-63, 12.5}</string>
+				<string>{-64, 5}</string>
+				<string>{-34.5, 15.5}</string>
+				<string>{-61.5, 14}</string>
+			</array>
+			<array>
+				<string>{62.5, -12.5}</string>
+				<string>{63.5, -7}</string>
+				<string>{-27.5, -15.5}</string>
+				<string>{-27, -16}</string>
+				<string>{61, -15}</string>
 			</array>
 		</array>
 	</dict>

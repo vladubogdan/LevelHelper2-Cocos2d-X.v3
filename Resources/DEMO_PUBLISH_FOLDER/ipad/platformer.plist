@@ -16,150 +16,150 @@
 		<key>brick.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{566, 283}, {128, 128}}</string>
+			<string>{{566.000000, 283.000000}, {128.000000, 128.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {128, 128}}</string>
+			<string>{{0.000000, 0.000000}, {128.000000, 128.000000}}</string>
 			<key>sourceSize</key>
-			<string>{128, 128}</string>
+			<string>{128.000000, 128.000000}</string>
 			<key>uuid</key>
 			<string>4EC4381D-615B-43E4-A952-F710DDE723C7</string>
 		</dict>
 		<key>bush.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{566, 415}, {83, 65}}</string>
+			<string>{{566.000000, 415.000000}, {83.000000, 65.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {65, 83}}</string>
+			<string>{{0.000000, 0.000000}, {65.000000, 83.000000}}</string>
 			<key>sourceSize</key>
-			<string>{83, 65}</string>
+			<string>{83.000000, 65.000000}</string>
 			<key>uuid</key>
 			<string>6305779C-1F18-4EDD-B6E7-5C410A967F3B</string>
 		</dict>
 		<key>clouds.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{635, 415}, {82, 53}}</string>
+			<string>{{635.000000, 415.000000}, {82.000000, 53.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {53, 82}}</string>
+			<string>{{0.000000, 0.000000}, {53.000000, 82.000000}}</string>
 			<key>sourceSize</key>
-			<string>{82, 53}</string>
+			<string>{82.000000, 53.000000}</string>
 			<key>uuid</key>
 			<string>20CA4C5F-D55E-4ACC-920D-F4C915E22436</string>
 		</dict>
 		<key>monkey.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{691, 415}, {46, 77}}</string>
+			<string>{{691.000000, 415.000000}, {46.000000, 77.000000}}</string>
 			<key>offset</key>
-			<string>{-3, -0.5}</string>
+			<string>{-3.000000, -0.500000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{9, 4}, {46, 77}}</string>
+			<string>{{9.000000, 4.000000}, {46.000000, 77.000000}}</string>
 			<key>sourceSize</key>
-			<string>{70, 84}</string>
+			<string>{70.000000, 84.000000}</string>
 			<key>uuid</key>
 			<string>363387A9-6B9D-4682-AC38-027B73015032</string>
 		</dict>
 		<key>mountain01.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2, 283}, {560, 182}}</string>
+			<string>{{2.000000, 283.000000}, {560.000000, 182.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {560, 182}}</string>
+			<string>{{0.000000, 0.000000}, {560.000000, 182.000000}}</string>
 			<key>sourceSize</key>
-			<string>{560, 182}</string>
+			<string>{560.000000, 182.000000}</string>
 			<key>uuid</key>
 			<string>D80BEA9D-2D06-49F7-B817-3BE7112B7160</string>
 		</dict>
 		<key>mountain02.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1131, 2}, {874, 232}}</string>
+			<string>{{1131.000000, 2.000000}, {874.000000, 232.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {874, 232}}</string>
+			<string>{{0.000000, 0.000000}, {874.000000, 232.000000}}</string>
 			<key>sourceSize</key>
-			<string>{874, 232}</string>
+			<string>{874.000000, 232.000000}</string>
 			<key>uuid</key>
 			<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
 		</dict>
 		<key>mountain03.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2, 2}, {1125, 277}}</string>
+			<string>{{2.000000, 2.000000}, {1125.000000, 277.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {1125, 277}}</string>
+			<string>{{0.000000, 0.000000}, {1125.000000, 277.000000}}</string>
 			<key>sourceSize</key>
-			<string>{1125, 277}</string>
+			<string>{1125.000000, 277.000000}</string>
 			<key>uuid</key>
 			<string>ECFBF842-DB73-4B3A-9A1D-B1E0878E6F51</string>
 		</dict>
 		<key>mushrooms.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{699, 284}, {123, 96}}</string>
+			<string>{{699.000000, 284.000000}, {123.000000, 96.000000}}</string>
 			<key>offset</key>
-			<string>{1.5, -2.5}</string>
+			<string>{1.500000, -2.500000}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{1, 4}, {96, 123}}</string>
+			<string>{{1.000000, 4.000000}, {96.000000, 123.000000}}</string>
 			<key>sourceSize</key>
-			<string>{128, 103}</string>
+			<string>{128.000000, 103.000000}</string>
 			<key>uuid</key>
 			<string>53407796-1F65-4887-BF24-69FA8F41AD7A</string>
 		</dict>
 		<key>smallTree.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2009, 24}, {18, 29}}</string>
+			<string>{{2009.000000, 24.000000}, {18.000000, 29.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {29, 18}}</string>
+			<string>{{0.000000, 0.000000}, {29.000000, 18.000000}}</string>
 			<key>sourceSize</key>
-			<string>{18, 29}</string>
+			<string>{18.000000, 29.000000}</string>
 			<key>uuid</key>
 			<string>93CB2C95-DFE8-43BD-838B-2FB821B33D80</string>
 		</dict>
 		<key>smallTreeDark.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2009, 2}, {18, 29}}</string>
+			<string>{{2009.000000, 2.000000}, {18.000000, 29.000000}}</string>
 			<key>offset</key>
-			<string>{0, 0}</string>
+			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{0, 0}, {29, 18}}</string>
+			<string>{{0.000000, 0.000000}, {29.000000, 18.000000}}</string>
 			<key>sourceSize</key>
-			<string>{18, 29}</string>
+			<string>{18.000000, 29.000000}</string>
 			<key>uuid</key>
 			<string>96FD0CBA-E13E-4426-B4A7-3B9CEB95E433</string>
 		</dict>
@@ -168,8 +168,10 @@
 	<dict>
 		<key>format</key>
 		<integer>2</integer>
+		<key>ratio</key>
+		<integer>1</integer>
 		<key>size</key>
-		<string>{2039, 500}</string>
+		<string>{2039.000000, 500.000000}</string>
 		<key>textureFileName</key>
 		<string>platformer.png</string>
 	</dict>

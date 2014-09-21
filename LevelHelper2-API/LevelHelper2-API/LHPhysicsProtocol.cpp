@@ -51,23 +51,30 @@ LHPhysicsProtocol::LHPhysicsProtocol()
 }
 LHPhysicsProtocol::~LHPhysicsProtocol()
 {
-    CCLOG("PHY PROTOCOL DEALLOC %p", this);
-    
+
+}
+
+void LHPhysicsProtocol::shouldRemoveBody()
+{
 #if LH_USE_BOX2D
-    
-    Node* _node = dynamic_cast<Node*>(this);
-    LHNodeProtocol* nodeProt = dynamic_cast<LHNodeProtocol*>(_node);
-    
-    CCLOG("WE HAVE BODY %p we have nodeProd %p node %p", _body, nodeProt, _node);
-    
-    if(nodeProt){
-        CCLOG("is dirty %d",nodeProt->isB2WorldDirty());
-    }
-    
+    LHNodeProtocol* nodeProt = dynamic_cast<LHNodeProtocol*>(this);
     if(_body && nodeProt && !nodeProt->isB2WorldDirty())
-//    if(_body && _body->GetWorld() && _body->GetWorld()->GetContactManager().m_contactListener != NULL)
     {
-        CCLOG("SHOULD REMOVE BODY");
+        Node* node = dynamic_cast<Node*>(this);
+
+        if(node){
+            
+            LHBox2dWorld* world = (LHBox2dWorld*)_body->GetWorld();
+            if(world){
+                LHScene* scene = (LHScene*)world->_scene;
+                if(scene){
+                    LHGameWorldNode* gw = scene->getGameWorldNode();
+                    if(gw){
+                        gw->removeScheduledContactsWithNode(node);
+                    }
+                }
+            }
+        }
         
         //do not remove the body if the scene is deallocing as the box2d world will be deleted
         //so we dont need to do this manualy
@@ -76,7 +83,6 @@ LHPhysicsProtocol::~LHPhysicsProtocol()
     }
 #endif
 }
-
 
 Node* LHPhysicsProtocol::LHGetNode(LHPhysicsProtocol* prot)
 {
@@ -143,16 +149,13 @@ void LHPhysicsProtocol::removeBody()
     if(_body){
         b2World* world = _body->GetWorld();
         if(world){
-            CCLOG("WE HAVE WORLD");
-            
+
             _body->SetUserData(NULL);
             if(!world->IsLocked()){
-                CCLOG("NODE LOCKED");
-                
+
                 this->removeAllAttachedJoints();
                 world->DestroyBody(_body);
-                CCLOG("DID DESTROY BODY");
-                
+            
                 _body = NULL;
                 scheduledForRemoval = false;
             }
@@ -710,7 +713,6 @@ void LHPhysicsProtocol::visitPhysicsProtocol()
 {
     //nothing to update on chipmunk - update is handled by Cocos2d
 }
-
 
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {

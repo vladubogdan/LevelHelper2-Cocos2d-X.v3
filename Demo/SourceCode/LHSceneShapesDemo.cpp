@@ -49,7 +49,7 @@ bool LHSceneShapesDemo::initWithContentOfFile(const std::string& plistLevelFile)
     Size size = this->getContentSize();
     
     Label* ttf = Label::create();
-    ttf->setString("SHAPES DEMO Example.\nShapes can have solid colors or textured.\nTextured shapes allow to edit each vertex color and opacity.\nDrag shapes to move them.");
+    ttf->setString("SHAPES DEMO Example.\nShapes can have solid colors or textured.\nTextured shapes allow to edit each vertex color and opacity.\nShapes can also have tileing repeating textures (like the T shape).\nDrag shapes to move them.");
     
     ttf->setTextColor(Color4B::BLACK);
     ttf->setHorizontalAlignment(TextHAlignment::CENTER);

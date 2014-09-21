@@ -24,7 +24,7 @@ LHShape::LHShape()
 
 LHShape::~LHShape()
 {
-    
+    this->shouldRemoveBody();
 }
 
 LHShape* LHShape::nodeWithDictionary(LHDictionary* dict, Node* prnt)

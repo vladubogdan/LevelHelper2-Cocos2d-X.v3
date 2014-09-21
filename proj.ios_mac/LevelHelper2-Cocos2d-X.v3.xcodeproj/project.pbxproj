@@ -82,6 +82,8 @@
 		6E0EEF29198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
 		6E0EEF2A198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
 		6E0EEF2B198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER in Resources */ = {isa = PBXBuildFile; fileRef = 6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */; };
+		6E10232419CEBE8100099E8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E10232319CEBE8100099E8A /* Images.xcassets */; };
+		6E10232F19CF353900099E8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E10232319CEBE8100099E8A /* Images.xcassets */; };
 		6E79165B1963F1F600E68E06 /* emptyButtonTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E79165A1963F1F600E68E06 /* emptyButtonTexture.png */; };
 		6E79165C1963F1F600E68E06 /* emptyButtonTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E79165A1963F1F600E68E06 /* emptyButtonTexture.png */; };
 		6E79167E1964186600E68E06 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 5087E77617EB970100C73F5D /* Icon-120.png */; };
@@ -483,6 +485,7 @@
 		6E0EEEFA198A2A3C002CDE7F /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		6E0EEEFB198A2A3C002CDE7F /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		6E0EEF25198B8A0A002CDE7F /* DEMO_PUBLISH_FOLDER */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_PUBLISH_FOLDER; path = ../Resources/DEMO_PUBLISH_FOLDER; sourceTree = "<group>"; };
+		6E10232319CEBE8100099E8A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		6E79165A1963F1F600E68E06 /* emptyButtonTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyButtonTexture.png; sourceTree = "<group>"; };
 		6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7916DD1964186600E68E06 /* Info+Box2d.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info+Box2d.plist"; path = "/Volumes/PersonalFiles/Projects/PrivateProjects/LevelHelper2-API-GITHUB/Cocos2d-X.v3/proj.ios_mac/Info+Box2d.plist"; sourceTree = "<absolute>"; };
@@ -863,6 +866,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6E10232319CEBE8100099E8A /* Images.xcassets */,
 				6E7916DD1964186600E68E06 /* Info+Box2d.plist */,
 				6E79165A1963F1F600E68E06 /* emptyButtonTexture.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
@@ -1085,6 +1089,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				6E10232F19CF353900099E8A /* Images.xcassets in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
@@ -1128,6 +1133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E79167E1964186600E68E06 /* Icon-120.png in Resources */,
+				6E10232419CEBE8100099E8A /* Images.xcassets in Resources */,
 				6E7916811964186600E68E06 /* Icon-76.png in Resources */,
 				6E7916821964186600E68E06 /* Default@2x.png in Resources */,
 				6E7916831964186600E68E06 /* Icon-100.png in Resources */,
@@ -1383,6 +1389,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1417,6 +1425,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1505,6 +1515,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1538,6 +1550,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;

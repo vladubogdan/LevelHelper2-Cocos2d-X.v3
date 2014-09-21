@@ -47,8 +47,6 @@ LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
 }
 LHNodeProtocol::~LHNodeProtocol()
 {
-    CCLOG("NODE PROTOCOL DEALLOC %p", this);
-    
     if(userProperty){
         delete userProperty;
         userProperty = NULL;

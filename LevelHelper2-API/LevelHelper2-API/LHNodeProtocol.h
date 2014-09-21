@@ -22,13 +22,6 @@ class LHScene;
 
 using namespace cocos2d;
 
-
-/**
- Most of the LevelHelper-2 nodes conforms to this protocol.
- */
-
-//class LHNodeAnimationProtocol;
-
 class LHNodeProtocol
 {
 public:

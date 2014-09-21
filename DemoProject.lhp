@@ -64,17 +64,31 @@
 		</dict>
 		<dict>
 			<key>DeviceName</key>
-			<string>Android</string>
+			<string>iPhone 6</string>
 			<key>ScaleRatio</key>
-			<real>1</real>
+			<real>1.2000000476837158</real>
 			<key>ScreenHeight</key>
-			<integer>720</integer>
+			<integer>750</integer>
 			<key>ScreenWidth</key>
-			<integer>1280</integer>
+			<integer>1334</integer>
 			<key>SuffixName</key>
-			<string>ipad</string>
+			<string>iphone6</string>
 			<key>color</key>
-			<string>{{0.039420325309038162, 0}, {0.040748715400695801, 1}}</string>
+			<string>{{0.5506446361541748, 0.89805477857589722}, {0.075750887393951416, 1}}</string>
+		</dict>
+		<dict>
+			<key>DeviceName</key>
+			<string>iPhone 6 Plus</string>
+			<key>ScaleRatio</key>
+			<real>2</real>
+			<key>ScreenHeight</key>
+			<integer>1242</integer>
+			<key>ScreenWidth</key>
+			<integer>2208</integer>
+			<key>SuffixName</key>
+			<string>iphone6plus</string>
+			<key>color</key>
+			<string>{{0.73797774314880371, 0.16586895287036896}, {0.67999488115310669, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -84,7 +98,9 @@
 		<key>UserPropertiesGenerationPath</key>
 		<string>LevelHelper2-API/UserProperties</string>
 		<key>ignoredFolders</key>
-		<array/>
+		<array>
+			<string>Resources/DEMO_PUBLISH_FOLDER</string>
+		</array>
 		<key>name</key>
 		<string>DemoProject</string>
 		<key>publishOptions</key>
@@ -142,6 +158,11 @@
 					<true/>
 				</dict>
 				<key>introductionDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>otherJointsDemo.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>
@@ -205,7 +226,7 @@
 			<key>publisherPluginName</key>
 			<string>Cocos2d-X</string>
 			<key>selectedPublishTypeName</key>
-			<string>Current Scene Only</string>
+			<string>All Selected Scenes</string>
 		</dict>
 	</dict>
 	<key>uuid</key>

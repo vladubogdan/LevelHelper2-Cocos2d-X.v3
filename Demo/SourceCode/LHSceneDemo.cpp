@@ -50,10 +50,6 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     
     sceneNames.push_back("LHSceneIntroductionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
-
-    sceneNames.push_back("LHSceneShapesDemo");
-    sceneCreators.push_back((createFuncPtrType)&LHSceneShapesDemo::create);
-
     
     //tests
 //    sceneNames.push_back("DynamicObjectsTransformAnimationTest");
@@ -95,6 +91,9 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneAssetWithJointsDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneAssetWithJointsDemo::create);
 
+    sceneNames.push_back("LHSceneShapesDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneShapesDemo::create);
+    
 
     sceneNames.push_back("LHSceneBeziersDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneBeziersDemo::create);
@@ -260,7 +259,7 @@ void LHSceneDemo::nextDemo(Ref *pSender, Widget::TouchEventType type)
 //            TransitionFadeUp
 //            TransitionFadeDown
             
-            Director::getInstance()->replaceScene(TransitionFlipAngular::create(1.0f, demo));
+            Director::getInstance()->replaceScene(TransitionFade::create(0.4f, demo));
             return;
         }
     }

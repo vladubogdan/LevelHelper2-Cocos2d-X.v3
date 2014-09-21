@@ -18,7 +18,6 @@ LHNodeAnimationProtocol::LHNodeAnimationProtocol():_animations(NULL), _activeAni
 
 LHNodeAnimationProtocol::~LHNodeAnimationProtocol()
 {
-    CCLOG("ANIMATION PROT DEALLOC");
     _activeAnimation = NULL;
     CC_SAFE_DELETE(_animations);
 }

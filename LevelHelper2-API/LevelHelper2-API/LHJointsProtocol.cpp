@@ -32,13 +32,14 @@ LHJointsProtocol::LHJointsProtocol()
 
 LHJointsProtocol::~LHJointsProtocol()
 {
+    
+}
+
+void LHJointsProtocol::shouldRemoveJoint()
+{
 #if LH_USE_BOX2D
     LHNodeProtocol* nodeProt = dynamic_cast<LHNodeProtocol*>(this);
     if(_joint && nodeProt && !nodeProt->isB2WorldDirty())
-//    if(_joint &&
-//       _joint->GetBodyA() &&
-//       _joint->GetBodyA()->GetWorld() &&
-//       _joint->GetBodyA()->GetWorld()->GetContactManager().m_contactListener != NULL)
     {
         //do not remove the joint if the scene is deallocing as the box2d world will be deleted
         //so we dont need to do this manualy
@@ -48,7 +49,7 @@ LHJointsProtocol::~LHJointsProtocol()
 #else
     this->removeJoint();
 #endif
-    
+
 }
 
 Point LHJointsProtocol::getAnchorA(){

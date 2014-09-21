@@ -85,6 +85,8 @@ LHRopeJointNode::LHRopeJointNode()
 
 LHRopeJointNode::~LHRopeJointNode()
 {
+    this->shouldRemoveJoint();
+    
     ropeShape = nullptr;
 
     cutAShapeNode = nullptr;

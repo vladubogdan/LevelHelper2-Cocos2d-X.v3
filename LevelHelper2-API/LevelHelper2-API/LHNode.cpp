@@ -18,7 +18,7 @@ LHNode::LHNode()
 
 LHNode::~LHNode()
 {
-    
+    this->shouldRemoveBody();
 }
 
 LHNode* LHNode::createWithName(const std::string& nm)

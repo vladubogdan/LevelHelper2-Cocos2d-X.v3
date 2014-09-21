@@ -28,7 +28,7 @@ LHWeldJointNode::LHWeldJointNode()
 
 LHWeldJointNode::~LHWeldJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHWeldJointNode* LHWeldJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)

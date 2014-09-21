@@ -29,6 +29,7 @@ LHGearJointNode::LHGearJointNode()
 
 LHGearJointNode::~LHGearJointNode()
 {
+    this->shouldRemoveJoint();
     _jointA = nullptr;
     _jointB = nullptr;
 }

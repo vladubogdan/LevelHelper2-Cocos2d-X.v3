@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>about</key>
+	<dict>
+		<key>app</key>
+		<string>LevelHelper 2</string>
+		<key>author</key>
+		<string>Vladu Bogdan</string>
+		<key>web</key>
+		<string>http://www.gamedevhelper.com</string>
+	</dict>
+	<key>frames</key>
+	<dict>
+		<key>weights_pulley-02</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 3.000000}, {220.000000, 335.000000}}</string>
+			<key>offset</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{13.000000, 14.000000}, {335.000000, 220.000000}}</string>
+			<key>sourceSize</key>
+			<string>{246.000000, 359.000000}</string>
+			<key>uuid</key>
+			<string>8D9128B2-C6D2-4984-BBA9-9E8C76497BFF</string>
+		</dict>
+		<key>weights_pulley-03</key>
+		<dict>
+			<key>frame</key>
+			<string>{{342.000000, 3.000000}, {142.000000, 211.000000}}</string>
+			<key>offset</key>
+			<string>{-2.500000, 1.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{8.000000, 10.000000}, {142.000000, 211.000000}}</string>
+			<key>sourceSize</key>
+			<string>{163.000000, 234.000000}</string>
+			<key>uuid</key>
+			<string>B4C2C2E5-BDEC-4E34-9F50-E6213265CDA7</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>ratio</key>
+		<real>1.2</real>
+		<key>size</key>
+		<string>{486.000000, 224.000000}</string>
+		<key>textureFileName</key>
+		<string>pulleyParts.png</string>
+	</dict>
+</dict>
+</plist>

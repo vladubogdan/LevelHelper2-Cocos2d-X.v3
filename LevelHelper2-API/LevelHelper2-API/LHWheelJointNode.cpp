@@ -28,7 +28,7 @@ LHWheelJointNode::LHWheelJointNode()
 
 LHWheelJointNode::~LHWheelJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHWheelJointNode* LHWheelJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)

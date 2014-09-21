@@ -28,7 +28,7 @@ LHRevoluteJointNode::LHRevoluteJointNode()
 
 LHRevoluteJointNode::~LHRevoluteJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHRevoluteJointNode* LHRevoluteJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)

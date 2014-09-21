@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>about</key>
+	<dict>
+		<key>app</key>
+		<string>LevelHelper 2</string>
+		<key>author</key>
+		<string>Vladu Bogdan</string>
+		<key>web</key>
+		<string>http://www.gamedevhelper.com</string>
+	</dict>
+	<key>frames</key>
+	<dict>
+		<key>blueRobot</key>
+		<dict>
+			<key>frame</key>
+			<string>{{139.000000, 2.000000}, {131.000000, 160.000000}}</string>
+			<key>offset</key>
+			<string>{1.500000, 2.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{14.000000, 8.000000}, {131.000000, 160.000000}}</string>
+			<key>sourceSize</key>
+			<string>{156.000000, 180.000000}</string>
+			<key>uuid</key>
+			<string>2F3A5F3F-DA9C-471B-930F-35601F2AE875</string>
+		</dict>
+		<key>greenRobot</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 167.000000}, {131.000000, 160.000000}}</string>
+			<key>offset</key>
+			<string>{1.500000, 2.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{12.000000, 14.000000}, {160.000000, 131.000000}}</string>
+			<key>sourceSize</key>
+			<string>{156.000000, 180.000000}</string>
+			<key>uuid</key>
+			<string>9C8173A8-5D80-4F56-AFDB-115E6D744990</string>
+		</dict>
+		<key>pinkRobot</key>
+		<dict>
+			<key>frame</key>
+			<string>{{3.000000, 2.000000}, {131.000000, 160.000000}}</string>
+			<key>offset</key>
+			<string>{1.500000, 2.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{14.000000, 8.000000}, {131.000000, 160.000000}}</string>
+			<key>sourceSize</key>
+			<string>{156.000000, 180.000000}</string>
+			<key>uuid</key>
+			<string>68189927-8EF2-4BEE-BDC3-20BA98F11C64</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>ratio</key>
+		<real>1.2</real>
+		<key>size</key>
+		<string>{272.000000, 300.000000}</string>
+		<key>textureFileName</key>
+		<string>robots.png</string>
+	</dict>
+</dict>
+</plist>

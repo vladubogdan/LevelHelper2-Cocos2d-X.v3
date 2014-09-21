@@ -236,7 +236,8 @@ void LHBox2dCollisionHandling::postSolve(b2Contact* contact, const b2ContactImpu
     Node* nodeA = this->getNodeAFromContact(contact);
     Node* nodeB = this->getNodeBFromContact(contact);
     if(!nodeA || !nodeB)return;
-
+    if(!nodeA->getParent() || !nodeB->getParent())return;
+    
     float impulse = 0;
     if(contactImpulse->count > 0)
     {
@@ -251,6 +252,7 @@ void LHBox2dCollisionHandling::beginContact(b2Contact* contact)
     Node* nodeA = this->getNodeAFromContact(contact);
     Node* nodeB = this->getNodeBFromContact(contact);
     if(!nodeA || !nodeB)return;
+    if(!nodeA->getParent() || !nodeB->getParent())return;
     
     //called for sensors
     _scene->getGameWorldNode()->scheduleDidBeginContactBetweenNodeA(nodeA, nodeB, this->getPointFromContact(contact), 0);
@@ -261,7 +263,8 @@ void LHBox2dCollisionHandling::endContact(b2Contact* contact)
     Node* nodeA = this->getNodeAFromContact(contact);
     Node* nodeB = this->getNodeBFromContact(contact);
     if(!nodeA || !nodeB)return;
-
+    if(!nodeA->getParent() || !nodeB->getParent())return;
+    
     _scene->getGameWorldNode()->scheduleDidEndContactBetweenNodeA(nodeA, nodeB);
 }
 

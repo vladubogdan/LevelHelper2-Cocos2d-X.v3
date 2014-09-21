@@ -157,8 +157,10 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     {
         _currentDev = curDev;
     
-        SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
-        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+        //this can cause issues with transitioning to new scenes.
+//        It is user responsibility to do this anyway also if the next level has the same textures - loading will be faster
+//        SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
+//        Director::getInstance()->getTextureCache()->removeUnusedTextures();
         
         this->loadGenericInfoFromDictionary(dict);
         

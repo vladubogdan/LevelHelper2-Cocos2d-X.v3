@@ -15,6 +15,7 @@
 
 LHCamera::LHCamera()
 {
+    wasUpdated= false;
     _followedNode = nullptr;
 }
 
@@ -180,4 +181,6 @@ void LHCamera::visit(Renderer *renderer, const Mat4& parentTransform, bool paren
         Node::visit(renderer, parentTransform, parentTransformUpdated);
 #endif
     }
+    
+    wasUpdated= true;
 }

@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>ipad</string>
 			<key>color</key>
-			<string>{{0.03942059725522995, 0}, {0.040749069303274155, 1}}</string>
+			<string>{{0.039420325309038162, 0}, {0.040748715400695801, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -122,6 +122,11 @@
 					<true/>
 				</dict>
 				<key>collisionHandlingDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>dynamicObjAnimTest.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

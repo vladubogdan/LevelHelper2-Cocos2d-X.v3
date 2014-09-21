@@ -184,6 +184,9 @@ public:
      */
     static LHNodeProtocol* LHGetNodeProtocol(Node* node);
     
+    bool isB2WorldDirty();
+    void markAsB2WorldDirty();
+    bool _b2WorldDirty;
 };
 
 #define LH_GET_NODE_FROM_NODE_PROTOCOL LHNodeProtocol::LHGetNode

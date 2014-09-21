@@ -43,9 +43,12 @@
 
 LHNodeProtocol::LHNodeProtocol():name("Untitled"),userProperty(NULL)
 {
+    _b2WorldDirty = false;
 }
 LHNodeProtocol::~LHNodeProtocol()
 {
+    CCLOG("NODE PROTOCOL DEALLOC %p", this);
+    
     if(userProperty){
         delete userProperty;
         userProperty = NULL;
@@ -91,6 +94,27 @@ Node* LHNodeProtocol::LHGetNode(LHNodeProtocol* prot)
 LHNodeProtocol* LHNodeProtocol::LHGetNodeProtocol(Node* node)
 {
     return dynamic_cast<LHNodeProtocol*>(node);
+}
+
+bool LHNodeProtocol::isB2WorldDirty(){
+    return _b2WorldDirty;
+}
+void LHNodeProtocol::markAsB2WorldDirty()
+{
+    _b2WorldDirty = true;
+    
+    Node* node = dynamic_cast<Node*>(this);
+    if(!node)return;
+    
+    auto& children = node->getChildren();
+    for( const auto &n : children)
+    {
+        LHNodeProtocol* nProt = dynamic_cast<LHNodeProtocol*>(n);
+        if(nProt)
+        {
+            nProt->markAsB2WorldDirty();
+        }
+    }
 }
 
 

@@ -28,8 +28,10 @@ std::string CameraPhysicsTest::className(){
 
 CameraPhysicsTest::CameraPhysicsTest(){
     //initialize your content here
-    
+#if LH_USE_BOX2D
     mouseJoint = NULL;
+#endif
+    
 }
 CameraPhysicsTest::~CameraPhysicsTest(){
     //release your content here

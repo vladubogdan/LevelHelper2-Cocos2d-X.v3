@@ -21,18 +21,24 @@
 			<string>{0.000000, 0.000000}</string>
 			<key>imageFileName</key>
 			<string>carParts.png</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>carBody</string>
 			<key>nodePhysics</key>
 			<dict>
 				<key>allowSleep</key>
 				<true/>
+				<key>angularDamping</key>
+				<real>0.0</real>
+				<key>angularVelocity</key>
+				<real>0.0</real>
 				<key>bullet</key>
 				<false/>
 				<key>fixedRotation</key>
 				<false/>
 				<key>fixtureUUID</key>
-				<string>DB52C0FF-EA67-4A52-879C-66F4A6F114AD</string>
+				<string>BA5C2AB4-8A80-4DC2-8DCB-49B39C05D9A0</string>
 				<key>genericFixture</key>
 				<dict>
 					<key>category</key>
@@ -54,6 +60,10 @@
 				</dict>
 				<key>gravityScale</key>
 				<real>1</real>
+				<key>linearDamping</key>
+				<real>0.0</real>
+				<key>linearVelocity</key>
+				<string>{0.000000, 0.000000}</string>
 				<key>shape</key>
 				<integer>5</integer>
 				<key>type</key>
@@ -62,7 +72,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>8E3F3D19-E493-4B2A-8DD7-C58A699A45B3</string>
+			<string>18A72B18-6886-4B8B-ACA1-0873F075C3CA</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -91,6 +101,8 @@
 			<false/>
 			<key>enableMotor</key>
 			<false/>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>lowerAngle</key>
 			<real>0.0</real>
 			<key>maxMotorTorque</key>
@@ -102,7 +114,7 @@
 			<key>nodeType</key>
 			<string>LHRevoluteJoint</string>
 			<key>parentUUID</key>
-			<string>8E3F3D19-E493-4B2A-8DD7-C58A699A45B3</string>
+			<string>18A72B18-6886-4B8B-ACA1-0873F075C3CA</string>
 			<key>relativePosA</key>
 			<string>{0.000000, 0.000000}</string>
 			<key>spriteAUUID</key>
@@ -125,6 +137,8 @@
 			<false/>
 			<key>enableMotor</key>
 			<false/>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>lowerAngle</key>
 			<real>0.0</real>
 			<key>maxMotorTorque</key>
@@ -136,7 +150,7 @@
 			<key>nodeType</key>
 			<string>LHRevoluteJoint</string>
 			<key>parentUUID</key>
-			<string>8E3F3D19-E493-4B2A-8DD7-C58A699A45B3</string>
+			<string>18A72B18-6886-4B8B-ACA1-0873F075C3CA</string>
 			<key>relativePosA</key>
 			<string>{0.000000, 0.000000}</string>
 			<key>spriteAUUID</key>
@@ -163,12 +177,18 @@
 			<string>{-0.052083, 0.031250}</string>
 			<key>imageFileName</key>
 			<string>carParts.png</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>backWheel</string>
 			<key>nodePhysics</key>
 			<dict>
 				<key>allowSleep</key>
 				<true/>
+				<key>angularDamping</key>
+				<real>0.0</real>
+				<key>angularVelocity</key>
+				<real>0.0</real>
 				<key>bullet</key>
 				<false/>
 				<key>fixedRotation</key>
@@ -194,6 +214,10 @@
 				</dict>
 				<key>gravityScale</key>
 				<real>1</real>
+				<key>linearDamping</key>
+				<real>0.0</real>
+				<key>linearVelocity</key>
+				<string>{0.000000, 0.000000}</string>
 				<key>shape</key>
 				<integer>1</integer>
 				<key>type</key>
@@ -202,7 +226,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>8E3F3D19-E493-4B2A-8DD7-C58A699A45B3</string>
+			<string>18A72B18-6886-4B8B-ACA1-0873F075C3CA</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -235,12 +259,18 @@
 			<string>{0.052083, 0.031250}</string>
 			<key>imageFileName</key>
 			<string>carParts.png</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>frontWheel</string>
 			<key>nodePhysics</key>
 			<dict>
 				<key>allowSleep</key>
 				<true/>
+				<key>angularDamping</key>
+				<real>0.0</real>
+				<key>angularVelocity</key>
+				<real>0.0</real>
 				<key>bullet</key>
 				<false/>
 				<key>fixedRotation</key>
@@ -266,6 +296,10 @@
 				</dict>
 				<key>gravityScale</key>
 				<real>1</real>
+				<key>linearDamping</key>
+				<real>0.0</real>
+				<key>linearVelocity</key>
+				<string>{0.000000, 0.000000}</string>
 				<key>shape</key>
 				<integer>1</integer>
 				<key>type</key>
@@ -274,7 +308,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>8E3F3D19-E493-4B2A-8DD7-C58A699A45B3</string>
+			<string>18A72B18-6886-4B8B-ACA1-0873F075C3CA</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -301,12 +335,14 @@
 	<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 	<key>generalPosition</key>
 	<string>{0.066667, 0.100000}</string>
+	<key>invisibleInEditor</key>
+	<false/>
 	<key>name</key>
 	<string>Untitled</string>
 	<key>nodeType</key>
 	<string>LHAsset</string>
 	<key>parentUUID</key>
-	<string>0FB5A76D-89F0-4471-9B6D-AF99D1E34C6B</string>
+	<string>8B8109D0-CE84-4C5D-8450-2960117B6DBF</string>
 	<key>rotation</key>
 	<real>0.0</real>
 	<key>scale</key>
@@ -319,7 +355,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>DB52C0FF-EA67-4A52-879C-66F4A6F114AD</key>
+		<key>BA5C2AB4-8A80-4DC2-8DCB-49B39C05D9A0</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>
@@ -379,7 +415,7 @@
 		</array>
 	</dict>
 	<key>uuid</key>
-	<string>8E3F3D19-E493-4B2A-8DD7-C58A699A45B3</string>
+	<string>18A72B18-6886-4B8B-ACA1-0873F075C3CA</string>
 	<key>zOrder</key>
 	<integer>0</integer>
 </dict>

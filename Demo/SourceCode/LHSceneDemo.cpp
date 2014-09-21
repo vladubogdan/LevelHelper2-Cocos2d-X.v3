@@ -21,7 +21,9 @@
 #include "LHSceneWaterAreaDemo.h"
 #include "LHSceneNodesSubclassingDemo.h"
 
+//TESTS
 #include "CameraPhysicsTest.h"
+#include "DynamicObjectsTransformAnimationTest.h"
 
 LHSceneDemo* LHSceneDemo::create()
 {
@@ -49,6 +51,13 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneIntroductionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
 
+    sceneNames.push_back("LHSceneShapesDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneShapesDemo::create);
+
+    
+    //tests
+//    sceneNames.push_back("DynamicObjectsTransformAnimationTest");
+//    sceneCreators.push_back((createFuncPtrType)&DynamicObjectsTransformAnimationTest::create);
 //    sceneNames.push_back("CameraPhysicsTest");
 //    sceneCreators.push_back((createFuncPtrType)&CameraPhysicsTest::create);
     
@@ -86,8 +95,6 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneAssetWithJointsDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneAssetWithJointsDemo::create);
 
-    sceneNames.push_back("LHSceneShapesDemo");
-    sceneCreators.push_back((createFuncPtrType)&LHSceneShapesDemo::create);
 
     sceneNames.push_back("LHSceneBeziersDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneBeziersDemo::create);
@@ -170,14 +177,15 @@ void LHSceneDemo::previousDemo(Ref *pSender, Widget::TouchEventType type)
         
         if(className == currentName)
         {
-            int newIdx = i-1;
+            int newIdx = (int)i-1;
             if(newIdx < 0){
-                newIdx = sceneNames.size()-1;
+                newIdx = (int)sceneNames.size()-1;
             }
             
             createFuncPtrType func = sceneCreators[newIdx];
             LHSceneDemo* demo = func();
             Director::getInstance()->replaceScene(demo);
+//            Director::getInstance()->replaceScene(TransitionFade::create(1.0f, demo));
             return;
         }
     }
@@ -197,6 +205,8 @@ void LHSceneDemo::restartDemo(Ref *pSender, Widget::TouchEventType type)
             createFuncPtrType func = sceneCreators[i];
             LHSceneDemo* demo = func();
             Director::getInstance()->replaceScene(demo);
+//            Director::getInstance()->replaceScene(TransitionSplitCols::create(1.0f, demo));
+            
             return;
         }
     }
@@ -213,14 +223,44 @@ void LHSceneDemo::nextDemo(Ref *pSender, Widget::TouchEventType type)
 
         if(className == currentName)
         {
-            int newIdx = i+1;
-            if(newIdx >= sceneNames.size()){
+            int newIdx = (int)i+1;
+            if(newIdx >= (int)sceneNames.size()){
                 newIdx = 0;
             }
             
             createFuncPtrType func = sceneCreators[newIdx];
             LHSceneDemo* demo = func();
             Director::getInstance()->replaceScene(demo);
+            
+//            TransitionSceneOriented
+//            TransitionRotoZoom
+//            TransitionJumpZoom
+//            TransitionMoveInL
+//            TransitionMoveInR
+//            TransitionMoveInT
+//            TransitionMoveInB
+//            TransitionSlideInL
+//            TransitionSlideInR
+//            TransitionSlideInB
+//            TransitionSlideInT
+//            TransitionShrinkGrow
+//            TransitionFlipX
+//            TransitionFlipY
+//            TransitionFlipAngular
+//            TransitionZoomFlipX
+//            TransitionZoomFlipY
+//            TransitionZoomFlipAngular
+//            TransitionFade
+//            TransitionCrossFade
+//            TransitionTurnOffTiles
+//            TransitionSplitCols
+//            TransitionSplitRows
+//            TransitionFadeTR
+//            TransitionFadeBL
+//            TransitionFadeUp
+//            TransitionFadeDown
+            
+            Director::getInstance()->replaceScene(TransitionFlipAngular::create(1.0f, demo));
             return;
         }
     }

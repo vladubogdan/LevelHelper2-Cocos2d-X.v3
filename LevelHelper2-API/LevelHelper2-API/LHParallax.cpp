@@ -14,6 +14,7 @@
 #include "LHDevice.h"
 #include "LHNode.h"
 #include "LHGameWorldNode.h"
+#include "LHCamera.h"
 
 LHParallax::LHParallax()
 {
@@ -102,6 +103,11 @@ void LHParallax::transformLayerPositions()
     Point parallaxPos = getPosition();
     Node* followed = followedNode();
     if(followed){
+        
+        if(LHCamera::isLHCamera(followed)){
+            if(!((LHCamera*)followed)->wasUpdated)return;
+        }
+        
         parallaxPos = followed->getPosition();
         
         Point anchor = followed->getAnchorPoint();

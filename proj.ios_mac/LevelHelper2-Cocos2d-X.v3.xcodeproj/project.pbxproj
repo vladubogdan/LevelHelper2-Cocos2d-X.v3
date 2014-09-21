@@ -187,6 +187,9 @@
 		6E908FD019A8446A0090246B /* LHSceneWeldJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */; };
 		6E908FD119A8446A0090246B /* LHSceneWeldJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */; };
 		6E908FD219A8446A0090246B /* LHSceneWeldJointsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */; };
+		6EAD81F319CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD81F119CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp */; };
+		6EAD81F419CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD81F119CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp */; };
+		6EAD81F519CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD81F119CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp */; };
 		6EC554CA19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		6EC554CB19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
 		6EC554CC19A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE in Resources */ = {isa = PBXBuildFile; fileRef = 6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */; };
@@ -526,6 +529,8 @@
 		6E908F9419A8446A0090246B /* LHSceneWaterAreaDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneWaterAreaDemo.h; sourceTree = "<group>"; };
 		6E908F9519A8446A0090246B /* LHSceneWeldJointsDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneWeldJointsDemo.cpp; sourceTree = "<group>"; };
 		6E908F9619A8446A0090246B /* LHSceneWeldJointsDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneWeldJointsDemo.h; sourceTree = "<group>"; };
+		6EAD81F119CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicObjectsTransformAnimationTest.cpp; sourceTree = "<group>"; };
+		6EAD81F219CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicObjectsTransformAnimationTest.h; sourceTree = "<group>"; };
 		6EC554C919A9DD5C00CF0760 /* DEMO_INDIVIDUAL_IMAGES_EXAMPLE */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DEMO_INDIVIDUAL_IMAGES_EXAMPLE; path = ../Resources/DEMO_INDIVIDUAL_IMAGES_EXAMPLE; sourceTree = "<group>"; };
 		6EC554EF19AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSceneNodesSubclassingDemo.cpp; sourceTree = "<group>"; };
 		6EC554F019AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSceneNodesSubclassingDemo.h; sourceTree = "<group>"; };
@@ -849,6 +854,8 @@
 			children = (
 				6EFCCC7B19C6C2EC00615A8E /* CameraPhysicsTest.cpp */,
 				6EFCCC7C19C6C2EC00615A8E /* CameraPhysicsTest.h */,
+				6EAD81F119CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp */,
+				6EAD81F219CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.h */,
 			);
 			name = BugTest;
 			sourceTree = "<group>";
@@ -1175,6 +1182,7 @@
 				6EC554F319AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp in Sources */,
 				6E908FCF19A8446A0090246B /* LHSceneWaterAreaDemo.cpp in Sources */,
 				6E908F9C19A8446A0090246B /* LHSceneAssetWithJointsDemo.cpp in Sources */,
+				6EAD81F519CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp in Sources */,
 				6E908FB719A8446A0090246B /* LHSceneIntroductionDemo.cpp in Sources */,
 				6EC554FF19AB3BD400CF0760 /* MyCustomNode.cpp in Sources */,
 				6E908FBD19A8446A0090246B /* LHScenePhysicsTransformationsDemo.cpp in Sources */,
@@ -1221,6 +1229,7 @@
 				6E908FB019A8446A0090246B /* LHSceneGearJointDemo.cpp in Sources */,
 				6E0EEEFD198A2A3C002CDE7F /* HelloWorldScene.cpp in Sources */,
 				6E908FCE19A8446A0090246B /* LHSceneWaterAreaDemo.cpp in Sources */,
+				6EAD81F419CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp in Sources */,
 				6E908FBF19A8446A0090246B /* LHScenePulleyJointDemo.cpp in Sources */,
 				6E908FC819A8446A0090246B /* LHSceneShapesDemo.cpp in Sources */,
 				6E908F9819A8446A0090246B /* LHSceneAssetDemo.cpp in Sources */,
@@ -1247,6 +1256,7 @@
 				6EC554F119AB2CB400CF0760 /* LHSceneNodesSubclassingDemo.cpp in Sources */,
 				6E908FCD19A8446A0090246B /* LHSceneWaterAreaDemo.cpp in Sources */,
 				6E908F9A19A8446A0090246B /* LHSceneAssetWithJointsDemo.cpp in Sources */,
+				6EAD81F319CABF8D005683F2 /* DynamicObjectsTransformAnimationTest.cpp in Sources */,
 				6E908FB519A8446A0090246B /* LHSceneIntroductionDemo.cpp in Sources */,
 				6EC554FD19AB3BD400CF0760 /* MyCustomNode.cpp in Sources */,
 				6E908FBB19A8446A0090246B /* LHScenePhysicsTransformationsDemo.cpp in Sources */,

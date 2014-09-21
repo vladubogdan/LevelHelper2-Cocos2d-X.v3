@@ -42,6 +42,7 @@ public:
      * @endcode
      */
     static LHAsset* createWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
+    bool initWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
     
     
     static LHAsset* nodeWithDictionary(LHDictionary* dict, Node* prnt);
@@ -78,8 +79,6 @@ public:
 private:
 
     friend class LHPhysicsProtocol;
-    
-    bool initWithName(const std::string& nm, const std::string& assetFileName, Node* prnt);
     
     __Array* tracedFixturesWithUUID(const std::string& uuid);
     __Dictionary*   _tracedFixtures;

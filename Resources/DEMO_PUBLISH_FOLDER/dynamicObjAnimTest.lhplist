@@ -17,12 +17,14 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
 			<string>LHBackUINode</string>
 			<key>parentUUID</key>
-			<string>0FB5A76D-89F0-4471-9B6D-AF99D1E34C6B</string>
+			<string>9894ED65-FEF0-44FD-9CD1-D9B2F1D28280</string>
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
@@ -34,7 +36,7 @@
 				<string>DEFAULT</string>
 			</array>
 			<key>uuid</key>
-			<string>E321D6A6-2CDB-4459-86FC-54DE91B86BFC</string>
+			<string>78ECDE7D-8434-44E3-8C30-2CCDC78CE869</string>
 			<key>zOrder</key>
 			<integer>-1</integer>
 		</dict>
@@ -46,24 +48,159 @@
 			<key>children</key>
 			<array>
 				<dict>
-					<key>activeCamera</key>
-					<true/>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 0.500000}</string>
+							<key>animations</key>
+							<array>
+								<dict>
+									<key>active</key>
+									<true/>
+									<key>fps</key>
+									<integer>24</integer>
+									<key>name</key>
+									<string>anim</string>
+									<key>properties</key>
+									<dict>
+										<key>Position</key>
+										<dict>
+											<key>Frames</key>
+											<array>
+												<dict>
+													<key>frameIndex</key>
+													<integer>0</integer>
+													<key>positions</key>
+													<dict>
+														<key>AA8D7068-5EA2-4A51-B5DC-7904FA200DF2</key>
+														<string>{-414.746406, -11.192482}</string>
+													</dict>
+												</dict>
+												<dict>
+													<key>frameIndex</key>
+													<integer>29</integer>
+													<key>positions</key>
+													<dict>
+														<key>AA8D7068-5EA2-4A51-B5DC-7904FA200DF2</key>
+														<string>{420.407799, 2.989679}</string>
+													</dict>
+												</dict>
+											</array>
+											<key>type</key>
+											<string>LHPositionProperty</string>
+										</dict>
+									</dict>
+									<key>repetitions</key>
+									<integer>0</integer>
+									<key>totalFrames</key>
+									<integer>30</integer>
+								</dict>
+							</array>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{-0.432028, -0.017488}</string>
+							<key>imageFileName</key>
+							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
+							<key>name</key>
+							<string>carTyre</string>
+							<key>nodePhysics</key>
+							<dict>
+								<key>allowSleep</key>
+								<true/>
+								<key>bullet</key>
+								<false/>
+								<key>fixedRotation</key>
+								<false/>
+								<key>fixtureUUID</key>
+								<string>699C814F-F7E5-4634-91FF-D1B094F8697F</string>
+								<key>genericFixture</key>
+								<dict>
+									<key>category</key>
+									<integer>1</integer>
+									<key>density</key>
+									<real>0.10000000149011612</real>
+									<key>fixtureID</key>
+									<integer>0</integer>
+									<key>friction</key>
+									<real>0.20000000298023224</real>
+									<key>mask</key>
+									<integer>65535</integer>
+									<key>name</key>
+									<string>GenericFixture</string>
+									<key>restitution</key>
+									<real>0.0</real>
+									<key>sensor</key>
+									<false/>
+								</dict>
+								<key>gravityScale</key>
+								<real>1</real>
+								<key>shape</key>
+								<integer>5</integer>
+								<key>type</key>
+								<integer>2</integer>
+							</dict>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>94197FE2-94F2-4C5C-8652-52B3E1F97C15</string>
+							<key>relativeImagePath</key>
+							<string>DEMO_PUBLISH_FOLDER/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.000000, 1.000000}</string>
+							<key>size</key>
+							<string>{47.000000, 46.000000}</string>
+							<key>spriteName</key>
+							<string>carTyre</string>
+							<key>spriteUUID</key>
+							<string>F2BF5807-ACFF-44E8-BAA8-94A87CAC4F40</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>AA8D7068-5EA2-4A51-B5DC-7904FA200DF2</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+					</array>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.708333, 0.500000}</string>
+					<string>{0.502631, 0.720196}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
-					<string>UntitledCamera</string>
+					<string>UntitledNode</string>
 					<key>nodeType</key>
-					<string>LHCamera</string>
+					<string>LHNode</string>
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
-					<key>restrictToGameWorld</key>
-					<false/>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{939.599426, 129.105667}</string>
 					<key>tags</key>
 					<array>
 						<string>DEFAULT</string>
 					</array>
 					<key>uuid</key>
-					<string>DF3B270F-1EBC-4C7B-93B0-5AA7F0415908</string>
+					<string>94197FE2-94F2-4C5C-8652-52B3E1F97C15</string>
+					<key>zOrder</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>alpha</key>
@@ -73,11 +210,13 @@
 					<key>colorOverlay</key>
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.520833, 0.312500}</string>
+					<string>{0.506288, 0.867654}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
-					<string>wood_1</string>
+					<string>wood</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
@@ -87,7 +226,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>DD8A06E5-5F7A-46EA-A932-146A86080E32</string>
+						<string>12C7A204-F742-48A7-B8FC-FA10EB7C2B74</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -112,7 +251,7 @@
 						<key>shape</key>
 						<integer>5</integer>
 						<key>type</key>
-						<integer>2</integer>
+						<integer>0</integer>
 					</dict>
 					<key>nodeType</key>
 					<string>LHSprite</string>
@@ -123,7 +262,7 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{1.000000, 1.000000}</string>
+					<string>{7.262409, 1.000000}</string>
 					<key>size</key>
 					<string>{128.000000, 32.000000}</string>
 					<key>spriteName</key>
@@ -135,71 +274,7 @@
 						<string>DEFAULT</string>
 					</array>
 					<key>uuid</key>
-					<string>E319F354-7893-41B5-9C9B-FFB49B0FF723</string>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-				<dict>
-					<key>alpha</key>
-					<real>255</real>
-					<key>anchor</key>
-					<string>{0.500000, 0.500000}</string>
-					<key>colorOverlay</key>
-					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
-					<key>generalPosition</key>
-					<string>{-0.452319, -0.062111}</string>
-					<key>name</key>
-					<string>dummyBodyForMouseJoint</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>density</key>
-							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>shape</key>
-						<integer>0</integer>
-						<key>type</key>
-						<integer>0</integer>
-					</dict>
-					<key>nodeType</key>
-					<string>LHNode</string>
-					<key>parentUUID</key>
-					<string>_GAME_WORLD_NODE_UUID_</string>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scale</key>
-					<string>{1.000000, 1.000000}</string>
-					<key>size</key>
-					<string>{151.425583, 113.320618}</string>
-					<key>tags</key>
-					<array>
-						<string>DEFAULT</string>
-					</array>
-					<key>uuid</key>
-					<string>7868DC69-8430-43BF-83A5-003D82B54ECD</string>
+					<string>6243D433-165A-4055-B571-5EF625420AE5</string>
 					<key>zOrder</key>
 					<integer>0</integer>
 				</dict>
@@ -208,12 +283,14 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
 			<string>LHGameWorldNode</string>
 			<key>parentUUID</key>
-			<string>0FB5A76D-89F0-4471-9B6D-AF99D1E34C6B</string>
+			<string>9894ED65-FEF0-44FD-9CD1-D9B2F1D28280</string>
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
@@ -225,7 +302,7 @@
 				<string>DEFAULT</string>
 			</array>
 			<key>uuid</key>
-			<string>95D18AFD-984B-4D18-BC95-0FC76F79A090</string>
+			<string>81EA0A47-E1E9-4832-98F2-A28AED70EF2A</string>
 			<key>zOrder</key>
 			<integer>0</integer>
 		</dict>
@@ -238,12 +315,14 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
 			<string>LHUINode</string>
 			<key>parentUUID</key>
-			<string>0FB5A76D-89F0-4471-9B6D-AF99D1E34C6B</string>
+			<string>9894ED65-FEF0-44FD-9CD1-D9B2F1D28280</string>
 			<key>rotation</key>
 			<real>0.0</real>
 			<key>scale</key>
@@ -255,7 +334,7 @@
 				<string>DEFAULT</string>
 			</array>
 			<key>uuid</key>
-			<string>8BCB63FB-FB66-45FE-803B-83E21620E2FA</string>
+			<string>88C2538B-CEBD-4F33-8965-365E587B8DD0</string>
 			<key>zOrder</key>
 			<integer>1</integer>
 		</dict>
@@ -309,15 +388,10 @@
 	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
+	<key>invisibleInEditor</key>
+	<false/>
 	<key>nodeType</key>
 	<string>LHScene</string>
-	<key>physicsBoundaries</key>
-	<dict>
-		<key>960x640</key>
-		<string>{{0.236042, 0.052041}, {0.733593, 0.909729}}</string>
-		<key>general</key>
-		<string>{{0.236042, 0.052041}, {0.733593, 0.909729}}</string>
-	</dict>
 	<key>sceneFormat</key>
 	<real>1</real>
 	<key>tags</key>
@@ -326,7 +400,32 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>A1C3D729-1BCE-4C27-950D-C1495DC1194A</key>
+		<key>12C7A204-F742-48A7-B8FC-FA10EB7C2B74</key>
+		<array>
+			<array>
+				<string>{63, 15.5}</string>
+				<string>{-34.5, 15.5}</string>
+				<string>{-64, 5}</string>
+				<string>{-64, -13.5}</string>
+				<string>{-63, -15}</string>
+				<string>{-27.5, -15.5}</string>
+				<string>{63.5, -7}</string>
+			</array>
+			<array>
+				<string>{-63, 12.5}</string>
+				<string>{-64, 5}</string>
+				<string>{-34.5, 15.5}</string>
+				<string>{-61.5, 14}</string>
+			</array>
+			<array>
+				<string>{62.5, -12.5}</string>
+				<string>{63.5, -7}</string>
+				<string>{-27.5, -15.5}</string>
+				<string>{-27, -16}</string>
+				<string>{61, -15}</string>
+			</array>
+		</array>
+		<key>430A02DA-D0E9-4326-95DB-F471E0ED41C9</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>
@@ -384,35 +483,57 @@
 				<string>{-46.75, -22.5}</string>
 			</array>
 		</array>
-		<key>DD8A06E5-5F7A-46EA-A932-146A86080E32</key>
+		<key>699C814F-F7E5-4634-91FF-D1B094F8697F</key>
 		<array>
 			<array>
-				<string>{63, 15.5}</string>
-				<string>{-34.5, 15.5}</string>
-				<string>{-64, 5}</string>
-				<string>{-64, -13.5}</string>
-				<string>{-63, -15}</string>
-				<string>{-27.5, -15.5}</string>
-				<string>{63.5, -7}</string>
+				<string>{5.25, 20.25}</string>
+				<string>{-3.25, 20.75}</string>
+				<string>{-3.75, -20.75}</string>
+				<string>{-3.25, -21.25}</string>
+				<string>{20.75, -3.25}</string>
+				<string>{20.25, 5.25}</string>
+				<string>{18.25, 10.25}</string>
+				<string>{13.25, 16.25}</string>
 			</array>
 			<array>
-				<string>{-63, 12.5}</string>
-				<string>{-64, 5}</string>
-				<string>{-34.5, 15.5}</string>
-				<string>{-61.5, 14}</string>
+				<string>{-18.75, -10.75}</string>
+				<string>{-13.75, -16.75}</string>
+				<string>{-3.75, -20.75}</string>
+				<string>{-3.25, 20.75}</string>
+				<string>{-5.75, 20.25}</string>
+				<string>{-16.75, 13.25}</string>
+				<string>{-21.25, 2.75}</string>
+				<string>{-21.25, -3.25}</string>
 			</array>
 			<array>
-				<string>{62.5, -12.5}</string>
-				<string>{63.5, -7}</string>
-				<string>{-27.5, -15.5}</string>
-				<string>{-27, -16}</string>
-				<string>{61, -15}</string>
+				<string>{10.25, -18.75}</string>
+				<string>{16.25, -13.75}</string>
+				<string>{19.25, -8.75}</string>
+				<string>{20.75, -3.25}</string>
+				<string>{-3.25, -21.25}</string>
+				<string>{2.75, -21.25}</string>
+			</array>
+			<array>
+				<string>{-19.75, 8.25}</string>
+				<string>{-21.25, 2.75}</string>
+				<string>{-16.75, 13.25}</string>
+			</array>
+			<array>
+				<string>{-13.75, 16.25}</string>
+				<string>{-16.75, 13.25}</string>
+				<string>{-5.75, 20.25}</string>
+			</array>
+			<array>
+				<string>{-5.75, -20.75}</string>
+				<string>{-3.75, -20.75}</string>
+				<string>{-13.75, -16.75}</string>
+				<string>{-10.75, -18.75}</string>
 			</array>
 		</array>
 	</dict>
 	<key>useGlobalGravity</key>
 	<true/>
 	<key>uuid</key>
-	<string>0FB5A76D-89F0-4471-9B6D-AF99D1E34C6B</string>
+	<string>9894ED65-FEF0-44FD-9CD1-D9B2F1D28280</string>
 </dict>
 </plist>

@@ -51,9 +51,24 @@ LHPhysicsProtocol::LHPhysicsProtocol()
 }
 LHPhysicsProtocol::~LHPhysicsProtocol()
 {
+    CCLOG("PHY PROTOCOL DEALLOC %p", this);
+    
 #if LH_USE_BOX2D
-    if(_body && _body->GetWorld() && _body->GetWorld()->GetContactManager().m_contactListener != NULL)
+    
+    Node* _node = dynamic_cast<Node*>(this);
+    LHNodeProtocol* nodeProt = dynamic_cast<LHNodeProtocol*>(_node);
+    
+    CCLOG("WE HAVE BODY %p we have nodeProd %p node %p", _body, nodeProt, _node);
+    
+    if(nodeProt){
+        CCLOG("is dirty %d",nodeProt->isB2WorldDirty());
+    }
+    
+    if(_body && nodeProt && !nodeProt->isB2WorldDirty())
+//    if(_body && _body->GetWorld() && _body->GetWorld()->GetContactManager().m_contactListener != NULL)
     {
+        CCLOG("SHOULD REMOVE BODY");
+        
         //do not remove the body if the scene is deallocing as the box2d world will be deleted
         //so we dont need to do this manualy
         //in some cases the nodes will be retained and removed after the box2d world is already deleted and we may have a crash
@@ -128,10 +143,16 @@ void LHPhysicsProtocol::removeBody()
     if(_body){
         b2World* world = _body->GetWorld();
         if(world){
+            CCLOG("WE HAVE WORLD");
+            
             _body->SetUserData(NULL);
             if(!world->IsLocked()){
+                CCLOG("NODE LOCKED");
+                
                 this->removeAllAttachedJoints();
                 world->DestroyBody(_body);
+                CCLOG("DID DESTROY BODY");
+                
                 _body = NULL;
                 scheduledForRemoval = false;
             }
@@ -416,6 +437,20 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     
     _body->SetSleepingAllowed(dict->boolForKey("allowSleep"));
     _body->SetBullet(dict->boolForKey("bullet"));
+    
+    if(dict->objectForKey("angularDamping"))//all this properties were added in the same moment
+    {
+        _body->SetAngularDamping(dict->floatForKey("angularDamping"));
+    
+        _body->SetAngularVelocity(dict->floatForKey("angularVelocity"));//radians/second.
+    
+        _body->SetLinearDamping(dict->floatForKey("linearDamping"));
+        
+        Point linearVel = dict->pointForKey("linearVelocity");
+        _body->SetLinearVelocity(b2Vec2(linearVel.x,linearVel.y));
+    }
+
+    
     
     Size sizet = node->getContentSize();
     
@@ -948,6 +983,15 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
 
         if(dict->intForKey("gravityScale") == 0){
             node->getPhysicsBody()->setGravityEnable(false);
+        }
+        
+        if(dict->objectForKey("angularDamping"))//all this properties were added in the same moment
+        {
+            node->getPhysicsBody()->setAngularDamping(dict->floatForKey("angularDamping"));
+            node->getPhysicsBody()->setAngularVelocity(dict->floatForKey("angularVelocity"));
+            node->getPhysicsBody()->setLinearDamping(dict->floatForKey("linearDamping"));
+            Point linearVel = dict->pointForKey("linearVelocity");
+            node->getPhysicsBody()->setVelocity(Vec2(linearVel.x, linearVel.y));
         }
     }
 }

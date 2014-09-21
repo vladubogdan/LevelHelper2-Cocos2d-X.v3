@@ -20,6 +20,7 @@ LHAsset::LHAsset()
 
 LHAsset::~LHAsset()
 {
+    CCLOG("ASSET DEALLOC");
     CC_SAFE_RELEASE(_tracedFixtures);
 }
 

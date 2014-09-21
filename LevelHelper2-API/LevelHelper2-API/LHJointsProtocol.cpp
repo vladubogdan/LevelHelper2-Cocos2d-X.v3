@@ -33,10 +33,12 @@ LHJointsProtocol::LHJointsProtocol()
 LHJointsProtocol::~LHJointsProtocol()
 {
 #if LH_USE_BOX2D
-    if(_joint &&
-       _joint->GetBodyA() &&
-       _joint->GetBodyA()->GetWorld() &&
-       _joint->GetBodyA()->GetWorld()->GetContactManager().m_contactListener != NULL)
+    LHNodeProtocol* nodeProt = dynamic_cast<LHNodeProtocol*>(this);
+    if(_joint && nodeProt && !nodeProt->isB2WorldDirty())
+//    if(_joint &&
+//       _joint->GetBodyA() &&
+//       _joint->GetBodyA()->GetWorld() &&
+//       _joint->GetBodyA()->GetWorld()->GetContactManager().m_contactListener != NULL)
     {
         //do not remove the joint if the scene is deallocing as the box2d world will be deleted
         //so we dont need to do this manualy
@@ -129,14 +131,15 @@ bool LHJointsProtocol::getCollideConnected(){
 
 Point LHJointsProtocol::getLocalAnchorA()
 {
-    return Point(_relativePosA.x,
-                 -_relativePosA.y);
+
+    return Point(_relativePosA.x*_nodeA->getScaleX(),
+                 -_relativePosA.y*_nodeA->getScaleY());
 }
 
 Point LHJointsProtocol::getLocalAnchorB()
 {
-    return Point( _relativePosB.x,
-                 -_relativePosB.y);
+    return Point( _relativePosB.x*_nodeB->getScaleX(),
+                 -_relativePosB.y*_nodeB->getScaleY());
 }
 
 

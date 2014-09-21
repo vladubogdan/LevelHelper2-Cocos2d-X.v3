@@ -80,6 +80,8 @@ public:
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
 #endif
     
+    virtual void onEnter();
+    
     void update(float delta);
     
 #if LH_USE_BOX2D

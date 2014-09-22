@@ -75,7 +75,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>6F9C14CB-2A31-4BB1-9B7B-45C790C9E4D3</string>
+						<string>89B3F695-488F-4EC0-BBFF-6A41E38BC51A</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -159,7 +159,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>DD6DC8DF-4A02-4300-8A0F-BF57E813FA39</string>
+						<string>DB663655-267B-41EF-97B6-ADF86196B73B</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -478,7 +478,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>6F9C14CB-2A31-4BB1-9B7B-45C790C9E4D3</key>
+		<key>89B3F695-488F-4EC0-BBFF-6A41E38BC51A</key>
 		<array>
 			<array>
 				<string>{-14.75, -73.5}</string>
@@ -586,7 +586,7 @@
 				<string>{12.75, -72}</string>
 			</array>
 		</array>
-		<key>DD6DC8DF-4A02-4300-8A0F-BF57E813FA39</key>
+		<key>DB663655-267B-41EF-97B6-ADF86196B73B</key>
 		<array>
 			<array>
 				<string>{-19, -113.5}</string>

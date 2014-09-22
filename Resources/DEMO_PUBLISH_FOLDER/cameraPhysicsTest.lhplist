@@ -97,7 +97,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>FD70C76B-2FE4-4368-93C6-BC47C7B29E74</string>
+						<string>943EDE43-C175-434B-8057-C31E20D6EA37</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -364,7 +364,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>FD70C76B-2FE4-4368-93C6-BC47C7B29E74</key>
+		<key>943EDE43-C175-434B-8057-C31E20D6EA37</key>
 		<array>
 			<array>
 				<string>{63, 15.5}</string>

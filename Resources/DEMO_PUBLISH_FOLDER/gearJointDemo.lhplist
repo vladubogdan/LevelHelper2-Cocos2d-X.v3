@@ -75,7 +75,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>D321BAAA-8EFD-4A84-9D77-73976A5FB96E</string>
+						<string>97617B63-3A1A-4E31-A2D0-7341A85B2109</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -241,7 +241,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>3C34957C-C0F5-459D-BF0E-6D99D9A1FD2D</string>
+						<string>0D70C912-1A79-4404-971A-73512C3C6871</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -325,7 +325,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>D9F59690-147B-4AEF-B63F-352B351D0DEA</string>
+						<string>FF6CA300-AC02-412A-9799-B7201DCB392A</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -780,7 +780,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>3C34957C-C0F5-459D-BF0E-6D99D9A1FD2D</key>
+		<key>0D70C912-1A79-4404-971A-73512C3C6871</key>
 		<array>
 			<array>
 				<string>{29.25, 10.75}</string>
@@ -894,7 +894,7 @@
 				<string>{22.25, 12.25}</string>
 			</array>
 		</array>
-		<key>D321BAAA-8EFD-4A84-9D77-73976A5FB96E</key>
+		<key>97617B63-3A1A-4E31-A2D0-7341A85B2109</key>
 		<array>
 			<array>
 				<string>{-46.5, 15.75}</string>
@@ -968,7 +968,7 @@
 				<string>{57.5, 34.25}</string>
 			</array>
 		</array>
-		<key>D9F59690-147B-4AEF-B63F-352B351D0DEA</key>
+		<key>FF6CA300-AC02-412A-9799-B7201DCB392A</key>
 		<array>
 			<array>
 				<string>{-15.75, -20}</string>

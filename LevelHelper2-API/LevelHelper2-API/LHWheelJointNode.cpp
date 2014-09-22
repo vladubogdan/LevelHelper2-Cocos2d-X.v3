@@ -64,7 +64,7 @@ bool LHWheelJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         _damping    = dict->floatForKey("wheelDampingRatio");
         
         _maxMotorTorque = dict->floatForKey("wheelMaxMotorForce");
-        _motorSpeed = -dict->floatForKey("wheelMotorSpeed");
+        _motorSpeed = dict->floatForKey("wheelMotorSpeed");
         
         _axis = dict->pointForKey("axis");
         
@@ -129,7 +129,7 @@ bool LHWheelJointNode::lateLoading()
         
         jointDef.enableMotor    = _enableMotor;
         jointDef.maxMotorTorque = _maxMotorTorque;
-        jointDef.motorSpeed     = CC_DEGREES_TO_RADIANS(-_motorSpeed*360.0);
+        jointDef.motorSpeed     = CC_DEGREES_TO_RADIANS(_motorSpeed*360.0);
         jointDef.frequencyHz    = _frequency;
         jointDef.dampingRatio   = _damping;
         

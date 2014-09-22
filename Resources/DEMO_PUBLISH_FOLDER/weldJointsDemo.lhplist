@@ -17,6 +17,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -52,6 +54,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint</string>
 					<key>nodeType</key>
@@ -78,6 +82,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_1</string>
 					<key>nodeType</key>
@@ -104,6 +110,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_2</string>
 					<key>nodeType</key>
@@ -130,6 +138,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_3</string>
 					<key>nodeType</key>
@@ -156,6 +166,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_4</string>
 					<key>nodeType</key>
@@ -182,6 +194,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_5</string>
 					<key>nodeType</key>
@@ -208,6 +222,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_6</string>
 					<key>nodeType</key>
@@ -234,6 +250,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_7</string>
 					<key>nodeType</key>
@@ -260,6 +278,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_8</string>
 					<key>nodeType</key>
@@ -286,6 +306,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_9</string>
 					<key>nodeType</key>
@@ -312,6 +334,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_10</string>
 					<key>nodeType</key>
@@ -338,6 +362,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_11</string>
 					<key>nodeType</key>
@@ -364,6 +390,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_12</string>
 					<key>nodeType</key>
@@ -390,6 +418,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_13</string>
 					<key>nodeType</key>
@@ -416,6 +446,8 @@
 					<real>0.0</real>
 					<key>frequency</key>
 					<real>0.0</real>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledWeldJoint_14</string>
 					<key>nodeType</key>
@@ -446,12 +478,18 @@
 					<string>{0.432607, -0.340959}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>carTyre</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
@@ -477,6 +515,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>1</integer>
 						<key>type</key>
@@ -518,12 +560,18 @@
 					<string>{0.754528, -0.884723}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>carTyre_1</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
@@ -549,6 +597,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>1</integer>
 						<key>type</key>
@@ -590,12 +642,18 @@
 					<string>{0.182423, -1.163061}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>carTyre_2</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
@@ -621,6 +679,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>1</integer>
 						<key>type</key>
@@ -662,12 +724,18 @@
 					<string>{0.535521, -1.519597}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>carTyre_3</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
@@ -693,6 +761,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>1</integer>
 						<key>type</key>
@@ -734,12 +806,18 @@
 					<string>{-0.067783, -1.658280}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>carTyre_4</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
@@ -765,6 +843,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>1</integer>
 						<key>type</key>
@@ -806,12 +888,18 @@
 					<string>{1.067922, -1.688470}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>carTyre_5</string>
 					<key>nodePhysics</key>
 					<dict>
 						<key>allowSleep</key>
 						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
 						<key>bullet</key>
 						<false/>
 						<key>fixedRotation</key>
@@ -837,6 +925,10 @@
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
 						<key>shape</key>
 						<integer>1</integer>
 						<key>type</key>
@@ -885,12 +977,18 @@
 							<string>{0.902080, -0.229110}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -916,6 +1014,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -957,12 +1059,18 @@
 							<string>{0.823680, -0.047325}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_15</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -988,6 +1096,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1029,12 +1141,18 @@
 							<string>{0.718348, 0.084735}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_14</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1060,6 +1178,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1101,12 +1223,18 @@
 							<string>{0.593358, 0.172846}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_13</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1132,6 +1260,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1173,12 +1305,18 @@
 							<string>{0.460605, 0.230651}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_12</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1204,6 +1342,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1245,12 +1387,18 @@
 							<string>{0.324976, 0.270889}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_11</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1276,6 +1424,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1317,12 +1469,18 @@
 							<string>{0.187703, 0.295855}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_10</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1348,6 +1506,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1389,12 +1551,18 @@
 							<string>{0.049627, 0.307320}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_9</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1420,6 +1588,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1461,12 +1633,18 @@
 							<string>{-0.088656, 0.307414}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_8</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1492,6 +1670,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1533,12 +1715,18 @@
 							<string>{-0.226739, 0.296141}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_7</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1564,6 +1752,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1605,12 +1797,18 @@
 							<string>{-0.364045, 0.271597}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_6</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1636,6 +1834,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1677,12 +1879,18 @@
 							<string>{-0.499709, 0.231609}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_5</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1708,6 +1916,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1749,12 +1961,18 @@
 							<string>{-0.632544, 0.174214}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_4</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1780,6 +1998,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1821,12 +2043,18 @@
 							<string>{-0.757728, 0.086756}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_3</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1852,6 +2080,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1893,12 +2125,18 @@
 							<string>{-0.863664, -0.044189}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_2</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1924,6 +2162,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -1965,12 +2207,18 @@
 							<string>{-0.912874, -0.240765}</string>
 							<key>imageFileName</key>
 							<string>carParts.png</string>
+							<key>invisibleInEditor</key>
+							<false/>
 							<key>name</key>
 							<string>wood_1</string>
 							<key>nodePhysics</key>
 							<dict>
 								<key>allowSleep</key>
 								<true/>
+								<key>angularDamping</key>
+								<real>0.0</real>
+								<key>angularVelocity</key>
+								<real>0.0</real>
 								<key>bullet</key>
 								<false/>
 								<key>fixedRotation</key>
@@ -1996,6 +2244,10 @@
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
+								<key>linearDamping</key>
+								<real>0.0</real>
+								<key>linearVelocity</key>
+								<string>{0.000000, 0.000000}</string>
 								<key>shape</key>
 								<integer>0</integer>
 								<key>type</key>
@@ -2031,6 +2283,8 @@
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.497638, 0.278107}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>bridgeParts</string>
 					<key>nodeType</key>
@@ -2057,6 +2311,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -2087,6 +2343,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -2147,17 +2405,27 @@
 		</dict>
 		<dict>
 			<key>ratio</key>
-			<real>1</real>
+			<real>1.2000000476837158</real>
 			<key>size</key>
-			<string>{1280.000000, 720.000000}</string>
+			<string>{1334.000000, 750.000000}</string>
 			<key>suffix</key>
-			<string>ipad</string>
+			<string>iphone6</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2208.000000, 1242.000000}</string>
+			<key>suffix</key>
+			<string>iphone6plus</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
 	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
+	<key>invisibleInEditor</key>
+	<false/>
 	<key>nodeType</key>
 	<string>LHScene</string>
 	<key>sceneFormat</key>

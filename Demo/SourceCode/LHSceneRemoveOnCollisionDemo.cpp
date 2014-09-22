@@ -90,8 +90,8 @@ bool LHSceneRemoveOnCollisionDemo::disableCandyCollisionWithNode(Node* node)
 bool LHSceneRemoveOnCollisionDemo::shouldDisableContactBetweenNodes(Node* nodeA, Node* nodeB){
     
 #if COCOS2D_VERSION >= 0x00030200
-    
-    if(nodeA->getName() == "candy")
+        
+    if(nodeA && nodeA->getName() == "candy")
     {
         return this->disableCandyCollisionWithNode(nodeB);
     }

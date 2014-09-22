@@ -16,30 +16,30 @@
 		<key>candy</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2, 2}, {53, 53}}</string>
+			<string>{{2.000000, 2.000000}, {53.000000, 53.000000}}</string>
 			<key>offset</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{7, 3}, {53, 53}}</string>
+			<string>{{7.000000, 3.000000}, {53.000000, 53.000000}}</string>
 			<key>sourceSize</key>
-			<string>{65, 61}</string>
+			<string>{65.000000, 61.000000}</string>
 			<key>uuid</key>
 			<string>554683CF-2615-41EF-956A-933D6F02D016</string>
 		</dict>
 		<key>thumb_tack</key>
 		<dict>
 			<key>frame</key>
-			<string>{{59, 2}, {50, 67}}</string>
+			<string>{{59.000000, 2.000000}, {50.000000, 67.000000}}</string>
 			<key>offset</key>
-			<string>{1, -1.5}</string>
+			<string>{1.000000, -1.500000}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{1, 7}, {67, 50}}</string>
+			<string>{{1.000000, 7.000000}, {67.000000, 50.000000}}</string>
 			<key>sourceSize</key>
-			<string>{62, 72}</string>
+			<string>{62.000000, 72.000000}</string>
 			<key>uuid</key>
 			<string>B647FA4A-442F-4032-8164-8FEF3601430D</string>
 		</dict>
@@ -48,8 +48,10 @@
 	<dict>
 		<key>format</key>
 		<integer>2</integer>
+		<key>ratio</key>
+		<integer>1</integer>
 		<key>size</key>
-		<string>{127, 56}</string>
+		<string>{127.000000, 56.000000}</string>
 		<key>textureFileName</key>
 		<string>ropeAssets.png</string>
 	</dict>

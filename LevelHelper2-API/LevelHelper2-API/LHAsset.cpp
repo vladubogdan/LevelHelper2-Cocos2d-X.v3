@@ -20,6 +20,7 @@ LHAsset::LHAsset()
 
 LHAsset::~LHAsset()
 {
+    this->shouldRemoveBody();
     CC_SAFE_RELEASE(_tracedFixtures);
 }
 

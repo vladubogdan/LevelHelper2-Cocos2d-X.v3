@@ -106,7 +106,7 @@ bool LHAnimation::initWithDictionary(LHDictionary* dict, LHNodeAnimationProtocol
         this->setAnimating(true);
     }
     
-    _currentRepetition = -1;
+    _currentRepetition = 0;
     
     return true;
 }

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>about</key>
+	<dict>
+		<key>app</key>
+		<string>LevelHelper 2</string>
+		<key>author</key>
+		<string>Vladu Bogdan</string>
+		<key>web</key>
+		<string>http://www.gamedevhelper.com</string>
+	</dict>
+	<key>frames</key>
+	<dict>
+		<key>object_backpack</key>
+		<dict>
+			<key>frame</key>
+			<string>{{83.000000, 173.000000}, {95.000000, 114.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, -0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{6.000000, 7.000000}, {95.000000, 114.000000}}</string>
+			<key>sourceSize</key>
+			<string>{107.000000, 127.000000}</string>
+			<key>uuid</key>
+			<string>79AD2F07-C0BE-4B5A-BB3F-9FAC5F80A471</string>
+		</dict>
+		<key>object_banana</key>
+		<dict>
+			<key>frame</key>
+			<string>{{183.000000, 2.000000}, {98.000000, 67.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{6.000000, 4.000000}, {98.000000, 67.000000}}</string>
+			<key>sourceSize</key>
+			<string>{110.000000, 76.000000}</string>
+			<key>uuid</key>
+			<string>FAE55543-0B9F-4B04-A86D-BAB025D0B01C</string>
+		</dict>
+		<key>object_bananabunch</key>
+		<dict>
+			<key>frame</key>
+			<string>{{182.000000, 73.000000}, {92.000000, 65.000000}}</string>
+			<key>offset</key>
+			<string>{1.500000, -0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{6.000000, 8.000000}, {65.000000, 92.000000}}</string>
+			<key>sourceSize</key>
+			<string>{105.000000, 78.000000}</string>
+			<key>uuid</key>
+			<string>60F9EAC9-FDD1-4EAB-811D-7A0EF562B591</string>
+		</dict>
+		<key>object_canteen</key>
+		<dict>
+			<key>frame</key>
+			<string>{{253.000000, 74.000000}, {50.000000, 77.000000}}</string>
+			<key>offset</key>
+			<string>{-1.500000, -0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{9.000000, 9.000000}, {50.000000, 77.000000}}</string>
+			<key>sourceSize</key>
+			<string>{71.000000, 94.000000}</string>
+			<key>uuid</key>
+			<string>C3F38C64-C80F-4AC6-BA50-91147927289B</string>
+		</dict>
+		<key>object_hat</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 172.000000}, {130.000000, 76.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{7.000000, 8.000000}, {76.000000, 130.000000}}</string>
+			<key>sourceSize</key>
+			<string>{146.000000, 90.000000}</string>
+			<key>uuid</key>
+			<string>A0CC7494-203E-4C79-A14A-ECA50F1FBA3D</string>
+		</dict>
+		<key>object_pineapple</key>
+		<dict>
+			<key>frame</key>
+			<string>{{118.000000, 2.000000}, {60.000000, 151.000000}}</string>
+			<key>offset</key>
+			<string>{1.500000, -1.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{8.000000, 6.000000}, {60.000000, 151.000000}}</string>
+			<key>sourceSize</key>
+			<string>{73.000000, 160.000000}</string>
+			<key>uuid</key>
+			<string>072F5BA2-FB8C-4349-BB62-DFB06F1A6E47</string>
+		</dict>
+		<key>object_statue</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 2.000000}, {110.000000, 166.000000}}</string>
+			<key>offset</key>
+			<string>{1.000000, -0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{9.000000, 6.000000}, {110.000000, 166.000000}}</string>
+			<key>sourceSize</key>
+			<string>{126.000000, 177.000000}</string>
+			<key>uuid</key>
+			<string>0DB4639A-8D34-4D83-8FBD-20753577F85A</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>ratio</key>
+		<real>1.2</real>
+		<key>size</key>
+		<string>{305.000000, 305.000000}</string>
+		<key>textureFileName</key>
+		<string>objects.png</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>about</key>
+	<dict>
+		<key>app</key>
+		<string>LevelHelper 2</string>
+		<key>author</key>
+		<string>Vladu Bogdan</string>
+		<key>web</key>
+		<string>http://www.gamedevhelper.com</string>
+	</dict>
+	<key>frames</key>
+	<dict>
+		<key>brick.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{679.000000, 340.000000}, {154.000000, 154.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {154.000000, 154.000000}}</string>
+			<key>sourceSize</key>
+			<string>{154.000000, 154.000000}</string>
+			<key>uuid</key>
+			<string>4EC4381D-615B-43E4-A952-F710DDE723C7</string>
+		</dict>
+		<key>bush.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{679.000000, 498.000000}, {100.000000, 77.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {77.000000, 100.000000}}</string>
+			<key>sourceSize</key>
+			<string>{100.000000, 77.000000}</string>
+			<key>uuid</key>
+			<string>6305779C-1F18-4EDD-B6E7-5C410A967F3B</string>
+		</dict>
+		<key>clouds.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{761.000000, 498.000000}, {98.000000, 63.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {63.000000, 98.000000}}</string>
+			<key>sourceSize</key>
+			<string>{98.000000, 63.000000}</string>
+			<key>uuid</key>
+			<string>20CA4C5F-D55E-4ACC-920D-F4C915E22436</string>
+		</dict>
+		<key>monkey.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{829.000000, 498.000000}, {55.000000, 92.000000}}</string>
+			<key>offset</key>
+			<string>{-3.500000, -0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{11.000000, 5.000000}, {55.000000, 92.000000}}</string>
+			<key>sourceSize</key>
+			<string>{84.000000, 101.000000}</string>
+			<key>uuid</key>
+			<string>363387A9-6B9D-4682-AC38-027B73015032</string>
+		</dict>
+		<key>mountain01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 340.000000}, {672.000000, 218.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {672.000000, 218.000000}}</string>
+			<key>sourceSize</key>
+			<string>{672.000000, 218.000000}</string>
+			<key>uuid</key>
+			<string>D80BEA9D-2D06-49F7-B817-3BE7112B7160</string>
+		</dict>
+		<key>mountain02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1357.000000, 2.000000}, {1048.000000, 278.000000}}</string>
+			<key>offset</key>
+			<string>{-0.500000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {1048.000000, 278.000000}}</string>
+			<key>sourceSize</key>
+			<string>{1049.000000, 278.000000}</string>
+			<key>uuid</key>
+			<string>D5E1B534-5E70-4D5B-B10E-50D9C997C7C1</string>
+		</dict>
+		<key>mountain03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 2.000000}, {1350.000000, 332.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {1350.000000, 332.000000}}</string>
+			<key>sourceSize</key>
+			<string>{1350.000000, 332.000000}</string>
+			<key>uuid</key>
+			<string>ECFBF842-DB73-4B3A-9A1D-B1E0878E6F51</string>
+		</dict>
+		<key>mushrooms.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{838.000000, 339.000000}, {148.000000, 115.000000}}</string>
+			<key>offset</key>
+			<string>{1.000000, -3.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 4.000000}, {115.000000, 148.000000}}</string>
+			<key>sourceSize</key>
+			<string>{154.000000, 123.000000}</string>
+			<key>uuid</key>
+			<string>53407796-1F65-4887-BF24-69FA8F41AD7A</string>
+		</dict>
+		<key>smallTree.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2410.000000, 28.000000}, {21.000000, 35.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {35.000000, 21.000000}}</string>
+			<key>sourceSize</key>
+			<string>{21.000000, 35.000000}</string>
+			<key>uuid</key>
+			<string>93CB2C95-DFE8-43BD-838B-2FB821B33D80</string>
+		</dict>
+		<key>smallTreeDark.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2410.000000, 2.000000}, {21.000000, 35.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {35.000000, 21.000000}}</string>
+			<key>sourceSize</key>
+			<string>{21.000000, 35.000000}</string>
+			<key>uuid</key>
+			<string>96FD0CBA-E13E-4426-B4A7-3B9CEB95E433</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>ratio</key>
+		<real>1.2</real>
+		<key>size</key>
+		<string>{2447.000000, 600.000000}</string>
+		<key>textureFileName</key>
+		<string>platformer.png</string>
+	</dict>
+</dict>
+</plist>

@@ -14,7 +14,7 @@
 
 #if LH_USE_BOX2D
 #include "LHBox2dDebugDrawNode.h"
-#include "Box2D/Box2D.h"
+
 #endif
 
 
@@ -31,6 +31,17 @@ LHGameWorldNode::~LHGameWorldNode()
 {
 #if LH_USE_BOX2D
     //we need to first destroy all children and then destroy box2d world
+    
+    auto& children = this->getChildren();
+    for( const auto &n : children)
+    {
+        LHNodeProtocol* nProt = dynamic_cast<LHNodeProtocol*>(n);
+        if(nProt)
+        {
+            nProt->markAsB2WorldDirty();
+        }
+    }
+    
     
     _scheduledBeginContact.clear();
     _scheduledEndContact.clear();
@@ -82,11 +93,18 @@ bool LHGameWorldNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         
         this->loadChildrenFromDictionary(dict);
         
-        this->scheduleUpdate();
         
         return true;
     }
     return false;
+}
+
+void LHGameWorldNode::onEnter(){
+
+    //this needs to be called on onEnter or else when user uses transitions to move to a new scene scheduleUpdate will not work
+    this->scheduleUpdate();
+    
+    Node::onEnter();
 }
 
 void LHGameWorldNode::update(float delta)
@@ -102,6 +120,9 @@ void LHGameWorldNode::visit(Renderer *renderer, const Mat4& parentTransform, uin
 void LHGameWorldNode::visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated)
 #endif
 {
+    
+    
+    
 #if LH_USE_BOX2D
 #if LH_DEBUG
     _debugNode->clear();
@@ -130,7 +151,8 @@ b2World* LHGameWorldNode::getBox2dWorld()
         
         b2Vec2 gravity;
         gravity.Set(0.f, 0.0f);
-        _box2dWorld = new b2World(gravity);
+        _box2dWorld = new LHBox2dWorld(gravity, this->getScene());
+//        _box2dWorld = new b2World(gravity);
         _box2dWorld->SetAllowSleeping(true);
         _box2dWorld->SetContinuousPhysics(true);
 
@@ -159,7 +181,7 @@ b2World* LHGameWorldNode::getBox2dWorld()
 void LHGameWorldNode::step(float dt)
 {
     if(!this->getBox2dWorld())return;
-        
+    
 	float32 frameTime = dt;
 	int stepsPerformed = 0;
 	while ( (frameTime > 0.0) && (stepsPerformed < MAXIMUM_NUMBER_OF_STEPS) ){
@@ -182,10 +204,15 @@ void LHGameWorldNode::afterStep(float dt)
     {
         LHScheduledContactInfo info = _scheduledBeginContact[i];
         if(info.getNodeA() && info.getNodeB()){
-            ((LHScene*)this->getScene())->didBeginContactBetweenNodes(info.getNodeA(),
-                                                                      info.getNodeB(),
-                                                                      info.getContactPoint(),
-                                                                      info.getImpulse());
+            if(info.getNodeA()->getParent() && info.getNodeB()->getParent()){
+                
+                
+                
+                ((LHScene*)this->getScene())->didBeginContactBetweenNodes(info.getNodeA(),
+                                                                          info.getNodeB(),
+                                                                          info.getContactPoint(),
+                                                                          info.getImpulse());
+            }
         }
     }
     _scheduledBeginContact.clear();
@@ -195,40 +222,74 @@ void LHGameWorldNode::afterStep(float dt)
     {
         LHScheduledContactInfo info = _scheduledEndContact[i];
         if(info.getNodeA() && info.getNodeB()){
-            ((LHScene*)this->getScene())->didEndContactBetweenNodes(info.getNodeA(),
-                                                                    info.getNodeB());
+            if(info.getNodeA()->getParent() && info.getNodeB()->getParent()){
+                ((LHScene*)this->getScene())->didEndContactBetweenNodes(info.getNodeA(),
+                                                                        info.getNodeB());
+            }
         }
     }
     _scheduledEndContact.clear();
 }
 
+void LHGameWorldNode::removeScheduledContactsWithNode(Node* node){
+    
+    std::vector<LHScheduledContactInfo>::iterator it;
+    for(it = _scheduledBeginContact.begin(); it != _scheduledBeginContact.end();)
+    {
+        if(it->getNodeA() == node || it->getNodeB() == node)
+        {
+            it = _scheduledBeginContact.erase(it);
+        }
+        else{
+            ++it;
+        }
+    }
+    for(it = _scheduledEndContact.begin(); it != _scheduledEndContact.end();)
+    {
+        if(it->getNodeA() == node || it->getNodeB() == node)
+        {
+            it = _scheduledEndContact.erase(it);
+        }
+        else{
+            ++it;
+        }
+    }
+}
 
 void LHGameWorldNode::scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nodeB, Point contactPoint, float impulse)
 {
-    for(size_t i = 0; i < _scheduledBeginContact.size(); ++i)
-    {
-        LHScheduledContactInfo info = _scheduledBeginContact[i];
-        if((info.getNodeA() == nodeA && info.getNodeB() == nodeB) ||
-           (info.getNodeA() == nodeB && info.getNodeB() == nodeA)
-           ){
-            return;
-        }
-    }
+    //this will restrict calling multiple contancts with same nodes (maybe the objects collide in two different points
+//    for(size_t i = 0; i < _scheduledBeginContact.size(); ++i)
+//    {
+//        LHScheduledContactInfo info = _scheduledBeginContact[i];
+//        if((info.getNodeA() == nodeA && info.getNodeB() == nodeB) ||
+//           (info.getNodeA() == nodeB && info.getNodeB() == nodeA)
+//           ){
+//            return;
+//        }
+//    }
+    
+    //this means the object has already been removed but box2d still has it in the collision map
+    if(nodeA->getParent() == NULL || nodeB->getParent() == NULL)return;
     
     _scheduledBeginContact.push_back(LHScheduledContactInfo(nodeA, nodeB, contactPoint, impulse));
 }
 
 void LHGameWorldNode::scheduleDidEndContactBetweenNodeA(Node* nodeA, Node* nodeB)
 {
-    for(size_t i = 0; i < _scheduledEndContact.size(); ++i)
-    {
-        LHScheduledContactInfo info = _scheduledEndContact[i];
-        if((info.getNodeA() == nodeA && info.getNodeB() == nodeB) ||
-           (info.getNodeA() == nodeB && info.getNodeB() == nodeA)
-           ){
-            return;
-        }
-    }
+    //this will restrict calling multiple contancts with same nodes (maybe the objects collide in two different points
+//    for(size_t i = 0; i < _scheduledEndContact.size(); ++i)
+//    {
+//        LHScheduledContactInfo info = _scheduledEndContact[i];
+//        if((info.getNodeA() == nodeA && info.getNodeB() == nodeB) ||
+//           (info.getNodeA() == nodeB && info.getNodeB() == nodeA)
+//           ){
+//            return;
+//        }
+//    }
+    
+    //this means the object has already been removed but box2d still has it in the collision map
+    if(nodeA->getParent() == NULL || nodeB->getParent() == NULL)return;
 
     _scheduledEndContact.push_back(LHScheduledContactInfo(nodeA, nodeB, Point(), 0));
 }

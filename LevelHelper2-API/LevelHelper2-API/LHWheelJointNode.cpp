@@ -28,7 +28,7 @@ LHWheelJointNode::LHWheelJointNode()
 
 LHWheelJointNode::~LHWheelJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHWheelJointNode* LHWheelJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
@@ -125,11 +125,11 @@ bool LHWheelJointNode::lateLoading()
         
         b2WheelJointDef jointDef;
         
-        jointDef.Initialize(bodyA, bodyB, posA, b2Vec2(_axis.x,-_axis.y));
+        jointDef.Initialize(bodyA, bodyB, posA, b2Vec2(-_axis.x,_axis.y));
         
         jointDef.enableMotor    = _enableMotor;
         jointDef.maxMotorTorque = _maxMotorTorque;
-        jointDef.motorSpeed     = CC_DEGREES_TO_RADIANS(_motorSpeed);
+        jointDef.motorSpeed     = CC_DEGREES_TO_RADIANS(-_motorSpeed*360.0);
         jointDef.frequencyHz    = _frequency;
         jointDef.dampingRatio   = _damping;
         

@@ -52,6 +52,8 @@ public:
     void updatePhysicsTransform();
     void updatePhysicsScale();
     
+    void shouldRemoveBody();
+    
 #if LH_USE_BOX2D
 
     __Array* jointList();

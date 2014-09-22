@@ -19,7 +19,7 @@ LHSprite::LHSprite()
 
 LHSprite::~LHSprite()
 {
-
+    this->shouldRemoveBody();    
 }
 
 LHSprite* LHSprite::createWithFile(const std::string& filename, const std::string& folder, Node* prnt)

@@ -16,30 +16,30 @@
 		<key>weights_pulley-02</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2, 2}, {183, 279}}</string>
+			<string>{{2.000000, 2.000000}, {183.000000, 279.000000}}</string>
 			<key>offset</key>
-			<string>{1, 1}</string>
+			<string>{1.000000, 1.000000}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{11, 12}, {279, 183}}</string>
+			<string>{{11.000000, 12.000000}, {279.000000, 183.000000}}</string>
 			<key>sourceSize</key>
-			<string>{205, 299}</string>
+			<string>{205.000000, 299.000000}</string>
 			<key>uuid</key>
 			<string>8D9128B2-C6D2-4984-BBA9-9E8C76497BFF</string>
 		</dict>
 		<key>weights_pulley-03</key>
 		<dict>
 			<key>frame</key>
-			<string>{{286, 2}, {119, 176}}</string>
+			<string>{{286.000000, 2.000000}, {119.000000, 176.000000}}</string>
 			<key>offset</key>
-			<string>{-1.5, 1.5}</string>
+			<string>{-1.500000, 1.500000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{7, 8}, {119, 176}}</string>
+			<string>{{7.000000, 8.000000}, {119.000000, 176.000000}}</string>
 			<key>sourceSize</key>
-			<string>{136, 195}</string>
+			<string>{136.000000, 195.000000}</string>
 			<key>uuid</key>
 			<string>B4C2C2E5-BDEC-4E34-9F50-E6213265CDA7</string>
 		</dict>
@@ -48,8 +48,10 @@
 	<dict>
 		<key>format</key>
 		<integer>2</integer>
+		<key>ratio</key>
+		<integer>1</integer>
 		<key>size</key>
-		<string>{405, 187}</string>
+		<string>{405.000000, 187.000000}</string>
 		<key>textureFileName</key>
 		<string>pulleyParts.png</string>
 	</dict>

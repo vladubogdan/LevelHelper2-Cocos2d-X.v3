@@ -28,7 +28,7 @@ LHRevoluteJointNode::LHRevoluteJointNode()
 
 LHRevoluteJointNode::~LHRevoluteJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHRevoluteJointNode* LHRevoluteJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
@@ -63,11 +63,11 @@ bool LHRevoluteJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         _enableMotor = dict->boolForKey("enableMotor");
         
         
-        _lowerAngle = CC_DEGREES_TO_RADIANS(dict->floatForKey("lowerAngle") - 90.0f);
-        _upperAngle = CC_DEGREES_TO_RADIANS(dict->floatForKey("upperAngle") - 90.0f);
+        _lowerAngle = CC_DEGREES_TO_RADIANS(dict->floatForKey("lowerAngle") - 180.0f);
+        _upperAngle = CC_DEGREES_TO_RADIANS(dict->floatForKey("upperAngle") - 180.0f);
         
         _maxMotorTorque = dict->floatForKey("maxMotorTorque");
-        _motorSpeed     = dict->floatForKey("motorSpeed");
+        _motorSpeed     = CC_DEGREES_TO_RADIANS(-360.0*dict->floatForKey("motorSpeed"));
         
         return true;
     }
@@ -136,8 +136,14 @@ bool LHRevoluteJointNode::lateLoading()
         jointDef.enableLimit = _enableLimit;
         jointDef.enableMotor = _enableMotor;
         
-        jointDef.lowerAngle = _lowerAngle;
-        jointDef.upperAngle = _upperAngle;
+        if(_lowerAngle < _upperAngle){
+            jointDef.lowerAngle = _lowerAngle;
+            jointDef.upperAngle = _upperAngle;
+        }
+        else{
+            jointDef.lowerAngle = _upperAngle;
+            jointDef.upperAngle = _lowerAngle;
+        }
         
         jointDef.maxMotorTorque = _maxMotorTorque;
         jointDef.motorSpeed     = _motorSpeed;
@@ -146,7 +152,7 @@ bool LHRevoluteJointNode::lateLoading()
         joint->SetUserData(this);
         
         this->setJoint(joint);
-                
+        
 #else//chipmunk
         if(nodeA->getPhysicsBody() && nodeB->getPhysicsBody())
         {

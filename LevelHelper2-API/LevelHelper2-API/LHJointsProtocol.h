@@ -76,6 +76,7 @@ public:
     void findConnectedNodes();
     bool getCollideConnected();
     
+    void shouldRemoveJoint();
 private:
     
     

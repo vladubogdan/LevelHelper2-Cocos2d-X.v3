@@ -28,7 +28,7 @@ LHPrismaticJointNode::LHPrismaticJointNode()
 
 LHPrismaticJointNode::~LHPrismaticJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHPrismaticJointNode* LHPrismaticJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
@@ -126,15 +126,21 @@ bool LHPrismaticJointNode::lateLoading()
         
         b2PrismaticJointDef jointDef;
         
-        jointDef.Initialize(bodyA, bodyB, posA, b2Vec2(_axis.x,-_axis.y));
+        jointDef.Initialize(bodyA, bodyB, posA, b2Vec2(-_axis.x,_axis.y));
         
         jointDef.enableLimit = _enableLimit;
         jointDef.enableMotor = _enableMotor;
         jointDef.maxMotorForce = _maxMotorForce;
-        jointDef.motorSpeed = CC_DEGREES_TO_RADIANS(_motorSpeed);
-        jointDef.upperTranslation = scene->metersFromValue(_upperTranslation);
-        jointDef.lowerTranslation = scene->metersFromValue(_lowerTranslation);
+        jointDef.motorSpeed = _motorSpeed;
         
+        if(_lowerTranslation < _upperTranslation){
+            jointDef.upperTranslation = scene->metersFromValue(_upperTranslation);
+            jointDef.lowerTranslation = scene->metersFromValue(_lowerTranslation);
+        }
+        else{
+            jointDef.upperTranslation = scene->metersFromValue(_lowerTranslation);
+            jointDef.lowerTranslation = scene->metersFromValue(_upperTranslation);
+        }
         
         jointDef.collideConnected = this->getCollideConnected();
         

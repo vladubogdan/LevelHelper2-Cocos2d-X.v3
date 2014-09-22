@@ -33,6 +33,7 @@ public:
     void beginContact(b2Contact* contact);
     void endContact(b2Contact* contact);
     
+    LHScene* getScene(){return _scene;}
 private:
     LHScene* _scene;
     LHContactListenerPimpl* _b2Listener;

@@ -17,6 +17,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -56,6 +58,8 @@
 					<string>{{1.000000, 0.113643}, {0.129410, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.500000, 0.575000}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledBezier</string>
 					<key>nodeType</key>
@@ -115,6 +119,8 @@
 					<string>{{0.000000, 0.186432}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.500000, 0.900000}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledBezier_1</string>
 					<key>nodeType</key>
@@ -174,6 +180,8 @@
 					<string>{{0.904081, 0.999163}, {0.136924, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.500000, 0.237500}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>UntitledBezier_2</string>
 					<key>nodeType</key>
@@ -255,6 +263,8 @@
 					<string>{{0.885079, 1.000000}, {0.112456, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{0.500000, 0.512500}</string>
+					<key>invisibleInEditor</key>
+					<false/>
 					<key>name</key>
 					<string>TexturedShape+UntitledBezier</string>
 					<key>nodeType</key>
@@ -378,6 +388,10 @@
 					<array>
 						<string>DEFAULT</string>
 					</array>
+					<key>tileScale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>tileTexture</key>
+					<false/>
 					<key>triangles</key>
 					<array>
 						<dict>
@@ -1111,6 +1125,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -1141,6 +1157,8 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
+			<key>invisibleInEditor</key>
+			<false/>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -1201,17 +1219,27 @@
 		</dict>
 		<dict>
 			<key>ratio</key>
-			<real>1</real>
+			<real>1.2000000476837158</real>
 			<key>size</key>
-			<string>{1280.000000, 720.000000}</string>
+			<string>{1334.000000, 750.000000}</string>
 			<key>suffix</key>
-			<string>ipad</string>
+			<string>iphone6</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2208.000000, 1242.000000}</string>
+			<key>suffix</key>
+			<string>iphone6plus</string>
 		</dict>
 	</array>
 	<key>globalGravityDirection</key>
 	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
+	<key>invisibleInEditor</key>
+	<false/>
 	<key>nodeType</key>
 	<string>LHScene</string>
 	<key>sceneFormat</key>

@@ -80,6 +80,9 @@ public:
 
     void setPosition(Point position);
 private:
+    
+    friend class LHParallax;
+    
     bool _active;
     bool _restricted;
     
@@ -89,6 +92,8 @@ private:
     void resetActiveState();
     void setSceneView();
     Point transformToRestrictivePosition(Point position);
+    
+    bool wasUpdated;
 };
 
 #endif //__LEVELHELPER_API_CAMERA_H__

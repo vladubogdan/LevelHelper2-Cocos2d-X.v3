@@ -48,7 +48,7 @@ LHBezier::LHBezier()
 
 LHBezier::~LHBezier()
 {
-    
+    this->shouldRemoveBody();
 }
 
 LHBezier* LHBezier::nodeWithDictionary(LHDictionary* dict, Node* prnt)

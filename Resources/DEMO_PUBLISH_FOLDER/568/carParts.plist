@@ -63,6 +63,8 @@
 	<dict>
 		<key>format</key>
 		<integer>2</integer>
+		<key>ratio</key>
+		<integer>1</integer>
 		<key>size</key>
 		<string>{178.000000, 118.000000}</string>
 		<key>textureFileName</key>

@@ -39,14 +39,14 @@ using namespace cocos2d;
 
 LHScene::LHScene()
 {
-    _currentDev = nullptr;
-    _touchListener = nullptr;
-    _loadedAssetsInformations = nullptr;
-    _tracedFixtures = nullptr;
-    _gameWorldNode = nullptr;
-    _lateLoadingNodes = nullptr;
-    _uiNode = nullptr;
-    _backUINode = nullptr;
+    _currentDev = NULL;
+    _touchListener = NULL;
+    _loadedAssetsInformations = NULL;
+    _tracedFixtures = NULL;
+    _gameWorldNode = NULL;
+    _lateLoadingNodes = NULL;
+    _uiNode = NULL;
+    _backUINode = NULL;
     
 //    printf("lhscene constructor\n");
 }
@@ -104,8 +104,7 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         return false;
     }
 
-    
-    
+
     int aspect = dict->intForKey("aspect");
     
     
@@ -155,10 +154,16 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     bool ret = Scene::initWithPhysics();
     if(ret)
     {
+        _gameWorldNode = NULL;
+        _uiNode = NULL;
+        _backUINode = NULL;
+        
         _currentDev = curDev;
     
-        SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
-        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+        //this can cause issues with transitioning to new scenes.
+//        It is user responsibility to do this anyway also if the next level has the same textures - loading will be faster
+//        SpriteFrameCache::getInstance()->removeUnusedSpriteFrames();
+//        Director::getInstance()->getTextureCache()->removeUnusedTextures();
         
         this->loadGenericInfoFromDictionary(dict);
         

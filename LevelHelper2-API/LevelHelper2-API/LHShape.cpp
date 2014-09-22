@@ -19,11 +19,12 @@
 LHShape::LHShape()
 {
     _drawNode = NULL;
+    _tile = false;
 }
 
 LHShape::~LHShape()
 {
-    
+    this->shouldRemoveBody();
 }
 
 LHShape* LHShape::nodeWithDictionary(LHDictionary* dict, Node* prnt)
@@ -78,6 +79,10 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
 
 void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
 {
+    _tile = dict->boolForKey("tileTexture");
+    _tileScale = dict->sizeForKey("tileScale");
+
+    
     Size size = this->getContentSize();
     float alpha = dict->floatForKey("alpha");
     
@@ -106,6 +111,10 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
         
         if(texture){
             Texture2D::TexParams texParams = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
+            if(_tile){
+                texParams = {GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_REPEAT, GL_REPEAT};
+            }
+            
             texture->setTexParameters(texParams);
             _drawNode->setTexture(texture);
         }
@@ -140,6 +149,10 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
     float scaleX = this->getScaleX();
     float scaleY = this->getScaleY();
     
+    Size imageSize;
+    if(texture)
+        imageSize = Size(texture->getPixelsWide(), texture->getPixelsHigh());
+
     for(int i = 0; i < triangles->count(); i+=3)
     {
         LHDictionary* dictA = triangles->dictAtIndex(i);
@@ -190,6 +203,19 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
         Point posC = dictC->pointForKey("point");
         posC.y = -posC.y;
         Point uvC = dictC->pointForKey("uv");
+        
+        if(_tile && texture){
+            
+            uvA.x = (posA.x/imageSize.width)*(_tileScale.width);
+            uvA.y = -(posA.y/imageSize.height)*(_tileScale.height);
+            
+            uvB.x = (posB.x/imageSize.width)*(_tileScale.width);
+            uvB.y = -(posB.y/imageSize.height)*(_tileScale.height);
+            
+            uvC.x = (posC.x/imageSize.width)*(_tileScale.width);
+            uvC.y = -(posC.y/imageSize.height)*(_tileScale.height);
+        }
+
         
         posA.x *= scaleX;
         posA.y *= scaleY;

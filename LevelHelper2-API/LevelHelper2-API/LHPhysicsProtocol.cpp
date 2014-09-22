@@ -51,9 +51,31 @@ LHPhysicsProtocol::LHPhysicsProtocol()
 }
 LHPhysicsProtocol::~LHPhysicsProtocol()
 {
+
+}
+
+void LHPhysicsProtocol::shouldRemoveBody()
+{
 #if LH_USE_BOX2D
-    if(_body && _body->GetWorld() && _body->GetWorld()->GetContactManager().m_contactListener != NULL)
+    LHNodeProtocol* nodeProt = dynamic_cast<LHNodeProtocol*>(this);
+    if(_body && nodeProt && !nodeProt->isB2WorldDirty())
     {
+        Node* node = dynamic_cast<Node*>(this);
+
+        if(node){
+            
+            LHBox2dWorld* world = (LHBox2dWorld*)_body->GetWorld();
+            if(world){
+                LHScene* scene = (LHScene*)world->_scene;
+                if(scene){
+                    LHGameWorldNode* gw = scene->getGameWorldNode();
+                    if(gw){
+                        gw->removeScheduledContactsWithNode(node);
+                    }
+                }
+            }
+        }
+        
         //do not remove the body if the scene is deallocing as the box2d world will be deleted
         //so we dont need to do this manualy
         //in some cases the nodes will be retained and removed after the box2d world is already deleted and we may have a crash
@@ -61,7 +83,6 @@ LHPhysicsProtocol::~LHPhysicsProtocol()
     }
 #endif
 }
-
 
 Node* LHPhysicsProtocol::LHGetNode(LHPhysicsProtocol* prot)
 {
@@ -128,10 +149,13 @@ void LHPhysicsProtocol::removeBody()
     if(_body){
         b2World* world = _body->GetWorld();
         if(world){
+
             _body->SetUserData(NULL);
             if(!world->IsLocked()){
+
                 this->removeAllAttachedJoints();
                 world->DestroyBody(_body);
+            
                 _body = NULL;
                 scheduledForRemoval = false;
             }
@@ -417,6 +441,20 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     _body->SetSleepingAllowed(dict->boolForKey("allowSleep"));
     _body->SetBullet(dict->boolForKey("bullet"));
     
+    if(dict->objectForKey("angularDamping"))//all this properties were added in the same moment
+    {
+        _body->SetAngularDamping(dict->floatForKey("angularDamping"));
+    
+        _body->SetAngularVelocity(dict->floatForKey("angularVelocity"));//radians/second.
+    
+        _body->SetLinearDamping(dict->floatForKey("linearDamping"));
+        
+        Point linearVel = dict->pointForKey("linearVelocity");
+        _body->SetLinearVelocity(b2Vec2(linearVel.x,linearVel.y));
+    }
+
+    
+    
     Size sizet = node->getContentSize();
     
     sizet.width  = scene->metersFromValue(sizet.width);
@@ -675,7 +713,6 @@ void LHPhysicsProtocol::visitPhysicsProtocol()
 {
     //nothing to update on chipmunk - update is handled by Cocos2d
 }
-
 
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
@@ -948,6 +985,15 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
 
         if(dict->intForKey("gravityScale") == 0){
             node->getPhysicsBody()->setGravityEnable(false);
+        }
+        
+        if(dict->objectForKey("angularDamping"))//all this properties were added in the same moment
+        {
+            node->getPhysicsBody()->setAngularDamping(dict->floatForKey("angularDamping"));
+            node->getPhysicsBody()->setAngularVelocity(dict->floatForKey("angularVelocity"));
+            node->getPhysicsBody()->setLinearDamping(dict->floatForKey("linearDamping"));
+            Point linearVel = dict->pointForKey("linearVelocity");
+            node->getPhysicsBody()->setVelocity(Vec2(linearVel.x, linearVel.y));
         }
     }
 }

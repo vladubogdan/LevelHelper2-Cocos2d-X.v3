@@ -32,8 +32,9 @@ public:
     void createMouseJointForTouchLocation(Point point);
     void setTargetOnMouseJoint(Point point);
     void destroyMouseJoint();
-    
+#if LH_USE_BOX2D
     b2MouseJoint* mouseJoint;
+#endif
 };
 
 #endif /* defined(CameraPhysicsTest) */

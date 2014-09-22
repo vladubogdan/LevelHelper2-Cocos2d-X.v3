@@ -16,8 +16,20 @@
 
 
 #if LH_USE_BOX2D
-class b2World;
+#include "Box2D/Box2D.h"
+
 class LHBox2dDebugDrawNode;
+
+class LHBox2dWorld : public b2World
+{
+public:
+    
+    LHBox2dWorld(const b2Vec2& gravity, void* sceneObj):b2World(gravity),_scene(sceneObj){}
+    virtual ~LHBox2dWorld(){_scene = NULL;}
+    
+    void* _scene;
+};
+
 #endif
 
 using namespace cocos2d;
@@ -80,6 +92,8 @@ public:
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
 #endif
     
+    virtual void onEnter();
+    
     void update(float delta);
     
 #if LH_USE_BOX2D
@@ -103,16 +117,17 @@ private:
 #if LH_USE_BOX2D
     
     friend class LHBox2dCollisionHandling;
-
+    friend class LHPhysicsProtocol;
     
     void scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nodeB, Point contactPoint, float impulse);
     void scheduleDidEndContactBetweenNodeA(Node* nodeA, Node* nodeB);
     
+    void removeScheduledContactsWithNode(Node* node);
 
     void step(float dt);
     void afterStep(float dt);
     
-    b2World* _box2dWorld;
+    LHBox2dWorld* _box2dWorld;
     
     float FIXED_TIMESTEP;
     float MINIMUM_TIMESTEP;

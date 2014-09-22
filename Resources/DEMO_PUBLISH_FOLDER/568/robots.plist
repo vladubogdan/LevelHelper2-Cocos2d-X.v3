@@ -16,45 +16,45 @@
 		<key>blueRobot</key>
 		<dict>
 			<key>frame</key>
-			<string>{{116, 2}, {110, 133}}</string>
+			<string>{{116.000000, 2.000000}, {110.000000, 133.000000}}</string>
 			<key>offset</key>
-			<string>{2, 1.5}</string>
+			<string>{2.000000, 1.500000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{12, 7}, {110, 133}}</string>
+			<string>{{12.000000, 7.000000}, {110.000000, 133.000000}}</string>
 			<key>sourceSize</key>
-			<string>{130, 150}</string>
+			<string>{130.000000, 150.000000}</string>
 			<key>uuid</key>
 			<string>2F3A5F3F-DA9C-471B-930F-35601F2AE875</string>
 		</dict>
 		<key>greenRobot</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2, 140}, {110, 133}}</string>
+			<string>{{2.000000, 140.000000}, {110.000000, 133.000000}}</string>
 			<key>offset</key>
-			<string>{2, 1.5}</string>
+			<string>{2.000000, 1.500000}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{10, 12}, {133, 110}}</string>
+			<string>{{10.000000, 12.000000}, {133.000000, 110.000000}}</string>
 			<key>sourceSize</key>
-			<string>{130, 150}</string>
+			<string>{130.000000, 150.000000}</string>
 			<key>uuid</key>
 			<string>9C8173A8-5D80-4F56-AFDB-115E6D744990</string>
 		</dict>
 		<key>pinkRobot</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2, 2}, {110, 133}}</string>
+			<string>{{2.000000, 2.000000}, {110.000000, 133.000000}}</string>
 			<key>offset</key>
-			<string>{2, 1.5}</string>
+			<string>{2.000000, 1.500000}</string>
 			<key>rotated</key>
 			<false/>
 			<key>sourceColorRect</key>
-			<string>{{12, 7}, {110, 133}}</string>
+			<string>{{12.000000, 7.000000}, {110.000000, 133.000000}}</string>
 			<key>sourceSize</key>
-			<string>{130, 150}</string>
+			<string>{130.000000, 150.000000}</string>
 			<key>uuid</key>
 			<string>68189927-8EF2-4BEE-BDC3-20BA98F11C64</string>
 		</dict>
@@ -63,8 +63,10 @@
 	<dict>
 		<key>format</key>
 		<integer>2</integer>
+		<key>ratio</key>
+		<integer>1</integer>
 		<key>size</key>
-		<string>{227, 250}</string>
+		<string>{227.000000, 250.000000}</string>
 		<key>textureFileName</key>
 		<string>robots.png</string>
 	</dict>

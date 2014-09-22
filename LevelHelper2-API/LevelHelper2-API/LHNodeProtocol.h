@@ -22,13 +22,6 @@ class LHScene;
 
 using namespace cocos2d;
 
-
-/**
- Most of the LevelHelper-2 nodes conforms to this protocol.
- */
-
-//class LHNodeAnimationProtocol;
-
 class LHNodeProtocol
 {
 public:
@@ -184,6 +177,9 @@ public:
      */
     static LHNodeProtocol* LHGetNodeProtocol(Node* node);
     
+    bool isB2WorldDirty();
+    void markAsB2WorldDirty();
+    bool _b2WorldDirty;
 };
 
 #define LH_GET_NODE_FROM_NODE_PROTOCOL LHNodeProtocol::LHGetNode

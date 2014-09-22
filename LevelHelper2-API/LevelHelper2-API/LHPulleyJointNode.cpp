@@ -28,7 +28,7 @@ LHPulleyJointNode::LHPulleyJointNode()
 
 LHPulleyJointNode::~LHPulleyJointNode()
 {
-
+    this->shouldRemoveJoint();
 }
 
 LHPulleyJointNode* LHPulleyJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)

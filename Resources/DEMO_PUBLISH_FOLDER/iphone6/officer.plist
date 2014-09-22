@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>about</key>
+	<dict>
+		<key>app</key>
+		<string>LevelHelper 2</string>
+		<key>author</key>
+		<string>Vladu Bogdan</string>
+		<key>web</key>
+		<string>http://www.gamedevhelper.com</string>
+	</dict>
+	<key>frames</key>
+	<dict>
+		<key>SUNGLASSES.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{130.000000, 2.000000}, {77.000000, 20.000000}}</string>
+			<key>offset</key>
+			<string>{-3.500000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{2.000000, 0.000000}, {20.000000, 77.000000}}</string>
+			<key>sourceSize</key>
+			<string>{84.000000, 24.000000}</string>
+			<key>uuid</key>
+			<string>3860A7DA-1EA4-485B-9D4B-588FA2F27FB1</string>
+		</dict>
+		<key>angry_mouth.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{128.000000, 756.000000}, {29.000000, 22.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {22.000000, 29.000000}}</string>
+			<key>sourceSize</key>
+			<string>{29.000000, 22.000000}</string>
+			<key>uuid</key>
+			<string>83CB68E2-9145-4D7B-A65F-7FD0181EA86B</string>
+		</dict>
+		<key>eyes_ANGRY.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{3.000000, 855.000000}, {43.000000, 25.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, -2.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 5.000000}, {43.000000, 25.000000}}</string>
+			<key>sourceSize</key>
+			<string>{44.000000, 30.000000}</string>
+			<key>uuid</key>
+			<string>EA8F7245-9EFD-49F8-9657-1CB6B2883CCC</string>
+		</dict>
+		<key>eyes_CLOSED.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{64.000000, 839.000000}, {44.000000, 30.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {44.000000, 30.000000}}</string>
+			<key>sourceSize</key>
+			<string>{44.000000, 30.000000}</string>
+			<key>uuid</key>
+			<string>5B0A47A3-8057-42F1-A2B4-DAEE8AD5A0B6</string>
+		</dict>
+		<key>eyes_OPEN.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{106.000000, 312.000000}, {46.000000, 28.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, -1.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 2.000000}, {46.000000, 28.000000}}</string>
+			<key>sourceSize</key>
+			<string>{46.000000, 30.000000}</string>
+			<key>uuid</key>
+			<string>4BC3E757-EDDE-4818-B19E-704C3499EAA2</string>
+		</dict>
+		<key>foot_LEFT.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{3.000000, 641.000000}, {68.000000, 34.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, -0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 1.000000}, {68.000000, 34.000000}}</string>
+			<key>sourceSize</key>
+			<string>{69.000000, 35.000000}</string>
+			<key>uuid</key>
+			<string>379AC1F4-D7DB-46D1-A9C2-DE845FE267F0</string>
+		</dict>
+		<key>foot_RIGHT.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{81.000000, 609.000000}, {68.000000, 34.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, -0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 1.000000}, {68.000000, 34.000000}}</string>
+			<key>sourceSize</key>
+			<string>{69.000000, 35.000000}</string>
+			<key>uuid</key>
+			<string>B6DA3C3D-3A09-4C1E-9936-B2D2207A165F</string>
+		</dict>
+		<key>forearm_L_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{90.000000, 437.000000}, {60.000000, 34.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 0.000000}, {60.000000, 34.000000}}</string>
+			<key>sourceSize</key>
+			<string>{61.000000, 34.000000}</string>
+			<key>uuid</key>
+			<string>3A565676-B217-4A03-8B4C-6778BB7AFF26</string>
+		</dict>
+		<key>forearm_R_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{70.000000, 717.000000}, {35.000000, 59.000000}}</string>
+			<key>offset</key>
+			<string>{-0.500000, 1.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{4.000000, 1.000000}, {59.000000, 35.000000}}</string>
+			<key>sourceSize</key>
+			<string>{38.000000, 64.000000}</string>
+			<key>uuid</key>
+			<string>9F828740-428F-4279-88E1-F37EC5BDABA9</string>
+		</dict>
+		<key>gun-belt.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{127.000000, 126.000000}, {84.000000, 25.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 1.000000}, {25.000000, 84.000000}}</string>
+			<key>sourceSize</key>
+			<string>{85.000000, 25.000000}</string>
+			<key>uuid</key>
+			<string>464A0E31-8F77-4397-8E5E-B7F07ED56CA7</string>
+		</dict>
+		<key>gun-holster.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{118.000000, 258.000000}, {32.000000, 49.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {32.000000, 49.000000}}</string>
+			<key>sourceSize</key>
+			<string>{32.000000, 49.000000}</string>
+			<key>uuid</key>
+			<string>D2C4D003-9E5B-4A04-8C88-140EBEED4262</string>
+		</dict>
+		<key>gun.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{64.000000, 798.000000}, {37.000000, 50.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {50.000000, 37.000000}}</string>
+			<key>sourceSize</key>
+			<string>{37.000000, 50.000000}</string>
+			<key>uuid</key>
+			<string>A59EA0EC-6D13-4D6C-BAE7-B6C652254F6C</string>
+		</dict>
+		<key>hair.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 358.000000}, {85.000000, 56.000000}}</string>
+			<key>offset</key>
+			<string>{-0.500000, 11.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 2.000000}, {85.000000, 56.000000}}</string>
+			<key>sourceSize</key>
+			<string>{86.000000, 82.000000}</string>
+			<key>uuid</key>
+			<string>0C92FBC2-A5B5-4D6E-AD4A-FD69CE2F01A0</string>
+		</dict>
+		<key>handOpen.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 680.000000}, {52.000000, 63.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 1.000000}, {63.000000, 52.000000}}</string>
+			<key>sourceSize</key>
+			<string>{53.000000, 63.000000}</string>
+			<key>uuid</key>
+			<string>DCB9ECF6-ACA3-45C9-8016-AF48E77CA512</string>
+		</dict>
+		<key>handOpenBackHand.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{3.000000, 737.000000}, {57.000000, 58.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 1.000000}, {58.000000, 57.000000}}</string>
+			<key>sourceSize</key>
+			<string>{58.000000, 59.000000}</string>
+			<key>uuid</key>
+			<string>0D430DF1-F15A-43F5-B5CA-6B5B4A853FD8</string>
+		</dict>
+		<key>handPoint.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{82.000000, 561.000000}, {43.000000, 68.000000}}</string>
+			<key>offset</key>
+			<string>{-0.500000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {68.000000, 43.000000}}</string>
+			<key>sourceSize</key>
+			<string>{44.000000, 68.000000}</string>
+			<key>uuid</key>
+			<string>64069AB5-2219-4B59-BF02-CC8AAF58D8B2</string>
+		</dict>
+		<key>handRest.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{65.000000, 756.000000}, {37.000000, 58.000000}}</string>
+			<key>offset</key>
+			<string>{-4.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 1.000000}, {58.000000, 37.000000}}</string>
+			<key>sourceSize</key>
+			<string>{47.000000, 58.000000}</string>
+			<key>uuid</key>
+			<string>CE5432A7-5A77-4C3B-8BB8-382C11C78FDE</string>
+		</dict>
+		<key>hand_L_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 885.000000}, {37.000000, 42.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {42.000000, 37.000000}}</string>
+			<key>sourceSize</key>
+			<string>{37.000000, 42.000000}</string>
+			<key>uuid</key>
+			<string>00E7A15D-F08B-486E-89AA-F61CB3B01FC1</string>
+		</dict>
+		<key>hand_OpenGrab.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{3.000000, 798.000000}, {56.000000, 52.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 0.000000}, {56.000000, 52.000000}}</string>
+			<key>sourceSize</key>
+			<string>{57.000000, 53.000000}</string>
+			<key>uuid</key>
+			<string>BEFC08E0-AE06-4D8F-BD14-3210DB4D7C75</string>
+		</dict>
+		<key>hand_R_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{50.000000, 874.000000}, {41.000000, 42.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, -0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {42.000000, 41.000000}}</string>
+			<key>sourceSize</key>
+			<string>{41.000000, 43.000000}</string>
+			<key>uuid</key>
+			<string>E644259F-50EA-4E5A-B5C2-678F46CDB230</string>
+		</dict>
+		<key>hat.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 99.000000}, {119.000000, 69.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {119.000000, 69.000000}}</string>
+			<key>sourceSize</key>
+			<string>{119.000000, 69.000000}</string>
+			<key>uuid</key>
+			<string>30CFF8A4-718A-4D6E-BEB9-0BE9C0B77DC6</string>
+		</dict>
+		<key>head.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{3.000000, 268.000000}, {85.000000, 98.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 0.000000}, {98.000000, 85.000000}}</string>
+			<key>sourceSize</key>
+			<string>{85.000000, 99.000000}</string>
+			<key>uuid</key>
+			<string>7179BDC7-3698-4413-83A4-A4C7145B19E0</string>
+		</dict>
+		<key>leg_lower_L_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 477.000000}, {48.000000, 79.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {79.000000, 48.000000}}</string>
+			<key>sourceSize</key>
+			<string>{48.000000, 79.000000}</string>
+			<key>uuid</key>
+			<string>C8BD3DE9-2B40-4DED-8358-EB775AAA2E4B</string>
+		</dict>
+		<key>leg_lower_R_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{3.000000, 530.000000}, {50.000000, 74.000000}}</string>
+			<key>offset</key>
+			<string>{1.000000, 0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 1.000000}, {74.000000, 50.000000}}</string>
+			<key>sourceSize</key>
+			<string>{50.000000, 75.000000}</string>
+			<key>uuid</key>
+			<string>05E1EDF9-579B-42AE-A74E-109C0584DEAF</string>
+		</dict>
+		<key>leg_upper_L_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{106.000000, 344.000000}, {45.000000, 88.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {45.000000, 88.000000}}</string>
+			<key>sourceSize</key>
+			<string>{45.000000, 88.000000}</string>
+			<key>uuid</key>
+			<string>5B53AB47-346B-4106-9A91-9359045F674E</string>
+		</dict>
+		<key>leg_upper_R_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{3.000000, 418.000000}, {54.000000, 82.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 0.000000}, {82.000000, 54.000000}}</string>
+			<key>sourceSize</key>
+			<string>{54.000000, 83.000000}</string>
+			<key>uuid</key>
+			<string>94813C28-48CE-4F9E-B88E-8CA0EEB033B1</string>
+		</dict>
+		<key>mouth.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{97.000000, 875.000000}, {28.000000, 19.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {28.000000, 19.000000}}</string>
+			<key>sourceSize</key>
+			<string>{28.000000, 19.000000}</string>
+			<key>uuid</key>
+			<string>B5C51836-9688-4792-ABEE-4EC1BB67AFEF</string>
+		</dict>
+		<key>muzzleFlash.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{130.000000, 84.000000}, {20.000000, 37.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {20.000000, 37.000000}}</string>
+			<key>sourceSize</key>
+			<string>{20.000000, 37.000000}</string>
+			<key>uuid</key>
+			<string>F8F0D449-0A20-46C5-85B8-8ED238B0EEFF</string>
+		</dict>
+		<key>neck_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{118.000000, 215.000000}, {38.000000, 32.000000}}</string>
+			<key>offset</key>
+			<string>{-0.500000, -0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {32.000000, 38.000000}}</string>
+			<key>sourceSize</key>
+			<string>{39.000000, 33.000000}</string>
+			<key>uuid</key>
+			<string>D279AF55-F641-4024-8AAE-EA6215F74549</string>
+		</dict>
+		<key>pant_bottom_RIGHT.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{128.000000, 790.000000}, {44.000000, 19.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {19.000000, 44.000000}}</string>
+			<key>sourceSize</key>
+			<string>{44.000000, 19.000000}</string>
+			<key>uuid</key>
+			<string>EA808060-8D89-448E-944C-6713D49AB410</string>
+		</dict>
+		<key>pelvis.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{89.000000, 476.000000}, {80.000000, 59.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, -0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 1.000000}, {59.000000, 80.000000}}</string>
+			<key>sourceSize</key>
+			<string>{81.000000, 60.000000}</string>
+			<key>uuid</key>
+			<string>EEB1E088-DE50-4684-81DA-E26419D642A5</string>
+		</dict>
+		<key>shoulder_L_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 585.000000}, {52.000000, 74.000000}}</string>
+			<key>offset</key>
+			<string>{1.000000, -0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 1.000000}, {74.000000, 52.000000}}</string>
+			<key>sourceSize</key>
+			<string>{52.000000, 75.000000}</string>
+			<key>uuid</key>
+			<string>E00DCC2C-D3BC-4A53-AC00-D698E2F0D7F2</string>
+		</dict>
+		<key>shoulder_R_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{75.000000, 648.000000}, {64.000000, 64.000000}}</string>
+			<key>offset</key>
+			<string>{0.500000, -0.500000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1.000000, 1.000000}, {64.000000, 64.000000}}</string>
+			<key>sourceSize</key>
+			<string>{65.000000, 65.000000}</string>
+			<key>uuid</key>
+			<string>FB46BFDD-6BD1-47DB-9391-D2DB7FFEEBC0</string>
+		</dict>
+		<key>tennisBall.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{119.000000, 839.000000}, {31.000000, 31.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {31.000000, 31.000000}}</string>
+			<key>sourceSize</key>
+			<string>{31.000000, 31.000000}</string>
+			<key>uuid</key>
+			<string>A2E71E8E-8D82-47AB-B06A-5E318EDDC362</string>
+		</dict>
+		<key>torso_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 2.000000}, {92.000000, 123.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, -0.500000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {123.000000, 92.000000}}</string>
+			<key>sourceSize</key>
+			<string>{92.000000, 124.000000}</string>
+			<key>uuid</key>
+			<string>4AC4D7DF-638D-4D26-B6AC-BF5D59F61501</string>
+		</dict>
+		<key>vest_outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2.000000, 173.000000}, {91.000000, 111.000000}}</string>
+			<key>offset</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0.000000, 0.000000}, {111.000000, 91.000000}}</string>
+			<key>sourceSize</key>
+			<string>{91.000000, 111.000000}</string>
+			<key>uuid</key>
+			<string>C9B55117-9B00-41C8-999D-53A2C0189BC8</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>ratio</key>
+		<real>1.2</real>
+		<key>size</key>
+		<string>{153.000000, 924.000000}</string>
+		<key>textureFileName</key>
+		<string>officer.png</string>
+	</dict>
+</dict>
+</plist>

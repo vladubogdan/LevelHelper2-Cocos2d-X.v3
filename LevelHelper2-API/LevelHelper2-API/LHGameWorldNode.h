@@ -112,6 +112,9 @@ public:
     Point getGravity();
     void setGravity(Point val);
     
+    virtual void setPosition(const Vec2& position);
+    virtual void setScale(float scale);
+    
 private:
 
 #if LH_USE_BOX2D

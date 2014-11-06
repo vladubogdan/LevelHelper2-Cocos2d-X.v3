@@ -48,9 +48,11 @@ public:
      */
     float getRatioY(){return _yRatio;}
 
+    Point getInitialPosition(){return initialPosition;}
 private:
     float _xRatio;
     float _yRatio;
+    Point initialPosition;
 };
 
 #endif //__LEVELHELPER_API_PARALLAX_LAYER_H__

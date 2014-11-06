@@ -81,10 +81,18 @@ public:
     __Array* tracedFixturesWithUUID(const std::string& uuid);
     
     
-    virtual bool onTouchBegan(Touch* touch, Event* event);
-    virtual void onTouchMoved(Touch* touch, Event* event);
-    virtual void onTouchEnded(Touch* touch, Event* event);
-    virtual void onTouchCancelled(Touch *touch, Event *event);
+    CC_DEPRECATED_ATTRIBUTE virtual bool onTouchBegan(Touch* touch, Event* event); //use onTouchesBegan instead
+    CC_DEPRECATED_ATTRIBUTE virtual void onTouchMoved(Touch* touch, Event* event);//use onTouchesMoved instead
+    CC_DEPRECATED_ATTRIBUTE virtual void onTouchEnded(Touch* touch, Event* event);//use onTouchesEnded instead
+    CC_DEPRECATED_ATTRIBUTE virtual void onTouchCancelled(Touch *touch, Event *event);//use onTouchesCancelled instead
+    
+    virtual void onTouchesBegan(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesMoved(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesCancelled(const std::vector<Touch*>& touches, Event *event);
+    
+    virtual void onMouseScroll(Event* event);
+    virtual void didPinchAtLocation(Point centerTouch, float delta, bool closing);
 
     virtual void onEnter();
     virtual void onExit();
@@ -229,7 +237,10 @@ private:
     Point   designOffset;
     Rect    gameWorldRect;
     
-    EventListenerTouchOneByOne* _touchListener;
+//    EventListenerTouchOneByOne* _touchListener;
+    EventListenerTouchAllAtOnce* _touchListener;
+    
+    EventListenerMouse* _mouseListener;
     
     __Dictionary*   _tracedFixtures;
     __Dictionary*   _loadedAssetsInformations;
@@ -244,11 +255,16 @@ private:
     
     void loadGlobalGravityFromDictionary(LHDictionary* dict);
     void loadPhysicsBoundariesFromDictionary(LHDictionary* dict);
+    void loadGameWorldInfoFromDictionary(LHDictionary* dict);
+    
+    bool loadingInProgress;
     
 #if LH_USE_BOX2D
     LHBox2dCollisionHandling* _box2dCollision;
 #endif
-
+    
+    //pinch support
+    float lastDistanceBetweenTouches;
 };
 
 #endif //__LEVELHELPER_API_SCENE_H__

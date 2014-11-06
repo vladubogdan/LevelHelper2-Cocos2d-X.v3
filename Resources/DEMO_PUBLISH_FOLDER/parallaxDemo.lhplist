@@ -958,16 +958,26 @@
 					<key>followedNodeUUID</key>
 					<string>870881B2-D199-4A22-B90B-5D0A052AC7BF</string>
 					<key>generalPosition</key>
-					<string>{0.415687, 0.154347}</string>
+					<string>{0.415687, 0.325000}</string>
+					<key>importantArea</key>
+					<string>{0.500000, 0.500000}</string>
 					<key>invisibleInEditor</key>
+					<false/>
+					<key>lockX</key>
+					<false/>
+					<key>lockY</key>
 					<false/>
 					<key>name</key>
 					<string>UntitledCamera</string>
 					<key>nodeType</key>
 					<string>LHCamera</string>
+					<key>offset</key>
+					<string>{0.000000, 0.000000}</string>
 					<key>parentUUID</key>
 					<string>_GAME_WORLD_NODE_UUID_</string>
 					<key>restrictToGameWorld</key>
+					<true/>
+					<key>smoothMovement</key>
 					<true/>
 					<key>tags</key>
 					<array>
@@ -975,6 +985,10 @@
 					</array>
 					<key>uuid</key>
 					<string>BB8048BE-F000-4D1F-86EB-02502E831F83</string>
+					<key>zoomOnPinchOrScroll</key>
+					<true/>
+					<key>zoomValue</key>
+					<real>1</real>
 				</dict>
 				<dict>
 					<key>alpha</key>
@@ -2790,6 +2804,67 @@
 	<array>
 		<string>DEFAULT</string>
 	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>16B9B6DD-17DF-40B7-B10B-D15A5C3F0007</key>
+		<array>
+			<array>
+				<string>{-40.75, -37.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-41.25, -34.5}</string>
+			</array>
+			<array>
+				<string>{10.25, -37}</string>
+				<string>{10.25, -35}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{5.75, -40.5}</string>
+				<string>{8.75, -39}</string>
+			</array>
+			<array>
+				<string>{82.25, 4.5}</string>
+				<string>{82.25, 22}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{42.25, -19.5}</string>
+				<string>{52.25, -16.5}</string>
+				<string>{63.75, -11}</string>
+				<string>{75.25, -2.5}</string>
+			</array>
+			<array>
+				<string>{-83.75, 24}</string>
+				<string>{-84.75, 21}</string>
+				<string>{-84.75, -7.5}</string>
+				<string>{-83.75, -10}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-80.25, 26.5}</string>
+				<string>{-81.75, 26}</string>
+			</array>
+			<array>
+				<string>{81.75, 23.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{82.25, 22}</string>
+			</array>
+			<array>
+				<string>{10.25, -35}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{-36.75, -40.5}</string>
+			</array>
+			<array>
+				<string>{-54.75, -22.5}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-83.75, -10}</string>
+			</array>
+			<array>
+				<string>{-41.25, -34.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-46.75, -22.5}</string>
+			</array>
+		</array>
+	</dict>
 	<key>useGlobalGravity</key>
 	<true/>
 	<key>uuid</key>

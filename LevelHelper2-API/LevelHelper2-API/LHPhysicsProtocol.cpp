@@ -179,10 +179,11 @@ void LHPhysicsProtocol::updatePhysicsTransform(){
     {
         LHScene* scene = (LHScene*)_node->getScene();
         LHGameWorldNode* gWNode = scene->getGameWorldNode();
-        Point worldPos = _node->getParent()->convertToWorldSpace(_node->getPosition());
-        worldPos = gWNode->convertToNodeSpace(worldPos);
-        Point gWPos = gWNode->getPosition();
-        worldPos = Point(worldPos.x - gWPos.x, worldPos.y - gWPos.y);
+        Point worldPos = _node->getPosition();
+        if(gWNode != _node->getParent()){
+            worldPos = _node->getParent()->convertToWorldSpace(worldPos);
+            worldPos = gWNode->convertToNodeSpace(worldPos);
+        }
         
         b2Vec2 b2Pos = scene->metersFromPoint(worldPos);
         float globalAngle =  LHNodeTransform::globalAngleFromLocalAngle(_node, _node->getRotation());

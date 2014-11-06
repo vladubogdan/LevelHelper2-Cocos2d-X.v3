@@ -100,6 +100,14 @@ void LHParallax::visit(Renderer *renderer, const Mat4& parentTransform, bool par
 
 void LHParallax::transformLayerPositions()
 {
+    LHScene* scene = (LHScene*)this->getScene();
+    
+    LHGameWorldNode* gwNode = scene->getGameWorldNode();
+    
+    float oldScale = gwNode->getScale();
+    gwNode->setScale(1.0f);
+    
+    
     Point parallaxPos = getPosition();
     Node* followed = followedNode();
     if(followed){
@@ -107,44 +115,49 @@ void LHParallax::transformLayerPositions()
         if(LHCamera::isLHCamera(followed)){
             if(!((LHCamera*)followed)->wasUpdated)return;
         }
-        
-        parallaxPos = followed->getPosition();
-        
-        Point anchor = followed->getAnchorPoint();
-        Size content = followed->getContentSize();
-        
-        parallaxPos.x -= content.width*(anchor.x -0.5);
-        parallaxPos.y -= content.height*(anchor.y -0.5);
 
-        Size winSize = ((LHScene*)getScene())->getContentSize();
+        Point worldPoint = followed->convertToWorldSpaceAR(Point(0,0));
         
-        parallaxPos.x = parallaxPos.x - winSize.width*0.5;
-        parallaxPos.y = parallaxPos.y - winSize.height*0.5;
+        if(LHCamera::isLHCamera(followed)){
+            
+            ((LHCamera*)followed)->setZoomValue(1);
+            
+            Size winSize = scene->getDesignResolutionSize();
+            worldPoint = Point(winSize.width*0.5, winSize.height*0.5);
+        }
+        
+        parallaxPos = gwNode->convertToNodeSpaceAR(worldPoint);
     }
     
-    if(lastPosition.equals(Point())){
-        lastPosition = parallaxPos;
+    if(initialPosition.equals(Point())){
+        initialPosition = parallaxPos;
     }
     
+
     if(!lastPosition.equals(parallaxPos))
     {
-        Point deltaPos(parallaxPos.x - lastPosition.x,
-                       parallaxPos.y - lastPosition.y);
-
+        Point deltaPos(initialPosition.x - parallaxPos.x,
+                       initialPosition.y - parallaxPos.y);
+        
         auto& children = this->getChildren();
         for( const auto &n : children)
         {
             LHParallaxLayer* nd = dynamic_cast<LHParallaxLayer*>(n);
             if(nd)
             {
-                Point curPos = nd->getPosition();
-                
-                Point pt(curPos.x + deltaPos.x*(-nd->getRatioX()),
-                         curPos.y + deltaPos.y*(-nd->getRatioY()));
+                Point initialPos = nd->getInitialPosition();
+
+                Point pt(initialPos.x - deltaPos.x*(nd->getRatioX()),
+                         initialPos.y - deltaPos.y*(nd->getRatioY()));
                 
                 nd->setPosition(pt);
             }
         }
     }
     lastPosition = parallaxPos;
+    
+    gwNode->setScale(oldScale);
+    if(followed&& LHCamera::isLHCamera(followed)){
+        ((LHCamera*)followed)->setZoomValue(oldScale);        
+    }
 }

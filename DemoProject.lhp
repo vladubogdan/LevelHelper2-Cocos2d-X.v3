@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>iphone6</string>
 			<key>color</key>
-			<string>{{0.43397572636604309, 0.89395397901535034}, {0.066014409065246582, 1}}</string>
+			<string>{{0.33179903030395508, 0.89017981290817261}, {0.061685547232627869, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -88,7 +88,7 @@
 			<key>SuffixName</key>
 			<string>iphone6plus</string>
 			<key>color</key>
-			<string>{{0.60127091407775879, 0}, {0.54790985584259033, 1}}</string>
+			<string>{{0.44159188866615295, 0}, {0.39802318811416626, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -225,8 +225,10 @@
 			</dict>
 			<key>publisherPluginName</key>
 			<string>Cocos2d-X</string>
+			<key>relativePublishLocation</key>
+			<string>Resources/DEMO_PUBLISH_FOLDER</string>
 			<key>selectedPublishTypeName</key>
-			<string>All Selected Scenes</string>
+			<string>Current Scene Only</string>
 		</dict>
 	</dict>
 	<key>uuid</key>

@@ -110,12 +110,15 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
         texture = Director::getInstance()->getTextureCache()->addImage(imagePath);
         
         if(texture){
-            Texture2D::TexParams texParams = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
             if(_tile){
-                texParams = {GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_REPEAT, GL_REPEAT};
+                Texture2D::TexParams texParams = {GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_REPEAT, GL_REPEAT};
+                texture->setTexParameters(texParams);
             }
-            
-            texture->setTexParameters(texParams);
+            else
+            {
+                Texture2D::TexParams texParams = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
+                texture->setTexParameters(texParams);
+            }
             _drawNode->setTexture(texture);
         }
     }

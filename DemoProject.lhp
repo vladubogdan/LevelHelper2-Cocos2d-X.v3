@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>iphone6</string>
 			<key>color</key>
-			<string>{{0.33179903030395508, 0.89017981290817261}, {0.061685547232627869, 1}}</string>
+			<string>{{0.25949245691299438, 0.88589322566986084}, {0.059532951563596725, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -88,7 +88,7 @@
 			<key>SuffixName</key>
 			<string>iphone6plus</string>
 			<key>color</key>
-			<string>{{0.44159188866615295, 0}, {0.39802318811416626, 1}}</string>
+			<string>{{0.28448912501335144, 0}, {0.25499022006988525, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -103,6 +103,11 @@
 		</array>
 		<key>name</key>
 		<string>DemoProject</string>
+		<key>otherOptions</key>
+		<dict>
+			<key>relativeDocumentsLocation</key>
+			<string>Demo/DOCUMENTS/Levels</string>
+		</dict>
 		<key>publishOptions</key>
 		<dict>
 			<key>ScenesOptions</key>

@@ -9,6 +9,16 @@
 #include "LHUtils.h"
 #include "LHValue.h"
 
+//we implement this function because its missing in Windows Phone 8 c++ lib.
+float fmin(float x, float y){
+    return x > y ? y : x;
+}
+
+//we implement this function because its missing in Windows Phone 8 c++ lib.
+float fmax(float x, float y){
+    return x > y ? x: y;
+}
+
 std::string LHUtils::getLastPathComponent(const std::string& path)
 {
     
@@ -102,5 +112,6 @@ float LHUtils::LHPointLength(const Point& pt)
 }
 
 float LHUtils::LHRandomFloat(float Min, float Max){
-    return ((arc4random()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
+//    return ((arc4random()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
+    return ((rand()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
 }

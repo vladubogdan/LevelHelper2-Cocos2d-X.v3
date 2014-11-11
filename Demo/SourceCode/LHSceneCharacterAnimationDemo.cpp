@@ -55,8 +55,12 @@ bool LHSceneCharacterAnimationDemo::initWithContentOfFile(const std::string& pli
 }
 
 
-bool LHSceneCharacterAnimationDemo::onTouchBegan(Touch* touch, Event* event)
+void LHSceneCharacterAnimationDemo::onTouchesBegan(const std::vector<Touch*>& touches, Event* event)
 {
+    if(touches.size() < 1){
+        return;
+    }
+//    Touch* touch = touches[0];
     
 //    if(Director::getInstance()->isPaused())
 //    {
@@ -78,5 +82,5 @@ bool LHSceneCharacterAnimationDemo::onTouchBegan(Touch* touch, Event* event)
 
     
     //dont forget to call super
-    return LHScene::onTouchBegan(touch, event);
+    LHScene::onTouchesBegan(touches, event);
 }

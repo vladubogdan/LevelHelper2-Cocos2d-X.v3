@@ -18,7 +18,7 @@ public:
     
     virtual LevelHelperNodeTypeSubclass createNodeObjectForSubclassWithName(const std::string subclassTypeName, const std::string lhTypeName);
     
-    virtual bool onTouchBegan(Touch* touch, Event* event);
+    void onTouchesBegan(const std::vector<Touch*>& touches, Event* event);
 };
 
 #endif // __LH_SCENE_NODES_SUBCLASSING_DEMO_H__

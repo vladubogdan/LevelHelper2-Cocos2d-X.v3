@@ -61,8 +61,13 @@ bool LHSceneAssetDemo::initWithContentOfFile(const std::string& plistLevelFile)
     return retValue;
 }
 
-bool LHSceneAssetDemo::onTouchBegan(Touch* touch, Event* event)
+void LHSceneAssetDemo::onTouchesBegan(const std::vector<Touch*>& touches, Event* event)
 {
+    if(touches.size() < 1){
+        return;
+    }
+    Touch* touch = touches[0];
+    
     Point location = touch->getLocation();
     
     LHAsset* asset = LHAsset::createWithName("myNewAsset",
@@ -97,5 +102,5 @@ bool LHSceneAssetDemo::onTouchBegan(Touch* touch, Event* event)
 
     
     //dont forget to call super
-    return LHScene::onTouchBegan(touch, event);
+    return LHScene::onTouchesBegan(touches, event);
 }

@@ -51,17 +51,27 @@ bool CameraPhysicsTest::initWithContentOfFile(const std::string& plistLevelFile)
 }
 
 
-bool CameraPhysicsTest::onTouchBegan(Touch* touch, Event* event)
+void CameraPhysicsTest::onTouchesBegan(const std::vector<Touch*>& touches, Event* event)
 {
+    if(touches.size() < 1){
+        return;
+    }
+    Touch* touch = touches[0];
+
     Point touchLocation = touch->getLocation();
     touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
     
     this->createMouseJointForTouchLocation(touchLocation);
     
     //dont forget to call super
-    return LHScene::onTouchBegan(touch, event);
+    LHScene::onTouchesBegan(touches, event);
 }
-void CameraPhysicsTest::onTouchMoved(Touch* touch, Event* event){
+void CameraPhysicsTest::onTouchesMoved(const std::vector<Touch*>& touches, Event* event){
+    
+    if(touches.size() < 1){
+        return;
+    }
+    Touch* touch = touches[0];
     
     Point touchLocation = touch->getLocation();
     touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
@@ -70,19 +80,19 @@ void CameraPhysicsTest::onTouchMoved(Touch* touch, Event* event){
     this->setTargetOnMouseJoint(touchLocation);
     
     //dont forget to call super
-    LHScene::onTouchMoved(touch, event);
+    LHScene::onTouchesMoved(touches, event);
 }
-void CameraPhysicsTest::onTouchEnded(Touch* touch, Event* event){
+void CameraPhysicsTest::onTouchesEnded(const std::vector<Touch*>& touches, Event* event){
     
     this->destroyMouseJoint();
     
-    LHScene::onTouchEnded(touch, event);
+    LHScene::onTouchesEnded(touches, event);
 }
-void CameraPhysicsTest::onTouchCancelled(Touch *touch, Event *event){
+void CameraPhysicsTest::onTouchesCancelled(const std::vector<Touch*>& touches, Event *event){
     
     this->destroyMouseJoint();
     
-    LHScene::onTouchCancelled(touch, event);
+    LHScene::onTouchesCancelled(touches, event);
 }
 
 

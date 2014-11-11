@@ -15,8 +15,8 @@ public:
     virtual bool initWithContentOfFile(const std::string& plistLevelFile);
 
     virtual std::string className();
-    
-    virtual bool onTouchBegan(Touch* touch, Event* event);
+
+    virtual void onTouchesBegan(const std::vector<Touch*>& touches, Event* event);
 };
 
 #endif // __LH_SCENE_CHARACTER_ANIM_DEMO_H__

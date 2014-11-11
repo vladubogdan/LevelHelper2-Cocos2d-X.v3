@@ -112,11 +112,9 @@ bool LHCamera::initWithDictionary(LHDictionary* dict, Node* prnt)
         
         minZoomValue = 0.1;
         if(_restricted){
-            if(winSize.width < worldSize.width || winSize.height < worldSize.height){
-                if(worldSize.width > worldSize.height){
-                    minZoomValue = winSize.height/worldSize.height;
-                }
-                else{
+            if(winSize.width < worldSize.width || winSize.height < worldSize.height){                
+                minZoomValue = winSize.height/worldSize.height;
+                if(minZoomValue < winSize.width/worldSize.width){
                     minZoomValue = winSize.width/worldSize.width;
                 }
             }
@@ -381,7 +379,6 @@ void LHCamera::pinchZoomWithScaleDeltaAndCenter(float delta, const Point& scaleC
     this->setPosition(this->getPosition() + centerPointDelta);// ccpAdd(self.position, centerPointDelta);
     
     this->performVisit();
-//    this->cocos2d::Node::visit();
 }
 
 
@@ -431,8 +428,13 @@ Point LHCamera::transformToRestrictivePosition(Point position)
     Node* followed = this->followedNode();
     if(followed){
         
-        Point worldPoint = followed->convertToWorldSpaceAR(Point());
-        Point gwNodePos = gwNode->convertToNodeSpaceAR(worldPoint);
+        Point gwNodePos = followed->getPosition();
+        
+        if(followed->getParent() != gwNode)
+        {
+            Point worldPoint = followed->convertToWorldSpaceAR(Point());
+            gwNodePos = gwNode->convertToNodeSpaceAR(worldPoint);
+        }
         
         _viewPosition = gwNodePos;
         _centerPosition = transPoint;
@@ -523,37 +525,6 @@ Point LHCamera::transformToRestrictivePosition(Point position)
     transPoint.y = y;
     
     return transPoint;
-    
-//    Node* followed = followedNode();
-//    if(followed){
-//        
-//        position = followed->convertToWorldSpaceAR(Point());
-//        position = ((LHScene*)getScene())->getGameWorldNode()->convertToNodeSpaceAR(position);
-//    }
-//
-//    Size winSize = ((LHScene*)getScene())->getContentSize();
-//    Rect worldRect = ((LHScene*)getScene())->getGameWorldRect();
-//
-//    float x = position.x;
-//    float y = position.y;
-//    
-//    if(!worldRect.equals(Rect()) && restrictedToGameWorld()){
-//        
-//        if(x > (worldRect.origin.x + worldRect.size.width)*0.5){
-//            x = MIN(x, worldRect.origin.x + worldRect.size.width - winSize.width *0.5);
-//        }
-//        else{
-//            x = MAX(x, worldRect.origin.x + winSize.width *0.5);
-//        }
-//        
-//        y = MAX(y, worldRect.origin.y + worldRect.size.height + winSize.height*0.5);
-//        y = MIN(y, worldRect.origin.y - winSize.height*0.5);
-//    }
-//    
-//    Point pt(winSize.width*0.5-x,
-//             winSize.height*0.5-y);
-//    
-//    return pt;
 }
 
 void LHCamera::performVisit()

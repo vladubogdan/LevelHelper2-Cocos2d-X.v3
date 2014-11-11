@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>iphone6</string>
 			<key>color</key>
-			<string>{{0.25949245691299438, 0.88589322566986084}, {0.059532951563596725, 1}}</string>
+			<string>{{0.21858632564544678, 0.87999296188354492}, {0.058396220207214355, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -88,7 +88,7 @@
 			<key>SuffixName</key>
 			<string>iphone6plus</string>
 			<key>color</key>
-			<string>{{0.28448912501335144, 0}, {0.25499022006988525, 1}}</string>
+			<string>{{0.16178183257579803, 0}, {0.14670984447002411, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>

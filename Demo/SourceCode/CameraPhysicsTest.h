@@ -25,10 +25,11 @@ public:
     virtual std::string className();
     
     
-    bool onTouchBegan(Touch* touch, Event* event);
-    void onTouchMoved(Touch* touch, Event* event);
-    void onTouchEnded(Touch* touch, Event* event);
-    void onTouchCancelled(Touch *touch, Event *event);
+    virtual void onTouchesBegan(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesMoved(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesCancelled(const std::vector<Touch*>& touches, Event *event);
+    
     void createMouseJointForTouchLocation(Point point);
     void setTargetOnMouseJoint(Point point);
     void destroyMouseJoint();

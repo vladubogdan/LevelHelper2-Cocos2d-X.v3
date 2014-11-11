@@ -64,8 +64,14 @@ bool LHScenePhysicsTransformationsDemo::initWithContentOfFile(const std::string&
     return retValue;
 }
 
-bool LHScenePhysicsTransformationsDemo::onTouchBegan(Touch* touch, Event* event)
+void LHScenePhysicsTransformationsDemo::onTouchesBegan(const std::vector<Touch*>& touches, Event* event)
 {
+    if(touches.size() < 1){
+        return;
+    }
+    Touch* touch = touches[0];
+    
+
     Point location = touch->getLocation();
     
     
@@ -84,10 +90,10 @@ bool LHScenePhysicsTransformationsDemo::onTouchBegan(Touch* touch, Event* event)
             node->setRotation(LHUtils::LHRandomFloat(0, 360));
             node->setScaleX(LHUtils::LHRandomFloat(0.2, 1.5f));
             node->setScaleY(LHUtils::LHRandomFloat(0.2, 1.5f));
-            return false;
+            return;
         }
     }
     //dont forget to call super
-    return LHScene::onTouchBegan(touch, event);
+    LHScene::onTouchesBegan(touches, event);
 }
 

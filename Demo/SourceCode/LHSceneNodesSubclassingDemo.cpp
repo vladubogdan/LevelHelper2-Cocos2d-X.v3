@@ -69,8 +69,13 @@ LevelHelperNodeTypeSubclass LHSceneNodesSubclassingDemo::createNodeObjectForSubc
     return nullptr;
 }
 
-bool LHSceneNodesSubclassingDemo::onTouchBegan(Touch* touch, Event* event)
+void LHSceneNodesSubclassingDemo::onTouchesBegan(const std::vector<Touch*>& touches, Event* event)
 {
+    if(touches.size() < 1){
+        return;
+    }
+    Touch* touch = touches[0];
+    
     Point location = touch->getLocation();
     
     __Array* allChildrenOfTypeBlueRobotSprite = this->getGameWorldNode()->getChildrenOfType<BlueRobotSprite*>();
@@ -90,7 +95,7 @@ bool LHSceneNodesSubclassingDemo::onTouchBegan(Touch* touch, Event* event)
     }
 
     //dont forget to call super
-    return LHScene::onTouchBegan(touch, event);
+    LHScene::onTouchesBegan(touches, event);
 }
 
 

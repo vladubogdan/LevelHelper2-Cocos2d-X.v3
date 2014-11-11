@@ -53,9 +53,9 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->loadGenericInfoFromDictionary(dict);
         
         this->loadShapeFromDictionary(dict, scene);
-
-        this->setScaleX(1);
-        this->setScaleY(1);
+        
+//        this->setScaleX(1);
+//        this->setScaleY(1);
 
 #if LH_USE_BOX2D
         prnt->addChild(this);
@@ -75,7 +75,6 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
     }
     return false;
 }
-
 
 void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
 {
@@ -149,8 +148,8 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
     __Array* uvPoints       = __Array::create();
     __Array* colors         = __Array::create();
     
-    float scaleX = this->getScaleX();
-    float scaleY = this->getScaleY();
+//    float scaleX = this->getScaleX();
+//    float scaleY = this->getScaleY();
     
     Size imageSize;
     if(texture)
@@ -220,14 +219,14 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
         }
 
         
-        posA.x *= scaleX;
-        posA.y *= scaleY;
-        
-        posB.x *= scaleX;
-        posB.y *= scaleY;
-        
-        posC.x *= scaleX;
-        posC.y *= scaleY;
+//        posA.x *= scaleX;
+//        posA.y *= scaleY;
+//        
+//        posB.x *= scaleX;
+//        posB.y *= scaleY;
+//        
+//        posC.x *= scaleX;
+//        posC.y *= scaleY;
         
         
         _triangles.push_back(posA);

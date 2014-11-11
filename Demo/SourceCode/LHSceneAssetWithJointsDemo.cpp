@@ -61,8 +61,13 @@ bool LHSceneAssetWithJointsDemo::initWithContentOfFile(const std::string& plistL
     return retValue;
 }
 
-bool LHSceneAssetWithJointsDemo::onTouchBegan(Touch* touch, Event* event)
+void LHSceneAssetWithJointsDemo::onTouchesBegan(const std::vector<Touch*>& touches, Event* event)
 {
+    if(touches.size() < 1){
+        return;
+    }
+    Touch* touch = touches[0];
+
     Point location = touch->getLocation();
     
     LHAsset* asset = LHAsset::createWithName("myNewAsset",
@@ -78,5 +83,5 @@ bool LHSceneAssetWithJointsDemo::onTouchBegan(Touch* touch, Event* event)
     //The only way to use scale is to scale the node prior creating the joint - so from inside LevelHelper 2 app.
     
     //dont forget to call super
-    return LHScene::onTouchBegan(touch, event);
+    LHScene::onTouchesBegan(touches, event);
 }

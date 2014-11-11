@@ -304,4 +304,19 @@ void LHGameWorldNode::setGravity(Point gravity){
     this->getBox2dWorld()->SetGravity(grv);
 }
 
+void LHGameWorldNode::setPosition(const Vec2& position){
+    if(((LHScene*)this->getScene())->loadingInProgress){
+        return;
+    }
+    Node::setPosition(position);
+}
+
+void LHGameWorldNode::setScale(float scale){
+    if(((LHScene*)this->getScene())->loadingInProgress){
+        return;
+    }
+    Node::setScale(scale);
+}
+
+
 #endif

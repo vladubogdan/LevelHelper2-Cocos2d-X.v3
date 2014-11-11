@@ -42,7 +42,7 @@ public:
     static Node* LHGetNode(LHPhysicsProtocol* prot);
     
     /**
-     Removed the physics body from the node. The Cocos2d node will still be alive.
+     Removed the physics body from the node. The Cocos2d-X node will still be alive.
      If you want to remove the node call "removeFromParent" instead.
      Note that you won't be able to recreate the body after removal without recreating the entire Cocos2d node.
      If you need the physics body at a later time you may want to change the physics type to No Physics.
@@ -66,6 +66,12 @@ public:
      */
     b2Body* getBox2dBody(){ return _body;}
 
+    /**
+     Set the Box2d body that was manually created by the user. Use "removeBody" to delete the body. 
+     If you manually remove the body somewhere in your code make sure you call this method with a NULL argument. e.g node->setBox2dBody(NULL);
+     */
+    void setBox2dBody(b2Body* val){_body = val;}
+    
     /**
      Take the Box2d body from a common Node* object. Helper function in order to not deal with casts.
      */

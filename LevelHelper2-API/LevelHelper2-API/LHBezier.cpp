@@ -106,9 +106,6 @@ void LHBezier::loadShapeFromDictionary(LHDictionary* dict)
     LHArray* points = dict->arrayForKey("points");
     bool closed     = dict->boolForKey("closed");
     
-//    float scaleX = this->getScaleX();
-//    float scaleY = this->getScaleY();
-    
     Point* prevValue = nullptr;
     LHDictionary* previousPointDict = nullptr;
     for(int i = 0; i < points->count(); ++i)
@@ -127,7 +124,7 @@ void LHBezier::loadShapeFromDictionary(LHDictionary* dict)
                 control2 = pointDict->pointForKey("mainPt");
             }
             
-            Point vPoint = {0.0f, 0.0f};
+            Point vPoint(0.0f, 0.0f);
             for(float t = 0.0; t <= (1 + (1.0f / MAX_BEZIER_STEPS)); t += 1.0f / MAX_BEZIER_STEPS)
             {
                 vPoint = LHPointOnCurve(previousPointDict->pointForKey("mainPt"),
@@ -135,12 +132,8 @@ void LHBezier::loadShapeFromDictionary(LHDictionary* dict)
                                         control2,
                                         pointDict->pointForKey("mainPt"),
                                         t);
-                
-//                vPoint.x *= scaleX;
-//                vPoint.y *= scaleY;
-                
+
                 Point pt(vPoint.x, -vPoint.y);
-                
                 
                 if(prevValue){
                     Point prevPt = Point(prevValue->x, prevValue->y);
@@ -170,7 +163,7 @@ void LHBezier::loadShapeFromDictionary(LHDictionary* dict)
                 control2 = ptDict->pointForKey("mainPt");
             }
             
-            Point vPoint = {0.0f, 0.0f};
+            Point vPoint(0.0f, 0.0f);
             for(float t = 0; t <= (1 + (1.0f / MAX_BEZIER_STEPS)); t += 1.0f / MAX_BEZIER_STEPS)
             {
                 vPoint = LHPointOnCurve(previousPointDict->pointForKey("mainPt"),
@@ -178,10 +171,7 @@ void LHBezier::loadShapeFromDictionary(LHDictionary* dict)
                                         control2,
                                         ptDict->pointForKey("mainPt"),
                                         t);
-                
-//                vPoint.x *= scaleX;
-//                vPoint.y *= scaleY;
-                
+
                 Point pt(vPoint.x, -vPoint.y);
                 if(prevValue){
                     Point prevPt = Point(prevValue->x, prevValue->y);

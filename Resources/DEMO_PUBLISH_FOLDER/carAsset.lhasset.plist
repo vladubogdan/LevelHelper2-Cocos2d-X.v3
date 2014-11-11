@@ -38,7 +38,7 @@
 				<key>fixedRotation</key>
 				<false/>
 				<key>fixtureUUID</key>
-				<string>4F81F7B7-8E82-41DE-B75C-1178CE86F635</string>
+				<string>A349378F-EE45-400C-8FB5-50CC9902A669</string>
 				<key>genericFixture</key>
 				<dict>
 					<key>category</key>
@@ -72,7 +72,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>084FE5B8-FEDC-49C3-8655-8FF8A02120F4</string>
+			<string>B5546DD7-26D2-42DC-97FF-A1AEE27B4606</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -111,10 +111,12 @@
 			<real>0.0</real>
 			<key>name</key>
 			<string>frontWheelJoint</string>
+			<key>needsCopyReasignment</key>
+			<false/>
 			<key>nodeType</key>
 			<string>LHRevoluteJoint</string>
 			<key>parentUUID</key>
-			<string>084FE5B8-FEDC-49C3-8655-8FF8A02120F4</string>
+			<string>B5546DD7-26D2-42DC-97FF-A1AEE27B4606</string>
 			<key>relativePosA</key>
 			<string>{0.000000, 0.000000}</string>
 			<key>spriteAUUID</key>
@@ -147,10 +149,12 @@
 			<real>0.0</real>
 			<key>name</key>
 			<string>backWheelJoint</string>
+			<key>needsCopyReasignment</key>
+			<false/>
 			<key>nodeType</key>
 			<string>LHRevoluteJoint</string>
 			<key>parentUUID</key>
-			<string>084FE5B8-FEDC-49C3-8655-8FF8A02120F4</string>
+			<string>B5546DD7-26D2-42DC-97FF-A1AEE27B4606</string>
 			<key>relativePosA</key>
 			<string>{0.000000, 0.000000}</string>
 			<key>spriteAUUID</key>
@@ -226,7 +230,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>084FE5B8-FEDC-49C3-8655-8FF8A02120F4</string>
+			<string>B5546DD7-26D2-42DC-97FF-A1AEE27B4606</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -308,7 +312,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>084FE5B8-FEDC-49C3-8655-8FF8A02120F4</string>
+			<string>B5546DD7-26D2-42DC-97FF-A1AEE27B4606</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -342,7 +346,7 @@
 	<key>nodeType</key>
 	<string>LHAsset</string>
 	<key>parentUUID</key>
-	<string>EC0FA371-37FA-49A5-BB4E-02409E63F6A6</string>
+	<string>3565B8A7-C87E-4E09-ABC3-85D3A1A3A69D</string>
 	<key>rotation</key>
 	<real>0.0</real>
 	<key>scale</key>
@@ -355,7 +359,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>4F81F7B7-8E82-41DE-B75C-1178CE86F635</key>
+		<key>A349378F-EE45-400C-8FB5-50CC9902A669</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>
@@ -415,7 +419,7 @@
 		</array>
 	</dict>
 	<key>uuid</key>
-	<string>084FE5B8-FEDC-49C3-8655-8FF8A02120F4</string>
+	<string>B5546DD7-26D2-42DC-97FF-A1AEE27B4606</string>
 	<key>zOrder</key>
 	<integer>0</integer>
 </dict>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Version</key>
-	<integer>16</integer>
+	<integer>17</integer>
 	<key>NewProjectQuestion</key>
 	<string>Do you want to use the basic Cocos2d-X Xcode project template?</string>
 	<key>NewProjectInfo</key>

@@ -62,6 +62,7 @@ private:
     std::string _followedNodeUUID;
     Node* _followedNode;
     Point lastPosition;
+    Point initialPosition;
 };
 
 #endif //__LEVELHELPER_API_PARALLAX_H__

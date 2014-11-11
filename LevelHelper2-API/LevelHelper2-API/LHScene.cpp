@@ -34,6 +34,7 @@
 #include <sstream>
 using namespace std;
 
+#define kLHPinchThreshold 2.0
 
 using namespace cocos2d;
 
@@ -47,8 +48,9 @@ LHScene::LHScene()
     _lateLoadingNodes = NULL;
     _uiNode = NULL;
     _backUINode = NULL;
+    loadingInProgress = false;
     
-//    printf("lhscene constructor\n");
+    lastDistanceBetweenTouches = 0.0f;
 }
 
 LHScene::~LHScene()
@@ -154,6 +156,8 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     bool ret = Scene::initWithPhysics();
     if(ret)
     {
+        loadingInProgress = true;
+        
         _gameWorldNode = NULL;
         _uiNode = NULL;
         _backUINode = NULL;
@@ -181,6 +185,7 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         Color3B backgroundClr = dict->colorForKey("backgroundColor");
         glClearColor(backgroundClr.r/255.0f, backgroundClr.g/255.0f, backgroundClr.b/255.0f, 1.0f);
 
+        this->loadGameWorldInfoFromDictionary(dict);
         
         this->loadChildrenFromDictionary(dict);
         
@@ -188,66 +193,9 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 #endif
         
-        
-        this->loadGlobalGravityFromDictionary(dict);        
+        this->loadGlobalGravityFromDictionary(dict);
         this->loadPhysicsBoundariesFromDictionary(dict);
-        
-        
-        
-        
-        LHDictionary* gameWorldInfo = dict->dictForKey("gameWorld");
-        if(gameWorldInfo)
-        {
-            Size scr = LH_SCREEN_RESOLUTION;
-            
-            stringstream tempString;
-            tempString <<(int)scr.width<<"x"<<(int)scr.height;
-            std::string key = tempString.str(); //Converts this into string;
-            
-            std::string rectInf;
-            if(gameWorldInfo->objectForKey(key)){
-                rectInf = gameWorldInfo->stringForKey(key);
-                
-            }
-            else{
-                rectInf = gameWorldInfo->stringForKey("general");
-            }
-            
-            if(rectInf.length() > 0){
-                Rect bRect = RectFromString(rectInf);
-                Size designSize = getDesignResolutionSize();
-                Point offset = getDesignOffset();
-                
-                gameWorldRect = Rect(bRect.origin.x*designSize.width+ offset.x,
-                                     (1.0f-  bRect.origin.y)*designSize.height + offset.y,
-                                     bRect.size.width*designSize.width ,
-                                     -(bRect.size.height)*designSize.height);
-                
 
-                                
-//                DrawNode* gw = DrawNode::create();
-//                
-//                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()),
-//                                Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
-//                
-//                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMinY()),
-//                                                 Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
-//                
-//                gw->drawSegment(Point(gameWorldRect.getMaxX(), gameWorldRect.getMaxY()),
-//                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()), 1, Color4F::BLUE);
-//                gw->drawSegment(Point(gameWorldRect.getMinX(), gameWorldRect.getMaxY()),
-//                                                 Point(gameWorldRect.getMinX(), gameWorldRect.getMinY()), 1, Color4F::BLUE);
-//
-//                _gameWorld->addChild(gw);
-            }
-        }
-        
-        
-        
-        
-        
-        
-        
         this->performLateLoading();
         
         
@@ -261,6 +209,8 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 //        auto contactListener = EventListenerPhysicsContact::create();
 //        contactListener->onContactBegin = CC_CALLBACK_1(LHScene::onContactBegin, this);
 //        _eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
+        
+        loadingInProgress = false;
         
         ret = true;
     };
@@ -285,6 +235,39 @@ void LHScene::loadGlobalGravityFromDictionary(LHDictionary* dict)
         this->getPhysicsWorld()->setGravity(Point(gravityVector.x*gravityForce*100,
                                                   gravityVector.y*gravityForce*100));
 #endif
+    }
+}
+
+void LHScene::loadGameWorldInfoFromDictionary(LHDictionary* dict)
+{
+    LHDictionary* gameWorldInfo = dict->dictForKey("gameWorld");
+    if(gameWorldInfo)
+    {
+        Size scr = LH_SCREEN_RESOLUTION;
+        
+        stringstream tempString;
+        tempString <<(int)scr.width<<"x"<<(int)scr.height;
+        std::string key = tempString.str(); //Converts this into string;
+        
+        std::string rectInf;
+        if(gameWorldInfo->objectForKey(key)){
+            rectInf = gameWorldInfo->stringForKey(key);
+            
+        }
+        else{
+            rectInf = gameWorldInfo->stringForKey("general");
+        }
+        
+        if(rectInf.length() > 0){
+            Rect bRect = RectFromString(rectInf);
+            Size designSize = getDesignResolutionSize();
+            Point offset = getDesignOffset();
+            
+            gameWorldRect = Rect(bRect.origin.x*designSize.width+ offset.x,
+                                 (1.0f-  bRect.origin.y)*designSize.height + offset.y,
+                                 bRect.size.width*designSize.width ,
+                                 -(bRect.size.height)*designSize.height);
+        }
     }
 }
 
@@ -381,14 +364,22 @@ void LHScene::createPhysicsBoundarySectionFrom(Point from, Point to, const std::
 void LHScene::onEnter()
 {
     auto dispatcher = Director::getInstance()->getEventDispatcher();
-    auto listener = EventListenerTouchOneByOne::create();
-    listener->setSwallowTouches(false);
-    listener->onTouchBegan = CC_CALLBACK_2(LHScene::onTouchBegan, this);
-    listener->onTouchMoved = CC_CALLBACK_2(LHScene::onTouchMoved, this);
-    listener->onTouchEnded = CC_CALLBACK_2(LHScene::onTouchEnded, this);
-    listener->onTouchCancelled = CC_CALLBACK_2(LHScene::onTouchCancelled, this);
-    dispatcher->addEventListenerWithFixedPriority(listener, 1);
+    auto listener = EventListenerTouchAllAtOnce::create();
+
+    listener->onTouchesBegan = CC_CALLBACK_2(LHScene::onTouchesBegan, this);
+    listener->onTouchesMoved = CC_CALLBACK_2(LHScene::onTouchesMoved, this);
+    listener->onTouchesEnded = CC_CALLBACK_2(LHScene::onTouchesEnded, this);
+    listener->onTouchesCancelled = CC_CALLBACK_2(LHScene::onTouchesCancelled, this);
+    dispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     _touchListener = listener;
+  
+    //multi touch on iOS will only work if you call this inside AppController.mm
+    //[eaglView setMultipleTouchEnabled:YES];
+    
+    auto mouseListener = EventListenerMouse::create();
+    mouseListener->onMouseScroll = CC_CALLBACK_1(LHScene::onMouseScroll, this);
+    dispatcher->addEventListenerWithFixedPriority(mouseListener, 1);
+    _mouseListener = mouseListener;
     
     Scene::onEnter();
 }
@@ -400,11 +391,11 @@ void LHScene::onExit()
     dispatcher->removeEventListener(_touchListener);
     _touchListener = nullptr;
     
+    dispatcher->removeEventListener(_mouseListener);
+    _mouseListener = nullptr;
+    
     Scene::onExit();
 }
-
-
-
 
 void LHScene::addLateLoadingNode(Node* node){
     if(!_lateLoadingNodes) {
@@ -519,36 +510,179 @@ __Dictionary* LHScene::assetInfoForFile(const std::string& assetFileName)
 
 
 #pragma mark - TOUCHES
-bool LHScene::onTouchBegan(Touch* touch, Event* event){
-    
-    _ropeJointsCutStartPt = touch->getLocation();
+bool LHScene::onTouchBegan(Touch* touch, Event* event)
+{
     return true;
 }
-void LHScene::onTouchMoved(Touch* touch, Event* event){
+void LHScene::onTouchMoved(Touch* touch, Event* event)
+{
     
 }
-void LHScene::onTouchEnded(Touch* touch, Event* event){
- 
-    Point location = touch->getLocation();
+void LHScene::onTouchEnded(Touch* touch, Event* event)
+{
     
-//    CCLOG("TOUCH ENDED %f %f", location.x, location.y);
+}
+void LHScene::onTouchCancelled(Touch *touch, Event *event)
+{
+    
+}
+
+void LHScene::onTouchesBegan(const std::vector<Touch*>& touches, Event* event){
+    
+    if(touches.size() < 1){
+        return;
+    }
+    
+    Touch* touch = touches[0];
+    _ropeJointsCutStartPt = touch->getLocation();
+    
+    onTouchBegan(touch, event);//XXX Soon to be removed
+}
+
+
+void LHScene::onTouchesMoved(const std::vector<Touch*>& touches, Event* event)
+{
+    if(touches.size() < 1){
+        return;
+    }
+    
+    Touch * touch1 = (Touch*)touches[0];
+    onTouchMoved(touch1, event);//XXX Soon to be removed
+    
+    if(touches.size() < 2)return;
+    
+    Touch * touch2 = (Touch*)touches[1];
+    Point delta1 = touch1->getDelta();
+    Point delta2 = touch2->getDelta();
+    
+    if ((fabs(delta1.x)<kLHPinchThreshold && fabs(delta1.y)<kLHPinchThreshold) ||
+        (fabs(delta2.x)<kLHPinchThreshold && fabs(delta2.y)<kLHPinchThreshold)) {
+        return;
+    }
+    
+    Point p1 = touch1->getLocation();
+    Point p2 = touch2->getLocation();
+    float deltaX = p2.x-p1.x;
+    float deltaY = p2.y-p1.y;
+    float distance = fabs(sqrtf(deltaX*deltaX+deltaY*deltaY));
+    
+    if (!lastDistanceBetweenTouches) {
+        lastDistanceBetweenTouches = distance;
+        return;
+    }
+
+    bool close = false;
+    if (lastDistanceBetweenTouches >distance) {
+        close = true;
+    }
+
+    if ((delta1.x>0 && delta2.x<0) || (delta1.x<0 && delta2.x>0) ||
+        (delta1.y>0 && delta2.y<0) || (delta1.y<0 && delta2.y>0))
+    {
+        float delta = distance - lastDistanceBetweenTouches;
+        
+        Point location1 = touch1->getLocation();
+        Point location2 = touch2->getLocation();
+        Point center = Point((location1.x + location2.x)*0.5, (location1.y + location2.y)*0.5);
+        
+        this->didPinchAtLocation(center, delta, close);
+    }
+
+    lastDistanceBetweenTouches = distance;
+}
+void LHScene::didPinchAtLocation(Point centerTouch, float delta, bool closing)
+{
+    //CCLOG("DID PINCH AT %f %f delta %f close %d", centerTouch.x, centerTouch.y, delta, closing);
+    
+    centerTouch = this->convertToNodeSpace(centerTouch);
+    
+    __Array* cameras = this->getChildrenOfType<LHCamera*>();
+    
+    for(size_t i = 0; i< cameras->count(); ++i)
+    {
+        LHCamera* cam = (LHCamera*)cameras->getObjectAtIndex(i);
+        
+        if(cam->isActive() && cam->usePinchOrScrollWheelToZoom()){
+            
+            float zoomDelta = 0.2;
+            if(delta< 0){
+                zoomDelta = -0.2;
+            }
+            cam->pinchZoomWithScaleDeltaAndCenter(zoomDelta, centerTouch);
+        }
+    }
+}
+
+void LHScene::onTouchesEnded(const std::vector<Touch*>& touches, Event* event)
+{
+    if(touches.size() <= 0){
+        return;
+    }
+    
+    Touch* touch = touches[0];
+    Point location = touch->getLocation();
     
     __Array* ropeJoints = this->getChildrenOfType<LHRopeJointNode*>();
     
     for(size_t i = 0; i< ropeJoints->count(); ++i)
     {
         LHRopeJointNode* rope = (LHRopeJointNode*)ropeJoints->getObjectAtIndex(i);
-
+        
         if(rope->canBeCut())
         {
             rope->cutWithLineFromPointA(_ropeJointsCutStartPt,
                                         location);
         }
     }
+    
+    onTouchEnded(touch, event);//XXX Soon to be removed
 }
-void LHScene::onTouchCancelled(Touch *touch, Event *event){
 
+void LHScene::onTouchesCancelled(const std::vector<Touch*>& touches, Event *event)
+{
+    if(touches.size() <= 0){
+        return;
+    }
+    
+    Touch* touch = touches[0];
+    onTouchCancelled(touch, event);//XXX Soon to be removed
 }
+
+void LHScene::onMouseScroll(Event* event){
+    
+    if(event->getType() == Event::Type::MOUSE)
+    {
+        EventMouse* mouseEvent = dynamic_cast<EventMouse*>(event);
+        
+        float deltaY = mouseEvent->getScrollY();
+        
+        float x = mouseEvent->getCursorX();
+        float y = mouseEvent->getCursorY();
+        
+        Point location = this->convertToNodeSpace(Point(x,y));
+
+        __Array* cameras = this->getChildrenOfType<LHCamera*>();
+  
+        for(size_t i = 0; i< cameras->count(); ++i)
+        {
+            LHCamera* cam = (LHCamera*)cameras->getObjectAtIndex(i);
+            
+            if(cam->isActive() && cam->usePinchOrScrollWheelToZoom()){
+                
+                float newScale = _gameWorldNode->getScale();
+                if(deltaY > 0)
+                    newScale += 0.025*_gameWorldNode->getScale();
+                else if(deltaY <0)
+                    newScale -= 0.025*_gameWorldNode->getScale();
+                
+                float delta = newScale - _gameWorldNode->getScale();
+                
+                cam->pinchZoomWithScaleDeltaAndCenter(delta, location);
+            }
+        }
+    }
+}
+
 
 #pragma mark - BOX2D SUPPORT
 #if LH_USE_BOX2D
@@ -611,30 +745,4 @@ void LHScene::setGlobalGravity(Point gravity)
     this->getPhysicsWorld()->setGravity(gravity);
 #endif
 }
-
-
-//#pragma mark - COLLISION HANDLING
-//
-//#if LH_USE_BOX2D
-//
-//#else
-//
-//bool LHScene::onContactBegin(PhysicsContact& contact)
-//{
-//    CCLOG("LHSCENE CONTACT BEGIN");
-//    
-//    return true;
-//    //nothing to do - should be overwritten
-//}
-//int LHScene::collisionPreSolveCallback(PhysicsContact& contact){
-//    //nothing to do - should be overwritten
-//}
-//void LHScene::collisionPostSolveCallback(PhysicsContact& contact){
-//    //nothing to do - should be overwritten
-//}
-//void LHScene::collisionSeparateCallback(PhysicsContact& contact){
-//    //nothing to do - should be overwritten
-//}
-//#endif
-
 

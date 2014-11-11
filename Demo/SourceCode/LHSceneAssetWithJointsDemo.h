@@ -17,8 +17,8 @@ public:
 
     virtual std::string className();
     
-    virtual bool onTouchBegan(Touch* touch, Event* event);
-    
+    void onTouchesBegan(const std::vector<Touch*>& touches, Event* event);
+
 private:
     
 };

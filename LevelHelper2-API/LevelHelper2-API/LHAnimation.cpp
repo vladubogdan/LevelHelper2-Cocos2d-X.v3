@@ -365,8 +365,8 @@ Point LHAnimation::convertFramePosition(Point newPos, Node* animNode)
     LHNodeProtocol* protocol = dynamic_cast<LHNodeProtocol*>(animNode);
     if(protocol && protocol->isCamera())
     {
-        return Point(newPos.x,
-                     winSize.height + newPos.y);
+        return Point(winSize.width*0.5 - newPos.x,
+                     -winSize.height*0.5 - newPos.y);
     }
     
     Node* p = animNode->getParent();
@@ -382,7 +382,6 @@ Point LHAnimation::convertFramePosition(Point newPos, Node* animNode)
 
         if(p != nullptr){
             newPos.y += scene->getDesignResolutionSize().height;
-//            newPos.y += p->getContentSize().height;
         }
     }
     else{

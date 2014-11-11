@@ -82,6 +82,8 @@
         {
             CGSize s = CGSizeMake([eaglview getWidth], [eaglview getHeight]);
             cocos2d::Application::getInstance()->applicationScreenSizeChanged((int) s.width, (int) s.height);
+            
+            [eaglview setMultipleTouchEnabled:YES];
         }
     }
 }

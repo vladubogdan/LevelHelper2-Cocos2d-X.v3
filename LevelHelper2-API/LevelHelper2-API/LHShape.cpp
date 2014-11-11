@@ -53,9 +53,9 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->loadGenericInfoFromDictionary(dict);
         
         this->loadShapeFromDictionary(dict, scene);
-
-        this->setScaleX(1);
-        this->setScaleY(1);
+        
+//        this->setScaleX(1);
+//        this->setScaleY(1);
 
 #if LH_USE_BOX2D
         prnt->addChild(this);
@@ -75,7 +75,6 @@ bool LHShape::initWithDictionary(LHDictionary* dict, Node* prnt)
     }
     return false;
 }
-
 
 void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
 {
@@ -110,12 +109,15 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
         texture = Director::getInstance()->getTextureCache()->addImage(imagePath);
         
         if(texture){
-            Texture2D::TexParams texParams = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
             if(_tile){
-                texParams = {GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_REPEAT, GL_REPEAT};
+                Texture2D::TexParams texParams = {GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_REPEAT, GL_REPEAT};
+                texture->setTexParameters(texParams);
             }
-            
-            texture->setTexParameters(texParams);
+            else
+            {
+                Texture2D::TexParams texParams = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
+                texture->setTexParameters(texParams);
+            }
             _drawNode->setTexture(texture);
         }
     }
@@ -146,8 +148,8 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
     __Array* uvPoints       = __Array::create();
     __Array* colors         = __Array::create();
     
-    float scaleX = this->getScaleX();
-    float scaleY = this->getScaleY();
+//    float scaleX = this->getScaleX();
+//    float scaleY = this->getScaleY();
     
     Size imageSize;
     if(texture)
@@ -217,14 +219,14 @@ void LHShape::loadShapeFromDictionary(LHDictionary* dict, LHScene* scene)
         }
 
         
-        posA.x *= scaleX;
-        posA.y *= scaleY;
-        
-        posB.x *= scaleX;
-        posB.y *= scaleY;
-        
-        posC.x *= scaleX;
-        posC.y *= scaleY;
+//        posA.x *= scaleX;
+//        posA.y *= scaleY;
+//        
+//        posB.x *= scaleX;
+//        posB.y *= scaleY;
+//        
+//        posC.x *= scaleX;
+//        posC.y *= scaleY;
         
         
         _triangles.push_back(posA);

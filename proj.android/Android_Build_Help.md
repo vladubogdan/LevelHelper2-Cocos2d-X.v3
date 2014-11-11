@@ -3,7 +3,8 @@ In order to build for Android from inside Xcode you need to first set the enviro
 1. Select "Android Build" target.
 2. Go to "Build Phases" tab.
 3. Set your ANT_ROOT, NDK_ROOT, ANDROID_SDK_ROOT variables
-4. Build pressing "Command+B"
+4. Set your Android target where it says "#setup target as desired here" - e.g change "android-19" to whaterver you have installed on your computer
+5. Build pressing "Command+B"
 
 
 The system was setup to be used with Genymotion simulator. If you want to build for a device you need to change the platform

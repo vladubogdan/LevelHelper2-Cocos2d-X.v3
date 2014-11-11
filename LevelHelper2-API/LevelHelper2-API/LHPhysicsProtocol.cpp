@@ -179,10 +179,11 @@ void LHPhysicsProtocol::updatePhysicsTransform(){
     {
         LHScene* scene = (LHScene*)_node->getScene();
         LHGameWorldNode* gWNode = scene->getGameWorldNode();
-        Point worldPos = _node->getParent()->convertToWorldSpace(_node->getPosition());
-        worldPos = gWNode->convertToNodeSpace(worldPos);
-        Point gWPos = gWNode->getPosition();
-        worldPos = Point(worldPos.x - gWPos.x, worldPos.y - gWPos.y);
+        Point worldPos = _node->getPosition();
+        if(gWNode != _node->getParent()){
+            worldPos = _node->getParent()->convertToWorldSpace(worldPos);
+            worldPos = gWNode->convertToNodeSpace(worldPos);
+        }
         
         b2Vec2 b2Pos = scene->metersFromPoint(worldPos);
         float globalAngle =  LHNodeTransform::globalAngleFromLocalAngle(_node, _node->getRotation());
@@ -519,6 +520,15 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
                 Point ptB = triangles[i+1];
                 Point ptC = triangles[i+2];
                 
+                ptA.x *= scaleX;
+                ptA.y *= scaleY;
+
+                ptB.x *= scaleX;
+                ptB.y *= scaleY;
+
+                ptC.x *= scaleX;
+                ptC.y *= scaleY;
+
                 b2Vec2 *verts = new b2Vec2[3];
                 
                 verts[2] = scene->metersFromPoint(ptA);
@@ -589,29 +599,48 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
         }
         else if(LHShape::isLHShape(node))
         {
-//            NSArray* points = [(LHShape*)_node outlinePoints];
-//            
-//            std::vector< b2Vec2 > verts;
-//            
-//            for(NSValue* val in points){
-//                CGPoint pt = CGPointFromValue(val);
-//                pt.x *= scaleX;
-//                pt.y *= scaleY;
-//                
-//                verts.push_back([scene metersFromPoint:pt]);
-//            }
-//            
-//            b2Shape* shape = new b2ChainShape();
-//            ((b2ChainShape*)shape)->CreateChain (&(verts.front()), (int)verts.size());
-//            
-//            b2FixtureDef fixture;
-//            [self setupFixture:&fixture withInfo:fixInfo];
-//            
-//            fixture.shape = shape;
-//            _body->CreateFixture(&fixture);
-//            
-//            delete shape;
-//            shape = NULL;
+            LHShape* nodeShape = (LHShape*)node;
+            
+            std::vector<Point> points = nodeShape->outlinePoints();
+            
+            std::vector< b2Vec2 > verts;
+            
+            LHValue* lastPt = nullptr;
+            for(int i = 0; i < points.size(); ++i)
+            {
+                Point pt = points[i];
+                
+                pt.x *= scaleX;
+                pt.y *= scaleY;
+                
+                b2Vec2 v2 = scene->metersFromPoint(pt);
+                if(lastPt != nullptr)
+                {
+                    Point oldPt = lastPt->getPoint();
+                    b2Vec2 v1 = b2Vec2(oldPt.x, oldPt.y);
+                    
+                    if(b2DistanceSquared(v1, v2) > b2_linearSlop * b2_linearSlop)
+                    {
+                        verts.push_back(v2);
+                    }
+                }
+                else{
+                    verts.push_back(v2);
+                }
+                lastPt = LHValue::create(Point(v2.x, v2.y));
+            }
+
+            b2Shape* shape = new b2ChainShape();
+            ((b2ChainShape*)shape)->CreateChain (&(verts.front()), (int)verts.size());
+            
+            b2FixtureDef fixture;
+            setupFixtureWithInfo(&fixture, fixInfo);
+            
+            fixture.shape = shape;
+            _body->CreateFixture(&fixture);
+            
+            delete shape;
+            shape = NULL;
         }
         else{
             

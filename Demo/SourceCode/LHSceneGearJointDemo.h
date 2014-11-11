@@ -21,10 +21,10 @@ public:
 
     virtual std::string className();
     
-    virtual bool onTouchBegan(Touch* touch, Event* event);
-    virtual void onTouchMoved(Touch* touch, Event* event);
-    virtual void onTouchEnded(Touch* touch, Event* event);
-    virtual void onTouchCancelled(Touch *touch, Event *event);
+    virtual void onTouchesBegan(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesMoved(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+    virtual void onTouchesCancelled(const std::vector<Touch*>& touches, Event* event);
 
 private:
 

@@ -15,6 +15,7 @@
 
 LHParallaxLayer::LHParallaxLayer()
 {
+    initialPosition = Point();
 }
 
 LHParallaxLayer::~LHParallaxLayer()
@@ -53,6 +54,8 @@ bool LHParallaxLayer::initWithDictionary(LHDictionary* dict, Node* prnt)
 
         this->loadChildrenFromDictionary(dict);
 
+        initialPosition = this->getPosition();
+        
         return true;
     }
     

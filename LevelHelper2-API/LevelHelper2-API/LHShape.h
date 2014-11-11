@@ -66,13 +66,14 @@ public:
     virtual void updateRotation(float rotation);
 #endif
 
-    
 private:
     std::vector<Point> _triangles;
     std::vector<Point> _outline;
     bool _tile;
     Size _tileScale;
     LHDrawNode*        _drawNode;
+    
+    Size _contentSize;
     
     void loadShapeFromDictionary(LHDictionary* dict, LHScene* scene);
 };

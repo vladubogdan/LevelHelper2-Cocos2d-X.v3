@@ -61,8 +61,13 @@ bool LHSceneShapesDemo::initWithContentOfFile(const std::string& plistLevelFile)
     return retValue;
 }
 
-bool LHSceneShapesDemo::onTouchBegan(Touch* touch, Event* event)
+void LHSceneShapesDemo::onTouchesBegan(const std::vector<Touch*>& touches, Event* event)
 {
+    if(touches.size() < 1){
+        return;
+    }
+    Touch* touch = touches[0];
+    
     Point touchLocation = touch->getLocation();
     touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
 
@@ -70,10 +75,16 @@ bool LHSceneShapesDemo::onTouchBegan(Touch* touch, Event* event)
     this->createMouseJointForTouchLocation(touchLocation);
     
     //dont forget to call super
-    return LHScene::onTouchBegan(touch, event);
+    LHScene::onTouchesBegan(touches, event);
 }
-void LHSceneShapesDemo::onTouchMoved(Touch* touch, Event* event){
 
+void LHSceneShapesDemo::onTouchesMoved(const std::vector<Touch*>& touches, Event* event){
+    
+    if(touches.size() < 1){
+        return;
+    }
+    Touch* touch = touches[0];
+    
     Point touchLocation = touch->getLocation();
     touchLocation = this->getGameWorldNode()->convertToNodeSpace(touchLocation);
 
@@ -81,19 +92,19 @@ void LHSceneShapesDemo::onTouchMoved(Touch* touch, Event* event){
     this->setTargetOnMouseJoint(touchLocation);
     
     //dont forget to call super
-    LHScene::onTouchMoved(touch, event);
+    LHScene::onTouchesMoved(touches, event);
 }
-void LHSceneShapesDemo::onTouchEnded(Touch* touch, Event* event){
+void LHSceneShapesDemo::onTouchesEnded(const std::vector<Touch*>& touches, Event* event){
     
     this->destroyMouseJoint();
     
-    LHScene::onTouchEnded(touch, event);
+    LHScene::onTouchesEnded(touches, event);
 }
-void LHSceneShapesDemo::onTouchCancelled(Touch *touch, Event *event){
+void LHSceneShapesDemo::onTouchesCancelled(const std::vector<Touch*>& touches, Event *event){
 
     this->destroyMouseJoint();
     
-    LHScene::onTouchCancelled(touch, event);
+    LHScene::onTouchesCancelled(touches, event);
 }
 
 

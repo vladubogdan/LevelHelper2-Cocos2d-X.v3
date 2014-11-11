@@ -21,6 +21,12 @@
 #include "Box2d/Box2d.h"
 #endif
 
+//we implement this function because its missing in Windows Phone 8 c++ lib.
+double asinh(double x)
+{
+    return log(x + sqrt(x*x + 1.0));
+}
+
 double bisection(double g0, double g1, double epsilon,
                  double (*fp)(double, void *), void *data)
 {
@@ -568,6 +574,7 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
 //        
 //    Node::removeFromParent();
 //}
+
 
 
 

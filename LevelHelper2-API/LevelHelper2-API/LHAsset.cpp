@@ -12,6 +12,7 @@
 #include "LHScene.h"
 #include "LHDevice.h"
 #include "LHConfig.h"
+#include "LHGameWorldNode.h"
 
 LHAsset::LHAsset()
 {
@@ -47,6 +48,13 @@ bool LHAsset::initWithName(const std::string& nm, const std::string& assetFileNa
         setName(nm);
         LHScene* scene = (LHScene*)prnt->getScene();
         
+        LHGameWorldNode* gwNode = scene->getGameWorldNode();
+        float oldScale = gwNode->getScale();
+        Point oldPos = gwNode->getPosition();
+        gwNode->setScale(1.0f);
+        gwNode->setPosition(Point(0,0));
+        
+        
         LHDictionary* assetInfo = (LHDictionary*)scene->assetInfoForFile(assetFileName);
         if(assetInfo)
         {
@@ -59,7 +67,10 @@ bool LHAsset::initWithName(const std::string& nm, const std::string& assetFileNa
             prnt->addChild(this);
             this->loadChildrenFromDictionary(assetInfo);
         }
-                
+        
+        gwNode->setScale(oldScale);
+        gwNode->setPosition(oldPos);
+        
         return true;
     }
     return false;
@@ -87,6 +98,13 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
         _physicsBody = NULL;
         
         LHScene* scene = (LHScene*)prnt->getScene();
+        
+        LHGameWorldNode* gwNode = scene->getGameWorldNode();
+        float oldScale = gwNode->getScale();
+        Point oldPos = gwNode->getPosition();
+        gwNode->setScale(1.0f);
+        gwNode->setPosition(Point(0,0));
+        
         this->loadGenericInfoFromDictionary(dict);
         
 #if LH_USE_BOX2D
@@ -123,6 +141,9 @@ bool LHAsset::initWithDictionary(LHDictionary* dict, Node* prnt)
         }
 
         this->createAnimationsFromDictionary(dict);
+        
+        gwNode->setScale(oldScale);
+        gwNode->setPosition(oldPos);
         
         return true;
     }

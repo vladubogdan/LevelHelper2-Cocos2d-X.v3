@@ -26,6 +26,10 @@ package org.cocos2dx.HelloPlugins;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import org.cocos2dx.plugin.PluginWrapper;
+import org.cocos2dx.plugin.FacebookWrapper;
+
+import android.content.Intent;
+import android.os.Bundle;
 
 public class AppActivity extends Cocos2dxActivity {
     
@@ -36,6 +40,41 @@ public class AppActivity extends Cocos2dxActivity {
         
         PluginWrapper.init(this);
         PluginWrapper.setGLSurfaceView(glSurfaceView);
+        FacebookWrapper.onCreate(this);
         return glSurfaceView;
     }
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		PluginWrapper.onResume();
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		PluginWrapper.onPause();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		PluginWrapper.onDestroy();
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(!PluginWrapper.onActivityResult(requestCode, resultCode, data))
+		{
+			super.onActivityResult(requestCode, resultCode, data);
+		}
+        FacebookWrapper.onAcitivityResult(requestCode, resultCode, data);
+	}
+    
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        FacebookWrapper.onSaveInstanceState(outState);
+    }
+    
 }

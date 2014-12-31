@@ -62,6 +62,14 @@ public:
     int intForKey(const std::string& key){
         return this->valueForKey(key)->intValue();
     }
+    
+    void printAllKeys(){
+        __Array* keys = this->allKeys();
+        for(int i = 0; i < keys->count(); ++i){
+            __String* obj = (__String*)keys->getObjectAtIndex(i);
+            printf("KEY %d %s\n", i, obj->getCString());
+        }
+    }
 };
 
 #endif /* defined(__LevelHelper2API__LHDictionary__) */

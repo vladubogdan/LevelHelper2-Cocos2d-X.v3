@@ -1162,6 +1162,7 @@ CursorKind.CXX_FINAL_ATTR = CursorKind(404)
 CursorKind.CXX_OVERRIDE_ATTR = CursorKind(405)
 CursorKind.ANNOTATE_ATTR = CursorKind(406)
 CursorKind.ASM_LABEL_ATTR = CursorKind(407)
+CursorKind.PACKED_ATTR    = CursorKind(408)
 
 ###
 # Preprocessing
@@ -1241,6 +1242,9 @@ class Cursor(Structure):
         e.g., when references in one translation refer to an entity defined in
         another translation unit."""
         return conf.lib.clang_getCursorUSR(self)
+
+    def getRawComment(self):
+        return conf.lib.clang_Cursor_getRawCommentText(self)
 
     @property
     def kind(self):
@@ -3264,6 +3268,12 @@ functionList = [
   ("clang_Type_getSizeOf",
    [Type],
    c_ulonglong),
+
+  ("clang_Cursor_getRawCommentText",
+   [Cursor],
+   _CXString,
+   _CXString.from_result),
+
 ]
 
 class LibclangError(Exception):

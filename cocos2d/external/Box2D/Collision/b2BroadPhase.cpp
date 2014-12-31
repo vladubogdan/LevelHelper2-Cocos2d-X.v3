@@ -17,6 +17,8 @@
 */
 
 #include <Box2D/Collision/b2BroadPhase.h>
+#include <cstring>
+using namespace std;
 
 b2BroadPhase::b2BroadPhase()
 {
@@ -88,6 +90,7 @@ void b2BroadPhase::UnBufferMove(int32 proxyId)
 		if (m_moveBuffer[i] == proxyId)
 		{
 			m_moveBuffer[i] = e_nullProxy;
+			return;
 		}
 	}
 }

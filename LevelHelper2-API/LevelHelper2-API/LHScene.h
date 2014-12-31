@@ -23,7 +23,6 @@
  LHScene class is used to load a level file into Cocos2d-X v3 engine.
  End users will have to subclass this class in order to add they're own game logic.
  */
-using namespace cocos2d;
 
 class LHDevice;
 class LHBackUINode;

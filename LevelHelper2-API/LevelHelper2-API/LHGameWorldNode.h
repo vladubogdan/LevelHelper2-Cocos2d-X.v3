@@ -112,7 +112,7 @@ public:
     Point getGravity();
     void setGravity(Point val);
     
-    virtual void setPosition(const Vec2& position);
+    virtual void setPosition(const cocos2d::Vec2& position);
     virtual void setScale(float scale);
     
 private:
@@ -122,7 +122,7 @@ private:
     friend class LHBox2dCollisionHandling;
     friend class LHPhysicsProtocol;
     
-    void scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nodeB, Point contactPoint, float impulse);
+    void scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nodeB, cocos2d::Point contactPoint, float impulse);
     void scheduleDidEndContactBetweenNodeA(Node* nodeA, Node* nodeB);
     
     void removeScheduledContactsWithNode(Node* node);

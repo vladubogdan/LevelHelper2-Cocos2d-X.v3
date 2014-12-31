@@ -22,7 +22,6 @@
 
 float64 b2Timer::s_invFrequency = 0.0f;
 
-#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
 b2Timer::b2Timer()
@@ -73,14 +72,14 @@ void b2Timer::Reset()
     timeval t;
     gettimeofday(&t, 0);
     m_start_sec = t.tv_sec;
-    m_start_usec = t.tv_usec;
+    m_start_msec = t.tv_usec * 0.001f;
 }
 
 float32 b2Timer::GetMilliseconds() const
 {
     timeval t;
     gettimeofday(&t, 0);
-    return 1000.0f * (t.tv_sec - m_start_sec) + 0.001f * (t.tv_usec - m_start_usec);
+    return (t.tv_sec - m_start_sec) * 1000 + t.tv_usec * 0.001f - m_start_msec;
 }
 
 #else

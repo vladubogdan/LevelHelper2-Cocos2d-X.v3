@@ -172,8 +172,14 @@ void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, bool 
                 float strength = (maxDistance - distance) / maxDistance;
                 float force = strength * maxForce;
                 float angle = atan2f(b2BodyPosition.y - b2TouchPosition.y, b2BodyPosition.x - b2TouchPosition.x);
-
-                b->ApplyLinearImpulse(b2Vec2(cosf(angle) * force, sinf(angle) * force), b->GetPosition(), true);
+                
+                #ifdef B2_MOTOR_JOINT_H
+                    //2.3.x
+                    b->ApplyLinearImpulse(b2Vec2(cosf(angle) * force, sinf(angle) * force), b->GetPosition(), true);
+                #else
+                    //2.2.1
+                    b->ApplyLinearImpulse(b2Vec2(cosf(angle) * force, sinf(angle) * force), b->GetPosition());
+                #endif
             }
         }
         else{
@@ -184,8 +190,14 @@ void LHGravityArea::visit(Renderer *renderer, const Mat4& parentTransform, bool 
             if(rect.containsPoint(pos))
             {
                 float force = this->getForce()/ptm;
-                
+
+                #ifdef B2_MOTOR_JOINT_H
+                //2.3.x
                 b->ApplyLinearImpulse(b2Vec2(_direction.x * force, _direction.y * force), b->GetPosition(), true);
+                #else
+                //2.2.1
+                b->ApplyLinearImpulse(b2Vec2(_direction.x * force, _direction.y * force), b->GetPosition());
+                #endif
             }
         }
 	}

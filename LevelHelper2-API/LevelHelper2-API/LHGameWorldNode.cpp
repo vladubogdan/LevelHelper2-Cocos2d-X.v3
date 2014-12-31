@@ -89,8 +89,9 @@ bool LHGameWorldNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->loadGenericInfoFromDictionary(dict);
         
         this->setPosition(Point(0,0));
+#if COCOS2D_VERSION < 0x00030300
         this->setContentSize(prnt->getScene()->getContentSize());
-        
+#endif
         this->loadChildrenFromDictionary(dict);
         
         
@@ -303,8 +304,19 @@ void LHGameWorldNode::setGravity(Point gravity){
     grv.Set(gravity.x, gravity.y);
     this->getBox2dWorld()->SetGravity(grv);
 }
+#else
 
-void LHGameWorldNode::setPosition(const Vec2& position){
+Point LHGameWorldNode::getGravity(){
+    Vec2 grv = this->getScene()->getPhysicsWorld()->getGravity();
+    return Point(grv.x, grv.y);
+}
+void LHGameWorldNode::setGravity(Point gravity){
+    this->getScene()->getPhysicsWorld()->setGravity(gravity);
+}
+
+#endif
+
+void LHGameWorldNode::setPosition(const cocos2d::Vec2& position){
     if(((LHScene*)this->getScene())->loadingInProgress){
         return;
     }
@@ -319,4 +331,4 @@ void LHGameWorldNode::setScale(float scale){
 }
 
 
-#endif
+

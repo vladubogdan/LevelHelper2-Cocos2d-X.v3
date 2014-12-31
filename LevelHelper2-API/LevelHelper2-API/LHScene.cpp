@@ -36,10 +36,11 @@ using namespace std;
 
 #define kLHPinchThreshold 2.0
 
-using namespace cocos2d;
-
 LHScene::LHScene()
 {
+#if LH_USE_BOX2D
+    _box2dCollision = NULL;
+#endif
     _currentDev = NULL;
     _touchListener = NULL;
     _loadedAssetsInformations = NULL;
@@ -99,10 +100,16 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 {
     std::string fullPath = FileUtils::getInstance()->fullPathForFilename(plistLevelFile);
     
-    LHDictionary* dict = (LHDictionary*)__Dictionary::createWithContentsOfFile(fullPath.c_str());
+    if(!FileUtils::getInstance()->isFileExist(fullPath))
+    {
+        printf("\nERROR: Could not load level file %s. The file located at %s doesn't exist.\n", plistLevelFile.c_str(), fullPath.c_str());
+        return false;
+    }
     
+    LHDictionary* dict = (LHDictionary*)__Dictionary::createWithContentsOfFile(fullPath.c_str());
+        
     if(!dict){
-        printf("ERROR: Could not load level file %s. The file located at %s does not appear to be valid.", plistLevelFile.c_str(), fullPath.c_str());
+        printf("\nERROR: Could not load level file %s. The file located at %s does not appear to be valid.\n", plistLevelFile.c_str(), fullPath.c_str());
         return false;
     }
 
@@ -112,6 +119,11 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     
     designResolutionSize = dict->sizeForKey("designResolution");
     LHArray* devsInfo = dict->arrayForKey("devices");
+    
+    if(!devsInfo){
+        printf("\nERROR: Level doesn't contain valid devices.\n");
+        return false;
+    }
     
     for(int i = 0; i < devsInfo->count(); ++i)
     {

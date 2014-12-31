@@ -45,7 +45,9 @@ bool LHBackUINode::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->loadGenericInfoFromDictionary(dict);
         
         this->setPosition(Point(0,0));
+#if COCOS2D_VERSION < 0x00030300
         this->setContentSize(prnt->getScene()->getContentSize());
+#endif
         
         this->loadChildrenFromDictionary(dict);
         

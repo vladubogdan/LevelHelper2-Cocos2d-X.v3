@@ -17,24 +17,6 @@ import project_compile
 
 BUILD_CFIG_FILE="build-cfg.json"
 
-def select_toolchain_version(ndk_root):
-    '''Because ndk-r8e uses gcc4.6 as default. gcc4.6 doesn't support c++11. So we should select gcc4.7 when
-    using ndk-r8e. But gcc4.7 is removed in ndk-r9, so we should determine whether gcc4.7 exist.
-    Conclution:
-    ndk-r8e  -> use gcc4.7
-    ndk-r9   -> use gcc4.8
-    '''
-
-    if os.path.isdir(os.path.join(ndk_root,"toolchains", "arm-linux-androideabi-4.8")):
-        os.environ['NDK_TOOLCHAIN_VERSION'] = '4.8'
-        cocos.Logging.info("The Selected NDK toolchain version was 4.8 !")
-    elif os.path.isdir(os.path.join(ndk_root,"toolchains", "arm-linux-androideabi-4.7")):
-        os.environ['NDK_TOOLCHAIN_VERSION'] = '4.7'
-        cocos.Logging.info("The Selected NDK toolchain version was 4.7 !")
-    else:
-        message = "Couldn't find the gcc toolchain."
-        raise cocos.CCPluginError(message)
-
 class AndroidBuilder(object):
 
     CFG_KEY_COPY_TO_ASSETS = "copy_to_assets"
@@ -44,10 +26,9 @@ class AndroidBuilder(object):
     CFG_KEY_ALIAS = "alias"
     CFG_KEY_ALIAS_PASS = "alias_pass"
 
-    def __init__(self, verbose, cocos_root, app_android_root, no_res, proj_obj):
+    def __init__(self, verbose, app_android_root, no_res, proj_obj):
         self._verbose = verbose
 
-        self.cocos_root = cocos_root
         self.app_android_root = app_android_root
         self._no_res = no_res
         self._project = proj_obj
@@ -57,37 +38,6 @@ class AndroidBuilder(object):
     def _run_cmd(self, command):
         cocos.CMDRunner.run_cmd(command, self._verbose)
 
-    def _convert_path_to_cmd(self, path):
-        """ Convert path which include space to correct style which bash(mac) and cmd(windows) can treat correctly.
-        
-            eg: on mac: convert '/usr/xxx/apache-ant 1.9.3' to '/usr/xxx/apache-ant\ 1.9.3'
-            eg: on windows: convert '"c:\apache-ant 1.9.3"\bin' to '"c:\apache-ant 1.9.3\bin"'
-        """
-        ret = path
-        if cocos.os_is_mac():
-            ret = path.replace("\ ", " ").replace(" ", "\ ")
-
-        if cocos.os_is_win32():
-            ret = "\"%s\"" % (path.replace("\"", ""))
-
-        # print("!!!!! Convert %s to %s\n" % (path, ret))
-        return ret
-   
-    def _convert_path_to_python(self, path):
-        """ COnvert path which include space to correct style which python can treat correctly.
-
-            eg: on mac: convert '/usr/xxx/apache-ant\ 1.9.3' to '/usr/xxx/apache-ant 1.9.3'
-            eg: on windows: convert '"c:\apache-ant 1.9.3"\bin' to 'c:\apache-ant 1.9.3\bin'
-        """
-        ret = path
-        if cocos.os_is_mac():
-            ret = path.replace("\ ", " ")
-
-        if cocos.os_is_win32():
-            ret = ret.replace("\"", "")
-
-        # print("!!!!! Convert %s to %s\n" % (path, ret))
-        return ret
 
     def _parse_cfg(self):
         self.cfg_path = os.path.join(self.app_android_root, BUILD_CFIG_FILE)
@@ -143,7 +93,7 @@ class AndroidBuilder(object):
 
     def _write_ant_properties(self, cfg):
         ant_cfg_file = os.path.join(self.app_android_root, "ant.properties")
-        file_obj = open(ant_cfg_file, "a")
+        file_obj = open(ant_cfg_file, "a+")
         for key in cfg.keys():
             str_cfg = "%s=%s\n" % (key, cfg[key])
             file_obj.write(str_cfg)
@@ -153,23 +103,24 @@ class AndroidBuilder(object):
     def _move_cfg(self, cfg):
         # add into ant.properties
         ant_cfg_file = os.path.join(self.app_android_root, "ant.properties")
-        file_obj = open(ant_cfg_file)
-        pattern = re.compile(r"^key\.store=(.+)")
-        keystore = None
-        for line in file_obj:
-            str1 = line.replace(' ', '')
-            str2 = str1.replace('\t', '')
-            match = pattern.match(str2)
-            if match is not None:
-                keystore = match.group(1)
-                break
-
-        file_obj.close()
+        try:
+            keystore = None
+            file_obj = open(ant_cfg_file)
+            pattern = re.compile(r"^key\.store=(.+)")
+            for line in file_obj:
+                str1 = line.replace(' ', '')
+                str2 = str1.replace('\t', '')
+                match = pattern.match(str2)
+                if match is not None:
+                    keystore = match.group(1)
+                    break
+            file_obj.close()
+        except:
+            pass
 
         if keystore is None:
             # ant.properties not have the config for sign
             self._write_ant_properties(cfg)
-
     def remove_c_libs(self, libs_dir):
         for file_name in os.listdir(libs_dir):
             lib_file = os.path.join(libs_dir,  file_name)
@@ -178,16 +129,84 @@ class AndroidBuilder(object):
                 if ext == ".a" or ext == ".so":
                     os.remove(lib_file)
                     
-                    
-    def do_ndk_build(self, ndk_build_param, build_mode):
+    def update_project(self, sdk_root, android_platform):
+        sdk_tool_path = os.path.join(sdk_root, "tools", "android")
+        app_android_root = self.app_android_root
+
+        # check the android platform
+        target_str = self.check_android_platform(sdk_root, android_platform, app_android_root, False)
+
+        # update project
+        command = "%s update project -t %s -p %s" % (cocos.CMDRunner.convert_path_to_cmd(sdk_tool_path), target_str, app_android_root)
+        self._run_cmd(command)
+
+        # update lib-projects
+        self.update_lib_projects(sdk_root, sdk_tool_path, android_platform)
+
+    def get_toolchain_version(self, ndk_root, compile_obj):
+        ret_version = "4.8"
+
+        version_file_path = os.path.join(ndk_root, "RELEASE.TXT")
+        try:
+            versionFile = open(version_file_path)
+            lines = versionFile.readlines()
+            versionFile.close()
+
+            version_num = None
+            version_char = None
+            pattern = r'^[a-zA-Z]+(\d+)(\w)'
+            for line in lines:
+                str_line = line.lstrip()
+                match = re.match(pattern, str_line)
+                if match:
+                    version_num = int(match.group(1))
+                    version_char = match.group(2)
+                    break
+
+            if version_num is None:
+                cocos.Logging.warning("Parse NDK version from file %s failed." % version_file_path)
+            else:
+                version_char = version_char.lower()
+                if version_num > 10 or (version_num == 10 and cmp(version_char, 'c') >= 0):
+                    ret_version = "4.9"
+                else:
+                    compile_obj.add_warning_at_end(
+                '''The NDK version is not r10c or above.
+Your application may crash or freeze on Android L(5.0) when using BMFont and HttpClient.
+For More information:
+    https://github.com/cocos2d/cocos2d-x/issues/9114
+    https://github.com/cocos2d/cocos2d-x/issues/9138\n''')
+        except:
+            cocos.Logging.warning("Parse NDK version from file %s failed." % version_file_path)
+
+        cocos.Logging.info("NDK_TOOLCHAIN_VERSION: %s" % ret_version)
+        if ret_version == "4.8":
+            compile_obj.add_warning_at_end(
+                "Your application may crash when using c++ 11 regular expression with NDK_TOOLCHAIN_VERSION %s" % ret_version)
+
+        return ret_version
+
+    def do_ndk_build(self, ndk_build_param, build_mode, compile_obj):
         cocos.Logging.info('NDK build mode: %s' % build_mode)
         ndk_root = cocos.check_environment_variable('NDK_ROOT')
-        select_toolchain_version(ndk_root)
+
+        toolchain_version = self.get_toolchain_version(ndk_root, compile_obj)
 
         app_android_root = self.app_android_root
-        cocos_root = self.cocos_root
+        reload(sys)
+        sys.setdefaultencoding('utf8')
         ndk_path = os.path.join(ndk_root, "ndk-build")
-        module_paths = [os.path.join(app_android_root, path) for path in self.ndk_module_paths]
+
+        module_paths = []
+        for cfg_path in self.ndk_module_paths:
+            if cfg_path.find("${ENGINE_ROOT}") >= 0:
+                cocos_root = cocos.check_environment_variable("COCOS_X_ROOT")
+                module_paths.append(cfg_path.replace("${ENGINE_ROOT}", cocos_root))
+            elif cfg_path.find("${COCOS_FRAMEWORKS}") >= 0:
+                cocos_frameworks = cocos.check_environment_variable("COCOS_FRAMEWORKS")
+                module_paths.append(cfg_path.replace("${COCOS_FRAMEWORKS}", cocos_frameworks))
+            else:
+                module_paths.append(os.path.join(app_android_root, cfg_path))
 
         # delete template static and dynamic files
         obj_local_dir = os.path.join(self.app_android_root, "obj", "local")
@@ -205,10 +224,12 @@ class AndroidBuilder(object):
         
         ndk_module_path= 'NDK_MODULE_PATH=' + ndk_module_path
 
-        if ndk_build_param == None:
+        if ndk_build_param is None:
             ndk_build_cmd = '%s -C %s %s' % (ndk_path, app_android_root, ndk_module_path)
         else:
-            ndk_build_cmd = '%s -C %s %s %s' % (ndk_path, app_android_root, ''.join(str(e) for e in ndk_build_param), ndk_module_path)
+            ndk_build_cmd = '%s -C %s %s %s' % (ndk_path, app_android_root, ' '.join(ndk_build_param), ndk_module_path)
+
+        ndk_build_cmd = '%s NDK_TOOLCHAIN_VERSION=%s' % (ndk_build_cmd, toolchain_version)
 
         if build_mode == 'debug':
             ndk_build_cmd = '%s NDK_DEBUG=1' % ndk_build_cmd
@@ -235,24 +256,69 @@ class AndroidBuilder(object):
                 lib_path = match.group(1)
                 abs_lib_path = os.path.join(self.app_android_root, lib_path)
                 if os.path.isdir(abs_lib_path):
-                    api_level = self.check_android_platform(sdk_root, android_platform, abs_lib_path, True)
-                    str_api_level = "android-" + str(api_level)
-                    command = "%s update lib-project -p %s -t %s" % (self._convert_path_to_cmd(sdk_tool_path), abs_lib_path, str_api_level)
+                    target_str = self.check_android_platform(sdk_root, android_platform, abs_lib_path, True)
+                    command = "%s update lib-project -p %s -t %s" % (cocos.CMDRunner.convert_path_to_cmd(sdk_tool_path), abs_lib_path, target_str)
                     self._run_cmd(command)
+
+
+    def select_default_android_platform(self, min_api_level):
+        ''' select a default android platform in SDK_ROOT
+        '''
+
+        sdk_root = cocos.check_environment_variable('ANDROID_SDK_ROOT')
+        platforms_dir = os.path.join(sdk_root, "platforms")
+        ret_num = -1
+        ret_platform = ""
+        if os.path.isdir(platforms_dir):
+            for dir_name in os.listdir(platforms_dir):
+                if not os.path.isdir(os.path.join(platforms_dir, dir_name)):
+                    continue
+
+                num = self.get_api_level(dir_name, raise_error=False)
+                if num >= min_api_level:
+                    if ret_num == -1 or ret_num > num:
+                        ret_num = num
+                        ret_platform = dir_name
+
+        if ret_num != -1:
+            return ret_platform
+        else:
+            return None
+
+
+    def get_api_level(self, target_str, raise_error=True):
+        special_targats_info = {
+            "android-4.2" : 17,
+            "android-L" : 20
+        }
+
+        if special_targats_info.has_key(target_str):
+            ret = special_targats_info[target_str]
+        else:
+            match = re.match(r'android-(\d+)', target_str)
+            if match is not None:
+                ret = int(match.group(1))
+            else:
+                if raise_error:
+                    raise cocos.CCPluginError("%s is not a valid android target platform." % target_str)
+                else:
+                    ret = -1
+
+        return ret
 
     def get_target_config(self, proj_path):
         property_file = os.path.join(proj_path, "project.properties")
         if not os.path.isfile(property_file):
             raise cocos.CCPluginError("Can't find file \"%s\"" % property_file)
 
-        patten = re.compile(r'^target=android-(\d+)')
+        patten = re.compile(r'^target=(.+)')
         for line in open(property_file):
             str1 = line.replace(' ', '')
             str2 = str1.replace('\t', '')
             match = patten.match(str2)
             if match is not None:
                 target = match.group(1)
-                target_num = int(target)
+                target_num = self.get_api_level(target)
                 if target_num > 0:
                     return target_num
 
@@ -265,50 +331,47 @@ class AndroidBuilder(object):
         if android_platform is None:
             # not specified platform, found one
             cocos.Logging.info('Android platform not specified, searching a default one...')
-            ret = cocos.select_default_android_platform(min_platform)
+            ret = self.select_default_android_platform(min_platform)
         else:
             # check whether it's larger than min_platform
-            if android_platform < min_platform:
+            select_api_level = self.get_api_level(android_platform)
+            if select_api_level < min_platform:
                 if auto_select:
                     # select one for project
-                    ret = cocos.select_default_android_platform(min_platform)
+                    ret = self.select_default_android_platform(min_platform)
                 else:
                     # raise error
-                    raise cocos.CCPluginError("The android-platform of project \"%s\" should be equal/larger than %d, but %d is specified." % (proj_path, min_platform, android_platform))
+                    raise cocos.CCPluginError("The android-platform of project \"%s\" should be equal/larger than %d, but %d is specified." % (proj_path, min_platform, select_api_level))
 
         if ret is None:
             raise cocos.CCPluginError("Can't find right android-platform for project : \"%s\". The android-platform should be equal/larger than %d" % (proj_path, min_platform))
 
-        platform_path = "android-%d" % ret
-        ret_path = os.path.join(self._convert_path_to_python(sdk_root), "platforms", platform_path)
+        ret_path = os.path.join(cocos.CMDRunner.convert_path_to_python(sdk_root), "platforms", ret)
         if not os.path.isdir(ret_path):
-            raise cocos.CCPluginError("The directory \"%s\" can't be found in android SDK" % platform_path)
+            raise cocos.CCPluginError("The directory \"%s\" can't be found in android SDK" % ret)
+
+        special_platforms_info = {
+            "android-4.2" : "android-17"
+        }
+        if special_platforms_info.has_key(ret):
+            ret = special_platforms_info[ret]
 
         return ret
 
                 
-    def do_build_apk(self, sdk_root, ant_root, android_platform, build_mode, output_dir, custom_step_args, compile_obj):
-        sdk_tool_path = os.path.join(sdk_root, "tools", "android")
-        cocos_root = self.cocos_root
+    def do_build_apk(self, sdk_root, ant_root, build_mode, output_dir, custom_step_args, compile_obj):
         app_android_root = self.app_android_root
-
-        # check the android platform
-        api_level = self.check_android_platform(sdk_root, android_platform, app_android_root, False)
-
-        # update project
-        str_api_level = "android-" + str(api_level)
-        command = "%s update project -t %s -p %s" % (self._convert_path_to_cmd(sdk_tool_path), str_api_level, app_android_root)
-        self._run_cmd(command)
-
-        # update lib-projects
-        self.update_lib_projects(sdk_root, sdk_tool_path, android_platform)
 
         # copy resources
         self._copy_resources(custom_step_args)
 
         # check the project config & compile the script files
         assets_dir = os.path.join(app_android_root, "assets")
-        compile_obj.compile_scripts(assets_dir, assets_dir)
+        if self._project._is_lua_project():
+            compile_obj.compile_lua_scripts(assets_dir, assets_dir)
+
+        if self._project._is_js_project():
+            compile_obj.compile_js_scripts(assets_dir, assets_dir)
 
         # run ant build
         ant_path = os.path.join(ant_root, 'ant')
@@ -321,7 +384,7 @@ class AndroidBuilder(object):
         # invoke custom step: pre-ant-build
         self._project.invoke_custom_step_script(cocos_project.Project.CUSTOM_STEP_PRE_ANT_BUILD, target_platform, args_ant_copy)
 
-        command = "%s clean %s -f %s -Dsdk.dir=%s" % (self._convert_path_to_cmd(ant_path), build_mode, buildfile_path, self._convert_path_to_cmd(sdk_root))
+        command = "%s clean %s -f %s -Dsdk.dir=%s" % (cocos.CMDRunner.convert_path_to_cmd(ant_path), build_mode, buildfile_path, cocos.CMDRunner.convert_path_to_cmd(sdk_root))
         self._run_cmd(command)
 
         # invoke custom step: post-ant-build
@@ -418,7 +481,7 @@ class AndroidBuilder(object):
 
     def _zipalign_apk(self, apk_file, aligned_file, sdk_root):
         align_path = os.path.join(sdk_root, "tools", "zipalign")
-        align_cmd = "%s 4 %s %s" % (self._convert_path_to_cmd(align_path), apk_file, aligned_file)
+        align_cmd = "%s 4 %s %s" % (cocos.CMDRunner.convert_path_to_cmd(align_path), apk_file, aligned_file)
         if os.path.exists(aligned_file):
             os.remove(aligned_file)
         self._run_cmd(align_cmd)

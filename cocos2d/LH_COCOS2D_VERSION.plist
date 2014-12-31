@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Version</key>
-	<string>3.2.0</string>
+	<string>3.3.0</string>
 	<key>Name</key>
 	<string>Cocos2d-X</string>
 	<key>RelativePath</key>

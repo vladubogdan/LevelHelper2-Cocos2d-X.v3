@@ -18,6 +18,7 @@ import subprocess
 import os
 import json
 import inspect
+import shutil
 
 import cocos
 
@@ -114,6 +115,8 @@ class CCPluginLuaCompile(cocos.CCPlugin):
         self._current_src_dir = None
         self._src_dir_arr = self.normalize_path_in_list(options.src_dir_arr)
         self._dst_dir = options.dst_dir
+        if not os.path.isabs(self._dst_dir):
+            self._dst_dir = os.path.abspath(self._dst_dir)
         self._verbose = options.verbose
         self._workingdir = workingdir
         self._lua_files = {}
@@ -121,6 +124,7 @@ class CCPluginLuaCompile(cocos.CCPlugin):
         self._encryptkey = options.encryptkey
         self._encryptsign = options.encryptsign
         self._luajit_exe_path = self.get_luajit_path()
+        self._disable_compile = options.disable_compile
 
         if self._luajit_exe_path is None:
             raise cocos.CCPluginError("Can't find right luajit for current system.")
@@ -130,6 +134,8 @@ class CCPluginLuaCompile(cocos.CCPlugin):
     def normalize_path_in_list(self, list):
         for i in list:
             tmp = os.path.normpath(i)
+            if not os.path.isabs(tmp):
+                tmp = os.path.abspath(tmp)
             list[list.index(i)] = tmp
         return list
 
@@ -183,7 +189,8 @@ class CCPluginLuaCompile(cocos.CCPlugin):
         cocos.Logging.debug("compiling lua (%s) to bytecode..." % lua_file)
 
         with cocos.pushd(self._luajit_dir):
-            self._run_cmd(self._luajit_exe_path + " -b " + lua_file+ " " + output_file)
+            cmd_str = "\"%s\" -b \"%s\" \"%s\"" % (self._luajit_exe_path, lua_file, output_file)
+            self._run_cmd(cmd_str)
 
     # TODO
     # def compress_js(self):
@@ -209,13 +216,17 @@ class CCPluginLuaCompile(cocos.CCPlugin):
         - `self`:
         """
 
-        cocos.Logging.info("compiling lua script files to bytecode")
+        cocos.Logging.info("processing lua script files")
         index = 0
         for src_dir in self._src_dir_arr:
             for lua_file in self._lua_files[src_dir]:
                 self._current_src_dir = src_dir
                 dst_lua_file = self.get_output_file_path(lua_file)
-                self.compile_lua(lua_file, dst_lua_file)
+                if self._disable_compile:
+                    shutil.copy(lua_file, dst_lua_file)
+                else:
+                    self.compile_lua(lua_file, dst_lua_file)                   
+
                 if self._isEncrypt == True:
                     bytesFile = open(dst_lua_file, "rb+")
                     encryBytes = encrypt(bytesFile.read(), self._encryptkey)
@@ -276,6 +287,9 @@ class CCPluginLuaCompile(cocos.CCPlugin):
         parser.add_option("-b", "--encryptsign",
                           dest="encryptsign",default="XXTEA",
                           help="encrypt sign")
+        parser.add_option("--disable-compile",
+                          action="store_true", dest="disable_compile", default=False,
+                          help="Whether or not to compile")
 
         (options, args) = parser.parse_args(argv)
 

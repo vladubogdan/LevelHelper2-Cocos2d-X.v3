@@ -160,6 +160,9 @@
 		6EF179BD1A65A89A00577215 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF179B31A65A89A00577215 /* HelloWorld.png */; };
 		6EF179BE1A65A89A00577215 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF179B31A65A89A00577215 /* HelloWorld.png */; };
 		6EF179BF1A65A89A00577215 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF179B31A65A89A00577215 /* HelloWorld.png */; };
+		6EF179E41A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF179E21A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp */; };
+		6EF179E51A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF179E21A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp */; };
+		6EF179E61A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF179E21A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -346,6 +349,8 @@
 		6EF179B11A65A89A00577215 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		6EF179B21A65A89A00577215 /* emptyButtonTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyButtonTexture.png; sourceTree = "<group>"; };
 		6EF179B31A65A89A00577215 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
+		6EF179E21A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneOnTheFlySpritesWithPhysicsDemo.cpp; path = ../Classes/LHSceneOnTheFlySpritesWithPhysicsDemo.cpp; sourceTree = "<group>"; };
+		6EF179E31A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneOnTheFlySpritesWithPhysicsDemo.h; path = ../Classes/LHSceneOnTheFlySpritesWithPhysicsDemo.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -437,6 +442,8 @@
 			children = (
 				6E9187B31A66388800A02F59 /* LHSceneDemo.cpp */,
 				6E9187B41A66388800A02F59 /* LHSceneDemo.h */,
+				6EF179E21A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp */,
+				6EF179E31A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.h */,
 				6E91881C1A663F0700A02F59 /* LHSceneComplexPhysicsDemo.cpp */,
 				6E91881D1A663F0700A02F59 /* LHSceneComplexPhysicsDemo.h */,
 				6E91879F1A66388800A02F59 /* BlueRobotSprite.cpp */,
@@ -845,6 +852,7 @@
 				6E9187D31A66388800A02F59 /* BlueRobotSprite.cpp in Sources */,
 				6E9187FD1A66388800A02F59 /* LHSceneNodesSubclassingDemo.cpp in Sources */,
 				6E9187FA1A66388800A02F59 /* LHSceneIntroductionDemo.cpp in Sources */,
+				6EF179E61A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp in Sources */,
 				6E9187E81A66388800A02F59 /* LHSceneCameraFollowDemo.cpp in Sources */,
 				6E9187D61A66388800A02F59 /* CameraPhysicsTest.cpp in Sources */,
 				6E9187E51A66388800A02F59 /* LHSceneCameraDemo.cpp in Sources */,
@@ -880,6 +888,7 @@
 				6E9188111A66388800A02F59 /* LHSceneUserPropertiesDemo.cpp in Sources */,
 				6E9187EA1A66388800A02F59 /* LHSceneCharacterAnimationDemo.cpp in Sources */,
 				6E9187F61A66388800A02F59 /* LHSceneGravityAreasDemo.cpp in Sources */,
+				6EF179E51A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp in Sources */,
 				6E9188081A66388800A02F59 /* LHSceneRemoveOnCollisionDemo.cpp in Sources */,
 				6E9187E41A66388800A02F59 /* LHSceneCameraDemo.cpp in Sources */,
 				6E9187F31A66388800A02F59 /* LHSceneGearJointDemo.cpp in Sources */,
@@ -917,6 +926,7 @@
 				6E9187D11A66388800A02F59 /* BlueRobotSprite.cpp in Sources */,
 				6E9187FB1A66388800A02F59 /* LHSceneNodesSubclassingDemo.cpp in Sources */,
 				6E9187F81A66388800A02F59 /* LHSceneIntroductionDemo.cpp in Sources */,
+				6EF179E41A6690E200577215 /* LHSceneOnTheFlySpritesWithPhysicsDemo.cpp in Sources */,
 				6E9187E61A66388800A02F59 /* LHSceneCameraFollowDemo.cpp in Sources */,
 				6E9187D41A66388800A02F59 /* CameraPhysicsTest.cpp in Sources */,
 				6E9187E31A66388800A02F59 /* LHSceneCameraDemo.cpp in Sources */,

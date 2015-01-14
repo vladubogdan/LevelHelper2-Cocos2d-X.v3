@@ -119,17 +119,6 @@ static void LHSetupb2FixtureWithInfo(b2FixtureDef* fixture, ValueMap& dict)
     fixture->filter.categoryBits= dict["category"].asInt();
 }
 
-static void LHSetupb2FixtureWithInfo(b2FixtureDef* fixture, LHDictionary* dict)
-{
-    fixture->density     = dict->floatForKey("density");
-    fixture->friction    = dict->floatForKey("friction");
-    fixture->restitution = dict->floatForKey("restitution");
-    fixture->isSensor    = dict->boolForKey("sensor");
-    
-    fixture->filter.maskBits    = dict->intForKey("mask");
-    fixture->filter.categoryBits= dict->intForKey("category");
-}
-
 LHBodyShape::LHBodyShape()
 {
     m_box2dFixture = NULL;
@@ -259,7 +248,7 @@ bool LHBodyShape::initWithValueMap(ValueMap& dict, b2Body* body, Node* node, LHS
     return false;
 }
 
-LHBodyShape* LHBodyShape::createCircleWithDictionary(LHDictionary* dict, b2Body* body, Node* node, LHScene* scene, Size size)
+LHBodyShape* LHBodyShape::createCircleWithDictionary(ValueMap& dict, b2Body* body, Node* node, LHScene* scene, Size size)
 {
     LHBodyShape *ret = new LHBodyShape();
     if (ret && ret->initCircleWithDictionary(dict, body, node, scene, size))
@@ -274,11 +263,11 @@ LHBodyShape* LHBodyShape::createCircleWithDictionary(LHDictionary* dict, b2Body*
     }
 }
 
-bool LHBodyShape::initCircleWithDictionary(LHDictionary* dict, b2Body* body, Node* node, LHScene* scene, Size size)
+bool LHBodyShape::initCircleWithDictionary(ValueMap& dict, b2Body* body, Node* node, LHScene* scene, Size size)
 {
     {
-        shapeName   = dict->stringForKey("name");
-        shapeID     = dict->intForKey("shapeID");
+        shapeName   = dict["name"].asString();
+        shapeID     = dict["shapeID"].asInt();
         
         b2CircleShape* shape = new b2CircleShape();
         shape->m_radius = size.width*0.5;
@@ -299,7 +288,7 @@ bool LHBodyShape::initCircleWithDictionary(LHDictionary* dict, b2Body* body, Nod
 }
 
 
-LHBodyShape* LHBodyShape::createRectangleWithDictionary(LHDictionary* dict, b2Body* body, Node* node, LHScene* scene, Size size)
+LHBodyShape* LHBodyShape::createRectangleWithDictionary(ValueMap& dict, b2Body* body, Node* node, LHScene* scene, Size size)
 {
     LHBodyShape *ret = new LHBodyShape();
     if (ret && ret->initRectangleWithDictionary(dict, body, node, scene, size))
@@ -314,11 +303,11 @@ LHBodyShape* LHBodyShape::createRectangleWithDictionary(LHDictionary* dict, b2Bo
     }
 }
 
-bool LHBodyShape::initRectangleWithDictionary(LHDictionary* dict, b2Body* body, Node* node, LHScene* scene, Size size)
+bool LHBodyShape::initRectangleWithDictionary(ValueMap& dict, b2Body* body, Node* node, LHScene* scene, Size size)
 {
     {
-        shapeName   = dict->stringForKey("name");
-        shapeID     = dict->intForKey("shapeID");
+        shapeName   = dict["name"].asString();
+        shapeID     = dict["shapeID"].asInt();
         
         b2PolygonShape* shape = new b2PolygonShape();
         shape->SetAsBox(size.width*0.5f, size.height*0.5f);
@@ -338,7 +327,7 @@ bool LHBodyShape::initRectangleWithDictionary(LHDictionary* dict, b2Body* body, 
     return false;
 }
 
-LHBodyShape* LHBodyShape::createWithDictionary(LHDictionary* dict, LHArray* shapePoints, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
+LHBodyShape* LHBodyShape::createWithDictionary(ValueMap& dict, ValueVector& shapePoints, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
 {
     LHBodyShape *ret = new LHBodyShape();
     if (ret && ret->initWithDictionary(dict, shapePoints, body, node, scene, scaleX, scaleY))
@@ -353,20 +342,22 @@ LHBodyShape* LHBodyShape::createWithDictionary(LHDictionary* dict, LHArray* shap
     }
 }
 
-bool LHBodyShape::initWithDictionary(LHDictionary* dict, LHArray* shapePoints, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
+bool LHBodyShape::initWithDictionary(ValueMap& dict, ValueVector& shapePoints, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
 {
     {
-        shapeName   = dict->stringForKey("name");
-        shapeID     = dict->intForKey("shapeID");
+        shapeName   = dict["name"].asString();
+        shapeID     = dict["shapeID"].asInt();
         
         int flipx = scaleX < 0 ? -1 : 1;
         int flipy = scaleY < 0 ? -1 : 1;
         
         
-        for(int f = 0; f < shapePoints->count(); ++f)
+        for(int f = 0; f < shapePoints.size(); ++f)
         {
-            LHArray* fixPoints = shapePoints->arrayAtIndex(f);
-            int count = (int)fixPoints->count();
+            Value fixPointsValue = shapePoints[f];;
+            ValueVector fixPoints = fixPointsValue.asValueVector();
+            
+            int count = (int)fixPoints.size();
             if(count > 2)
             {
                 b2Vec2 *verts = new b2Vec2[count];
@@ -377,7 +368,8 @@ bool LHBodyShape::initWithDictionary(LHDictionary* dict, LHArray* shapePoints, b
                 {
                     const int idx = (flipx < 0 && flipy >= 0) || (flipx >= 0 && flipy < 0) ? count - i - 1 : i;
                     
-                    Point point = fixPoints->pointAtIndex(j);
+                    std::string pointStr = fixPoints[j].asString();
+                    Point point = PointFromString(pointStr);
                     
                     point.x *= scaleX;
                     point.y *= scaleY;
@@ -414,7 +406,7 @@ bool LHBodyShape::initWithDictionary(LHDictionary* dict, LHArray* shapePoints, b
 }
 
 
-LHBodyShape* LHBodyShape::createWithDictionaryAndTriangles(LHDictionary* dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
+LHBodyShape* LHBodyShape::createWithDictionaryAndTriangles(ValueMap& dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
 {
     LHBodyShape *ret = new LHBodyShape();
     if (ret && ret->initWithDictionaryAndTriangles(dict, triangles, body, node, scene, scaleX, scaleY))
@@ -429,11 +421,12 @@ LHBodyShape* LHBodyShape::createWithDictionaryAndTriangles(LHDictionary* dict, c
     }
 }
 
-bool LHBodyShape::initWithDictionaryAndTriangles(LHDictionary* dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
+bool LHBodyShape::initWithDictionaryAndTriangles(ValueMap& dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
 {
     {
-        shapeName   = dict->stringForKey("name");
-        shapeID     = dict->intForKey("shapeID");
+        shapeName   = dict["name"].asString();
+        shapeID     = dict["shapeID"].asInt();
+
         
         for(int i = 0;  i < triangles.size(); i=i+3)
         {
@@ -475,7 +468,7 @@ bool LHBodyShape::initWithDictionaryAndTriangles(LHDictionary* dict, const std::
     return false;
 }
 
-LHBodyShape* LHBodyShape::createChainWithDictionaryAndPoints(LHDictionary* dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
+LHBodyShape* LHBodyShape::createChainWithDictionaryAndPoints(ValueMap& dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
 {
     LHBodyShape *ret = new LHBodyShape();
     if (ret && ret->initChainWithDictionaryAndPoints(dict, points, close, body, node, scene, scaleX, scaleY))
@@ -490,11 +483,12 @@ LHBodyShape* LHBodyShape::createChainWithDictionaryAndPoints(LHDictionary* dict,
     }
 }
 
-bool LHBodyShape::initChainWithDictionaryAndPoints(LHDictionary* dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
+bool LHBodyShape::initChainWithDictionaryAndPoints(ValueMap& dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
 {
     {
-        shapeName   = dict->stringForKey("name");
-        shapeID     = dict->intForKey("shapeID");
+        shapeName   = dict["name"].asString();
+        shapeID     = dict["shapeID"].asInt();
+
         
         std::vector< b2Vec2 > verts;
         

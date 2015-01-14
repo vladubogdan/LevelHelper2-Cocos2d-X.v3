@@ -115,3 +115,89 @@ float LHUtils::LHRandomFloat(float Min, float Max){
 //    return ((arc4random()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
     return ((rand()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
 }
+
+
+ValueVector LHUtils::Array_To_ValueVector(__Array* arr)
+{
+    ValueVector ret;
+    
+    Ref* obj;
+    CCARRAY_FOREACH(arr, obj)
+    {
+        Value arrElement;
+        
+        __String* strVal = nullptr;
+        __Dictionary* dictVal = nullptr;
+        __Array* arrVal = nullptr;
+        __Double* doubleVal = nullptr;
+        __Bool* boolVal = nullptr;
+        __Float* floatVal = nullptr;
+        __Integer* intVal = nullptr;
+        
+        if ((strVal = dynamic_cast<__String *>(obj))) {
+            arrElement = Value(strVal->getCString());
+        } else if ((dictVal = dynamic_cast<__Dictionary*>(obj))) {
+            arrElement = Dictionary_To_ValueMap(dictVal);
+        } else if ((arrVal = dynamic_cast<__Array*>(obj))) {
+            arrElement = Array_To_ValueVector(arrVal);
+        } else if ((doubleVal = dynamic_cast<__Double*>(obj))) {
+            arrElement = Value(doubleVal->getValue());
+        } else if ((floatVal = dynamic_cast<__Float*>(obj))) {
+            arrElement = Value(floatVal->getValue());
+        } else if ((intVal = dynamic_cast<__Integer*>(obj))) {
+            arrElement = Value(intVal->getValue());
+        }  else if ((boolVal = dynamic_cast<__Bool*>(obj))) {
+            arrElement = boolVal->getValue() ? Value(true) : Value(false);
+        } else {
+            CCASSERT(false, "the type isn't suppored.");
+        }
+        
+        ret.push_back(arrElement);
+    }
+    return ret;
+}
+
+ValueMap LHUtils::Dictionary_To_ValueMap(__Dictionary* dict)
+{
+    ValueMap ret;
+    DictElement* pElement = nullptr;
+    CCDICT_FOREACH(dict, pElement)
+    {
+        Ref* obj = pElement->getObject();
+        
+        __String* strVal = nullptr;
+        __Dictionary* dictVal = nullptr;
+        __Array* arrVal = nullptr;
+        __Double* doubleVal = nullptr;
+        __Bool* boolVal = nullptr;
+        __Float* floatVal = nullptr;
+        __Integer* intVal = nullptr;
+        
+        Value dictElement;
+        
+        if ((strVal = dynamic_cast<__String *>(obj))) {
+            dictElement = Value(strVal->getCString());
+        } else if ((dictVal = dynamic_cast<__Dictionary*>(obj))) {
+            dictElement = Dictionary_To_ValueMap(dictVal);
+        } else if ((arrVal = dynamic_cast<__Array*>(obj))) {
+            dictElement = Array_To_ValueVector(arrVal);
+        } else if ((doubleVal = dynamic_cast<__Double*>(obj))) {
+            dictElement = Value(doubleVal->getValue());
+        } else if ((floatVal = dynamic_cast<__Float*>(obj))) {
+            dictElement = Value(floatVal->getValue());
+        } else if ((intVal = dynamic_cast<__Integer*>(obj))) {
+            dictElement = Value(intVal->getValue());
+        } else if ((boolVal = dynamic_cast<__Bool*>(obj))) {
+            dictElement = boolVal->getValue() ? Value(true) : Value(false);
+        } else {
+            CCASSERT(false, "the type isn't suppored.");
+        }
+        
+        const char* key = pElement->getStrKey();
+        if (key && strlen(key) > 0)
+        {
+            ret[key] = dictElement;
+        }
+    }
+    return ret;
+}

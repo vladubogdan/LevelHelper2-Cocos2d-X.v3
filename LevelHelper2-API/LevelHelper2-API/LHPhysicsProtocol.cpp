@@ -38,6 +38,8 @@
 
 #include "NodeTransform.h"
 
+#include "LHUtils.h"
+
 #if LH_USE_BOX2D
 #include "Box2d/Box2d.h"
 #include "LHBodyShape.h"
@@ -53,9 +55,10 @@ LHPhysicsProtocol::LHPhysicsProtocol()
 }
 LHPhysicsProtocol::~LHPhysicsProtocol()
 {
-
-    CC_SAFE_RELEASE(subShapes);
+#if LH_USE_BOX2D
+    CC_SAFE_DELETE(subShapes);
     _body = NULL;
+#endif
 }
 
 void LHPhysicsProtocol::shouldRemoveBody()
@@ -154,7 +157,7 @@ void LHPhysicsProtocol::removeBody()
         b2World* world = _body->GetWorld();
         if(world){
 
-            CC_SAFE_RELEASE(subShapes);
+            CC_SAFE_DELETE(subShapes);
             
             _body->SetUserData(NULL);
             if(!world->IsLocked()){
@@ -365,34 +368,30 @@ void LHPhysicsProtocol::visitPhysicsProtocol()
     }
 }
 
-void setupFixtureWithInfo(b2FixtureDef* fixture, LHDictionary* fixInfo)
-{
-    fixture->density     = fixInfo->floatForKey("density");
-    fixture->friction    = fixInfo->floatForKey("friction");
-    fixture->restitution = fixInfo->floatForKey("restitution");
-    fixture->isSensor    = fixInfo->boolForKey("sensor");
-    
-    fixture->filter.maskBits    = fixInfo->intForKey("mask");
-    fixture->filter.categoryBits= fixInfo->intForKey("category");
-}
-
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
     if(!dict)return;
-    
+    ValueMap map = LHUtils::Dictionary_To_ValueMap(dict);
+    this->loadPhysicsFromValueMap(map, scene);
+}
+
+void LHPhysicsProtocol::loadPhysicsFromValueMap(ValueMap dict, LHScene* scene)
+{
     Node* node = LH_GET_NODE_FROM_PHYSICS_PROTOCOL(this);
     if(!node)return;
 
-    int shapeType = dict->intForKey("shape");
-    int type  = dict->intForKey("type");
+    Value shapeTypeVal = dict["shape"];
+    int shapeType = 6;//editor
+    if(!shapeTypeVal.isNull())
+        shapeType= shapeTypeVal.asInt();
     
+    int type  = dict["type"].asInt();
     
     b2World* world = scene->getBox2dWorld();
     
     b2BodyDef bodyDef;
     bodyDef.type = (b2BodyType)type;
     
-//    Point position = node->convertToWorldSpaceAR(Point());
     Point position = node->getParent()->convertToWorldSpace(node->getPosition());
     b2Vec2 bodyPos = scene->metersFromPoint(position);
     bodyDef.position = bodyPos;
@@ -404,24 +403,20 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     _body = world->CreateBody(&bodyDef);
     _body->SetUserData(node);
     
-    _body->SetFixedRotation(dict->boolForKey("fixedRotation"));
-    _body->SetGravityScale(dict->floatForKey("gravityScale"));
+    _body->SetFixedRotation(dict["fixedRotation"].asBool());
+    _body->SetGravityScale(dict["gravityScale"].asFloat());
     
-    _body->SetSleepingAllowed(dict->boolForKey("allowSleep"));
-    _body->SetBullet(dict->boolForKey("bullet"));
+    _body->SetSleepingAllowed(dict["allowSleep"].asBool());
+    _body->SetBullet(dict["bullet"].asBool());
     
-    if(dict->objectForKey("angularDamping"))//all this properties were added in the same moment
-    {
-        _body->SetAngularDamping(dict->floatForKey("angularDamping"));
+    _body->SetAngularDamping(dict["angularDamping"].asFloat());
+    _body->SetAngularVelocity(dict["angularVelocity"].asFloat());//radians/second.
+    _body->SetLinearDamping(dict["linearDamping"].asFloat());
     
-        _body->SetAngularVelocity(dict->floatForKey("angularVelocity"));//radians/second.
+    std::string velStr = dict["linearVelocity"].asString();
+    Point linearVel = PointFromString(velStr);
+    _body->SetLinearVelocity(b2Vec2(linearVel.x,linearVel.y));
     
-        _body->SetLinearDamping(dict->floatForKey("linearDamping"));
-        
-        Point linearVel = dict->pointForKey("linearVelocity");
-        _body->SetLinearVelocity(b2Vec2(linearVel.x,linearVel.y));
-    }
-
     
     Size sizet = node->getContentSize();
     
@@ -437,16 +432,17 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     
     previousScale = Point(scaleX, scaleY);
     
-    
     sizet.width *= scaleX;
     sizet.height*= scaleY;
     
+    Value genericFixVal = dict["genericFixture"];
+    ValueMap fixInfo;
+    if(!genericFixVal.isNull()){
+        fixInfo = genericFixVal.asValueMap();
+    }
     
-    LHDictionary* fixInfo = dict->dictForKey("genericFixture");
-
-    
-    subShapes = __Array::create();
-    subShapes->retain();
+    subShapes = new __Array();
+    subShapes->init();
     
     if(shapeType == 0)//RECTANGLE
     {
@@ -522,10 +518,11 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     }
     else if(shapeType == 4)//OVAL
     {
-        LHArray* fixturesInfo = dict->arrayForKey("ovalShape");
+        Value fixturesInfoValue = dict["ovalShape"];
+        if(!fixturesInfoValue.isNull())
+        {
+            ValueVector fixturesInfo =fixturesInfoValue.asValueVector();
         
-        if(fixturesInfo){
-            
             LHBodyShape* shape = LHBodyShape::createWithDictionary(fixInfo,
                                                                    fixturesInfo,
                                                                    _body,
@@ -541,7 +538,7 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     }
     else if(shapeType == 5)//TRACED
     {
-        std::string fixUUID = dict->stringForKey("fixtureUUID");
+        std::string fixUUID = dict["fixtureUUID"].asString();
         LHArray* fixturesInfo = (LHArray*)scene->tracedFixturesWithUUID(fixUUID);
         if(!fixturesInfo){
             LHAsset* asset = this->assetParent();
@@ -551,8 +548,10 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
         }
         
         if(fixturesInfo){
+            
+            ValueVector fixVector = LHUtils::Array_To_ValueVector(fixturesInfo);
             LHBodyShape* shape = LHBodyShape::createWithDictionary(fixInfo,
-                                                                   fixturesInfo,
+                                                                   fixVector,
                                                                    _body,
                                                                    node,
                                                                    scene,

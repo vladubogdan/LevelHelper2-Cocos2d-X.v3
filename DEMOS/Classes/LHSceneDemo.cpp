@@ -21,6 +21,7 @@
 #include "LHSceneWaterAreaDemo.h"
 #include "LHSceneNodesSubclassingDemo.h"
 #include "LHSceneComplexPhysicsDemo.h"
+#include "LHSceneOnTheFlySpritesWithPhysicsDemo.h"
 
 //TESTS
 #include "CameraPhysicsTest.h"
@@ -51,6 +52,9 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     
     sceneNames.push_back("LHSceneIntroductionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
+        
+    sceneNames.push_back("LHSceneOnTheFlySpritesWithPhysicsDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneOnTheFlySpritesWithPhysicsDemo::create);
     
     sceneNames.push_back("LHSceneComplexPhysicsDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneComplexPhysicsDemo::create);

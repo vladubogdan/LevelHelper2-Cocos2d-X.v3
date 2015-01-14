@@ -15,6 +15,7 @@ using namespace cocos2d;
 
 class LHValue;
 
+
 class LHUtils
 {
 public:
@@ -35,6 +36,9 @@ public:
     static float LHPointLength(const Point& pt);
     
     static float LHRandomFloat(float Min, float Max);
+    
+    static ValueMap Dictionary_To_ValueMap(__Dictionary* dict);
+    static ValueVector Array_To_ValueVector(__Array* arr);
 };
 
 #endif //__LevelHelper2API__LHUtils__

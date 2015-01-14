@@ -32,20 +32,20 @@ public:
     static LHBodyShape* createWithValueMap(ValueMap& dict, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     virtual bool initWithValueMap(ValueMap& dict, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     
-    static LHBodyShape* createCircleWithDictionary(LHDictionary* dict, b2Body* body, Node* node, LHScene* scene,  Size size);
-    virtual bool initCircleWithDictionary(LHDictionary* dict, b2Body* body, Node* node, LHScene* scene,  Size size);
+    static LHBodyShape* createCircleWithDictionary(ValueMap& dict, b2Body* body, Node* node, LHScene* scene,  Size size);
+    virtual bool initCircleWithDictionary(ValueMap& dict, b2Body* body, Node* node, LHScene* scene,  Size size);
     
-    static LHBodyShape* createRectangleWithDictionary(LHDictionary* dict, b2Body* body, Node* node, LHScene* scene,  Size size);
-    virtual bool initRectangleWithDictionary(LHDictionary* dict, b2Body* body, Node* node, LHScene* scene,  Size size);
+    static LHBodyShape* createRectangleWithDictionary(ValueMap& dict, b2Body* body, Node* node, LHScene* scene,  Size size);
+    virtual bool initRectangleWithDictionary(ValueMap& dict, b2Body* body, Node* node, LHScene* scene,  Size size);
     
-    static LHBodyShape* createWithDictionary(LHDictionary* dict, LHArray* shapePoints, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
-    virtual bool initWithDictionary(LHDictionary* dict, LHArray* shapePoints, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
+    static LHBodyShape* createWithDictionary(ValueMap& dict, ValueVector& shapePoints, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
+    virtual bool initWithDictionary(ValueMap& dict, ValueVector& shapePoints, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     
-    static LHBodyShape* createWithDictionaryAndTriangles(LHDictionary* dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
-    virtual bool initWithDictionaryAndTriangles(LHDictionary* dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
+    static LHBodyShape* createWithDictionaryAndTriangles(ValueMap& dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
+    virtual bool initWithDictionaryAndTriangles(ValueMap& dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     
-    static LHBodyShape* createChainWithDictionaryAndPoints(LHDictionary* dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
-    virtual bool initChainWithDictionaryAndPoints(LHDictionary* dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
+    static LHBodyShape* createChainWithDictionaryAndPoints(ValueMap& dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
+    virtual bool initChainWithDictionaryAndPoints(ValueMap& dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     
     
     static bool LHValidateCentroid(b2Vec2* vs, int count);

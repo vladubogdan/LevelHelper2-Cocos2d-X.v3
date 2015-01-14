@@ -22,6 +22,44 @@ LHSprite::~LHSprite()
     this->shouldRemoveBody();    
 }
 
+void LHSprite::cacheSpriteFramesInfo(const std::string& imageFilePath, LHScene* scene)
+{
+    std::string plist_path = imageFilePath;
+    size_t extPos = plist_path.rfind('.');
+    if (extPos != std::string::npos)
+    {
+        // Erase the current extension.
+        plist_path.erase(extPos);
+        // Add the new extension.
+        plist_path.append(".plist");
+    }
+    
+    Texture2D *texture = Director::getInstance()->getTextureCache()->addImage(imageFilePath);
+    if (texture)
+    {
+        std::string fullPlistPath = FileUtils::getInstance()->fullPathForFilename(plist_path);
+        
+        std::string plist_content = FileUtils::getInstance()->getStringFromFile(fullPlistPath);
+        
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFileContent(plist_content, texture);
+        
+        ValueMap dictionary = FileUtils::getInstance()->getValueMapFromData(plist_content.c_str(), static_cast<int>(plist_content.size()));
+        
+        ValueMap& framesDict = dictionary["frames"].asValueMap();
+        
+        //here we add all bodies info found in this plist file
+        //I do it this way in order to avoid loading the file again
+        //this way - we only read this plist file once
+        for (auto iter = framesDict.begin(); iter != framesDict.end(); ++iter)
+        {
+            ValueMap& frameDict = iter->second.asValueMap();
+            std::string sprFrameName = iter->first;
+            Value& bodyInfo = frameDict["body"];
+            scene->setEditorBodyInfoForSpriteName(sprFrameName, imageFilePath, bodyInfo);
+        }
+    }
+}
+
 LHSprite* LHSprite::createWithFile(const std::string& filename, const std::string& folder, Node* prnt)
 {
     LHSprite *ret = new LHSprite();
@@ -54,12 +92,12 @@ bool LHSprite::initWithFilename(const std::string& filename, const std::string& 
 }
 
 LHSprite* LHSprite::createWithSpriteName(const std::string& spriteFrameName,
-                                         const std::string& plistFile,
-                                         const std::string& plistFolder,
+                                         const std::string& imageFile,
+                                         const std::string& folder,
                                          Node* prnt)
 {
     LHSprite *ret = new LHSprite();
-    if (ret && ret->initWithSpriteName(spriteFrameName, plistFile, plistFolder, prnt))
+    if (ret && ret->initWithSpriteName(spriteFrameName, imageFile, folder, prnt))
     {
         ret->autorelease();
         return ret;
@@ -71,21 +109,30 @@ LHSprite* LHSprite::createWithSpriteName(const std::string& spriteFrameName,
     }
 }
 bool LHSprite::initWithSpriteName(const std::string& spriteName,
-                                  const std::string& plistFile,
-                                  const std::string& plistFolder,
+                                  const std::string& imageFile,
+                                  const std::string& folder,
                                   Node* prnt)
 {
     LHScene* scene = (LHScene*)prnt->getScene();
     
-    std::string plistPath = LHUtils::getImagePathWithFilename(plistFile,
-                                                              plistFolder,
+    std::string imagePath = LHUtils::getImagePathWithFilename(imageFile,
+                                                              folder,
                                                               scene->getCurrentDeviceSuffix());
     
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile(plistPath);
+    this->cacheSpriteFramesInfo(imagePath, scene);
     
     if(Sprite::initWithSpriteFrameName(spriteName))
     {
+        this->setName(spriteName);
+        spriteFrameName = spriteName;
+        imageFilePath = imagePath;
+        
         prnt->addChild(this);
+        
+        Value* phyInfo = scene->getEditorBodyInfoForSpriteName(spriteName, imagePath);
+        ValueMap phyDict = phyInfo->asValueMap();
+        
+        this->loadPhysicsFromValueMap(phyDict, scene);
         
         //some other initializing in the future
         return true;
@@ -119,8 +166,8 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     std::string relativeImgPath = dict->stringForKey("relativeImagePath");
     
     imageFilePath = LHUtils::getImagePathWithFilename(imageFile,
-                                                              relativeImgPath,
-                                                              scene->getCurrentDeviceSuffix());
+                                                      relativeImgPath,
+                                                      scene->getCurrentDeviceSuffix());
 
     bool initResult = false;
     
@@ -133,43 +180,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
            false == scene->hasEditorBodyInfoForImageFilePath(imageFilePath))
         {
             //dont reload if already loaded
-            
-            std::string plist_path = imageFilePath;
-            size_t extPos = plist_path.rfind('.');
-            if (extPos != std::string::npos)
-            {
-                // Erase the current extension.
-                plist_path.erase(extPos);
-                // Add the new extension.
-                plist_path.append(".plist");
-            }
-         
-            Texture2D *texture = Director::getInstance()->getTextureCache()->addImage(imageFilePath);
-            if (texture)
-            {
-                std::string fullPlistPath = FileUtils::getInstance()->fullPathForFilename(plist_path);
-            
-                std::string plist_content = FileUtils::getInstance()->getStringFromFile(fullPlistPath);
-                
-                SpriteFrameCache::getInstance()->addSpriteFramesWithFileContent(plist_content, texture);
-                
-                ValueMap dictionary = FileUtils::getInstance()->getValueMapFromData(plist_content.c_str(), static_cast<int>(plist_content.size()));
-                
-                ValueMap& framesDict = dictionary["frames"].asValueMap();
-
-                printf("tryes to load file");
-                
-                //here we add all bodies info found in this plist file
-                //I do it this way in order to avoid loading the file again
-                //this way - we only read this plist file once
-                for (auto iter = framesDict.begin(); iter != framesDict.end(); ++iter)
-                {
-                    ValueMap& frameDict = iter->second.asValueMap();
-                    std::string sprFrameName = iter->first;
-                    Value& bodyInfo = frameDict["body"];
-                    scene->setEditorBodyInfoForSpriteName(sprFrameName, imageFilePath, bodyInfo);
-                }
-            }
+            this->cacheSpriteFramesInfo(imageFilePath, scene);
             //we are no longer using this method because we need to load the physics info if available
             //SpriteFrameCache::getInstance()->addSpriteFramesWithFile(plist_path, imagePath);
         }
@@ -191,11 +202,11 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 #if LH_USE_BOX2D
         prnt->addChild(this);
         this->loadTransformationInfoFromDictionary(dict);
-        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), scene);
 #else
         
         //cocos2d-chipmunk required that the body is loaded before adding the node to the parent
-        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), (LHScene*)prnt->getScene());
+        this->loadPhysicsFromDictionary(dict->dictForKey("nodePhysics"), scene);
         prnt->addChild(this);
         this->loadTransformationInfoFromDictionary(dict);
 #endif

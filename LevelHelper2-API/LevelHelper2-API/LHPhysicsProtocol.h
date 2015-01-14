@@ -34,8 +34,9 @@ public:
 
     LHPhysicsProtocol();
     virtual ~LHPhysicsProtocol();
-    
+
     void loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene);
+    void loadPhysicsFromValueMap(ValueMap value_Map, LHScene* scene);
     
     void visitPhysicsProtocol();
     

@@ -21,8 +21,6 @@
 			<string>{0.002723, -0.002408}</string>
 			<key>imageFileName</key>
 			<string>robots.png</string>
-			<key>invisibleInEditor</key>
-			<false/>
 			<key>name</key>
 			<string>blueRobot</string>
 			<key>nodePhysics</key>
@@ -43,8 +41,6 @@
 					<integer>1</integer>
 					<key>density</key>
 					<real>0.10000000149011612</real>
-					<key>fixtureID</key>
-					<integer>0</integer>
 					<key>friction</key>
 					<real>0.20000000298023224</real>
 					<key>mask</key>
@@ -55,6 +51,8 @@
 					<real>0.0</real>
 					<key>sensor</key>
 					<false/>
+					<key>shapeID</key>
+					<integer>0</integer>
 				</dict>
 				<key>gravityScale</key>
 				<real>1</real>
@@ -70,7 +68,7 @@
 			<key>nodeType</key>
 			<string>LHSprite</string>
 			<key>parentUUID</key>
-			<string>357F1C6E-4108-415D-8D8C-7E91BA192E6A</string>
+			<string>94B85735-A616-47C9-A3F0-E9CD073EFE39</string>
 			<key>relativeImagePath</key>
 			<string>DEMO_PUBLISH_FOLDER/</string>
 			<key>rotation</key>
@@ -97,14 +95,12 @@
 	<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 	<key>generalPosition</key>
 	<string>{0.066667, 0.100000}</string>
-	<key>invisibleInEditor</key>
-	<false/>
 	<key>name</key>
 	<string>Untitled</string>
 	<key>nodeType</key>
 	<string>LHAsset</string>
 	<key>parentUUID</key>
-	<string>3565B8A7-C87E-4E09-ABC3-85D3A1A3A69D</string>
+	<string>E912062D-7820-48E4-951B-99EB487C80CB</string>
 	<key>rotation</key>
 	<real>0.0</real>
 	<key>scale</key>
@@ -116,7 +112,7 @@
 		<string>DEFAULT</string>
 	</array>
 	<key>uuid</key>
-	<string>357F1C6E-4108-415D-8D8C-7E91BA192E6A</string>
+	<string>94B85735-A616-47C9-A3F0-E9CD073EFE39</string>
 	<key>zOrder</key>
 	<integer>0</integer>
 </dict>

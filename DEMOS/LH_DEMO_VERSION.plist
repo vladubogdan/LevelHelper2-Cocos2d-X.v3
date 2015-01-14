@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Version</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>MinimumUpdateableVersion</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>Name</key>
 	<string>DEMOS</string>
 	<key>RelativePath</key>

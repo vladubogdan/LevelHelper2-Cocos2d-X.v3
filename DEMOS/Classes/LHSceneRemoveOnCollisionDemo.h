@@ -22,7 +22,7 @@ public:
 #if LH_USE_BOX2D
     
     virtual bool shouldDisableContactBetweenNodes(Node* nodeA, Node* nodeB);
-    virtual void didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse);
+    virtual void didBeginContact(LHContactInfo contact);
     
 #else//chipmunk
     

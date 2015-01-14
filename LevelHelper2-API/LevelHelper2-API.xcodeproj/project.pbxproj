@@ -11,6 +11,9 @@
 		6E90918B19A845BD0090246B /* LHScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910B19A845BD0090246B /* LHScene.cpp */; };
 		6E90918C19A845BD0090246B /* LHScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910B19A845BD0090246B /* LHScene.cpp */; };
 		6E90918D19A845BD0090246B /* LHScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E90910B19A845BD0090246B /* LHScene.cpp */; };
+		6E9188281A66697400A02F59 /* LHContactInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9188261A66697400A02F59 /* LHContactInfo.cpp */; };
+		6E9188291A66697400A02F59 /* LHContactInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9188261A66697400A02F59 /* LHContactInfo.cpp */; };
+		6E91882A1A66697400A02F59 /* LHContactInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E9188261A66697400A02F59 /* LHContactInfo.cpp */; };
 		6EC556EA19ADF53400CF0760 /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556BE19ADF53400CF0760 /* LHAsset.cpp */; };
 		6EC556EB19ADF53400CF0760 /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556BE19ADF53400CF0760 /* LHAsset.cpp */; };
 		6EC556EC19ADF53400CF0760 /* LHAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC556BE19ADF53400CF0760 /* LHAsset.cpp */; };
@@ -166,6 +169,9 @@
 		6EC557BF19ADF5D500CF0760 /* NodeTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC557AC19ADF5D500CF0760 /* NodeTransform.cpp */; };
 		6EDE843D19A483A200599C48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDE843C19A483A200599C48 /* Foundation.framework */; };
 		6EDE86DD19A4898100599C48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDE843C19A483A200599C48 /* Foundation.framework */; };
+		6EF1798A1A6577FE00577215 /* LHBodyShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF179881A6577FE00577215 /* LHBodyShape.cpp */; };
+		6EF1798B1A6577FE00577215 /* LHBodyShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF179881A6577FE00577215 /* LHBodyShape.cpp */; };
+		6EF1798C1A6577FE00577215 /* LHBodyShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF179881A6577FE00577215 /* LHBodyShape.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +183,8 @@
 		6E90910A19A845BD0090246B /* LHConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHConfig.h; sourceTree = "<group>"; };
 		6E90910B19A845BD0090246B /* LHScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHScene.cpp; sourceTree = "<group>"; };
 		6E90910C19A845BD0090246B /* LHScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHScene.h; sourceTree = "<group>"; };
+		6E9188261A66697400A02F59 /* LHContactInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHContactInfo.cpp; path = "LevelHelper2-API/LHContactInfo.cpp"; sourceTree = SOURCE_ROOT; };
+		6E9188271A66697400A02F59 /* LHContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHContactInfo.h; path = "LevelHelper2-API/LHContactInfo.h"; sourceTree = SOURCE_ROOT; };
 		6E9FD24E19A4F77E0046CDBD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6E9FD25019A4F7A60046CDBD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E9FD25219A4F7AB0046CDBD /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -297,6 +305,8 @@
 		6EDE8B7C19A4986C00599C48 /* libLevelHelper2-API.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libLevelHelper2-API.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDE8B7D19A4988B00599C48 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = ../Box2D/build/Debug/libBox2D.a; sourceTree = "<group>"; };
 		6EDE8B8919A499E200599C48 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = ../Box2D/build/Debug/libBox2D.a; sourceTree = "<group>"; };
+		6EF179881A6577FE00577215 /* LHBodyShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBodyShape.cpp; path = "LevelHelper2-API/LHBodyShape.cpp"; sourceTree = SOURCE_ROOT; };
+		6EF179891A6577FE00577215 /* LHBodyShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHBodyShape.h; path = "LevelHelper2-API/LHBodyShape.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +450,8 @@
 		6E90913A19A845BD0090246B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				6EF179881A6577FE00577215 /* LHBodyShape.cpp */,
+				6EF179891A6577FE00577215 /* LHBodyShape.h */,
 				6EC5578619ADF5BB00CF0760 /* LHJointsProtocol.cpp */,
 				6EC5578719ADF5BB00CF0760 /* LHJointsProtocol.h */,
 				6EC5578819ADF5BB00CF0760 /* LHNodeAnimationProtocol.cpp */,
@@ -458,6 +470,8 @@
 		6E90914619A845BD0090246B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				6E9188261A66697400A02F59 /* LHContactInfo.cpp */,
+				6E9188271A66697400A02F59 /* LHContactInfo.h */,
 				6EC557A019ADF5D400CF0760 /* LHArray.h */,
 				6EC557A119ADF5D400CF0760 /* LHBox2dCollisionHandling.cpp */,
 				6EC557A219ADF5D400CF0760 /* LHBox2dCollisionHandling.h */,
@@ -623,6 +637,7 @@
 				6EC5579D19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */,
 				6EC5571719ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */,
 				6EC556F019ADF53400CF0760 /* LHBezier.cpp in Sources */,
+				6EF1798A1A6577FE00577215 /* LHBodyShape.cpp in Sources */,
 				6EC5571A19ADF53400CF0760 /* LHShape.cpp in Sources */,
 				6EC5570819ADF53400CF0760 /* LHParallax.cpp in Sources */,
 				6EC5570B19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */,
@@ -646,6 +661,7 @@
 				6EC556ED19ADF53400CF0760 /* LHBackUINode.cpp in Sources */,
 				6EC5571419ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */,
 				6EC5572319ADF53400CF0760 /* LHWater.cpp in Sources */,
+				6E9188281A66697400A02F59 /* LHContactInfo.cpp in Sources */,
 				6EC5577019ADF58800CF0760 /* LHPositionFrame.cpp in Sources */,
 				6EC5579719ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */,
 				6EC5574919ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */,
@@ -682,6 +698,7 @@
 				6EC5579E19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */,
 				6EC5571819ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */,
 				6EC556F119ADF53400CF0760 /* LHBezier.cpp in Sources */,
+				6EF1798B1A6577FE00577215 /* LHBodyShape.cpp in Sources */,
 				6EC5571B19ADF53400CF0760 /* LHShape.cpp in Sources */,
 				6EC5570919ADF53400CF0760 /* LHParallax.cpp in Sources */,
 				6EC5570C19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */,
@@ -705,6 +722,7 @@
 				6EC556EE19ADF53400CF0760 /* LHBackUINode.cpp in Sources */,
 				6EC5571519ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */,
 				6EC5572419ADF53400CF0760 /* LHWater.cpp in Sources */,
+				6E9188291A66697400A02F59 /* LHContactInfo.cpp in Sources */,
 				6EC5577119ADF58800CF0760 /* LHPositionFrame.cpp in Sources */,
 				6EC5579819ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */,
 				6EC5574A19ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */,
@@ -741,6 +759,7 @@
 				6EC5579F19ADF5BC00CF0760 /* LHUserProperties.cpp in Sources */,
 				6EC5571919ADF53400CF0760 /* LHRopeJointNode.cpp in Sources */,
 				6EC556F219ADF53400CF0760 /* LHBezier.cpp in Sources */,
+				6EF1798C1A6577FE00577215 /* LHBodyShape.cpp in Sources */,
 				6EC5571C19ADF53400CF0760 /* LHShape.cpp in Sources */,
 				6EC5570A19ADF53400CF0760 /* LHParallax.cpp in Sources */,
 				6EC5570D19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */,
@@ -764,6 +783,7 @@
 				6EC556EF19ADF53400CF0760 /* LHBackUINode.cpp in Sources */,
 				6EC5571619ADF53400CF0760 /* LHRevoluteJointNode.cpp in Sources */,
 				6EC5572519ADF53400CF0760 /* LHWater.cpp in Sources */,
+				6E91882A1A66697400A02F59 /* LHContactInfo.cpp in Sources */,
 				6EC5577219ADF58800CF0760 /* LHPositionFrame.cpp in Sources */,
 				6EC5579919ADF5BC00CF0760 /* LHNodeProtocol.cpp in Sources */,
 				6EC5574B19ADF56600CF0760 /* LHChildrenOpacitiesProperty.cpp in Sources */,
@@ -890,7 +910,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7 x86_64 i386 armv7s";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -919,7 +939,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7 x86_64 i386 armv7s";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
 		};
@@ -928,8 +948,10 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				DSTROOT = /tmp/LevelHelper2_API.dst;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					USE_FILE32API,
@@ -952,7 +974,7 @@
 				PRODUCT_NAME = "LevelHelper2-API";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -961,8 +983,10 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				DSTROOT = /tmp/LevelHelper2_API.dst;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					USE_FILE32API,
@@ -984,7 +1008,7 @@
 				PRODUCT_NAME = "LevelHelper2-API";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
@@ -992,6 +1016,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DSTROOT = /tmp/LevelHelper2_API.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1024,6 +1049,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DSTROOT = /tmp/LevelHelper2_API.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (

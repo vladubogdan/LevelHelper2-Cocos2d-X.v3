@@ -5,11 +5,16 @@
 //  Created by Bogdan Vladu on 06/07/14.
 //  Copyright (c) 2014 VLADU BOGDAN DANIEL PFA. All rights reserved.
 //
+
+#ifndef __LEVELHELPER_API_COLLISION_HANDLING_H__
+#define __LEVELHELPER_API_COLLISION_HANDLING_H__
+
 #include "LHConfig.h"
 
 #if LH_USE_BOX2D
 
 #include "cocos2d.h"
+#include "LHContactInfo.h"
 using namespace cocos2d;
 
 class LHScene;
@@ -38,6 +43,8 @@ private:
     LHScene* _scene;
     LHContactListenerPimpl* _b2Listener;
     
+    LHContactInfo getContactInfoForb2Contact(b2Contact* contact);
+    
     b2Fixture* getFixtureAFromContact(b2Contact* contact);
     b2Fixture* getFixtureBFromContact(b2Contact* contact);
     b2Body* getBodyAFromContact(b2Contact* contact);
@@ -50,3 +57,5 @@ private:
 };
 
 #endif
+
+#endif //__LEVELHELPER_API_COLLISION_HANDLING_H__

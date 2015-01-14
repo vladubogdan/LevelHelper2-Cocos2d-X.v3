@@ -71,6 +71,19 @@ LHScene::~LHScene()
     devices.clear();
     
     CC_SAFE_RELEASE(_tracedFixtures);
+    
+    for (auto iter = _editorBodiesInfo.begin(); iter != _editorBodiesInfo.end(); ++iter)
+    {
+        std::map<std::string, Value* > obj = iter->second;
+        for(auto subIter = obj.begin(); subIter != obj.end(); ++subIter)
+        {
+            Value* val = subIter->second;
+            delete val;
+        }
+    }
+    _editorBodiesInfo.clear();
+    
+    
     _gameWorldNode = nullptr;
     _uiNode = nullptr;
     _backUINode = nullptr;
@@ -438,6 +451,31 @@ void LHScene::performLateLoading(){
 __Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
 {
     return (__Array*)_tracedFixtures->objectForKey(uuid);
+}
+
+bool LHScene::hasEditorBodyInfoForImageFilePath(const std::string& imageFilePath)
+{
+    return _editorBodiesInfo.find( imageFilePath ) != _editorBodiesInfo.end();
+}
+
+Value* LHScene::getEditorBodyInfoForSpriteName(const std::string& spriteName, const std::string& imageFilePath)
+{
+    std::map<std::string, Value*>spritesInfo = _editorBodiesInfo[imageFilePath];
+    return spritesInfo[spriteName];
+}
+void LHScene::setEditorBodyInfoForSpriteName(const std::string& spriteName, const std::string& imageFilePath, Value& bodyInfo)
+{
+    std::map<std::string, Value*> spritesInfo;
+    if(_editorBodiesInfo.find( imageFilePath ) != _editorBodiesInfo.end())
+    {
+        spritesInfo = _editorBodiesInfo[imageFilePath];
+    }
+    
+    if(!bodyInfo.isNull() && spritesInfo.find(spriteName) == spritesInfo.end())
+    {
+        spritesInfo[spriteName] = new Value(bodyInfo);
+    }
+    _editorBodiesInfo[imageFilePath] = spritesInfo;
 }
 
 std::string LHScene::getCurrentDeviceSuffix()

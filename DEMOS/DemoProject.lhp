@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>iphone6</string>
 			<key>color</key>
-			<string>{{0.18914416432380676, 0.85747039318084717}, {0.057205542922019958, 1}}</string>
+			<string>{{0.040882796049118042, 0.040999472141265869}, {0.040837496519088745, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -88,7 +88,7 @@
 			<key>SuffixName</key>
 			<string>iphone6plus</string>
 			<key>color</key>
-			<string>{{0.056972704827785492, 0}, {0.056383904069662094, 1}}</string>
+			<string>{{0.039420325309038162, 0}, {0.040748715400695801, 1}}</string>
 		</dict>
 	</array>
 	<key>engine</key>
@@ -106,7 +106,7 @@
 		<key>otherOptions</key>
 		<dict>
 			<key>relativeDocumentsLocation</key>
-			<string>Demo/DOCUMENTS/Levels</string>
+			<string>Levels</string>
 		</dict>
 		<key>publishOptions</key>
 		<dict>
@@ -143,6 +143,11 @@
 					<true/>
 				</dict>
 				<key>collisionHandlingDemo.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>complexPhysics.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

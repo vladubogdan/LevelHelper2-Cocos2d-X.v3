@@ -126,41 +126,14 @@ bool LHSceneCollisionHandlingDemo::shouldDisableContactBetweenNodes(Node* nodeA,
         
     return false;
 }
-void LHSceneCollisionHandlingDemo::didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse)
+void LHSceneCollisionHandlingDemo::didBeginContact(LHContactInfo contact)
 {
-    //ensure that the nodes received comes from a LevelHelper API object
-    LHNodeProtocol* a = dynamic_cast<LHNodeProtocol*>(nodeA);
-    LHNodeProtocol* b = dynamic_cast<LHNodeProtocol*>(nodeB);
-    
-    if(a && b)
-    {
-#if COCOS2D_VERSION >= 0x00030200
-        CCLOG("DID BEGIN CONTACT %s %s scenePt %f %f impulse %f", nodeA->getName().c_str(), nodeB->getName().c_str(),
-              contactPoint.x, contactPoint.y, impulse);
-
-#else
-        CCLOG("DID BEGIN CONTACT %s %s scenePt %f %f impulse %f", a->getName().c_str(), b->getName().c_str(), contactPoint.x, contactPoint.y, impulse);
-#endif
-                
-    }
-    
-    
+    printf("DID BEGIN CONTACT %s %s scenePt %f %f impulse %f\n", contact.nodeA->getName().c_str(), contact.nodeB->getName().c_str(),
+          contact.contactPoint.x, contact.contactPoint.y, contact.impulse);
 }
-void LHSceneCollisionHandlingDemo::didEndContactBetweenNodes(Node* nodeA, Node* nodeB)
+void LHSceneCollisionHandlingDemo::didEndContact(LHContactInfo contact)
 {
-    //ensure that the nodes received comes from a LevelHelper API object
-    LHNodeProtocol* a = dynamic_cast<LHNodeProtocol*>(nodeA);
-    LHNodeProtocol* b = dynamic_cast<LHNodeProtocol*>(nodeB);
-    
-    if(a && b)
-    {
-#if COCOS2D_VERSION >= 0x00030200
-        CCLOG("DID END CONTACT BETWEEN A:%s AND B:%s", nodeA->getName().c_str(), nodeB->getName().c_str());
-#else
-        CCLOG("DID END CONTACT BETWEEN A:%s AND B:%s", a->getName().c_str(), b->getName().c_str());
-#endif
-        
-    }
+    printf("DID END CONTACT BETWEEN A:%s AND B:%s\n", contact.nodeA->getName().c_str(), contact.nodeB->getName().c_str());
 }
 #else
 

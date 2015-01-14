@@ -17,8 +17,6 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
-			<key>invisibleInEditor</key>
-			<false/>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -58,8 +56,6 @@
 					<string>{0.443116, 0.078452}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>carTyre</string>
 					<key>nodePhysics</key>
@@ -140,8 +136,6 @@
 					<string>{0.459605, 0.602349}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>shouldNotCollide</string>
 					<key>nodePhysics</key>
@@ -222,8 +216,6 @@
 					<string>{0.835774, 0.752678}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>wood</string>
 					<key>nodePhysics</key>
@@ -304,8 +296,6 @@
 					<string>{0.469869, 0.238993}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>wood_1</string>
 					<key>nodePhysics</key>
@@ -384,8 +374,6 @@
 					<real>6</real>
 					<key>generalPosition</key>
 					<string>{0.460863, 0.799167}</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>UntitledGravityArea</string>
 					<key>nodeType</key>
@@ -416,8 +404,6 @@
 					<string>{0.301308, 0.355019}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>wood_2</string>
 					<key>nodePhysics</key>
@@ -492,8 +478,6 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
-			<key>invisibleInEditor</key>
-			<false/>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -524,8 +508,6 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
-			<key>invisibleInEditor</key>
-			<false/>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -605,8 +587,6 @@
 	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
-	<key>invisibleInEditor</key>
-	<false/>
 	<key>nodeType</key>
 	<string>LHScene</string>
 	<key>physicsBoundaries</key>
@@ -632,6 +612,67 @@
 	<array>
 		<string>DEFAULT</string>
 	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>51B4B895-8C30-43E6-8BFE-7D60DC33AD0A</key>
+		<array>
+			<array>
+				<string>{-40.75, -37.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-41.25, -34.5}</string>
+			</array>
+			<array>
+				<string>{10.25, -37}</string>
+				<string>{10.25, -35}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{5.75, -40.5}</string>
+				<string>{8.75, -39}</string>
+			</array>
+			<array>
+				<string>{82.25, 4.5}</string>
+				<string>{82.25, 22}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{42.25, -19.5}</string>
+				<string>{52.25, -16.5}</string>
+				<string>{63.75, -11}</string>
+				<string>{75.25, -2.5}</string>
+			</array>
+			<array>
+				<string>{-83.75, 24}</string>
+				<string>{-84.75, 21}</string>
+				<string>{-84.75, -7.5}</string>
+				<string>{-83.75, -10}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-80.25, 26.5}</string>
+				<string>{-81.75, 26}</string>
+			</array>
+			<array>
+				<string>{81.75, 23.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{82.25, 22}</string>
+			</array>
+			<array>
+				<string>{10.25, -35}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{-36.75, -40.5}</string>
+			</array>
+			<array>
+				<string>{-54.75, -22.5}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-83.75, -10}</string>
+			</array>
+			<array>
+				<string>{-41.25, -34.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-46.75, -22.5}</string>
+			</array>
+		</array>
+	</dict>
 	<key>useGlobalGravity</key>
 	<true/>
 	<key>uuid</key>

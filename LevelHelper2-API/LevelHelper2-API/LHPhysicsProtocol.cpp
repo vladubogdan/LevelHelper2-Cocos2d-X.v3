@@ -40,6 +40,7 @@
 
 #if LH_USE_BOX2D
 #include "Box2d/Box2d.h"
+#include "LHBodyShape.h"
 #endif
 
 LHPhysicsProtocol::LHPhysicsProtocol()
@@ -47,11 +48,14 @@ LHPhysicsProtocol::LHPhysicsProtocol()
 #if LH_USE_BOX2D
     scheduledForRemoval = false;
     _body = NULL;
+    subShapes = NULL;
 #endif
 }
 LHPhysicsProtocol::~LHPhysicsProtocol()
 {
 
+    CC_SAFE_RELEASE(subShapes);
+    _body = NULL;
 }
 
 void LHPhysicsProtocol::shouldRemoveBody()
@@ -150,6 +154,8 @@ void LHPhysicsProtocol::removeBody()
         b2World* world = _body->GetWorld();
         if(world){
 
+            CC_SAFE_RELEASE(subShapes);
+            
             _body->SetUserData(NULL);
             if(!world->IsLocked()){
 
@@ -190,97 +196,6 @@ void LHPhysicsProtocol::updatePhysicsTransform(){
         _body->SetTransform(b2Pos, CC_DEGREES_TO_RADIANS(-globalAngle));
         _body->SetAwake(true);
     }
-}
-
-bool LHValidateCentroid(b2Vec2* vs, int count)
-{
-    if(count > b2_maxPolygonVertices)
-        return false;
-    
-    if(count < 3)
-        return false;
-    
-    b2Vec2 c; c.Set(0.0f, 0.0f);
-    float32 area = 0.0f;
-    
-    // pRef is the reference point for forming triangles.
-    // It's location doesn't change the result (except for rounding error).
-    b2Vec2 pRef(0.0f, 0.0f);
-#if 0
-    // This code would put the reference point inside the polygon.
-    for (int32 i = 0; i < count; ++i)
-    {
-        pRef += vs[i];
-    }
-    pRef *= 1.0f / count;
-#endif
-    
-    const float32 inv3 = 1.0f / 3.0f;
-    
-    for (int32 i = 0; i < count; ++i)
-    {
-        // Triangle vertices.
-        b2Vec2 p1 = pRef;
-        b2Vec2 p2 = vs[i];
-        b2Vec2 p3 = i + 1 < count ? vs[i+1] : vs[0];
-        
-        b2Vec2 e1 = p2 - p1;
-        b2Vec2 e2 = p3 - p1;
-        
-        float32 D = b2Cross(e1, e2);
-        
-        float32 triangleArea = 0.5f * D;
-        area += triangleArea;
-        
-        // Area weighted centroid
-        c += triangleArea * inv3 * (p1 + p2 + p3);
-    }
-    
-    // Centroid
-    if(area < b2_epsilon)
-    {
-        return false;
-    }
-    
-    return true;
-    
-//    CCLOG("COUNT %d", count);
-//    
-//	if(count < 3 || count > b2_maxPolygonVertices)
-//        return false;
-//    
-//	int32 n = b2Min(count, b2_maxPolygonVertices);
-//    
-//	// Perform welding and copy vertices into local buffer.
-//	b2Vec2 ps[b2_maxPolygonVertices];
-//	int32 tempCount = 0;
-//	for (int32 i = 0; i < n; ++i)
-//	{
-//		b2Vec2 v = vs[i];
-//        
-//		bool unique = true;
-//		for (int32 j = 0; j < tempCount; ++j)
-//		{
-//			if (b2DistanceSquared(v, ps[j]) < 0.5f * b2_linearSlop)
-//			{
-//				unique = false;
-//				break;
-//			}
-//		}
-//        
-//		if (unique)
-//		{
-//			ps[tempCount++] = v;
-//		}
-//	}
-//    
-//	n = tempCount;
-//	if (n < 3)
-//	{
-//        return false;
-//	}
-//    
-//    return true;
 }
 
 void LHPhysicsProtocol::updatePhysicsScale(){
@@ -343,7 +258,7 @@ void LHPhysicsProtocol::updatePhysicsScale(){
                     newVertices[idx] = pt;
                 }
                 
-                bool valid = LHValidateCentroid(newVertices, count);
+                bool valid = LHBodyShape::LHValidateCentroid(newVertices, count);
                 if(!valid) {
                     //flip
                     b2Vec2* flippedVertices = new b2Vec2[count];
@@ -471,6 +386,7 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     int shapeType = dict->intForKey("shape");
     int type  = dict->intForKey("type");
     
+    
     b2World* world = scene->getBox2dWorld();
     
     b2BodyDef bodyDef;
@@ -507,7 +423,6 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     }
 
     
-    
     Size sizet = node->getContentSize();
     
     sizet.width  = scene->metersFromValue(sizet.width);
@@ -528,77 +443,50 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     
     
     LHDictionary* fixInfo = dict->dictForKey("genericFixture");
-    LHArray* fixturesInfo = nullptr;
+
+    
+    subShapes = __Array::create();
+    subShapes->retain();
     
     if(shapeType == 0)//RECTANGLE
     {
-        b2Shape* shape = new b2PolygonShape();
-        ((b2PolygonShape*)shape)->SetAsBox(sizet.width*0.5f, sizet.height*0.5f);
-        
-        b2FixtureDef fixture;
-        setupFixtureWithInfo(&fixture, fixInfo);
-        
-        fixture.shape = shape;
-        _body->CreateFixture(&fixture);
-        
-        delete shape;
-        shape = NULL;
+        LHBodyShape* shape = LHBodyShape::createRectangleWithDictionary(fixInfo,
+                                                                        _body,
+                                                                        node,
+                                                                        scene,
+                                                                        sizet);
+        if(shape){
+            subShapes->addObject(shape);
+        }
     }
     else if(shapeType == 1)//CIRCLE
     {
-        b2Shape* shape = new b2CircleShape();
-        ((b2CircleShape*)shape)->m_radius = sizet.width*0.5;
-        
-        b2FixtureDef fixture;
-        setupFixtureWithInfo(&fixture, fixInfo);
-        
-        fixture.shape = shape;
-        _body->CreateFixture(&fixture);
-        
-        delete shape;
-        shape = NULL;
+        LHBodyShape* shape = LHBodyShape::createCircleWithDictionary(fixInfo,
+                                                                     _body,
+                                                                     node,
+                                                                     scene,
+                                                                     sizet);
+        if(shape){
+            subShapes->addObject(shape);
+        }
     }
     else if(shapeType == 2)//POLYGON
     {
         if(LHShape::isLHShape(node))
         {
-            LHShape* shape = (LHShape*)node;
+            LHShape* shapeNode = (LHShape*)node;
             
-            std::vector<Point> triangles = shape->trianglePoints();
+            std::vector<Point> triangles = shapeNode->trianglePoints();
             
-            for(int i = 0;  i < triangles.size(); i=i+3)
-            {
-                Point ptA = triangles[i];
-                Point ptB = triangles[i+1];
-                Point ptC = triangles[i+2];
-                
-                ptA.x *= scaleX;
-                ptA.y *= scaleY;
-
-                ptB.x *= scaleX;
-                ptB.y *= scaleY;
-
-                ptC.x *= scaleX;
-                ptC.y *= scaleY;
-
-                b2Vec2 *verts = new b2Vec2[3];
-                
-                verts[2] = scene->metersFromPoint(ptA);
-                verts[1] = scene->metersFromPoint(ptB);
-                verts[0] = scene->metersFromPoint(ptC);
-                
-                b2PolygonShape shapeDef;
-                
-                shapeDef.Set(verts, 3);
-                
-                b2FixtureDef fixture;
-                
-                setupFixtureWithInfo(&fixture, fixInfo);
-                
-                fixture.shape = &shapeDef;
-                _body->CreateFixture(&fixture);
-                delete[] verts;
-                
+            LHBodyShape* shape = LHBodyShape::createWithDictionaryAndTriangles(fixInfo,
+                                                                               triangles,
+                                                                               _body,
+                                                                               node,
+                                                                               scene,
+                                                                               scaleX,
+                                                                               scaleY);
+            if(shape){
+                subShapes->addObject(shape);
             }
         }
     }
@@ -606,48 +494,15 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     {
         if(LHBezier::isLHBezier(node))
         {
-            LHBezier* bezier = (LHBezier*)node;
+            LHBezier* bezierNode = (LHBezier*)node;
             
-            std::vector<Point> points =  bezier->linePoints();
+            std::vector<Point> points =  bezierNode->linePoints();
             
-            std::vector< b2Vec2 > verts;
-            
-            LHValue* lastPt = nullptr;
-            for(int i = 0; i < points.size(); ++i)
-            {
-                Point pt = points[i];
-
-                pt.x *= scaleX;
-                pt.y *= scaleY;
-                
-                b2Vec2 v2 = scene->metersFromPoint(pt);
-                if(lastPt != nullptr)
-                {
-                    Point oldPt = lastPt->getPoint();
-                    b2Vec2 v1 = b2Vec2(oldPt.x, oldPt.y);
-                    
-                    if(b2DistanceSquared(v1, v2) > b2_linearSlop * b2_linearSlop)
-                    {
-                        verts.push_back(v2);
-                    }
-                }
-                else{
-                    verts.push_back(v2);
-                }
-                lastPt = LHValue::create(Point(v2.x, v2.y));
+            LHBodyShape* shape = LHBodyShape::createChainWithDictionaryAndPoints(fixInfo, points, false, _body, node, scene, scaleX, scaleY);
+            if(shape){
+                subShapes->addObject(shape);
             }
             
-            b2Shape* shape = new b2ChainShape();
-            ((b2ChainShape*)shape)->CreateChain (&(verts.front()), (int)verts.size());
-            
-            b2FixtureDef fixture;
-            setupFixtureWithInfo(&fixture, fixInfo);
-            
-            fixture.shape = shape;
-            _body->CreateFixture(&fixture);
-            
-            delete shape;
-            shape = NULL;
         }
         else if(LHShape::isLHShape(node))
         {
@@ -655,44 +510,10 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
             
             std::vector<Point> points = nodeShape->outlinePoints();
             
-            std::vector< b2Vec2 > verts;
-            
-            LHValue* lastPt = nullptr;
-            for(int i = 0; i < points.size(); ++i)
-            {
-                Point pt = points[i];
-                
-                pt.x *= scaleX;
-                pt.y *= scaleY;
-                
-                b2Vec2 v2 = scene->metersFromPoint(pt);
-                if(lastPt != nullptr)
-                {
-                    Point oldPt = lastPt->getPoint();
-                    b2Vec2 v1 = b2Vec2(oldPt.x, oldPt.y);
-                    
-                    if(b2DistanceSquared(v1, v2) > b2_linearSlop * b2_linearSlop)
-                    {
-                        verts.push_back(v2);
-                    }
-                }
-                else{
-                    verts.push_back(v2);
-                }
-                lastPt = LHValue::create(Point(v2.x, v2.y));
+            LHBodyShape* shape = LHBodyShape::createChainWithDictionaryAndPoints(fixInfo, points, true, _body, node, scene, scaleX, scaleY);
+            if(shape){
+                subShapes->addObject(shape);
             }
-
-            b2Shape* shape = new b2ChainShape();
-            ((b2ChainShape*)shape)->CreateChain (&(verts.front()), (int)verts.size());
-            
-            b2FixtureDef fixture;
-            setupFixtureWithInfo(&fixture, fixInfo);
-            
-            fixture.shape = shape;
-            _body->CreateFixture(&fixture);
-            
-            delete shape;
-            shape = NULL;
         }
         else{
             
@@ -701,69 +522,75 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     }
     else if(shapeType == 4)//OVAL
     {
-        fixturesInfo = dict->arrayForKey("ovalShape");
+        LHArray* fixturesInfo = dict->arrayForKey("ovalShape");
+        
+        if(fixturesInfo){
+            
+            LHBodyShape* shape = LHBodyShape::createWithDictionary(fixInfo,
+                                                                   fixturesInfo,
+                                                                   _body,
+                                                                   node,
+                                                                   scene,
+                                                                   scaleX,
+                                                                   scaleY);
+            if(shape){
+                subShapes->addObject(shape);
+            }
+        }
+
     }
     else if(shapeType == 5)//TRACED
     {
         std::string fixUUID = dict->stringForKey("fixtureUUID");
-        fixturesInfo = (LHArray*)scene->tracedFixturesWithUUID(fixUUID);        
+        LHArray* fixturesInfo = (LHArray*)scene->tracedFixturesWithUUID(fixUUID);
         if(!fixturesInfo){
             LHAsset* asset = this->assetParent();
             if(asset){
                 fixturesInfo = (LHArray*)asset->tracedFixturesWithUUID(fixUUID);
             }
         }
-    }
-    
-    if(fixturesInfo)
-    {
-        int flipx = scaleX < 0 ? -1 : 1;
-        int flipy = scaleY < 0 ? -1 : 1;
         
-        for(int f = 0; f < fixturesInfo->count(); ++f)
-        {
-            LHArray* fixPoints = fixturesInfo->arrayAtIndex(f);
-
-            int count = (int)fixPoints->count();
-            
-            if(count > 2)
-            {
-                b2Vec2 *verts = new b2Vec2[count];
-                b2PolygonShape shapeDef;
-                
-                int i = 0;
-                for(int j = count-1; j >=0; --j)
-                {
-                    const int idx = (flipx < 0 && flipy >= 0) || (flipx >= 0 && flipy < 0) ? count - i - 1 : i;
-                    
-                    Point point = fixPoints->pointAtIndex(j);
-
-                    point.x *= scaleX;
-                    point.y *= scaleY;
-                    
-                    point.y = -point.y;
-                    
-                    b2Vec2 vec = scene->metersFromPoint(point);
-
-                    verts[idx] = vec;
-                    ++i;
-                }
-                
-                if(LHValidateCentroid(verts, count))
-                {
-                    shapeDef.Set(verts, count);
-                    
-                    b2FixtureDef fixture;
-                    
-                    setupFixtureWithInfo(&fixture, fixInfo);
-                    
-                    fixture.shape = &shapeDef;
-                    _body->CreateFixture(&fixture);
-                }
-
-                delete[] verts;
+        if(fixturesInfo){
+            LHBodyShape* shape = LHBodyShape::createWithDictionary(fixInfo,
+                                                                   fixturesInfo,
+                                                                   _body,
+                                                                   node,
+                                                                   scene,
+                                                                   scaleX,
+                                                                   scaleY);
+            if(shape){
+                subShapes->addObject(shape);
             }
         }
+    }
+    else if(shapeType == 6)//editor
+    {
+        //available only on sprites
+        LHSprite* sprite = dynamic_cast<LHSprite*>(node);
+        
+        if(!sprite)return;
+        
+        Value* bodyInfo = scene->getEditorBodyInfoForSpriteName(sprite->getSpriteFrameName(), sprite->getImageFilePath());
+        
+        ValueMap info = bodyInfo->asValueMap();
+        ValueVector fixturesInfo = info["shapes"].asValueVector();
+        
+        for(int f = 0; f < fixturesInfo.size(); ++f)
+        {
+            ValueMap shapeInfo = fixturesInfo[f].asValueMap();
+            
+            LHBodyShape* shape = LHBodyShape::createWithValueMap(shapeInfo,
+                                                                 _body,
+                                                                 node,
+                                                                 scene,
+                                                                 scaleX,
+                                                                 scaleY);
+            if(shape){
+                subShapes->addObject(shape);
+            }
+        }
+        
+        return;
     }
 }
 

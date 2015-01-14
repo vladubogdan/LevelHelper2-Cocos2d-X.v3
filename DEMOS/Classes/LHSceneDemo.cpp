@@ -20,6 +20,7 @@
 #include "LHSceneRemoveOnCollisionDemo.h"
 #include "LHSceneWaterAreaDemo.h"
 #include "LHSceneNodesSubclassingDemo.h"
+#include "LHSceneComplexPhysicsDemo.h"
 
 //TESTS
 #include "CameraPhysicsTest.h"
@@ -48,10 +49,11 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     /*INITIALIZE YOUR CONTENT HERE*/
     /*AT THIS POINT EVERYTHING IS LOADED AND YOU CAN ACCESS YOUR OBJECTS*/
     
-    CCLOG("ENTER HERE");
-    
     sceneNames.push_back("LHSceneIntroductionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
+    
+    sceneNames.push_back("LHSceneComplexPhysicsDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneComplexPhysicsDemo::create);
     
     //tests
 //    sceneNames.push_back("DynamicObjectsTransformAnimationTest");
@@ -96,7 +98,6 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneShapesDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneShapesDemo::create);
     
-
     sceneNames.push_back("LHSceneBeziersDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneBeziersDemo::create);
 
@@ -105,7 +106,7 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
 
     sceneNames.push_back("LHSceneCollisionHandlingDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneCollisionHandlingDemo::create);
-
+    
     sceneNames.push_back("LHSceneRemoveOnCollisionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneRemoveOnCollisionDemo::create);
 
@@ -118,8 +119,6 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     sceneNames.push_back("LHSceneWaterAreaDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneWaterAreaDemo::create);
 
-    CCLOG("SIZE %d", (int)sceneNames.size());
-    CCLOG("SIZE %d", (int)sceneCreators.size());
     
     Size size = this->getContentSize();
     {

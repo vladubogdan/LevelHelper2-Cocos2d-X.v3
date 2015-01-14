@@ -17,6 +17,7 @@
 
 #if LH_USE_BOX2D
 #include "Box2D/Box2D.h"
+#include "LHContactInfo.h"
 
 class LHBox2dDebugDrawNode;
 
@@ -34,41 +35,11 @@ public:
 
 using namespace cocos2d;
 
+
 /**
  LHGameWorldNode class is used to load the game world node object from a level file.
  Users can retrieve node objects by calling the scene (LHScene) getChildNodeWithName("name") method.
  */
-
-class LHScheduledContactInfo
-{
-public:
-    
-    LHScheduledContactInfo(Node* a, Node* b, Point ctPt, float imp)
-    {
-        _nodeA = a;
-        _nodeB = b;
-        _contactPoint = ctPt;
-        _impulse = imp;
-    }
-    virtual ~LHScheduledContactInfo(){_nodeA = nullptr; _nodeB = nullptr;}
-    
-    Node* getNodeA(){return _nodeA;}
-    void setNodeA(Node* a){_nodeA = a;}
-    
-    Node* getNodeB(){return _nodeB;}
-    void setNodeB(Node* b){_nodeB = b;}
-    
-    Point getContactPoint(){return _contactPoint;}
-    float getImpulse(){return _impulse;}
-    
-private:
-    Node* _nodeA;
-    Node* _nodeB;
-    Point _contactPoint;
-    float _impulse;
-};
-
-
 class LHDictionary;
 class LHScene;
 
@@ -122,8 +93,8 @@ private:
     friend class LHBox2dCollisionHandling;
     friend class LHPhysicsProtocol;
     
-    void scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nodeB, cocos2d::Point contactPoint, float impulse);
-    void scheduleDidEndContactBetweenNodeA(Node* nodeA, Node* nodeB);
+    void scheduleDidBeginContact(LHContactInfo contact);
+    void scheduleDidEndContact(LHContactInfo contact);
     
     void removeScheduledContactsWithNode(Node* node);
 
@@ -139,8 +110,8 @@ private:
     int MAXIMUM_NUMBER_OF_STEPS;
     
     
-    std::vector<LHScheduledContactInfo> _scheduledBeginContact;
-    std::vector<LHScheduledContactInfo> _scheduledEndContact;
+    std::vector<LHContactInfo> _scheduledBeginContact;
+    std::vector<LHContactInfo> _scheduledEndContact;
     
 #endif
 

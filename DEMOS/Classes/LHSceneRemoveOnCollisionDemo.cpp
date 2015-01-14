@@ -129,8 +129,10 @@ bool LHSceneRemoveOnCollisionDemo::shouldDisableContactBetweenNodes(Node* nodeA,
         
     return false;
 }
-void LHSceneRemoveOnCollisionDemo::didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse)
+void LHSceneRemoveOnCollisionDemo::didBeginContact(LHContactInfo contact)
 {
+    Node* nodeA = contact.nodeA;
+    Node* nodeB = contact.nodeB;
     
 #if COCOS2D_VERSION >= 0x00030200
     

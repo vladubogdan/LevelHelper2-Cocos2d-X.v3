@@ -134,9 +134,13 @@ public:
     virtual void updateRotation(float rotation);
 #endif
     
+    std::string getImageFilePath(){return imageFilePath;}
+    std::string getSpriteFrameName(){return spriteFrameName;}
     
 private:
 
+    std::string imageFilePath;
+    std::string spriteFrameName;
 };
 
 #endif //__LEVELHELPER_API_SPRITE_H__//

@@ -118,36 +118,71 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
     std::string imageFile = dict->stringForKey("imageFileName");
     std::string relativeImgPath = dict->stringForKey("relativeImagePath");
     
-    std::string imagePath = LHUtils::getImagePathWithFilename(imageFile,
+    imageFilePath = LHUtils::getImagePathWithFilename(imageFile,
                                                               relativeImgPath,
                                                               scene->getCurrentDeviceSuffix());
 
     bool initResult = false;
     
+
     if(dict->objectForKey("spriteName"))
     {
-        std::string spriteName = dict->stringForKey("spriteName");
+        spriteFrameName = dict->stringForKey("spriteName");
         
-        std::string plist_path = imagePath;
-        size_t extPos = plist_path.rfind('.');
-        if (extPos != std::string::npos)
+        if(NULL == SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameName) ||
+           false == scene->hasEditorBodyInfoForImageFilePath(imageFilePath))
         {
-            // Erase the current extension.
-            plist_path.erase(extPos);
-            // Add the new extension.
-            plist_path.append(".plist");
+            //dont reload if already loaded
+            
+            std::string plist_path = imageFilePath;
+            size_t extPos = plist_path.rfind('.');
+            if (extPos != std::string::npos)
+            {
+                // Erase the current extension.
+                plist_path.erase(extPos);
+                // Add the new extension.
+                plist_path.append(".plist");
+            }
+         
+            Texture2D *texture = Director::getInstance()->getTextureCache()->addImage(imageFilePath);
+            if (texture)
+            {
+                std::string fullPlistPath = FileUtils::getInstance()->fullPathForFilename(plist_path);
+            
+                std::string plist_content = FileUtils::getInstance()->getStringFromFile(fullPlistPath);
+                
+                SpriteFrameCache::getInstance()->addSpriteFramesWithFileContent(plist_content, texture);
+                
+                ValueMap dictionary = FileUtils::getInstance()->getValueMapFromData(plist_content.c_str(), static_cast<int>(plist_content.size()));
+                
+                ValueMap& framesDict = dictionary["frames"].asValueMap();
+
+                printf("tryes to load file");
+                
+                //here we add all bodies info found in this plist file
+                //I do it this way in order to avoid loading the file again
+                //this way - we only read this plist file once
+                for (auto iter = framesDict.begin(); iter != framesDict.end(); ++iter)
+                {
+                    ValueMap& frameDict = iter->second.asValueMap();
+                    std::string sprFrameName = iter->first;
+                    Value& bodyInfo = frameDict["body"];
+                    scene->setEditorBodyInfoForSpriteName(sprFrameName, imageFilePath, bodyInfo);
+                }
+            }
+            //we are no longer using this method because we need to load the physics info if available
+            //SpriteFrameCache::getInstance()->addSpriteFramesWithFile(plist_path, imagePath);
         }
         
-        SpriteFrameCache::getInstance()->addSpriteFramesWithFile(plist_path, imagePath);
-        
-        initResult = initWithSpriteFrameName(spriteName);
+        initResult = initWithSpriteFrameName(spriteFrameName);
     }
     else{
-        initResult = initWithFile(imagePath);
+        initResult = initWithFile(imageFilePath);
     }
     
     if(initResult)
     {
+        
         _physicsBody = NULL;
         Size curSize = this->getContentSize();
         this->loadGenericInfoFromDictionary(dict);
@@ -174,6 +209,7 @@ bool LHSprite::initWithDictionary(LHDictionary* dict, Node* prnt)
 
     return false;
 }
+
 
 #if COCOS2D_VERSION >= 0x00030200
 void LHSprite::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags)

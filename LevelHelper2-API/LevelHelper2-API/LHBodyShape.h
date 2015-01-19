@@ -56,15 +56,12 @@ public:
     const std::string& getShapeName(){return shapeName;}
     const int getShapeID(){return shapeID;}
     
-    b2Fixture* box2dFixture(){return m_box2dFixture;}
-    
     static bool isLHBodyShape(Ref* obj);
     static LHBodyShape* shapeForb2Fixture(b2Fixture* fix);
     
 private:
     std::string shapeName;
     int shapeID;
-    b2Fixture* m_box2dFixture; //week ptr
 };
 
 

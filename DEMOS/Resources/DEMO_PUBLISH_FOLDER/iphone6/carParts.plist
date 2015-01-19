@@ -45,16 +45,74 @@
 						<key>mask</key>
 						<integer>65535</integer>
 						<key>name</key>
-						<string>frontPart</string>
+						<string>carShapeWithHole</string>
 						<key>points</key>
 						<array>
 							<array>
-								<string>{43.819952318037856, -26.765586164429426}</string>
-								<string>{74.18014852167407, -15.842423122138904}</string>
-								<string>{100.42691219619137, 4.3992608404722962}</string>
-								<string>{97.913148183293089, 31.476314754537768}</string>
-								<string>{26.702214329870628, 32.177561157702769}</string>
-								<string>{24.832770201656963, -26.903364777487429}</string>
+								<string>{90.80000364780426, 31.70000159740448}</string>
+								<string>{-95.80000376701355, 31.100001573562622}</string>
+								<string>{-41.800001621246338, -25.300000667572021}</string>
+							</array>
+							<array>
+								<string>{90.80000364780426, 31.70000159740448}</string>
+								<string>{-41.800001621246338, -25.300000667572021}</string>
+								<string>{9.8000004291534424, -27.100000739097595}</string>
+							</array>
+							<array>
+								<string>{90.80000364780426, 31.70000159740448}</string>
+								<string>{9.8000004291534424, -27.100000739097595}</string>
+								<string>{21.800000905990601, -27.100000739097595}</string>
+							</array>
+							<array>
+								<string>{90.80000364780426, 31.70000159740448}</string>
+								<string>{21.800000905990601, -27.100000739097595}</string>
+								<string>{54.800002217292786, -22.90000057220459}</string>
+							</array>
+							<array>
+								<string>{90.80000364780426, 31.70000159740448}</string>
+								<string>{54.800002217292786, -22.90000057220459}</string>
+								<string>{81.200003266334534, -10.900000095367432}</string>
+							</array>
+							<array>
+								<string>{90.80000364780426, 31.70000159740448}</string>
+								<string>{81.200003266334534, -10.900000095367432}</string>
+								<string>{98.600003957748413, 4.700000524520874}</string>
+							</array>
+							<array>
+								<string>{99.200003981590271, 28.70000147819519}</string>
+								<string>{90.80000364780426, 31.70000159740448}</string>
+								<string>{98.600003957748413, 4.700000524520874}</string>
+							</array>
+							<array>
+								<string>{8.0000003576278687, -48.70000159740448}</string>
+								<string>{21.800000905990601, -27.100000739097595}</string>
+								<string>{9.8000004291534424, -27.100000739097595}</string>
+								<string>{8.0000003576278687, -40.300001263618469}</string>
+							</array>
+							<array>
+								<string>{-44.20000171661377, -48.70000159740448}</string>
+								<string>{8.0000003576278687, -48.70000159740448}</string>
+								<string>{8.0000003576278687, -40.300001263618469}</string>
+								<string>{-42.400001645088196, -40.300001263618469}</string>
+							</array>
+							<array>
+								<string>{-55.60000216960907, -27.100000739097595}</string>
+								<string>{-44.20000171661377, -48.70000159740448}</string>
+								<string>{-42.400001645088196, -40.300001263618469}</string>
+								<string>{-47.200001835823059, -31.300000905990601}</string>
+							</array>
+							<array>
+								<string>{-55.60000216960907, -27.100000739097595}</string>
+								<string>{-47.200001835823059, -31.300000905990601}</string>
+								<string>{-41.800001621246338, -25.300000667572021}</string>
+								<string>{-95.80000376701355, 31.100001573562622}</string>
+							</array>
+							<array>
+								<string>{-100.60000395774841, -11.50000011920929}</string>
+								<string>{-65.200002551078796, -27.100000739097595}</string>
+								<string>{-55.60000216960907, -27.100000739097595}</string>
+								<string>{-95.80000376701355, 31.100001573562622}</string>
+								<string>{-101.80000400543213, 28.100001454353333}</string>
 							</array>
 						</array>
 						<key>restitution</key>
@@ -62,41 +120,14 @@
 						<key>sensor</key>
 						<false/>
 						<key>shapeID</key>
-						<integer>2</integer>
-					</dict>
-					<dict>
-						<key>category</key>
-						<integer>1</integer>
-						<key>density</key>
-						<real>0.10000000000000001</real>
-						<key>friction</key>
-						<real>0.20000000000000001</real>
-						<key>mask</key>
-						<integer>65535</integer>
-						<key>name</key>
-						<string>topPart</string>
-						<key>points</key>
-						<array>
-							<array>
-								<string>{-45.558331318323816, -50.89216594737767}</string>
-								<string>{4.6726943780707657, -48.478826519721537}</string>
-								<string>{20.550276884919882, -27.397360672725849}</string>
-								<string>{-55.55360644442095, -26.876185583121966}</string>
-							</array>
-						</array>
-						<key>restitution</key>
-						<integer>0</integer>
-						<key>sensor</key>
-						<false/>
-						<key>shapeID</key>
-						<integer>1</integer>
+						<integer>3</integer>
 					</dict>
 				</array>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>frame</key>
-			<string>{{1.000000, 2.000000}, {201.000000, 81.000000}}</string>
+			<string>{{2.000000, 2.000000}, {201.000000, 81.000000}}</string>
 			<key>offset</key>
 			<string>{-1.000000, 8.500000}</string>
 			<key>rotated</key>
@@ -144,7 +175,7 @@
 						<key>name</key>
 						<string>myCircle</string>
 						<key>radius</key>
-						<real>19.08643</real>
+						<real>23.638680000000001</real>
 						<key>restitution</key>
 						<integer>0</integer>
 						<key>sensor</key>
@@ -157,7 +188,7 @@
 				<integer>2</integer>
 			</dict>
 			<key>frame</key>
-			<string>{{0.000000, 86.000000}, {51.000000, 51.000000}}</string>
+			<string>{{2.000000, 88.000000}, {51.000000, 51.000000}}</string>
 			<key>offset</key>
 			<string>{-0.500000, 0.000000}</string>
 			<key>rotated</key>
@@ -223,7 +254,7 @@
 				<integer>2</integer>
 			</dict>
 			<key>frame</key>
-			<string>{{205.000000, 0.000000}, {38.000000, 38.000000}}</string>
+			<string>{{208.000000, 2.000000}, {38.000000, 38.000000}}</string>
 			<key>offset</key>
 			<string>{-20.000000, 20.000000}</string>
 			<key>rotated</key>
@@ -293,7 +324,7 @@
 				<integer>2</integer>
 			</dict>
 			<key>frame</key>
-			<string>{{56.000000, 86.000000}, {154.000000, 38.000000}}</string>
+			<string>{{58.000000, 88.000000}, {154.000000, 38.000000}}</string>
 			<key>offset</key>
 			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
@@ -313,7 +344,7 @@
 		<key>ratio</key>
 		<real>1.2</real>
 		<key>size</key>
-		<string>{246.000000, 139.000000}</string>
+		<string>{249.000000, 141.000000}</string>
 		<key>textureFileName</key>
 		<string>carParts.png</string>
 	</dict>

@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>iphone6</string>
 			<key>color</key>
-			<string>{{0.04084526002407074, 0.040866993367671967}, {0.040834307670593262, 1}}</string>
+			<string>{{0.040840994566679001, 0.040852658450603485}, {0.040833938866853714, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -153,6 +153,11 @@
 					<true/>
 				</dict>
 				<key>dynamicObjAnimTest.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>emptyLevel.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

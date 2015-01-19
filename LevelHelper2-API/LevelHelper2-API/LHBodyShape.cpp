@@ -121,12 +121,10 @@ static void LHSetupb2FixtureWithInfo(b2FixtureDef* fixture, ValueMap& dict)
 
 LHBodyShape::LHBodyShape()
 {
-    m_box2dFixture = NULL;
 }
 
 LHBodyShape::~LHBodyShape()
 {
-    m_box2dFixture = NULL;
 }
 
 LHBodyShape* LHBodyShape::createWithValueMap(ValueMap& dict, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)

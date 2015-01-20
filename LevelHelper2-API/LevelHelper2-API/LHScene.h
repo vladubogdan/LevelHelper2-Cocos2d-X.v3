@@ -187,7 +187,7 @@ public:
      
      Available only when using Box2d.
      
-     @param contact The info of this contact. A struct with nodeA, nodeB, nodeAShapeName, nodeBShapeName, nodeAShapeID, nodeBShapeID.
+     @param contact The info of this contact. An object with nodeA, nodeB, nodeAShapeName, nodeBShapeName, nodeAShapeID, nodeBShapeID.
      
      */
     virtual void didBeginContact(LHContactInfo contact){}
@@ -265,6 +265,7 @@ private:
     
 #if LH_USE_BOX2D
     LHBox2dCollisionHandling* _box2dCollision;
+    __Array* _physicsBoundarySubShapes;
 #endif
     
     //pinch support

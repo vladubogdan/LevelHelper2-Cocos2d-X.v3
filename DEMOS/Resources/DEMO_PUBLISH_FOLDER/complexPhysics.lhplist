@@ -212,7 +212,7 @@
 						<key>fixedRotation</key>
 						<true/>
 						<key>fixtureUUID</key>
-						<string>1B4053A8-76B8-4973-ADAB-77880DB671AA</string>
+						<string>5BF8BC71-5DB6-452B-A44F-6DAE9DC77B77</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -276,7 +276,7 @@
 					<key>colorOverlay</key>
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.500368, 0.407673}</string>
+					<string>{0.553809, 0.352249}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -858,7 +858,7 @@
 					<key>colorOverlay</key>
 					<string>{{0.000000, 0.000000}, {0.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.649596, 0.721341}</string>
+					<string>{0.675204, 0.719618}</string>
 					<key>name</key>
 					<string>UntitledBezier</string>
 					<key>nodePhysics</key>
@@ -1244,7 +1244,7 @@
 					<key>colorOverlay</key>
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.201932, 0.058978}</string>
+					<string>{0.236656, 0.058978}</string>
 					<key>imageFileName</key>
 					<string>carParts.png</string>
 					<key>name</key>
@@ -1416,9 +1416,9 @@
 	<key>physicsBoundaries</key>
 	<dict>
 		<key>960x640</key>
-		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
+		<string>{{-0.000790, 0.000000}, {1.000790, 0.934279}}</string>
 		<key>general</key>
-		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
+		<string>{{-0.000790, 0.000000}, {1.000790, 0.934279}}</string>
 	</dict>
 	<key>sceneFormat</key>
 	<real>1</real>
@@ -1428,7 +1428,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>1B4053A8-76B8-4973-ADAB-77880DB671AA</key>
+		<key>5BF8BC71-5DB6-452B-A44F-6DAE9DC77B77</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>

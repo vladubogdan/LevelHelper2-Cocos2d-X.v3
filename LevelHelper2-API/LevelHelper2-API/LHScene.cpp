@@ -29,6 +29,7 @@
 #include "LHWater.h"
 #include "LHUtils.h"
 #include "LHBox2dCollisionHandling.h"
+#include "LHBodyShape.h"
 
 
 #include <sstream>
@@ -40,6 +41,7 @@ LHScene::LHScene()
 {
 #if LH_USE_BOX2D
     _box2dCollision = NULL;
+    _physicsBoundarySubShapes = NULL;
 #endif
     _currentDev = NULL;
     _touchListener = NULL;
@@ -59,6 +61,7 @@ LHScene::~LHScene()
     _currentDev = nullptr;
     
 #if LH_USE_BOX2D
+    CC_SAFE_RELEASE(_physicsBoundarySubShapes);
     CC_SAFE_DELETE(_box2dCollision);
 #endif
     
@@ -328,7 +331,7 @@ void LHScene::loadPhysicsBoundariesFromDictionary(LHDictionary* dict)
             {
                 createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
                                                  Point(skBRect.getMaxX(), skBRect.getMinY()),
-                                                 "LHPhysicsBottomBoundary");
+                                                 "LHPhysicsTopBoundary");
             }
             
             {
@@ -341,7 +344,7 @@ void LHScene::loadPhysicsBoundariesFromDictionary(LHDictionary* dict)
             {
                 createPhysicsBoundarySectionFrom(Point(skBRect.getMaxX(), skBRect.getMaxY()),
                                                  Point(skBRect.getMinX(), skBRect.getMaxY()),
-                                                 "LHPhysicsTopBoundary");
+                                                 "LHPhysicsBottomBoundary");
             }
             
             {
@@ -355,33 +358,24 @@ void LHScene::loadPhysicsBoundariesFromDictionary(LHDictionary* dict)
 
 void LHScene::createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName)
 {
+    LHNode* drawNode = LHNode::createWithName(sectionName);
+    
 #if LH_USE_BOX2D
     
-    float PTM_RATIO = this->getPtm();
+    if(!_physicsBoundarySubShapes){
+        _physicsBoundarySubShapes = new __Array();
+        _physicsBoundarySubShapes->init();
+    }
     
-    // Define the ground body.
-    b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(0, 0); // bottom-left corner
-    
-    b2Body* physicsBoundariesBody = this->getBox2dWorld()->CreateBody(&groundBodyDef);
-    
-    // Define the ground box shape.
-    b2EdgeShape groundBox;
-    
-    // top
-    groundBox.Set(b2Vec2(from.x/PTM_RATIO,
-                         from.y/PTM_RATIO),
-                  b2Vec2(to.x/PTM_RATIO,
-                         to.y/PTM_RATIO));
-    physicsBoundariesBody->CreateFixture(&groundBox,0);
+    LHBodyShape* shape = LHBodyShape::createWithName(sectionName, from, to, drawNode, this);
+    _physicsBoundarySubShapes->addObject(shape);
     
 #else //chipmunk
-    LHNode* drawNode = LHNode::createWithName(sectionName);
     PhysicsBody* boundaryBody = PhysicsBody::createEdgeSegment(from, to);
     drawNode->setPhysicsBody(boundaryBody);
-    this->getGameWorldNode()->addChild(drawNode);
 #endif
     
+    this->getGameWorldNode()->addChild(drawNode);
 }
 
 

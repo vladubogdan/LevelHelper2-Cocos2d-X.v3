@@ -44,6 +44,9 @@ public:
     static LHBodyShape* createWithDictionaryAndTriangles(ValueMap& dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     virtual bool initWithDictionaryAndTriangles(ValueMap& dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     
+    static LHBodyShape* createWithName(const std::string& nm, const Point& ptA, const Point& ptB, Node* node, LHScene* scene);
+    virtual bool initWithName(const std::string& nm, const Point& ptA, const Point& ptB, Node* node, LHScene* scene);
+    
     static LHBodyShape* createChainWithDictionaryAndPoints(ValueMap& dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     virtual bool initChainWithDictionaryAndPoints(ValueMap& dict, const std::vector<Point>& points, bool close, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY);
     

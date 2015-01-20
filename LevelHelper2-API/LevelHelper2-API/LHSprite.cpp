@@ -109,9 +109,9 @@ LHSprite* LHSprite::createWithSpriteName(const std::string& spriteFrameName,
     }
 }
 bool LHSprite::initWithSpriteName(const std::string& spriteName,
-                                  const std::string& imageFile,
-                                  const std::string& folder,
-                                  Node* prnt)
+                                       const std::string& imageFile,
+                                       const std::string& folder,
+                                       Node* prnt)
 {
     LHScene* scene = (LHScene*)prnt->getScene();
     

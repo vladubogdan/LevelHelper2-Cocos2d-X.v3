@@ -404,6 +404,55 @@ bool LHBodyShape::initWithDictionary(ValueMap& dict, ValueVector& shapePoints, b
 }
 
 
+
+LHBodyShape* LHBodyShape::createWithName(const std::string& nm, const Point& ptA, const Point& ptB, Node* node, LHScene* scene)
+{
+    LHBodyShape *ret = new LHBodyShape();
+    if (ret && ret->initWithName(nm, ptA, ptB, node, scene))
+    {
+        ret->autorelease();
+        return ret;
+    }
+    else
+    {
+        CC_SAFE_DELETE(ret);
+        return nullptr;
+    }
+}
+
+bool LHBodyShape::initWithName(const std::string& nm, const Point& ptA, const Point& ptB, Node* node, LHScene* scene)
+{
+    {
+        shapeName   = nm;
+        shapeID     = 0;
+        
+        // Define the ground body.
+        b2BodyDef groundBodyDef;
+        groundBodyDef.position.Set(0, 0); // bottom-left corner
+        
+        b2Body* physicsBoundariesBody = scene->getBox2dWorld()->CreateBody(&groundBodyDef);
+        
+        physicsBoundariesBody->SetUserData(node);
+        
+        // Define the ground box shape.
+        b2EdgeShape groundBox;
+        
+        b2Vec2 from = scene->metersFromPoint(ptA);
+        b2Vec2 to = scene->metersFromPoint(ptB);
+        
+        // top
+        groundBox.Set(from, to);
+        b2Fixture* fixture = physicsBoundariesBody->CreateFixture(&groundBox,0);
+        fixture->SetUserData(this);
+        
+        return true;
+    }
+    return false;
+}
+
+
+
+
 LHBodyShape* LHBodyShape::createWithDictionaryAndTriangles(ValueMap& dict, const std::vector<Point>& triangles, b2Body* body, Node* node, LHScene* scene, float scaleX, float scaleY)
 {
     LHBodyShape *ret = new LHBodyShape();

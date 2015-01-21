@@ -38,12 +38,17 @@ void LHSprite::cacheSpriteFramesInfo(const std::string& imageFilePath, LHScene* 
     if (texture)
     {
         std::string fullPlistPath = FileUtils::getInstance()->fullPathForFilename(plist_path);
+
+#if COCOS2D_VERSION > 0x00030200
         
         std::string plist_content = FileUtils::getInstance()->getStringFromFile(fullPlistPath);
-        
         SpriteFrameCache::getInstance()->addSpriteFramesWithFileContent(plist_content, texture);
-        
         ValueMap dictionary = FileUtils::getInstance()->getValueMapFromData(plist_content.c_str(), static_cast<int>(plist_content.size()));
+#else
+        
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFile(fullPlistPath);
+        ValueMap dictionary = FileUtils::getInstance()->getValueMapFromFile(fullPlistPath);
+#endif
         
         ValueMap& framesDict = dictionary["frames"].asValueMap();
         

@@ -69,6 +69,8 @@ public:
 
     virtual bool lateLoading();
     
+    virtual void shouldRemoveJoint();
+    
 private:
     
     float   _thickness;
@@ -94,6 +96,8 @@ private:
     
     b2RopeJoint* cutJointA;
     b2RopeJoint* cutJointB;
+    b2RopeJoint* cutJointAB; //we use this to disable collision between body A & B if the rope is cut when they are next to each other
+    
     b2Body* cutBodyA;
     b2Body* cutBodyB;
     

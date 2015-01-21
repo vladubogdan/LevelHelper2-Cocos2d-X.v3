@@ -68,10 +68,11 @@ void LHSceneOnTheFlySpritesWithPhysicsDemo::onTouchesBegan(const std::vector<Tou
     location = this->getGameWorldNode()->convertToNodeSpace(location);
     
 
-    LHSprite* sprite = LHSprite::createWithSpriteFrameName("carBody",
-                                                           "carParts.png",
-                                                           "DEMO_PUBLISH_FOLDER/",
-                                                           this->getGameWorldNode());
+    LHSprite* sprite = LHSprite::createWithSpriteName("carBody",
+                                                      "carParts.png",
+                                                      "DEMO_PUBLISH_FOLDER/",
+                                                      this->getGameWorldNode());
+    
     printf("did create %s %p\n", sprite->getName().c_str(), sprite);
     sprite->setPosition(location);
     

@@ -63,8 +63,8 @@ bool LHRevoluteJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         _enableMotor = dict->boolForKey("enableMotor");
         
         
-        _lowerAngle = CC_DEGREES_TO_RADIANS(dict->floatForKey("lowerAngle") - 180.0f);
-        _upperAngle = CC_DEGREES_TO_RADIANS(dict->floatForKey("upperAngle") - 180.0f);
+        _lowerAngle = CC_DEGREES_TO_RADIANS(-dict->floatForKey("lowerAngle"));
+        _upperAngle = CC_DEGREES_TO_RADIANS(-dict->floatForKey("upperAngle"));
         
         _maxMotorTorque = dict->floatForKey("maxMotorTorque");
         _motorSpeed     = CC_DEGREES_TO_RADIANS(-360.0*dict->floatForKey("motorSpeed"));

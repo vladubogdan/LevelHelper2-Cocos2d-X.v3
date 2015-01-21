@@ -61,11 +61,11 @@ bool LHPrismaticJointNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         _enableLimit = dict->boolForKey("enablePrismaticLimit");
         _enableMotor = dict->boolForKey("enablePrismaticMotor");
         
-        _lowerTranslation = dict->floatForKey("lowerTranslation");
-        _upperTranslation = dict->floatForKey("upperTranslation");
+        _lowerTranslation = -dict->floatForKey("lowerTranslation");
+        _upperTranslation = -dict->floatForKey("upperTranslation");
         
         _maxMotorForce  = dict->floatForKey("maxMotorForce");
-        _motorSpeed     = dict->floatForKey("prismaticMotorSpeed");
+        _motorSpeed     = -dict->floatForKey("prismaticMotorSpeed");
         
         _axis = dict->pointForKey("axis");
         

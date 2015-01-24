@@ -54,7 +54,8 @@ bool LHSceneComplexPhysicsDemo::initWithContentOfFile(const std::string& plistLe
     return retValue;
 }
 
-void LHSceneComplexPhysicsDemo::didBeginContact(LHContactInfo contact){
+#if LH_USE_BOX2D
+void LHSceneComplexPhysicsDemo::didBeginContact(const LHContactInfo& contact){
     
     printf("DID BEGIN CONTACT WITH INFO\n");
     printf("Node A %s\n", contact.nodeA->getName().c_str());
@@ -69,7 +70,7 @@ void LHSceneComplexPhysicsDemo::didBeginContact(LHContactInfo contact){
     printf("------------------------------------------\n");
 }
 
-void LHSceneComplexPhysicsDemo::didEndContact(LHContactInfo contact){
+void LHSceneComplexPhysicsDemo::didEndContact(const LHContactInfo& contact){
 
     printf("DID END CONTACT WITH INFO\n");
     printf("Node A %s\n", contact.nodeA->getName().c_str());
@@ -81,5 +82,6 @@ void LHSceneComplexPhysicsDemo::didEndContact(LHContactInfo contact){
     printf("Box2d Contact Info %p\n", contact.box2dContact);
     printf("------------------------------------------\n");
 }
+#endif
 
 

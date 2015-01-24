@@ -621,6 +621,10 @@ void LHPhysicsProtocol::visitPhysicsProtocol()
     //nothing to update on chipmunk - update is handled by Cocos2d
 }
 
+void LHPhysicsProtocol::loadPhysicsFromValueMap(ValueMap value_Map, LHScene* scene){
+    //not used by chipmunk yet
+}
+
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
     if(!dict)return;

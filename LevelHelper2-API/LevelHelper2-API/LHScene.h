@@ -190,7 +190,7 @@ public:
      @param contact The info of this contact. An object with nodeA, nodeB, nodeAShapeName, nodeBShapeName, nodeAShapeID, nodeBShapeID.
      
      */
-    virtual void didBeginContact(LHContactInfo contact){}
+    virtual void didBeginContact(const LHContactInfo& contact){}
     CC_DEPRECATED_ATTRIBUTE virtual void didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse){}
     /**
      Overwrite this methods to receive collision informations when using Box2d.
@@ -200,7 +200,7 @@ public:
      
      @param LHContactInfo The info of this contact. NOTE: Contact Point and Impulse is not available at this stage.
      */
-    virtual void didEndContact(LHContactInfo contact){}
+    virtual void didEndContact(const LHContactInfo& contact){}
     CC_DEPRECATED_ATTRIBUTE virtual void didEndContactBetweenNodes(Node* nodeA, Node* nodeB){}
 #else
     

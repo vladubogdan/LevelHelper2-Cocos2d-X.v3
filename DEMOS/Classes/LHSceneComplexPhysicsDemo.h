@@ -16,8 +16,10 @@ public:
 
     virtual std::string className();
     
-    virtual void didBeginContact(LHContactInfo contact);
-    virtual void didEndContact(LHContactInfo contact);
+#if LH_USE_BOX2D
+    virtual void didBeginContact(const LHContactInfo& contact);
+    virtual void didEndContact(const LHContactInfo& contact);
+#endif
     
 };
 

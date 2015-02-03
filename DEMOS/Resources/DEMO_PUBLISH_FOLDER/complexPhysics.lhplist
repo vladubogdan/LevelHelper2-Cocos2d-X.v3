@@ -1,0 +1,1899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>2</integer>
+	<key>backgroundColor</key>
+	<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>BACK USER INTERFACE</string>
+			<key>nodeType</key>
+			<string>LHBackUINode</string>
+			<key>parentUUID</key>
+			<string>E912062D-7820-48E4-951B-99EB487C80CB</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>25B0AA79-0050-446F-A0D3-8DB79E9D7468</string>
+			<key>zOrder</key>
+			<integer>-1</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.191851, 0.829603}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>wood_3</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.20000000298023224</real>
+							<key>friction</key>
+							<real>0.30000001192092896</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.30000001192092896</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>1</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>0</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{128.000000, 32.000000}</string>
+					<key>spriteName</key>
+					<string>wood</string>
+					<key>spriteUUID</key>
+					<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>B1B371AA-6C68-4B32-9F5C-658361A187C6</string>
+					<key>zOrder</key>
+					<integer>-1</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.673062, 0.217680}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>wood_4</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.20000000298023224</real>
+							<key>friction</key>
+							<real>0.30000001192092896</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.30000001192092896</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>1</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>0</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>200.98974609375</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{128.000000, 32.000000}</string>
+					<key>spriteName</key>
+					<string>wood</string>
+					<key>spriteUUID</key>
+					<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>33389F2A-7975-458C-816C-0B9967A441C1</string>
+					<key>zOrder</key>
+					<integer>-1</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.492561, 0.148848}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>test2</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>6</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{128.000000, 128.000000}</string>
+					<key>spriteName</key>
+					<string>test2</string>
+					<key>spriteUUID</key>
+					<string>6ADE2BC5-C91D-4B1B-A3DE-1AE8D81DB81A</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>0F0CE684-122C-426E-84FF-0ACD47A9F0B8</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.816033, 0.322685}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>carTyre_1</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>MyCircleShape</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>3</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>1</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{47.000000, 46.000000}</string>
+					<key>spriteName</key>
+					<string>carTyre</string>
+					<key>spriteUUID</key>
+					<string>F2BF5807-ACFF-44E8-BAA8-94A87CAC4F40</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>13CCE072-D4C7-46F1-A0C7-8441E270C9C6</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.233959, 0.354550}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>carBody_1</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<false/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<true/>
+						<key>fixedRotation</key>
+						<true/>
+						<key>fixtureUUID</key>
+						<string>6E032924-7F20-4410-B960-72E8E5E8A13F</string>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>0.60000002384185791</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>5</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{180.000000, 95.000000}</string>
+					<key>spriteName</key>
+					<string>carBody</string>
+					<key>spriteUUID</key>
+					<string>9015E100-C10C-4DE0-A4C3-A69E08983DEC</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>78834A5B-39C6-4B92-94A2-1F2694A8E7CE</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.401235, 0.388494}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>test2_1</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.0</real>
+							<key>friction</key>
+							<real>0.0</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>0</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{128.000000, 128.000000}</string>
+					<key>spriteName</key>
+					<string>test2</string>
+					<key>spriteUUID</key>
+					<string>6ADE2BC5-C91D-4B1B-A3DE-1AE8D81DB81A</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>423D4C38-3575-403E-B29C-C21BBE95CFD2</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.123427, 0.470519}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>wood</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>6</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{128.000000, 32.000000}</string>
+					<key>spriteName</key>
+					<string>wood</string>
+					<key>spriteUUID</key>
+					<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>E04B2B2C-6A5B-4F70-A808-CD2A4F6C1586</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.190581, 0.594556}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>wood_1</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.0</real>
+							<key>friction</key>
+							<real>0.0</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>0</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{128.000000, 32.000000}</string>
+					<key>spriteName</key>
+					<string>wood</string>
+					<key>spriteUUID</key>
+					<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>97A8A533-603D-4F24-8E24-E414822F95D5</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.664389, 0.497940}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>carTyre_2</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>MyFix</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>4</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>ovalShape</key>
+						<array>
+							<array>
+								<string>{-23.5, 2.8166875756574289e-15}</string>
+								<string>{-23.048454284667969, -4.4870772361755371}</string>
+								<string>{-21.71116828918457, -8.8017187118530273}</string>
+								<string>{-19.539535522460938, -12.778115272521973}</string>
+								<string>{-16.617010116577148, -16.263456344604492}</string>
+								<string>{-19.539535522460938, 12.778115272521973}</string>
+								<string>{-21.71116828918457, 8.8017187118530273}</string>
+								<string>{-23.048454284667969, 4.4870772361755371}</string>
+							</array>
+							<array>
+								<string>{-19.539535522460938, 12.778115272521973}</string>
+								<string>{-16.617010116577148, -16.263456344604492}</string>
+								<string>{-13.055900573730469, -19.123800277709961}</string>
+								<string>{-8.9930610656738281, -21.249229431152344}</string>
+								<string>{-4.5846223831176758, -22.558061599731445}</string>
+								<string>{-8.9930610656738281, 21.249229431152344}</string>
+								<string>{-13.055900573730469, 19.123800277709961}</string>
+								<string>{-16.617010116577148, 16.263456344604492}</string>
+							</array>
+							<array>
+								<string>{-8.9930610656738281, 21.249229431152344}</string>
+								<string>{-4.5846223831176758, -22.558061599731445}</string>
+								<string>{-4.3168801222754922e-15, -23}</string>
+								<string>{4.5846223831176758, -22.558061599731445}</string>
+								<string>{8.9930610656738281, -21.249229431152344}</string>
+								<string>{4.5846223831176758, 22.558061599731445}</string>
+								<string>{1.4389600054654579e-15, 23}</string>
+								<string>{-4.5846223831176758, 22.558061599731445}</string>
+							</array>
+							<array>
+								<string>{4.5846223831176758, 22.558061599731445}</string>
+								<string>{8.9930610656738281, -21.249229431152344}</string>
+								<string>{13.055900573730469, -19.123800277709961}</string>
+								<string>{16.617010116577148, -16.263456344604492}</string>
+								<string>{19.539535522460938, -12.778115272521973}</string>
+								<string>{16.617010116577148, 16.263456344604492}</string>
+								<string>{13.055900573730469, 19.123800277709961}</string>
+								<string>{8.9930610656738281, 21.249229431152344}</string>
+							</array>
+							<array>
+								<string>{16.617010116577148, 16.263456344604492}</string>
+								<string>{19.539535522460938, -12.778115272521973}</string>
+								<string>{21.71116828918457, -8.8017187118530273}</string>
+								<string>{23.048454284667969, -4.4870772361755371}</string>
+								<string>{23.5, 0}</string>
+								<string>{23.048454284667969, 4.4870772361755371}</string>
+								<string>{21.71116828918457, 8.8017187118530273}</string>
+								<string>{19.539535522460938, 12.778115272521973}</string>
+							</array>
+						</array>
+						<key>shape</key>
+						<integer>4</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 2.270327}</string>
+					<key>size</key>
+					<string>{47.000000, 46.000000}</string>
+					<key>spriteName</key>
+					<string>carTyre</string>
+					<key>spriteUUID</key>
+					<string>F2BF5807-ACFF-44E8-BAA8-94A87CAC4F40</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>37204D0E-2FE4-41DD-82B9-7C6CC0FDC950</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 0.512756}, {0.353925, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.369383, 0.657894}</string>
+					<key>name</key>
+					<string>UntitledTexturedShape</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>2</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHTexturedShape</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>points</key>
+					<array>
+						<dict>
+							<key>point</key>
+							<string>{32.473496, -64.029640}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{75.000000, 0.000000}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{31.655200, 56.613282}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{-36.832012, -5.327547}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{-75.000000, 86.602540}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{-75.000000, -86.602540}</string>
+						</dict>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{150.000000, 173.205078}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>tileScale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>tileTexture</key>
+					<false/>
+					<key>triangles</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-36.832012, -5.327547}</string>
+							<key>uv</key>
+							<string>{0.890625, 0.500000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-75.000000, 86.602540}</string>
+							<key>uv</key>
+							<string>{0.304688, 0.838291}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-75.000000, -86.602540}</string>
+							<key>uv</key>
+							<string>{0.304688, 0.161709}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-36.832012, -5.327547}</string>
+							<key>uv</key>
+							<string>{0.000000, 1.000000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-75.000000, -86.602540}</string>
+							<key>uv</key>
+							<string>{1.000000, 0.500000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{32.473496, -64.029640}</string>
+							<key>uv</key>
+							<string>{0.485472, 0.763798}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{31.655200, 56.613282}</string>
+							<key>uv</key>
+							<string>{0.423568, 0.740176}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-36.832012, -5.327547}</string>
+							<key>uv</key>
+							<string>{1.000000, 0.500000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{32.473496, -64.029640}</string>
+							<key>uv</key>
+							<string>{0.485472, 0.763798}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{31.655200, 56.613282}</string>
+							<key>uv</key>
+							<string>{0.711035, 0.826857}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{32.473496, -64.029640}</string>
+							<key>uv</key>
+							<string>{0.591018, 0.298962}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{75.000000, 0.000000}</string>
+							<key>uv</key>
+							<string>{1.000000, 0.500000}</string>
+						</dict>
+					</array>
+					<key>uuid</key>
+					<string>7504608E-3F36-4D3B-B3E4-A0121C28005D</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>closed</key>
+					<false/>
+					<key>colorOverlay</key>
+					<string>{{0.000000, 0.000000}, {0.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.675204, 0.719618}</string>
+					<key>name</key>
+					<string>UntitledBezier</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>3</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHBezier</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>points</key>
+					<array>
+						<dict>
+							<key>ctrl1</key>
+							<string>{-100.000000, 62.500019}</string>
+							<key>ctrl2</key>
+							<string>{-100.000000, 62.500019}</string>
+							<key>hasCtrl1</key>
+							<true/>
+							<key>hasCtrl2</key>
+							<true/>
+							<key>mainPt</key>
+							<string>{-100.000000, -37.499981}</string>
+						</dict>
+						<dict>
+							<key>ctrl1</key>
+							<string>{100.000000, 62.500019}</string>
+							<key>ctrl2</key>
+							<string>{100.000000, 62.500019}</string>
+							<key>hasCtrl1</key>
+							<true/>
+							<key>hasCtrl2</key>
+							<true/>
+							<key>mainPt</key>
+							<string>{100.000000, -37.499981}</string>
+						</dict>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{200.000000, 75.000031}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>5C59A4FB-6D6E-43DE-A6C1-490B0D91E6C3</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 0.512756}, {0.353925, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.878405, 0.580885}</string>
+					<key>name</key>
+					<string>UntitledTexturedShape_1</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>3</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHTexturedShape</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>points</key>
+					<array>
+						<dict>
+							<key>point</key>
+							<string>{32.473496, -64.029640}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{75.000000, 0.000000}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{31.655200, 56.613282}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{-36.832012, -5.327547}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{-75.000000, 86.602540}</string>
+						</dict>
+						<dict>
+							<key>point</key>
+							<string>{-75.000000, -86.602540}</string>
+						</dict>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{150.000000, 173.205078}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>tileScale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>tileTexture</key>
+					<false/>
+					<key>triangles</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-36.832012, -5.327547}</string>
+							<key>uv</key>
+							<string>{0.890625, 0.500000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-75.000000, 86.602540}</string>
+							<key>uv</key>
+							<string>{0.304688, 0.838291}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-75.000000, -86.602540}</string>
+							<key>uv</key>
+							<string>{0.304688, 0.161709}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-36.832012, -5.327547}</string>
+							<key>uv</key>
+							<string>{0.000000, 1.000000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-75.000000, -86.602540}</string>
+							<key>uv</key>
+							<string>{1.000000, 0.500000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{32.473496, -64.029640}</string>
+							<key>uv</key>
+							<string>{0.485472, 0.763798}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{31.655200, 56.613282}</string>
+							<key>uv</key>
+							<string>{0.423568, 0.740176}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{-36.832012, -5.327547}</string>
+							<key>uv</key>
+							<string>{1.000000, 0.500000}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{32.473496, -64.029640}</string>
+							<key>uv</key>
+							<string>{0.485472, 0.763798}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{31.655200, 56.613282}</string>
+							<key>uv</key>
+							<string>{0.711035, 0.826857}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{32.473496, -64.029640}</string>
+							<key>uv</key>
+							<string>{0.591018, 0.298962}</string>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>color</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>point</key>
+							<string>{75.000000, 0.000000}</string>
+							<key>uv</key>
+							<string>{1.000000, 0.500000}</string>
+						</dict>
+					</array>
+					<key>uuid</key>
+					<string>33CB8C6C-48AA-4EA9-A53A-EEC242F2F5C2</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.212717, 0.208963}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>carBody</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<false/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<true/>
+						<key>fixedRotation</key>
+						<true/>
+						<key>gravityScale</key>
+						<real>0.60000002384185791</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>6</integer>
+						<key>type</key>
+						<integer>0</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{180.000000, 95.000000}</string>
+					<key>spriteName</key>
+					<string>carBody</string>
+					<key>spriteUUID</key>
+					<string>9015E100-C10C-4DE0-A4C3-A69E08983DEC</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>E8EA3C44-D893-4F35-A367-F11CA42CE705</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.236656, 0.058978}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>carTyre</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>6</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{47.000000, 46.000000}</string>
+					<key>spriteName</key>
+					<string>carTyre</string>
+					<key>spriteUUID</key>
+					<string>F2BF5807-ACFF-44E8-BAA8-94A87CAC4F40</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>15CC348C-7643-4019-BB07-C4F1FC594C50</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.193708, 0.789902}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>wood_2</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.5</real>
+							<key>friction</key>
+							<real>0.30000001192092896</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.30000001192092896</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>2</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>0</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>335.30099487304688</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{128.000000, 32.000000}</string>
+					<key>spriteName</key>
+					<string>wood</string>
+					<key>spriteUUID</key>
+					<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>95873D62-BA5D-4EAA-9DBA-A3229AAAD590</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>collideConnected</key>
+					<false/>
+					<key>enableLimit</key>
+					<true/>
+					<key>enableMotor</key>
+					<false/>
+					<key>lowerAngle</key>
+					<real>-90</real>
+					<key>maxMotorTorque</key>
+					<real>20</real>
+					<key>motorSpeed</key>
+					<real>1</real>
+					<key>name</key>
+					<string>UntitledRevoluteJoint</string>
+					<key>needsCopyReasignment</key>
+					<true/>
+					<key>nodeType</key>
+					<string>LHRevoluteJoint</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativePosA</key>
+					<string>{-39.327172, -5.581974}</string>
+					<key>spriteAUUID</key>
+					<string>95873D62-BA5D-4EAA-9DBA-A3229AAAD590</string>
+					<key>spriteBUUID</key>
+					<string>B1B371AA-6C68-4B32-9F5C-658361A187C6</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>upperAngle</key>
+					<real>180</real>
+					<key>uuid</key>
+					<string>D469075E-CF80-41DB-940D-9B23494C8068</string>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.725068, 0.170778}</string>
+					<key>imageFileName</key>
+					<string>carParts.png</string>
+					<key>name</key>
+					<string>wood_5</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<false/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.5</real>
+							<key>friction</key>
+							<real>0.30000001192092896</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.30000001192092896</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>2</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>shape</key>
+						<integer>0</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHSprite</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>relativeImagePath</key>
+					<string>DEMO_PUBLISH_FOLDER/</string>
+					<key>rotation</key>
+					<real>184.49923706054688</real>
+					<key>scale</key>
+					<string>{1.278859, 1.533131}</string>
+					<key>size</key>
+					<string>{128.000000, 32.000000}</string>
+					<key>spriteName</key>
+					<string>wood</string>
+					<key>spriteUUID</key>
+					<string>479A7CE8-61E5-46D5-9334-503D86C53BFE</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>9262A28F-3DF3-4FF8-A8CE-F808CE912936</string>
+					<key>zOrder</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>axis</key>
+					<string>{0.382683, -0.923880}</string>
+					<key>collideConnected</key>
+					<false/>
+					<key>enablePrismaticLimit</key>
+					<true/>
+					<key>enablePrismaticMotor</key>
+					<false/>
+					<key>lowerTranslation</key>
+					<real>-45</real>
+					<key>maxMotorForce</key>
+					<real>67.800003051757812</real>
+					<key>name</key>
+					<string>UntitledPrismaticJoint</string>
+					<key>needsCopyReasignment</key>
+					<true/>
+					<key>nodeType</key>
+					<string>LHPrismaticJoint</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>prismaticMotorSpeed</key>
+					<real>-7.0999999046325684</real>
+					<key>relativePosA</key>
+					<string>{57.184756, -5.751861}</string>
+					<key>spriteAUUID</key>
+					<string>9262A28F-3DF3-4FF8-A8CE-F808CE912936</string>
+					<key>spriteBUUID</key>
+					<string>33389F2A-7975-458C-816C-0B9967A441C1</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>upperTranslation</key>
+					<real>95.199996948242188</real>
+					<key>uuid</key>
+					<string>CEB79EDE-869B-449B-A090-D0CF80B19E36</string>
+				</dict>
+			</array>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>GAME WORLD</string>
+			<key>nodeType</key>
+			<string>LHGameWorldNode</string>
+			<key>parentUUID</key>
+			<string>E912062D-7820-48E4-951B-99EB487C80CB</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>D3747A95-B807-4F1A-BEF6-EDD760038A1F</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>FRONT USER INTERFACE</string>
+			<key>nodeType</key>
+			<string>LHUINode</string>
+			<key>parentUUID</key>
+			<string>E912062D-7820-48E4-951B-99EB487C80CB</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>9867DF4B-556A-4F7A-BF8C-30AB7DEF348C</string>
+			<key>zOrder</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960.000000, 640.000000}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960.000000, 640.000000}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136.000000, 640.000000}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024.000000, 768.000000}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048.000000, 1536.000000}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1.2000000476837158</real>
+			<key>size</key>
+			<string>{1334.000000, 750.000000}</string>
+			<key>suffix</key>
+			<string>iphone6</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2208.000000, 1242.000000}</string>
+			<key>suffix</key>
+			<string>iphone6plus</string>
+		</dict>
+	</array>
+	<key>globalGravityDirection</key>
+	<string>{0.000000, -1.000000}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>1024x768</key>
+		<string>{{0.002379, 0.000000}, {0.997621, 0.981044}}</string>
+		<key>1136x640</key>
+		<string>{{0.002379, 0.000000}, {0.997621, 0.981044}}</string>
+		<key>1334x750</key>
+		<string>{{0.002379, 0.000000}, {0.997621, 0.981044}}</string>
+		<key>2048x1536</key>
+		<string>{{0.002379, 0.000000}, {0.997621, 0.981044}}</string>
+		<key>2208x1242</key>
+		<string>{{0.002379, 0.000000}, {0.997621, 0.981044}}</string>
+		<key>960x640</key>
+		<string>{{0.001859, 0.000000}, {0.998141, 0.979267}}</string>
+		<key>general</key>
+		<string>{{0.002379, 0.000000}, {0.997621, 0.981044}}</string>
+	</dict>
+	<key>sceneFormat</key>
+	<real>1</real>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>6E032924-7F20-4410-B960-72E8E5E8A13F</key>
+		<array>
+			<array>
+				<string>{-40.75, -37.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-41.25, -34.5}</string>
+			</array>
+			<array>
+				<string>{10.25, -37}</string>
+				<string>{10.25, -35}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{5.75, -40.5}</string>
+				<string>{8.75, -39}</string>
+			</array>
+			<array>
+				<string>{82.25, 4.5}</string>
+				<string>{82.25, 22}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{42.25, -19.5}</string>
+				<string>{52.25, -16.5}</string>
+				<string>{63.75, -11}</string>
+				<string>{75.25, -2.5}</string>
+			</array>
+			<array>
+				<string>{-83.75, 24}</string>
+				<string>{-84.75, 21}</string>
+				<string>{-84.75, -7.5}</string>
+				<string>{-83.75, -10}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-80.25, 26.5}</string>
+				<string>{-81.75, 26}</string>
+			</array>
+			<array>
+				<string>{81.75, 23.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{82.25, 22}</string>
+			</array>
+			<array>
+				<string>{10.25, -35}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{-36.75, -40.5}</string>
+			</array>
+			<array>
+				<string>{-54.75, -22.5}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-83.75, -10}</string>
+			</array>
+			<array>
+				<string>{-41.25, -34.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-46.75, -22.5}</string>
+			</array>
+		</array>
+	</dict>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>E912062D-7820-48E4-951B-99EB487C80CB</string>
+</dict>
+</plist>

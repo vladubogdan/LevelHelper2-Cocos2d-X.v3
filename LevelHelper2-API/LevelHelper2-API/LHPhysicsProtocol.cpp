@@ -38,8 +38,11 @@
 
 #include "NodeTransform.h"
 
+#include "LHUtils.h"
+
 #if LH_USE_BOX2D
 #include "Box2d/Box2d.h"
+#include "LHBodyShape.h"
 #endif
 
 LHPhysicsProtocol::LHPhysicsProtocol()
@@ -47,11 +50,15 @@ LHPhysicsProtocol::LHPhysicsProtocol()
 #if LH_USE_BOX2D
     scheduledForRemoval = false;
     _body = NULL;
+    subShapes = NULL;
 #endif
 }
 LHPhysicsProtocol::~LHPhysicsProtocol()
 {
-
+#if LH_USE_BOX2D
+    CC_SAFE_DELETE(subShapes);
+    _body = NULL;
+#endif
 }
 
 void LHPhysicsProtocol::shouldRemoveBody()
@@ -150,6 +157,8 @@ void LHPhysicsProtocol::removeBody()
         b2World* world = _body->GetWorld();
         if(world){
 
+            CC_SAFE_DELETE(subShapes);
+            
             _body->SetUserData(NULL);
             if(!world->IsLocked()){
 
@@ -190,45 +199,6 @@ void LHPhysicsProtocol::updatePhysicsTransform(){
         _body->SetTransform(b2Pos, CC_DEGREES_TO_RADIANS(-globalAngle));
         _body->SetAwake(true);
     }
-}
-
-bool LHValidateCentroid(b2Vec2* vs, int count)
-{
-	if(count < 3 || count > b2_maxPolygonVertices)
-        return false;
-    
-	int32 n = b2Min(count, b2_maxPolygonVertices);
-    
-	// Perform welding and copy vertices into local buffer.
-	b2Vec2 ps[b2_maxPolygonVertices];
-	int32 tempCount = 0;
-	for (int32 i = 0; i < n; ++i)
-	{
-		b2Vec2 v = vs[i];
-        
-		bool unique = true;
-		for (int32 j = 0; j < tempCount; ++j)
-		{
-			if (b2DistanceSquared(v, ps[j]) < 0.5f * b2_linearSlop)
-			{
-				unique = false;
-				break;
-			}
-		}
-        
-		if (unique)
-		{
-			ps[tempCount++] = v;
-		}
-	}
-    
-	n = tempCount;
-	if (n < 3)
-	{
-        return false;
-	}
-    
-    return true;
 }
 
 void LHPhysicsProtocol::updatePhysicsScale(){
@@ -291,7 +261,7 @@ void LHPhysicsProtocol::updatePhysicsScale(){
                     newVertices[idx] = pt;
                 }
                 
-                bool valid = LHValidateCentroid(newVertices, count);
+                bool valid = LHBodyShape::LHValidateCentroid(newVertices, count);
                 if(!valid) {
                     //flip
                     b2Vec2* flippedVertices = new b2Vec2[count];
@@ -398,33 +368,30 @@ void LHPhysicsProtocol::visitPhysicsProtocol()
     }
 }
 
-void setupFixtureWithInfo(b2FixtureDef* fixture, LHDictionary* fixInfo)
-{
-    fixture->density     = fixInfo->floatForKey("density");
-    fixture->friction    = fixInfo->floatForKey("friction");
-    fixture->restitution = fixInfo->floatForKey("restitution");
-    fixture->isSensor    = fixInfo->boolForKey("sensor");
-    
-    fixture->filter.maskBits    = fixInfo->intForKey("mask");
-    fixture->filter.categoryBits= fixInfo->intForKey("category");
-}
-
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
     if(!dict)return;
-    
+    ValueMap map = LHUtils::Dictionary_To_ValueMap(dict);
+    this->loadPhysicsFromValueMap(map, scene);
+}
+
+void LHPhysicsProtocol::loadPhysicsFromValueMap(ValueMap dict, LHScene* scene)
+{
     Node* node = LH_GET_NODE_FROM_PHYSICS_PROTOCOL(this);
     if(!node)return;
 
-    int shapeType = dict->intForKey("shape");
-    int type  = dict->intForKey("type");
+    Value shapeTypeVal = dict["shape"];
+    int shapeType = 6;//editor
+    if(!shapeTypeVal.isNull())
+        shapeType= shapeTypeVal.asInt();
+    
+    int type  = dict["type"].asInt();
     
     b2World* world = scene->getBox2dWorld();
     
     b2BodyDef bodyDef;
     bodyDef.type = (b2BodyType)type;
     
-//    Point position = node->convertToWorldSpaceAR(Point());
     Point position = node->getParent()->convertToWorldSpace(node->getPosition());
     b2Vec2 bodyPos = scene->metersFromPoint(position);
     bodyDef.position = bodyPos;
@@ -436,24 +403,19 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     _body = world->CreateBody(&bodyDef);
     _body->SetUserData(node);
     
-    _body->SetFixedRotation(dict->boolForKey("fixedRotation"));
-    _body->SetGravityScale(dict->floatForKey("gravityScale"));
+    _body->SetFixedRotation(dict["fixedRotation"].asBool());
+    _body->SetGravityScale(dict["gravityScale"].asFloat());
     
-    _body->SetSleepingAllowed(dict->boolForKey("allowSleep"));
-    _body->SetBullet(dict->boolForKey("bullet"));
+    _body->SetSleepingAllowed(dict["allowSleep"].asBool());
+    _body->SetBullet(dict["bullet"].asBool());
     
-    if(dict->objectForKey("angularDamping"))//all this properties were added in the same moment
-    {
-        _body->SetAngularDamping(dict->floatForKey("angularDamping"));
+    _body->SetAngularDamping(dict["angularDamping"].asFloat());
+    _body->SetAngularVelocity(dict["angularVelocity"].asFloat());//radians/second.
+    _body->SetLinearDamping(dict["linearDamping"].asFloat());
     
-        _body->SetAngularVelocity(dict->floatForKey("angularVelocity"));//radians/second.
-    
-        _body->SetLinearDamping(dict->floatForKey("linearDamping"));
-        
-        Point linearVel = dict->pointForKey("linearVelocity");
-        _body->SetLinearVelocity(b2Vec2(linearVel.x,linearVel.y));
-    }
-
+    std::string velStr = dict["linearVelocity"].asString();
+    Point linearVel = PointFromString(velStr);
+    _body->SetLinearVelocity(b2Vec2(linearVel.x,linearVel.y));
     
     
     Size sizet = node->getContentSize();
@@ -470,83 +432,57 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     
     previousScale = Point(scaleX, scaleY);
     
-    
     sizet.width *= scaleX;
     sizet.height*= scaleY;
     
+    Value genericFixVal = dict["genericFixture"];
+    ValueMap fixInfo;
+    if(!genericFixVal.isNull()){
+        fixInfo = genericFixVal.asValueMap();
+    }
     
-    LHDictionary* fixInfo = dict->dictForKey("genericFixture");
-    LHArray* fixturesInfo = nullptr;
+    subShapes = new __Array();
+    subShapes->init();
     
     if(shapeType == 0)//RECTANGLE
     {
-        b2Shape* shape = new b2PolygonShape();
-        ((b2PolygonShape*)shape)->SetAsBox(sizet.width*0.5f, sizet.height*0.5f);
-        
-        b2FixtureDef fixture;
-        setupFixtureWithInfo(&fixture, fixInfo);
-        
-        fixture.shape = shape;
-        _body->CreateFixture(&fixture);
-        
-        delete shape;
-        shape = NULL;
+        LHBodyShape* shape = LHBodyShape::createRectangleWithDictionary(fixInfo,
+                                                                        _body,
+                                                                        node,
+                                                                        scene,
+                                                                        sizet);
+        if(shape){
+            subShapes->addObject(shape);
+        }
     }
     else if(shapeType == 1)//CIRCLE
     {
-        b2Shape* shape = new b2CircleShape();
-        ((b2CircleShape*)shape)->m_radius = sizet.width*0.5;
-        
-        b2FixtureDef fixture;
-        setupFixtureWithInfo(&fixture, fixInfo);
-        
-        fixture.shape = shape;
-        _body->CreateFixture(&fixture);
-        
-        delete shape;
-        shape = NULL;
+        LHBodyShape* shape = LHBodyShape::createCircleWithDictionary(fixInfo,
+                                                                     _body,
+                                                                     node,
+                                                                     scene,
+                                                                     sizet);
+        if(shape){
+            subShapes->addObject(shape);
+        }
     }
     else if(shapeType == 2)//POLYGON
     {
         if(LHShape::isLHShape(node))
         {
-            LHShape* shape = (LHShape*)node;
+            LHShape* shapeNode = (LHShape*)node;
             
-            std::vector<Point> triangles = shape->trianglePoints();
+            std::vector<Point> triangles = shapeNode->trianglePoints();
             
-            for(int i = 0;  i < triangles.size(); i=i+3)
-            {
-                Point ptA = triangles[i];
-                Point ptB = triangles[i+1];
-                Point ptC = triangles[i+2];
-                
-                ptA.x *= scaleX;
-                ptA.y *= scaleY;
-
-                ptB.x *= scaleX;
-                ptB.y *= scaleY;
-
-                ptC.x *= scaleX;
-                ptC.y *= scaleY;
-
-                b2Vec2 *verts = new b2Vec2[3];
-                
-                verts[2] = scene->metersFromPoint(ptA);
-                verts[1] = scene->metersFromPoint(ptB);
-                verts[0] = scene->metersFromPoint(ptC);
-                
-                b2PolygonShape shapeDef;
-                
-                shapeDef.Set(verts, 3);
-                
-                b2FixtureDef fixture;
-                
-                setupFixtureWithInfo(&fixture, fixInfo);
-                
-                fixture.shape = &shapeDef;
-                _body->CreateFixture(&fixture);
-                delete[] verts;
-                
+            LHBodyShape* shape = LHBodyShape::createWithDictionaryAndTriangles(fixInfo,
+                                                                               triangles,
+                                                                               _body,
+                                                                               node,
+                                                                               scene,
+                                                                               scaleX,
+                                                                               scaleY);
+            if(shape){
+                subShapes->addObject(shape);
             }
         }
     }
@@ -554,48 +490,15 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     {
         if(LHBezier::isLHBezier(node))
         {
-            LHBezier* bezier = (LHBezier*)node;
+            LHBezier* bezierNode = (LHBezier*)node;
             
-            std::vector<Point> points =  bezier->linePoints();
+            std::vector<Point> points =  bezierNode->linePoints();
             
-            std::vector< b2Vec2 > verts;
-            
-            LHValue* lastPt = nullptr;
-            for(int i = 0; i < points.size(); ++i)
-            {
-                Point pt = points[i];
-
-                pt.x *= scaleX;
-                pt.y *= scaleY;
-                
-                b2Vec2 v2 = scene->metersFromPoint(pt);
-                if(lastPt != nullptr)
-                {
-                    Point oldPt = lastPt->getPoint();
-                    b2Vec2 v1 = b2Vec2(oldPt.x, oldPt.y);
-                    
-                    if(b2DistanceSquared(v1, v2) > b2_linearSlop * b2_linearSlop)
-                    {
-                        verts.push_back(v2);
-                    }
-                }
-                else{
-                    verts.push_back(v2);
-                }
-                lastPt = LHValue::create(Point(v2.x, v2.y));
+            LHBodyShape* shape = LHBodyShape::createChainWithDictionaryAndPoints(fixInfo, points, false, _body, node, scene, scaleX, scaleY);
+            if(shape){
+                subShapes->addObject(shape);
             }
             
-            b2Shape* shape = new b2ChainShape();
-            ((b2ChainShape*)shape)->CreateChain (&(verts.front()), (int)verts.size());
-            
-            b2FixtureDef fixture;
-            setupFixtureWithInfo(&fixture, fixInfo);
-            
-            fixture.shape = shape;
-            _body->CreateFixture(&fixture);
-            
-            delete shape;
-            shape = NULL;
         }
         else if(LHShape::isLHShape(node))
         {
@@ -603,44 +506,10 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
             
             std::vector<Point> points = nodeShape->outlinePoints();
             
-            std::vector< b2Vec2 > verts;
-            
-            LHValue* lastPt = nullptr;
-            for(int i = 0; i < points.size(); ++i)
-            {
-                Point pt = points[i];
-                
-                pt.x *= scaleX;
-                pt.y *= scaleY;
-                
-                b2Vec2 v2 = scene->metersFromPoint(pt);
-                if(lastPt != nullptr)
-                {
-                    Point oldPt = lastPt->getPoint();
-                    b2Vec2 v1 = b2Vec2(oldPt.x, oldPt.y);
-                    
-                    if(b2DistanceSquared(v1, v2) > b2_linearSlop * b2_linearSlop)
-                    {
-                        verts.push_back(v2);
-                    }
-                }
-                else{
-                    verts.push_back(v2);
-                }
-                lastPt = LHValue::create(Point(v2.x, v2.y));
+            LHBodyShape* shape = LHBodyShape::createChainWithDictionaryAndPoints(fixInfo, points, true, _body, node, scene, scaleX, scaleY);
+            if(shape){
+                subShapes->addObject(shape);
             }
-
-            b2Shape* shape = new b2ChainShape();
-            ((b2ChainShape*)shape)->CreateChain (&(verts.front()), (int)verts.size());
-            
-            b2FixtureDef fixture;
-            setupFixtureWithInfo(&fixture, fixInfo);
-            
-            fixture.shape = shape;
-            _body->CreateFixture(&fixture);
-            
-            delete shape;
-            shape = NULL;
         }
         else{
             
@@ -649,69 +518,78 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     }
     else if(shapeType == 4)//OVAL
     {
-        fixturesInfo = dict->arrayForKey("ovalShape");
+        Value fixturesInfoValue = dict["ovalShape"];
+        if(!fixturesInfoValue.isNull())
+        {
+            ValueVector fixturesInfo =fixturesInfoValue.asValueVector();
+        
+            LHBodyShape* shape = LHBodyShape::createWithDictionary(fixInfo,
+                                                                   fixturesInfo,
+                                                                   _body,
+                                                                   node,
+                                                                   scene,
+                                                                   scaleX,
+                                                                   scaleY);
+            if(shape){
+                subShapes->addObject(shape);
+            }
+        }
+
     }
     else if(shapeType == 5)//TRACED
     {
-        std::string fixUUID = dict->stringForKey("fixtureUUID");
-        fixturesInfo = (LHArray*)scene->tracedFixturesWithUUID(fixUUID);        
+        std::string fixUUID = dict["fixtureUUID"].asString();
+        LHArray* fixturesInfo = (LHArray*)scene->tracedFixturesWithUUID(fixUUID);
         if(!fixturesInfo){
             LHAsset* asset = this->assetParent();
             if(asset){
                 fixturesInfo = (LHArray*)asset->tracedFixturesWithUUID(fixUUID);
             }
         }
-    }
-    
-    if(fixturesInfo)
-    {
-        int flipx = scaleX < 0 ? -1 : 1;
-        int flipy = scaleY < 0 ? -1 : 1;
         
-        for(int f = 0; f < fixturesInfo->count(); ++f)
-        {
-            LHArray* fixPoints = fixturesInfo->arrayAtIndex(f);
-
-            int count = (int)fixPoints->count();
+        if(fixturesInfo){
             
-            if(count > 2)
-            {
-                b2Vec2 *verts = new b2Vec2[count];
-                b2PolygonShape shapeDef;
-                
-                int i = 0;
-                for(int j = count-1; j >=0; --j)
-                {
-                    const int idx = (flipx < 0 && flipy >= 0) || (flipx >= 0 && flipy < 0) ? count - i - 1 : i;
-                    
-                    Point point = fixPoints->pointAtIndex(j);
-
-                    point.x *= scaleX;
-                    point.y *= scaleY;
-                    
-                    point.y = -point.y;
-                    
-                    b2Vec2 vec = scene->metersFromPoint(point);
-
-                    verts[idx] = vec;
-                    ++i;
-                }
-                
-                if(LHValidateCentroid(verts, count))
-                {
-                    shapeDef.Set(verts, count);
-                    
-                    b2FixtureDef fixture;
-                    
-                    setupFixtureWithInfo(&fixture, fixInfo);
-                    
-                    fixture.shape = &shapeDef;
-                    _body->CreateFixture(&fixture);
-                }
-
-                delete[] verts;
+            ValueVector fixVector = LHUtils::Array_To_ValueVector(fixturesInfo);
+            LHBodyShape* shape = LHBodyShape::createWithDictionary(fixInfo,
+                                                                   fixVector,
+                                                                   _body,
+                                                                   node,
+                                                                   scene,
+                                                                   scaleX,
+                                                                   scaleY);
+            if(shape){
+                subShapes->addObject(shape);
             }
         }
+    }
+    else if(shapeType == 6)//editor
+    {
+        //available only on sprites
+        LHSprite* sprite = dynamic_cast<LHSprite*>(node);
+        
+        if(!sprite)return;
+        
+        Value* bodyInfo = scene->getEditorBodyInfoForSpriteName(sprite->getSpriteFrameName(), sprite->getImageFilePath());
+        
+        ValueMap info = bodyInfo->asValueMap();
+        ValueVector fixturesInfo = info["shapes"].asValueVector();
+        
+        for(int f = 0; f < fixturesInfo.size(); ++f)
+        {
+            ValueMap shapeInfo = fixturesInfo[f].asValueMap();
+            
+            LHBodyShape* shape = LHBodyShape::createWithValueMap(shapeInfo,
+                                                                 _body,
+                                                                 node,
+                                                                 scene,
+                                                                 scaleX,
+                                                                 scaleY);
+            if(shape){
+                subShapes->addObject(shape);
+            }
+        }
+        
+        return;
     }
 }
 
@@ -741,6 +619,10 @@ void LHPhysicsProtocol::updatePhysicsScale(){
 void LHPhysicsProtocol::visitPhysicsProtocol()
 {
     //nothing to update on chipmunk - update is handled by Cocos2d
+}
+
+void LHPhysicsProtocol::loadPhysicsFromValueMap(ValueMap value_Map, LHScene* scene){
+    //not used by chipmunk yet
 }
 
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)

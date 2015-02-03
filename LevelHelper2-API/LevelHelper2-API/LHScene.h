@@ -16,6 +16,7 @@
 
 
 #if LH_USE_BOX2D
+#include "LHContactInfo.h"
 #include "Box2D/Box2D.h"
 #endif
 
@@ -23,7 +24,6 @@
  LHScene class is used to load a level file into Cocos2d-X v3 engine.
  End users will have to subclass this class in order to add they're own game logic.
  */
-using namespace cocos2d;
 
 class LHDevice;
 class LHBackUINode;
@@ -187,23 +187,21 @@ public:
      
      Available only when using Box2d.
      
-     @param nodeA First node that participates in the collision.
-     @param nodeB Second node that participates in the collision.
-     @param contactPoint The location where the two nodes collided in scene coordinates.
-     @param impulse The impulse of the collision.
+     @param contact The info of this contact. An object with nodeA, nodeB, nodeAShapeName, nodeBShapeName, nodeAShapeID, nodeBShapeID.
      
      */
-    virtual void didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse){}
+    virtual void didBeginContact(const LHContactInfo& contact){}
+    CC_DEPRECATED_ATTRIBUTE virtual void didBeginContactBetweenNodes(Node* nodeA, Node* nodeB, Point contactPoint, float impulse){}
     /**
      Overwrite this methods to receive collision informations when using Box2d.
      Called when the collision ends. Called when two nodes no longer collide at a specific point. May be called multiple times for same two nodes, because the point at which the nodes are touching has changed.
      
      Available only when using Box2d.
      
-     @param nodeA First node that participates in the collision.
-     @param nodeB Second node that participates in the collision.
+     @param LHContactInfo The info of this contact. NOTE: Contact Point and Impulse is not available at this stage.
      */
-    virtual void didEndContactBetweenNodes(Node* nodeA, Node* nodeB){}
+    virtual void didEndContact(const LHContactInfo& contact){}
+    CC_DEPRECATED_ATTRIBUTE virtual void didEndContactBetweenNodes(Node* nodeA, Node* nodeB){}
 #else
     
     bool onContactBegin(PhysicsContact& contact);
@@ -226,7 +224,8 @@ private:
     friend class LHParallaxLayer;
     friend class LHParallax;
     friend class LHRopeJointNode;
-
+    friend class LHPhysicsProtocol;
+    
     LHBackUINode* _backUINode;
     LHGameWorldNode* _gameWorldNode;
     LHUINode* _uiNode;
@@ -237,12 +236,12 @@ private:
     Point   designOffset;
     Rect    gameWorldRect;
     
-//    EventListenerTouchOneByOne* _touchListener;
     EventListenerTouchAllAtOnce* _touchListener;
     
     EventListenerMouse* _mouseListener;
     
     __Dictionary*   _tracedFixtures;
+    std::map<std::string, std::map<std::string, Value*> >_editorBodiesInfo; //<imageFile < spriteFrameName, bodyInfo> >
     __Dictionary*   _loadedAssetsInformations;
     __Array*        _lateLoadingNodes;
     
@@ -257,10 +256,16 @@ private:
     void loadPhysicsBoundariesFromDictionary(LHDictionary* dict);
     void loadGameWorldInfoFromDictionary(LHDictionary* dict);
     
+    bool hasEditorBodyInfoForImageFilePath(const std::string& imageFilePath);
+    Value* getEditorBodyInfoForSpriteName(const std::string& spriteName, const std::string& imageFilePath);
+    void setEditorBodyInfoForSpriteName(const std::string& spriteName, const std::string& imageFilePath, Value& bodyInfo);
+    
+    
     bool loadingInProgress;
     
 #if LH_USE_BOX2D
     LHBox2dCollisionHandling* _box2dCollision;
+    __Array* _physicsBoundarySubShapes;
 #endif
     
     //pinch support

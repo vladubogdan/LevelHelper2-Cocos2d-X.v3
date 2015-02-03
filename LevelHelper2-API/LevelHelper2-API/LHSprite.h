@@ -63,8 +63,8 @@ public:
      * Creates a sprite with an sprite frame name using a sprite sheet name.
      *
      * @param   spriteName A null terminated string which indicates the sprite frame name.
-     * @param   plistFile A null terminated string which indicates the plist containing the info of the sprite to be loaded.
-     * @param   plistFolder A null terminated string which indicates the folder that contains the plist file. The folder must be added as reference in Xcode - blue icon.
+     * @param   imageFile A null terminated string which indicates the image file containing the sprite texture. This file will be used to look for the plist file.
+     * @param   folder A null terminated string which indicates the folder that contains the image & plist file. The folder must be added as reference in Xcode - blue icon.
      * @param   prnt A parent node. Must be in the LHScene hierarchy.
      * @return  An autoreleased sprite object
      
@@ -84,15 +84,15 @@ public:
             objects.plist
             objects.png
      
-     LHSprite* spr = LHSprite::createWithSpriteName("object_backpack", "objects.plist", "DEMO_PUBLISH_FOLDER/", this->getGameWorld());
+     LHSprite* spr = LHSprite::createWithSpriteName("object_backpack", "objects.png", "DEMO_PUBLISH_FOLDER/", this->getGameWorld());
      if(spr){
         spr->setPosition(Point(400,350));
      }
      @endcode
      */
     static LHSprite* createWithSpriteName(const std::string& spriteName,
-                                          const std::string& plistFile,
-                                          const std::string& plistFolder,
+                                          const std::string& imageFile,
+                                          const std::string& folder,
                                           Node* prnt);
 
     
@@ -106,7 +106,7 @@ public:
     virtual ~LHSprite();
     
     bool initWithFilename(const std::string& filename, const std::string& folder, Node* prnt);
-    bool initWithSpriteName(const std::string& spriteName, const std::string& plistFile, const std::string& plistFolder, Node* prnt);
+    bool initWithSpriteName(const std::string& spriteName, const std::string& imageFile, const std::string& folder, Node* prnt);
     
 
     
@@ -134,9 +134,15 @@ public:
     virtual void updateRotation(float rotation);
 #endif
     
+    std::string getImageFilePath(){return imageFilePath;}
+    std::string getSpriteFrameName(){return spriteFrameName;}
     
 private:
 
+    std::string imageFilePath;
+    std::string spriteFrameName;
+    
+    void cacheSpriteFramesInfo(const std::string& imageFilePath, LHScene* scene);
 };
 
 #endif //__LEVELHELPER_API_SPRITE_H__//

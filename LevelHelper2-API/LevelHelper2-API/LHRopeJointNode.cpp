@@ -82,12 +82,50 @@ LHRopeJointNode::LHRopeJointNode()
 {
     cutJointA = nullptr;
     cutJointB = nullptr;
-
+#if LH_USE_BOX2D
+    cutJointAB= nullptr;
+#endif
+    
     ropeShape = nullptr;
     cutAShapeNode = nullptr;
     cutBShapeNode = nullptr;
     _cutTimer = -1;
 }
+
+void LHRopeJointNode::shouldRemoveJoint()
+{
+#if LH_USE_BOX2D
+    LHNodeProtocol* nodeProt = dynamic_cast<LHNodeProtocol*>(this);
+    if(cutBodyA && nodeProt && !nodeProt->isB2WorldDirty())
+    {
+        b2World* world = cutBodyA->GetWorld();
+        if(cutBodyA){
+            world->DestroyBody(cutBodyA);
+        }
+        cutBodyA = nullptr;
+        cutJointA = nullptr;
+        
+        if(cutBodyB){
+            world->DestroyBody(cutBodyB);
+        }
+        cutBodyB = nullptr;
+        cutJointB = nullptr;
+        
+        if(cutJointAB){
+            world->DestroyJoint(cutJointAB);
+        }
+        cutJointAB = nullptr;
+    }
+#else
+    cutJointA->removeFormWorld();
+    cutJointB->removeFormWorld();
+    cutJointA = nullptr;
+    cutJointB = nullptr;    
+#endif
+    
+    LHJointsProtocol::shouldRemoveJoint();
+}
+
 
 LHRopeJointNode::~LHRopeJointNode()
 {
@@ -100,6 +138,9 @@ LHRopeJointNode::~LHRopeJointNode()
     
     cutBShapeNode = nullptr;
     cutJointB = nullptr;
+#if LH_USE_BOX2D
+    cutJointAB = nullptr;
+#endif
 }
 
 LHRopeJointNode* LHRopeJointNode::nodeWithDictionary(LHDictionary* dict, Node* prnt)
@@ -381,7 +422,7 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
                         jointDef.collideConnected  = this->getCollideConnected();
                         
                         cutJointA = (b2RopeJoint*)world->CreateJoint(&jointDef);
-                     
+                        //cutJointA->SetUserData(this);
                         
 #else//chipmunk
                         Node* cutBodyA = Node::create();
@@ -477,7 +518,17 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
                         jointDef.collideConnected = this->getCollideConnected();
                         
                         cutJointB = (b2RopeJoint*)world->CreateJoint(&jointDef);
+                        //cutJointB->SetUserData(this);
                         
+                        
+                        b2RopeJointDef jointBetweenBodiesDef;
+                        jointBetweenBodiesDef.localAnchorA = b2Vec2(0,0);
+                        jointBetweenBodiesDef.localAnchorB = b2Vec2(0,0);
+                        jointBetweenBodiesDef.bodyA = LH_GET_BOX2D_BODY(this->getNodeA());
+                        jointBetweenBodiesDef.bodyB = LH_GET_BOX2D_BODY(this->getNodeB());
+                        jointBetweenBodiesDef.maxLength = scene->metersFromValue(std::numeric_limits<float>::max());
+                        jointBetweenBodiesDef.collideConnected = this->getCollideConnected();
+                        cutJointAB = (b2RopeJoint*)world->CreateJoint(&jointBetweenBodiesDef);
                         
 #else//chipmunk
                         Node* cutBodyB = Node::create();
@@ -522,61 +573,6 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
         prevValue = val;
     }
 }
-
-
-//void LHRopeJointNode::removeFromParent(){
-//
-//#if LH_USE_BOX2D
-//
-//    LHScene* scene = (LHScene*)this->getScene();
-//    LHGameWorldNode* pNode = scene->getGameWorldNode();
-//    if(pNode)
-//    {
-//        //if we dont have the scene it means the scene was changed so the box2d world will be deleted, deleting the joints also - safe
-//        //if we do have the scene it means the node was deleted so we need to delete the joint manually
-//        //if we dont have the scene it means
-//        b2World* world = pNode->getBox2dWorld();
-//        if(world){
-//            if(cutJointA)
-//            {
-//                world->DestroyJoint(cutJointA);
-//                cutJointA = NULL;
-//            }
-//            if(cutBodyA){
-//                world->DestroyBody(cutBodyA);
-//                cutBodyA = NULL;
-//            }
-//            
-//            if(cutJointB)
-//            {
-//                world->DestroyJoint(cutJointB);
-//                cutJointB = NULL;
-//            }
-//            if(cutBodyB){
-//                world->DestroyBody(cutBodyB);
-//                cutBodyB = NULL;
-//            }
-//        }
-//    }
-//#else
-//    if(cutJointA){
-//        cutJointA->removeFormWorld();
-//        cutJointA = nullptr;
-//    }
-//    
-//    if(cutJointB){
-//        cutJointB->removeFormWorld();
-//        cutJointB = nullptr;
-//    }
-//#endif
-//    
-//    this->removeJoint();
-//        
-//    Node::removeFromParent();
-//}
-
-
-
 
 int LHRopeJointNode::gravityDirectionAngle(){
     Vect gravityVector = this->getScene()->getPhysicsWorld()->getGravity();

@@ -32,7 +32,9 @@ LHJointsProtocol::LHJointsProtocol()
 
 LHJointsProtocol::~LHJointsProtocol()
 {
-    
+    _joint = nullptr;
+    _nodeA = nullptr;
+    _nodeB = nullptr;
 }
 
 void LHJointsProtocol::shouldRemoveJoint()

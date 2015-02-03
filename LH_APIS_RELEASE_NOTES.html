@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+ <div class="container">
+
+
+</br>
+<h3>Libraries Release Notes</h3>
+
+<h5>Cocos2d-X Library</h5>
+<ul>
+	<li>Cocos2d-X version 3.3</li>
+</ul>
+
+<h4>After Update Compilation Help</h4>
+
+Because of changes in the Cocos2d-X 3.3 library files & code structure, user action is required to make an old project compile.</br>
+<hr>
+
+1. Go to AppController.mm and change:</br>
+<code>
+<b>#import "CCEAGLView.h"</b>
+</code>
+</br>
+to</br>
+<code>
+#import "platform/ios/CCEAGLView-ios.h"
+</code>
+</br>
+<hr>
+2. Go to RootViewController.mm and change:</br>
+<code>
+#import "CCEAGLView.h"
+</code>
+</br>
+to</br>
+<code>
+#import "platform/ios/CCEAGLView-ios.h"
+</code>
+
+</br>
+<hr>
+3. Go to AppController.mm and change:</br>
+<code>
+cocos2d::GLView *glview = cocos2d::GLView::createWithEAGLView(eaglView);
+</code>
+</br>
+to</br>
+<code>
+cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
+</code>
+
+
+</br>
+<hr>
+4. Go to AppDelegate.cpp and change:</br>
+<code>
+glview = GLView::create("My Game");
+</code>
+</br>
+to</br>
+<code>
+glview = GLViewImpl::create("My Game");
+</code>
+</br>
+
+
+
+<hr>
+5. Select all your project targets and under "General" tab find "Linked Frameworks and Libraries" and remove the following libraries if present:</br>
+<code></br>
+libbox2d iOS.a</br>
+libchipmunk iOS.a</br>
+libcocos2dx-extensions iOS.a</br>
+libCocos2dDenshion iOS.a</br>
+</code>
+</br>
+</br>
+
+</div><!-- /.container -->
+
+</body>
+</html>

@@ -29,6 +29,7 @@
 #include "LHWater.h"
 #include "LHUtils.h"
 #include "LHBox2dCollisionHandling.h"
+#include "LHBodyShape.h"
 
 
 #include <sstream>
@@ -36,10 +37,12 @@ using namespace std;
 
 #define kLHPinchThreshold 2.0
 
-using namespace cocos2d;
-
 LHScene::LHScene()
 {
+#if LH_USE_BOX2D
+    _box2dCollision = NULL;
+    _physicsBoundarySubShapes = NULL;
+#endif
     _currentDev = NULL;
     _touchListener = NULL;
     _loadedAssetsInformations = NULL;
@@ -58,6 +61,7 @@ LHScene::~LHScene()
     _currentDev = nullptr;
     
 #if LH_USE_BOX2D
+    CC_SAFE_RELEASE(_physicsBoundarySubShapes);
     CC_SAFE_DELETE(_box2dCollision);
 #endif
     
@@ -70,6 +74,19 @@ LHScene::~LHScene()
     devices.clear();
     
     CC_SAFE_RELEASE(_tracedFixtures);
+    
+    for (auto iter = _editorBodiesInfo.begin(); iter != _editorBodiesInfo.end(); ++iter)
+    {
+        std::map<std::string, Value* > obj = iter->second;
+        for(auto subIter = obj.begin(); subIter != obj.end(); ++subIter)
+        {
+            Value* val = subIter->second;
+            delete val;
+        }
+    }
+    _editorBodiesInfo.clear();
+    
+    
     _gameWorldNode = nullptr;
     _uiNode = nullptr;
     _backUINode = nullptr;
@@ -99,10 +116,16 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
 {
     std::string fullPath = FileUtils::getInstance()->fullPathForFilename(plistLevelFile);
     
-    LHDictionary* dict = (LHDictionary*)__Dictionary::createWithContentsOfFile(fullPath.c_str());
+    if(!FileUtils::getInstance()->isFileExist(fullPath))
+    {
+        printf("\nERROR: Could not load level file %s. The file located at %s doesn't exist.\n", plistLevelFile.c_str(), fullPath.c_str());
+        return false;
+    }
     
+    LHDictionary* dict = (LHDictionary*)__Dictionary::createWithContentsOfFile(fullPath.c_str());
+        
     if(!dict){
-        printf("ERROR: Could not load level file %s. The file located at %s does not appear to be valid.", plistLevelFile.c_str(), fullPath.c_str());
+        printf("\nERROR: Could not load level file %s. The file located at %s does not appear to be valid.\n", plistLevelFile.c_str(), fullPath.c_str());
         return false;
     }
 
@@ -112,6 +135,11 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
     
     designResolutionSize = dict->sizeForKey("designResolution");
     LHArray* devsInfo = dict->arrayForKey("devices");
+    
+    if(!devsInfo){
+        printf("\nERROR: Level doesn't contain valid devices.\n");
+        return false;
+    }
     
     for(int i = 0; i < devsInfo->count(); ++i)
     {
@@ -303,7 +331,7 @@ void LHScene::loadPhysicsBoundariesFromDictionary(LHDictionary* dict)
             {
                 createPhysicsBoundarySectionFrom(Point(skBRect.getMinX(), skBRect.getMinY()),
                                                  Point(skBRect.getMaxX(), skBRect.getMinY()),
-                                                 "LHPhysicsBottomBoundary");
+                                                 "LHPhysicsTopBoundary");
             }
             
             {
@@ -316,7 +344,7 @@ void LHScene::loadPhysicsBoundariesFromDictionary(LHDictionary* dict)
             {
                 createPhysicsBoundarySectionFrom(Point(skBRect.getMaxX(), skBRect.getMaxY()),
                                                  Point(skBRect.getMinX(), skBRect.getMaxY()),
-                                                 "LHPhysicsTopBoundary");
+                                                 "LHPhysicsBottomBoundary");
             }
             
             {
@@ -330,33 +358,24 @@ void LHScene::loadPhysicsBoundariesFromDictionary(LHDictionary* dict)
 
 void LHScene::createPhysicsBoundarySectionFrom(Point from, Point to, const std::string& sectionName)
 {
+    LHNode* drawNode = LHNode::createWithName(sectionName);
+    
 #if LH_USE_BOX2D
     
-    float PTM_RATIO = this->getPtm();
+    if(!_physicsBoundarySubShapes){
+        _physicsBoundarySubShapes = new __Array();
+        _physicsBoundarySubShapes->init();
+    }
     
-    // Define the ground body.
-    b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(0, 0); // bottom-left corner
-    
-    b2Body* physicsBoundariesBody = this->getBox2dWorld()->CreateBody(&groundBodyDef);
-    
-    // Define the ground box shape.
-    b2EdgeShape groundBox;
-    
-    // top
-    groundBox.Set(b2Vec2(from.x/PTM_RATIO,
-                         from.y/PTM_RATIO),
-                  b2Vec2(to.x/PTM_RATIO,
-                         to.y/PTM_RATIO));
-    physicsBoundariesBody->CreateFixture(&groundBox,0);
+    LHBodyShape* shape = LHBodyShape::createWithName(sectionName, from, to, drawNode, this);
+    _physicsBoundarySubShapes->addObject(shape);
     
 #else //chipmunk
-    LHNode* drawNode = LHNode::createWithName(sectionName);
     PhysicsBody* boundaryBody = PhysicsBody::createEdgeSegment(from, to);
     drawNode->setPhysicsBody(boundaryBody);
-    this->getGameWorldNode()->addChild(drawNode);
 #endif
     
+    this->getGameWorldNode()->addChild(drawNode);
 }
 
 
@@ -426,6 +445,31 @@ void LHScene::performLateLoading(){
 __Array* LHScene::tracedFixturesWithUUID(const std::string& uuid)
 {
     return (__Array*)_tracedFixtures->objectForKey(uuid);
+}
+
+bool LHScene::hasEditorBodyInfoForImageFilePath(const std::string& imageFilePath)
+{
+    return _editorBodiesInfo.find( imageFilePath ) != _editorBodiesInfo.end();
+}
+
+Value* LHScene::getEditorBodyInfoForSpriteName(const std::string& spriteName, const std::string& imageFilePath)
+{
+    std::map<std::string, Value*>spritesInfo = _editorBodiesInfo[imageFilePath];
+    return spritesInfo[spriteName];
+}
+void LHScene::setEditorBodyInfoForSpriteName(const std::string& spriteName, const std::string& imageFilePath, Value& bodyInfo)
+{
+    std::map<std::string, Value*> spritesInfo;
+    if(_editorBodiesInfo.find( imageFilePath ) != _editorBodiesInfo.end())
+    {
+        spritesInfo = _editorBodiesInfo[imageFilePath];
+    }
+    
+    if(!bodyInfo.isNull() && spritesInfo.find(spriteName) == spritesInfo.end())
+    {
+        spritesInfo[spriteName] = new Value(bodyInfo);
+    }
+    _editorBodiesInfo[imageFilePath] = spritesInfo;
 }
 
 std::string LHScene::getCurrentDeviceSuffix()

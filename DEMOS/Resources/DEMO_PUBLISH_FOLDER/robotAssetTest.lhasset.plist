@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>alpha</key>
+	<real>255</real>
+	<key>anchor</key>
+	<string>{0.500000, 0.500000}</string>
+	<key>assetUUID</key>
+	<string>131153C4-A281-40D4-AF07-707425507696</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.002723, -0.002408}</string>
+			<key>imageFileName</key>
+			<string>robots.png</string>
+			<key>name</key>
+			<string>blueRobot</string>
+			<key>nodePhysics</key>
+			<dict>
+				<key>allowSleep</key>
+				<true/>
+				<key>angularDamping</key>
+				<real>0.0</real>
+				<key>angularVelocity</key>
+				<real>0.0</real>
+				<key>bullet</key>
+				<false/>
+				<key>fixedRotation</key>
+				<false/>
+				<key>genericFixture</key>
+				<dict>
+					<key>category</key>
+					<integer>1</integer>
+					<key>density</key>
+					<real>0.10000000149011612</real>
+					<key>friction</key>
+					<real>0.20000000298023224</real>
+					<key>mask</key>
+					<integer>65535</integer>
+					<key>name</key>
+					<string>GenericFixture</string>
+					<key>restitution</key>
+					<real>0.0</real>
+					<key>sensor</key>
+					<false/>
+					<key>shapeID</key>
+					<integer>0</integer>
+				</dict>
+				<key>gravityScale</key>
+				<real>1</real>
+				<key>linearDamping</key>
+				<real>0.0</real>
+				<key>linearVelocity</key>
+				<string>{0.000000, 0.000000}</string>
+				<key>shape</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>nodeType</key>
+			<string>LHSprite</string>
+			<key>parentUUID</key>
+			<string>805CFAC3-3A32-49F9-9795-DF15F0DEFA44</string>
+			<key>relativeImagePath</key>
+			<string>DEMO_PUBLISH_FOLDER/</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{130.000000, 150.000000}</string>
+			<key>spriteName</key>
+			<string>blueRobot</string>
+			<key>spriteUUID</key>
+			<string>2F3A5F3F-DA9C-471B-930F-35601F2AE875</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>6F572F1A-D567-4914-BF2D-F6B7B375A546</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>colorOverlay</key>
+	<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+	<key>generalPosition</key>
+	<string>{0.066667, 0.100000}</string>
+	<key>name</key>
+	<string>Untitled</string>
+	<key>nodeType</key>
+	<string>LHAsset</string>
+	<key>parentUUID</key>
+	<string>E53DE3DE-3F0F-4BA9-B882-E01A6546241B</string>
+	<key>rotation</key>
+	<real>0.0</real>
+	<key>scale</key>
+	<string>{1.000000, 1.000000}</string>
+	<key>size</key>
+	<string>{419.807037, 169.135956}</string>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>uuid</key>
+	<string>805CFAC3-3A32-49F9-9795-DF15F0DEFA44</string>
+	<key>zOrder</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -1,5 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
+LOCAL_CFLAGS += -DCOCOS2D_DEBUG=0
+
 include $(CLEAR_VARS)
 
 $(call import-add-path,$(LOCAL_PATH)/../../cocos2d)
@@ -12,7 +14,6 @@ LOCAL_MODULE := cocos2dcpp_shared
 LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 FILE_LIST += $(wildcard $(LOCAL_PATH)/../../Classes/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/../../Demo/SourceCode/*.cpp)
 #FILE_LIST += $(wildcard $(LOCAL_PATH)/../../cocos2d/cocos/base/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/../../LevelHelper2-API/LevelHelper2-API/*.cpp)
 
@@ -20,7 +21,6 @@ LOCAL_SRC_FILES := hellocpp/main.cpp
 LOCAL_SRC_FILES += $(FILE_LIST:$(LOCAL_PATH)/%=%)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../Demo/SourceCode
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../cocos2d/cocos/ui
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../cocos2d/external
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../cocos2d/external/Box2D

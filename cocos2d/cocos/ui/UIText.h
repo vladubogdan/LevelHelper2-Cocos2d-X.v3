@@ -26,6 +26,7 @@ THE SOFTWARE.
 #define __UILABEL_H__
 
 #include "ui/UIWidget.h"
+#include "ui/GUIExport.h"
 
 NS_CC_BEGIN
 
@@ -38,7 +39,7 @@ namespace ui {
  *@js 
  *@lua NA
  */
-class Text : public Widget
+class CC_GUI_DLL Text : public Widget
 {
     
     DECLARE_CLASS_GUI_INFO
@@ -138,7 +139,7 @@ public:
     bool isTouchScaleChangeEnabled()const;
 
     //override "getVirtualRendererSize" method of widget.
-    virtual const Size& getVirtualRendererSize() const override;
+    virtual Size getVirtualRendererSize() const override;
 
     //override "getVirtualRenderer" method of widget.
     virtual Node* getVirtualRenderer() override;
@@ -148,6 +149,13 @@ public:
      */
     virtual std::string getDescription() const override;
 
+    /**
+     * Set the rendering size of the text, you should call this method
+     * along with calling `ignoreContentAdaptWithSize(false)`, otherwise the text area
+     * size is caculated by the real size of the text content
+     * @param size   The text rendering area size
+     *
+     */
     void setTextAreaSize(const Size &size);
 
     const Size& getTextAreaSize()const;
@@ -159,6 +167,10 @@ public:
     void setTextVerticalAlignment(TextVAlignment alignment);
 
     TextVAlignment getTextVerticalAlignment()const;
+    
+    void setTextColor(const Color4B color);
+    
+    const Color4B& getTextColor() const;
     
     /**
      * Enable shadow for the label
@@ -192,8 +204,6 @@ protected:
     virtual void onPressStateChangedToDisabled() override;
     virtual void onSizeChanged() override;
    
-    virtual void updateFlippedX() override;
-    virtual void updateFlippedY() override;
     void labelScaleChangedWithSize();
     virtual Widget* createCloneInstance() override;
     virtual void copySpecialProperties(Widget* model) override;

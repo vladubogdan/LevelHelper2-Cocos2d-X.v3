@@ -89,8 +89,9 @@ bool LHGameWorldNode::initWithDictionary(LHDictionary* dict, Node* prnt)
         this->loadGenericInfoFromDictionary(dict);
         
         this->setPosition(Point(0,0));
+#if COCOS2D_VERSION < 0x00030300
         this->setContentSize(prnt->getScene()->getContentSize());
-        
+#endif
         this->loadChildrenFromDictionary(dict);
         
         
@@ -202,16 +203,14 @@ void LHGameWorldNode::afterStep(float dt)
 {
     for(size_t i = 0; i < _scheduledBeginContact.size(); ++i)
     {
-        LHScheduledContactInfo info = _scheduledBeginContact[i];
-        if(info.getNodeA() && info.getNodeB()){
-            if(info.getNodeA()->getParent() && info.getNodeB()->getParent()){
-                
-                
-                
-                ((LHScene*)this->getScene())->didBeginContactBetweenNodes(info.getNodeA(),
-                                                                          info.getNodeB(),
-                                                                          info.getContactPoint(),
-                                                                          info.getImpulse());
+        LHContactInfo info = _scheduledBeginContact[i];
+        if(info.nodeA && info.nodeB){
+            if(info.nodeA->getParent() && info.nodeB->getParent()){
+                ((LHScene*)this->getScene())->didBeginContact(info);
+                ((LHScene*)this->getScene())->didBeginContactBetweenNodes(info.nodeA,
+                                                                          info.nodeB,
+                                                                          info.contactPoint,
+                                                                          info.impulse);
             }
         }
     }
@@ -220,11 +219,12 @@ void LHGameWorldNode::afterStep(float dt)
     
     for(size_t i = 0; i < _scheduledEndContact.size(); ++i)
     {
-        LHScheduledContactInfo info = _scheduledEndContact[i];
-        if(info.getNodeA() && info.getNodeB()){
-            if(info.getNodeA()->getParent() && info.getNodeB()->getParent()){
-                ((LHScene*)this->getScene())->didEndContactBetweenNodes(info.getNodeA(),
-                                                                        info.getNodeB());
+        LHContactInfo info = _scheduledEndContact[i];
+        if(info.nodeA && info.nodeB){
+            if(info.nodeA->getParent() && info.nodeB->getParent()){
+                ((LHScene*)this->getScene())->didEndContact(info);
+                ((LHScene*)this->getScene())->didEndContactBetweenNodes(info.nodeA,
+                                                                        info.nodeB);
             }
         }
     }
@@ -233,10 +233,10 @@ void LHGameWorldNode::afterStep(float dt)
 
 void LHGameWorldNode::removeScheduledContactsWithNode(Node* node){
     
-    std::vector<LHScheduledContactInfo>::iterator it;
+    std::vector<LHContactInfo>::iterator it;
     for(it = _scheduledBeginContact.begin(); it != _scheduledBeginContact.end();)
     {
-        if(it->getNodeA() == node || it->getNodeB() == node)
+        if(it->nodeA == node || it->nodeB == node)
         {
             it = _scheduledBeginContact.erase(it);
         }
@@ -246,7 +246,7 @@ void LHGameWorldNode::removeScheduledContactsWithNode(Node* node){
     }
     for(it = _scheduledEndContact.begin(); it != _scheduledEndContact.end();)
     {
-        if(it->getNodeA() == node || it->getNodeB() == node)
+        if(it->nodeA == node || it->nodeB == node)
         {
             it = _scheduledEndContact.erase(it);
         }
@@ -256,7 +256,7 @@ void LHGameWorldNode::removeScheduledContactsWithNode(Node* node){
     }
 }
 
-void LHGameWorldNode::scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nodeB, Point contactPoint, float impulse)
+void LHGameWorldNode::scheduleDidBeginContact(LHContactInfo contact)
 {
     //this will restrict calling multiple contancts with same nodes (maybe the objects collide in two different points
 //    for(size_t i = 0; i < _scheduledBeginContact.size(); ++i)
@@ -269,13 +269,14 @@ void LHGameWorldNode::scheduleDidBeginContactBetweenNodeA(Node* nodeA, Node* nod
 //        }
 //    }
     
-    //this means the object has already been removed but box2d still has it in the collision map
-    if(nodeA->getParent() == NULL || nodeB->getParent() == NULL)return;
     
-    _scheduledBeginContact.push_back(LHScheduledContactInfo(nodeA, nodeB, contactPoint, impulse));
+    //this means the object has already been removed but box2d still has it in the collision map
+    //if(nodeA->getParent() == NULL || nodeB->getParent() == NULL)return;
+    
+    _scheduledBeginContact.push_back(contact);
 }
 
-void LHGameWorldNode::scheduleDidEndContactBetweenNodeA(Node* nodeA, Node* nodeB)
+void LHGameWorldNode::scheduleDidEndContact(LHContactInfo contact)
 {
     //this will restrict calling multiple contancts with same nodes (maybe the objects collide in two different points
 //    for(size_t i = 0; i < _scheduledEndContact.size(); ++i)
@@ -289,9 +290,9 @@ void LHGameWorldNode::scheduleDidEndContactBetweenNodeA(Node* nodeA, Node* nodeB
 //    }
     
     //this means the object has already been removed but box2d still has it in the collision map
-    if(nodeA->getParent() == NULL || nodeB->getParent() == NULL)return;
+    //if(nodeA->getParent() == NULL || nodeB->getParent() == NULL)return;
 
-    _scheduledEndContact.push_back(LHScheduledContactInfo(nodeA, nodeB, Point(), 0));
+    _scheduledEndContact.push_back(contact);
 }
 
 Point LHGameWorldNode::getGravity(){
@@ -303,8 +304,19 @@ void LHGameWorldNode::setGravity(Point gravity){
     grv.Set(gravity.x, gravity.y);
     this->getBox2dWorld()->SetGravity(grv);
 }
+#else
 
-void LHGameWorldNode::setPosition(const Vec2& position){
+Point LHGameWorldNode::getGravity(){
+    Vec2 grv = this->getScene()->getPhysicsWorld()->getGravity();
+    return Point(grv.x, grv.y);
+}
+void LHGameWorldNode::setGravity(Point gravity){
+    this->getScene()->getPhysicsWorld()->setGravity(gravity);
+}
+
+#endif
+
+void LHGameWorldNode::setPosition(const cocos2d::Vec2& position){
     if(((LHScene*)this->getScene())->loadingInProgress){
         return;
     }
@@ -319,4 +331,4 @@ void LHGameWorldNode::setScale(float scale){
 }
 
 
-#endif
+

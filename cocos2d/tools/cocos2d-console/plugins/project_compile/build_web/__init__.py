@@ -18,15 +18,15 @@ def check_jdk_version():
     jdk_version = None
     for line in child.stderr:
         if 'java version' in line:
-            if '1.7' in line:
-                jdk_version = JDK_1_7
             if '1.6' in line:
                 jdk_version = JDK_1_6
+            else:
+                jdk_version = JDK_1_7
 
     child.wait()
 
     if jdk_version is None:
-        raise cocos.CCPluginError("Not valid jdk isntalled")
+        raise cocos.CCPluginError("Not valid jdk installed")
 
     return jdk_version
 
@@ -95,6 +95,7 @@ def gen_buildxml(project_dir, project_json, output_dir, build_opts):
     buildContent = buildContent.replace("%sourceMapCfg%",  sourceMapContent)
     buildContent = buildContent.replace("%ccJsList%", _getFileArrStr(ccJsList))
     buildContent = buildContent.replace("%userJsList%", _getFileArrStr(userJsList))
+    buildContent = buildContent.replace("%debug%", build_opts["debug"])
 
     buildXmlOutputFile = open(os.path.join(publish_dir, "build.xml"), "w")
     buildXmlOutputFile.write(buildContent)

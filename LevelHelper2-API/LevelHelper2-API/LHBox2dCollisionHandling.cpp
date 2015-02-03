@@ -15,6 +15,8 @@
 #if LH_USE_BOX2D
 
 #include "Box2d/Box2d.h"
+#include "LHContactInfo.h"
+#include "LHBodyShape.h"
 
 class LHContactListenerPimpl : public b2ContactListener
 {
@@ -198,11 +200,38 @@ b2Body* LHBox2dCollisionHandling::getBodyBFromContact(b2Contact* contact)
     return fixtureB->GetBody();
 }
 
+LHContactInfo LHBox2dCollisionHandling::getContactInfoForb2Contact(b2Contact* contact)
+{
+    Node* nodeA = this->getNodeAFromContact(contact);
+    Node* nodeB = this->getNodeBFromContact(contact);
+
+    LHContactInfo info;
+    
+    if(!nodeA || !nodeB)return info;
+    if(!nodeA->getParent() || !nodeB->getParent())return info;
+    
+    LHBodyShape* shapeA = LHBodyShape::shapeForb2Fixture(contact->GetFixtureA());
+    LHBodyShape* shapeB = LHBodyShape::shapeForb2Fixture(contact->GetFixtureB());
+    
+    if(!shapeA || !shapeB)return info;
+    
+    info.nodeA          = nodeA;
+    info.nodeB          = nodeB;
+    info.nodeAShapeName = shapeA->getShapeName();
+    info.nodeBShapeName = shapeB->getShapeName();
+    info.nodeAShapeID   = shapeA->getShapeID();
+    info.nodeBShapeID   = shapeB->getShapeID();
+    info.contactPoint   = this->getPointFromContact(contact);
+    info.box2dContact   = contact;
+    return info;
+}
+
 Node* LHBox2dCollisionHandling::getNodeAFromContact(b2Contact* contact){
     b2Body* bodyA = this->getBodyAFromContact(contact);
     if(!bodyA || !bodyA->GetUserData())return NULL;
     return (Node*)bodyA->GetUserData();
 }
+
 
 Node* LHBox2dCollisionHandling::getNodeBFromContact(b2Contact* contact){
     b2Body* bodyB = this->getBodyBFromContact(contact);
@@ -233,39 +262,37 @@ void LHBox2dCollisionHandling::preSolve(b2Contact* contact, const b2Manifold* ol
 }
 void LHBox2dCollisionHandling::postSolve(b2Contact* contact, const b2ContactImpulse* contactImpulse)
 {
-    Node* nodeA = this->getNodeAFromContact(contact);
-    Node* nodeB = this->getNodeBFromContact(contact);
-    if(!nodeA || !nodeB)return;
-    if(!nodeA->getParent() || !nodeB->getParent())return;
+    LHContactInfo info = this->getContactInfoForb2Contact(contact);
+    if(!info.nodeA || !info.nodeB || !info.nodeA->getParent() || !info.nodeB->getParent()) return;
     
     float impulse = 0;
     if(contactImpulse->count > 0)
     {
         impulse = contactImpulse->normalImpulses[0];
     }
-    _scene->getGameWorldNode()->scheduleDidBeginContactBetweenNodeA(nodeA, nodeB, this->getPointFromContact(contact), impulse);
+    info.impulse = impulse;
+    
+    _scene->getGameWorldNode()->scheduleDidBeginContact(info);
     
     //at this point send the info to the scene
 }
 void LHBox2dCollisionHandling::beginContact(b2Contact* contact)
 {
-    Node* nodeA = this->getNodeAFromContact(contact);
-    Node* nodeB = this->getNodeBFromContact(contact);
-    if(!nodeA || !nodeB)return;
-    if(!nodeA->getParent() || !nodeB->getParent())return;
+    LHContactInfo info = this->getContactInfoForb2Contact(contact);
+    if(!info.nodeA || !info.nodeB || !info.nodeA->getParent() || !info.nodeB->getParent()) return;
+
+    info.impulse = 0;
     
     //called for sensors
-    _scene->getGameWorldNode()->scheduleDidBeginContactBetweenNodeA(nodeA, nodeB, this->getPointFromContact(contact), 0);
+    _scene->getGameWorldNode()->scheduleDidBeginContact(info);
     
 }
 void LHBox2dCollisionHandling::endContact(b2Contact* contact)
 {
-    Node* nodeA = this->getNodeAFromContact(contact);
-    Node* nodeB = this->getNodeBFromContact(contact);
-    if(!nodeA || !nodeB)return;
-    if(!nodeA->getParent() || !nodeB->getParent())return;
+    LHContactInfo info = this->getContactInfoForb2Contact(contact);
+    if(!info.nodeA || !info.nodeB || !info.nodeA->getParent() || !info.nodeB->getParent()) return;
     
-    _scene->getGameWorldNode()->scheduleDidEndContactBetweenNodeA(nodeA, nodeB);
+    _scene->getGameWorldNode()->scheduleDidEndContact(info);
 }
 
 

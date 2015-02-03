@@ -34,8 +34,9 @@ public:
 
     LHPhysicsProtocol();
     virtual ~LHPhysicsProtocol();
-    
+
     void loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene);
+    void loadPhysicsFromValueMap(ValueMap value_Map, LHScene* scene);
     
     void visitPhysicsProtocol();
     
@@ -96,6 +97,7 @@ private:
     bool scheduledForRemoval;
     Point previousScale;
     b2Body* _body;
+    __Array* subShapes;
 #endif
     
     LHAsset* assetParent();

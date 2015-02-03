@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Version</key>
-	<integer>17</integer>
+	<integer>20</integer>
 	<key>NewProjectQuestion</key>
 	<string>Do you want to use the basic Cocos2d-X Xcode project template?</string>
 	<key>NewProjectInfo</key>
 	<string>The Xcode project will help you get started but it&apos;s not required if you prefer to setup everything manually or have a different project in which you want to use LevelHelper.</string>
 	<key>ZipPath</key>
-	<string>https://github.com/vladubogdan/LevelHelper2-Cocos2d-X.v3/archive/master.zip</string>
+	<string>https://github.com/vladubogdan/LevelHelper2-Cocos2d-X.v3/archive/develop.zip</string>
 	<key>ZipName</key>
 	<string>LevelHelper2-Cocos2d-X.v3.zip</string>
 </dict>

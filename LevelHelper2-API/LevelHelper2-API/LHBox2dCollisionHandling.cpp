@@ -97,65 +97,7 @@ void lhContactBeginContactCaller(void* object,
                                  b2Contact* contact);
 void lhContactEndContactCaller(void* object,
                                b2Contact* contact);
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//@interface LHActiveContact : NSObject
-//{
-//    __unsafe_unretained SKNode* nodeA;
-//    __unsafe_unretained SKNode* nodeB;
-//    CGPoint contactPoint;
-//    BOOL _disabled;
-//}
-//+(instancetype)activeContactWithA:(SKNode*)a
-//                                b:(SKNode*)b
-//                         disabled:(BOOL)disabled
-//                     contactPoint:(CGPoint)pt;
-//
-//-(SKNode*)nodeA;
-//-(SKNode*)nodeB;
-//-(CGPoint)contactPoint;
-//-(BOOL)disabled;
-//@end
-//@implementation LHActiveContact
-//
-//-(id)initActiveContactWithA:(SKNode*)a
-//                          b:(SKNode*)b
-//                   disabled:(BOOL)disabled
-//               contactPoint:(CGPoint)pt
-//{
-//    if(self = [super init])
-//    {
-//        nodeA = a;
-//        nodeB = b;
-//        _disabled = disabled;
-//        contactPoint = pt;
-//    }
-//    return self;
-//}
-//+(instancetype)activeContactWithA:(SKNode *)a
-//                                b:(SKNode *)b
-//                         disabled:(BOOL)disabled
-//                     contactPoint:(CGPoint)pt
-//{
-//    return LH_AUTORELEASED([[self alloc] initActiveContactWithA:a
-//                                                              b:b
-//                                                       disabled:disabled
-//                                                   contactPoint:pt]);
-//}
-//-(SKNode*)nodeA{
-//    return nodeA;
-//}
-//-(SKNode*)nodeB{
-//    return nodeB;
-//}
-//-(BOOL)disabled{
-//    return _disabled;
-//}
-//-(CGPoint)contactPoint{
-//    return contactPoint;
-//}
-//@end
-////////////////////////////////////////////////////////////////////////////////
+
 ////////////////////////////////////////////////////////////////////////////////
 LHBox2dCollisionHandling::~LHBox2dCollisionHandling(){
     _scene->getBox2dWorld()->SetContactListener(NULL);
@@ -213,14 +155,27 @@ LHContactInfo LHBox2dCollisionHandling::getContactInfoForb2Contact(b2Contact* co
     LHBodyShape* shapeA = LHBodyShape::shapeForb2Fixture(contact->GetFixtureA());
     LHBodyShape* shapeB = LHBodyShape::shapeForb2Fixture(contact->GetFixtureB());
     
-    if(!shapeA || !shapeB)return info;
+    std::string shapeAName = "userShapeA";
+    std::string shapeBName = "userShapeB";
+    
+    int shapeAId = 0;
+    int shapeBId = 0;
+    
+    if(shapeA){
+        shapeAName = shapeA->getShapeName();
+        shapeAId   = shapeA->getShapeID();
+    }
+    if(shapeB){
+        shapeBName = shapeB->getShapeName();
+        shapeBId   = shapeB->getShapeID();
+    }
     
     info.nodeA          = nodeA;
     info.nodeB          = nodeB;
-    info.nodeAShapeName = shapeA->getShapeName();
-    info.nodeBShapeName = shapeB->getShapeName();
-    info.nodeAShapeID   = shapeA->getShapeID();
-    info.nodeBShapeID   = shapeB->getShapeID();
+    info.nodeAShapeName = shapeAName;
+    info.nodeBShapeName = shapeBName;
+    info.nodeAShapeID   = shapeAId;
+    info.nodeBShapeID   = shapeBId;
     info.contactPoint   = this->getPointFromContact(contact);
     info.box2dContact   = contact;
     return info;

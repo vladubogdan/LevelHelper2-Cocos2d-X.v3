@@ -189,6 +189,7 @@
 		6E9FD25019A4F7A60046CDBD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E9FD25219A4F7AB0046CDBD /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		6E9FD2BF19A4FEBF0046CDBD /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../build/Release-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		6EABE79D1A81DEAF00BD68BF /* LH_APIS_RELEASE_NOTES.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = LH_APIS_RELEASE_NOTES.html; path = ../LH_APIS_RELEASE_NOTES.html; sourceTree = "<group>"; };
 		6EC556BE19ADF53400CF0760 /* LHAsset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHAsset.cpp; path = "LevelHelper2-API/LHAsset.cpp"; sourceTree = SOURCE_ROOT; };
 		6EC556BF19ADF53400CF0760 /* LHAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHAsset.h; path = "LevelHelper2-API/LHAsset.h"; sourceTree = SOURCE_ROOT; };
 		6EC556C019ADF53400CF0760 /* LHBackUINode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBackUINode.cpp; path = "LevelHelper2-API/LHBackUINode.cpp"; sourceTree = SOURCE_ROOT; };
@@ -493,6 +494,7 @@
 		6EDE843019A483A200599C48 = {
 			isa = PBXGroup;
 			children = (
+				6EABE79D1A81DEAF00BD68BF /* LH_APIS_RELEASE_NOTES.html */,
 				6E742E461A53B44A006B24D4 /* LH_COCOS2D_VERSION.plist */,
 				6EC557C019ADF86700CF0760 /* LH_COCOS2DX_PROJECT_TEMPLATE.plist */,
 				6E80C4B719A75ABC002EEA12 /* LH_API_VERSION.plist */,

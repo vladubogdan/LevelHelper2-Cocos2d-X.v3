@@ -28,6 +28,7 @@
 
 #include "LHSpriteFrameProperty.h"
 
+#include "LHRootBoneProperty.h"
 
 LHAnimationProperty::~LHAnimationProperty()
 {
@@ -73,6 +74,9 @@ LHAnimationProperty* LHAnimationProperty::createWithDictionary(LHDictionary* dic
     }
     else if(type == "LHSpriteFrameProperty"){
         aProp = new LHSpriteFrameProperty();
+    }
+    else if(type == "LHRootBoneProperty"){
+        aProp = new LHRootBoneProperty();
     }
     else{
         aProp = new LHAnimationProperty();

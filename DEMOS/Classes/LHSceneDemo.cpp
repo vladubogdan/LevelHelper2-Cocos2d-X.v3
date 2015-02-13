@@ -22,7 +22,7 @@
 #include "LHSceneNodesSubclassingDemo.h"
 #include "LHSceneComplexPhysicsDemo.h"
 #include "LHSceneOnTheFlySpritesWithPhysicsDemo.h"
-
+#include "LHSceneSkeletalCharacterDemo.h"
 //TESTS
 #include "CameraPhysicsTest.h"
 #include "DynamicObjectsTransformAnimationTest.h"
@@ -52,7 +52,10 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
     
     sceneNames.push_back("LHSceneIntroductionDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneIntroductionDemo::create);
-        
+
+    sceneNames.push_back("LHSceneSkeletalCharacterDemo");
+    sceneCreators.push_back((createFuncPtrType)&LHSceneSkeletalCharacterDemo::create);
+
     sceneNames.push_back("LHSceneOnTheFlySpritesWithPhysicsDemo");
     sceneCreators.push_back((createFuncPtrType)&LHSceneOnTheFlySpritesWithPhysicsDemo::create);
     

@@ -66,45 +66,42 @@ bool LHBodyShape::LHValidateCentroid(b2Vec2* vs, int count)
         return false;
     }
     
+
+	
+	int32 n = b2Min(count, b2_maxPolygonVertices);
+    
+	// Perform welding and copy vertices into local buffer.
+	b2Vec2 ps[b2_maxPolygonVertices];
+	int32 tempCount = 0;
+	for (int32 i = 0; i < n; ++i)
+	{
+		b2Vec2 v = vs[i];
+        
+		bool unique = true;
+		for (int32 j = 0; j < tempCount; ++j)
+		{
+			if (b2DistanceSquared(v, ps[j]) < 0.5f * b2_linearSlop)
+			{
+				unique = false;
+				break;
+			}
+		}
+        
+		if (unique)
+		{
+			ps[tempCount++] = v;
+		}
+	}
+    
+	n = tempCount;
+	if (n < 3)
+	{
+		return false;
+	}
+
+    
     return true;
     
-    //    CCLOG("COUNT %d", count);
-    //
-    //	if(count < 3 || count > b2_maxPolygonVertices)
-    //        return false;
-    //
-    //	int32 n = b2Min(count, b2_maxPolygonVertices);
-    //
-    //	// Perform welding and copy vertices into local buffer.
-    //	b2Vec2 ps[b2_maxPolygonVertices];
-    //	int32 tempCount = 0;
-    //	for (int32 i = 0; i < n; ++i)
-    //	{
-    //		b2Vec2 v = vs[i];
-    //
-    //		bool unique = true;
-    //		for (int32 j = 0; j < tempCount; ++j)
-    //		{
-    //			if (b2DistanceSquared(v, ps[j]) < 0.5f * b2_linearSlop)
-    //			{
-    //				unique = false;
-    //				break;
-    //			}
-    //		}
-    //
-    //		if (unique)
-    //		{
-    //			ps[tempCount++] = v;
-    //		}
-    //	}
-    //    
-    //	n = tempCount;
-    //	if (n < 3)
-    //	{
-    //        return false;
-    //	}
-    //    
-    //    return true;
 }
 
 

@@ -111,6 +111,11 @@ float LHUtils::LHPointLength(const Point& pt)
     return sqrtf(pt.x*pt.x + pt.y*pt.y);
 }
 
+double LHUtils::LHNormalAbsoluteAngleDegrees(double angle) {
+    angle = fmod(angle, 360.0f);
+    return angle >= 0 ? angle : (angle + 360.0f);
+}
+
 float LHUtils::LHRandomFloat(float Min, float Max){
 //    return ((arc4random()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
     return ((rand()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;

@@ -16,3 +16,4 @@ cocos2d/cocos/platform/android/java/bin
 cocos2d/cocos/platform/android/java/gen
 proj.android/gen
 proj.android/libs
+bin/debug/android/LevelHelper2-Cocos2d-X.v3-debug.apk

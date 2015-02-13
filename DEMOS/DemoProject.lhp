@@ -74,7 +74,7 @@
 			<key>SuffixName</key>
 			<string>iphone6</string>
 			<key>color</key>
-			<string>{{0.040834672749042511, 0.040832150727510452}, {0.040833376348018646, 1}}</string>
+			<string>{{0.040834497660398483, 0.040831636637449265}, {0.040833365172147751, 1}}</string>
 		</dict>
 		<dict>
 			<key>DeviceName</key>
@@ -107,6 +107,8 @@
 		<dict>
 			<key>relativeDocumentsLocation</key>
 			<string>Levels</string>
+			<key>relativeSpriteSheetsLocation</key>
+			<string>SpriteSheets</string>
 		</dict>
 		<key>publishOptions</key>
 		<dict>
@@ -213,6 +215,11 @@
 					<true/>
 				</dict>
 				<key>simpleCar.lhs</key>
+				<dict>
+					<key>publish</key>
+					<true/>
+				</dict>
+				<key>skeletalCharacter.lhs</key>
 				<dict>
 					<key>publish</key>
 					<true/>

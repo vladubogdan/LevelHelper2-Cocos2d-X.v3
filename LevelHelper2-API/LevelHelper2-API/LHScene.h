@@ -39,14 +39,30 @@ class LHBox2dCollisionHandling;
 
 typedef Node* (*LevelHelperNodeTypeSubclass)(LHDictionary* dict, Node* prnt);
 
+/**
+ LHScene class is used to load a level file into Cocos2d-X v3 engine.
+ End users will have to subclass this class in order to add they're own game logic.
+ */
 class LHScene : public cocos2d::Scene, public LHNodeProtocol
 {
     
 public:
+    
+    /**
+     Returns a scene object with all the level elements loaded into Cocos2d-X.
+     */
     static LHScene* createWithContentOfFile(const std::string& plistLevelFile);
 
     LHScene();
     virtual ~LHScene();
+    
+    /**
+     Overwrite this method to create your own auto-released LHScene subclass.
+     
+     :param: std::string The level file name. e.g "LH-Published/level.plist"
+     
+     :returns: true or false if level file was loaded.
+     */
     virtual bool initWithContentOfFile(const std::string& plistLevelFile);
     
     std::string getCurrentDeviceSuffix();
@@ -86,15 +102,70 @@ public:
     CC_DEPRECATED_ATTRIBUTE virtual void onTouchEnded(Touch* touch, Event* event);//use onTouchesEnded instead
     CC_DEPRECATED_ATTRIBUTE virtual void onTouchCancelled(Touch *touch, Event *event);//use onTouchesCancelled instead
     
+    /**
+     *  Overwrite this method to receive touch began events.
+     *  Don't forget to call LHScene::onTouchesBegan(...) or else you will capture the events.
+     *
+     *  @param touches A vector of Touch objects.
+     *  @param event   The event.
+     */
     virtual void onTouchesBegan(const std::vector<Touch*>& touches, Event* event);
+
+    /**
+     *  Overwrite this method to receive touch moved events.
+     *  Don't forget to call LHScene::onTouchesMoved(...) or else you will capture the events.
+     *
+     *  @param touches A vector of Touch objects.
+     *  @param event   The event.
+     */
     virtual void onTouchesMoved(const std::vector<Touch*>& touches, Event* event);
-    virtual void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
-    virtual void onTouchesCancelled(const std::vector<Touch*>& touches, Event *event);
     
+    /**
+     *  Overwrite this method to receive touch ended events.
+     *  Don't forget to call LHScene::onTouchesEnded(...) or else you will capture the events.
+     *
+     *  @param touches A vector of Touch objects.
+     *  @param event   The event.
+     */
+    virtual void onTouchesEnded(const std::vector<Touch*>& touches, Event* event);
+    
+    /**
+     *  Overwrite this method to receive touch cancelled events.
+     *  Don't forget to call LHScene::onTouchesCancelled(...) or else you will capture the events.
+     *
+     *  @param touches A vector of Touch objects.
+     *  @param event   The event.
+     */
+    virtual void onTouchesCancelled(const std::vector<Touch*>& touches, Event *event);
+
+    /**
+     *  Overwrite this method to receive mouse scroll events.
+     *  Don't forget to call LHScene::onMouseScroll(...) or else you will capture the event.
+     *
+     *  @param event   The event.
+     */
     virtual void onMouseScroll(Event* event);
+    
+    /**
+     *  Overwrite this method to receive pinch events.
+     *  Don't forget to call LHScene::didPinchAtLocation(...) or else you will capture the event.
+     *
+     *  @param centerTouch The center point of the pinch.
+     *  @param delta       How much the fingers have distance themself.
+     *  @param closing     If the pinch is closeing or opening.
+     */
     virtual void didPinchAtLocation(Point centerTouch, float delta, bool closing);
 
+    /**
+     *  Overwrite this method to receive onEnter events.
+     *  Mandatory call LHScene::onEnter(); or else you will capture the event.
+     */
     virtual void onEnter();
+    
+    /**
+     *  Overwrite this method to receive onExit events.
+     *  Mandatory call LHScene::onExit(); or else you will capture the event.
+     */
     virtual void onExit();
     
     

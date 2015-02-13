@@ -26,6 +26,10 @@
 #include "LHAsset.h"
 #include "LHCamera.h"
 #include "LHGravityArea.h"
+
+#include "LHBone.h"
+#include "LHBoneNodes.h"
+
 #include "LHRopeJointNode.h"
 #include "LHRevoluteJointNode.h"
 #include "LHDistanceJointNode.h"
@@ -427,9 +431,17 @@ Node* LHNodeProtocol::createLHNodeWithDictionary(LHDictionary* childInfo, Node* 
     {
         return LHSprite::nodeWithDictionary(childInfo, prnt);
     }
+    else if(nodeType == "LHBone")
+    {
+        return LHBone::nodeWithDictionary(childInfo, prnt);
+    }
     else if(nodeType == "LHNode")
     {
         return LHNode::nodeWithDictionary(childInfo, prnt);
+    }
+    else if(nodeType == "LHBoneNodes")
+    {
+        return LHBoneNodes::nodeWithDictionary(childInfo, prnt);
     }
     else if(nodeType == "LHCamera")
     {

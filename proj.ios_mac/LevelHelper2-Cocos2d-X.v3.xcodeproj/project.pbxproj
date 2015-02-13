@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		6E8003FB19A860D800284D21 /* Android Build */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 6E8003FC19A860D800284D21 /* Build configuration list for PBXAggregateTarget "Android Build" */;
-			buildPhases = (
-				6E8003FF19A860DC00284D21 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = "Android Build";
-			productName = "Android Build";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
@@ -242,12 +228,11 @@
 		6E0EEEFA198A2A3C002CDE7F /* LHSceneSubclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneSubclass.cpp; path = ../Classes/LHSceneSubclass.cpp; sourceTree = "<group>"; };
 		6E0EEEFB198A2A3C002CDE7F /* LHSceneSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneSubclass.h; path = ../Classes/LHSceneSubclass.h; sourceTree = "<group>"; };
 		6E68F70319D0A54D00A2D652 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ios/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		6E742E421A530C57006B24D4 /* Cocos2dxActivity.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; name = Cocos2dxActivity.java; path = ../cocos2d/cocos/platform/android/java/src/org/cocos2dx/lib/Cocos2dxActivity.java; sourceTree = "<group>"; };
+		6E70FD0F1A88D3520027FA21 /* compileAndroid.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = compileAndroid.sh; path = ../compileAndroid.sh; sourceTree = "<group>"; };
+		6E70FD101A88D66E0027FA21 /* ANDROID_BUILD_HELP.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = ANDROID_BUILD_HELP.md; path = ../ANDROID_BUILD_HELP.md; sourceTree = "<group>"; };
 		6E7916DC1964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LevelHelper2-Cocos2d-X.v3 + Box2d - iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7916DD1964186600E68E06 /* Info+Box2d.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info+Box2d.plist"; path = "/Volumes/PersonalFiles/ActiveProjects/LevelHelper2-API-GITHUB/Cocos2d-X.v3.3.0/proj.ios_mac/Info+Box2d.plist"; sourceTree = "<absolute>"; };
 		6E80040119A8741E00284D21 /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Android.mk; path = ../proj.android/jni/Android.mk; sourceTree = "<group>"; };
-		6E80040219A8744B00284D21 /* Android_Build_Help.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = Android_Build_Help.md; path = ../proj.android/Android_Build_Help.md; sourceTree = "<group>"; };
-		6E8CB4191A52DBBD00663859 /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = ../proj.android/AndroidManifest.xml; sourceTree = "<group>"; };
 		6E8CB41A1A52DBBD00663859 /* project.properties */ = {isa = PBXFileReference; lastKnownFileType = text; name = project.properties; path = ../proj.android/project.properties; sourceTree = "<group>"; };
 		6E908F6119A8442B0090246B /* LevelHelper2-API.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "LevelHelper2-API.xcodeproj"; path = "../LevelHelper2-API/LevelHelper2-API.xcodeproj"; sourceTree = "<group>"; };
 		6E97C8EB1A52970400DF4A1A /* LH2-Published */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "LH2-Published"; sourceTree = "<group>"; };
@@ -475,12 +460,11 @@
 		6E80040019A873FC00284D21 /* Android */ = {
 			isa = PBXGroup;
 			children = (
-				6E80040219A8744B00284D21 /* Android_Build_Help.md */,
+				6E70FD101A88D66E0027FA21 /* ANDROID_BUILD_HELP.md */,
+				6E70FD0F1A88D3520027FA21 /* compileAndroid.sh */,
 				6E80040119A8741E00284D21 /* Android.mk */,
 				6EF1386719A89A5E00CC03F3 /* Application.mk */,
-				6E8CB4191A52DBBD00663859 /* AndroidManifest.xml */,
 				6E8CB41A1A52DBBD00663859 /* project.properties */,
-				6E742E421A530C57006B24D4 /* Cocos2dxActivity.java */,
 			);
 			name = Android;
 			sourceTree = "<group>";
@@ -615,7 +599,6 @@
 				6E7916721964186600E68E06 /* LevelHelper2-Cocos2d-X.v3 + Box2d - iOS */,
 				5087E73D17EB910900C73F5D /* LevelHelper2-Cocos2d-X.v3 + Box2d - Mac */,
 				1D6058900D05DD3D006BFB54 /* LevelHelper2-Cocos2d-X.v3 + Chipmunk - iOS */,
-				6E8003FB19A860D800284D21 /* Android Build */,
 			);
 		};
 /* End PBXProject section */
@@ -742,22 +725,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6E8003FF19A860DC00284D21 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\nopen -a Genymotion\n\n`/usr/bin/killall -d \"player\" &> /dev/null`\nlet \"RUNNING = ! $?\"\nif [ $RUNNING == 1 ]; then\n echo \"Genymotion simulator appears to be running.\"\nelse\necho \"warning: No Genymotion simulator running. Please install the simulator from http://www.genymotion.com\"\nfi\n\necho 'SRCROOT:'\"${SRCROOT}/../proj.android/\"\ncd \"${SRCROOT}/../proj.android/\"\n\n#setup this paths as located on your computer\nexport ANT_ROOT=/Volumes/PersonalFiles/Tools/Android/apache-ant-1.9.4/bin\nexport NDK_ROOT=/Volumes/PersonalFiles/Tools/Android/android-ndk-r9d\nexport ANDROID_SDK_ROOT=/Volumes/PersonalFiles/Tools/Android/adt-bundle-mac-x86_64-20140321/sdk/\n\n\nif [ ! -d \"${ANT_ROOT}\" ]; then\necho \"error: \\\"ANT_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\nif [ ! -d \"${NDK_ROOT}\" ]; then\necho \"error: \\\"NDK_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\nif [ ! -d \"${ANDROID_SDK_ROOT}\" ]; then\necho \"error: \\\"ANDROID_SDK_ROOT\\\" not found or not defined. Please read Android_Build_Help for more info.\"\nexit 1\nfi\n\npython build_native.py\n\n#setup target as desired here\n\"${ANDROID_SDK_ROOT}/tools/android\" update project --path \"${SRCROOT}/../cocos2d/cocos/platform/android/java\" --target android-19  --subprojects\n\ncd \"${SRCROOT}/../proj.android/\"\n\n\"${ANT_ROOT}/ant\" -Dsdk.dir=\"$ANDROID_SDK_ROOT\" debug\n\nopen ./bin\n\necho \"warning: Build has finished but may have failed.\"\n\nrm -rf \"${SRCROOT}/../proj.android/assets/\"*\n\necho \"warning: Trying to install to simulator. This will block execution until the device is present.\"\n\n#\"${ANDROID_SDK_ROOT}/platform-tools/adb\" install -r \"${SRCROOT}/../proj.android/bin/HelloCpp-debug.apk\";\n\n#\"${ANDROID_SDK_ROOT}/platform-tools/adb\" shell am start -n org.cocos2dx.hellocpp/org.cocos2dx.cpp.AppActivity\n\n#get app activity\n#\"${ANDROID_SDK_ROOT}/build-tools/android-4.4.2/aapt\" dump xmltree HelloCpp-debug.apk AndroidManifest.xml";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -1020,22 +987,6 @@
 			};
 			name = Release;
 		};
-		6E8003FD19A860D800284D21 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		6E8003FE19A860D800284D21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1122,15 +1073,6 @@
 			buildConfigurations = (
 				6E7916DA1964186600E68E06 /* Debug */,
 				6E7916DB1964186600E68E06 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		6E8003FC19A860D800284D21 /* Build configuration list for PBXAggregateTarget "Android Build" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E8003FD19A860D800284D21 /* Debug */,
-				6E8003FE19A860D800284D21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

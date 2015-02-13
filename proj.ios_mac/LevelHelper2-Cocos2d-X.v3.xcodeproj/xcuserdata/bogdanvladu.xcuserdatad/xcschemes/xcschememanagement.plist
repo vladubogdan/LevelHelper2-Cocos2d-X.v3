@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Android Build.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>LevelHelper2-Cocos2d-X.v3 + Box2d - Mac.xcscheme</key>
 		<dict>
 			<key>isShown</key>

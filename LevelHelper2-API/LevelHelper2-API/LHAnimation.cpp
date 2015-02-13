@@ -39,6 +39,11 @@
 #include "LHSpriteFrameProperty.h"
 #include "LHSpriteFrame.h"
 
+#include "LHBone.h"
+#include "LHBoneNodes.h"
+#include "LHBoneFrame.h"
+#include "LHRootBoneProperty.h"
+
 #include "LHCameraActivateProperty.h"
 
 #include "LHNodeAnimationProtocol.h"
@@ -301,7 +306,6 @@ void LHAnimation::updateNodeWithAnimationProperty(LHAnimationProperty* prop, flo
         animNode = prop->subpropertyNode();
     }
     
-
     if(LHChildrenPositionsProperty::isLHChildrenPositionsProperty(prop))
     {
         animateNodeChildrenPositionsToTime(time, beginFrm, endFrm, animNode, prop);
@@ -309,6 +313,11 @@ void LHAnimation::updateNodeWithAnimationProperty(LHAnimationProperty* prop, flo
     else if(LHPositionProperty::isLHPositionProperty(prop))
     {
         animateNodePositionToTime(time, beginFrm, endFrm, animNode);
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    else if(LHRootBoneProperty::isLHRootBoneProperty(prop))
+    {
+        animateRootBonesToTime(time, beginFrm, endFrm, animNode);
     }
     ////////////////////////////////////////////////////////////////////////////
     else if(LHChildrenRotationsProperty::isLHChildrenRotationsProperty(prop))
@@ -516,6 +525,135 @@ void LHAnimation::animateNodePositionToTime(float time, LHFrame* beginFrm, LHFra
         node->setPosition(newPos);
     }
 }
+
+void LHAnimation::animateRootBonesToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* _animNode)
+{
+    LHBone* rootBone = dynamic_cast<LHBone*>(_animNode);
+    if(!rootBone)return;
+    
+    LHBoneFrame* beginFrame    = (LHBoneFrame*)beginFrm;
+    LHBoneFrame* endFrame      = (LHBoneFrame*)endFrm;
+    
+    
+    if(rootBone->isRoot())
+    {
+        __Array* allBones = rootBone->getChildrenOfType<LHBone*>();
+        
+        if(beginFrame && endFrame && beginFrm != endFrm)
+        {
+            double beginTime= beginFrame->frameNumber()*(1.0/_fps);
+            double endTime  = endFrame->frameNumber()*(1.0/_fps);
+            
+            double framesTimeDistance = endTime - beginTime;
+            double timeUnit = (time-beginTime)/framesTimeDistance; //a value between 0 and 1
+            
+            LHBoneFrameInfo* beginFrmInfo = beginFrame->boneFrameInfoForBoneNamed("__rootBone__");
+            LHBoneFrameInfo* endFrmInfo = endFrame->boneFrameInfoForBoneNamed("__rootBone__");
+            
+            if(beginFrmInfo && endFrmInfo)
+            {
+                float beginRotation = beginFrmInfo->rotation;
+                float endRotation = endFrmInfo->rotation;
+                
+                float shortest_angle = fmodf( (fmodf( (endRotation - beginRotation), 360.0f) + 540.0f), 360.0) - 180.0f;
+                //lets calculate the new value based on the start - end and unit time
+                float newRotation = beginRotation + shortest_angle*timeUnit;
+                
+                Point beginPosition = beginFrmInfo->position;
+                Point endPosition = endFrmInfo->position;
+                
+                //lets calculate the new node position based on the start - end and unit time
+                double newX = beginPosition.x + (endPosition.x - beginPosition.x)*timeUnit;
+                double newY = beginPosition.y + (endPosition.y - beginPosition.y)*timeUnit;
+                
+                Point newPos(newX, -newY);
+                
+                newPos = this->convertFramePosition(newPos, rootBone);
+                
+                rootBone->setRotation(newRotation);
+                rootBone->setPosition(newPos);
+            }
+
+            for(int i = 0; i < allBones->count(); ++i)
+            {
+                LHBone* b = (LHBone*)allBones->getObjectAtIndex(i);
+            
+                beginFrmInfo= beginFrame->boneFrameInfoForBoneNamed(b->getName());
+                endFrmInfo  = endFrame->boneFrameInfoForBoneNamed(b->getName());
+                
+                if(beginFrmInfo && endFrmInfo)
+                {
+                    
+                    float beginRotation= beginFrmInfo->rotation;
+                    float endRotation  = endFrmInfo->rotation;
+                    
+                    float shortest_angle = fmodf( (fmodf( (endRotation - beginRotation), 360.0f) + 540.0f), 360.0) - 180.0f;
+                    //lets calculate the new value based on the start - end and unit time
+                    float newRotation = beginRotation + shortest_angle*timeUnit;
+                    
+                    b->setRotation(newRotation);
+                    
+                    if(!b->getIsRigid())
+                    {
+                        Point beginPosition= beginFrmInfo->position;
+                        Point endPosition  = endFrmInfo->position;
+                        
+                        //lets calculate the new node position based on the start - end and unit time
+                        double newX = beginPosition.x + (endPosition.x - beginPosition.x)*timeUnit;
+                        double newY = beginPosition.y + (endPosition.y - beginPosition.y)*timeUnit;
+                        
+                        Point newPos = Point(newX, -newY);
+                        
+                        newPos = this->convertFramePosition(newPos, b);
+                        
+                        b->setPosition(newPos);
+                    }
+                }
+            }
+        }
+        else if(beginFrame && !endFrame){
+            
+            LHBoneFrameInfo* beginFrmInfo = beginFrame->boneFrameInfoForBoneNamed("__rootBone__");
+            
+            if(beginFrmInfo)
+            {
+                Point beginPosition = beginFrmInfo->position;
+                Point newPos = Point(beginPosition.x, -beginPosition.y);
+                
+                newPos = this->convertFramePosition(newPos, rootBone);
+
+                float beginRot =  beginFrmInfo->rotation;
+                
+                rootBone->setRotation(beginRot);
+                rootBone->setPosition(newPos);
+            }
+            
+            for(int i = 0; i < allBones->count(); ++i)
+            {
+                LHBone* b = (LHBone*)allBones->getObjectAtIndex(i);
+                
+                beginFrmInfo = beginFrame->boneFrameInfoForBoneNamed(b->getName());
+                
+                if(beginFrmInfo)
+                {
+                    float newRotation = beginFrmInfo->rotation;
+                    b->setRotation(newRotation);
+                    
+                    if(!b->getIsRigid())
+                    {
+                        Point beginPosition = beginFrmInfo->position;
+                        Point newPos = Point(beginPosition.x, -beginPosition.y);
+                        
+                        newPos = this->convertFramePosition(newPos, b);
+                        
+                        b->setPosition(newPos);
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 void LHAnimation::animateNodeChildrenRotationsToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* _animNode, LHAnimationProperty* prop)
 {

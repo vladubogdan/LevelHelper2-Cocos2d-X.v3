@@ -8,6 +8,7 @@
 
 #include "NodeTransform.h"
 #include "LHScene.h"
+#include "LHUtils.h"
 
 Point LHNodeTransform::convertToWorldScale(Node* node, Point nodeScale)
 {
@@ -52,4 +53,40 @@ float LHNodeTransform::localAngleFromGlobalAngle(Node* node, float ga){
         prnt = prnt->getParent();
     }
     return ga;
+}
+
+float LHNodeTransform::convertToWorldAngle(Node* node, float rotation)
+{
+    Point rot = Vec2::forAngle(-CC_DEGREES_TO_RADIANS(rotation));
+    Point worldPt = node->convertToWorldSpace(rot);
+    Point worldOriginPt = node->convertToWorldSpace(Point(0,0));
+    Point worldVec = worldPt - worldOriginPt;
+    float ang = -CC_RADIANS_TO_DEGREES(worldVec.getAngle());
+    return LHUtils::LHNormalAbsoluteAngleDegrees(ang);
+}
+
+float LHNodeTransform::convertToNodeAngle(Node* node, float rotation)
+{
+    Point rot = Vec2::forAngle(-CC_DEGREES_TO_RADIANS(rotation));
+    Point nodePt = node->convertToNodeSpace(rot);
+    Point nodeOriginPt = node->convertToNodeSpace(Point(0,0));
+    Point nodeVec = nodePt- nodeOriginPt;
+    float ang = -CC_RADIANS_TO_DEGREES(nodeVec.getAngle());
+    return LHUtils::LHNormalAbsoluteAngleDegrees(ang);
+}
+
+
+Point LHNodeTransform::unitForGlobalPosition(Node* node, Point globalpt)
+{
+    Point local = node->convertToNodeSpace(globalpt);
+    
+    Size sizer = node->getContentSize();
+    
+    float centerPointX = sizer.width*0.5;
+    float centerPointY = sizer.height*0.5;
+    
+    local.x += centerPointX;
+    local.y += centerPointY;
+    
+    return  Point(local.x/sizer.width, local.y/sizer.height);
 }

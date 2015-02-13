@@ -21,6 +21,11 @@ public:
     
     static float globalAngleFromLocalAngle(Node* node, float la);
     static float localAngleFromGlobalAngle(Node* node, float ga);
+    
+    static float convertToWorldAngle(Node* node, float rotation);
+    static float convertToNodeAngle(Node* node, float rotation);
+    
+    static Point unitForGlobalPosition(Node* node, Point globalpt);
 };
 
 #endif //__LevelHelper2API_NODE_TRANSFORM__

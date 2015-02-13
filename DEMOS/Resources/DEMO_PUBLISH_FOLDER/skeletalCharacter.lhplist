@@ -1,0 +1,2734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>0</integer>
+	<key>backgroundColor</key>
+	<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>BACK USER INTERFACE</string>
+			<key>nodeType</key>
+			<string>LHBackUINode</string>
+			<key>parentUUID</key>
+			<string>8C3423AB-BE8A-4449-BECF-0BF1F17BD725</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>8183DE85-F54D-4181-A95C-4BEAC4EFBC02</string>
+			<key>zOrder</key>
+			<integer>-1</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 1.000000}</string>
+					<key>animations</key>
+					<array>
+						<dict>
+							<key>active</key>
+							<true/>
+							<key>fps</key>
+							<integer>24</integer>
+							<key>name</key>
+							<string>test</string>
+							<key>properties</key>
+							<dict>
+								<key>Skeletal Transform</key>
+								<dict>
+									<key>Frames</key>
+									<array>
+										<dict>
+											<key>bonesInfo</key>
+											<dict>
+												<key>UntitledBone</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, 0.000000}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>UntitledBone_1</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -24.774813}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>UntitledBone_2</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -25.319134}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>UntitledBone_3</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -74.886894}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>UntitledBone_4</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -25.375549}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>__rootBone__</key>
+												<dict>
+													<key>pos</key>
+													<string>{234.505354, 536.604465}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+											</dict>
+											<key>frameIndex</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>bonesInfo</key>
+											<dict>
+												<key>UntitledBone</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, 0.000000}</string>
+													<key>rot</key>
+													<real>315</real>
+												</dict>
+												<key>UntitledBone_1</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -24.774813}</string>
+													<key>rot</key>
+													<real>90</real>
+												</dict>
+												<key>UntitledBone_2</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -25.319134}</string>
+													<key>rot</key>
+													<real>315</real>
+												</dict>
+												<key>UntitledBone_3</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -74.886894}</string>
+													<key>rot</key>
+													<real>135</real>
+												</dict>
+												<key>UntitledBone_4</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -25.375549}</string>
+													<key>rot</key>
+													<real>225</real>
+												</dict>
+												<key>__rootBone__</key>
+												<dict>
+													<key>pos</key>
+													<string>{234.505354, 536.604465}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+											</dict>
+											<key>frameIndex</key>
+											<integer>14</integer>
+										</dict>
+										<dict>
+											<key>bonesInfo</key>
+											<dict>
+												<key>UntitledBone</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, 0.000000}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>UntitledBone_1</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -24.774813}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>UntitledBone_2</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -25.319134}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>UntitledBone_3</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -74.886894}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>UntitledBone_4</key>
+												<dict>
+													<key>pos</key>
+													<string>{0.000000, -25.375549}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+												<key>__rootBone__</key>
+												<dict>
+													<key>pos</key>
+													<string>{234.505354, 536.604465}</string>
+													<key>rot</key>
+													<real>0.0</real>
+												</dict>
+											</dict>
+											<key>frameIndex</key>
+											<integer>29</integer>
+										</dict>
+									</array>
+									<key>type</key>
+									<string>LHRootBoneProperty</string>
+								</dict>
+							</dict>
+							<key>repetitions</key>
+							<integer>0</integer>
+							<key>totalFrames</key>
+							<integer>30</integer>
+						</dict>
+					</array>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 0.500000}</string>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.000000, -0.032813}</string>
+									<key>imageFileName</key>
+									<string>test.png</string>
+									<key>name</key>
+									<string>blue</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4403FCD0-92B4-491C-86FE-904E851411E0</string>
+									<key>relativeImagePath</key>
+									<string>DEMO_PUBLISH_FOLDER/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{50.000000, 50.000000}</string>
+									<key>spriteName</key>
+									<string>blue</string>
+									<key>spriteUUID</key>
+									<string>DBF3F339-CEB8-4592-A504-BDAB2E2A328C</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>2CAB8EC2-DB01-47C2-B03E-4372D6F185FD</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.000000, -0.110937}</string>
+									<key>imageFileName</key>
+									<string>test.png</string>
+									<key>name</key>
+									<string>red</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4403FCD0-92B4-491C-86FE-904E851411E0</string>
+									<key>relativeImagePath</key>
+									<string>DEMO_PUBLISH_FOLDER/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{50.000000, 50.000000}</string>
+									<key>spriteName</key>
+									<string>red</string>
+									<key>spriteUUID</key>
+									<string>8019554D-37CF-45B8-BA8A-1D1F9460EE86</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>F288A2B8-9953-477F-AAD0-DCE0DF1ABA74</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.000000, -0.189062}</string>
+									<key>imageFileName</key>
+									<string>test.png</string>
+									<key>name</key>
+									<string>blue_1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4403FCD0-92B4-491C-86FE-904E851411E0</string>
+									<key>relativeImagePath</key>
+									<string>DEMO_PUBLISH_FOLDER/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{50.000000, 50.000000}</string>
+									<key>spriteName</key>
+									<string>blue</string>
+									<key>spriteUUID</key>
+									<string>DBF3F339-CEB8-4592-A504-BDAB2E2A328C</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>E6F09B02-4CE1-4ACD-97CD-CDC75796D8C2</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.000000, -0.345313}</string>
+									<key>imageFileName</key>
+									<string>test.png</string>
+									<key>name</key>
+									<string>red_1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4403FCD0-92B4-491C-86FE-904E851411E0</string>
+									<key>relativeImagePath</key>
+									<string>DEMO_PUBLISH_FOLDER/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{50.000000, 50.000000}</string>
+									<key>spriteName</key>
+									<string>red</string>
+									<key>spriteUUID</key>
+									<string>8019554D-37CF-45B8-BA8A-1D1F9460EE86</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>80FC1CCE-0DB8-4052-9251-C4E1FA17B3B1</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.000000, -0.423438}</string>
+									<key>imageFileName</key>
+									<string>test.png</string>
+									<key>name</key>
+									<string>blue_2</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4403FCD0-92B4-491C-86FE-904E851411E0</string>
+									<key>relativeImagePath</key>
+									<string>DEMO_PUBLISH_FOLDER/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{50.000000, 50.000000}</string>
+									<key>spriteName</key>
+									<string>blue</string>
+									<key>spriteUUID</key>
+									<string>DBF3F339-CEB8-4592-A504-BDAB2E2A328C</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>881B2A05-9FC2-45CF-BF47-5B452B2F00F8</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{0.000000, 0.000000}</string>
+							<key>lockedNodes</key>
+							<true/>
+							<key>name</key>
+							<string>Nodes</string>
+							<key>nodeType</key>
+							<string>LHBoneNodes</string>
+							<key>parentUUID</key>
+							<string>854B427A-0243-4E11-B260-965A4239E512</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.000000, 1.000000}</string>
+							<key>size</key>
+							<string>{0.000000, 0.000000}</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>4403FCD0-92B4-491C-86FE-904E851411E0</string>
+							<key>zOrder</key>
+							<integer>-9999</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 1.000000}</string>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 1.000000}</string>
+									<key>children</key>
+									<array>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 1.000000}</string>
+											<key>children</key>
+											<array>
+												<dict>
+													<key>alpha</key>
+													<real>255</real>
+													<key>anchor</key>
+													<string>{0.500000, 1.000000}</string>
+													<key>children</key>
+													<array>
+														<dict>
+															<key>alpha</key>
+															<real>255</real>
+															<key>anchor</key>
+															<string>{0.500000, 1.000000}</string>
+															<key>colorOverlay</key>
+															<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+															<key>connections</key>
+															<array>
+																<dict>
+																	<key>angleDelta</key>
+																	<real>0.0</real>
+																	<key>nodeName</key>
+																	<string>blue_2</string>
+																	<key>positionDelta</key>
+																	<string>{0.000000, 0.203872}</string>
+																</dict>
+															</array>
+															<key>generalPosition</key>
+															<string>{0.000000, -0.039649}</string>
+															<key>maxAngle</key>
+															<real>180</real>
+															<key>minAngle</key>
+															<real>-180</real>
+															<key>name</key>
+															<string>UntitledBone_4</string>
+															<key>nodeType</key>
+															<string>LHBone</string>
+															<key>parentUUID</key>
+															<string>8D1F0670-6E8A-4D91-BCD6-BC16AAFA2ED5</string>
+															<key>rigid</key>
+															<true/>
+															<key>rotation</key>
+															<real>0.0</real>
+															<key>scale</key>
+															<string>{1.000000, 1.000000}</string>
+															<key>size</key>
+															<string>{4.000000, 50.408203}</string>
+															<key>tags</key>
+															<array>
+																<string>DEFAULT</string>
+															</array>
+															<key>uuid</key>
+															<string>E0151D76-1A4C-4148-BF29-7E9755E8E07F</string>
+															<key>zOrder</key>
+															<integer>0</integer>
+														</dict>
+													</array>
+													<key>colorOverlay</key>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+													<key>connections</key>
+													<array>
+														<dict>
+															<key>angleDelta</key>
+															<real>0.0</real>
+															<key>nodeName</key>
+															<string>red_1</string>
+															<key>positionDelta</key>
+															<string>{0.000000, -0.375590}</string>
+														</dict>
+													</array>
+													<key>generalPosition</key>
+													<string>{0.000000, -0.117011}</string>
+													<key>maxAngle</key>
+													<real>180</real>
+													<key>minAngle</key>
+													<real>-180</real>
+													<key>name</key>
+													<string>UntitledBone_3</string>
+													<key>nodeType</key>
+													<string>LHBone</string>
+													<key>parentUUID</key>
+													<string>6A3DA304-7FC3-4FD7-A285-BC0CC3EAD36C</string>
+													<key>rigid</key>
+													<true/>
+													<key>rotation</key>
+													<real>0.0</real>
+													<key>scale</key>
+													<string>{1.000000, 1.000000}</string>
+													<key>size</key>
+													<string>{4.000000, 49.248901}</string>
+													<key>tags</key>
+													<array>
+														<string>DEFAULT</string>
+													</array>
+													<key>uuid</key>
+													<string>8D1F0670-6E8A-4D91-BCD6-BC16AAFA2ED5</string>
+													<key>zOrder</key>
+													<integer>0</integer>
+												</dict>
+											</array>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>connections</key>
+											<array>
+												<dict>
+													<key>angleDelta</key>
+													<real>0.0</real>
+													<key>nodeName</key>
+													<string>blue_1</string>
+													<key>positionDelta</key>
+													<string>{0.000000, 0.113559}</string>
+												</dict>
+											</array>
+											<key>generalPosition</key>
+											<string>{0.000000, -0.039561}</string>
+											<key>maxAngle</key>
+											<real>180</real>
+											<key>minAngle</key>
+											<real>-180</real>
+											<key>name</key>
+											<string>UntitledBone_2</string>
+											<key>nodeType</key>
+											<string>LHBone</string>
+											<key>parentUUID</key>
+											<string>B79DBFEC-C13B-4F71-9FD2-B57454290C06</string>
+											<key>rigid</key>
+											<true/>
+											<key>rotation</key>
+											<real>0.0</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{4.000000, 50.226212}</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>6A3DA304-7FC3-4FD7-A285-BC0CC3EAD36C</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+									</array>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>connections</key>
+									<array>
+										<dict>
+											<key>angleDelta</key>
+											<real>0.0</real>
+											<key>nodeName</key>
+											<string>red</string>
+											<key>positionDelta</key>
+											<string>{0.000000, -0.318586}</string>
+										</dict>
+									</array>
+									<key>devicePositions</key>
+									<dict>
+										<key>1024x768</key>
+										<string>{0.000000, -0.038711}</string>
+										<key>1136x640</key>
+										<string>{0.000000, -0.038711}</string>
+										<key>2048x1536</key>
+										<string>{0.000000, -0.038711}</string>
+										<key>960x640</key>
+										<string>{0.000000, -0.038711}</string>
+									</dict>
+									<key>generalPosition</key>
+									<string>{0.000000, -0.038711}</string>
+									<key>maxAngle</key>
+									<real>180</real>
+									<key>minAngle</key>
+									<real>-180</real>
+									<key>name</key>
+									<string>UntitledBone_1</string>
+									<key>nodeType</key>
+									<string>LHBone</string>
+									<key>parentUUID</key>
+									<string>A24A02DA-CF61-4434-AA70-791AAD3DC777</string>
+									<key>perDevicePosition</key>
+									<true/>
+									<key>rigid</key>
+									<true/>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{4.000000, 49.361732}</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>B79DBFEC-C13B-4F71-9FD2-B57454290C06</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>connections</key>
+							<array>
+								<dict>
+									<key>angleDelta</key>
+									<real>0.0</real>
+									<key>nodeName</key>
+									<string>blue</string>
+									<key>positionDelta</key>
+									<string>{0.000000, 0.224867}</string>
+								</dict>
+							</array>
+							<key>generalPosition</key>
+							<string>{0.000000, 0.000000}</string>
+							<key>maxAngle</key>
+							<real>180</real>
+							<key>minAngle</key>
+							<real>-180</real>
+							<key>name</key>
+							<string>UntitledBone</string>
+							<key>nodeType</key>
+							<string>LHBone</string>
+							<key>parentUUID</key>
+							<string>854B427A-0243-4E11-B260-965A4239E512</string>
+							<key>rigid</key>
+							<true/>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.000000, 1.000000}</string>
+							<key>size</key>
+							<string>{4.000000, 42.450375}</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>A24A02DA-CF61-4434-AA70-791AAD3DC777</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+					</array>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>connections</key>
+					<array/>
+					<key>generalPosition</key>
+					<string>{0.244276, 0.838444}</string>
+					<key>maxAngle</key>
+					<real>180</real>
+					<key>minAngle</key>
+					<real>-180</real>
+					<key>name</key>
+					<string>UntitledSkelet</string>
+					<key>nodeType</key>
+					<string>LHBone</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>rigid</key>
+					<true/>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{8.000000, 8.000000}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>854B427A-0243-4E11-B260-965A4239E512</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 1.000000}</string>
+							<key>animations</key>
+							<array>
+								<dict>
+									<key>active</key>
+									<true/>
+									<key>fps</key>
+									<integer>24</integer>
+									<key>name</key>
+									<string>testAnim</string>
+									<key>properties</key>
+									<dict>
+										<key>Skeletal Transform</key>
+										<dict>
+											<key>Frames</key>
+											<array>
+												<dict>
+													<key>bonesInfo</key>
+													<dict>
+														<key>UntitledBone</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.192960, -4.672000}</string>
+															<key>rot</key>
+															<real>0.0</real>
+														</dict>
+														<key>UntitledBone_1</key>
+														<dict>
+															<key>pos</key>
+															<string>{12.379200, -8.794240}</string>
+															<key>rot</key>
+															<real>156.73876953125</real>
+														</dict>
+														<key>UntitledBone_10</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -11.246080}</string>
+															<key>rot</key>
+															<real>344.20297241210938</real>
+														</dict>
+														<key>UntitledBone_11</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -10.533760}</string>
+															<key>rot</key>
+															<real>13.589795112609863</real>
+														</dict>
+														<key>UntitledBone_12</key>
+														<dict>
+															<key>pos</key>
+															<string>{-4.920000, -32.849920}</string>
+															<key>rot</key>
+															<real>12.33080005645752</real>
+														</dict>
+														<key>UntitledBone_2</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.049920, -10.592640}</string>
+															<key>rot</key>
+															<real>1.0355209112167358</real>
+														</dict>
+														<key>UntitledBone_3</key>
+														<dict>
+															<key>pos</key>
+															<string>{13.246080, -24.512640}</string>
+															<key>rot</key>
+															<real>107.11795043945312</real>
+														</dict>
+														<key>UntitledBone_4</key>
+														<dict>
+															<key>pos</key>
+															<string>{-13.489759, -7.012834}</string>
+															<key>rot</key>
+															<real>202.3614501953125</real>
+														</dict>
+														<key>UntitledBone_5</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.154560, -13.141760}</string>
+															<key>rot</key>
+															<real>0.0</real>
+														</dict>
+														<key>UntitledBone_6</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.288000, -12.723200}</string>
+															<key>rot</key>
+															<real>73.028564453125</real>
+														</dict>
+														<key>UntitledBone_7</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -7.822720}</string>
+															<key>rot</key>
+															<real>1.7553544044494629</real>
+														</dict>
+														<key>UntitledBone_8</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.052800, -11.745280}</string>
+															<key>rot</key>
+															<real>5.5465173721313477</real>
+														</dict>
+														<key>UntitledBone_9</key>
+														<dict>
+															<key>pos</key>
+															<string>{-17.090880, -21.533440}</string>
+															<key>rot</key>
+															<real>282.47821044921875</real>
+														</dict>
+														<key>__rootBone__</key>
+														<dict>
+															<key>pos</key>
+															<string>{-3.027840, 55.646720}</string>
+															<key>rot</key>
+															<real>0.0</real>
+														</dict>
+														<key>foot_l</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.718080, -11.832320}</string>
+															<key>rot</key>
+															<real>296.9735107421875</real>
+														</dict>
+													</dict>
+													<key>frameIndex</key>
+													<integer>0</integer>
+												</dict>
+												<dict>
+													<key>bonesInfo</key>
+													<dict>
+														<key>UntitledBone</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.192960, -4.672000}</string>
+															<key>rot</key>
+															<real>10</real>
+														</dict>
+														<key>UntitledBone_1</key>
+														<dict>
+															<key>pos</key>
+															<string>{12.379200, -8.794240}</string>
+															<key>rot</key>
+															<real>91.185302734375</real>
+														</dict>
+														<key>UntitledBone_10</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -11.246080}</string>
+															<key>rot</key>
+															<real>287.7413330078125</real>
+														</dict>
+														<key>UntitledBone_11</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -10.533760}</string>
+															<key>rot</key>
+															<real>319.10049438476562</real>
+														</dict>
+														<key>UntitledBone_12</key>
+														<dict>
+															<key>pos</key>
+															<string>{-4.920000, -32.849920}</string>
+															<key>rot</key>
+															<real>350</real>
+														</dict>
+														<key>UntitledBone_2</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.049920, -10.592640}</string>
+															<key>rot</key>
+															<real>56.980861663818359</real>
+														</dict>
+														<key>UntitledBone_3</key>
+														<dict>
+															<key>pos</key>
+															<string>{13.246080, -24.512640}</string>
+															<key>rot</key>
+															<real>70</real>
+														</dict>
+														<key>UntitledBone_4</key>
+														<dict>
+															<key>pos</key>
+															<string>{-13.489759, -7.012834}</string>
+															<key>rot</key>
+															<real>258.4713134765625</real>
+														</dict>
+														<key>UntitledBone_5</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.154560, -13.141760}</string>
+															<key>rot</key>
+															<real>289.35516357421875</real>
+														</dict>
+														<key>UntitledBone_6</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.288000, -12.723200}</string>
+															<key>rot</key>
+															<real>357.42306518554688</real>
+														</dict>
+														<key>UntitledBone_7</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -7.822720}</string>
+															<key>rot</key>
+															<real>67.002120971679688</real>
+														</dict>
+														<key>UntitledBone_8</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.052800, -11.745280}</string>
+															<key>rot</key>
+															<real>69.214012145996094</real>
+														</dict>
+														<key>UntitledBone_9</key>
+														<dict>
+															<key>pos</key>
+															<string>{-17.090880, -21.533440}</string>
+															<key>rot</key>
+															<real>226.19891357421875</real>
+														</dict>
+														<key>__rootBone__</key>
+														<dict>
+															<key>pos</key>
+															<string>{-3.027840, 55.646720}</string>
+															<key>rot</key>
+															<real>0.0</real>
+														</dict>
+														<key>foot_l</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.718080, -11.832320}</string>
+															<key>rot</key>
+															<real>348.87908935546875</real>
+														</dict>
+													</dict>
+													<key>frameIndex</key>
+													<integer>14</integer>
+												</dict>
+												<dict>
+													<key>bonesInfo</key>
+													<dict>
+														<key>UntitledBone</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.192960, -4.672000}</string>
+															<key>rot</key>
+															<real>0.0</real>
+														</dict>
+														<key>UntitledBone_1</key>
+														<dict>
+															<key>pos</key>
+															<string>{12.379200, -8.794240}</string>
+															<key>rot</key>
+															<real>156.73876953125</real>
+														</dict>
+														<key>UntitledBone_10</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -11.246080}</string>
+															<key>rot</key>
+															<real>344.20297241210938</real>
+														</dict>
+														<key>UntitledBone_11</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -10.533760}</string>
+															<key>rot</key>
+															<real>13.589795112609863</real>
+														</dict>
+														<key>UntitledBone_12</key>
+														<dict>
+															<key>pos</key>
+															<string>{-4.920000, -32.849920}</string>
+															<key>rot</key>
+															<real>12.33080005645752</real>
+														</dict>
+														<key>UntitledBone_2</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.049920, -10.592640}</string>
+															<key>rot</key>
+															<real>1.0355209112167358</real>
+														</dict>
+														<key>UntitledBone_3</key>
+														<dict>
+															<key>pos</key>
+															<string>{13.246080, -24.512640}</string>
+															<key>rot</key>
+															<real>107.11795043945312</real>
+														</dict>
+														<key>UntitledBone_4</key>
+														<dict>
+															<key>pos</key>
+															<string>{-13.489759, -7.012834}</string>
+															<key>rot</key>
+															<real>202.3614501953125</real>
+														</dict>
+														<key>UntitledBone_5</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.154560, -13.141760}</string>
+															<key>rot</key>
+															<real>0.0</real>
+														</dict>
+														<key>UntitledBone_6</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.288000, -12.723200}</string>
+															<key>rot</key>
+															<real>73.028564453125</real>
+														</dict>
+														<key>UntitledBone_7</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.000000, -7.822720}</string>
+															<key>rot</key>
+															<real>1.7553544044494629</real>
+														</dict>
+														<key>UntitledBone_8</key>
+														<dict>
+															<key>pos</key>
+															<string>{0.052800, -11.745280}</string>
+															<key>rot</key>
+															<real>5.5465173721313477</real>
+														</dict>
+														<key>UntitledBone_9</key>
+														<dict>
+															<key>pos</key>
+															<string>{-17.090880, -21.533440}</string>
+															<key>rot</key>
+															<real>282.47821044921875</real>
+														</dict>
+														<key>__rootBone__</key>
+														<dict>
+															<key>pos</key>
+															<string>{-3.027840, 55.646720}</string>
+															<key>rot</key>
+															<real>0.0</real>
+														</dict>
+														<key>foot_l</key>
+														<dict>
+															<key>pos</key>
+															<string>{-0.718080, -11.832320}</string>
+															<key>rot</key>
+															<real>296.9735107421875</real>
+														</dict>
+													</dict>
+													<key>frameIndex</key>
+													<integer>29</integer>
+												</dict>
+											</array>
+											<key>type</key>
+											<string>LHRootBoneProperty</string>
+										</dict>
+									</dict>
+									<key>repetitions</key>
+									<integer>0</integer>
+									<key>totalFrames</key>
+									<integer>30</integer>
+								</dict>
+							</array>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>children</key>
+									<array>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{0.022118, -0.083387}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>upperArm_L</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>274.46914672851562</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{18.000000, 25.000000}</string>
+											<key>spriteName</key>
+											<string>upperArm_L</string>
+											<key>spriteUUID</key>
+											<string>D9FD4119-E075-4A59-BDBC-7CD660873DBF</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>072DF68F-2FF7-4F42-957C-D7352701343C</string>
+											<key>zOrder</key>
+											<integer>-1</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{-0.000513, -0.054073}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>Body</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>0.0</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{56.000000, 71.000000}</string>
+											<key>spriteName</key>
+											<string>Body</string>
+											<key>spriteUUID</key>
+											<string>311ED56E-17E0-4CCC-9D8E-80567C7D8BC2</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>BB487EF3-5030-451E-AA45-7CE21F42B650</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{0.029568, 0.036275}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>lowerLeg_L</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>336.27188110351562</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{30.000000, 34.000000}</string>
+											<key>spriteName</key>
+											<string>lowerLeg_L</string>
+											<key>spriteUUID</key>
+											<string>37D10EF5-1651-48F3-B65B-437B1BC04125</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>6E366967-B206-46D0-A29B-986B553BBCD6</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{0.045422, 0.061984}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>foot_L</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>340.90158081054688</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{48.000000, 23.000000}</string>
+											<key>spriteName</key>
+											<string>foot_L</string>
+											<key>spriteUUID</key>
+											<string>ACE3C9EE-AFDF-4AAA-AEBA-1EAAC6CD082D</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>95DFA865-E794-4641-B00A-94518ED273AC</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{0.043684, -0.073182}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>lowerArm_L</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>288.21929931640625</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{21.000000, 32.000000}</string>
+											<key>spriteName</key>
+											<string>lowerArm_L</string>
+											<key>spriteUUID</key>
+											<string>03138379-7CA1-4D0F-8153-E47B147D088F</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>8092C41A-B54E-4F20-A0EE-26B6A6B02843</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{0.058736, -0.064523}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>hand_L</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>292.24124145507812</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{26.000000, 26.000000}</string>
+											<key>spriteName</key>
+											<string>hand_L</string>
+											<key>spriteUUID</key>
+											<string>DD1A919B-D69B-4BAA-966F-2CA1C903555D</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>2646CE2D-1906-4B00-864F-8547C1472844</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{0.018604, 0.002748}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>upperLeg_L</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>338.59417724609375</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{23.000000, 32.000000}</string>
+											<key>spriteName</key>
+											<string>upperLeg_L</string>
+											<key>spriteUUID</key>
+											<string>456B3A0E-DF7A-47CA-96DE-5FA6B5E9A173</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>774B6824-218D-418A-AFC2-91D8B651D86D</string>
+											<key>zOrder</key>
+											<integer>1</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>children</key>
+											<array>
+												<dict>
+													<key>alpha</key>
+													<real>255</real>
+													<key>anchor</key>
+													<string>{0.500000, 0.500000}</string>
+													<key>children</key>
+													<array>
+														<dict>
+															<key>alpha</key>
+															<real>255</real>
+															<key>anchor</key>
+															<string>{0.500000, 0.500000}</string>
+															<key>colorOverlay</key>
+															<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+															<key>generalPosition</key>
+															<string>{-0.007714, 0.034301}</string>
+															<key>imageFileName</key>
+															<string>girlSoldierParts.png</string>
+															<key>name</key>
+															<string>foot_R</string>
+															<key>nodeType</key>
+															<string>LHSprite</string>
+															<key>parentUUID</key>
+															<string>0E04BC24-039E-4B8B-98E5-EAAD35254A3F</string>
+															<key>relativeImagePath</key>
+															<string>DEMO_PUBLISH_FOLDER/</string>
+															<key>rotation</key>
+															<real>-2.30181884765625</real>
+															<key>scale</key>
+															<string>{1.000000, 1.000000}</string>
+															<key>size</key>
+															<string>{48.000000, 23.000000}</string>
+															<key>spriteName</key>
+															<string>foot_R</string>
+															<key>spriteUUID</key>
+															<string>6DA3C69A-315C-4687-B7D2-783DCE53A0CF</string>
+															<key>tags</key>
+															<array>
+																<string>DEFAULT</string>
+															</array>
+															<key>uuid</key>
+															<string>68D85246-A21D-4CE1-B7D5-D95D8121009F</string>
+															<key>zOrder</key>
+															<integer>0</integer>
+														</dict>
+													</array>
+													<key>colorOverlay</key>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+													<key>generalPosition</key>
+													<string>{-0.003773, 0.035964}</string>
+													<key>imageFileName</key>
+													<string>girlSoldierParts.png</string>
+													<key>name</key>
+													<string>lowerLeg_R</string>
+													<key>nodeType</key>
+													<string>LHSprite</string>
+													<key>parentUUID</key>
+													<string>935ECDF1-6AD3-427C-BDBB-DAC0CA0F3E3F</string>
+													<key>relativeImagePath</key>
+													<string>DEMO_PUBLISH_FOLDER/</string>
+													<key>rotation</key>
+													<real>5.3723907470703125</real>
+													<key>scale</key>
+													<string>{1.000000, 1.000000}</string>
+													<key>size</key>
+													<string>{30.000000, 34.000000}</string>
+													<key>spriteName</key>
+													<string>lowerLeg_R</string>
+													<key>spriteUUID</key>
+													<string>CDBA6F90-68E1-416D-B040-1CA54BF3E577</string>
+													<key>tags</key>
+													<array>
+														<string>DEFAULT</string>
+													</array>
+													<key>uuid</key>
+													<string>0E04BC24-039E-4B8B-98E5-EAAD35254A3F</string>
+													<key>zOrder</key>
+													<integer>0</integer>
+												</dict>
+											</array>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{-0.018236, 0.006520}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>upperLeg_R</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>18.443710327148438</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{23.000000, 32.000000}</string>
+											<key>spriteName</key>
+											<string>upperLeg_R</string>
+											<key>spriteUUID</key>
+											<string>D3630DAD-D770-432F-8D8E-1DAB61F7DB11</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>935ECDF1-6AD3-427C-BDBB-DAC0CA0F3E3F</string>
+											<key>zOrder</key>
+											<integer>1</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{0.007616, -0.180714}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>HeadNormal</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>2.4648637771606445</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{120.000000, 110.000000}</string>
+											<key>spriteName</key>
+											<string>HeadNormal</string>
+											<key>spriteUUID</key>
+											<string>B5DA7A9C-4EDD-4052-B881-A5D8EEBA1B52</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>63D0F331-DB9F-40AA-AE0E-F21212ED01D7</string>
+											<key>zOrder</key>
+											<integer>1</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{1.000000, 0.000000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{-0.015801, -0.066201}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>upperArm_R</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>98.2603759765625</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{22.000000, 30.000000}</string>
+											<key>spriteName</key>
+											<string>upperArm_R</string>
+											<key>spriteUUID</key>
+											<string>F25494DF-1F9F-4B67-8DA0-F007D1B0FFE7</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>4903537B-2A3B-40E2-91E6-F963D15490F3</string>
+											<key>zOrder</key>
+											<integer>2</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 0.500000}</string>
+											<key>children</key>
+											<array>
+												<dict>
+													<key>alpha</key>
+													<real>255</real>
+													<key>anchor</key>
+													<string>{0.500000, 0.500000}</string>
+													<key>colorOverlay</key>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+													<key>generalPosition</key>
+													<string>{-0.003061, 0.030100}</string>
+													<key>imageFileName</key>
+													<string>girlSoldierParts.png</string>
+													<key>name</key>
+													<string>hand_R</string>
+													<key>nodeType</key>
+													<string>LHSprite</string>
+													<key>parentUUID</key>
+													<string>6DB529BE-E001-4991-A614-8473E521CFD8</string>
+													<key>relativeImagePath</key>
+													<string>DEMO_PUBLISH_FOLDER/</string>
+													<key>rotation</key>
+													<real>22.462249755859375</real>
+													<key>scale</key>
+													<string>{1.000000, 1.000000}</string>
+													<key>size</key>
+													<string>{34.000000, 28.000000}</string>
+													<key>spriteName</key>
+													<string>hand_R</string>
+													<key>spriteUUID</key>
+													<string>D9FAA7B0-7752-40CD-9525-74F5C016137F</string>
+													<key>tags</key>
+													<array>
+														<string>DEFAULT</string>
+													</array>
+													<key>uuid</key>
+													<string>BE18A92E-BF0C-4DBF-875E-88F24E6F658D</string>
+													<key>zOrder</key>
+													<integer>0</integer>
+												</dict>
+											</array>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>generalPosition</key>
+											<string>{-0.052063, -0.088868}</string>
+											<key>imageFileName</key>
+											<string>girlSoldierParts.png</string>
+											<key>name</key>
+											<string>lowerArm_R</string>
+											<key>nodeType</key>
+											<string>LHSprite</string>
+											<key>parentUUID</key>
+											<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+											<key>relativeImagePath</key>
+											<string>DEMO_PUBLISH_FOLDER/</string>
+											<key>rotation</key>
+											<real>81.741790771484375</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{21.000000, 31.000000}</string>
+											<key>spriteName</key>
+											<string>lowerArm_R</string>
+											<key>spriteUUID</key>
+											<string>5003FBC1-287C-4FC5-865E-1C073B790978</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>6DB529BE-E001-4991-A614-8473E521CFD8</string>
+											<key>zOrder</key>
+											<integer>3</integer>
+										</dict>
+									</array>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.000000, 0.000000}</string>
+									<key>lockedNodes</key>
+									<true/>
+									<key>name</key>
+									<string>Nodes</string>
+									<key>nodeType</key>
+									<string>LHBoneNodes</string>
+									<key>parentUUID</key>
+									<string>10257735-4A1D-4788-9FF7-CB952ED1C8D9</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{0.000000, 0.000000}</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>53E87BB7-E833-4E73-A0CE-35A0CC111C30</string>
+									<key>zOrder</key>
+									<integer>-9999</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 1.000000}</string>
+									<key>children</key>
+									<array>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 1.000000}</string>
+											<key>children</key>
+											<array>
+												<dict>
+													<key>alpha</key>
+													<real>255</real>
+													<key>anchor</key>
+													<string>{0.500000, 1.000000}</string>
+													<key>children</key>
+													<array>
+														<dict>
+															<key>alpha</key>
+															<real>255</real>
+															<key>anchor</key>
+															<string>{0.500000, 1.000000}</string>
+															<key>colorOverlay</key>
+															<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+															<key>connections</key>
+															<array>
+																<dict>
+																	<key>angleDelta</key>
+																	<real>177.8214111328125</real>
+																	<key>nodeName</key>
+																	<string>hand_L</string>
+																	<key>positionDelta</key>
+																	<string>{0.398476, -1.651969}</string>
+																</dict>
+															</array>
+															<key>generalPosition</key>
+															<string>{0.000055, -0.018352}</string>
+															<key>maxAngle</key>
+															<real>100</real>
+															<key>minAngle</key>
+															<real>-70</real>
+															<key>name</key>
+															<string>UntitledBone_8</string>
+															<key>nodeType</key>
+															<string>LHBone</string>
+															<key>parentUUID</key>
+															<string>A05AD599-9734-4303-A937-619D0CF75156</string>
+															<key>rigid</key>
+															<true/>
+															<key>rotation</key>
+															<real>5.5465173721313477</real>
+															<key>scale</key>
+															<string>{1.000000, 1.000000}</string>
+															<key>size</key>
+															<string>{4.000000, 11.209096}</string>
+															<key>tags</key>
+															<array>
+																<string>DEFAULT</string>
+															</array>
+															<key>uuid</key>
+															<string>FAD012A5-C247-45AD-93CA-1425FA38ED7F</string>
+															<key>zOrder</key>
+															<integer>0</integer>
+														</dict>
+													</array>
+													<key>colorOverlay</key>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+													<key>connections</key>
+													<array>
+														<dict>
+															<key>angleDelta</key>
+															<real>179.34599304199219</real>
+															<key>nodeName</key>
+															<string>lowerArm_L</string>
+															<key>positionDelta</key>
+															<string>{0.581178, -3.463642}</string>
+														</dict>
+													</array>
+													<key>generalPosition</key>
+													<string>{0.000000, -0.012223}</string>
+													<key>maxAngle</key>
+													<real>110</real>
+													<key>minAngle</key>
+													<real>0.0</real>
+													<key>name</key>
+													<string>UntitledBone_7</string>
+													<key>nodeType</key>
+													<string>LHBone</string>
+													<key>parentUUID</key>
+													<string>5AF44208-7A85-48CA-9974-3AC6EA185F69</string>
+													<key>rigid</key>
+													<true/>
+													<key>rotation</key>
+													<real>1.7553544044494629</real>
+													<key>scale</key>
+													<string>{1.000000, 1.000000}</string>
+													<key>size</key>
+													<string>{4.000000, 22.915226}</string>
+													<key>tags</key>
+													<array>
+														<string>DEFAULT</string>
+													</array>
+													<key>uuid</key>
+													<string>A05AD599-9734-4303-A937-619D0CF75156</string>
+													<key>zOrder</key>
+													<integer>0</integer>
+												</dict>
+											</array>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>connections</key>
+											<array>
+												<dict>
+													<key>angleDelta</key>
+													<real>167.3511962890625</real>
+													<key>nodeName</key>
+													<string>upperArm_L</string>
+													<key>positionDelta</key>
+													<string>{0.889921, -1.010560}</string>
+												</dict>
+											</array>
+											<key>generalPosition</key>
+											<string>{0.013798, -0.038301}</string>
+											<key>maxAngle</key>
+											<real>240</real>
+											<key>minAngle</key>
+											<real>70</real>
+											<key>name</key>
+											<string>UntitledBone_3</string>
+											<key>nodeType</key>
+											<string>LHBone</string>
+											<key>parentUUID</key>
+											<string>D73BA7EE-0051-42ED-A13E-76C145678336</string>
+											<key>rigid</key>
+											<true/>
+											<key>rotation</key>
+											<real>107.11795043945312</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{4.000000, 15.645704}</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>5AF44208-7A85-48CA-9974-3AC6EA185F69</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 1.000000}</string>
+											<key>children</key>
+											<array>
+												<dict>
+													<key>alpha</key>
+													<real>255</real>
+													<key>anchor</key>
+													<string>{0.500000, 1.000000}</string>
+													<key>children</key>
+													<array>
+														<dict>
+															<key>alpha</key>
+															<real>255</real>
+															<key>anchor</key>
+															<string>{0.500000, 1.000000}</string>
+															<key>colorOverlay</key>
+															<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+															<key>connections</key>
+															<array>
+																<dict>
+																	<key>angleDelta</key>
+																	<real>-176.06695556640625</real>
+																	<key>nodeName</key>
+																	<string>hand_R</string>
+																	<key>positionDelta</key>
+																	<string>{-2.093812, -3.206524}</string>
+																</dict>
+															</array>
+															<key>generalPosition</key>
+															<string>{0.000000, -0.016459}</string>
+															<key>maxAngle</key>
+															<real>90</real>
+															<key>minAngle</key>
+															<real>-90</real>
+															<key>name</key>
+															<string>UntitledBone_11</string>
+															<key>nodeType</key>
+															<string>LHBone</string>
+															<key>parentUUID</key>
+															<string>29073A54-A37F-4F49-97E0-A19DF006A858</string>
+															<key>rigid</key>
+															<true/>
+															<key>rotation</key>
+															<real>13.589795112609863</real>
+															<key>scale</key>
+															<string>{1.000000, 1.000000}</string>
+															<key>size</key>
+															<string>{4.000000, 11.507619}</string>
+															<key>tags</key>
+															<array>
+																<string>DEFAULT</string>
+															</array>
+															<key>uuid</key>
+															<string>65AB5304-1BE5-4E67-AA78-877504540E72</string>
+															<key>zOrder</key>
+															<integer>0</integer>
+														</dict>
+													</array>
+													<key>colorOverlay</key>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+													<key>connections</key>
+													<array>
+														<dict>
+															<key>angleDelta</key>
+															<real>-184.93942260742188</real>
+															<key>nodeName</key>
+															<string>lowerArm_R</string>
+															<key>positionDelta</key>
+															<string>{-1.198771, -0.289735}</string>
+														</dict>
+													</array>
+													<key>generalPosition</key>
+													<string>{0.000000, -0.017572}</string>
+													<key>maxAngle</key>
+													<real>-140</real>
+													<key>minAngle</key>
+													<real>0.0</real>
+													<key>name</key>
+													<string>UntitledBone_10</string>
+													<key>nodeType</key>
+													<string>LHBone</string>
+													<key>parentUUID</key>
+													<string>DE850225-1E80-493C-8AB8-B994804CF26D</string>
+													<key>rigid</key>
+													<true/>
+													<key>rotation</key>
+													<real>344.20297241210938</real>
+													<key>scale</key>
+													<string>{1.000000, 1.000000}</string>
+													<key>size</key>
+													<string>{4.000000, 21.067068}</string>
+													<key>tags</key>
+													<array>
+														<string>DEFAULT</string>
+													</array>
+													<key>uuid</key>
+													<string>29073A54-A37F-4F49-97E0-A19DF006A858</string>
+													<key>zOrder</key>
+													<integer>0</integer>
+												</dict>
+											</array>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>connections</key>
+											<array>
+												<dict>
+													<key>angleDelta</key>
+													<real>-184.21783447265625</real>
+													<key>nodeName</key>
+													<string>upperArm_R</string>
+													<key>positionDelta</key>
+													<string>{-10.742453, 15.789453}</string>
+												</dict>
+											</array>
+											<key>generalPosition</key>
+											<string>{-0.017803, -0.033646}</string>
+											<key>maxAngle</key>
+											<real>20</real>
+											<key>minAngle</key>
+											<real>340</real>
+											<key>name</key>
+											<string>UntitledBone_9</string>
+											<key>nodeType</key>
+											<string>LHBone</string>
+											<key>parentUUID</key>
+											<string>D73BA7EE-0051-42ED-A13E-76C145678336</string>
+											<key>rigid</key>
+											<true/>
+											<key>rotation</key>
+											<real>282.47821044921875</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{4.000000, 22.492296}</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>DE850225-1E80-493C-8AB8-B994804CF26D</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 1.000000}</string>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>connections</key>
+											<array>
+												<dict>
+													<key>angleDelta</key>
+													<real>-9.865936279296875</real>
+													<key>nodeName</key>
+													<string>HeadNormal</string>
+													<key>positionDelta</key>
+													<string>{1.352830, -36.967929}</string>
+												</dict>
+											</array>
+											<key>generalPosition</key>
+											<string>{-0.005125, -0.051328}</string>
+											<key>maxAngle</key>
+											<real>40</real>
+											<key>minAngle</key>
+											<real>-10</real>
+											<key>name</key>
+											<string>UntitledBone_12</string>
+											<key>nodeType</key>
+											<string>LHBone</string>
+											<key>parentUUID</key>
+											<string>D73BA7EE-0051-42ED-A13E-76C145678336</string>
+											<key>rigid</key>
+											<true/>
+											<key>rotation</key>
+											<real>12.33080005645752</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{4.000000, 30.043617}</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>EE39FE5A-28C4-498B-9DCD-10FE1C01CB40</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+									</array>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>connections</key>
+									<array>
+										<dict>
+											<key>angleDelta</key>
+											<real>0.0</real>
+											<key>nodeName</key>
+											<string>Body</string>
+											<key>positionDelta</key>
+											<string>{-0.299520, -2.301158}</string>
+										</dict>
+									</array>
+									<key>generalPosition</key>
+									<string>{-0.000201, -0.007300}</string>
+									<key>maxAngle</key>
+									<real>10</real>
+									<key>minAngle</key>
+									<real>-10</real>
+									<key>name</key>
+									<string>UntitledBone</string>
+									<key>nodeType</key>
+									<string>LHBone</string>
+									<key>parentUUID</key>
+									<string>10257735-4A1D-4788-9FF7-CB952ED1C8D9</string>
+									<key>rigid</key>
+									<true/>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{4.000000, 55.267124}</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>D73BA7EE-0051-42ED-A13E-76C145678336</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 1.000000}</string>
+									<key>children</key>
+									<array>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 1.000000}</string>
+											<key>children</key>
+											<array>
+												<dict>
+													<key>alpha</key>
+													<real>255</real>
+													<key>anchor</key>
+													<string>{0.500000, 1.000000}</string>
+													<key>colorOverlay</key>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+													<key>connections</key>
+													<array>
+														<dict>
+															<key>angleDelta</key>
+															<real>246.15377807617188</real>
+															<key>nodeName</key>
+															<string>foot_L</string>
+															<key>positionDelta</key>
+															<string>{3.530152, -2.250899}</string>
+														</dict>
+													</array>
+													<key>generalPosition</key>
+													<string>{-0.000748, -0.018488}</string>
+													<key>maxAngle</key>
+													<real>20</real>
+													<key>minAngle</key>
+													<real>-90</real>
+													<key>name</key>
+													<string>foot_l</string>
+													<key>nodeType</key>
+													<string>LHBone</string>
+													<key>parentUUID</key>
+													<string>F144A599-B894-44FD-A126-B29129CAC80E</string>
+													<key>rigid</key>
+													<true/>
+													<key>rotation</key>
+													<real>296.9735107421875</real>
+													<key>scale</key>
+													<string>{1.000000, 1.000000}</string>
+													<key>size</key>
+													<string>{4.000000, 20.228800}</string>
+													<key>tags</key>
+													<array>
+														<string>DEFAULT</string>
+													</array>
+													<key>uuid</key>
+													<string>8735199D-E70D-41DC-A063-85DC0FAE41CA</string>
+													<key>zOrder</key>
+													<integer>0</integer>
+												</dict>
+											</array>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>connections</key>
+											<array>
+												<dict>
+													<key>angleDelta</key>
+													<real>178.49758911132812</real>
+													<key>nodeName</key>
+													<string>lowerLeg_L</string>
+													<key>positionDelta</key>
+													<string>{-2.271752, 0.401177}</string>
+												</dict>
+											</array>
+											<key>generalPosition</key>
+											<string>{-0.000052, -0.016551}</string>
+											<key>maxAngle</key>
+											<real>110</real>
+											<key>minAngle</key>
+											<real>0.0</real>
+											<key>name</key>
+											<string>UntitledBone_2</string>
+											<key>nodeType</key>
+											<string>LHBone</string>
+											<key>parentUUID</key>
+											<string>C3F84AA9-F01C-4B8D-A47F-AEDCE3946FD8</string>
+											<key>rigid</key>
+											<true/>
+											<key>rotation</key>
+											<real>1.0355209112167358</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{4.000000, 29.343765}</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>F144A599-B894-44FD-A126-B29129CAC80E</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+									</array>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>connections</key>
+									<array>
+										<dict>
+											<key>angleDelta</key>
+											<real>181.85540771484375</real>
+											<key>nodeName</key>
+											<string>upperLeg_L</string>
+											<key>positionDelta</key>
+											<string>{-0.867523, -1.032223}</string>
+										</dict>
+									</array>
+									<key>generalPosition</key>
+									<string>{0.012895, -0.013741}</string>
+									<key>maxAngle</key>
+									<real>240</real>
+									<key>minAngle</key>
+									<real>70</real>
+									<key>name</key>
+									<string>UntitledBone_1</string>
+									<key>nodeType</key>
+									<string>LHBone</string>
+									<key>parentUUID</key>
+									<string>10257735-4A1D-4788-9FF7-CB952ED1C8D9</string>
+									<key>rigid</key>
+									<true/>
+									<key>rotation</key>
+									<real>156.73876953125</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{4.000000, 21.654726}</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>C3F84AA9-F01C-4B8D-A47F-AEDCE3946FD8</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 1.000000}</string>
+									<key>children</key>
+									<array>
+										<dict>
+											<key>alpha</key>
+											<real>255</real>
+											<key>anchor</key>
+											<string>{0.500000, 1.000000}</string>
+											<key>children</key>
+											<array>
+												<dict>
+													<key>alpha</key>
+													<real>255</real>
+													<key>anchor</key>
+													<string>{0.500000, 1.000000}</string>
+													<key>colorOverlay</key>
+													<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+													<key>connections</key>
+													<array>
+														<dict>
+															<key>angleDelta</key>
+															<real>-253.875732421875</real>
+															<key>nodeName</key>
+															<string>foot_R</string>
+															<key>positionDelta</key>
+															<string>{-2.527103, -0.944029}</string>
+														</dict>
+													</array>
+													<key>generalPosition</key>
+													<string>{0.000300, -0.019880}</string>
+													<key>maxAngle</key>
+													<real>-20</real>
+													<key>minAngle</key>
+													<real>90</real>
+													<key>name</key>
+													<string>UntitledBone_6</string>
+													<key>nodeType</key>
+													<string>LHBone</string>
+													<key>parentUUID</key>
+													<string>941F36BE-8FF7-4C9E-B256-E8651A8542AC</string>
+													<key>rigid</key>
+													<true/>
+													<key>rotation</key>
+													<real>73.028564453125</real>
+													<key>scale</key>
+													<string>{1.000000, 1.000000}</string>
+													<key>size</key>
+													<string>{4.000000, 18.511036}</string>
+													<key>tags</key>
+													<array>
+														<string>DEFAULT</string>
+													</array>
+													<key>uuid</key>
+													<string>2B7528C5-67BB-426E-9DEA-82297CA8A5C2</string>
+													<key>zOrder</key>
+													<integer>0</integer>
+												</dict>
+											</array>
+											<key>colorOverlay</key>
+											<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+											<key>connections</key>
+											<array>
+												<dict>
+													<key>angleDelta</key>
+													<real>-178.54534912109375</real>
+													<key>nodeName</key>
+													<string>lowerLeg_R</string>
+													<key>positionDelta</key>
+													<string>{1.345375, 3.640128}</string>
+												</dict>
+											</array>
+											<key>generalPosition</key>
+											<string>{0.000161, -0.020534}</string>
+											<key>maxAngle</key>
+											<real>-110</real>
+											<key>minAngle</key>
+											<real>0.0</real>
+											<key>name</key>
+											<string>UntitledBone_5</string>
+											<key>nodeType</key>
+											<string>LHBone</string>
+											<key>parentUUID</key>
+											<string>BB0A1406-8222-4BF7-8CD2-B6042E522AD6</string>
+											<key>rigid</key>
+											<true/>
+											<key>rotation</key>
+											<real>0.0</real>
+											<key>scale</key>
+											<string>{1.000000, 1.000000}</string>
+											<key>size</key>
+											<string>{4.000000, 22.645191}</string>
+											<key>tags</key>
+											<array>
+												<string>DEFAULT</string>
+											</array>
+											<key>uuid</key>
+											<string>941F36BE-8FF7-4C9E-B256-E8651A8542AC</string>
+											<key>zOrder</key>
+											<integer>0</integer>
+										</dict>
+									</array>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>connections</key>
+									<array>
+										<dict>
+											<key>angleDelta</key>
+											<real>-183.91773986816406</real>
+											<key>nodeName</key>
+											<string>upperLeg_R</string>
+											<key>positionDelta</key>
+											<string>{-0.541066, 2.386422}</string>
+										</dict>
+									</array>
+									<key>generalPosition</key>
+									<string>{-0.014052, -0.010958}</string>
+									<key>maxAngle</key>
+									<real>-240</real>
+									<key>minAngle</key>
+									<real>-70</real>
+									<key>name</key>
+									<string>UntitledBone_4</string>
+									<key>nodeType</key>
+									<string>LHBone</string>
+									<key>parentUUID</key>
+									<string>10257735-4A1D-4788-9FF7-CB952ED1C8D9</string>
+									<key>rigid</key>
+									<true/>
+									<key>rotation</key>
+									<real>202.3614501953125</real>
+									<key>scale</key>
+									<string>{1.000000, 1.000000}</string>
+									<key>size</key>
+									<string>{4.000000, 28.518618}</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>BB0A1406-8222-4BF7-8CD2-B6042E522AD6</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>connections</key>
+							<array/>
+							<key>generalPosition</key>
+							<string>{-0.003154, 0.086948}</string>
+							<key>maxAngle</key>
+							<real>180</real>
+							<key>minAngle</key>
+							<real>-180</real>
+							<key>name</key>
+							<string>girlSoldier</string>
+							<key>nodeType</key>
+							<string>LHBone</string>
+							<key>parentUUID</key>
+							<string>6305647D-32CF-4F56-9DDC-C5D92F0BB619</string>
+							<key>rigid</key>
+							<true/>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{1.000000, 1.000000}</string>
+							<key>size</key>
+							<string>{8.000000, 8.000000}</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>10257735-4A1D-4788-9FF7-CB952ED1C8D9</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+					</array>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{0.634901, 0.525944}</string>
+					<key>name</key>
+					<string>UntitledNode</string>
+					<key>nodePhysics</key>
+					<dict>
+						<key>allowSleep</key>
+						<true/>
+						<key>angularDamping</key>
+						<real>0.0</real>
+						<key>angularVelocity</key>
+						<real>0.0</real>
+						<key>bullet</key>
+						<false/>
+						<key>fixedRotation</key>
+						<true/>
+						<key>genericFixture</key>
+						<dict>
+							<key>category</key>
+							<integer>1</integer>
+							<key>density</key>
+							<real>0.10000000149011612</real>
+							<key>friction</key>
+							<real>0.20000000298023224</real>
+							<key>mask</key>
+							<integer>65535</integer>
+							<key>name</key>
+							<string>GenericFixture</string>
+							<key>restitution</key>
+							<real>0.0</real>
+							<key>sensor</key>
+							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
+						</dict>
+						<key>gravityScale</key>
+						<real>1</real>
+						<key>linearDamping</key>
+						<real>0.0</real>
+						<key>linearVelocity</key>
+						<string>{0.000000, 0.000000}</string>
+						<key>ovalShape</key>
+						<array>
+							<array>
+								<string>{-6.4296894597534651e-15, -108.77463531494141}</string>
+								<string>{6.8284730911254883, -106.68456268310547}</string>
+								<string>{13.394532203674316, -100.49465942382812}</string>
+								<string>{19.445846557617188, -90.442802429199219}</string>
+								<string>{24.749868392944336, -76.915283203125}</string>
+								<string>{-19.445846557617188, -90.442802429199219}</string>
+								<string>{-13.394532203674316, -100.49465942382812}</string>
+								<string>{-6.8284730911254883, -106.68456268310547}</string>
+							</array>
+							<array>
+								<string>{-19.445846557617188, -90.442802429199219}</string>
+								<string>{24.749868392944336, -76.915283203125}</string>
+								<string>{29.102766036987305, -60.431949615478516}</string>
+								<string>{32.337261199951172, -41.626251220703125}</string>
+								<string>{34.329051971435547, -21.220878601074219}</string>
+								<string>{-32.337261199951172, -41.626251220703125}</string>
+								<string>{-29.102766036987305, -60.431949615478516}</string>
+								<string>{-24.749868392944336, -76.915283203125}</string>
+							</array>
+							<array>
+								<string>{-32.337261199951172, -41.626251220703125}</string>
+								<string>{34.329051971435547, -21.220878601074219}</string>
+								<string>{35.001598358154297, 0}</string>
+								<string>{34.329051971435547, 21.220878601074219}</string>
+								<string>{-32.337261199951172, 41.626251220703125}</string>
+								<string>{-34.329051971435547, 21.220878601074219}</string>
+								<string>{-35.001598358154297, 1.3321050839276097e-14}</string>
+								<string>{-34.329051971435547, -21.220878601074219}</string>
+							</array>
+							<array>
+								<string>{34.329051971435547, 21.220878601074219}</string>
+								<string>{32.337261199951172, 41.626251220703125}</string>
+								<string>{29.102766036987305, 60.431949615478516}</string>
+								<string>{24.749868392944336, 76.915283203125}</string>
+								<string>{-19.445846557617188, 90.442802429199219}</string>
+								<string>{-24.749868392944336, 76.915283203125}</string>
+								<string>{-29.102766036987305, 60.431949615478516}</string>
+								<string>{-32.337261199951172, 41.626251220703125}</string>
+							</array>
+							<array>
+								<string>{24.749868392944336, 76.915283203125}</string>
+								<string>{19.445846557617188, 90.442802429199219}</string>
+								<string>{13.394532203674316, 100.49465942382812}</string>
+								<string>{6.8284730911254883, 106.68456268310547}</string>
+								<string>{2.1432296787456638e-15, 108.77463531494141}</string>
+								<string>{-6.8284730911254883, 106.68456268310547}</string>
+								<string>{-13.394532203674316, 100.49465942382812}</string>
+								<string>{-19.445846557617188, 90.442802429199219}</string>
+							</array>
+						</array>
+						<key>shape</key>
+						<integer>4</integer>
+						<key>type</key>
+						<integer>2</integer>
+					</dict>
+					<key>nodeType</key>
+					<string>LHNode</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{2.000000, 2.000000}</string>
+					<key>size</key>
+					<string>{70.003197, 217.549271}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>6305647D-32CF-4F56-9DDC-C5D92F0BB619</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>GAME WORLD</string>
+			<key>nodeType</key>
+			<string>LHGameWorldNode</string>
+			<key>parentUUID</key>
+			<string>8C3423AB-BE8A-4449-BECF-0BF1F17BD725</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>78511882-33DA-49E0-9682-83709F03B4ED</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>FRONT USER INTERFACE</string>
+			<key>nodeType</key>
+			<string>LHUINode</string>
+			<key>parentUUID</key>
+			<string>8C3423AB-BE8A-4449-BECF-0BF1F17BD725</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>8D7ECC7E-5E10-416A-B22D-116B04114843</string>
+			<key>zOrder</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{960.000000, 640.000000}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{960.000000, 640.000000}</string>
+			<key>suffix</key>
+			<string>hd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136.000000, 640.000000}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1024.000000, 768.000000}</string>
+			<key>suffix</key>
+			<string>ipad</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2048.000000, 1536.000000}</string>
+			<key>suffix</key>
+			<string>ipadhd</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>1.2000000476837158</real>
+			<key>size</key>
+			<string>{1334.000000, 750.000000}</string>
+			<key>suffix</key>
+			<string>iphone6</string>
+		</dict>
+		<dict>
+			<key>ratio</key>
+			<real>2</real>
+			<key>size</key>
+			<string>{2208.000000, 1242.000000}</string>
+			<key>suffix</key>
+			<string>iphone6plus</string>
+		</dict>
+	</array>
+	<key>globalGravityDirection</key>
+	<string>{0.000000, -1.000000}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>physicsBoundaries</key>
+	<dict>
+		<key>960x640</key>
+		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
+		<key>general</key>
+		<string>{{0.000000, 0.000000}, {1.000000, 1.000000}}</string>
+	</dict>
+	<key>sceneFormat</key>
+	<real>1</real>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>tracedFixtures</key>
+	<dict>
+		<key>E18EE73E-4D8E-41E9-851F-122950D678F8</key>
+		<array>
+			<array>
+				<string>{-40.75, -37.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-41.25, -34.5}</string>
+			</array>
+			<array>
+				<string>{10.25, -37}</string>
+				<string>{10.25, -35}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{5.75, -40.5}</string>
+				<string>{8.75, -39}</string>
+			</array>
+			<array>
+				<string>{82.25, 4.5}</string>
+				<string>{82.25, 22}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{42.25, -19.5}</string>
+				<string>{52.25, -16.5}</string>
+				<string>{63.75, -11}</string>
+				<string>{75.25, -2.5}</string>
+			</array>
+			<array>
+				<string>{-83.75, 24}</string>
+				<string>{-84.75, 21}</string>
+				<string>{-84.75, -7.5}</string>
+				<string>{-83.75, -10}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-80.25, 26.5}</string>
+				<string>{-81.75, 26}</string>
+			</array>
+			<array>
+				<string>{81.75, 23.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{82.25, 22}</string>
+			</array>
+			<array>
+				<string>{10.25, -35}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{-36.75, -40.5}</string>
+			</array>
+			<array>
+				<string>{-54.75, -22.5}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-83.75, -10}</string>
+			</array>
+			<array>
+				<string>{-41.25, -34.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-46.75, -22.5}</string>
+			</array>
+		</array>
+	</dict>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>8C3423AB-BE8A-4449-BECF-0BF1F17BD725</string>
+</dict>
+</plist>

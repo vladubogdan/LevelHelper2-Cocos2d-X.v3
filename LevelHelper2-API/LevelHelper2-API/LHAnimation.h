@@ -127,6 +127,9 @@ private:
     
     void animateNodeChildrenPositionsToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode, LHAnimationProperty* prop);
     void animateNodePositionToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode);
+    
+    void animateRootBonesToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* _animNode);
+    
     void animateNodeChildrenRotationsToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode, LHAnimationProperty* prop);
     void animateNodeRotationToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode);
     void animateNodeChildrenScalesToTime(float time, LHFrame* beginFrm, LHFrame* endFrm, LHNodeAnimationProtocol* animNode, LHAnimationProperty* prop);

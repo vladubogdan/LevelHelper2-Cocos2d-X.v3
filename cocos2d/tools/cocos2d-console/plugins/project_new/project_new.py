@@ -110,6 +110,8 @@ class CCPluginNew(cocos.CCPlugin):
             "--mac-bundleid", dest="mac_bundleid", help="Set a bundle id for mac project")
         parser.add_argument("-e", "--engine-path", dest="engine_path",
                             help="Set the path of cocos2d-x/cocos2d-js engine")
+        parser.add_argument("--portrait", action="store_true", dest="portrait",
+                            help="Set the project be portrait.")
 
         group = parser.add_argument_group("lua/js project arguments")
         group.add_argument(
@@ -173,6 +175,10 @@ class CCPluginNew(cocos.CCPlugin):
                 data[cocos_project.Project.KEY_HAS_NATIVE] = True
             else:
                 data[cocos_project.Project.KEY_HAS_NATIVE] = False
+
+        # if --portrait is specified, change the orientation
+        if self._other_opts.portrait:
+            creator.do_other_step("change_orientation", not_existed_error=False)
 
         # write config files
         with open(cfg_path, 'w') as outfile:
@@ -260,18 +266,23 @@ class Templates(object):
         self._template_folders = {}
 
         for templates_dir in self._templates_paths:
-            dirs = [name for name in os.listdir(templates_dir) if os.path.isdir(
-                os.path.join(templates_dir, name))]
+            try:
+                dirs = [name for name in os.listdir(templates_dir) if os.path.isdir(
+                    os.path.join(templates_dir, name))]
+            except Exception:
+                continue
+
             pattern = template_pattern[self._lang]
-            valid_dirs = [
-                name for name in dirs if re.search(pattern, name) is not None]
+            for name in dirs:
+                match = re.search(pattern, name)
+                if match is None:
+                    continue
 
-            # store the template dir full path, eg. { 'name' : 'full_path'}
-            folders = {re.search(pattern, path).group(1): os.path.join(
-                templates_dir, path) for path in valid_dirs}
+                template_name = match.group(1)
+                if template_name in self._template_folders.keys():
+                    continue
 
-            # join dictionaries
-            self._template_folders = dict(self._template_folders.items() + folders.items())
+                self._template_folders[template_name] = os.path.join(templates_dir, name)
 
         if len(self._template_folders) == 0:
             cur_engine = "cocos2d-x" if self._lang == "js" else "cocos2d-js"
@@ -369,10 +380,16 @@ class TPCreator(object):
         self.cp_self(self.project_dir, exclude_files)
         self.do_cmds(default_cmds)
 
-    def do_other_step(self, step):
+    def do_other_step(self, step, not_existed_error=True):
         if step not in self.tp_other_step:
-            message = "Fatal: creating step '%s' is not found" % step
-            raise cocos.CCPluginError(message)
+            if not_existed_error:
+                # handle as error
+                message = "Fatal: creating step '%s' is not found" % step
+                raise cocos.CCPluginError(message)
+            else:
+                # handle as warning
+                cocos.Logging.warning("WARNING: Can't find step %s." % step)
+                return
 
         cmds = self.tp_other_step[step]
         self.do_cmds(cmds)
@@ -465,6 +482,9 @@ class TPCreator(object):
         if self.lang == 'lua':
             fileList = fileList + data['lua']
 
+        if self.lang == 'js' and 'js' in data.keys():
+            fileList = fileList + data['js']
+
         # begin copy engine
         cocos.Logging.info("> Copying cocos2d-x files...")
 
@@ -523,9 +543,12 @@ class TPCreator(object):
         for f in files:
             src = f.replace("PROJECT_NAME", src_project_name)
             dst = f.replace("PROJECT_NAME", dst_project_name)
-            if os.path.exists(os.path.join(dst_project_dir, src)):
-                os.rename(
-                    os.path.join(dst_project_dir, src), os.path.join(dst_project_dir, dst))
+            src_file_path = os.path.join(dst_project_dir, src)
+            dst_file_path = os.path.join(dst_project_dir, dst)
+            if os.path.exists(src_file_path):
+                if os.path.exists(dst_file_path):
+                    os.remove(dst_file_path)
+                os.rename(src_file_path, dst_file_path)
             else:
                 cocos.Logging.warning(
                     "%s not found" % os.path.join(dst_project_dir, src))
@@ -612,3 +635,41 @@ class TPCreator(object):
             else:
                 cocos.Logging.warning(
                     "%s not found" % os.path.join(dst_project_dir, dst))
+
+    def modify_files(self, v):
+        """ will modify the content of the file
+            format of v is :
+            [
+                {
+                    "file_path": The path related with project directory,
+                    "pattern": Find pattern,
+                    "replace_string": Replaced string
+                },
+                ...
+            ]
+        """
+        cocos.Logging.info("> Modify files by re.sub()")
+        for modify_info in v:
+            modify_file = modify_info["file_path"]
+            if not os.path.isabs(modify_file):
+                modify_file = os.path.abspath(os.path.join(self.project_dir, modify_file))
+
+            if not os.path.isfile(modify_file):
+                cocos.Logging.warning("%s is not a file." % modify_file)
+                continue
+
+            pattern = modify_info["pattern"]
+            replace_str = modify_info["replace_string"]
+
+            f = open(modify_file)
+            lines = f.readlines()
+            f.close()
+
+            new_lines = []
+            for line in lines:
+                new_line = re.sub(pattern, replace_str, line)
+                new_lines.append(new_line)
+
+            f = open(modify_file, "w")
+            f.writelines(new_lines)
+            f.close()

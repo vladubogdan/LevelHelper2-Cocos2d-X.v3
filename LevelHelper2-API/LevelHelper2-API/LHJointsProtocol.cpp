@@ -134,6 +134,7 @@ bool LHJointsProtocol::getCollideConnected(){
 
 Point LHJointsProtocol::getLocalAnchorA()
 {
+    if(!_nodeA)return Point();
 
     return Point(_relativePosA.x*_nodeA->getScaleX(),
                  -_relativePosA.y*_nodeA->getScaleY());
@@ -141,6 +142,8 @@ Point LHJointsProtocol::getLocalAnchorA()
 
 Point LHJointsProtocol::getLocalAnchorB()
 {
+    if(!_nodeB)return Point();
+    
     return Point( _relativePosB.x*_nodeB->getScaleX(),
                  -_relativePosB.y*_nodeB->getScaleY());
 }

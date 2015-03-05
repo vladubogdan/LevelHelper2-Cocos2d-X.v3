@@ -27,6 +27,9 @@
 #include "LHChildrenOpacitiesProperty.h"
 
 #include "LHSpriteFrameProperty.h"
+#include "LHChildrenSpriteFramesProperty.h"
+
+#include "LHCameraActivateProperty.h"
 
 #include "LHRootBoneProperty.h"
 
@@ -75,10 +78,18 @@ LHAnimationProperty* LHAnimationProperty::createWithDictionary(LHDictionary* dic
     else if(type == "LHSpriteFrameProperty"){
         aProp = new LHSpriteFrameProperty();
     }
+    else if(type == "LHChildrenSpriteFramesProperty"){
+        aProp = new LHChildrenSpriteFramesProperty();
+    }
     else if(type == "LHRootBoneProperty"){
         aProp = new LHRootBoneProperty();
     }
+    else if(type == "LHCameraActivateProperty"){
+        aProp = new LHCameraActivateProperty();
+    }
     else{
+        CCLOG("COULD NOT FIND ANIMATION PROPETY %s", type.c_str());
+        
         aProp = new LHAnimationProperty();
     }
     

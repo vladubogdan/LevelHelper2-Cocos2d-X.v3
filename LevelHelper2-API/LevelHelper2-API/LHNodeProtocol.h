@@ -51,6 +51,9 @@ public:
     virtual std::vector<std::string> getTags(){return tags;}
     virtual void setTags(LHArray* _tags_);
     
+    /**
+     Returns true or false if current node contains the given tag name.
+     */
     virtual bool containsTag(const std::string& tagName);
     
     

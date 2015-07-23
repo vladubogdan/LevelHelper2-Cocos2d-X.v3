@@ -11,6 +11,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		3281DF001B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3281DEFE1B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp */; };
+		3281DF011B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3281DEFE1B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp */; };
+		3281DF021B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3281DEFE1B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -281,6 +284,8 @@
 		1D6058910D05DD3D006BFB54 /* DEMOS + Chipmunk - iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DEMOS + Chipmunk - iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3281DEFE1B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHSceneJointWithCameraBUGFix.cpp; path = ../Classes/LHSceneJointWithCameraBUGFix.cpp; sourceTree = "<group>"; };
+		3281DEFF1B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHSceneJointWithCameraBUGFix.h; path = ../Classes/LHSceneJointWithCameraBUGFix.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -473,6 +478,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3281DEFE1B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp */,
+				3281DEFF1B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.h */,
 				6E9187B31A66388800A02F59 /* LHSceneDemo.cpp */,
 				6E9187B41A66388800A02F59 /* LHSceneDemo.h */,
 				6E70FD361A88E2E90027FA21 /* LHSceneSkeletalCharacterDemo.cpp */,
@@ -903,6 +910,7 @@
 				6E9188061A66388800A02F59 /* LHScenePulleyJointDemo.cpp in Sources */,
 				6E9187E21A66388800A02F59 /* LHSceneBeziersDemo.cpp in Sources */,
 				6E9188151A66388800A02F59 /* LHSceneWaterAreaDemo.cpp in Sources */,
+				3281DF021B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp in Sources */,
 				6E91881B1A66388800A02F59 /* MyCustomNode.cpp in Sources */,
 				6E9187EE1A66388800A02F59 /* LHSceneCollisionHandlingDemo.cpp in Sources */,
 				6E9187F41A66388800A02F59 /* LHSceneGearJointDemo.cpp in Sources */,
@@ -937,6 +945,7 @@
 				6E9187DB1A66388800A02F59 /* LHSceneAssetDemo.cpp in Sources */,
 				6E9188051A66388800A02F59 /* LHScenePulleyJointDemo.cpp in Sources */,
 				6E9188171A66388800A02F59 /* LHSceneWeldJointsDemo.cpp in Sources */,
+				3281DF011B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp in Sources */,
 				6E91881A1A66388800A02F59 /* MyCustomNode.cpp in Sources */,
 				6E91881F1A663F0700A02F59 /* LHSceneComplexPhysicsDemo.cpp in Sources */,
 				6E9187E71A66388800A02F59 /* LHSceneCameraFollowDemo.cpp in Sources */,
@@ -979,6 +988,7 @@
 				6E9188041A66388800A02F59 /* LHScenePulleyJointDemo.cpp in Sources */,
 				6E9187E01A66388800A02F59 /* LHSceneBeziersDemo.cpp in Sources */,
 				6E9188131A66388800A02F59 /* LHSceneWaterAreaDemo.cpp in Sources */,
+				3281DF001B60C9BA0072D2CE /* LHSceneJointWithCameraBUGFix.cpp in Sources */,
 				6E9188191A66388800A02F59 /* MyCustomNode.cpp in Sources */,
 				6E9187EC1A66388800A02F59 /* LHSceneCollisionHandlingDemo.cpp in Sources */,
 				6E9187F21A66388800A02F59 /* LHSceneGearJointDemo.cpp in Sources */,

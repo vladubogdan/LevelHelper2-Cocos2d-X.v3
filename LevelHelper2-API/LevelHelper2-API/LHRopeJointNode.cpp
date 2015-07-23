@@ -366,9 +366,16 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
                     //create a new body at cut position and a joint between bodyA and this new body
                     {
 #if LH_USE_BOX2D
-                        LHGameWorldNode* pNode = scene->getGameWorldNode();
-                        b2World* world = pNode->getBox2dWorld();
-                        interPt = this->convertToWorldSpace(interPt);
+                        LHGameWorldNode* gwNode = scene->getGameWorldNode();
+                        b2World* world = gwNode->getBox2dWorld();
+                        
+                        
+                        if(gwNode != this->getNodeA()){
+                            interPt = this->getNodeA()->getParent()->convertToWorldSpace(interPt);
+                            interPt = gwNode->convertToNodeSpace(interPt);
+                        }
+                        
+                        
                         b2Vec2 bodyPos = scene->metersFromPoint(interPt);
                         
                         b2BodyDef bodyDef;
@@ -418,6 +425,7 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
                         else{
                             cutJointALength = _length - cutLength;
                         }
+                        
                         jointDef.maxLength         = scene->metersFromValue(cutJointALength);
                         jointDef.collideConnected  = this->getCollideConnected();
                         
@@ -444,6 +452,7 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
                             cutJointALength = _length - cutLength;
                         }
                         
+                        
                         cutJointA = PhysicsJointLimit::construct(this->getNodeA()->getPhysicsBody(),
                                                                  body,
                                                                  a,
@@ -461,8 +470,9 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
 #if LH_USE_BOX2D
                         
                         LHScene* scene = (LHScene*)this->getScene();
-                        LHGameWorldNode* pNode = scene->getGameWorldNode();
-                        b2World* world = pNode->getBox2dWorld();
+                        LHGameWorldNode* gwNode = scene->getGameWorldNode();
+                        b2World* world = gwNode->getBox2dWorld();
+                        
                         
                         b2Vec2 bodyPos = scene->metersFromPoint(interPt);
                         b2BodyDef bodyDef;
@@ -513,6 +523,7 @@ void LHRopeJointNode::cutWithLineFromPointA(const Point& touchA, const Point& to
                         else{
                             cutJointBLength = cutLength;
                         }
+                        
                         jointDef.maxLength = scene->metersFromValue(cutJointBLength);
                         
                         jointDef.collideConnected = this->getCollideConnected();
@@ -851,12 +862,16 @@ void LHRopeJointNode::visit(Renderer *renderer, const Mat4& parentTransform, boo
 
 #if LH_USE_BOX2D
 
+    LHScene* scene = (LHScene*)this->getScene();
+    LHGameWorldNode* gWNode = scene->getGameWorldNode();
+    
     if(cutAShapeNode){
 
         b2Vec2 pos = cutBodyA->GetPosition();
-        LHScene* scene = (LHScene*)this->getScene();
-        Point worldPos = scene->pointFromMeters(pos);
-        Point B = this->convertToNodeSpaceAR(worldPos);
+        Point gwPos = scene->pointFromMeters(pos);
+        Point worldPoint = gWNode->convertToWorldSpace(gwPos);
+        
+        Point B = this->convertToNodeSpaceAR(worldPoint);
 
         this->drawRopeShape(cutAShapeNode, anchorA, B, cutJointALength, _segments);
     }
@@ -865,8 +880,13 @@ void LHRopeJointNode::visit(Renderer *renderer, const Mat4& parentTransform, boo
         b2Vec2 pos = cutBodyB->GetPosition();
         LHScene* scene = (LHScene*)this->getScene();
         
-        Point worldPos = scene->pointFromMeters(pos);
-        Point A = this->convertToNodeSpaceAR(worldPos);
+        Point gwPos = scene->pointFromMeters(pos);
+        
+        Point worldPoint = gWNode->convertToWorldSpace(gwPos);
+        Point A = this->convertToNodeSpace(worldPoint);
+        
+        
+        
         this->drawRopeShape(cutBShapeNode, A, anchorB, cutJointBLength, _segments);
     }
     

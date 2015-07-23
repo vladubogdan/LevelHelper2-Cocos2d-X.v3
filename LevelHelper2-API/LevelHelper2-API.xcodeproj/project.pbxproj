@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E4D70A91AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */; };
+		6E4D70AA1AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */; };
+		6E4D70AB1AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */; };
 		6E70FD1F1A88DA110027FA21 /* LHBoneFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E70FD1D1A88DA110027FA21 /* LHBoneFrame.cpp */; };
 		6E70FD201A88DA110027FA21 /* LHBoneFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E70FD1D1A88DA110027FA21 /* LHBoneFrame.cpp */; };
 		6E70FD211A88DA110027FA21 /* LHBoneFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E70FD1D1A88DA110027FA21 /* LHBoneFrame.cpp */; };
@@ -187,6 +190,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHChildrenSpriteFramesProperty.cpp; path = "LevelHelper2-API/LHChildrenSpriteFramesProperty.cpp"; sourceTree = SOURCE_ROOT; };
+		6E4D70A81AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHChildrenSpriteFramesProperty.h; path = "LevelHelper2-API/LHChildrenSpriteFramesProperty.h"; sourceTree = SOURCE_ROOT; };
 		6E70FD1D1A88DA110027FA21 /* LHBoneFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBoneFrame.cpp; path = "LevelHelper2-API/LHBoneFrame.cpp"; sourceTree = SOURCE_ROOT; };
 		6E70FD1E1A88DA110027FA21 /* LHBoneFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHBoneFrame.h; path = "LevelHelper2-API/LHBoneFrame.h"; sourceTree = SOURCE_ROOT; };
 		6E70FD221A88DC1E0027FA21 /* LHRootBoneProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHRootBoneProperty.cpp; path = "LevelHelper2-API/LHRootBoneProperty.cpp"; sourceTree = SOURCE_ROOT; };
@@ -407,6 +412,8 @@
 				6EC5573619ADF56600CF0760 /* LHChildrenOpacitiesProperty.h */,
 				6EC5573719ADF56600CF0760 /* LHChildrenPositionsProperty.cpp */,
 				6EC5573819ADF56600CF0760 /* LHChildrenPositionsProperty.h */,
+				6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */,
+				6E4D70A81AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.h */,
 				6EC5573919ADF56600CF0760 /* LHChildrenRotationsProperty.cpp */,
 				6EC5573A19ADF56600CF0760 /* LHChildrenRotationsProperty.h */,
 				6EC5573B19ADF56600CF0760 /* LHChildrenScalesProperty.cpp */,
@@ -681,6 +688,7 @@
 				6EC5572E19ADF54300CF0760 /* LHAnimation.cpp in Sources */,
 				6EC5570219ADF53400CF0760 /* LHGravityArea.cpp in Sources */,
 				6EC5576D19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */,
+				6E4D70A91AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */,
 				6EC5574619ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */,
 				6EC5576A19ADF58800CF0760 /* LHFrame.cpp in Sources */,
 				6EC556F619ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */,
@@ -746,6 +754,7 @@
 				6EC5572F19ADF54300CF0760 /* LHAnimation.cpp in Sources */,
 				6EC5570319ADF53400CF0760 /* LHGravityArea.cpp in Sources */,
 				6EC5576E19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */,
+				6E4D70AA1AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */,
 				6EC5574719ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */,
 				6EC5576B19ADF58800CF0760 /* LHFrame.cpp in Sources */,
 				6EC556F719ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */,
@@ -811,6 +820,7 @@
 				6EC5573019ADF54300CF0760 /* LHAnimation.cpp in Sources */,
 				6EC5570419ADF53400CF0760 /* LHGravityArea.cpp in Sources */,
 				6EC5576F19ADF58800CF0760 /* LHOpacityFrame.cpp in Sources */,
+				6E4D70AB1AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */,
 				6EC5574819ADF56600CF0760 /* LHCameraActivateProperty.cpp in Sources */,
 				6EC5576C19ADF58800CF0760 /* LHFrame.cpp in Sources */,
 				6EC556F819ADF53400CF0760 /* LHDistanceJointNode.cpp in Sources */,

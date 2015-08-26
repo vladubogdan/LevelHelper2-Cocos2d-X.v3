@@ -13,9 +13,12 @@
 #include "LHValue.h"
 #include "LHDrawNode.h"
 #include "LHConfig.h"
+#include "LHUtils.h"
+
+#include "LHGameWorldNode.h"
 
 #if LH_USE_BOX2D
-//#include "LHb2BuoyancyController.h"
+#include "LHb2BuoyancyController.h"
 #endif
 
 
@@ -94,7 +97,7 @@ public:
         }
         float v = (waveBlock != nullptr ? waveBlock((position - left + offset) / wavelength) : 1.0f) * amplitude;
         if(clampBlock != nullptr) {
-            v = clampBlock(abs(position - middle), v, -v, halfWidth);
+            v = clampBlock((float)abs((int)(position - middle)), v, -v, halfWidth);
         }
         return v;
     }
@@ -124,6 +127,10 @@ LHWater::LHWater()
 
 LHWater::~LHWater()
 {
+#if LH_USE_BOX2D
+    CC_SAFE_DELETE(buoyancyController);
+#endif
+    
     _drawNode = nullptr;
     clearWaves();
 }
@@ -148,6 +155,11 @@ bool LHWater::initWithDictionary(LHDictionary* dict, Node* prnt)
     if(Node::init())
     {
         _physicsBody = NULL;
+
+#if LH_USE_BOX2D
+        buoyancyController = NULL;
+#endif
+
         
         _drawNode = LHDrawNode::create();
         this->addChild(_drawNode);
@@ -241,10 +253,9 @@ float LHWater::valueAt(float pos)
 
 float LHWater::globalXToWaveX(float pointX){
     
-    Size sizet = getContentSize();
     Point pos  = getPosition();
     
-    float fullWidth = sizet.width*getScaleX();
+    float fullWidth = _width*getScaleX();
     float halfWidth = fullWidth*0.5;
     
     float val = (pointX - pos.x) + halfWidth;
@@ -256,13 +267,12 @@ float LHWater::globalXToWaveX(float pointX){
 
 float LHWater::waveYToGlobalY(float waveY){
     
-    Size sizet = getContentSize();
     Point pos  = getPosition();
     
     float waveHeight = _height+waveY;
     float percent = waveHeight/_height;
     
-    float fullHeight = sizet.height*getScaleY();;
+    float fullHeight = _height*getScaleY();
     float halfHeight = fullHeight*0.5;
     
     float result = pos.y - fullHeight*percent + halfHeight;
@@ -301,6 +311,53 @@ std::vector<LHWave*> LHWater::createSplash(float pos, float h, float w, float t)
     currentWaves.push_back(w2);
     return currentWaves;
 }
+
+Rect LHWater::getWaveRect()
+{
+    Point pos = this->convertToWorldSpace(Vec2::ZERO);
+    
+    return Rect(-_width *this->getScaleX() *0.5 + pos.x,
+                -_height*this->getScaleY() *0.5 + pos.y,
+                _width  * this->getScaleX(),
+                _height * this->getScaleY());
+}
+
+#if LH_USE_BOX2D
+Rect LHWater::getBoundingRectForBody(b2Body* bd)
+{
+    b2AABB aabb;
+    b2Transform t;
+    t.SetIdentity();
+    aabb.lowerBound = b2Vec2(FLT_MAX,FLT_MAX);
+    aabb.upperBound = b2Vec2(-FLT_MAX,-FLT_MAX);
+    b2Fixture* fixture = bd->GetFixtureList();
+    while (fixture != NULL) {
+        const b2Shape *shape = fixture->GetShape();
+        const int childCount = shape->GetChildCount();
+        for (int child = 0; child < childCount; ++child) {
+            const b2Vec2 r(shape->m_radius, shape->m_radius);
+            b2AABB shapeAABB;
+            shape->ComputeAABB(&shapeAABB, t, child);
+            shapeAABB.lowerBound = shapeAABB.lowerBound + r;
+            shapeAABB.upperBound = shapeAABB.upperBound - r;
+            aabb.Combine(shapeAABB);
+        }
+        fixture = fixture->GetNext();
+    }
+    
+    LHScene* scene = (LHScene*)this->getScene();
+    
+    float wm = aabb.upperBound.x - aabb.lowerBound.x;
+    float hm = aabb.upperBound.y - aabb.lowerBound.y;
+    
+    float x = scene->valueFromMeters(aabb.upperBound.x + bd->GetPosition().x - wm);
+    float y = scene->valueFromMeters(aabb.upperBound.y + bd->GetPosition().y - hm);
+    float w = scene->valueFromMeters(wm);
+    float h = scene->valueFromMeters(hm);
+    
+    return Rect(x, y, w, h);
+}
+#endif
 
 void LHWater::setShapeTriangles(__Array* triangles, const Color4F& c4)
 {
@@ -442,5 +499,120 @@ void LHWater::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
         Node::visit(renderer, parentTransform, parentTransformUpdated);
 #endif
     }
+    
+    
+#if LH_USE_BOX2D
+    
+    LHScene* scene = (LHScene*)this->getScene();
+    LHGameWorldNode* pNode = scene->getGameWorldNode();
+    b2World* world = pNode->getBox2dWorld();
+    
+    if(NULL == buoyancyController && world){
+        buoyancyController = new LH_b2BuoyancyController(world);
+        buoyancyController->offset = -1127;
+    }
+    
+    if(world && buoyancyController){
+        
+        buoyancyController->density = -_waterDensity;
+        
+        for (b2Body* b = world->GetBodyList(); b; b = b->GetNext()){
+            
+            if(b->GetType() == b2_dynamicBody){
+                
+                Node* node = (Node*)b->GetUserData();
+                if(node){
+                    
+                    Rect rect = this->getWaveRect();
+                    
+                    Rect bodyRect = this->getBoundingRectForBody(b);
+                    
+                    char objPointerStr[100];
+                    snprintf(objPointerStr, sizeof(objPointerStr), "%p", b->GetUserData());
+                    std::string objAsStdStr = objPointerStr;
+                    
+                    if(LHUtils::LHRectOverlapsRect(rect,  bodyRect))
+                    {
+                        Point bodyPt = scene->pointFromMeters(b->GetPosition());
+                        
+                        float scaleX = node->getScaleX();
+                        float scaleY = node->getScaleY();
+                        
+                        float x = bodyPt.x;
+                        float y = this->valueAt(this->globalXToWaveX(x));
+                        y = this->waveYToGlobalY(y);
+                        
+                        float globalY = y;
+                        
+                        y = scene->metersFromValue(y);
+                        
+                        float splashX = this->globalXToWaveX(x);
+                        
+                        bool addedSplash = false;
+                        float previousX = -1000000;
+                        b2Fixture* f = b->GetFixtureList();
+                        while (f) {
+                            
+                            if(!f->IsSensor())
+                            {
+                                buoyancyController->offset = -y;
+                                buoyancyController->useDensity = false;
+                                buoyancyController->velocity = b2Vec2(0,0);
+                                if(_turbulence){
+                                    float vdirection = 1.0f;
+                                    if(_turbulenceV > 0)
+                                        vdirection = -1.0f;
+                                    buoyancyController->velocity = b2Vec2(vdirection*_turbulenceVelocity, 0);
+                                }
+                                
+                                
+                                ValueMap::iterator it = bodySplashes.find(objAsStdStr);
+                                
+                                bool after = buoyancyController->ApplyToFixture(f);
+                                if(after && it == bodySplashes.end() && _splashCollision){
+                                    
+                                    
+                                    if(previousX != splashX && !addedSplash)
+                                    {
+                                        std::vector<LHWave*> splashes = this->createSplash(splashX,
+                                                                                           _splashHeight*scaleY,
+                                                                                           _splashWidth*scaleX,
+                                                                                           _splashTime);
+                                        
+                                        previousX = splashX;
+                                        addedSplash = true;
+
+                                        for(int spl = 0; spl < splashes.size(); ++spl)
+                                        {
+                                            LHWave* wave = splashes[spl];
+                                            wave->step();
+                                        }
+                                        
+                                        bodySplashes[objAsStdStr] = Value(true);
+                                    }
+                                }
+                                
+                                if(this->getPosition().y + _height*0.5 - globalY + bodyRect.size.height > bodyPt.y)
+                                {
+                                    buoyancyController->ApplyToFixture(f);
+                                }
+                            }
+                            f = f->GetNext();
+                        }
+                    }
+                    else{
+                        
+                        ValueMap::iterator it = bodySplashes.find(objAsStdStr);
+                        if(it != bodySplashes.end())
+                            bodySplashes.erase (it);
+                    }
+                }
+            }
+        }
+    }
+    
+    
+#endif
+    
 }
 

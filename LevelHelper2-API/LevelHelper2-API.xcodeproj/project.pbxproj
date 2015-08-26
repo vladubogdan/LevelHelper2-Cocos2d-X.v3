@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32F42E6C1B8D96AA00D71671 /* LHb2BuoyancyController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32F42E6A1B8D96AA00D71671 /* LHb2BuoyancyController.cpp */; };
+		32F42E6D1B8D96AA00D71671 /* LHb2BuoyancyController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32F42E6A1B8D96AA00D71671 /* LHb2BuoyancyController.cpp */; };
 		6E4D70A91AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */; };
 		6E4D70AA1AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */; };
 		6E4D70AB1AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */; };
@@ -190,6 +192,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32F42E691B8D96AA00D71671 /* b2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Controller.h; sourceTree = "<group>"; };
+		32F42E6A1B8D96AA00D71671 /* LHb2BuoyancyController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHb2BuoyancyController.cpp; sourceTree = "<group>"; };
+		32F42E6B1B8D96AA00D71671 /* LHb2BuoyancyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHb2BuoyancyController.h; sourceTree = "<group>"; };
 		6E4D70A71AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHChildrenSpriteFramesProperty.cpp; path = "LevelHelper2-API/LHChildrenSpriteFramesProperty.cpp"; sourceTree = SOURCE_ROOT; };
 		6E4D70A81AA86D77002CDB7A /* LHChildrenSpriteFramesProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHChildrenSpriteFramesProperty.h; path = "LevelHelper2-API/LHChildrenSpriteFramesProperty.h"; sourceTree = SOURCE_ROOT; };
 		6E70FD1D1A88DA110027FA21 /* LHBoneFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBoneFrame.cpp; path = "LevelHelper2-API/LHBoneFrame.cpp"; sourceTree = SOURCE_ROOT; };
@@ -363,6 +368,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32F42E681B8D968F00D71671 /* Box2dControllers */ = {
+			isa = PBXGroup;
+			children = (
+				32F42E691B8D96AA00D71671 /* b2Controller.h */,
+				32F42E6A1B8D96AA00D71671 /* LHb2BuoyancyController.cpp */,
+				32F42E6B1B8D96AA00D71671 /* LHb2BuoyancyController.h */,
+			);
+			name = Box2dControllers;
+			sourceTree = "<group>";
+		};
 		6E9090E219A845BD0090246B /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +592,7 @@
 				6E90910A19A845BD0090246B /* LHConfig.h */,
 				6E90910B19A845BD0090246B /* LHScene.cpp */,
 				6E90910C19A845BD0090246B /* LHScene.h */,
+				32F42E681B8D968F00D71671 /* Box2dControllers */,
 				6E90910D19A845BD0090246B /* Nodes */,
 				6E90913A19A845BD0090246B /* Protocols */,
 				6E90914619A845BD0090246B /* Utilities */,
@@ -747,6 +763,7 @@
 				6EC5570C19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */,
 				6EC557B519ADF5D500CF0760 /* LHDevice.cpp in Sources */,
 				6EC5579B19ADF5BC00CF0760 /* LHPhysicsProtocol.cpp in Sources */,
+				32F42E6C1B8D96AA00D71671 /* LHb2BuoyancyController.cpp in Sources */,
 				6EC5571E19ADF53400CF0760 /* LHSprite.cpp in Sources */,
 				6EC5572119ADF53400CF0760 /* LHUINode.cpp in Sources */,
 				6EC5578119ADF59C00CF0760 /* LHOpacityProperty.cpp in Sources */,
@@ -813,6 +830,7 @@
 				6EC5570D19ADF53400CF0760 /* LHParallaxLayer.cpp in Sources */,
 				6EC557B619ADF5D500CF0760 /* LHDevice.cpp in Sources */,
 				6EC5579C19ADF5BC00CF0760 /* LHPhysicsProtocol.cpp in Sources */,
+				32F42E6D1B8D96AA00D71671 /* LHb2BuoyancyController.cpp in Sources */,
 				6EC5571F19ADF53400CF0760 /* LHSprite.cpp in Sources */,
 				6EC5572219ADF53400CF0760 /* LHUINode.cpp in Sources */,
 				6EC5578219ADF59C00CF0760 /* LHOpacityProperty.cpp in Sources */,

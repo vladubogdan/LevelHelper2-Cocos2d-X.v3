@@ -17,8 +17,6 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
-			<key>invisibleInEditor</key>
-			<false/>
 			<key>name</key>
 			<string>BACK USER INTERFACE</string>
 			<key>nodeType</key>
@@ -55,95 +53,9 @@
 					<key>colorOverlay</key>
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.336929, 0.135807}</string>
-					<key>imageFileName</key>
-					<string>objects.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
-					<key>name</key>
-					<string>object_canteen</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>angularDamping</key>
-						<real>0.0</real>
-						<key>angularVelocity</key>
-						<real>0.0</real>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>fixtureUUID</key>
-						<string>7A5C629F-225D-4E93-95CB-F9EDC443AB15</string>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>density</key>
-							<real>1.2999999523162842</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>linearDamping</key>
-						<real>0.0</real>
-						<key>linearVelocity</key>
-						<string>{0.000000, 0.000000}</string>
-						<key>shape</key>
-						<integer>5</integer>
-						<key>type</key>
-						<integer>2</integer>
-					</dict>
-					<key>nodeType</key>
-					<string>LHSprite</string>
-					<key>parentUUID</key>
-					<string>_GAME_WORLD_NODE_UUID_</string>
-					<key>relativeImagePath</key>
-					<string>DEMO_PUBLISH_FOLDER/</string>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scale</key>
-					<string>{1.000000, 1.000000}</string>
-					<key>size</key>
-					<string>{60.000000, 78.000000}</string>
-					<key>spriteName</key>
-					<string>object_canteen</string>
-					<key>spriteUUID</key>
-					<string>C3F38C64-C80F-4AC6-BA50-91147927289B</string>
-					<key>tags</key>
-					<array>
-						<string>DEFAULT</string>
-					</array>
-					<key>uuid</key>
-					<string>646FADFA-12AF-427C-B788-E9BD69209189</string>
-					<key>zOrder</key>
-					<integer>-1</integer>
-				</dict>
-				<dict>
-					<key>alpha</key>
-					<real>255</real>
-					<key>anchor</key>
-					<string>{0.500000, 0.500000}</string>
-					<key>colorOverlay</key>
-					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
-					<key>generalPosition</key>
 					<string>{0.461674, 0.283975}</string>
 					<key>imageFileName</key>
 					<string>objects.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>object_hat</string>
 					<key>nodePhysics</key>
@@ -159,15 +71,13 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>43117BF1-A72A-4FFF-8B58-17C42841B23B</string>
+						<string>461C5434-B2C4-4295-AFE5-FD92DD1C6A48</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
 							<integer>1</integer>
 							<key>density</key>
 							<real>0.89999997615814209</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
 							<key>friction</key>
 							<real>0.20000000298023224</real>
 							<key>mask</key>
@@ -178,6 +88,8 @@
 							<real>0.0</real>
 							<key>sensor</key>
 							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
@@ -224,8 +136,6 @@
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{-0.772662, -0.175172}</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>dummyBodyForMouseJoint</string>
 					<key>nodePhysics</key>
@@ -246,8 +156,6 @@
 							<integer>1</integer>
 							<key>density</key>
 							<real>0.10000000149011612</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
 							<key>friction</key>
 							<real>0.20000000298023224</real>
 							<key>mask</key>
@@ -258,6 +166,8 @@
 							<real>0.0</real>
 							<key>sensor</key>
 							<false/>
+							<key>shapeID</key>
+							<integer>0</integer>
 						</dict>
 						<key>gravityScale</key>
 						<real>1</real>
@@ -291,174 +201,6 @@
 				</dict>
 				<dict>
 					<key>alpha</key>
-					<real>255</real>
-					<key>anchor</key>
-					<string>{0.500000, 0.500000}</string>
-					<key>colorOverlay</key>
-					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
-					<key>generalPosition</key>
-					<string>{0.825549, 0.189808}</string>
-					<key>imageFileName</key>
-					<string>objects.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
-					<key>name</key>
-					<string>object_backpack</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>angularDamping</key>
-						<real>0.0</real>
-						<key>angularVelocity</key>
-						<real>0.0</real>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>fixtureUUID</key>
-						<string>312D69A0-BFFB-4A96-8C0A-EE5D54F32652</string>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>density</key>
-							<real>3</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>linearDamping</key>
-						<real>0.0</real>
-						<key>linearVelocity</key>
-						<string>{0.000000, 0.000000}</string>
-						<key>shape</key>
-						<integer>5</integer>
-						<key>type</key>
-						<integer>2</integer>
-					</dict>
-					<key>nodeType</key>
-					<string>LHSprite</string>
-					<key>parentUUID</key>
-					<string>_GAME_WORLD_NODE_UUID_</string>
-					<key>relativeImagePath</key>
-					<string>DEMO_PUBLISH_FOLDER/</string>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scale</key>
-					<string>{1.000000, 1.000000}</string>
-					<key>size</key>
-					<string>{90.000000, 106.000000}</string>
-					<key>spriteName</key>
-					<string>object_backpack</string>
-					<key>spriteUUID</key>
-					<string>79AD2F07-C0BE-4B5A-BB3F-9FAC5F80A471</string>
-					<key>tags</key>
-					<array>
-						<string>DEFAULT</string>
-					</array>
-					<key>uuid</key>
-					<string>87791899-1F11-4B76-A555-91DEEB3E8FFC</string>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-				<dict>
-					<key>alpha</key>
-					<real>255</real>
-					<key>anchor</key>
-					<string>{0.500000, 0.500000}</string>
-					<key>colorOverlay</key>
-					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
-					<key>generalPosition</key>
-					<string>{0.561173, 0.171293}</string>
-					<key>imageFileName</key>
-					<string>objects.png</string>
-					<key>invisibleInEditor</key>
-					<false/>
-					<key>name</key>
-					<string>object_banana</string>
-					<key>nodePhysics</key>
-					<dict>
-						<key>allowSleep</key>
-						<true/>
-						<key>angularDamping</key>
-						<real>0.0</real>
-						<key>angularVelocity</key>
-						<real>0.0</real>
-						<key>bullet</key>
-						<false/>
-						<key>fixedRotation</key>
-						<false/>
-						<key>fixtureUUID</key>
-						<string>CA3A2265-9D21-44C3-A350-1535F15BAC83</string>
-						<key>genericFixture</key>
-						<dict>
-							<key>category</key>
-							<integer>1</integer>
-							<key>density</key>
-							<real>1.1000000238418579</real>
-							<key>fixtureID</key>
-							<integer>0</integer>
-							<key>friction</key>
-							<real>0.20000000298023224</real>
-							<key>mask</key>
-							<integer>65535</integer>
-							<key>name</key>
-							<string>GenericFixture</string>
-							<key>restitution</key>
-							<real>0.0</real>
-							<key>sensor</key>
-							<false/>
-						</dict>
-						<key>gravityScale</key>
-						<real>1</real>
-						<key>linearDamping</key>
-						<real>0.0</real>
-						<key>linearVelocity</key>
-						<string>{0.000000, 0.000000}</string>
-						<key>shape</key>
-						<integer>5</integer>
-						<key>type</key>
-						<integer>2</integer>
-					</dict>
-					<key>nodeType</key>
-					<string>LHSprite</string>
-					<key>parentUUID</key>
-					<string>_GAME_WORLD_NODE_UUID_</string>
-					<key>relativeImagePath</key>
-					<string>DEMO_PUBLISH_FOLDER/</string>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scale</key>
-					<string>{1.000000, 1.000000}</string>
-					<key>size</key>
-					<string>{92.000000, 64.000000}</string>
-					<key>spriteName</key>
-					<string>object_banana</string>
-					<key>spriteUUID</key>
-					<string>FAE55543-0B9F-4B04-A86D-BAB025D0B01C</string>
-					<key>tags</key>
-					<array>
-						<string>DEFAULT</string>
-					</array>
-					<key>uuid</key>
-					<string>1EF0A6A5-5F3E-4098-81A4-22258D86CCCF</string>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-				<dict>
-					<key>alpha</key>
 					<real>178.5</real>
 					<key>anchor</key>
 					<string>{0.500000, 0.500000}</string>
@@ -468,8 +210,6 @@
 					<string>{0.498903, 0.805834}</string>
 					<key>height</key>
 					<real>60</real>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>waterArea</string>
 					<key>nodeType</key>
@@ -487,7 +227,7 @@
 					<key>splash</key>
 					<true/>
 					<key>splashH</key>
-					<real>9</real>
+					<real>12.5</real>
 					<key>splashT</key>
 					<real>30</real>
 					<key>splashW</key>
@@ -499,7 +239,7 @@
 					<key>turbulence</key>
 					<true/>
 					<key>turbulenceH</key>
-					<real>3.1000003814697266</real>
+					<real>2.6000003814697266</real>
 					<key>turbulenceL</key>
 					<real>2.2000000476837158</real>
 					<key>turbulenceV</key>
@@ -509,7 +249,7 @@
 					<key>uuid</key>
 					<string>B544D9E8-E8EF-4FDB-AB06-137E81D4B866</string>
 					<key>waterDensity</key>
-					<real>0.59999996423721313</real>
+					<real>1.6999999284744263</real>
 					<key>width</key>
 					<real>60</real>
 					<key>zOrder</key>
@@ -533,8 +273,6 @@
 							<string>{1.250000, 0.025000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_11</string>
 							<key>nodePhysics</key>
@@ -555,8 +293,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -567,6 +303,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -615,8 +353,6 @@
 							<string>{1.250000, 0.225000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_10</string>
 							<key>nodePhysics</key>
@@ -637,8 +373,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -649,6 +383,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -697,8 +433,6 @@
 							<string>{1.250000, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_9</string>
 							<key>nodePhysics</key>
@@ -719,8 +453,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -731,6 +463,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -779,8 +513,6 @@
 							<string>{1.116667, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_8</string>
 							<key>nodePhysics</key>
@@ -801,8 +533,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -813,6 +543,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -861,8 +593,6 @@
 							<string>{0.983333, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_7</string>
 							<key>nodePhysics</key>
@@ -883,8 +613,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -895,6 +623,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -943,8 +673,6 @@
 							<string>{0.850000, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_6</string>
 							<key>nodePhysics</key>
@@ -965,8 +693,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -977,6 +703,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1025,8 +753,6 @@
 							<string>{0.716667, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_5</string>
 							<key>nodePhysics</key>
@@ -1047,8 +773,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1059,6 +783,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1107,8 +833,6 @@
 							<string>{0.583333, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_4</string>
 							<key>nodePhysics</key>
@@ -1129,8 +853,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1141,6 +863,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1189,8 +913,6 @@
 							<string>{0.450000, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_3</string>
 							<key>nodePhysics</key>
@@ -1211,8 +933,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1223,6 +943,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1271,8 +993,6 @@
 							<string>{0.316667, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_2</string>
 							<key>nodePhysics</key>
@@ -1293,8 +1013,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1305,6 +1023,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1353,8 +1073,6 @@
 							<string>{0.316667, 0.225000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_1</string>
 							<key>nodePhysics</key>
@@ -1375,8 +1093,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1387,6 +1103,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1435,8 +1153,6 @@
 							<string>{0.316667, 0.025000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick</string>
 							<key>nodePhysics</key>
@@ -1457,8 +1173,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1469,6 +1183,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1517,8 +1233,6 @@
 							<string>{1.383333, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_12</string>
 							<key>nodePhysics</key>
@@ -1539,8 +1253,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1551,6 +1263,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1599,8 +1313,6 @@
 							<string>{1.383333, 0.225000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_13</string>
 							<key>nodePhysics</key>
@@ -1621,8 +1333,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1633,6 +1343,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1681,8 +1393,6 @@
 							<string>{1.383333, 0.025000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_14</string>
 							<key>nodePhysics</key>
@@ -1703,8 +1413,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1715,6 +1423,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1763,8 +1473,6 @@
 							<string>{1.383333, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_15</string>
 							<key>nodePhysics</key>
@@ -1785,8 +1493,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1797,6 +1503,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1845,8 +1553,6 @@
 							<string>{1.250000, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_16</string>
 							<key>nodePhysics</key>
@@ -1867,8 +1573,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1879,6 +1583,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -1927,8 +1633,6 @@
 							<string>{1.116667, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_17</string>
 							<key>nodePhysics</key>
@@ -1949,8 +1653,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -1961,6 +1663,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2009,8 +1713,6 @@
 							<string>{0.983333, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_18</string>
 							<key>nodePhysics</key>
@@ -2031,8 +1733,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2043,6 +1743,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2091,8 +1793,6 @@
 							<string>{0.850000, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_19</string>
 							<key>nodePhysics</key>
@@ -2113,8 +1813,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2125,6 +1823,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2173,8 +1873,6 @@
 							<string>{0.716667, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_20</string>
 							<key>nodePhysics</key>
@@ -2195,8 +1893,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2207,6 +1903,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2255,8 +1953,6 @@
 							<string>{0.583333, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_21</string>
 							<key>nodePhysics</key>
@@ -2277,8 +1973,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2289,6 +1983,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2337,8 +2033,6 @@
 							<string>{0.450000, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_22</string>
 							<key>nodePhysics</key>
@@ -2359,8 +2053,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2371,6 +2063,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2419,8 +2113,6 @@
 							<string>{0.316667, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_23</string>
 							<key>nodePhysics</key>
@@ -2441,8 +2133,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2453,6 +2143,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2501,8 +2193,6 @@
 							<string>{0.183333, 0.625000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_24</string>
 							<key>nodePhysics</key>
@@ -2523,8 +2213,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2535,6 +2223,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2583,8 +2273,6 @@
 							<string>{0.183333, 0.425000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_25</string>
 							<key>nodePhysics</key>
@@ -2605,8 +2293,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2617,6 +2303,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2665,8 +2353,6 @@
 							<string>{0.183333, 0.225000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_26</string>
 							<key>nodePhysics</key>
@@ -2687,8 +2373,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2699,6 +2383,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2747,8 +2433,6 @@
 							<string>{0.183333, 0.025000}</string>
 							<key>imageFileName</key>
 							<string>platformer.png</string>
-							<key>invisibleInEditor</key>
-							<false/>
 							<key>name</key>
 							<string>brick_27</string>
 							<key>nodePhysics</key>
@@ -2769,8 +2453,6 @@
 									<integer>1</integer>
 									<key>density</key>
 									<real>0.10000000149011612</real>
-									<key>fixtureID</key>
-									<integer>0</integer>
 									<key>friction</key>
 									<real>0.20000000298023224</real>
 									<key>mask</key>
@@ -2781,6 +2463,8 @@
 									<real>0.0</real>
 									<key>sensor</key>
 									<false/>
+									<key>shapeID</key>
+									<integer>0</integer>
 								</dict>
 								<key>gravityScale</key>
 								<real>1</real>
@@ -2823,8 +2507,6 @@
 					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 					<key>generalPosition</key>
 					<string>{-0.283333, 0.575000}</string>
-					<key>invisibleInEditor</key>
-					<false/>
 					<key>name</key>
 					<string>bricks</string>
 					<key>nodeType</key>
@@ -2851,8 +2533,6 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
-			<key>invisibleInEditor</key>
-			<false/>
 			<key>name</key>
 			<string>GAME WORLD</string>
 			<key>nodeType</key>
@@ -2883,8 +2563,6 @@
 			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
 			<key>generalPosition</key>
 			<string>{0.000000, 0.000000}</string>
-			<key>invisibleInEditor</key>
-			<false/>
 			<key>name</key>
 			<string>FRONT USER INTERFACE</string>
 			<key>nodeType</key>
@@ -2964,8 +2642,6 @@
 	<string>{0.000000, -1.000000}</string>
 	<key>globalGravityForce</key>
 	<real>8</real>
-	<key>invisibleInEditor</key>
-	<false/>
 	<key>nodeType</key>
 	<string>LHScene</string>
 	<key>physicsBoundaries</key>
@@ -2989,81 +2665,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>312D69A0-BFFB-4A96-8C0A-EE5D54F32652</key>
-		<array>
-			<array>
-				<string>{10.25, -47}</string>
-				<string>{12.25, -36.5}</string>
-				<string>{3.25, -47}</string>
-				<string>{3.75, -47.5}</string>
-			</array>
-			<array>
-				<string>{30.75, -26.5}</string>
-				<string>{31.75, -13.5}</string>
-				<string>{-20.25, 45.5}</string>
-				<string>{-24.75, 44}</string>
-				<string>{-27.25, 36.5}</string>
-				<string>{-25.75, -40.5}</string>
-				<string>{-7.25, -38.5}</string>
-				<string>{21.25, -34}</string>
-			</array>
-			<array>
-				<string>{36.75, 39}</string>
-				<string>{24.25, 43.5}</string>
-				<string>{9.75, 47}</string>
-				<string>{-20.25, 45.5}</string>
-				<string>{31.75, -13.5}</string>
-				<string>{38.25, 1}</string>
-				<string>{39.25, 23.5}</string>
-				<string>{38.75, 32.5}</string>
-			</array>
-			<array>
-				<string>{34.25, -12.5}</string>
-				<string>{36.25, -9.5}</string>
-				<string>{38.25, 1}</string>
-				<string>{31.75, -13.5}</string>
-			</array>
-			<array>
-				<string>{-5.25, -45}</string>
-				<string>{3.25, -47}</string>
-				<string>{12.25, -36.5}</string>
-				<string>{-7.25, -38.5}</string>
-				<string>{-6.75, -42}</string>
-			</array>
-			<array>
-				<string>{-26.75, 42}</string>
-				<string>{-27.25, 36.5}</string>
-				<string>{-24.75, 44}</string>
-			</array>
-			<array>
-				<string>{-13.25, -43}</string>
-				<string>{-10.25, -41.5}</string>
-				<string>{-7.25, -38.5}</string>
-				<string>{-25.75, -40.5}</string>
-				<string>{-22.75, -42}</string>
-				<string>{-18.75, -43}</string>
-			</array>
-			<array>
-				<string>{-32.75, -32}</string>
-				<string>{-25.75, -40.5}</string>
-				<string>{-27.25, 36.5}</string>
-				<string>{-39.25, 9}</string>
-				<string>{-39.75, -6.5}</string>
-				<string>{-37.75, -19.5}</string>
-			</array>
-			<array>
-				<string>{-31.25, 33}</string>
-				<string>{-35.75, 24.5}</string>
-				<string>{-39.25, 9}</string>
-				<string>{-27.25, 36.5}</string>
-			</array>
-			<array>
-				<string>{16.25, -36}</string>
-				<string>{21.25, -34}</string>
-				<string>{-7.25, -38.5}</string>
-			</array>
-		</array>
-		<key>43117BF1-A72A-4FFF-8B58-17C42841B23B</key>
+		<key>461C5434-B2C4-4295-AFE5-FD92DD1C6A48</key>
 		<array>
 			<array>
 				<string>{-54, 16.5}</string>
@@ -3128,121 +2730,62 @@
 				<string>{-19, -29}</string>
 			</array>
 		</array>
-		<key>7A5C629F-225D-4E93-95CB-F9EDC443AB15</key>
+		<key>4CDAC14D-A5C9-4039-BC22-D54B14E80E35</key>
 		<array>
 			<array>
-				<string>{-14.75, -19}</string>
-				<string>{-9.75, -19.5}</string>
-				<string>{-19.75, -12.5}</string>
-				<string>{-18.25, -15.5}</string>
+				<string>{-40.75, -37.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-41.25, -34.5}</string>
 			</array>
 			<array>
-				<string>{14.75, -17.5}</string>
-				<string>{18.75, -3}</string>
-				<string>{19.25, 10.5}</string>
-				<string>{-19.75, -12.5}</string>
-				<string>{7.75, -21.5}</string>
+				<string>{10.25, -37}</string>
+				<string>{10.25, -35}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{5.75, -40.5}</string>
+				<string>{8.75, -39}</string>
 			</array>
 			<array>
-				<string>{-7.75, -29}</string>
-				<string>{-5.25, -31}</string>
-				<string>{7.25, -30.5}</string>
-				<string>{-7.75, -21}</string>
+				<string>{82.25, 4.5}</string>
+				<string>{82.25, 22}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{42.25, -19.5}</string>
+				<string>{52.25, -16.5}</string>
+				<string>{63.75, -11}</string>
+				<string>{75.25, -2.5}</string>
 			</array>
 			<array>
-				<string>{-19.75, 30}</string>
-				<string>{-21.25, 26.5}</string>
-				<string>{-22.25, 20}</string>
-				<string>{-22.25, 12}</string>
-				<string>{-19.75, -12.5}</string>
-				<string>{19.25, 10.5}</string>
-				<string>{2.25, 32.5}</string>
-				<string>{-16.75, 32.5}</string>
+				<string>{-83.75, 24}</string>
+				<string>{-84.75, 21}</string>
+				<string>{-84.75, -7.5}</string>
+				<string>{-83.75, -10}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-80.25, 26.5}</string>
+				<string>{-81.75, 26}</string>
 			</array>
 			<array>
-				<string>{14.75, 29.5}</string>
-				<string>{9.25, 31.5}</string>
-				<string>{2.25, 32.5}</string>
-				<string>{19.25, 10.5}</string>
+				<string>{81.75, 23.5}</string>
+				<string>{79.25, 26}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-36.75, -40.5}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{82.25, 22}</string>
 			</array>
 			<array>
-				<string>{7.75, -21.5}</string>
-				<string>{-19.75, -12.5}</string>
-				<string>{-9.75, -19.5}</string>
-				<string>{7.25, -30.5}</string>
+				<string>{10.25, -35}</string>
+				<string>{17.25, -22.5}</string>
+				<string>{-36.75, -40.5}</string>
 			</array>
 			<array>
-				<string>{5.25, -31.5}</string>
-				<string>{7.25, -30.5}</string>
-				<string>{-5.25, -31}</string>
-				<string>{-4.75, -31.5}</string>
+				<string>{-54.75, -22.5}</string>
+				<string>{-46.75, -22.5}</string>
+				<string>{-83.75, -10}</string>
 			</array>
 			<array>
-				<string>{-9.75, -19.5}</string>
-				<string>{-7.75, -21}</string>
-				<string>{7.25, -30.5}</string>
-			</array>
-		</array>
-		<key>CA3A2265-9D21-44C3-A350-1535F15BAC83</key>
-		<array>
-			<array>
-				<string>{38.75, -26.75}</string>
-				<string>{40.25, -22.75}</string>
-				<string>{40.25, -17.75}</string>
-				<string>{37.25, -14.25}</string>
-				<string>{27.25, -12.25}</string>
-				<string>{34.75, -27.75}</string>
-				<string>{35.25, -28.25}</string>
-			</array>
-			<array>
-				<string>{26.25, -19.75}</string>
-				<string>{32.75, -27.25}</string>
-				<string>{34.75, -27.75}</string>
-				<string>{27.25, -12.25}</string>
-			</array>
-			<array>
-				<string>{-40.75, -3.75}</string>
-				<string>{-38.75, -6.25}</string>
-				<string>{-33.75, -7.75}</string>
-				<string>{-6.75, 3.75}</string>
-				<string>{-23.75, 21.25}</string>
-				<string>{-29.75, 17.25}</string>
-				<string>{-37.25, 8.75}</string>
-				<string>{-40.75, 0.25}</string>
-			</array>
-			<array>
-				<string>{-36.75, -7.75}</string>
-				<string>{-33.75, -7.75}</string>
-				<string>{-38.75, -6.25}</string>
-			</array>
-			<array>
-				<string>{-23.75, 21.25}</string>
-				<string>{-6.75, 3.75}</string>
-				<string>{1.75, 4.25}</string>
-				<string>{22.25, 22.25}</string>
-				<string>{16.25, 24.75}</string>
-				<string>{6.25, 26.75}</string>
-				<string>{-4.25, 26.75}</string>
-				<string>{-15.25, 24.75}</string>
-			</array>
-			<array>
-				<string>{22.25, 22.25}</string>
-				<string>{1.75, 4.25}</string>
-				<string>{7.25, 3.25}</string>
-				<string>{38.25, 5.25}</string>
-				<string>{34.25, 12.25}</string>
-				<string>{27.75, 18.75}</string>
-			</array>
-			<array>
-				<string>{37.25, -14.25}</string>
-				<string>{38.25, 5.25}</string>
-				<string>{17.25, -1.75}</string>
-				<string>{27.25, -12.25}</string>
-			</array>
-			<array>
-				<string>{17.25, -1.75}</string>
-				<string>{38.25, 5.25}</string>
-				<string>{7.25, 3.25}</string>
+				<string>{-41.25, -34.5}</string>
+				<string>{-37.25, -40}</string>
+				<string>{-46.75, -22.5}</string>
 			</array>
 		</array>
 	</dict>

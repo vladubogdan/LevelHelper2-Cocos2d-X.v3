@@ -116,6 +116,14 @@ double LHUtils::LHNormalAbsoluteAngleDegrees(double angle) {
     return angle >= 0 ? angle : (angle + 360.0f);
 }
 
+bool LHUtils::LHRectOverlapsRect(Rect r1,  Rect r2)
+{
+    return !(r1.origin.x + r1.size.width < r2.origin.x ||
+             r1.origin.y + r1.size.height < r2.origin.y ||
+             r1.origin.x > r2.origin.x + r2.size.width ||
+             r1.origin.y > r2.origin.y + r2.size.height);
+}
+
 float LHUtils::LHRandomFloat(float Min, float Max){
 //    return ((arc4random()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;
     return ((rand()%RAND_MAX)/(RAND_MAX*1.0))*(Max-Min)+Min;

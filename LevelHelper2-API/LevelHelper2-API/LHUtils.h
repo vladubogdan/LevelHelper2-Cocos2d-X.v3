@@ -34,7 +34,9 @@ public:
     static Point LHPointNormalize(const Point& pt);
     static Point LHPointScaled(const Point& pt, float val);
     static float LHPointLength(const Point& pt);
+    
     static double LHNormalAbsoluteAngleDegrees(double angle);
+    static bool LHRectOverlapsRect(Rect r1,  Rect r2);
     
     static float LHRandomFloat(float Min, float Max);
     

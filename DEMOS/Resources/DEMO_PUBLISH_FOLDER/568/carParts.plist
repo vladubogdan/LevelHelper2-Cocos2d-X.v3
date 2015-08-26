@@ -127,13 +127,13 @@
 				<integer>0</integer>
 			</dict>
 			<key>frame</key>
-			<string>{{2.000000, 2.000000}, {168.000000, 68.000000}}</string>
+			<string>{{1.000000, 2.000000}, {168.000000, 68.000000}}</string>
 			<key>offset</key>
 			<string>{-1.000000, 6.500000}</string>
 			<key>rotated</key>
-			<false/>
+			<true/>
 			<key>sourceColorRect</key>
-			<string>{{5.000000, 7.000000}, {168.000000, 68.000000}}</string>
+			<string>{{20.000000, 5.000000}, {68.000000, 168.000000}}</string>
 			<key>sourceSize</key>
 			<string>{180.000000, 95.000000}</string>
 			<key>uuid</key>
@@ -188,7 +188,7 @@
 				<integer>2</integer>
 			</dict>
 			<key>frame</key>
-			<string>{{2.000000, 74.000000}, {43.000000, 43.000000}}</string>
+			<string>{{74.000000, 3.000000}, {43.000000, 43.000000}}</string>
 			<key>offset</key>
 			<string>{0.000000, -0.500000}</string>
 			<key>rotated</key>
@@ -254,7 +254,7 @@
 				<integer>2</integer>
 			</dict>
 			<key>frame</key>
-			<string>{{174.000000, 2.000000}, {32.000000, 32.000000}}</string>
+			<string>{{120.000000, 2.000000}, {32.000000, 32.000000}}</string>
 			<key>offset</key>
 			<string>{-16.000000, 16.000000}</string>
 			<key>rotated</key>
@@ -324,13 +324,13 @@
 				<integer>2</integer>
 			</dict>
 			<key>frame</key>
-			<string>{{49.000000, 74.000000}, {128.000000, 32.000000}}</string>
+			<string>{{74.000000, 49.000000}, {128.000000, 32.000000}}</string>
 			<key>offset</key>
 			<string>{0.000000, 0.000000}</string>
 			<key>rotated</key>
-			<false/>
+			<true/>
 			<key>sourceColorRect</key>
-			<string>{{0.000000, 0.000000}, {128.000000, 32.000000}}</string>
+			<string>{{0.000000, 0.000000}, {32.000000, 128.000000}}</string>
 			<key>sourceSize</key>
 			<string>{128.000000, 32.000000}</string>
 			<key>uuid</key>
@@ -344,7 +344,7 @@
 		<key>ratio</key>
 		<integer>1</integer>
 		<key>size</key>
-		<string>{207.000000, 118.000000}</string>
+		<string>{154.000000, 178.000000}</string>
 		<key>textureFileName</key>
 		<string>carParts.png</string>
 	</dict>

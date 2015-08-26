@@ -14,6 +14,10 @@
 #include "LHNodeProtocol.h"
 #include "LHNodeAnimationProtocol.h"
 
+#if LH_USE_BOX2D
+class LH_b2BuoyancyController;
+#endif
+
 using namespace cocos2d;
 
 /*
@@ -44,6 +48,8 @@ public:
 #else
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
 #endif
+    
+    Rect getWaveRect();
 
 private:
     LHDrawNode* _drawNode;
@@ -80,6 +86,16 @@ private:
     float globalXToWaveX(float pointX);
     float waveYToGlobalY(float waveY);
     std::vector<LHWave*> createSplash(float pos, float h, float w, float t);
+    
+    
+#if LH_USE_BOX2D
+    LH_b2BuoyancyController* buoyancyController;
+    Rect getBoundingRectForBody(b2Body* bd);
+    
+    ValueMap bodySplashes;
+//    std::map<std::string, bool> bodySplashes;
+#endif
+    
 };
 
 #endif //__LEVELHELPER_API_WATER_H__

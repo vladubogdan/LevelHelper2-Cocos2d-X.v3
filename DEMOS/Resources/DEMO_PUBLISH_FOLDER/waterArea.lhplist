@@ -71,7 +71,7 @@
 						<key>fixedRotation</key>
 						<false/>
 						<key>fixtureUUID</key>
-						<string>461C5434-B2C4-4295-AFE5-FD92DD1C6A48</string>
+						<string>CAB2C959-F9CF-46FE-9A33-C987ED607733</string>
 						<key>genericFixture</key>
 						<dict>
 							<key>category</key>
@@ -207,7 +207,7 @@
 					<key>colorOverlay</key>
 					<string>{{0.223529, 0.345098}, {0.474510, 1.000000}}</string>
 					<key>generalPosition</key>
-					<string>{0.498903, 0.805834}</string>
+					<string>{0.501550, 0.710551}</string>
 					<key>height</key>
 					<real>60</real>
 					<key>name</key>
@@ -221,7 +221,7 @@
 					<key>rotation</key>
 					<real>0.0</real>
 					<key>scale</key>
-					<string>{14.435098, 3.608880}</string>
+					<string>{9.060778, 3.608880}</string>
 					<key>size</key>
 					<string>{60.000000, 60.000000}</string>
 					<key>splash</key>
@@ -254,6 +254,40 @@
 					<real>60</real>
 					<key>zOrder</key>
 					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>activeCamera</key>
+					<true/>
+					<key>generalPosition</key>
+					<string>{0.506504, 0.767727}</string>
+					<key>importantArea</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>lockX</key>
+					<false/>
+					<key>lockY</key>
+					<false/>
+					<key>name</key>
+					<string>UntitledCamera</string>
+					<key>nodeType</key>
+					<string>LHCamera</string>
+					<key>offset</key>
+					<string>{0.000000, 0.000000}</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>restrictToGameWorld</key>
+					<false/>
+					<key>smoothMovement</key>
+					<true/>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>02EFB9A4-A3DC-47AC-AA12-9A8DBF30EFF9</string>
+					<key>zoomOnPinchOrScroll</key>
+					<false/>
+					<key>zoomValue</key>
+					<real>1</real>
 				</dict>
 				<dict>
 					<key>alpha</key>
@@ -2665,7 +2699,7 @@
 	</array>
 	<key>tracedFixtures</key>
 	<dict>
-		<key>461C5434-B2C4-4295-AFE5-FD92DD1C6A48</key>
+		<key>CAB2C959-F9CF-46FE-9A33-C987ED607733</key>
 		<array>
 			<array>
 				<string>{-54, 16.5}</string>
@@ -2730,7 +2764,7 @@
 				<string>{-19, -29}</string>
 			</array>
 		</array>
-		<key>4CDAC14D-A5C9-4039-BC22-D54B14E80E35</key>
+		<key>F77E5F1A-6E32-465F-97F1-0CA9D3C2F898</key>
 		<array>
 			<array>
 				<string>{-40.75, -37.5}</string>

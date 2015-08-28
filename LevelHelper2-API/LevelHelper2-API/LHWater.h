@@ -49,7 +49,7 @@ public:
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, bool parentTransformUpdated);
 #endif
     
-    Rect getWaveRect();
+    Rect getGameWorldWaveRect();
 
 private:
     LHDrawNode* _drawNode;

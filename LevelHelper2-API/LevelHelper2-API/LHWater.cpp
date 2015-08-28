@@ -312,9 +312,13 @@ std::vector<LHWave*> LHWater::createSplash(float pos, float h, float w, float t)
     return currentWaves;
 }
 
-Rect LHWater::getWaveRect()
+Rect LHWater::getGameWorldWaveRect()
 {
-    Point pos = this->convertToWorldSpace(Vec2::ZERO);
+    LHScene* scene = (LHScene*)this->getScene();
+    LHGameWorldNode* gwNode = scene->getGameWorldNode();
+    
+    Point pos = this->getParent()->convertToWorldSpace(this->getPosition());
+    pos = gwNode->convertToNodeSpace(pos);
     
     return Rect(-_width *this->getScaleX() *0.5 + pos.x,
                 -_height*this->getScaleY() *0.5 + pos.y,
@@ -523,7 +527,7 @@ void LHWater::visit(Renderer *renderer, const Mat4& parentTransform, bool parent
                 Node* node = (Node*)b->GetUserData();
                 if(node){
                     
-                    Rect rect = this->getWaveRect();
+                    Rect rect = this->getGameWorldWaveRect();
                     
                     Rect bodyRect = this->getBoundingRectForBody(b);
                     

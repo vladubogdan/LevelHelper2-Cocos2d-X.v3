@@ -92,6 +92,8 @@ bool LHAnimation::initWithDictionary(LHDictionary* dict, LHNodeAnimationProtocol
     _properties = new __Array();
     _properties->init();
     
+
+    
     LHDictionary* propDictInfo = dict->dictForKey("properties");
 
     __Array* allKeys = propDictInfo->allKeys();
@@ -112,6 +114,7 @@ bool LHAnimation::initWithDictionary(LHDictionary* dict, LHNodeAnimationProtocol
     }
     
     _currentRepetition = 0;
+    _currentTime = 0.0f;
     
     return true;
 }

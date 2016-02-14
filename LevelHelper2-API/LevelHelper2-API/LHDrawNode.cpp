@@ -50,7 +50,10 @@ bool LHDrawNode::init()
         _colors = nullptr;
         
         _blendFunc = BlendFunc::ALPHA_PREMULTIPLIED;
-        _glProgram = ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_COLOR);
+        //_glProgram = ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_COLOR);
+
+        _glProgram = GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_COLOR);
+        
         
         clear();
         
@@ -234,7 +237,9 @@ Texture2D* LHDrawNode::getTexture() const{
 
 void LHDrawNode::setTexture(Texture2D *texture){
     _texture = texture;
-    _glProgram = ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
+//    _glProgram = ShaderCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
+    _glProgram = GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR);
+    
 }
 
 void LHDrawNode::setBlendFunc(const BlendFunc &blendFunc){

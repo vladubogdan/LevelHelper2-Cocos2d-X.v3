@@ -90,6 +90,9 @@
 		6E9B5E701A6E68220090C8B4 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9B5E4F1A6E68220090C8B4 /* Settings.png */; };
 		6E9B5E711A6E68220090C8B4 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9B5E501A6E68220090C8B4 /* Settings@2x.png */; };
 		6E9B5E721A6E68220090C8B4 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9B5E501A6E68220090C8B4 /* Settings@2x.png */; };
+		6EED3AE01BC4FC840099FC5F /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED3ADB1BC4FC490099FC5F /* libiconv.2.dylib */; };
+		6EED3AE41BC52B3F0099FC5F /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED3ADB1BC4FC490099FC5F /* libiconv.2.dylib */; };
+		6EED3AE51BC52B4F0099FC5F /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED3ADB1BC4FC490099FC5F /* libiconv.2.dylib */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -254,6 +257,7 @@
 		6E9B5E4F1A6E68220090C8B4 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Settings.png; path = Icons/Settings.png; sourceTree = "<group>"; };
 		6E9B5E501A6E68220090C8B4 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings@2x.png"; path = "Icons/Settings@2x.png"; sourceTree = "<group>"; };
 		6EA6DF2B1A526EA800C94A6D /* DEMOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DEMOS.xcodeproj; path = ../DEMOS/proj.ios_mac/DEMOS.xcodeproj; sourceTree = "<group>"; };
+		6EED3ADB1BC4FC490099FC5F /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = ../../../../../../usr/lib/libiconv.2.dylib; sourceTree = "<group>"; };
 		6EF1386719A89A5E00CC03F3 /* Application.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = Application.mk; path = ../proj.android/jni/Application.mk; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -269,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EED3AE01BC4FC840099FC5F /* libiconv.2.dylib in Frameworks */,
 				6E80039F19A8503A00284D21 /* libLevelHelper2-API.a in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -288,6 +293,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EED3AE51BC52B4F0099FC5F /* libiconv.2.dylib in Frameworks */,
 				6E80039A19A84FC100284D21 /* libLevelHelper2-API.a in Frameworks */,
 				1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */,
 				503AE11217EB99EE00D1A890 /* libcurl.dylib in Frameworks */,
@@ -308,6 +314,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EED3AE41BC52B3F0099FC5F /* libiconv.2.dylib in Frameworks */,
 				6E80035D19A84C5800284D21 /* libLevelHelper2-API.a in Frameworks */,
 				6E7916CC1964186600E68E06 /* libcocos2d iOS.a in Frameworks */,
 				6E7916CF1964186600E68E06 /* CoreMotion.framework in Frameworks */,
@@ -392,6 +399,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EED3ADB1BC4FC490099FC5F /* libiconv.2.dylib */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
 				503AE11A17EB9C5A00D1A890 /* IOKit.framework */,
 				503AE11117EB99EE00D1A890 /* libcurl.dylib */,

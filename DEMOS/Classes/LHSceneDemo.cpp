@@ -139,7 +139,7 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
         //buttons do not work without a texture so we use this dummy empty texture
         button->loadTextures("emptyButtonTexture.png", "emptyButtonTexture.png", "");
         button->setTitleFontSize(32);
-        button->setTitleColor(ccColor3B::MAGENTA);
+        button->setTitleColor(Color3B::MAGENTA);
         button->setEnabled(true);
         button->setTouchEnabled(true);
         button->addTouchEventListener(CC_CALLBACK_2(LHSceneDemo::previousDemo, this));
@@ -153,7 +153,7 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
         //buttons do not work without a texture so we use this dummy empty texture
         button->loadTextures("emptyButtonTexture.png", "emptyButtonTexture.png", "");
         button->setTitleFontSize(32);
-        button->setTitleColor(ccColor3B::MAGENTA);
+        button->setTitleColor(Color3B::MAGENTA);
         button->setEnabled(true);
         button->setTouchEnabled(true);
         button->addTouchEventListener(CC_CALLBACK_2(LHSceneDemo::restartDemo, this));
@@ -167,7 +167,7 @@ bool LHSceneDemo::initWithContentOfFile(const std::string& plistLevelFile)
         //buttons do not work without a texture so we use this dummy empty texture
         button->loadTextures("emptyButtonTexture.png", "emptyButtonTexture.png", "");
         button->setTitleFontSize(32);
-        button->setTitleColor(ccColor3B::MAGENTA);
+        button->setTitleColor(Color3B::MAGENTA);
         button->setEnabled(true);
         button->setTouchEnabled(true);
         button->addTouchEventListener(CC_CALLBACK_2(LHSceneDemo::nextDemo, this));

@@ -625,6 +625,93 @@ void LHPhysicsProtocol::loadPhysicsFromValueMap(ValueMap value_Map, LHScene* sce
     //not used by chipmunk yet
 }
 
+static bool LHValidateChipmunkCentroid(Point* vs, int count)
+{
+    const int maxPolygonVertices = 8;
+    
+    if(count > maxPolygonVertices)
+        return false;
+    
+    if(count < 3)
+        return false;
+    
+    Point c(0.0f, 0.0f);
+    float area = 0.0f;
+    
+    // pRef is the reference point for forming triangles.
+    // It's location doesn't change the result (except for rounding error).
+    Point pRef(0.0f, 0.0f);
+
+    const float inv3 = 1.0f / 3.0f;
+    
+    for (int i = 0; i < count; ++i)
+    {
+        // Triangle vertices.
+        Point p1 = pRef;
+        Point p2 = vs[i];
+        Point p3 = i + 1 < count ? vs[i+1] : vs[0];
+        
+        Point e1 = p2 - p1;
+        Point e2 = p3 - p1;
+        
+        float D = e1.x * e2.y - e1.y * e2.x;//cross
+        
+        float triangleArea = 0.5f * D;
+        area += triangleArea;
+        
+        // Area weighted centroid
+        c += triangleArea * inv3 * (p1 + p2 + p3);
+    }
+    
+    // Centroid
+    if(area < FLT_EPSILON)
+    {
+        return false;
+    }
+    
+    const float linearSlop = 0.005f;
+    
+    int n = MIN(count, maxPolygonVertices);
+    
+    // Perform welding and copy vertices into local buffer.
+    Point ps[maxPolygonVertices];
+    int tempCount = 0;
+    for (int i = 0; i < n; ++i)
+    {
+        Point v = vs[i];
+        
+        bool unique = true;
+        for (int j = 0; j < tempCount; ++j)
+        {
+            
+            Point distC(v.x - ps[j].x, v.y - ps[j].y);
+            float dot = distC.x * distC.x + distC.y * distC.y;
+            
+            if (dot < 0.5f * linearSlop)
+            {
+                unique = false;
+                break;
+            }
+        }
+        
+        if (unique)
+        {
+            ps[tempCount++] = v;
+        }
+    }
+    
+    n = tempCount;
+    if (n < 3)
+    {
+        return false;
+    }
+    
+    
+    return true;
+    
+}
+
+
 void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* scene)
 {
     if(!dict)return;
@@ -734,23 +821,23 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
     }
     else if(shape == 4)//OVAL
     {
-        fixturesInfo = dict->arrayForKey("ovalShape");
+        //fixturesInfo = dict->arrayForKey("ovalShape");
     }
     else if(shape == 5)//TRACED
     {
-        if(dict->objectForKey("fixtureUUID"))
-        {
-            std::string fixUUID = dict->stringForKey("fixtureUUID");
-            if(scene){
-                fixturesInfo = scene->tracedFixturesWithUUID(fixUUID);
-            }
-            if(!fixturesInfo){
-                LHAsset* asset = this->assetParent();
-                if(asset){
-                    fixturesInfo = (LHArray*)asset->tracedFixturesWithUUID(fixUUID);
-                }
-            }
-        }
+//        if(dict->objectForKey("fixtureUUID"))
+//        {
+//            std::string fixUUID = dict->stringForKey("fixtureUUID");
+//            if(scene){
+//                fixturesInfo = scene->tracedFixturesWithUUID(fixUUID);
+//            }
+//            if(!fixturesInfo){
+//                LHAsset* asset = this->assetParent();
+//                if(asset){
+//                    fixturesInfo = (LHArray*)asset->tracedFixturesWithUUID(fixUUID);
+//                }
+//            }
+//        }
     }
     else if(shape == 2)//POLYGON
     {
@@ -799,43 +886,105 @@ void LHPhysicsProtocol::loadPhysicsFromDictionary(LHDictionary* dict, LHScene* s
         PhysicsBody* body = PhysicsBody::create();
         node->setPhysicsBody(body);
 
-//        int flipx = scaleX < 0 ? -1 : 1;
-//        int flipy = scaleY < 0 ? -1 : 1;
+        int flipx = scaleX < 0 ? -1 : 1;
+        int flipy = scaleY < 0 ? -1 : 1;
 
         
+//        for(int f = 0; f < fixturesInfo->count(); ++f)
+//        {
+//            Value fixPointsValue = shapePoints[f];;
+//            ValueVector fixPoints = fixPointsValue.asValueVector();
+//            
+//            int count = (int)fixPoints.size();
+//            if(count > 2)
+//            {
+//                b2Vec2 *verts = new b2Vec2[count];
+//                b2PolygonShape shapeDef;
+//                
+//                int i = 0;
+//                for(int j = count-1; j >=0; --j)
+//                {
+//                    const int idx = (flipx < 0 && flipy >= 0) || (flipx >= 0 && flipy < 0) ? count - i - 1 : i;
+//
+//                    std::string pointStr = fixPoints[j].asString();
+//                    Point point = PointFromString(pointStr);
+//                    
+//                    point.x *= scaleX;
+//                    point.y *= scaleY;
+//                    
+//                    point.y = -point.y;
+//                    
+//                    b2Vec2 vec = scene->metersFromPoint(point);
+//                    
+//                    verts[idx] = vec;
+//                    ++i;
+//                }
+//                
+//                if(LHValidateCentroid(verts, count))
+//                {
+//                    shapeDef.Set(verts, count);
+//                    
+//                    b2FixtureDef fixture;
+//                    
+//                    LHSetupb2FixtureWithInfo(&fixture, dict);
+//                    
+//                    fixture.userData = this;
+//                    fixture.shape = &shapeDef;
+//                    body->CreateFixture(&fixture);
+//                }
+//                
+//                delete[] verts;
+//            }
+//        }
+        
+
+        
+        
+        
+        printf("SHAPE.......................\n");
         for(int f = 0; f < fixturesInfo->count(); ++f)
         {
             LHArray* fixPoints = (LHArray*)fixturesInfo->getObjectAtIndex(f);
 
+            printf("FIXTURE.........\n");
+            
             int count = (int)fixPoints->count();
             if(count > 2)
             {
                 Point* points = new Point[count];
                 
-//                int i = 0;
-//                for(int j = count-1; j >=0; --j)
-//                {
-//                    const int idx = (flipx < 0 && flipy >= 0) || (flipx >= 0 && flipy < 0) ? count - i - 1 : i;
-                
-                int i = count - 1;
-                for(int j = 0; j< count; ++j)
+                int i = 0;
+                for(int j = count-1; j >=0; --j)
                 {
+                    const int idx = (flipx < 0 && flipy >= 0) || (flipx >= 0 && flipy < 0) ? count - i - 1 : i;
+
+                
+//                int i = count - 1;
+//                for(int j = 0; j< count; ++j)
+//                {
                     
                     Point point = fixPoints->pointAtIndex(j);
-                    point.y = -point.y;
                     
                     point.x *= scaleX;
                     point.y *= scaleY;
-                    
-                    points[j] = point;
-//                    points[idx] = point;
-                    i = i-1;
-//                    ++i;
+
+                    point.y = -point.y;
+
+                    printf("PT %f %f\n", point.x, point.y);
+//                    points[j] = point;
+                    points[idx] = point;
+//                    i = i-1;
+                    ++i;
                 }
                 
-                PhysicsShapePolygon* shape = PhysicsShapePolygon::create(points, count);
-                fixShapes->addObject(shape);
-                body->addShape(shape);
+
+                if(LHValidateChipmunkCentroid(points, count))
+                {
+                    
+                    PhysicsShapePolygon* shape = PhysicsShapePolygon::create(points, count);
+                    fixShapes->addObject(shape);
+                    body->addShape(shape);
+                }
                 
                 delete[] points;
             }

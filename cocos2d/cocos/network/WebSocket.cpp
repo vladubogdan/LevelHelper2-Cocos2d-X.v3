@@ -185,8 +185,6 @@ void WsThreadHelper::joinSubThread()
 
 void WsThreadHelper::update(float dt)
 {
-    WsMessage *msg = nullptr;
-
     /* Avoid locking if, in most cases, the queue is empty. This could be a little faster.
     size() is not thread-safe, it might return a strange value, but it should be OK in our scenario.
     */
@@ -203,17 +201,22 @@ void WsThreadHelper::update(float dt)
     }
     
     // Gets message
-    msg = *(_UIWsMessageQueue->begin());
-    _UIWsMessageQueue->pop_front();
+    // Process all messages in the queue, in case it's piling up faster than being processed
+    std::list<WsMessage*> messages;
+    while (!_UIWsMessageQueue->empty()) {
+        messages.push_back(_UIWsMessageQueue->front());
+        _UIWsMessageQueue->pop_front();
+    }
 
     _UIWsMessageQueueMutex.unlock();
     
-    if (_ws)
-    {
-        _ws->onUIThreadReceiveMessage(msg);
+    for (auto msg : messages) {
+        if (_ws)
+        {
+            _ws->onUIThreadReceiveMessage(msg);
+        }
+        CC_SAFE_DELETE(msg);
     }
-    
-    CC_SAFE_DELETE(msg);
 }
 
 enum WS_MSG {
@@ -245,9 +248,12 @@ WebSocket::~WebSocket()
     close();
     CC_SAFE_RELEASE_NULL(_wsHelper);
     
-    for (int i = 0; _wsProtocols[i].callback != nullptr; ++i)
+    if(_wsProtocols)
     {
-        CC_SAFE_DELETE_ARRAY(_wsProtocols[i].name);
+        for (int i = 0; _wsProtocols[i].callback != nullptr; ++i)
+        {
+            CC_SAFE_DELETE_ARRAY(_wsProtocols[i].name);
+        }
     }
 	CC_SAFE_DELETE_ARRAY(_wsProtocols);
 }
@@ -524,10 +530,11 @@ int WebSocket::onSocketCallback(struct libwebsocket_context *ctx,
 
                 std::lock_guard<std::mutex> lk(_wsHelper->_subThreadWsMessageQueueMutex);
                                                
-                std::list<WsMessage*>::iterator iter = _wsHelper->_subThreadWsMessageQueue->begin();
+                auto iter = _wsHelper->_subThreadWsMessageQueue->begin();
                 
-                int bytesWrite = 0;
-                for (; iter != _wsHelper->_subThreadWsMessageQueue->end();)
+                //To avoid automatically disconnected on Android,send only one WsMessage at a time.
+                //for (; iter != _wsHelper->_subThreadWsMessageQueue->end();)
+                if (iter != _wsHelper->_subThreadWsMessageQueue->end())
                 {
                     WsMessage* subThreadMsg = *iter;
                     
@@ -540,8 +547,6 @@ int WebSocket::onSocketCallback(struct libwebsocket_context *ctx,
 
                         size_t remaining = data->len - data->issued;
                         size_t n = std::min(remaining, c_bufferSize );
-                        //fixme: the log is not thread safe
-//                        CCLOG("[websocket:send] total: %d, sent: %d, remaining: %d, buffer size: %d", static_cast<int>(data->len), static_cast<int>(data->issued), static_cast<int>(remaining), static_cast<int>(n));
 
                         unsigned char* buf = new unsigned char[LWS_SEND_BUFFER_PRE_PADDING + n + LWS_SEND_BUFFER_POST_PADDING];
 
@@ -570,20 +575,18 @@ int WebSocket::onSocketCallback(struct libwebsocket_context *ctx,
                         		writeProtocol |= LWS_WRITE_NO_FIN;
                         }
 
-                        bytesWrite = libwebsocket_write(wsi,  &buf[LWS_SEND_BUFFER_PRE_PADDING], n, (libwebsocket_write_protocol)writeProtocol);
-                        //fixme: the log is not thread safe
-//                        CCLOG("[websocket:send] bytesWrite => %d", bytesWrite);
+                        auto bytesWrite = libwebsocket_write(wsi,  &buf[LWS_SEND_BUFFER_PRE_PADDING], n, (libwebsocket_write_protocol)writeProtocol);
 
                         // Buffer overrun?
                         if (bytesWrite < 0)
                         {
-                            break;
+                            //break;
                         }
                         // Do we have another fragments to send?
                         else if (remaining != n)
                         {
                             data->issued += n;
-                            break;
+                            //break;
                         }
                         // Safely done!
                         else

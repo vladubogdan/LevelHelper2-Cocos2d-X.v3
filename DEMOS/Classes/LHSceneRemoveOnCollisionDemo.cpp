@@ -42,7 +42,6 @@ bool LHSceneRemoveOnCollisionDemo::initWithContentOfFile(const std::string& plis
     Size size = this->getContentSize();
     Label* ttf = Label::create();
     
-    
 #if LH_USE_BOX2D
     ttf->setString("REMOVE OBJECTS ON COLLISION\nIf you are familiar with Box2d then you will know that\nremoving a body in the collision callback function\nwill make Box2d library assert as the world is locked.\nThe LevelHelper API solves this by sending the callbacks when its safe.\nCut the rope to remove the bodies when collision occurs.");
 #else
@@ -67,9 +66,9 @@ void LHSceneRemoveOnCollisionDemo::handleCandyCollisionWithNode(Node* candy, Nod
     {
         if(prot->containsTag("BANANA"))
         {
-            CCLOG("REMOVING NODE %p", node);
             node->removeFromParent();
         }
+        
     }
 }
 
@@ -90,7 +89,7 @@ bool LHSceneRemoveOnCollisionDemo::disableCandyCollisionWithNode(Node* node)
 bool LHSceneRemoveOnCollisionDemo::shouldDisableContactBetweenNodes(Node* nodeA, Node* nodeB){
     
 #if COCOS2D_VERSION >= 0x00030200
-        
+    
     if(nodeA && nodeA->getName() == "candy")
     {
         return this->disableCandyCollisionWithNode(nodeB);
@@ -129,7 +128,8 @@ bool LHSceneRemoveOnCollisionDemo::shouldDisableContactBetweenNodes(Node* nodeA,
         
     return false;
 }
-void LHSceneRemoveOnCollisionDemo::didBeginContact(LHContactInfo contact)
+
+void LHSceneRemoveOnCollisionDemo::didBeginContact(const LHContactInfo& contact)
 {
     Node* nodeA = contact.nodeA;
     Node* nodeB = contact.nodeB;

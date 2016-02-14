@@ -168,6 +168,9 @@
 		6E9B5E3D1A6E59930090C8B4 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9B5E1C1A6E59930090C8B4 /* Settings.png */; };
 		6E9B5E3E1A6E59930090C8B4 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9B5E1D1A6E59930090C8B4 /* Settings@2x.png */; };
 		6E9B5E3F1A6E59930090C8B4 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E9B5E1D1A6E59930090C8B4 /* Settings@2x.png */; };
+		6EED3AD71BC4FBB30099FC5F /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED3AD61BC4FBB30099FC5F /* libiconv.2.dylib */; };
+		6EED3AE11BC4FD4C0099FC5F /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED3AD61BC4FBB30099FC5F /* libiconv.2.dylib */; };
+		6EED3AE21BC500060099FC5F /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EED3AD61BC4FBB30099FC5F /* libiconv.2.dylib */; };
 		6EF179A81A65A7AD00577215 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E91878F1A65A5A900A02F59 /* libcocos2d Mac.a */; };
 		6EF179A91A65A7AD00577215 /* libLevelHelper2-API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9187881A65A58500A02F59 /* libLevelHelper2-API.a */; };
 		6EF179AE1A65A7BC00577215 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9187911A65A5A900A02F59 /* libcocos2d iOS.a */; };
@@ -383,6 +386,8 @@
 		6E9B5E1B1A6E59930090C8B4 /* iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone@2x.png"; sourceTree = "<group>"; };
 		6E9B5E1C1A6E59930090C8B4 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		6E9B5E1D1A6E59930090C8B4 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
+		6EED3AD41BC4FB1D0099FC5F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		6EED3AD61BC4FBB30099FC5F /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = ../../../../../../../usr/lib/libiconv.2.dylib; sourceTree = "<group>"; };
 		6EF179B01A65A89A00577215 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		6EF179B11A65A89A00577215 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		6EF179B21A65A89A00577215 /* emptyButtonTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyButtonTexture.png; sourceTree = "<group>"; };
@@ -403,6 +408,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EED3AE11BC4FD4C0099FC5F /* libiconv.2.dylib in Frameworks */,
 				6EF179AE1A65A7BC00577215 /* libcocos2d iOS.a in Frameworks */,
 				6EF179AF1A65A7BC00577215 /* libLevelHelper2-API.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -422,6 +428,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EED3AE21BC500060099FC5F /* libiconv.2.dylib in Frameworks */,
 				6EF179A81A65A7AD00577215 /* libcocos2d Mac.a in Frameworks */,
 				6EF179A91A65A7AD00577215 /* libLevelHelper2-API.a in Frameworks */,
 				503AE11217EB99EE00D1A890 /* libcurl.dylib in Frameworks */,
@@ -442,6 +449,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EED3AD71BC4FBB30099FC5F /* libiconv.2.dylib in Frameworks */,
 				6E9187961A65A5CA00A02F59 /* libcocos2d iOS.a in Frameworks */,
 				6E9187971A65A5CA00A02F59 /* libLevelHelper2-API.a in Frameworks */,
 				6E7916CF1964186600E68E06 /* CoreMotion.framework in Frameworks */,
@@ -573,6 +581,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EED3AD61BC4FBB30099FC5F /* libiconv.2.dylib */,
+				6EED3AD41BC4FB1D0099FC5F /* libiconv.tbd */,
 				6E9187731A65A3B700A02F59 /* libLevelHelper2-API.a */,
 				6E9187711A65A3AF00A02F59 /* libcocos2d iOS.a */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
@@ -1203,11 +1213,12 @@
 					"$(inherited)",
 					"$(SRCROOT)/../../cocos2d/cocos/platform/ios",
 					"$(SRCROOT)/../../cocos2d/cocos/platform/ios/Simulation",
+					"$(SRCROOT)/../../cocos2d/cocos/platform",
 					"$(SRCROOT)/../../LevelHelper2-API/LevelHelper2-API/**",
 					"$(SRCROOT)/../../cocos2d/external/Box2D/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info+Box2d.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "DEMOS + Box2d - iOS";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1235,11 +1246,12 @@
 					"$(inherited)",
 					"$(SRCROOT)/../../cocos2d/cocos/platform/ios",
 					"$(SRCROOT)/../../cocos2d/cocos/platform/ios/Simulation",
+					"$(SRCROOT)/../../cocos2d/cocos/platform",
 					"$(SRCROOT)/../../LevelHelper2-API/LevelHelper2-API/**",
 					"$(SRCROOT)/../../cocos2d/external/Box2D/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info+Box2d.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "DEMOS + Box2d - iOS";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;

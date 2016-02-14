@@ -7,21 +7,21 @@
 		<key>LevelHelper2-API+Box2d-OSX.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
 		<key>LevelHelper2-API+Box2d.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
 		<key>LevelHelper2-API.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>

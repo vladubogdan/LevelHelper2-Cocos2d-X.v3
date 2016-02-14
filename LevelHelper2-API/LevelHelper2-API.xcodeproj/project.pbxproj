@@ -336,6 +336,8 @@
 		6EDE8B7C19A4986C00599C48 /* libLevelHelper2-API.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libLevelHelper2-API.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDE8B7D19A4988B00599C48 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = ../Box2D/build/Debug/libBox2D.a; sourceTree = "<group>"; };
 		6EDE8B8919A499E200599C48 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = ../Box2D/build/Debug/libBox2D.a; sourceTree = "<group>"; };
+		6EED3AD11BC4FAEF0099FC5F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		6EED3AD81BC4FBDD0099FC5F /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = ../../../../../../usr/lib/libiconv.2.dylib; sourceTree = "<group>"; };
 		6EF179881A6577FE00577215 /* LHBodyShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LHBodyShape.cpp; path = "LevelHelper2-API/LHBodyShape.cpp"; sourceTree = SOURCE_ROOT; };
 		6EF179891A6577FE00577215 /* LHBodyShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHBodyShape.h; path = "LevelHelper2-API/LHBodyShape.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -567,6 +569,8 @@
 		6EDE843B19A483A200599C48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EED3AD81BC4FBDD0099FC5F /* libiconv.2.dylib */,
+				6EED3AD11BC4FAEF0099FC5F /* libiconv.tbd */,
 				6E80035419A84A8E00284D21 /* OpenGL.framework */,
 				6E80C4D219A7683B002EEA12 /* Foundation.framework */,
 				6E9FD2BF19A4FEBF0046CDBD /* libObjectiveChipmunk.a */,
@@ -1033,12 +1037,13 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../cocos2d/cocos\"",
 					"\"$(SRCROOT)/../cocos2d/cocos/2d\"",
+					"\"$(SRCROOT)/../cocos2d/cocos/platform\"",
 					"\"$(SRCROOT)/../cocos2d/cocos/platform/ios\"",
 					"\"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation\"",
-					"\"$(SRCROOT)/../cocos2d/cocos/platform\"",
 					"\"$(SRCROOT)/../cocos2d/cocos/ui\"",
 					"\"$(SRCROOT)/../cocos2d/external\"",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "LevelHelper2-API";
@@ -1067,12 +1072,13 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../cocos2d/cocos\"",
 					"\"$(SRCROOT)/../cocos2d/cocos/2d\"",
+					"\"$(SRCROOT)/../cocos2d/cocos/platform\"",
 					"\"$(SRCROOT)/../cocos2d/cocos/platform/ios\"",
 					"\"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation\"",
-					"\"$(SRCROOT)/../cocos2d/cocos/platform\"",
 					"\"$(SRCROOT)/../cocos2d/cocos/ui\"",
 					"\"$(SRCROOT)/../cocos2d/external\"",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "LevelHelper2-API";

@@ -213,6 +213,9 @@ bool LHScene::initWithContentOfFile(const std::string& plistLevelFile)
         Color3B backgroundClr = dict->colorForKey("backgroundColor");
         glClearColor(backgroundClr.r/255.0f, backgroundClr.g/255.0f, backgroundClr.b/255.0f, 1.0f);
 
+        Director::getInstance()->setClearColor(Color4F(backgroundClr.r/255.0f, backgroundClr.g/255.0f, backgroundClr.b/255.0f, 1.0f));
+        
+        
         this->loadGameWorldInfoFromDictionary(dict);
         
         this->loadChildrenFromDictionary(dict);

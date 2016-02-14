@@ -24,7 +24,9 @@ LHSceneWaterAreaDemo::LHSceneWaterAreaDemo()
 
 LHSceneWaterAreaDemo::~LHSceneWaterAreaDemo()
 {
+#if LH_USE_BOX2D
     this->destroyMouseJoint();
+#endif
     //nothing to release
 }
 

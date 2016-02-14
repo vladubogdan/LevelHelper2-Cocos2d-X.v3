@@ -1,12 +1,12 @@
 ## ===== instance function implementation template
 bool ${signature_name}(JSContext *cx, uint32_t argc, jsval *vp)
 {
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
 #if len($arguments) > 0
-    jsval *argv = JS_ARGV(cx, vp);
     bool ok = true;
 #end if
 #if not $is_constructor
-    JSObject *obj = JS_THIS_OBJECT(cx, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
     js_proxy_t *proxy = jsb_get_js_proxy(obj);
     ${namespaced_class_name}* cobj = (${namespaced_class_name} *)(proxy ? proxy->ptr : NULL);
     JSB_PRECONDITION2( cobj, cx, false, "${signature_name} : Invalid Native Object");
@@ -19,7 +19,13 @@ bool ${signature_name}(JSContext *cx, uint32_t argc, jsval *vp)
         #set $count = 0
         #while $count < $arg_idx
             #set $arg = $arguments[$count]
+            #if $arg.is_numeric
+        ${arg.to_string($generator)} arg${count} = 0;
+            #elif $arg.is_pointer
+        ${arg.to_string($generator)} arg${count} = nullptr;
+            #else
         ${arg.to_string($generator)} arg${count};
+            #end if
             #set $count = $count + 1
         #end while
         #set $count = 0
@@ -28,7 +34,7 @@ bool ${signature_name}(JSContext *cx, uint32_t argc, jsval *vp)
         #while $count < $arg_idx
             #set $arg = $arguments[$count]
         ${arg.to_native({"generator": $generator,
-                             "in_value": "argv[" + str(count) + "]",
+                             "in_value": "args.get(" + str(count) + ")",
                              "out_value": "arg" + str(count),
                              "class_name": $class_name,
                              "level": 2,
@@ -42,26 +48,10 @@ bool ${signature_name}(JSContext *cx, uint32_t argc, jsval *vp)
         #set $arg_list = ", ".join($arg_array)
         #if $is_constructor
         ${namespaced_class_name}* cobj = new (std::nothrow) ${namespaced_class_name}($arg_list);
-#if not $generator.script_control_cpp
-        cocos2d::Ref *_ccobj = dynamic_cast<cocos2d::Ref *>(cobj);
-        if (_ccobj) {
-            _ccobj->autorelease();
-        }
-#end if
-        TypeTest<${namespaced_class_name}> t;
-        js_type_class_t *typeClass = nullptr;
-        std::string typeName = t.s_name();
-        auto typeMapIter = _js_global_type_map.find(typeName);
-        CCASSERT(typeMapIter != _js_global_type_map.end(), "Can't find the class type!");
-        typeClass = typeMapIter->second;
-        CCASSERT(typeClass, "The value is null.");
-        JSObject *obj = JS_NewObject(cx, typeClass->jsclass, typeClass->proto, typeClass->parentProto);
-        JS_SET_RVAL(cx, vp, OBJECT_TO_JSVAL(obj));
-        // link the native object with the javascript object
-        js_proxy_t* p = jsb_new_proxy(cobj, obj);
-#if not $generator.script_control_cpp
-        JS_AddNamedObjectRoot(cx, &p->obj, "${namespaced_class_name}");
-#end if
+
+        js_type_class_t *typeClass = js_get_type_from_native<${namespaced_class_name}>(cobj);
+        JS::RootedObject jsobj(cx, jsb_ref_create_jsobject(cx, cobj, typeClass, "${namespaced_class_name}"));
+        args.rval().set(OBJECT_TO_JSVAL(jsobj));
         #else
             #if $ret_type.name != "void"
                 #if $ret_type.is_enum
@@ -75,10 +65,10 @@ bool ${signature_name}(JSContext *cx, uint32_t argc, jsval *vp)
                                     "out_value": "jsret",
                                     "ntype": str($ret_type),
                                     "level": 2})};
-        JS_SET_RVAL(cx, vp, jsret);
+        args.rval().set(jsret);
             #else
         cobj->${func_name}($arg_list);
-        JS_SET_RVAL(cx, vp, JSVAL_VOID);
+        args.rval().setUndefined();
             #end if
         #end if
         return true;

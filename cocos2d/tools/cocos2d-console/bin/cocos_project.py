@@ -2,6 +2,7 @@ import os
 import re
 import json
 import cocos
+from MultiLanguage import MultiLanguage
 
 class Project(object):
     CPP = 'cpp'
@@ -13,6 +14,7 @@ class Project(object):
     KEY_PROJ_TYPE = 'project_type'
     KEY_HAS_NATIVE = 'has_native'
     KEY_CUSTOM_STEP_SCRIPT = "custom_step_script"
+    KEY_ENGINE_VERSION = "engine_version"
 
     CUSTOM_STEP_PRE_BUILD        = "pre-build"
     CUSTOM_STEP_POST_BUILD       = "post-build"
@@ -39,7 +41,9 @@ class Project(object):
         proj_path = self._find_project_dir(src_dir)
         # config file is not found
         if proj_path == None:
-            raise cocos.CCPluginError("Can't find config file %s in path %s" % (Project.CONFIG, src_dir))
+            raise cocos.CCPluginError(MultiLanguage.get_string('PROJECT_CFG_NOT_FOUND_FMT',
+                                      os.path.join(src_dir, Project.CONFIG)),
+                                      cocos.CCPluginError.ERROR_PATH_NOT_FOUND)
 
         project_json = os.path.join(proj_path, Project.CONFIG)
         try:
@@ -49,20 +53,27 @@ class Project(object):
         except Exception:
             if f is not None:
                 f.close()
-            raise cocos.CCPluginError("Configuration file %s is broken!" % project_json)
+            raise cocos.CCPluginError(MultiLanguage.get_string('PROJECT_CFG_BROKEN_FMT',
+                                      project_json),
+                                      cocos.CCPluginError.ERROR_PARSE_FILE)
 
         if project_info is None:
-            raise cocos.CCPluginError("Parse configuration in file \"%s\" failed." % Project.CONFIG)
+            raise cocos.CCPluginError(MultiLanguage.get_string('PROJECT_CFG_PARSE_FAILED_FMT',
+                                      Project.CONFIG), cocos.CCPluginError.ERROR_PARSE_FILE)
 
         if not project_info.has_key(Project.KEY_PROJ_TYPE):
-            raise cocos.CCPluginError("Can't get value of \"%s\" in file \"%s\"." % (Project.KEY_PROJ_TYPE, Project.CONFIG))
+            raise cocos.CCPluginError(MultiLanguage.get_string('PROJECT_CFG_GET_VALUE_FAILED_FMT',
+                                      (Project.KEY_PROJ_TYPE, Project.CONFIG)),
+                                      cocos.CCPluginError.ERROR_WRONG_CONFIG)
 
         lang = project_info[Project.KEY_PROJ_TYPE]
         lang = lang.lower()
 
-        # The config is invalide
+        # The config is invalid
         if not (lang in Project.language_list()):
-            raise cocos.CCPluginError("The value of \"%s\" must be one of (%s)" % (Project.KEY_PROJ_TYPE, ', '.join(Project.list_for_display())))
+            raise cocos.CCPluginError(MultiLanguage.get_string('PROJECT_CFG_INVALID_LANG_FMT',
+                                      (Project.KEY_PROJ_TYPE, ', '.join(Project.list_for_display()))),
+                                      cocos.CCPluginError.ERROR_WRONG_CONFIG)
 
         # record the dir & language of the project
         self._project_dir = proj_path
@@ -85,9 +96,10 @@ class Project(object):
                 script_dir, script_name = os.path.split(script_path)
                 sys.path.append(script_dir)
                 self._custom_step = __import__(os.path.splitext(script_name)[0])
-                cocos.Logging.info("Find custom step script: %s" % script_path)
+                cocos.Logging.info(MultiLanguage.get_string('PROJECT_INFO_FOUND_CUSTOM_STEP_FMT', script_path))
             else:
-                cocos.Logging.warning("Can't find custom step script %s" % script_path)
+                cocos.Logging.warning(MultiLanguage.get_string('PROJECT_WARNING_CUSTOM_SCRIPT_NOT_FOUND_FMT',
+                                      script_path))
                 self._custom_step = None
 
         return project_info
@@ -97,7 +109,7 @@ class Project(object):
             if self._custom_step is not None:
                 self._custom_step.handle_event(event, tp, args)
         except Exception as e:
-            cocos.Logging.warning("Custom step invoke failed: %s" % e)
+            cocos.Logging.warning(MultiLanguage.get_string('PROJECT_WARNING_CUSTOM_STEP_FAILED_FMT', e))
             raise e
 
     def _find_project_dir(self, start_path):
@@ -208,11 +220,11 @@ class Platforms(object):
     def list():
         return Platforms.CFG_CLASS_MAP.keys()
 
-    def __init__(self, project, current):
+    def __init__(self, project, current, proj_dir = None):
         self._project = project
 
         proj_info = self._project.info
-        self._gen_available_platforms(proj_info)
+        self._gen_available_platforms(proj_info, proj_dir)
 
         self._current = None
         if current is not None:
@@ -220,7 +232,9 @@ class Platforms(object):
             if current_lower in self._available_platforms.keys():
                 self._current = current_lower
             else:
-                raise cocos.CCPluginError("Current available platforms : %s. '%s' is not available." % (self._available_platforms.keys(), current))
+                raise cocos.CCPluginError(MultiLanguage.get_string('PROJECT_INVALID_PLATFORM_FMT',
+                                          (self._available_platforms.keys(), current)),
+                                          cocos.CCPluginError.ERROR_WRONG_ARGS)
 
     def _filter_platforms(self, platforms):
         ret = []
@@ -243,7 +257,7 @@ class Platforms(object):
 
         return ret
 
-    def _gen_available_platforms(self, proj_info):
+    def _gen_available_platforms(self, proj_info, proj_dir):
         # generate the platform list for different projects
         if self._project._is_lua_project():
             if self._project._is_native_support():
@@ -255,7 +269,7 @@ class Platforms(object):
                     platform_list = []
         elif self._project._is_js_project():
             if self._project._is_native_support():
-                platform_list = [ Platforms.ANDROID, Platforms.WIN32, Platforms.IOS, Platforms.MAC, Platforms.WEB, Platforms.LINUX]
+                platform_list = [ Platforms.ANDROID, Platforms.WIN32, Platforms.IOS, Platforms.MAC, Platforms.WEB, Platforms.LINUX, Platforms.WP8, Platforms.WP8_1, Platforms.METRO ]
             else:
                 if self._project.has_android_libs():
                     platform_list = [ Platforms.ANDROID, Platforms.WEB ]
@@ -281,12 +295,16 @@ class Platforms(object):
             else:
                 cfg_obj = cfg_class(root_path, self._project._is_script_project())
 
+            if proj_dir is not None:
+                cfg_obj.proj_path = os.path.join(root_path, proj_dir)
+                
             if cfg_obj._is_available():
                 self._available_platforms[p] = cfg_obj
 
         # don't have available platforms
         if len(self._available_platforms) == 0:
-            raise cocos.CCPluginError("There isn't any available platforms")
+            raise cocos.CCPluginError(MultiLanguage.get_string('PROJECT_NO_AVAILABLE_PLATFORMS'),
+                                      cocos.CCPluginError.ERROR_WRONG_CONFIG)
 
     def get_current_platform(self):
         return self._current
@@ -345,9 +363,9 @@ class Platforms(object):
             self._current = self._available_platforms.keys()[0]
             return
 
-        raise cocos.CCPluginError("The target platform is not specified.\n" +
-            "You can specify a target platform with \"-p\" or \"--platform\".\n" +
-            "Available platforms : %s" % str(self._available_platforms.keys()))
+        raise cocos.CCPluginError(MultiLanguage.get_string('PROJECT_SPECIFY_PLATFORM_FMT',
+                                  str(self._available_platforms.keys())),
+                                  cocos.CCPluginError.ERROR_WRONG_CONFIG)
 
 class PlatformConfig(object):
     KEY_PROJ_PATH = "project_path"
@@ -376,19 +394,31 @@ class PlatformConfig(object):
         return ret
 
 class AndroidConfig(PlatformConfig):
+    KEY_STUDIO_PATH = "studio_proj_path"
 
     def _use_default(self):
         if self._is_script:
             self.proj_path = os.path.join(self._proj_root_path, "frameworks", "runtime-src", "proj.android")
+            self.studio_path = os.path.join(self._proj_root_path, "frameworks", "runtime-src", "proj.android-studio")
         else:
             self.proj_path = os.path.join(self._proj_root_path, "proj.android")
+            self.studio_path = os.path.join(self._proj_root_path, "proj.android-studio")
 
     def _parse_info(self, cfg_info):
         super(AndroidConfig, self)._parse_info(cfg_info)
 
-    def _is_available(self):
-        ret = super(AndroidConfig, self)._is_available()
+        if cfg_info.has_key(AndroidConfig.KEY_STUDIO_PATH):
+            self.studio_path = os.path.join(self._proj_root_path, cfg_info[AndroidConfig.KEY_STUDIO_PATH])
+        else:
+            self.studio_path = None
 
+    def _is_available(self):
+        proj_android_existed = super(AndroidConfig, self)._is_available()
+        proj_studio_existed = False
+        if (self.studio_path is not None) and os.path.isdir(self.studio_path):
+            proj_studio_existed = True
+
+        ret = (proj_android_existed or proj_studio_existed)
         return ret
 
 class iOSConfig(PlatformConfig):
@@ -453,6 +483,7 @@ class Win32Config(PlatformConfig):
     KEY_SLN_FILE = "sln_file"
     KEY_PROJECT_NAME = "project_name"
     KEY_BUILD_CFG_PATH = "build_cfg_path"
+    KEY_EXE_OUT_DIR = "exe_out_dir"
 
     def _use_default(self):
         if self._is_script:
@@ -463,6 +494,7 @@ class Win32Config(PlatformConfig):
         self.sln_file = None
         self.project_name =None
         self.build_cfg_path = None
+        self.exe_out_dir = None
 
     def _parse_info(self, cfg_info):
         super(Win32Config, self)._parse_info(cfg_info)
@@ -480,6 +512,11 @@ class Win32Config(PlatformConfig):
             self.build_cfg_path = cfg_info[Win32Config.KEY_BUILD_CFG_PATH]
         else:
             self.build_cfg_path = None
+
+        if cfg_info.has_key(Win32Config.KEY_EXE_OUT_DIR):
+            self.exe_out_dir = cfg_info[Win32Config.KEY_EXE_OUT_DIR]
+        else:
+            self.exe_out_dir = None
 
     def _is_available(self):
         ret = super(Win32Config, self)._is_available()
@@ -533,10 +570,12 @@ class LinuxConfig(PlatformConfig):
 class WebConfig(PlatformConfig):
     KEY_SUB_URL = "sub_url"
     KEY_RUN_ROOT_DIR = "run_root_dir"
+    KEY_COPY_RESOURCES = "copy_resources"
 
     def _use_default(self):
         self.proj_path = self._proj_root_path
         self.run_root_dir = self._proj_root_path
+        self.copy_res = None
         self.sub_url = None
 
     def _parse_info(self, cfg_info):
@@ -551,6 +590,11 @@ class WebConfig(PlatformConfig):
         else:
             self.run_root_dir = None
 
+        if cfg_info.has_key(WebConfig.KEY_COPY_RESOURCES):
+            self.copy_res = cfg_info[WebConfig.KEY_COPY_RESOURCES]
+        else:
+            self.copy_res = None
+
     def _is_available(self):
         ret = super(WebConfig, self)._is_available()
 
@@ -563,6 +607,7 @@ class WebConfig(PlatformConfig):
 class Wp8Config(PlatformConfig):
     KEY_BUILD_FOLDER_PATH = "build_folder_path"
     KEY_MANIFEST_PATH = "manifest_path"
+    KEY_WP8_PROJ_PATH = 'wp8_proj_path'
 
     def _use_default(self):
         if self._is_script:
@@ -570,6 +615,7 @@ class Wp8Config(PlatformConfig):
         else:
             self.proj_path = os.path.join(self._proj_root_path, "proj.wp8-xaml")
 
+        self.wp8_proj_path = self.proj_path
         self.sln_file = None
         self.project_name =None
         self.build_folder_path = "App/Bin/x86"
@@ -581,6 +627,11 @@ class Wp8Config(PlatformConfig):
             self.sln_file = cfg_info[Win32Config.KEY_SLN_FILE]
         else:
             self.sln_file = None
+
+        if cfg_info.has_key(Wp8Config.KEY_WP8_PROJ_PATH):
+            self.wp8_proj_path = os.path.join(self._proj_root_path, cfg_info[Wp8Config.KEY_WP8_PROJ_PATH])
+        else:
+            self.wp8_proj_path = self.proj_path
 
         if cfg_info.has_key(Win32Config.KEY_PROJECT_NAME):
             self.project_name = cfg_info[Win32Config.KEY_PROJECT_NAME]

@@ -89,7 +89,7 @@ bool isCJKUnicode(char16_t ch)
         || (ch >= 0xAC00 && ch <= 0xD7AF)   // Hangul Syllables
         || (ch >= 0xF900 && ch <= 0xFAFF)   // CJK Compatibility Ideographs
         || (ch >= 0xFE30 && ch <= 0xFE4F)   // CJK Compatibility Forms
-        || (ch >= 0x31C0 && ch <= 0x4DFF);  // Other exiensions
+        || (ch >= 0x31C0 && ch <= 0x4DFF);  // Other extensions
 }
 
 void trimUTF16Vector(std::vector<char16_t>& str)
@@ -154,6 +154,47 @@ bool UTF16ToUTF8(const std::u16string& utf16, std::string& outUtf8)
 
     return llvm::convertUTF16ToUTF8String(utf16, outUtf8);
 }
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) 
+std::string getStringUTFCharsJNI(JNIEnv* env, jstring srcjStr, bool* ret)
+{
+    std::string utf8Str;
+    const unsigned short * unicodeChar = ( const unsigned short *)env->GetStringChars(srcjStr, nullptr);
+    size_t unicodeCharLength = env->GetStringLength(srcjStr);
+    const std::u16string unicodeStr((const char16_t *)unicodeChar, unicodeCharLength);
+    bool flag = UTF16ToUTF8(unicodeStr, utf8Str);
+
+    if (ret)
+    {
+        *ret = flag;
+    }
+
+    if (!flag)
+    {
+        utf8Str = "";
+    }
+    env->ReleaseStringChars(srcjStr, unicodeChar);
+    return utf8Str;
+}
+
+jstring newStringUTFJNI(JNIEnv* env, std::string utf8Str, bool* ret)
+{
+    std::u16string utf16Str;
+    bool flag = cocos2d::StringUtils::UTF8ToUTF16(utf8Str, utf16Str);
+
+    if (ret)
+    {
+        *ret = flag;
+    }
+
+    if(!flag)
+    {
+        utf16Str.clear();
+    }
+    jstring stringText = env->NewString((const jchar*)utf16Str.data(), utf16Str.length());
+    return stringText;
+}
+#endif
 
 std::vector<char16_t> getChar16VectorFromUTF16String(const std::u16string& utf16)
 {

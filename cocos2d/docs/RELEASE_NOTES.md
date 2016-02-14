@@ -1,48 +1,36 @@
-# cocos2d-x v3.4 Release Notes #
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Cocos2d-x 3.10 Release Notes](#cocos2d-x-
+- -release-notes)
 - [Misc Information](#misc-information)
 - [Requirements](#requirements)
   - [Runtime Requirements](#runtime-requirements)
   - [Compiler Requirements](#compiler-requirements)
   - [How to run tests](#how-to-run-tests)
+    - [Cocos Console](#cocos-console)
     - [Mac OSX & iOS](#mac-osx-&-ios)
     - [Android](#android)
     - [Windows](#windows)
     - [Linux](#linux)
   - [How to start a new game](#how-to-start-a-new-game)
-- [v3.4](#v34)
-  - [Bugs fixed in v3.4](#bugs-fixed-in-v34)
-- [v3.4rc1](#v34rc1)
-  - [Highlights of v3.4rc1](#highlights-of-v34rc1)
-  - [Features in detail](#features-in-detail)
-    - [3D rendering support for 2D objects](#3d-rendering-support-for-2d-objects)
-    - [Culling is now an options by CC_USE_CULLING macro](#culling-is-now-an-options-by-cc_use_culling-macro)
-  - [Bugs fixed in v3.4rc1](#bugs-fixed-in-v34rc1)
-- [v3.4rc0](#v34rc0)
-  - [Bugs fixed in v3.4rc0](#bugs-fixed-in-v34rc0)
-- [v3.4beta0](#v34beta0)
-  - [Highlights of v3.4beta0](#highlights-of-v34beta0)
-  - [Features in detail](#features-in-detail-1)
-    - [Create Sprite3D asynchronously](#create-sprite3d-asynchronously)
-    - [Frustum culling](#frustum-culling)
-    - [Use less resources to create  ui::CheckBox and ui::Slider](#use-less-resources-to-create--uicheckbox-and-uislider)
-    - [Custom Allocators](#custom-allocators)
-      - [Default Allocator](#default-allocator)
-      - [General Allocator](#general-allocator)
-      - [Fixed Block Allocator](#fixed-block-allocator)
-      - [Pool Allocator](#pool-allocator)
-    - [Implementing Custom Allocators for Objects](#implementing-custom-allocators-for-objects)
-    - [Console (allocator command, tags, counts etc)](#console-allocator-command-tags-counts-etc)
+- [v3.10](#v310)
+  - [Highlights features, improvements and API updates of v3.10](#highlights-features-improvements-and-api-updates-of-v310)
+  - [The main features in detail of Cocos2d-x v3.10:](#the-main-features-in-detail-of-cocos2d-x-v310)
+    - [UI System](#ui-system)
+    - [AudioEngine](#audioengine)
+    - [Others](#others)
+  - [Other changes](#other-changes)
+  - [NEW APIS](#new-apis)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+# Cocos2d-x 3.10 Release Notes #
+
 # Misc Information
 
-* [Full Changelog](https://github.com/cocos2d/cocos2d-x/blob/cocos2d-x-3.4/CHANGELOG)
-* v3.0 Release Notes can be found here: [v3.0 Release Notes](https://github.com/cocos2d/cocos2d-x/blob/cocos2d-x-3.0/docs/RELEASE_NOTES.md)
+* [Full Changelog](https://github.com/cocos2d/cocos2d-x/blob/v3/CHANGELOG)
 
 # Requirements
 
@@ -52,23 +40,50 @@
 * iOS 5.0 or newer
 * OS X 10.7 or newer
 * Windows 7 or newer
-* Windows Phone 8 or newer
+* Windows Phone 8.1
+* Windows 10 UWP
 * Linux Ubuntu 14.04 or newer
+* Mordern browsers and IE 9+ (On mobile platforms, only iOS and Android 5 activated WebGL support)
 
 ## Compiler Requirements
 
 * Xcode 5.1 or newer for iOS or Mac
 * gcc 4.9 or newer for Linux
 * ndk-r10c for Android
-* Visual Studio 2012  or newer for Windows (win32)
-* Visual Studio 2012  or newer for Windows Phone 8
+* Visual Studio 2013 or newer for Windows (win32)
+* Visual Studio 2013 update4 or newer for Windows 8.1 universal Apps
+* Visual Studio 2015 RC or newer and Windows 10.0 (build 10074 or higher) for Windows 10.0 UWP Apps
 
 ## How to run tests
+
+### Cocos Console
+
+You can use [Cocos Console](www.cocos2d-x.org/wiki/Cocos2d-console) command line tool to run the test cases on almost all supported platforms.
+
+In console application:
+```
+// Enter cpp test folder
+cd tests/cpp-tests
+// Or enter js test folder
+cd tests/js-tests
+// Or enter lua test folder
+cd tests/lua-tests
+
+// Compile or run test case
+cocos compile -p ios|mac|android|win32|win8_1|metro|web -m debug|release
+cocos run -p ios|mac|android|win32|win8_1|metro|web -m debug|release
+```
+
+For example, if you want to run cpp test in release mode on Android, you can use the following command:
+
+```
+cocos run -p android -m release
+```
 
 ### Mac OSX & iOS
 
 * Enter `cocos2d-x/build` folder, open `cocos2d_test.xcodeproj`
-* Select `iOS` or `OS X` target in scheme toolbar
+* Select `cpp-tests`, `lua-tests`, `js-tests` for `iOS` or `OS X` target in scheme toolbar
 * Click `run` button
 
 ### Android
@@ -100,10 +115,11 @@ Then
 
 ### Windows
 
-* Enter `cocos2d-x/build`, and open `cocos2d-win32.vs2012.sln`
-* Select `cpp-empty-test` as running target
+* For win32 project, enter `cocos2d-x/build`, and open `cocos2d-win32.sln`
+* For win 8.1 project, enter `cocos2d-x/build`, and open `cocos2d-win8.1-universal.sln`
+* For win 10 project, enter `cocos2d-x/build`, and open `cocos2d-win10.sln`
+* Select running target
 * Click run button
-
 
 ### Linux
 
@@ -125,173 +141,262 @@ Run
 
 ## How to start a new game
 
-Please refer to this document: [ReadMe](../README.md)
-# v3.4
-##Bugs fixed in v3.4
-* C++: crash on armeabi-v7a arch device which do not support NEON instructions
-* GLProgram: crash on low end device with no more than 8 attributes support
-* New audio: game freeze if audio played two many times on android
-* Node: anchor point has no effects on rotation
-* More bugs fixed
+Use Cocos Console to create a new game:
 
-# v3.4rc1
-
-##Highlights of v3.4rc1
-* C++: added CC_USE_CULLING macro to control if enable auto culling or not
-* FileUtils::fullPathForFilename will return empty string when file can not be found
-* VertexBuffer&IndexBuffer: allow setting usage(GL_STATIC_DRAW or GL_DYNAMIC_DRAW) in create method
-* Renderer: 3D rendering support for 2d objects
-
-##Features in detail
-###3D rendering support for 2D objects
-This feature enables Sprite, Label, Particle to be rendered in 3D space by adding them as children of Sprite3D or Billboard. You can achieve effects like blob shadow, 3D particle, Visual damage number popups
-```c++
-auto billboard = Billboard::create();
-auto label = Label::create();
-label->setString("+100");
-billboard->addChild(label);
 ```
-###Culling is now an options by CC_USE_CULLING macro
-Culling is an important features in cocos2d-x v3.x, but some developer may not want to use culling when all of the scene exist in one screen. A macro `CC_USE_CULLING` in `CCConfig.h` can be used to enable or disable culling.
-
-##Bugs fixed in v3.4rc1
-* DrawNode: fix random crash because of init opengl buffer wrongly
-* DrawNode: drawPoints() can not set ponit size
-* EventDispatcher: crash if adding/removing event listeners and dispatching event in event callback function
-* GLProgramState: may cause GL_INVALID_VALUE error at start up on Android
-* LUA: 0x80000000 can not be converted by lua_tonumber correctly on some devices
-* PhysicsBody: can't get correct position in the same frame of adding PhysicsBody to PhysicsWorld
-* UI: fix crash when navigation controller is null
-
-# v3.4rc0
-##Bugs fixed in v3.4rc0
-* FileUtils::GetData() can not get data on windows
-* FileUtils::GetData() memory leaks when file size is 0 on windows
-* Crash if GLProgram log compile or link error info on windows
-* Assert error exist because of outdated uniforms and attributes in GLProgramState when app come to foreground on android
-* GL_INVALID_OPERATION error because VAO and VBO is not reset when app come to foreground on android
-* Update Luajit to v2.0.3, it fix some crash problems on windows
-* Update libcurl to new version v7.39.0
-* More bugs fixed
-
-# v3.4beta0
-
-## Highlights of v3.4beta0
-## Features in detail
-
-### Create Sprite3D asynchronously
-
-It allows to load Sprite3D in another thread so that you can process more logic in the main thread. And it notifies you using a custom callback after creating is finished.
-
-`modelPath` is the file to be loaded, `AsyncLoadSprite3DTest::asyncLoad_Callback` is the user's callback function, `userParam` is the parameter that the callback function is wanted.
-
-```c++
-Sprite3D::createAsync(modelPath, CC_CALLBACK_2(AsyncLoadSprite3DTest::asyncLoad_Callback, this), (void*)userParam);
+cocos new -l cpp|js|lua MyNewGame
 ```
 
-The callback function is called after loading Sprite3D, the callback function can be something like this,
+# v3.10
 
-```c++
-void AsyncLoadSprite3DTest::asyncLoad_Callback(Sprite3D* sprite, void* param)
-{
-    //sprite is the loaded sprite
-    sprite->setPosition(point);
-    addChild(sprite);
-}
-```
+## Highlights features, improvements and API updates of v3.10
 
-### Frustum culling
+We are happy to announce the release of Cocos2d-x v3.10. Following are the highlighted features, improvements and API updates in this version. 
 
-Frustum culling means only the stuff that is inside the frustum is sent to the graphics hardware. To find out more information, please visit [Wikipedia](http://en.wikipedia.org/wiki/Frustum). It can potentially improve the performance of the application since only the vertices that are part of the visible part of the 3D world are kept on the graphics card memory.
+1. Provides a unified setup for both Cocos2d-x and Cocos. This allows you to stay up to date with the latest Cocos2d-x releases. This includes using precompiled binaries and source code, in a single place. As always the source code is available from [GitHub](https://github.com/cocos2d/cocos2d-x) but, there is no longer a `.zip` file available containing the source code. 
+2. New __Cocos Launcher__ tool! __Cocos Launcher__ allows:
+  * One step to create a new project with the engine, by using precompiled libraries or source code.
+  * Easy integration with SDKBOX for 3rd party services: Facebook, IAP and many more.
+  * Developers to provide feedback and get support, directly within __Cocos Launcher__, making it simple to contact the engine team for help.　
+3. UI System:
+  * Reimplemented `Scale9Sprite` to improve performance and reduce memory consumption.
+  * Changed `PageView` to derive from `ListView`. `PageView` can add any widget as a child.
+  * Added three new *overflow types* to `Label`: **CLAMP**，**SHRINK**, **RESIZE_HEIGHT**.
+  * Fixed a bug in `ClippingNode` that corrects its behavior when being set as a child.
+4. Improved **JavaScript Bindings**: follows [SpiderMonkey GC best practices](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/GC_Rooting_Guide) making it more robust.
 
-Frustum culling is a property of camera, it is enabled by default. And you can use the following to enable or disable the frustum culling,
+## The main features in detail of Cocos2d-x v3.10:
 
-```c++
-//the first parameter is enable frustum culling or not, the second means that frustum culling using near and far plan or not.
-camera->enableFrustumCulling(true, true);
-```
+### UI System
 
-Note that when you can make sure that all the stuff is inside the frustum you can turn off the frustum culling.
+1. Reimplemented `Scale9Sprite` and improve the scale9sprite performance and reduce memory consumption.
+    
+    Reimplemented ui::Scale9Sprite, now the Slice sprite uses 16 vertices and 54 indices instead of the old 9 sprites way, The memory consumption is much lower than the previous implementation, and it is also more efficient.
 
-For more infomation please reffer to the cpptests/CameraTest
+    In SIMPLE mode, the 4 borders are all 0 and the whole sprite will scale horizontally and vertically. In this mode only 1 quad is used for rendering, for example:
 
-### Use less resources to create  ui::CheckBox and ui::Slider
+        auto blocks = ui::Scale9Sprite::createWithSpriteFrameName("blocks9c.png");
+        //When setting to SIMPLE, only 4 vertexes is used to rendering.
+        blocks->setRenderingType(Scale9Sprite::RenderingType::SIMPLE);
 
-Now we could use less resources to create  ui::CheckBox and ui::Slider.
+    In SLICE mode, it will use 18 triangles to rendering the slice 9 sprite. If the 4 borders are 0, there still be 18 triangles computed. So choose your RenderingType wisely, for example:
 
-To create an ui::CheckBox, we could simply pass the normal state box and active texture.
+		auto sprite = ui::Scale9Sprite::createWithSpriteFrameName("blocks9c.png");
+        //When setting to SLICE, 16 vertexes will be used to rendering.
+        sprite->setRenderingType(Scale9Sprite::RenderingType::SLICE);
+    
+2. Changed `PageView` to derived from ListView, PageView can add any type of widget as child.
 
-```cpp
-CheckBox* checkBox2 = CheckBox::create("cocosui/check_box_normal.png",
-                                              "cocosui/check_box_active.png");
-```
+    PageView was derived from Layout and it implemented the features of scrolling and item arrangement from scratch. But the features are already there in ListView. So remove those duplicated implementations from PageView and make it inherit from ListView.
 
-To create an ui::Slider, we could only pass the slider bar texture and normal ball texture.
+    By consequence, PageView becomes simpler and easier to maintain because it considers only paging implementation. for example:
 
-```cpp
-Slider* sliderScale9 = Slider::create("cocosui/slidbar.png", "cocosui/sliderballnormal.png");
-```
+        // Create the page view
+        Size size(240, 130);
+        PageView* pageView = PageView::create();
+        pageView->setDirection(PageView::Direction::HORIZONTAL);
+        pageView->setContentSize(size);
+        Size backgroundSize = background->getContentSize();
+        //"removeAllPages" is changed to "removeAllItems"
+        pageView->removeAllItems();
+        pageView->setIndicatorEnabled(true);
 
-If the selected state texture is missing, when user press the widget, the normal texture will scale.
+        int pageCount = 4;
+        for (int i = 0; i < pageCount; ++i)
+        {
+            Layout* layout = Layout::create();
+            layout->setContentSize(size);
+            
+            ImageView* imageView = ImageView::create("cocosui/scrollviewbg.png");
+            imageView->setScale9Enabled(true);
+            imageView->setContentSize(size);
+            imageView->setPosition(Vec2(layout->getContentSize().width / 2.0f, layout->getContentSize().height / 2.0f));
+            layout->addChild(imageView);
+            
+            Text* label = Text::create(StringUtils::format("page %d",(i+1)), "fonts/Marker Felt.ttf", 30);
+            label->setColor(Color3B(192, 192, 192));
+            label->setPosition(Vec2(layout->getContentSize().width / 2.0f, layout->getContentSize().height / 2.0f));
+            layout->addChild(label);
+            //"insertPage" is changed to "insertCustomItem"
+            pageView->insertCustomItem(layout, i);
+        }
+        //"removePageAtIndex" is changed to "removeItem"
+        pageView->removeItem(0);
+        //"scrollToPage" is changed to "scrollToItem"
+        pageView->scrollToItem(pageCount - 2);
 
-If the disable state texture is missing, when the widget is in disable state, we use gray shader to turn the normal state texture to gray.
+     More detail usage please refer to: tests/cpp-tests/Classes/UITest/CocoStudioGUITest/UIPageViewTest/UIPageViewTest.cpp.
+    
+   
+3. Added three overflow type to new label: CLAMP, SHRINK, RESIZE_HEIGHT.
+  
+     Overflow type is used to control label overflow result, In SHRINK mode, the font size will change dynamically to adapt the content size. In CLAMP mode, when label content goes out of the bounding box, it will be clipped, In RESIZE_HEIGHT mode, you can only change the width of label and the height is changed automatically. For example:
+       
+        //Change the label's Overflow type
+        label->setOverflow(Label::Overflow::RESIZE_HEIGHT);
 
-The original ui::Button also support the gray shader enhancement.
+     More detail usage please refer to: tests/cpp-tests/Classes/LabelTest/LabelTestNew.cpp.
 
-### Custom Allocators
+     Limitations:
 
-in ccConfig.h you can control the custom allocator system with the following defines.
 
-```c++
-#define CC_ENABLE_ALLOCATOR 1
-#define CC_ENABLE_ALLOCATOR_DIAGNOSTICS CC_ENABLE_ALLOCATOR
-#define CC_ENABLE_ALLOCATOR_GLOBAL_NEW_DELETE 0
+     currently only TTF and BMFont support all the valid Overflow type. Char Map font supports all the Overflow type except for SHRINK, because we can't measure its font size. System font only support Overflow::Normal and Overflow::RESIZE_HEIGHT.
 
-#define CC_ALLOCATOR_GLOBAL cocos2d::allocator::AllocatorStrategyDefault
-#define CC_ALLOCATOR_GLOBAL_NEW_DELETE cocos2d::allocator::AllocatorStrategyGlobalSmallBlock
-```
+## Other changes
+[NEW]           RichText supported new line element.
 
-__CC_ENABLE_ALLOCATOR__ turns everything on or off. When set to 0, everything should still build, but all custom allocator code is disabled or removed. This is handled mainly through macros, but if you implement new allocator strategies, you should be aware of, and respect this preprocessor directive.
+[NEW]           UIText::clone supports clone the text effect.
 
-__CC_ENABLE_ALLOCATOR_DIAGNOSTICS__ defaults to the same value as __CC_ENABLE_ALLOCATOR__, but setting this to 0 will disable allocator diagnostics via the control panel. Diagnostics have significant overhead, so you definitely want to disable them for production builds.
+[NEW]           UI: Added methods to query label effect state.
+    
+[REFINE]        IOS: Added virtual keyword for some render related function.
 
-__CC_ENABLE_ALLOCATOR_GLOBAL_NEW_DELETE__ enables overriding of the global __new__ and __delete__ operators. The allocator strategy used can be selected by setting the __CC_ALLOCATOR_GLOBAL_NEW_DELETE__ define.
+[REFINE]        UI: Fixed boring deprecated warning in HttpRequest.
 
-__CC_ALLOCATOR_GLOBAL__ defines the allocator strategy to use for global allocations. All memory needed by other allocators will use this global allocator, as well as the macros __CC_MALLOC__, __CC_FREE__ etc.
+[REFINE]        Network: Fixed Downloader bug on iOS & Android platform.
 
-Third party libraries that use malloc/free will continue to use the original malloc/free so their memory usage will not be tracked.
+[REFINE]        Studio: Fixed deprecation warning in SkeletonRenderer.
 
-Calls to new/delete from shared libraries should work ok provided the library is loaded after the allocator has initialized, which should be the case, unless you load a shared library from a static variable initialization.
+[REFINE]        JS: Added js test case for fix, improve template.
 
-#### Default Allocator
+[REFINE]        Network: Permit http access to cocos2d-x.org in test projects on iOS.
 
-The default allocator wraps malloc and free and provides an allocator interface that anyone can use to allocate blocks of memory. Tracking is not currently enabled here, but can be added in the future.
+[REFINE]        Network: Crash when removing a remotely downloaded image from texture 
+cache in js-binding.
 
-#### General Allocator
+[REFINE]        Win10: WinRT project update version to v3.10.
 
-The general allocator provides a series of fixed sized allocators from the smallest allocation size of 4 bytes up to some threshold which currently defaults to 8 Kbytes. Anything larger than this threshold will fallback to the default allocator. See fixed allocators for more details.
+[REFINE]        Console: Added quiet option for Cocos Toolkit.
 
-#### Fixed Block Allocator
+[REFINE]        JS: New GC model for js-binding.
 
-Fixed block allocators provide a memory pool of blocks of fixed size. They are extremely fast since no searching for best fit is required, they can simply pop the first block off a list and return that. Similarly, freeing memory is also extremely fast since they just push the block on the front of the list. Memory is not actually freed, it is kept allocated and track on a free list. It will be possible to reduce the allocated memory by freeing up unused pages of memory from the list.
+[REFINE]        Doc: Fixed typos in documentation and comments.
 
-#### Pool Allocator
+[REFINE]        UI: Updated controlButton size calculate with new Scale9Sprite logic.
 
-Implements a custom fixed block allocator for a specific type. You can override local new/delete for types that are classes or structs using __CC_USE_ALLOCATOR_POOL(pool)__. Additionally, these allocators are configurable in terms of the initial size.
+[REFINE]        Win10: Added missing _USRJSSTATIC preprocessor define for ARM builds.
 
-### Implementing Custom Allocators for Objects
-Simply add a static instance of the pool allocator to your class, and use the __CC_USE_ALLOCATOR_POOL__ macro to implement operators __new__ and __delete__ for your class.
+[REFINE]        JS: Added ccvector_to / ccmap_to converted to new js-binding API.
 
-```c++
-    class SomeClass
-    {
-    public:
+[REFINE]        UI: Slider misprint fix.
 
-        cocos2d::allocator::AllocatorStrategyPool<SomeClass> _allocator;
-        CC_USE_ALLOCATOR_POOL(SomeClass, _allocator);
-    };
-```
+[FIX]           Core: Fixed premultiplyAlpha for mipmaps and compressed textures.
 
-### Console (allocator command, tags, counts etc)
+[FIX]           UI: Fixed Scale9sprite rendering error when content size smaller than the sum of leftInset and rightInset.
 
-You can connect to the running app using the console. I.e. __telnet localhost 5678__ and issue the __allocator__ command to dump out all allocator diagnostic information. One of the useful pieces of information is the highest count for pool allocators. You can plug this value back into the initial size for the allocator to preallocate this number of objects when starting, improving startup speed significantly.
+[FIX]           Win32: Fixed EditBox crash when removing an EditBox in a scheduler.
+
+[FIX]           Android: Fixed cannot add view to mFrameLayout when extends Cocos2dxActivity.
+
+[FIX]           2D: Fixed actionNode set at wrong position bug.
+
+[FIX]           3D: Fixed the movement of PUParticle lags one frame.
+
+[FIX]           UI: Fixed the wront argument of setPlaceholderFontName in EditBox.
+
+[FIX]           UI: Fixed EditBox editBoxEditingDidEnd may use the original text after change the text of EditBox in user script.
+
+[FIX]           Audio: Fixed `FinishCallback` never be called in Windows.
+
+[FIX]           UI: Fixed Layout stencil clipping nested with Clipping Node rendering issue.
+
+[FIX]           UI: Keyboard doesn't hide when click the screen outside of EditBox on iOS platform.
+
+[FIX]           UI: Fixed a fatal bug in EditBox implement on Windows platform.
+
+[FIX]           UI: Fixed edit box setPlaceholderFontName and scale font size issue.
+
+[FIX]           Core: Fixed memory leak when initWithImage() failed.
+
+[FIX]           Network: CCDownloader on iOS is broken in v3.9 js-binding.
+
+[FIX]           JS: Bindings fixes for Menu, Sprite and Label.
+
+[FIX]           Studio: Removed weak reference in ActionNode.
+
+[FIX]           UI: shouldStartLoading method should return value to js in js-binding.
+
+[FIX]           UI: Fixed scrollview render error.
+
+[FIX]           JS: Fixed win32 js project crash issue.
+
+[FIX]           UI: Button touch doesn't work with scale9 enabled.
+
+[FIX]           JS: Fixed evalString doesn't return result issue.
+
+[FIX]           JS: Fixed ComponentJS proxy management issue in JSB.
+
+[FIX]           Android: Fixed include in cocos network module.
+
+[FIX]           Network: Fixed web socket crash.
+
+[FIX]           UI: Fixed TextField missing default password style text setting.
+
+[TEST]          S9SpriteTest: Scale9Sprite fade actions with cascade opacity.
+
+[TEST]          Web: Removed default focus block from UIFocusTestVertical.
+
+[TEST]          Lua: Fixed pageViewTest Horizontal scroll won't work in Lua-test.
+
+You can also take a look at the [full changelog](https://github.com/cocos2d/cocos2d-x/blob/v3/CHANGELOG).
+
+## NEW APIS
+
+1. RichText
+
+    Added RichElementNewLine class to create new RichText Element.
+
+    For more information: [https://github.com/cocos2d/cocos2d-x/pull/14033](https://github.com/cocos2d/cocos2d-x/pull/14033 "https://github.com/cocos2d/cocos2d-x/pull/14033")
+
+2. PageViewIndicator
+
+    Added PageViewIndicator class to create PageViewIndicator.
+
+    For more information: [https://github.com/cocos2d/cocos2d-x/blob/v3/cocos/ui/UIPageViewIndicator.h](https://github.com/cocos2d/cocos2d-x/blob/v3/cocos/ui/UIPageViewIndicator.h "https://github.com/cocos2d/cocos2d-x/blob/v3/cocos/ui/UIPageViewIndicator.h")
+
+3. PageView 
+
+    Changed PageView to derived from ListView.
+    For more information: [https://github.com/cocos2d/cocos2d-x/pull/14252](https://github.com/cocos2d/cocos2d-x/pull/14252 "https://github.com/cocos2d/cocos2d-x/pull/14252")
+
+4. ApplicationProtocol
+
+    Added the API getVersion.
+
+
+5. PolygonInfo
+
+    Added the API setTriangles.
+
+6. Scale9Sprite
+
+    Added setRenderingType, getRenderingType.
+
+9. FontFNT
+
+    Added setFontSize, getOriginalFontSize.
+
+10. Label
+
+    Added setBMFontSize, getBMFontSize, enableWrap, isWrapEnabled, setOverflow, getOverflow, initWithTTF, isShadowEnabled, getShadowOffset, getShadowBlurRadius, getShadowColor, getOutlineSize, getLabelEffectType, getEffectColor.
+
+11. AudioEngineImpl
+
+    Added AudioEngineImpl to implement FMOD.
+
+12. Lua Module
+
+    Added luaval_to_node, node_to_luaval.
+
+13. JS Module
+
+    Added js_cocos2dx_ComponentJS_create
+
+14. ui::Text
+
+    Added isShadowEnabled, getShadowOffset, getShadowBlurRadius, getShadowColor,  getOutlineSize, getLabelEffectType, getEffectColor.
+
+15. UITextTest_Clone 
+
+    Added UITextTest_Clone class.
+    

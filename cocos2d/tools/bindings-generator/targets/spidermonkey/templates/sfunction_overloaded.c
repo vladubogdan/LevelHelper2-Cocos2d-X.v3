@@ -1,7 +1,7 @@
 ## ===== static function implementation template - for overloaded functions
 bool ${signature_name}(JSContext *cx, uint32_t argc, jsval *vp)
 {
-    jsval *argv = JS_ARGV(cx, vp);
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     bool ok = true;
     #for func in $implementations
     
@@ -16,9 +16,15 @@ bool ${signature_name}(JSContext *cx, uint32_t argc, jsval *vp)
             #set count = 0
             #while $count < $arg_idx
                 #set $arg = $func.arguments[$count]
+                #if $arg.is_numeric
+            ${arg.to_string($generator)} arg${count} = 0;
+                #elif $arg.is_pointer
+            ${arg.to_string($generator)} arg${count} = nullptr;
+                #else
             ${arg.to_string($generator)} arg${count};
+                #end if
             ${arg.to_native({"generator": $generator,
-                             "in_value": "argv[" + str(count) + "]",
+                             "in_value": "args.get(" + str(count) + ")",
                              "out_value": "arg" + str(count),
                              "class_name": $class_name,
                              "level": 3,
@@ -42,7 +48,7 @@ bool ${signature_name}(JSContext *cx, uint32_t argc, jsval *vp)
                                          "out_value": "jsret",
                                          "ntype": str($func.ret_type),
                                          "level": 3})};
-            JS_SET_RVAL(cx, vp, jsret);
+            args.rval().set(jsret);
             #else
             ${namespaced_class_name}::${func.func_name}($arg_list);
             #end if

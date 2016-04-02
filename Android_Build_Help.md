@@ -1,6 +1,12 @@
 Please follow this steps in order to build for Android
 
+BUILD FOR SIMULATOR
+---------------------------------------------
+
+
 1. Open Terminal and type the following command in order to compile the project for android
+
+    ../../../tools/cocos2d-console/bin/cocos deploy -p android
 
     [your project path]/cocos2d/tools/cocos2d-console/bin/cocos compile -p android
     
@@ -41,3 +47,57 @@ Please follow this steps in order to build for Android
 Other Info
 
 - Modify Android.mk file located inside proj.android/jni to include new files or libraries 
+
+
+
+BUILD FOR DEVICE
+---------------------------------------------
+
+- You may need to add in Android.mk the following (modified for your needs)
+
+APP_ABI := armeabi armeabi-v7a
+APP_PLATFORM := android-10
+
+- Dont forget to set your variables if needed
+
+export NDK_ROOT=/Volumes/XXXX/android-ndk-r9d
+export ANT_ROOT=/Volumes/XXXX/apache-ant-1.9.4/
+export ANDROID_SDK_ROOT=/Volumes/XXXX/adt-bundle-mac-x86_64-20140321/sdk/
+
+
+- If you get when compiling an error in terminal regarint UTF8 you may need to type this in terminal 
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+source ~/.bash_profile
+
+
+- open Terminal and  "cd" to "proj.android" folder
+
+
+- Once the compilation is done your apk file will be located inside
+
+    [your project path]/proj.android/bin
+
+
+
+- Find your device in Terminal
+
+[..]/adt-bundle-mac-x86_64-20140321/sdk/platform-tools/adb devices
+
+- Copy apk to device in Terminal
+
+[..]/adt-bundle-mac-x86_64-20140321/sdk/platform-tools/adb install [..]proj.android/bin/AppName.apk
+
+
+- If device unauthorized
+
+[..]/adt-bundle-mac-x86_64-20140321/sdk/platform-tools/adb kill-server
+[..]/adt-bundle-mac-x86_64-20140321/sdk/platform-tools/adb start-server
+[..]/adt-bundle-mac-x86_64-20140321/sdk/platform-tools/adb devices
+--respond on device
+
+
+--SEE LOGS FROM DEVICE
+
+$adb logcat -d | grep 'com.gamedevhelper.levelhelper' > shorterlog.txt

@@ -48,6 +48,10 @@
         this._fullViewport = fullViewport;
     };
 
+    proto.needDraw = function () {
+        return this._needDraw && this._node.autoDraw;
+    };
+
     proto.rendering = function (ctx) {
         var gl = ctx || cc._renderContext;
         var node = this._node;
@@ -256,7 +260,7 @@
         this._oldFBO = gl.getParameter(gl.FRAMEBUFFER_BINDING);
         gl.bindFramebuffer(gl.FRAMEBUFFER, this._fBO);//Will direct drawing to the frame buffer created above
 
-        /*  Certain Qualcomm Andreno gpu's will retain data in memory after a frame buffer switch which corrupts the render to the texture.
+        /*  Certain Qualcomm Adreno gpu's will retain data in memory after a frame buffer switch which corrupts the render to the texture.
          *   The solution is to clear the frame buffer before rendering to the texture. However, calling glClear has the unintended result of clearing the current texture.
          *   Create a temporary texture to overcome this. At the end of CCRenderTexture::begin(), switch the attached texture to the second one, call glClear,
          *   and then switch back to the original texture. This solution is unnecessary for other devices as they don't have the same issue with switching frame buffers.

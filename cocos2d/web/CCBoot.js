@@ -567,14 +567,26 @@ cc.path = /** @lends cc.path# */{
 
 //+++++++++++++++++++++++++something about loader start+++++++++++++++++++++++++++
 /**
- * Loader for resource loading process. It's a singleton object.
+ * Resource loading management. Created by in CCBoot.js as a singleton
+ * cc.loader.
+ * @name cc.Loader
  * @class
+ * @memberof cc
+ * @see cc.loader
+ */
+
+/**
+ * Singleton instance of cc.Loader.
+ * @name cc.loader
+ * @member {cc.Loader}
+ * @memberof cc
  */
 cc.loader = (function () {
     var _jsCache = {}, //cache for js
         _register = {}, //register of loaders
         _langPathCache = {}, //cache for lang path
         _aliases = {}, //aliases for res url
+        _queue = {}, // Callback queue for resources already loading
         _urlRegExp = new RegExp(
             "^" +
                 // protocol identifier
@@ -607,10 +619,24 @@ cc.loader = (function () {
             "$", "i"
         );
 
-    return /** @lends cc.loader# */{
-        resPath: "",//root path of resource
-        audioPath: "",//root path of audio
-        cache: {},//cache for data loaded
+    return /** @lends cc.Loader# */{
+        /**
+         * Root path of resources.
+         * @type {String}
+         */
+        resPath: "",
+
+        /**
+         * Root path of audio resources
+         * @type {String}
+         */
+        audioPath: "",
+
+        /**
+         * Cache for data loaded.
+         * @type {Object}
+         */
+        cache: {},
 
         /**
          * Get XMLHttpRequest.
@@ -641,6 +667,10 @@ cc.loader = (function () {
                 results[2] = a2;
             } else throw new Error("arguments error to load js!");
             return results;
+        },
+
+        isLoading: function (url) {
+            return (_queue[url] !== undefined);
         },
 
         /**
@@ -855,7 +885,7 @@ cc.loader = (function () {
                 isCrossOrigin: true
             };
             if (callback !== undefined)
-                opt.isCrossOrigin = option.isCrossOrigin === null ? opt.isCrossOrigin : option.isCrossOrigin;
+                opt.isCrossOrigin = option.isCrossOrigin === undefined ? opt.isCrossOrigin : option.isCrossOrigin;
             else if (option !== undefined)
                 callback = option;
 
@@ -863,6 +893,12 @@ cc.loader = (function () {
             if (img) {
                 callback && callback(null, img);
                 return img;
+            }
+
+            var queue = _queue[url];
+            if (queue) {
+                queue.callbacks.push(callback);
+                return queue.img;
             }
 
             img = new Image();
@@ -873,22 +909,51 @@ cc.loader = (function () {
                 this.removeEventListener('load', loadCallback, false);
                 this.removeEventListener('error', errorCallback, false);
 
-                cc.loader.cache[url] = img;
-                if (callback)
-                    callback(null, img);
+                if (!_urlRegExp.test(url)) {
+                    cc.loader.cache[url] = img;
+                }
+
+                var queue = _queue[url];
+                if (queue) {
+                    callbacks = queue.callbacks;
+                    for (var i = 0; i < callbacks.length; ++i) {
+                        var cb = callbacks[i];
+                        if (cb) {
+                            cb(null, img);
+                        }
+                    }
+                    queue.img = null;
+                    delete _queue[url];
+                }
             };
 
             var self = this;
             var errorCallback = function () {
                 this.removeEventListener('error', errorCallback, false);
 
-                if(img.crossOrigin && img.crossOrigin.toLowerCase() === "anonymous"){
+                if (img.crossOrigin && img.crossOrigin.toLowerCase() === "anonymous") {
                     opt.isCrossOrigin = false;
                     self.release(url);
                     cc.loader.loadImg(url, opt, callback);
-                }else{
-                    typeof callback === "function" && callback("load image failed");
+                } else {
+                    var queue = _queue[url];
+                    if (queue) {
+                        callbacks = queue.callbacks;
+                        for (var i = 0; i < callbacks.length; ++i) {
+                            var cb = callbacks[i];
+                            if (cb) {
+                                cb("load image failed");
+                            }
+                        }
+                        queue.img = null;
+                        delete _queue[url];
+                    }
                 }
+            };
+
+            _queue[url] = {
+                img: img,
+                callbacks: callback ? [callback] : []
             };
 
             img.addEventListener("load", loadCallback);
@@ -1115,6 +1180,11 @@ cc.loader = (function () {
          */
         release: function (url) {
             var cache = this.cache;
+            var queue = _queue[url];
+            if (queue) {
+                queue.img = null;
+                delete _queue[url];
+            }
             delete cache[url];
             delete cache[_aliases[url]];
             delete _aliases[url];
@@ -1665,7 +1735,7 @@ var _initSys = function () {
     sys.browserType = sys.BROWSER_TYPE_UNKNOWN;
     /* Determine the browser type */
     (function(){
-        var typeReg1 = /sogou|qzone|liebao|micromessenger|ucbrowser|360 aphone|360browser|baiduboxapp|baidubrowser|maxthon|mxbrowser|trident|miuibrowser/i;
+        var typeReg1 = /mqqbrowser|sogou|qzone|liebao|micromessenger|ucbrowser|360 aphone|360browser|baiduboxapp|baidubrowser|maxthon|mxbrowser|trident|miuibrowser/i;
         var typeReg2 = /qqbrowser|chrome|safari|firefox|opr|oupeng|opera/i;
         var browserTypes = typeReg1.exec(ua);
         if(!browserTypes) browserTypes = typeReg2.exec(ua);
@@ -1695,8 +1765,8 @@ var _initSys = function () {
     sys.browserVersion = "";
     /* Determine the browser version number */
     (function(){
-        var versionReg1 = /(micromessenger|mx|maxthon|baidu|sogou)(mobile)?(browser)?\/?([\d.]+)/i;
-        var versionReg2 = /(msie |rv:|firefox|chrome|ucbrowser|qq|oupeng|opera|opr|safari|miui)(mobile)?(browser)?\/?([\d.]+)/i;
+        var versionReg1 = /(micromessenger|qq|mx|maxthon|baidu|sogou)(mobile)?(browser)?\/?([\d.]+)/i;
+        var versionReg2 = /(msie |rv:|firefox|chrome|ucbrowser|oupeng|opera|opr|safari|miui)(mobile)?(browser)?\/?([\d.]+)/i;
         var tmp = ua.match(versionReg1);
         if(!tmp) tmp = ua.match(versionReg2);
         sys.browserVersion = tmp ? tmp[4] : "";
@@ -1778,15 +1848,43 @@ var _initSys = function () {
 
     var _supportCanvas = !!_tmpCanvas1.getContext("2d");
     var _supportWebGL = false;
-    var tmpCanvas = document.createElement("CANVAS");
     if (win.WebGLRenderingContext) {
+        var tmpCanvas = document.createElement("CANVAS");
         try{
             var context = cc.create3DContext(tmpCanvas, {'stencil': true, 'preserveDrawingBuffer': true });
             if(context) {
                 _supportWebGL = true;
             }
+
+            if (_supportWebGL && sys.os === sys.OS_ANDROID) {
+                switch (sys.browserType) {
+                case sys.BROWSER_TYPE_MOBILE_QQ:
+                case sys.BROWSER_TYPE_BAIDU:
+                case sys.BROWSER_TYPE_BAIDU_APP:
+                    // QQ & Baidu Brwoser 6.2+ (using blink kernel)
+                    var browserVer = parseFloat(sys.browserVersion);
+                    if (browserVer >= 6.2) {
+                        _supportWebGL = true;
+                    }
+                    else {
+                        _supportWebGL = false;
+                    }
+                    break;
+                case sys.BROWSER_TYPE_ANDROID:
+                    // Android 5+ default browser
+                    if (sys.osMainVersion && sys.osMainVersion >= 5) {
+                        _supportWebGL = true;
+                    }
+                    break;
+                case sys.BROWSER_TYPE_UNKNOWN:
+                case sys.BROWSER_TYPE_360:
+                case sys.BROWSER_TYPE_MIUI:
+                    _supportWebGL = false;
+                }
+            }
         }
         catch (e) {}
+        tmpCanvas = null;
     }
 
     /**
@@ -1876,9 +1974,12 @@ var _initSys = function () {
         str += "isMobile : " + self.isMobile + "\r\n";
         str += "language : " + self.language + "\r\n";
         str += "browserType : " + self.browserType + "\r\n";
+        str += "browserVersion : " + self.browserVersion + "\r\n";
         str += "capabilities : " + JSON.stringify(self.capabilities) + "\r\n";
         str += "os : " + self.os + "\r\n";
+        str += "osVersion : " + self.osVersion + "\r\n";
         str += "platform : " + self.platform + "\r\n";
+        str += "Using " + (cc._renderType === cc.game.RENDER_TYPE_WEBGL ? "WEBGL" : "CANVAS") + " renderer." + "\r\n";
         cc.log(str);
     };
 
@@ -1894,8 +1995,8 @@ var _initSys = function () {
 };
 _initSys();
 
-delete _tmpCanvas1;
-delete _tmpCanvas2;
+_tmpCanvas1 = null;
+_tmpCanvas2 = null;
 
 //to make sure the cc.log, cc.warn, cc.error and cc.assert would not throw error before init by debugger mode.
 cc.log = cc.warn = cc.error = cc.assert = function () {
@@ -1911,9 +2012,7 @@ cc._engineLoaded = false;
 
 function _determineRenderType(config) {
     var CONFIG_KEY = cc.game.CONFIG_KEY,
-        userRenderMode = parseInt(config[CONFIG_KEY.renderMode]) || 0,
-        shieldOs = [cc.sys.OS_ANDROID],
-        shieldBrowser = [];
+        userRenderMode = parseInt(config[CONFIG_KEY.renderMode]) || 0;
 
     // Adjust RenderType
     if (isNaN(userRenderMode) || userRenderMode > 2 || userRenderMode < 0)
@@ -1921,29 +2020,25 @@ function _determineRenderType(config) {
 
     // Determine RenderType
     cc._renderType = cc.game.RENDER_TYPE_CANVAS;
-    cc._supportRender = true;
+    cc._supportRender = false;
 
-    if ( userRenderMode === 2 || 
-        (   userRenderMode === 0 && 
-            shieldOs.indexOf(cc.sys.os) === -1 && 
-            shieldBrowser.indexOf(cc.sys.browserType) === -1 )) {
+    if (userRenderMode === 0) {
         if (cc.sys.capabilities["opengl"]) {
             cc._renderType = cc.game.RENDER_TYPE_WEBGL;
             cc._supportRender = true;
         }
-        else {
-            cc._supportRender = false;
-        }
-    }
-    if (userRenderMode === 1
-        || (userRenderMode === 0 && !cc._supportRender)) {
-        if (cc.sys.capabilities["canvas"]) {
+        else if (cc.sys.capabilities["canvas"]) {
             cc._renderType = cc.game.RENDER_TYPE_CANVAS;
             cc._supportRender = true;
         }
-        else {
-            cc._supportRender = false;
-        }
+    }
+    else if (userRenderMode === 1 && cc.sys.capabilities["canvas"]) {
+        cc._renderType = cc.game.RENDER_TYPE_CANVAS;
+        cc._supportRender = true;
+    }
+    else if (userRenderMode === 2 && cc.sys.capabilities["opengl"]) {
+        cc._renderType = cc.game.RENDER_TYPE_WEBGL;
+        cc._supportRender = true;
     }
 }
 
@@ -2035,7 +2130,7 @@ cc.initEngine = function (config, cb) {
 
     document.body ? _load(config) : cc._addEventListener(window, 'load', _windowLoaded, false);
     _engineInitCalled = true;
-}
+};
 
 })();
 //+++++++++++++++++++++++++Engine initialization function end+++++++++++++++++++++++++++++
@@ -2045,32 +2140,97 @@ cc.initEngine = function (config, cb) {
  * An object to boot the game.
  * @class
  * @name cc.game
+ *
  */
 cc.game = /** @lends cc.game# */{
+    /** 
+     * Debug mode: No debugging. {@static}
+     * @const {Number}
+     * @static
+     */
     DEBUG_MODE_NONE: 0,
+    /**
+     * Debug mode: Info, warning, error to console.
+     * @const {Number}
+     * @static
+     */
     DEBUG_MODE_INFO: 1,
+    /**
+     * Debug mode: Warning, error to console.
+     * @const {Number}
+     * @static
+     */
     DEBUG_MODE_WARN: 2,
+    /**
+     * Debug mode: Error to console.
+     * @const {Number}
+     * @static
+     */
     DEBUG_MODE_ERROR: 3,
+    /**
+     * Debug mode: Info, warning, error to web page.
+     * @const {Number}
+     * @static
+     */
     DEBUG_MODE_INFO_FOR_WEB_PAGE: 4,
+    /**
+     * Debug mode: Warning, error to web page.
+     * @const {Number}
+     * @static
+     */
     DEBUG_MODE_WARN_FOR_WEB_PAGE: 5,
+    /**
+     * Debug mode: Error to web page.
+     * @const {Number}
+     * @static
+     */
     DEBUG_MODE_ERROR_FOR_WEB_PAGE: 6,
 
+    /**
+     * Event that is fired when the game is hidden.
+     * @constant {String}
+     */
     EVENT_HIDE: "game_on_hide",
+    /**
+     * Event that is fired when the game is shown.
+     * @constant {String}
+     */
     EVENT_SHOW: "game_on_show",
+    /**
+     * Event that is fired when the game is resized.
+     * @constant {String}
+     */
     EVENT_RESIZE: "game_on_resize",
+    /**
+     * Event that is fired when the renderer is done being initialized.
+     * @constant {String}
+     */
     EVENT_RENDERER_INITED: "renderer_inited",
 
+    /** @constant {Number} */
     RENDER_TYPE_CANVAS: 0,
+    /** @constant {Number} */
     RENDER_TYPE_WEBGL: 1,
+    /** @constant {Number} */
     RENDER_TYPE_OPENGL: 2,
 
     _eventHide: null,
     _eventShow: null,
 
     /**
-     * Key of config
+     * Keys found in project.json.
+     *
      * @constant
      * @type {Object}
+     *
+     * @prop {String} engineDir     - In debug mode, if you use the whole engine to develop your game, you should specify its relative path with "engineDir".
+     * @prop {String} modules       - Defines which modules you will need in your game, it's useful only on web
+     * @prop {String} debugMode     - Debug mode, see DEBUG_MODE_XXX constant definitions.
+     * @prop {String} showFPS       - Left bottom corner fps information will show when "showFPS" equals true, otherwise it will be hide.
+     * @prop {String} frameRate     - Sets the wanted frame rate for your game, but the real fps depends on your game implementation and the running environment.
+     * @prop {String} id            - Sets the id of your canvas element on the web page, it's useful only on web.
+     * @prop {String} renderMode    - Sets the renderer type, only useful on web, 0: Automatic, 1: Canvas, 2: WebGL
+     * @prop {String} jsList        - Sets the list of js files in your game.
      */
     CONFIG_KEY: {
         width: "width",
@@ -2084,7 +2244,7 @@ cc.game = /** @lends cc.game# */{
         renderMode: "renderMode",
         jsList: "jsList"
     },
-    
+
     // states
     _paused: true,//whether the game is paused
     _prepareCalled: false,//whether the prepare function has been called
@@ -2092,9 +2252,9 @@ cc.game = /** @lends cc.game# */{
     _rendererInitialized: false,
 
     _renderContext: null,
-    
+
     _intervalId: null,//interval target of main
-    
+
     _lastTime: null,
     _frameTime: null,
 
@@ -2122,13 +2282,13 @@ cc.game = /** @lends cc.game# */{
 
     /**
      * Callback when the scripts of engine have been load.
-     * @type {Function}
+     * @type {Function|null}
      */
     onStart: null,
 
     /**
      * Callback when game exits.
-     * @type {Function}
+     * @type {Function|null}
      */
     onStop: null,
 
@@ -2200,6 +2360,13 @@ cc.game = /** @lends cc.game# */{
         cc.game.onStart();
     },
 
+    /**
+     * End game, it will close the game window
+     */
+    end: function () {
+        close();
+    },
+
 //  @Game loading
     /**
      * Prepare game.
@@ -2207,7 +2374,7 @@ cc.game = /** @lends cc.game# */{
      */
     prepare: function (cb) {
         var self = this,
-            config = self.config, 
+            config = self.config,
             CONFIG_KEY = self.CONFIG_KEY;
 
         this._loadConfig();
@@ -2228,10 +2395,10 @@ cc.game = /** @lends cc.game# */{
             this._initRenderer(config[CONFIG_KEY.width], config[CONFIG_KEY.height]);
 
             /**
+             * cc.view is the shared view object.
              * @type {cc.EGLView}
              * @name cc.view
              * @memberof cc
-             * cc.view is the shared view object.
              */
             cc.view = cc.EGLView._getInstance();
 
@@ -2244,10 +2411,10 @@ cc.game = /** @lends cc.game# */{
             if (cc.director.setOpenGLView)
                 cc.director.setOpenGLView(cc.view);
             /**
+             * cc.winSize is the alias object for the size of the current game window.
              * @type {cc.Size}
              * @name cc.winSize
              * @memberof cc
-             * cc.winSize is the alias object for the size of the current game window.
              */
             cc.winSize = cc.director.getWinSize();
 
@@ -2300,7 +2467,7 @@ cc.game = /** @lends cc.game# */{
                 cc.game.onStart = onStart;
             }
         }
-        
+
         this.prepare(cc.game.onStart && cc.game.onStart.bind(cc.game));
     },
 
@@ -2377,8 +2544,9 @@ cc.game = /** @lends cc.game# */{
         if (document["ccConfig"]) {
             this._initConfig(document["ccConfig"]);
         }
-        // Load from project.json 
+        // Load from project.json
         else {
+            var data = {};
             try {
                 var cocos_script = document.getElementsByTagName('script');
                 for(var i = 0; i < cocos_script.length; i++){
@@ -2400,12 +2568,11 @@ cc.game = /** @lends cc.game# */{
                 if(!txt){
                     txt = cc.loader._loadTxtSync("project.json");
                 }
-                var data = JSON.parse(txt);
-                this._initConfig(data || {});
+                data = JSON.parse(txt);
             } catch (e) {
                 cc.log("Failed to read or parse project.json");
-                this._initConfig({});
             }
+            this._initConfig(data);
         }
     },
 
@@ -2494,9 +2661,13 @@ cc.game = /** @lends cc.game# */{
         if (this._renderContext) {
             cc.renderer = cc.rendererWebGL;
             win.gl = this._renderContext; // global variable declared in CCMacro.js
+            cc.renderer.init();
             cc.shaderCache._init();
             cc._drawingUtil = new cc.DrawingPrimitiveWebGL(this._renderContext);
             cc.textureCache._initializingRenderer();
+            cc.glExt = {};
+            cc.glExt.instanced_arrays = gl.getExtension("ANGLE_instanced_arrays");
+            cc.glExt.element_uint = gl.getExtension("OES_element_index_uint");
         } else {
             cc.renderer = cc.rendererCanvas;
             this._renderContext = cc._renderContext = new cc.CanvasContextWrapper(localCanvas.getContext("2d"));

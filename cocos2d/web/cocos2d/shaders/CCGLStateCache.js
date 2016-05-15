@@ -25,9 +25,6 @@
  ****************************************************************************/
 
 cc._currentProjectionMatrix = -1;
-cc._vertexAttribPosition = false;
-cc._vertexAttribColor = false;
-cc._vertexAttribTexCoords = false;
 
 if (cc.ENABLE_GL_STATE_CACHE) {
     cc.MAX_ACTIVETEXTURE = 16;
@@ -39,6 +36,69 @@ if (cc.ENABLE_GL_STATE_CACHE) {
     cc._GLServerState = 0;
     if(cc.TEXTURE_ATLAS_USE_VAO)
         cc._uVAO = 0;
+
+    var _currBuffers = {};
+    var _currBuffer;
+
+    WebGLRenderingContext.prototype.glBindBuffer = WebGLRenderingContext.prototype.bindBuffer;
+    WebGLRenderingContext.prototype.bindBuffer = function (target, buffer) {
+        if (_currBuffers[target] !== buffer) {
+            _currBuffers[target] = buffer;
+            this.glBindBuffer(target, buffer);
+        }
+
+        if (!_currBuffer || _currBuffer !== buffer) {
+            _currBuffer = buffer;
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+
+    WebGLRenderingContext.prototype.glEnableVertexAttribArray = WebGLRenderingContext.prototype.enableVertexAttribArray;
+    WebGLRenderingContext.prototype.enableVertexAttribArray = function (index) {
+        if (index === cc.VERTEX_ATTRIB_FLAG_POSITION) {
+            if (!this._vertexAttribPosition) {
+                this.glEnableVertexAttribArray(index);
+                this._vertexAttribPosition = true;
+            }
+        }
+        else if (index === cc.VERTEX_ATTRIB_FLAG_COLOR) {
+            if (!this._vertexAttribColor) {
+                this.glEnableVertexAttribArray(index);
+                this._vertexAttribColor = true;
+            }
+        }
+        else if (index === cc.VERTEX_ATTRIB_FLAG_TEX_COORDS) {
+            if (!this._vertexAttribTexCoords) {
+                this.glEnableVertexAttribArray(index);
+                this._vertexAttribTexCoords = true;
+            }
+        }
+        else {
+            this.glEnableVertexAttribArray(index);
+        }
+    };
+
+    WebGLRenderingContext.prototype.glDisableVertexAttribArray = WebGLRenderingContext.prototype.disableVertexAttribArray;
+    WebGLRenderingContext.prototype.disableVertexAttribArray = function (index) {
+        if (index === cc.VERTEX_ATTRIB_FLAG_COLOR) {
+            if (this._vertexAttribColor) {
+                this.glDisableVertexAttribArray(index);
+                this._vertexAttribColor = false;
+            }
+        }
+        else if (index === cc.VERTEX_ATTRIB_FLAG_TEX_COORDS) {
+            if (this._vertexAttribTexCoords) {
+                this.glDisableVertexAttribArray(index);
+                this._vertexAttribTexCoords = false;
+            }
+        }
+        else if (index !== 0) {
+            this.glDisableVertexAttribArray(index);
+        }
+    };
 }
 
 // GL State Cache functions
@@ -51,9 +111,6 @@ if (cc.ENABLE_GL_STATE_CACHE) {
 cc.glInvalidateStateCache = function () {
     cc.kmGLFreeAll();
     cc._currentProjectionMatrix = -1;
-    cc._vertexAttribPosition = false;
-    cc._vertexAttribColor = false;
-    cc._vertexAttribTexCoords = false;
     if (cc.ENABLE_GL_STATE_CACHE) {
         cc._currentShaderProgram = -1;
         for (var i = 0; i < cc.MAX_ACTIVETEXTURE; i++) {
@@ -81,7 +138,7 @@ cc.glUseProgram = function (program) {
 if(!cc.ENABLE_GL_STATE_CACHE){
     cc.glUseProgram = function (program) {
         cc._renderContext.useProgram(program);
-    }
+    };
 }
 
 /**
@@ -150,9 +207,9 @@ cc.glBlendFuncForParticle = function(sfactor, dfactor) {
     }
 };
 
-if(!cc.ENABLE_GL_STATE_CACHE){
+if (!cc.ENABLE_GL_STATE_CACHE) {
     cc.glBlendFunc = cc.setBlending;
-};
+}
 
 /**
  * Resets the blending mode back to the cached state in case you used glBlendFuncSeparate() or glBlendEquation().<br/>
@@ -174,52 +231,6 @@ cc.glBlendResetToCache = function () {
  */
 cc.setProjectionMatrixDirty = function () {
     cc._currentProjectionMatrix = -1;
-};
-
-/**
- * <p>
- *    Will enable the vertex attribs that are passed as flags.  <br/>
- *    Possible flags:                                           <br/>
- *    cc.VERTEX_ATTRIB_FLAG_POSITION                             <br/>
- *    cc.VERTEX_ATTRIB_FLAG_COLOR                                <br/>
- *    cc.VERTEX_ATTRIB_FLAG_TEX_COORDS                            <br/>
- *                                                              <br/>
- *    These flags can be ORed. The flags that are not present, will be disabled.
- * </p>
- * @function
- * @param {cc.VERTEX_ATTRIB_FLAG_POSITION | cc.VERTEX_ATTRIB_FLAG_COLOR | cc.VERTEX_ATTRIB_FLAG_TEX_OORDS} flags
- */
-cc.glEnableVertexAttribs = function (flags) {
-    /* Position */
-    var ctx = cc._renderContext;
-    var enablePosition = ( flags & cc.VERTEX_ATTRIB_FLAG_POSITION );
-    if (enablePosition !== cc._vertexAttribPosition) {
-        if (enablePosition)
-            ctx.enableVertexAttribArray(cc.VERTEX_ATTRIB_POSITION);
-        else
-            ctx.disableVertexAttribArray(cc.VERTEX_ATTRIB_POSITION);
-        cc._vertexAttribPosition = enablePosition;
-    }
-
-    /* Color */
-    var enableColor = (flags & cc.VERTEX_ATTRIB_FLAG_COLOR);
-    if (enableColor !== cc._vertexAttribColor) {
-        if (enableColor)
-            ctx.enableVertexAttribArray(cc.VERTEX_ATTRIB_COLOR);
-        else
-            ctx.disableVertexAttribArray(cc.VERTEX_ATTRIB_COLOR);
-        cc._vertexAttribColor = enableColor;
-    }
-
-    /* Tex Coords */
-    var enableTexCoords = (flags & cc.VERTEX_ATTRIB_FLAG_TEX_COORDS);
-    if (enableTexCoords !== cc._vertexAttribTexCoords) {
-        if (enableTexCoords)
-            ctx.enableVertexAttribArray(cc.VERTEX_ATTRIB_TEX_COORDS);
-        else
-            ctx.disableVertexAttribArray(cc.VERTEX_ATTRIB_TEX_COORDS);
-        cc._vertexAttribTexCoords = enableTexCoords;
-    }
 };
 
 /**
@@ -337,4 +348,3 @@ cc.glEnable = function (flags) {
          cc._renderContext.disable(cc._renderContext.BLEND);*/
     }
 };
-

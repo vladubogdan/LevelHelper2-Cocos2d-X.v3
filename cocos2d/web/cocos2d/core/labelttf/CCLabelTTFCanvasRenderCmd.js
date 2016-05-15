@@ -211,7 +211,7 @@ cc.LabelTTF._firsrEnglish = /^[a-zA-Z0-9ÄÖÜäöüßéèçàùêâîôû]/;
         context.setTransform(1, 0, 0, 1, locStatus.contextTransform.x, locStatus.contextTransform.y);
         var xOffset = locStatus.xOffset;
         var yOffsetArray = locStatus.OffsetYArray;
-        this.drawLabels(context, xOffset, yOffsetArray)
+        this.drawLabels(context, xOffset, yOffsetArray);
     };
 
     proto._checkWarp = function (strArr, i, maxWidth) {
@@ -264,6 +264,7 @@ cc.LabelTTF._firsrEnglish = /^[a-zA-Z0-9ÄÖÜäöüßéèçàùêâîôû]/;
                 if (cc.LabelTTF._symbolRex.test(sLine || tmpText)) {
                     result = cc.LabelTTF._lastWordRex.exec(sText);
                     fuzzyLen -= result ? result[0].length : 0;
+                    if (fuzzyLen === 0) fuzzyLen = 1;
 
                     sLine = text.substr(fuzzyLen);
                     sText = text.substr(0, fuzzyLen);
@@ -349,7 +350,7 @@ cc.LabelTTF._firsrEnglish = /^[a-zA-Z0-9ÄÖÜäöüßéèçàùêâîôû]/;
             context.fillText(line, xOffset, yOffsetArray[i]);
         }
         cc.g_NumberOfDraws++;
-    }
+    };
 })();
 
 (function(){

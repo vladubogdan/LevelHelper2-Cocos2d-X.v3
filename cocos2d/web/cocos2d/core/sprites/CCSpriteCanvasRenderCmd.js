@@ -109,7 +109,6 @@
     proto.rendering = function (ctx, scaleX, scaleY) {
         var node = this._node;
         var locTextureCoord = this._textureCoord, alpha = (this._displayedOpacity / 255);
-
         var texture = this._textureToRender || node._texture;
 
         if ((texture && (locTextureCoord.width === 0 || locTextureCoord.height === 0|| !texture._textureLoaded)) || alpha === 0)
@@ -150,7 +149,7 @@
         w = locWidth * scaleX;
         h = locHeight * scaleY;
 
-        if (texture) {
+        if (texture && texture._htmlElementObj) {
             image = texture._htmlElementObj;
             if (texture._pattern !== "") {
                 wrapper.setFillStyle(context.createPattern(image, texture._pattern));

@@ -32,15 +32,19 @@ cc.CustomRenderCmd = function (target, func) {
         if (!this._callback)
             return;
         this._callback.call(this._target, ctx, scaleX, scaleY);
-    }
+    };
+    this.needDraw = function () {
+        return this._needDraw;
+    };
 };
 
 cc.Node._dirtyFlags = {transformDirty: 1 << 0, visibleDirty: 1 << 1, colorDirty: 1 << 2, opacityDirty: 1 << 3, cacheDirty: 1 << 4,
-    orderDirty: 1 << 5, textDirty: 1 << 6, gradientDirty:1 << 7, all: (1 << 8) - 1};
+    orderDirty: 1 << 5, textDirty: 1 << 6, gradientDirty:1 << 7, textureDirty: 1 << 8, all: (1 << 9) - 1};
 
 //-------------------------Base -------------------------
 cc.Node.RenderCmd = function(renderable){
     this._dirtyFlag = 1;                           //need update the transform at first.
+    this._savedDirtyFlag = true;
 
     this._node = renderable;
     this._needDraw = false;
@@ -60,6 +64,10 @@ cc.Node.RenderCmd = function(renderable){
 
 cc.Node.RenderCmd.prototype = {
     constructor: cc.Node.RenderCmd,
+
+    needDraw: function () {
+        return this._needDraw;
+    },
 
     getAnchorPointInPoints: function(){
         return cc.p(this._anchorPointInPoints);
@@ -85,7 +93,7 @@ cc.Node.RenderCmd.prototype = {
     },
 
     getParentToNodeTransform: function(){
-        if(this._dirtyFlag & cc.Node._dirtyFlags.transformDirty)
+        if (this._dirtyFlag & cc.Node._dirtyFlags.transformDirty)
             this._inverse = cc.affineTransformInvert(this.getNodeToParentTransform());
         return this._inverse;
     },
@@ -217,6 +225,8 @@ cc.Node.RenderCmd.prototype = {
         var flags = cc.Node._dirtyFlags, locFlag = this._dirtyFlag;
         var colorDirty = locFlag & flags.colorDirty,
             opacityDirty = locFlag & flags.opacityDirty;
+        this._savedDirtyFlag = this._savedDirtyFlag || locFlag;
+
         if(colorDirty)
             this._updateDisplayColor();
 
@@ -325,8 +335,14 @@ cc.Node.RenderCmd.prototype = {
     _syncStatus: function (parentCmd) {
         //  In the visit logic does not restore the _dirtyFlag
         //  Because child elements need parent's _dirtyFlag to change himself
-        var flags = cc.Node._dirtyFlags, locFlag = this._dirtyFlag;
-        var parentNode = parentCmd ? parentCmd._node : null;
+        var flags = cc.Node._dirtyFlags, locFlag = this._dirtyFlag, parentNode = null;
+        if (parentCmd) {
+            parentNode = parentCmd._node;
+            this._savedDirtyFlag = this._savedDirtyFlag || parentCmd._savedDirtyFlag || locFlag;
+        }
+        else {
+            this._savedDirtyFlag = this._savedDirtyFlag || locFlag;
+        }
 
         //  There is a possibility:
         //    The parent element changed color, child element not change
@@ -359,7 +375,7 @@ cc.Node.RenderCmd.prototype = {
         if(colorDirty || opacityDirty)
             this._updateColor();
 
-        if (cc._renderType === cc.game.RENDER_TYPE_WEBGL || locFlag & flags.transformDirty)
+        if (locFlag & flags.transformDirty)
             //update the transform
             this.transform(parentCmd, true);
 
@@ -368,24 +384,41 @@ cc.Node.RenderCmd.prototype = {
     },
 
     visitChildren: function(){
+        var renderer = cc.renderer;
         var node = this._node;
-        var i, children = node._children, child;
+        var i, children = node._children, child, cmd;
         var len = children.length;
         if (len > 0) {
             node.sortAllChildren();
             // draw children zOrder < 0
             for (i = 0; i < len; i++) {
                 child = children[i];
-                if (child._localZOrder < 0)
-                    child._renderCmd.visit(this);
-                else
+                if (child._localZOrder < 0) {
+                    cmd = child._renderCmd;
+                    cmd.visit(this);
+                }
+                else {
                     break;
+                }
             }
-            cc.renderer.pushRenderCommand(this);
-            for (; i < len; i++)
-                children[i]._renderCmd.visit(this);
+
+            if (isNaN(node._customZ)) {
+                node._vertexZ = renderer.assignedZ;
+                renderer.assignedZ += renderer.assignedZStep;
+            }
+
+            renderer.pushRenderCommand(this);
+            for (; i < len; i++) {
+                child = children[i];
+                child._renderCmd.visit(this);
+            }
         } else {
-            cc.renderer.pushRenderCommand(this);
+            if (isNaN(node._customZ)) {
+                node._vertexZ = renderer.assignedZ;
+                renderer.assignedZ += renderer.assignedZStep;
+            }
+
+            renderer.pushRenderCommand(this);
         }
         this._dirtyFlag = 0;
     }
@@ -399,7 +432,6 @@ cc.Node.RenderCmd.prototype = {
         cc.Node.RenderCmd.call(this, renderable);
         this._cachedParent = null;
         this._cacheDirty = false;
-
     };
 
     var proto = cc.Node.CanvasRenderCmd.prototype = Object.create(cc.Node.RenderCmd.prototype);

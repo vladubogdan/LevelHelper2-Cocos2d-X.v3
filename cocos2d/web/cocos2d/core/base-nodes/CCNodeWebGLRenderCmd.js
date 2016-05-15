@@ -34,6 +34,9 @@
         this._shaderProgram = null;
 
         this._camera = null;
+
+        // Current index in the command list for improving auto batching perf
+        this._currId = -1;
     };
 
     var proto = cc.Node.WebGLRenderCmd.prototype = Object.create(cc.Node.RenderCmd.prototype);
@@ -80,11 +83,11 @@
         t4x4Mat[5] = trans.d;
         t4x4Mat[13] = trans.ty;
 
-        // Update Z vertex manually
-        t4x4Mat[14] = node._vertexZ;
-
         //optimize performance for Javascript
         cc.kmMat4Multiply(stackMatrix, parentMatrix, t4x4);
+
+        // Update Z depth
+        t4x4Mat[14] = node._vertexZ;
 
         // XXX: Expensive calls. Camera should be integrated into the cached affine matrix
         if (node._camera !== null && !(node.grid !== null && node.grid.isActive())) {
@@ -109,8 +112,11 @@
                 node._camera._locateForRenderer(stackMatrix);
             }
         }
-        if(!recursive || !node._children || node._children.length === 0)
+
+        if (!recursive || !node._children) {
             return;
+        }
+        
         var i, len, locChildren = node._children;
         for(i = 0, len = locChildren.length; i< len; i++){
             locChildren[i]._renderCmd.transform(this, recursive);

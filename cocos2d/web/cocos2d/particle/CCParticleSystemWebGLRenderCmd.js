@@ -195,7 +195,9 @@
         //
         // Using VBO without VAO
         //
-        cc.glEnableVertexAttribs(cc.VERTEX_ATTRIB_FLAG_POS_COLOR_TEX);
+        gl.enableVertexAttribArray(cc.VERTEX_ATTRIB_POSITION);
+        gl.enableVertexAttribArray(cc.VERTEX_ATTRIB_COLOR);
+        gl.enableVertexAttribArray(cc.VERTEX_ATTRIB_TEX_COORDS);
 
         gl.bindBuffer(gl.ARRAY_BUFFER, this._buffersVBO[0]);
         gl.vertexAttribPointer(cc.VERTEX_ATTRIB_POSITION, 3, gl.FLOAT, false, 24, 0);               // vertices
@@ -366,7 +368,7 @@
     proto.postStep = function(){
         var gl = cc._renderContext;
         gl.bindBuffer(gl.ARRAY_BUFFER, this._buffersVBO[0]);
-        gl.bufferData(gl.ARRAY_BUFFER, this._quadsArrayBuffer, gl.DYNAMIC_DRAW);
+        gl.bufferSubData(gl.ARRAY_BUFFER, 0, this._quadsArrayBuffer);
     };
 
     proto._setBlendAdditive = function(){

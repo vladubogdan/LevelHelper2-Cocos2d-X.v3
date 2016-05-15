@@ -1061,6 +1061,9 @@
         });
         this.widgetAttributes(widget, json);
 
+        // the TextAtlas must be ignore ContentSize[Size] in the ccs file.
+        widget.ignoreContentAdaptWithSize(true);
+
         return widget;
     };
 
@@ -1395,6 +1398,7 @@
     });
 
 
+    load.registerParser("timeline", "2.*", parser);
     load.registerParser("timeline", "*", parser);
 
 

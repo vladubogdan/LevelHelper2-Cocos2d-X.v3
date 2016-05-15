@@ -5,13 +5,15 @@
              classpath="./compiler/compiler.jar"/>
     <target name="compile">
         <jscomp compilationLevel="simple" warning="quiet"
-                debug="false" output="./../lib/cocos2d-js-v3.10-min.js">
-            <!--sourceMapOutputFile="./../lib/cocos2d-js-v3.10-sourcemap" sourceMapFormat="V3" -->
+                debug="false" output="./../lib/cocos2d-js-v3.11-min.js"
+                languageIn="ECMASCRIPT5">
+            <!--sourceMapOutputFile="./../lib/cocos2d-js-v3.11-sourcemap" sourceMapFormat="V3" -->
             <sources dir="./../">
                 <file name="Base64Images.js"/>
                 <file name="CCBoot.js"/>
                 <file name="cocos2d/core/event-manager/CCEventHelper.js"/>
                 <file name="CCDebugger.js"/>
+                <file name="cocos2d/core/utils/CCSimplePool.js"/>
                 <file name="cocos2d/core/utils/BinaryLoader.js"/>
                 <file name="cocos2d/core/platform/CCClass.js"/>
                 <file name="cocos2d/core/platform/CCCommon.js"/>
@@ -40,6 +42,7 @@
                 <file name="cocos2d/core/event-manager/CCEventExtension.js"/>
                 <file name="cocos2d/core/base-nodes/BaseNodesPropertyDefine.js"/>
 
+                <file name="cocos2d/core/renderer/GlobalVertexBuffer.js"/>
                 <file name="cocos2d/core/renderer/RendererCanvas.js"/>
                 <file name="cocos2d/core/renderer/RendererWebGL.js"/>
 
@@ -227,8 +230,10 @@
                 <file name="extensions/ccui/uiwidgets/UIWebView.js"/>
                 <file name="extensions/ccui/uiwidgets/UIVideoPlayer.js"/>
                 <file name="extensions/ccui/uiwidgets/UIRichText.js"/>
+                <file name="extensions/ccui/uiwidgets/scroll-widget/UIScrollViewBar.js"/>
                 <file name="extensions/ccui/uiwidgets/scroll-widget/UIScrollView.js"/>
                 <file name="extensions/ccui/uiwidgets/scroll-widget/UIListView.js"/>
+                <file name="extensions/ccui/uiwidgets/scroll-widget/UIPageViewIndicator.js"/>
                 <file name="extensions/ccui/uiwidgets/scroll-widget/UIPageView.js"/>
                 <file name="extensions/ccui/uiwidgets/scroll-widget/UIScrollViewCanvasRenderCmd.js"/>
                 <file name="extensions/ccui/uiwidgets/scroll-widget/UIScrollViewWebGLRenderCmd.js"/>
@@ -302,9 +307,11 @@
 
     <target name="compile_core">
         <jscomp compilationLevel="simple" warning="quiet"
-                debug="false" output="./../lib/cocos2d-js-v3.10-core-min.js">
-            <!--sourceMapOutputFile="./../lib/cocos2d-js-v3.10-core-sourcemap" sourceMapFormat="V3" -->
+                debug="false" output="./../lib/cocos2d-js-v3.11-core-min.js"
+                languageIn="ECMASCRIPT5">
+            <!--sourceMapOutputFile="./../lib/cocos2d-js-v3.11-core-sourcemap" sourceMapFormat="V3" -->
             <sources dir="./../">
+                <file name="cocos2d/core/utils/CCSimplePool.js"/>
                 <file name="CCBoot.js"/>
                 <file name="cocos2d/core/event-manager/CCEventHelper.js"/>
                 <file name="cocos2d/core/platform/CCClass.js"/>
@@ -332,6 +339,7 @@
                 <file name="cocos2d/core/textures/CCTexture2D.js"/>
                 <file name="cocos2d/core/textures/CCTextureCache.js"/>
 
+                <file name="cocos2d/core/renderer/GlobalVertexBuffer.js"/>
                 <file name="cocos2d/core/renderer/RendererCanvas.js"/>
                 <file name="cocos2d/core/renderer/RendererWebGL.js"/>
 

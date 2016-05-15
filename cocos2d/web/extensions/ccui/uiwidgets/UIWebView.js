@@ -101,7 +101,11 @@ ccui.WebView = ccui.Widget.extend(/** @lends ccui.WebView# */{
             if(iframe){
                 var win = iframe.contentWindow;
                 if(win && win.location)
-                    win.history.back.call(win);
+                    try {
+                        win.history.back.call(win);
+                    } catch (error) {
+                        win.history.back();
+                    }
             }
         }catch(err){
             cc.log(err);
@@ -119,7 +123,11 @@ ccui.WebView = ccui.Widget.extend(/** @lends ccui.WebView# */{
             if(iframe){
                 var win = iframe.contentWindow;
                 if(win && win.location)
-                    win.history.forward.call(win);
+                    try {
+                        win.history.forward.call(win);
+                    } catch (error) {
+                        win.history.forward();
+                    }
             }
         }catch(err){
             cc.log(err);
@@ -248,6 +256,8 @@ ccui.WebView.EventType = {
             this._div.style["-webkit-overflow"] = "auto";
             this._div.style["-webkit-overflow-scrolling"] = "touch";
             this._iframe = document.createElement("iframe");
+            this._iframe.style["width"] = "100%";
+            this._iframe.style["height"] = "100%";
             this._div.appendChild(this._iframe);
         }else{
             this._div = this._iframe = document.createElement("iframe");
